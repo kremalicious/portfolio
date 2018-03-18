@@ -1,21 +1,21 @@
 @import 'variables';
 
 .header {
-    padding: $spacer / 4 $spacer / 2;
+    padding: $spacer / 2;
 }
 
 .header__title,
 .header__description {
     display: inline-block;
+    margin-bottom: 0;
 }
 
 .header__title {
-    margin-bottom: 0;
-    font-size: $font-size-h2;
+    font-size: $font-size-h3;
     margin-right: $spacer / 2;
+    color: $brand-main;
 }
 
 .header__description {
-    margin-bottom: 0;
     font-size: $font-size-large;
 }
