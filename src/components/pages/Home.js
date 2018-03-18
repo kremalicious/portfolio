@@ -1,11 +1,9 @@
 import React from 'react'
 
-const Start = () => (
-  <main className="screen screen--start">
-
-
+const Home = () => (
+  <main className="screen screen--home">
 
   </main>
 )
 
-export default Start
+export default Home
