@@ -1,0 +1,38 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+html {
+  font-size: 16px; }
+
+body {
+  background: #e7eef4;
+  font-family: "ff-tisa-sans-web-pro", "futura-pt", "le-havre", "Trebuchet MS", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #6b7f88;
+  text-rendering: optimizeLegibility;
+  font-display: swap;
+  font-feature-settings: 'liga', 'kern';
+  letter-spacing: -.01em; }
+
+p,
+ul,
+ol {
+  margin: 0 0 1.5rem; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "brandon-grotesque", "futura-pt", "le-havre", "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.1;
+  color: #015565;
+  font-weight: 700;
+  letter-spacing: -.04rem;
+  margin: 0 0 1.5rem; }

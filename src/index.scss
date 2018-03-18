@@ -1,0 +1,48 @@
+@import 'variables';
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+html {
+    font-size: $font-size-root;
+}
+
+body {
+    background: $brand-light;
+    font-family: $font-family-base;
+    font-weight: $font-weight-base;
+    font-size: $font-size-base;
+    line-height: $line-height;
+    color: $font-color-base;
+    text-rendering: optimizeLegibility;
+    font-display: swap;
+    font-feature-settings: 'liga', 'kern';
+    letter-spacing: -.01em;
+}
+
+p,
+ul,
+ol {
+    margin: 0 0 $spacer;
+}
+
+// Headings
+/////////////////////////////////////
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-family-headings;
+    line-height: $line-height-headings;
+    color: $color-headings;
+    font-weight: $font-weight-headings;
+    letter-spacing: -.04rem;
+    margin: 0 0 $spacer;
+}
