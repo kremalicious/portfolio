@@ -1,6 +1,6 @@
 [
   {
-    "name": "Ocean Protocol Website & CI",
+    "name": "Ocean Protocol",
     "slug": "ocean-site",
     "img": "ocean-site.png",
     "img2x": "ocean-site@2x.png",
@@ -9,7 +9,7 @@
     "slides": [ "ocean-site-1.png" ]
   },
   {
-    "name": "IPDB Website & CI",
+    "name": "IPDB",
     "slug": "ipdb-site",
     "img": "ipdb-site.png",
     "img2x": "ipdb-site@2x.png",
@@ -19,7 +19,7 @@
     "slides": [ "ipdb-site-1.png", "ipdb-site-2.png", "ipdb-site-3.png" ]
   },
   {
-    "name": "9984 >> Summit 2017 Website & CI",
+    "name": "9984 >> Summit 2017",
     "slug": "9984-site",
     "img": "9984-site.png",
     "img2x": "9984-site@2x.png",
@@ -29,7 +29,7 @@
     "slides": [ "9984-site-1.png", "9984-site-2.png", "9984-site-3.png" ]
   },
   {
-    "name": "BigchainDB Website & CI",
+    "name": "BigchainDB",
     "slug": "bigchaindb-site",
     "img": "bigchaindb-site.png",
     "img2x": "bigchaindb-site@2x.png",
@@ -43,7 +43,7 @@
     ]
   },
   {
-    "name": "ChartMogul Systems Landing Page",
+    "name": "ChartMogul",
     "slug": "chartmogul-landing",
     "img": "chartmogul-landing.png",
     "img2x": "chartmogul-landing@2x.png",
@@ -52,7 +52,7 @@
     "slides": [ "chartmogul-landing-1.png" ]
   },
   {
-    "name": "ShareTheMeal Website",
+    "name": "ShareTheMeal ",
     "slug": "sharethemeal-site",
     "img": "sharethemeal-site.png",
     "img2x": "sharethemeal-site@2x.png",
@@ -120,7 +120,7 @@
     "tags": [ "icon" ]
   },
   {
-    "name": "Mr. Reader Theme Coffee",
+    "name": "Mr. Reader",
     "slug": "mr-reader-theme",
     "img": "mr-reader-theme.jpg",
     "url": "http://www.curioustimes.de/mrreader/themes/",
@@ -146,7 +146,7 @@
     "tags": [ "web", "icon", "ci", "code", "design" ]
   },
   {
-    "name": "Mr. Reader iPad Icon",
+    "name": "Mr. Reader",
     "slug": "mr-reader",
     "img": "mr-reader.jpg",
     "img2x": "mr-reader@2x.jpg",

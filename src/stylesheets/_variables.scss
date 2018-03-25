@@ -7,7 +7,7 @@ $brand-light:           #e7eef4;
 
 $brand-grey:			#6b7f88;
 $brand-grey-light:		lighten($brand-grey, 20%);
-$brand-grey-dimmed:     lighten($brand-grey, 60%);
+$brand-grey-dimmed:     lighten($brand-grey, 50%);
 
 
 // Text Colors
@@ -36,13 +36,13 @@ $font-size-h6               : $font-size-small;
 $line-height                : 1.5;
 $line-height-small          : 1.1428571429;
 
-$font-family-base           : 'ff-tisa-sans-web-pro', 'futura-pt', 'le-havre', 'Trebuchet MS', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-base           : 'ff-tisa-sans-web-pro', 'Trebuchet MS', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-weight-base           : 400;
 $font-color-base            : $text-color;
 
 $font-family-monospace      : Menlo, Monaco, Consolas, 'Courier New', monospace;
 
-$font-family-headings       : 'brandon-grotesque', 'futura-pt', 'le-havre', 'Avenir Next', 'Helvetica Neue',Helvetica,Arial,sans-serif;
+$font-family-headings       : 'brandon-grotesque', 'Avenir Next', 'Helvetica Neue',Helvetica,Arial,sans-serif;
 $font-weight-headings       : 500;
 $line-height-headings       : 1.1;
 $color-headings:            $brand-main;

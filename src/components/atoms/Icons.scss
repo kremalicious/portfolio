@@ -1,0 +1,10 @@
+@import 'variables';
+
+.icon {
+    width: $font-size-base;
+    height: $font-size-base;
+    fill: $brand-grey;
+    stroke: none;
+    vertical-align: baseline;
+    margin-bottom: -.04rem;
+}
