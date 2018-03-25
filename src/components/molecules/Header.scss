@@ -14,6 +14,14 @@
     }
 }
 
+.header__logo {
+    display: block;
+    margin-top: -3rem;
+    font-size: 3rem;
+    color: $brand-grey-light;
+    margin-bottom: $spacer / 2;
+}
+
 .header__title,
 .header__description {
     display: inline-block;
