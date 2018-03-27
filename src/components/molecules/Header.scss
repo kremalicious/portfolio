@@ -37,20 +37,3 @@
 .header__description {
     font-size: $font-size-large;
 }
-
-.social { // stylelint-disable-line
-    margin-top: $spacer;
-}
-
-.social__link {
-    margin-left: $spacer / 2;
-    margin-right: $spacer / 2;
-    background: $brand-grey-dimmed;
-    padding: $spacer / 4;
-    text-align: center;
-    display: inline-block;
-    width: 1.35rem;
-    height: 1.35rem;
-    box-shadow: 0 1px 3px rgba($brand-main, .2), 0 5px 16px rgba($brand-main, .15);
-    border-radius: .25rem;
-}

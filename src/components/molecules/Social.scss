@@ -1,0 +1,24 @@
+@import 'variables';
+
+.social {
+    margin-top: $spacer;
+}
+
+.social__link {
+    margin-left: $spacer / 2;
+    margin-right: $spacer / 2;
+    background: $brand-grey-dimmed;
+    padding: $spacer / 4;
+    text-align: center;
+    display: inline-block;
+    width: 1.35rem;
+    height: 1.35rem;
+    box-shadow: 0 3px 5px rgba($brand-main, .1), 0 5px 16px rgba($brand-main, .1);
+    border-radius: .25rem;
+
+    &:hover,
+    &:focus {
+        transform: translate3d(0, -.2rem, 0);
+        box-shadow: 0 6px 10px rgba($brand-main, .1), 0 10px 25px rgba($brand-main, .1);
+    }
+}

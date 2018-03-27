@@ -1,17 +1,7 @@
 import React from 'react'
+import Social from './Social'
 import './Header.css'
-import { meta, social } from '../../constants'
-import { Twitter, GitHub, Facebook } from '../atoms/Icons'
-
-const SocialIcon = ({title}) => {
-  if (title === 'Twitter') {
-    return <Twitter />
-  } else if (title === 'GitHub') {
-    return <GitHub />
-  } else if (title === 'Facebook') {
-    return <Facebook />
-  }
-}
+import { meta } from '../../constants'
 
 const Header = () => (
   <header className="header">
@@ -20,13 +10,8 @@ const Header = () => (
       <h1 className="header__title">{meta.title}</h1>
       <p className="header__description">{meta.tagline}</p>
     </hgroup>
-    <aside className="social">
-      {social.map(link => (
-        <a className="social__link" href={link.url} key={link.title} title={link.title}>
-          <SocialIcon title={link.title} />
-        </a>
-      ))}
-    </aside>
+
+    <Social />
   </header>
 )
 
