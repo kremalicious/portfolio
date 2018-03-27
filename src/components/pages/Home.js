@@ -11,7 +11,7 @@ class Home extends Component {
 
         <div className="projects">
             {projects.map(project => (
-              <LazyLoad key={project.slug} height={700} once>
+              <LazyLoad key={project.slug} height={700} offset={200} once>
                 <FadeIn>
                   <article className="project" key={project.slug}>
                     <h1 className="project__title">{project.name}</h1>
