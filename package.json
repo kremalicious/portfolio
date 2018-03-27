@@ -17,6 +17,7 @@
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.7.0",
     "jest-cli": "^22.4.3",
+    "react-snap": "^1.11.5",
     "stylelint": "^9.1.3",
     "stylelint-config-standard": "^18.2.0"
   },
@@ -31,6 +32,7 @@
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
     "test": "npm run lint && react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postbuild": "react-snap"
   }
 }
