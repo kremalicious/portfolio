@@ -20,7 +20,7 @@ const Project = ({ project }) => {
           {img}
 
           <ul>
-            {Object.keys(links).map(key => (
+            {!!links && Object.keys(links).map(key => (
               <li key={key}>
                 <a href={links[key]}>{key}</a>
               </li>
