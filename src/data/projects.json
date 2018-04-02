@@ -1,278 +1,177 @@
 [
   {
-    "name": "Ocean Protocol",
-    "slug": "ocean-site",
-    "img": "ocean-site.png",
-    "img2x": "ocean-site@2x.png",
-    "url": "https://oceanprotocol.com",
-    "tags": ["web", "code", "design", "ci" ],
-    "slides": [ "ocean-site-1.png" ]
+    "title": "Ocean Protocol",
+    "slug": "oceanprotocol",
+    "img": "oceanprotocol.png",
+    "img2x": "oceanprotocol@2x.png",
+    "links": {
+      "Link": "https://oceanprotocol.com"
+    },
+    "description": ""
   },
   {
-    "name": "IPDB",
-    "slug": "ipdb-site",
-    "img": "ipdb-site.png",
-    "img2x": "ipdb-site@2x.png",
-    "url": "https://ipdb.io",
-    "github": "https://github.com/ipdb/website",
-    "tags": ["web", "code", "design", "ci"],
-    "slides": [ "ipdb-site-1.png", "ipdb-site-2.png", "ipdb-site-3.png" ]
+    "title": "IPDB",
+    "slug": "ipdb",
+    "img": "ipdb.png",
+    "img2x": "ipdb@2x.png",
+    "links": {
+      "Link": "https://ipdb.io",
+      "GitHub": "https://github.com/ipdb/website"
+    },
+    "description": "Bla Bla Bla"
   },
   {
-    "name": "9984 >> Summit 2017",
-    "slug": "9984-site",
-    "img": "9984-site.png",
-    "img2x": "9984-site@2x.png",
-    "url": "https://2017.9984.io",
-    "github": "https://github.com/9984/2017.9984.io",
-    "tags": [ "web", "code", "design", "ci" ],
-    "slides": [ "9984-site-1.png", "9984-site-2.png", "9984-site-3.png" ]
+    "title": "9984 >> Summit 2017",
+    "slug": "9984",
+    "img": "9984.png",
+    "img2x": "9984@2x.png",
+    "links": {
+      "Link": "https://2017.9984.io",
+      "GitHub": "https://github.com/9984/2017.9984.io"
+    },
+    "description": ""
   },
   {
-    "name": "BigchainDB",
-    "slug": "bigchaindb-site",
-    "img": "bigchaindb-site.png",
-    "img2x": "bigchaindb-site@2x.png",
-    "url": "https://www.bigchaindb.com",
-    "tags": [ "web", "code", "design", "ci" ],
-    "slides": [
-      "bigchaindb-site-1.png",
-      "bigchaindb-site-2.png",
-      "bigchaindb-site-3.png",
-      "bigchaindb-site-4.png"
-    ]
+    "title": "BigchainDB",
+    "slug": "bigchaindb",
+    "img": "bigchaindb.png",
+    "img2x": "bigchaindb@2x.png",
+    "links": {
+      "Link": "https://www.bigchaindb.com"
+    },
+    "description": ""
   },
   {
-    "name": "ChartMogul",
-    "slug": "chartmogul-landing",
-    "img": "chartmogul-landing.png",
-    "img2x": "chartmogul-landing@2x.png",
-    "url": "https://chartmogul.com/stripe/",
-    "tags": [ "web", "code", "design" ],
-    "slides": [ "chartmogul-landing-1.png" ]
+    "title": "ChartMogul",
+    "slug": "chartmogul",
+    "img": "chartmogul.png",
+    "img2x": "chartmogul@2x.png",
+    "links": {
+      "Link": "https://chartmogul.com/stripe/"
+    },
+    "description": ""
   },
   {
-    "name": "ShareTheMeal ",
-    "slug": "sharethemeal-site",
-    "img": "sharethemeal-site.png",
-    "img2x": "sharethemeal-site@2x.png",
-    "url": "https://sharethemeal.org/",
-    "tags": [ "web", "code" ]
+    "title": "ShareTheMeal ",
+    "slug": "sharethemeal",
+    "img": "sharethemeal.png",
+    "img2x": "sharethemeal@2x.png",
+    "links": {
+      "Link": "https://sharethemeal.org/"
+    },
+    "description": ""
   },
   {
-    "name": "ezeep Document Type Icons",
-    "slug": "ezeep-doc-icons",
-    "img": "ezeep-doc-icons.png",
-    "img2x": "ezeep-doc-icons@2x.png",
-    "tags": [ "web", "icon" ]
+    "title": "ezeep",
+    "slug": "ezeep",
+    "img": "ezeep.png",
+    "img2x": "ezeep@2x.png",
+    "description": ""
   },
   {
-    "name": "ezeep.com",
-    "slug": "ezeep-site",
-    "img": "ezeep-site.png",
-    "img2x": "ezeep-site@2x.png",
-    "url": "https://www.ezeep.com",
-    "tags": [ "web", "code", "design", "ci" ]
-  },
-  {
-    "name": "ezeep Web App Printer Units",
-    "slug": "ezeep-web-app-printers",
-    "img": "ezeep-web-app-printers.png",
-    "img2x": "ezeep-web-app-printers@2x.png",
-    "url": "https://portal.ezeep.com",
-    "tags": [ "web", "ui", "code", "design" ],
-    "slides": [
-      "ezeep-web-app-printers-1.png"
-    ]
-  },
-  {
-    "name": "ezeep Android app",
-    "slug": "ezeep-android",
-    "img": "ezeep-android.png",
-    "img2x": "ezeep-android@2x.png",
-    "url": "https://www.ezeep.com",
-    "tags": [ "android", "app", "icon", "ui" ],
-    "slides": [
-      "ezeep-android-1.png",
-      "ezeep-android-2.png",
-      "ezeep-android-3.png"
-    ]
-  },
-  {
-    "name": "ezeep OS X Printer Icon",
-    "slug": "ezeep-printer-icon-osx",
-    "img": "ezeep-printer-icon-osx.png",
-    "img2x": "ezeep-printer-icon-osx@2x.png",
-    "tags": [ "icon" ]
-  },
-  {
-    "name": "ezeep Menu Icons",
-    "slug": "ezeep-menu-icons",
-    "img": "ezeep-menu-icons.png",
-    "img2x": "ezeep-menu-icons@2x.png",
-    "tags": [ "web", "icon" ]
-  },
-  {
-    "name": "ezeep connect",
-    "slug": "ezeep-connect-icon",
-    "img": "ezeep-connect-icon.png",
-    "img2x": "ezeep-connect-icon@2x.png",
-    "tags": [ "icon" ]
-  },
-  {
-    "name": "Mr. Reader",
-    "slug": "mr-reader-theme",
-    "img": "mr-reader-theme.jpg",
-    "url": "http://www.curioustimes.de/mrreader/themes/",
-    "tags": [ "app" ],
-    "slides": [
-      "mr-reader-theme-1.png",
-      "mr-reader-theme-2.png",
-      "mr-reader-theme-3.png"
-    ]
-  },
-  {
-    "name": "Category Icons",
+    "title": "Category Icons",
     "slug": "category-icons",
     "img": "category-icons.jpg",
-    "infourl": "http://dribbble.com/shots/372450-Category-Icons",
-    "tags": [ "icon" ]
+    "links": {
+      "Info": "http://dribbble.com/shots/372450-Category-Icons"
+    },
+    "description": ""
   },
   {
-    "name": "Exquisite Droid",
+    "title": "Exquisite Droid",
     "slug": "exquisitedroid",
     "img": "exquisitedroid.jpg",
-    "url": "http://exquisitedroid.com",
-    "tags": [ "web", "icon", "ci", "code", "design" ]
+    "links": {
+      "Link": "http://exquisitedroid.com"
+    },
+    "description": ""
   },
   {
-    "name": "Mr. Reader",
+    "title": "Mr. Reader",
     "slug": "mr-reader",
     "img": "mr-reader.jpg",
     "img2x": "mr-reader@2x.jpg",
-    "url": "http://www.curioustimes.de/mrreader/",
-    "tags": [ "icon" ],
-    "slides": [
-      "mr-reader-1.jpg",
-      "mr-reader-2.jpg"
-    ]
+    "description": ""
   },
   {
-    "name": "IPP Halle",
+    "title": "IPP Halle",
     "slug": "ipp-halle",
     "img": "ipp-halle.png",
-    "url": "http://ipp-halle.de",
-    "tags": [ "web", "photo", "ci", "code", "design" ],
-    "slides": [
-      "ipp-halle-1.png",
-      "ipp-halle-2.png",
-      "ipp-halle-3.png"
-    ]
+    "links": {
+      "Link": "http://ipp-halle.de"
+    },
+    "description": ""
   },
   {
-    "name": "iPixelPad",
+    "title": "iPixelPad",
     "slug": "ipixelpad",
     "img": "ipixelpad.jpg",
-    "infourl": "http://www.kremalicious.com/2010/02/ipixelpad/",
-    "tags": [ "icon" ]
+    "links": {
+      "Info": "http://www.kremalicious.com/2010/02/ipixelpad/"
+    },
+    "description": ""
   },
   {
-    "name": "Shortmoves 10",
+    "title": "Shortmoves 10",
     "slug": "shortmoves10",
     "img": "shortmoves10.jpg",
-    "tags": [ "web", "photo", "ci", "code", "design" ],
-    "slides": [
-      "shortmoves10-1.png",
-      "shortmoves10-2.png",
-      "shortmoves10-3.png",
-      "shortmoves10-4.jpg",
-      "shortmoves10-5.jpg"
-    ]
+    "description": ""
   },
   {
-    "name": "Out Of Whale Oil",
+    "title": "Out Of Whale Oil",
     "slug": "out-of-whale-oil",
     "img": "out-of-whale-oil.jpg",
-    "infourl": "http://www.kremalicious.com/2009/02/out-of-whale-oil/",
-    "tags": [ "wallpaper" ],
-    "slides": [
-      "out-of-whale-oil-1.png",
-      "out-of-whale-oil-2.jpg",
-      "out-of-whale-oil-3.jpg",
-      "out-of-whale-oil-4.jpg"
-    ]
+    "links": {
+      "Info": "http://www.kremalicious.com/2009/02/out-of-whale-oil/"
+    },
+    "description": ""
   },
   {
-    "name": "mluBlogs",
+    "title": "mluBlogs",
     "slug": "mlublogs",
     "img": "mlublogs.png",
-    "url": "http://blogs.urz-uni-halle.de",
-    "tags": [ "web", "icon", "code", "design" ],
-    "slides": [
-      "mlublogs-1.png",
-      "mlublogs-2.png",
-      "mlublogs-3.png",
-      "mlublogs-4.jpg"
-    ]
+    "links": {
+      "Link": "http://blogs.urz-uni-halle.de"
+    },
+    "description": ""
   },
   {
-    "name": "Coffee Cup",
+    "title": "Coffee Cup",
     "slug": "coffee-cup",
     "img": "coffee-cup.jpg",
-    "infourl": "http://www.kremalicious.com/2008/10/the-finest-coffee-cups-most-incredible-coffee-icons-on-the-web/",
-    "tags": [ "icon" ]
+    "links": {
+      "Info": "http://www.kremalicious.com/2008/10/the-finest-coffee-cups-most-incredible-coffee-icons-on-the-web/"
+    },
+    "description": ""
   },
   {
-    "name": "Aref Jdey",
+    "title": "Aref Jdey",
     "slug": "aref-jdey",
     "img": "aref-jdey.jpg",
-    "url": "http://arefjdey.com/",
-    "tags": [ "web", "icon", "code", "design" ],
-    "slides": [
-      "aref-jdey-1.png",
-      "aref-jdey-2.png",
-      "aref-jdey-3.jpg"
-    ]
+    "description": ""
   },
   {
-    "name": "Niépce's Camera Obscura",
+    "title": "Niépce's Camera Obscura",
     "slug": "camera-obscura",
     "img": "camera-obscura.jpg",
-    "infourl": "http://www.kremalicious.com/2008/06/new-goodie-niepces-camera-obscura-and-the-history-of-the-first-photograph/",
-    "tags": [ "icon", "wallpaper" ],
-    "slides": [
-      "camera-obscura-1.jpg",
-      "camera-obscura-2.jpg",
-      "camera-obscura-3.jpg"
-    ]
+    "links": {
+      "Info": "http://www.kremalicious.com/2008/06/new-goodie-niepces-camera-obscura-and-the-history-of-the-first-photograph/"
+    },
+    "description": ""
   },
   {
-    "name": "Allinnia Creative Group Icons",
-    "slug": "allinnia-icons",
-    "img": "allinnia-icons.jpg",
-    "tags": [ "icon" ]
-  },
-  {
-    "name": "Allinnia Creative Group",
+    "title": "Allinnia Creative Group",
     "slug": "allinnia",
     "img": "allinnia.jpg",
-    "tags": [ "web", "code" ],
-    "slides": [
-      "allinnia-1.png",
-      "allinnia-2.png",
-      "allinnia-3.jpg"
-    ]
+    "description": ""
   },
   {
-    "name": "mkretschmann.com v1",
+    "title": "mkretschmann.com v1",
     "slug": "mkv1",
     "img": "mkv1.jpg",
-    "infourl": "http://www.kremalicious.com/2009/02/portal-thingy/",
-    "tags": [ "web", "code", "design" ],
-    "slides": [
-      "mkv1-2.jpg",
-      "mkv1-3.jpg",
-      "mkv1-1.jpg"
-    ]
+    "links": {
+      "Info": "http://www.kremalicious.com/2009/02/portal-thingy/"
+    },
+    "description": ""
   }
 ]

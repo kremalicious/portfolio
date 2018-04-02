@@ -1,7 +1,7 @@
 import React from 'react'
 import Social from './Social'
 import './Header.css'
-import { meta } from '../../constants'
+import meta from '../../data/meta.json'
 
 const Header = () => (
   <header className="header">

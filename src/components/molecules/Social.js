@@ -1,7 +1,9 @@
 import React from 'react'
 import { Twitter, GitHub, Facebook } from '../atoms/Icons'
-import { social } from '../../constants'
+import meta from '../../data/meta.json'
 import './Social.css'
+
+const social = meta.social
 
 const SocialIcon = ({ title }) => {
   if (title === 'Twitter') {
@@ -15,9 +17,9 @@ const SocialIcon = ({ title }) => {
 
 const Social = () => (
   <aside className="social">
-    {social.map(link => (
-      <a className="social__link" href={link.url} key={link.title} title={link.title}>
-        <SocialIcon title={link.title} />
+    {Object.keys(social).map((key, i) => (
+      <a className="social__link" href={social[key]} key={i} title={key}>
+        <SocialIcon title={key} />
       </a>
     ))}
   </aside>
