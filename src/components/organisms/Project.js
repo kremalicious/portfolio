@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
+import Header from '../molecules/Header'
 import Content from '../atoms/Content'
 
 const Project = ({ project }) => {
@@ -9,22 +10,25 @@ const Project = ({ project }) => {
   const links = project.links
 
   return (
-    <main className="screen screen--project">
-      <Content>
-        <h1>{title}</h1>
-        <p>{description}</p>
+    <Fragment>
+      <Header minimal />
+      <main className="screen screen--project">
+        <Content>
+          <h1>{title}</h1>
+          <p>{description}</p>
 
-        {img}
+          {img}
 
-        <ul>
-          {Object.keys(links).map(key => (
-            <li key={key}>
-              <a href={links[key]}>{key}</a>
-            </li>
-          ))}
-        </ul>
-      </Content>
-    </main>
+          <ul>
+            {Object.keys(links).map(key => (
+              <li key={key}>
+                <a href={links[key]}>{key}</a>
+              </li>
+            ))}
+          </ul>
+        </Content>
+      </main>
+    </Fragment>
   )
 }
 

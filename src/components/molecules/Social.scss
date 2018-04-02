@@ -2,6 +2,9 @@
 
 .social {
     margin-top: $spacer;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .social__link {
@@ -10,7 +13,9 @@
     background: $brand-grey-dimmed;
     padding: $spacer / 4;
     text-align: center;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 1.35rem;
     height: 1.35rem;
     box-shadow: 0 3px 5px rgba($brand-main, .1), 0 5px 16px rgba($brand-main, .1);

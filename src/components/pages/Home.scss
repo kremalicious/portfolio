@@ -9,6 +9,8 @@
     min-height: 100vh;
     position: relative;
     background-color: $brand-grey;
+    margin-left: -$spacer;
+    margin-right: -$spacer;
 }
 
 .project__title {

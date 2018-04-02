@@ -1,0 +1,12 @@
+@import 'variables';
+
+.footer {
+    padding: $spacer;
+    text-align: center;
+    color: $brand-grey-light;
+
+    &,
+    small {
+        font-size: $font-size-mini;
+    }
+}

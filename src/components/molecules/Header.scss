@@ -1,16 +1,39 @@
 @import 'variables';
 
 .header {
-    padding: $spacer / 2;
-    min-height: calc(100vh - #{$spacer});
+    padding: $spacer;
+    min-height: calc(100vh - #{$spacer * 3});
     display: flex;
     align-content: center;
     flex-wrap: wrap;
+    text-align: center;
+}
 
-    .name,
+.header--minimal {
+    min-height: 0;
+    text-align: left;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: space-between;
+    margin-bottom: $spacer;
+
     .social {
-        width: 100%;
-        text-align: center;
+        margin-top: 0;
+        text-align: right;
+        justify-content: flex-end;
+    }
+
+    .social__link {
+        width: 1rem;
+        height: 1rem;
+        padding: $spacer / 8;
+        margin-left: $spacer / 4;
+        margin-right: $spacer / 4;
+
+        .icon {
+            width: .75rem;
+            height: .75rem;
+        }
     }
 }
 
@@ -20,20 +43,55 @@
     font-size: 3rem;
     color: $brand-grey-light;
     margin-bottom: $spacer / 2;
+
+    .header--minimal & {
+        margin: 0;
+        display: inline-block;
+        font-size: 2rem;
+        margin-top: -2rem;
+        margin-right: $spacer / 4;
+    }
 }
 
 .header__title,
 .header__description {
     display: inline-block;
     margin-bottom: 0;
+    transition: .2s ease-out;
 }
 
 .header__title {
     font-size: $font-size-h3;
     margin-right: $spacer / 2;
     color: $brand-main;
+
+    .header--minimal & {
+        font-size: $font-size-h4;
+    }
 }
 
 .header__description {
     font-size: $font-size-large;
+    color: $brand-grey;
+
+    .header--minimal & {
+        font-size: $font-size-small;
+    }
+}
+
+.header__name {
+    width: 100%;
+    pointer-events: none;
+
+    .header--minimal & {
+        pointer-events: all;
+    }
+
+    &:hover,
+    &:focus {
+        .header__title,
+        .header__description {
+            color: $brand-cyan;
+        }
+    }
 }
