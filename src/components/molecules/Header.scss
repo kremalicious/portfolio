@@ -15,7 +15,6 @@
     font-size: 3rem;
     color: $brand-grey-light;
     margin-bottom: $spacer / 2;
-    transition: color .2s ease-out;
 }
 
 .header__title,
@@ -48,7 +47,14 @@
     justify-content: space-between;
 
     @media (min-width: 30rem) {
-        margin-bottom: $spacer * 2;
+        margin-bottom: $spacer;
+    }
+
+    .header__title,
+    .header__description,
+    .header__logo {
+        color: $brand-grey-light;
+        transition: color .2s ease-out;
     }
 
     .header__title {
@@ -76,6 +82,14 @@
             .header__logo {
                 color: $brand-cyan;
             }
+
+            .header__title {
+                color: $brand-main;
+            }
+
+            .header__description {
+                color: $brand-grey;
+            }
         }
     }
 
@@ -91,10 +105,20 @@
         padding: $spacer / 8;
         margin-left: $spacer / 4;
         margin-right: $spacer / 4;
+        background: transparent;
+        box-shadow: none;
+        transform: none;
 
         .icon {
-            width: .75rem;
-            height: .75rem;
+            fill: $brand-grey-light;
+            transition: .2s ease-out;
+        }
+
+        &:hover,
+        &:focus {
+            .icon {
+                fill: $brand-grey;
+            }
         }
     }
 }

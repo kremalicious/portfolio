@@ -10,7 +10,7 @@
 .social__link {
     margin-left: $spacer / 2;
     margin-right: $spacer / 2;
-    background: $brand-grey-dimmed;
+    background: $brand-light;
     padding: $spacer / 4;
     text-align: center;
     display: flex;
@@ -23,6 +23,7 @@
 
     &:hover,
     &:focus {
+        background: $brand-grey-dimmed;
         transform: translate3d(0, -.2rem, 0);
         box-shadow: 0 6px 10px rgba($brand-main, .1), 0 10px 25px rgba($brand-main, .1);
     }

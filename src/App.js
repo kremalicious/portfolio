@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
-import FadeIn from './components/atoms/FadeIn'
-import Routes from './Routes'
-import Footer from './components/molecules/Footer'
 import Helmet from 'react-helmet/es/Helmet'
+import Routes from './Routes'
+import FadeIn from './components/atoms/FadeIn'
+import Footer from './components/molecules/Footer'
 import meta from './data/meta.json'
 
 const Head = () => (

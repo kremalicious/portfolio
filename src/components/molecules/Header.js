@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Link from 'react-router-dom/Link'
 import PropTypes from 'prop-types'
 import Social from './Social'
 import './Header.css'
 import meta from '../../data/meta.json'
 
-class Header extends React.Component {
+class Header extends Component {
   render() {
     const minimal = this.props.minimal
     const classes = (minimal ? 'header header--minimal' : 'header')

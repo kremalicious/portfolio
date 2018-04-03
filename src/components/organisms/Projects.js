@@ -4,7 +4,6 @@ import LazyLoad from 'react-lazyload'
 import FadeIn from '../atoms/FadeIn'
 import projects from '../../data/projects.json'
 import images from '../../images'
-import '../atoms/FullWidth'
 import './Projects.css'
 
 const Projects = () => (
