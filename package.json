@@ -7,6 +7,7 @@
     "npm-run-all": "^4.1.2",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
+    "react-helmet": "^5.2.0",
     "react-lazyload": "^2.3.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",

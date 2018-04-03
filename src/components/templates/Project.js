@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
+import Helmet from 'react-helmet/es/Helmet'
 import Header from '../molecules/Header'
 import Content from '../atoms/Content'
 import FullWidth from '../atoms/FullWidth'
@@ -14,7 +15,12 @@ const Project = ({ project }) => {
 
   return (
     <Fragment>
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
+
       <Header minimal />
+
       <main className="screen screen--project">
         <article className="project">
           <Content>
