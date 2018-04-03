@@ -5,7 +5,7 @@ import Footer from './components/molecules/Footer'
 
 const App = () => (
   <FadeIn>
-    <div>
+    <div className="app">
       <Routes />
       <Footer />
     </div>
