@@ -2,7 +2,7 @@ import React from 'react'
 import Switch from 'react-router-dom/Switch'
 import Route from 'react-router-dom/Route'
 import Home from './components/pages/Home'
-import ProjectView from './components/organisms/ProjectView'
+import Project from './components/templates/Project'
 import NotFound from './components/pages/NotFound'
 import projects from './data/projects.json'
 
@@ -14,7 +14,7 @@ const Routes = () => (
         key={project.slug}
         path={`/${project.slug}`}
         render={(props) =>
-          <ProjectView
+          <Project
             {...props}
             project={project} />
         }

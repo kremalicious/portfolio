@@ -2,8 +2,7 @@
   {
     "title": "Ocean Protocol",
     "slug": "oceanprotocol",
-    "img": "oceanprotocol.png",
-    "img2x": "oceanprotocol@2x.png",
+    "img": "oceanprotocol",
     "links": {
       "Link": "https://oceanprotocol.com"
     },
@@ -12,8 +11,7 @@
   {
     "title": "IPDB",
     "slug": "ipdb",
-    "img": "ipdb.png",
-    "img2x": "ipdb@2x.png",
+    "img": "ipdb",
     "links": {
       "Link": "https://ipdb.io",
       "GitHub": "https://github.com/ipdb/website"
@@ -21,25 +19,32 @@
     "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix."
   },
   {
+    "title": "Berlin Innovation Ventures",
+    "slug": "biv",
+    "img": "biv",
+    "links": {
+      "Link": "http://berlininnovation.vc"
+    },
+    "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix."
+  },
+  {
     "title": "9984 >> Summit 2017",
     "slug": "9984",
-    "img": "9984.png",
-    "img2x": "9984@2x.png",
+    "img": "ninenineeightfour",
     "links": {
       "Link": "https://2017.9984.io",
       "GitHub": "https://github.com/9984/2017.9984.io"
     },
-    "description": ""
+    "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix."
   },
   {
     "title": "BigchainDB",
     "slug": "bigchaindb",
-    "img": "bigchaindb.png",
-    "img2x": "bigchaindb@2x.png",
+    "img": "bigchaindb",
     "links": {
       "Link": "https://www.bigchaindb.com"
     },
-    "description": ""
+    "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix."
   },
   {
     "title": "ChartMogul",

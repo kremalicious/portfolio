@@ -1,0 +1,19 @@
+@import 'variables';
+
+.project__title {
+    font-size: $font-size-h2;
+
+    @media (min-width: 30rem) {
+        font-size: $font-size-h1;
+    }
+}
+
+.project__description {
+    font-size: $font-size-large;
+    color: $brand-grey-light;
+    margin-bottom: $spacer * 4;
+}
+
+.project__image {
+    box-shadow: 0 3px 5px rgba($brand-main, .2), 0 5px 16px rgba($brand-main, .2);
+}
