@@ -16,4 +16,51 @@
 
 .project__image {
     box-shadow: 0 3px 5px rgba($brand-main, .2), 0 5px 16px rgba($brand-main, .2);
+    margin-bottom: $spacer * 3;
+}
+
+.project__meta {
+    margin-top: $spacer;
+
+    @media (min-width: 40rem) {
+        display: flex;
+        justify-content: space-between;
+
+        > div {
+            flex: 0 0 45%;
+        }
+    }
+}
+
+.project__techstack {
+    ul {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    li {
+        display: inline-block;
+        padding: $spacer / 4;
+        background: darken($brand-light, 3%);
+        flex: 0 0 28%;
+        margin-bottom: 4%;
+        text-align: center;
+        border-radius: 4rem;
+        font-size: $font-size-small;
+    }
+}
+
+.project__meta__title {
+    font-size: $font-size-h3;
+    margin-bottom: $spacer * 1.5;
+
+    span {
+        display: block;
+        margin-top: $spacer / 3;
+        font-size: $font-size-base;
+        font-family: $font-family-base;
+        color: $brand-grey-light;
+    }
 }

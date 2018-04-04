@@ -6,7 +6,15 @@
     "links": {
       "Link": "https://oceanprotocol.com"
     },
-    "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix."
+    "description": "Conceptualizing and executing the creative and visual direction of the Ocean Protocol brand. Leading the UI design & development of all Ocean Protocol web properties. \n\nInitial website in collaboration with [Balance](https://balance.io/).",
+    "techstack": [
+      "React",
+      "SCSS",
+      "JavaScript",
+      "Travis",
+      "AWS S3",
+      "Cloudflare"
+    ]
   },
   {
     "title": "IPDB",
@@ -16,7 +24,16 @@
       "Link": "https://ipdb.io",
       "GitHub": "https://github.com/ipdb/website"
     },
-    "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix."
+    "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix.",
+    "techstack": [
+      "Jekyll",
+      "Gulp",
+      "SCSS",
+      "JavaScript",
+      "Travis",
+      "AWS S3",
+      "Cloudflare"
+    ]
   },
   {
     "title": "Berlin Innovation Ventures",
@@ -25,7 +42,13 @@
     "links": {
       "Link": "http://berlininnovation.vc"
     },
-    "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix."
+    "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix.",
+    "techstack": [
+      "Jekyll",
+      "Gulp",
+      "SCSS",
+      "JavaScript"
+    ]
   },
   {
     "title": "9984 >> Summit 2017",
@@ -35,26 +58,59 @@
       "Link": "https://2017.9984.io",
       "GitHub": "https://github.com/9984/2017.9984.io"
     },
-    "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix."
+    "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix.",
+    "techstack": [
+      "Jekyll",
+      "Gulp",
+      "SCSS",
+      "JavaScript",
+      "Travis",
+      "AWS S3",
+      "Cloudflare"
+    ]
   },
   {
     "title": "BigchainDB",
     "slug": "bigchaindb",
     "img": "bigchaindb",
     "links": {
-      "Link": "https://www.bigchaindb.com"
+      "Link": "https://www.bigchaindb.com",
+      "GitHub": "https://github.com/bigchaindb/site"
     },
-    "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix."
+    "description": "Conceptualizing and executing the creative and visual direction of the BigchainDB brand. Leading the UI design & development of all BigchainDB web properties.",
+    "techstack": [
+      "Jekyll",
+      "Gulp",
+      "SCSS",
+      "JavaScript",
+      "Travis",
+      "AWS S3",
+      "Cloudflare"
+    ]
   },
   {
     "title": "ChartMogul",
     "slug": "chartmogul",
-    "img": "chartmogul.png",
-    "img2x": "chartmogul@2x.png",
+    "img": "chartmogul",
+    "img_more": [
+      "chartmogul01",
+      "chartmogul02"
+    ],
     "links": {
       "Link": "https://chartmogul.com/stripe/"
     },
-    "description": ""
+    "description": "Co-designing and leading the front-end development of various ChartMogul web properties. Creating and implementing a UI design system into the ChartMogul application.",
+    "techstack": [
+      "Jekyll",
+      "Gulp",
+      "SCSS",
+      "JavaScript",
+      "Travis",
+      "AWS S3",
+      "Cloudflare",
+      "Ruby on Rails",
+      "Backbone.js"
+    ]
   },
   {
     "title": "ShareTheMeal ",
