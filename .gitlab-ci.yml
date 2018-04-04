@@ -4,13 +4,10 @@ cache:
   paths:
     - node_modules/
 
-before_script:
-  - apt-get update -qq
-  - apt-get install -y libx11-xcb1 libxcomposite1 libxcursor1 libxfixes3 libxdamage1 libxi6
-
 testing:
   stage: test
   script:
     - npm install
     - npm test
-    - npm run build
+    - npm run build-css
+    - npm run build-js
