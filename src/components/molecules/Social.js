@@ -1,7 +1,7 @@
 import React from 'react'
 import { Twitter, GitHub, Facebook } from '../atoms/Icons'
 import meta from '../../data/meta.json'
-import './Social.css'
+import './Social.scss'
 
 const social = meta.social
 

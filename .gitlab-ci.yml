@@ -9,5 +9,4 @@ testing:
   script:
     - npm install
     - npm test
-    - npm run build-css
-    - npm run build-js
+    - npm run build
