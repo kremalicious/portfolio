@@ -6,6 +6,7 @@ import bigchaindb from './portfolio-bigchaindb.png'
 import chartmogul from './portfolio-chartmogul.png'
 import chartmogul01 from './portfolio-chartmogul-01.png'
 import chartmogul02 from './portfolio-chartmogul-02.png'
+import sharethemeal from './portfolio-sharethemeal.png'
 
 export default {
   oceanprotocol,
@@ -15,5 +16,6 @@ export default {
   bigchaindb,
   chartmogul,
   chartmogul01,
-  chartmogul02
+  chartmogul02,
+  sharethemeal
 }

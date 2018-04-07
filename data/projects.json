@@ -115,12 +115,11 @@
   {
     "title": "ShareTheMeal ",
     "slug": "sharethemeal",
-    "img": "sharethemeal.png",
-    "img2x": "sharethemeal@2x.png",
+    "img": "sharethemeal",
     "links": {
       "Link": "https://sharethemeal.org/"
     },
-    "description": ""
+    "description": "Co-designing and leading the front-end development of the ShareTheMeal website."
   },
   {
     "title": "ezeep",
