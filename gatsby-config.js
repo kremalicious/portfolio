@@ -1,10 +1,14 @@
+const meta = require('./data/meta.json')
+
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    siteUrl: `${meta.url}`,
   },
   plugins: [
+    'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-json',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -17,9 +21,9 @@ module.exports = {
       options: {
         includePaths: [
           `${__dirname}/node_modules`,
-          `${__dirname}/src/styles`,
+          `${__dirname}/src/styles`
         ],
       },
-    },
-  ],
+    }
+  ]
 }

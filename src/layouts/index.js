@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import FadeIn from '../components/atoms/FadeIn'
 import Footer from '../components/molecules/Footer'
-import meta from '../data/meta.json'
+import meta from '../../data/meta.json'
 import './index.scss'
 
 const Head = () => (

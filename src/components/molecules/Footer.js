@@ -1,5 +1,5 @@
 import React from 'react'
-import meta from '../../data/meta.json'
+import meta from '../../../data/meta.json'
 import './Footer.scss'
 
 const Footer = () => {

@@ -6,7 +6,6 @@ import images from '../../images'
 import './Projects.scss'
 
 const Projects = ({ data }) => {
-  console.log(data)
   const projects = data.allProjectsJson
 
   return <div className="projects full-width">

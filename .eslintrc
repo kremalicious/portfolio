@@ -11,6 +11,9 @@
     "browser": true,
     "node": true
   },
+  "globals": {
+    "graphql": true
+  },
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "rules": {
     "quotes": ["error", "single"],

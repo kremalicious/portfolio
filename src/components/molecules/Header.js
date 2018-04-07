@@ -3,7 +3,7 @@ import Link from 'react-router-dom/Link'
 import PropTypes from 'prop-types'
 import Social from './Social'
 import './Header.scss'
-import meta from '../../data/meta.json'
+import meta from '../../../data/meta.json'
 
 class Header extends Component {
   render() {

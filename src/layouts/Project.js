@@ -9,10 +9,7 @@ import images from '../images'
 import './Project.scss'
 
 const Project = ({ data }) => {
-  const project = data.allProjectsJson
-
-  console.log(project)
-
+  const project = data.allProjectsJson.edges[0].node
   const title = project.title
   const img = project.img
   const img_more = project.img_more
@@ -82,8 +79,8 @@ Project.propTypes = {
 export default Project
 
 export const query = graphql`
-  query ProjectQuery($slug: String!) {
-    allProjectsJson(slug: { eq: $slug }) {
+  query ProjectQuery($slug: String) {
+    allProjectsJson(filter: { slug: { eq: $slug } }) {
       edges {
         node {
           title
