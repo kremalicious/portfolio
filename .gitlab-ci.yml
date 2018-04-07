@@ -7,7 +7,7 @@ cache:
 testing:
   stage: test
   script:
-    - npm install
+    - npm i gatsby-cli -g
+    - npm i
     - npm test
-    - npm run build-css
-    - npm run build-js
+    - npm run build

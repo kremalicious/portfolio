@@ -1,5 +1,5 @@
 import React from 'react'
-import './Icons.css'
+import './Icons.scss'
 
 export const Facebook = props => (
   <svg className="icon" viewBox="0 0 20 20" width="20" height="20" {...props}>

@@ -1,24 +1,22 @@
 {
-    "plugins": [
-        "react"
-    ],
-    "parserOptions": {
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true,
-            "modules": true
-        }
-    },
-    "env": {
-        "browser": true,
-        "node": true
-    },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
-    ],
-    "rules": {
-        "quotes": [ "error", "single" ],
-        "semi": [ "error", "never" ]
+  "plugins": ["react", "graphql"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
     }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "graphql": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "rules": {
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"]
+  }
 }

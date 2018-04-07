@@ -1,14 +1,15 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet/es/Helmet'
+import Helmet from 'react-helmet'
 import ReactMarkdown from 'react-markdown'
-import Header from '../molecules/Header'
-import Content from '../atoms/Content'
-import FullWidth from '../atoms/FullWidth'
-import images from '../../images'
-import './Project.css'
+import Header from '../components/molecules/Header'
+import Content from '../components/atoms/Content'
+import FullWidth from '../components/atoms/FullWidth'
+import images from '../images'
+import './Project.scss'
 
-const Project = ({ project }) => {
+const Project = ({ data }) => {
+  const project = data.allProjectsJson.edges[0].node
   const title = project.title
   const img = project.img
   const img_more = project.img_more
@@ -17,7 +18,7 @@ const Project = ({ project }) => {
   const techstack = project.techstack
 
   return (
-    <Fragment>
+    <div>
       <Helmet>
         <title>{title}</title>
       </Helmet>
@@ -67,12 +68,34 @@ const Project = ({ project }) => {
           </Content>
         </article>
       </main>
-    </Fragment>
+    </div>
   )
 }
 
 Project.propTypes = {
-  project: PropTypes.object
+  data: PropTypes.object
 }
 
 export default Project
+
+export const query = graphql`
+  query ProjectQuery($slug: String) {
+    allProjectsJson(filter: { slug: { eq: $slug } }) {
+      edges {
+        node {
+          title
+          slug
+          img
+          img_more
+          links {
+            Link
+            GitHub
+            Info
+          }
+          description
+          techstack
+        }
+      }
+    }
+  }
+`

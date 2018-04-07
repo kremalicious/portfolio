@@ -1,6 +1,6 @@
 import React from 'react'
-import meta from '../../data/meta.json'
-import './Footer.css'
+import meta from '../../../data/meta.json'
+import './Footer.scss'
 
 const Footer = () => {
   const year = new Date().getFullYear()

@@ -1,29 +1,26 @@
 import React from 'react'
-import Link from 'react-router-dom/Link'
-import LazyLoad from 'react-lazyload'
+import PropTypes from 'prop-types'
+import Link from 'gatsby-link'
 import FadeIn from '../atoms/FadeIn'
-import projects from '../../data/projects.json'
 import images from '../../images'
-import './Projects.css'
+import './Projects.scss'
 
-const Projects = () => (
-  <div className="projects full-width">
-    {projects.map(project => (
-      <LazyLoad key={project.slug} height={700} offset={200} once>
-        <FadeIn>
-          <Link
-            key={project.slug}
-            to={{ pathname: `/${project.slug}` }}
-            className="projects__project"
-          >
-            <h1 className="projects__project__title">{project.title}</h1>
+const Projects = ({ data }) => {
+  const projects = data.allProjectsJson
 
-            <img className="projects__project__image" src={images[project.img]} alt={project.title} />
+  return <div className="projects full-width">
+      {projects.edges.map(({ node }) => <FadeIn key={node.slug}>
+          <Link key={node.slug} to={`/${node.slug}`} className="projects__project">
+            <h1 className="projects__project__title">{node.title}</h1>
+
+            <img className="projects__project__image" src={images[node.img]} alt={node.title} />
           </Link>
-        </FadeIn>
-      </LazyLoad>
-    ))}
-  </div>
-)
+        </FadeIn>)}
+    </div>
+}
+
+Projects.propTypes = {
+  data: PropTypes.object,
+}
 
 export default Projects
