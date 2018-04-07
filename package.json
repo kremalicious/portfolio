@@ -7,11 +7,17 @@
     "gatsby-link": "^1.6.39",
     "gatsby-plugin-react-helmet": "^2.0.8",
     "gatsby-plugin-sass": "latest",
+    "gatsby-source-filesystem": "^1.5.28",
+    "gatsby-transformer-json": "^1.0.16",
     "react-helmet": "^5.2.0",
-    "react-markdown": "3.3.0",
+    "react-markdown": "^3.3.0",
     "react-transition-group": "^2.3.0"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.19.1",
+    "eslint-plugin-graphql": "^1.5.0",
+    "eslint-plugin-react": "^7.7.0",
     "prettier": "^1.11.1"
   },
   "scripts": {
