@@ -6,10 +6,10 @@ import images from '../../images'
 import './Projects.scss'
 
 const Projects = ({ data }) => {
-  const projects = data.allProjectsJson
+  const projects = data.allProjectsJson.edges
 
   return <div className="projects full-width">
-      {projects.edges.map(({ node }) => <FadeIn key={node.slug}>
+      {projects.map(({ node }) => <FadeIn key={node.slug}>
           <Link key={node.slug} to={`/${node.slug}`} className="projects__project">
             <h1 className="projects__project__title">{node.title}</h1>
 

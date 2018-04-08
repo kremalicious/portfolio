@@ -1,8 +1,8 @@
 import React from 'react'
-import meta from '../../../data/meta.json'
+import PropTypes from 'prop-types'
 import './Footer.scss'
 
-const Footer = () => {
+const Footer = ({ meta }) => {
   const year = new Date().getFullYear()
 
   return (
@@ -10,6 +10,10 @@ const Footer = () => {
       <small>© {year} {meta.title} &mdash; All Rights Reserved</small>
     </footer>
   )
+}
+
+Footer.propTypes = {
+  meta: PropTypes.object,
 }
 
 export default Footer

@@ -1,4 +1,4 @@
-const meta = require('./data/meta.json')
+const meta = require('./src/data/meta.json')
 
 module.exports = {
   siteMetadata: {
@@ -7,24 +7,21 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-json',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        includePaths: [`${__dirname}/node_modules`, `${__dirname}/src/styles`],
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'data',
-        path: `${__dirname}/data/`,
+        path: `${__dirname}/src/data/`,
       },
     },
-    {
-      resolve: 'gatsby-plugin-sass',
-      options: {
-        includePaths: [
-          `${__dirname}/node_modules`,
-          `${__dirname}/src/styles`
-        ],
-      },
-    }
-  ]
+    'gatsby-transformer-json',
+  ],
 }

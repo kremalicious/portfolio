@@ -1,15 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Header from '../components/molecules/Header'
 import Projects from '../components/organisms/Projects'
 
 const Home = ({ data }) => (
-  <div>
-    <Header />
-    <main className="screen screen--home">
-      <Projects data={data} />
-    </main>
-  </div>
+  <main className="screen screen--home">
+    <Projects data={data} />
+  </main>
 )
 
 Home.propTypes = {

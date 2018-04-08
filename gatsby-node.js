@@ -1,12 +1,10 @@
 const path = require('path')
 
-// Implement the Gatsby API “createPages”. This is called once the
-// data layer is bootstrapped to let plugins create pages from data.
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
 
   return new Promise((resolve, reject) => {
-    const template = path.resolve('src/layouts/Project.js')
+    const template = path.resolve('src/components/organisms/Project.js')
 
     resolve(
       graphql(`
@@ -34,15 +32,27 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           reject(result.errors)
         }
 
-        console.log(result)
-
         result.data.allProjectsJson.edges.forEach(({ node }) => {
           const slug = node.slug
+          const title = node.title
+          const img = node.img
+          const img_more = node.img_more
+          const description = node.description
+          const links = node.links
+          const techstack = node.techstack
 
           createPage({
             path: slug,
             component: template,
-            context: { slug: slug },
+            context: {
+              title,
+              slug,
+              img,
+              img_more,
+              description,
+              techstack,
+              links
+            }
           })
         })
 

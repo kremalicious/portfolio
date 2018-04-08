@@ -20,13 +20,14 @@
     "babel-eslint": "^8.2.2",
     "eslint": "^4.19.1",
     "eslint-plugin-graphql": "^1.5.0",
+    "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
     "prettier": "^1.11.1",
     "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.2.0"
   },
   "scripts": {
-    "lint:js": "eslint ./src/**/*.js",
+    "lint:js": "eslint ./gatsby-*.js && eslint ./src/**/*.js",
     "lint:css": "stylelint ./src/**/*.scss",
     "lint": "npm run lint:js && npm run lint:css",
     "build": "gatsby build",

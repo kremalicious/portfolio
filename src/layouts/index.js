@@ -1,30 +1,48 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import Head from '../components/molecules/Head'
 import FadeIn from '../components/atoms/FadeIn'
+import Header from '../components/molecules/Header'
 import Footer from '../components/molecules/Footer'
-import meta from '../../data/meta.json'
 import './index.scss'
 
-const Head = () => (
-  <Helmet
-    defaultTitle={`${meta.title.toLowerCase()} { ${meta.tagline.toLowerCase()} }`}
-    titleTemplate={`%s // ${meta.title.toLowerCase()} { ${meta.tagline.toLowerCase()} }`}
-  >
-    <link rel="stylesheet" href="https://use.typekit.net/dtg3zui.css" />
-  </Helmet>
-)
+const TemplateWrapper = props => {
+  const meta = props.data.allDataJson.edges[0].node
 
-const TemplateWrapper = ({ children }) => (
-  <div className="app">
-    <Head />
-    <FadeIn>{children()}</FadeIn>
-    <Footer />
-  </div>
-)
+  return <div className="app">
+      <Head meta={meta} />
+      <Header meta={meta} />
+      <FadeIn>{props.children()}</FadeIn>
+      <Footer meta={meta} />
+    </div>
+}
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
+  data: PropTypes.object,
 }
 
 export default TemplateWrapper
+
+export const query = graphql`
+         query pageLayoutQueryAndMetaQuery {
+           allDataJson {
+             edges {
+               node {
+                 title
+                 tagline
+                 description
+                 url
+                 social {
+                   Twitter
+                   GitHub
+                   Facebook
+                 }
+               }
+             }
+           }
+           sitePage {
+             jsonName
+           }
+         }
+       `
