@@ -7,7 +7,9 @@ cache:
 testing:
   stage: test
   script:
-    - npm i gatsby-cli -g
     - npm i
     - npm test
-    - npm run build
+    - ./node_modules/gatsby/dist/bin/gatsby.js build
+  artifacts:
+    paths:
+      - public
