@@ -9,6 +9,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-json',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
