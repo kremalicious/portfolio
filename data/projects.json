@@ -119,32 +119,56 @@
     "links": {
       "Link": "https://sharethemeal.org/"
     },
-    "description": "Co-designing and leading the front-end development of the ShareTheMeal website."
+    "description": "Co-designing and leading the front-end development of the ShareTheMeal website.",
+    "techstack": [
+      "Jekyll",
+      "Gulp",
+      "SCSS",
+      "JavaScript",
+      "Travis",
+      "AWS S3",
+      "Cloudflare",
+      "Node.js"
+    ]
   },
   {
     "title": "ezeep",
     "slug": "ezeep",
-    "img": "ezeep.png",
-    "img2x": "ezeep@2x.png",
-    "description": ""
-  },
-  {
-    "title": "Category Icons",
-    "slug": "category-icons",
-    "img": "category-icons.jpg",
+    "img": "ezeep",
+    "description": "Conceptualizing and executing the creative and visual direction of the ezeep brand. Leading the UI design & development of all ezeep web properties and marketing materials. Designing all app experiences of ezeep on Windows, macOS, iOS, and Android.",
+    "img_more": [
+      "ezeep01",
+      "ezeep02"
+    ],
     "links": {
-      "Info": "http://dribbble.com/shots/372450-Category-Icons"
+      "Link": "https://ezeep.com/"
     },
-    "description": ""
+    "techstack": [
+      "WordPress",
+      "SCSS",
+      "JavaScript",
+      "Travis",
+      "AWS",
+      "Cloudflare",
+      "Node.js",
+      "Backbone.js",
+      "Electron"
+    ]
   },
   {
     "title": "Exquisite Droid",
     "slug": "exquisitedroid",
-    "img": "exquisitedroid.jpg",
+    "img": "exquisitedroid",
     "links": {
-      "Link": "http://exquisitedroid.com"
+      "Link": "https://exquisitedroid.com",
+      "Dribbble": "https://dribbble.com/shots/380597-ExquisiteDroid-Header"
     },
-    "description": ""
+    "description": "Designing, developing and writing a showcase website presenting the most beautiful and usable apps created for Android.",
+    "techstack": [
+      "WordPress",
+      "SCSS",
+      "JavaScript"
+    ]
   },
   {
     "title": "Mr. Reader",
