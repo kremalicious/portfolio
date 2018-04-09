@@ -42,11 +42,9 @@
 
     li {
         display: inline-block;
-        padding: $spacer / 4;
-        background: darken($brand-light, 3%);
-        flex: 0 0 28%;
-        margin-bottom: 4%;
-        text-align: center;
+        padding: 0;
+        flex: 0 0 (100% / 3);
+        margin-bottom: $spacer;
         border-radius: 4rem;
         font-size: $font-size-small;
     }

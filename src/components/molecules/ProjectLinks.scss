@@ -1,0 +1,27 @@
+@import 'variables';
+
+.projectlinks {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+
+    li {
+        display: block;
+        flex: 0 0 48%;
+        margin-bottom: 2%;
+    }
+
+    a {
+        display: block;
+        background: darken($brand-light, 5%);
+        text-align: center;
+        border-radius: .25rem;
+        padding: $spacer / 4;
+    }
+
+    .icon {
+        margin-right: $spacer / 3;
+    }
+}

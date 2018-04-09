@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import ReactMarkdown from 'react-markdown'
 import Content from '../atoms/Content'
 import FullWidth from '../atoms/FullWidth'
+import ProjectLinks from '../molecules/ProjectLinks'
 import images from '../../images'
 import './Project.scss'
 
@@ -16,8 +17,7 @@ const Project = props => {
   const links = project.links
   const techstack = project.techstack
 
-  return (
-    <Fragment>
+  return <Fragment>
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -27,11 +27,7 @@ const Project = props => {
         <article className="project">
           <Content>
             <h1 className="project__title">{title}</h1>
-            <ReactMarkdown
-              source={description}
-              escapeHtml={false}
-              className="project__description"
-            />
+            <ReactMarkdown source={description} escapeHtml={false} className="project__description" />
 
             <FullWidth>
               <img className="project__image" src={images[img]} alt={title} />
@@ -52,7 +48,9 @@ const Project = props => {
             <footer className="project__meta">
               <div className="project__techstack">
                 <h3 className="project__meta__title">
-                  Technologies <span>The tech stack I was involved with.</span>
+                  Technologies <span>
+                    The tech stack I was involved with.
+                  </span>
                 </h3>
                 <ul>
                   {!!techstack &&
@@ -64,23 +62,13 @@ const Project = props => {
                 <h3 className="project__meta__title">
                   Links <span>See the project live on the interwebz.</span>
                 </h3>
-                <ul>
-                  {!!links &&
-                    Object.keys(links).map(key => {
-                      if (links[key]) {
-                        return <li key={key}>
-                            <a href={links[key]}>{key}</a>
-                          </li>
-                      }
-                    })}
-                </ul>
+                <ProjectLinks links={links} />
               </div>
             </footer>
           </Content>
         </article>
       </main>
     </Fragment>
-  )
 }
 
 Project.propTypes = {
