@@ -8,7 +8,6 @@ module.exports = {
     'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-sass',
       options: {
