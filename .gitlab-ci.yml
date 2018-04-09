@@ -9,7 +9,6 @@ testing:
   script:
     - npm i
     - npm test
-    - ./node_modules/gatsby/dist/bin/gatsby.js build
   artifacts:
     paths:
       - public
