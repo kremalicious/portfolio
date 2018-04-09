@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 import Social from './Social'
 import './Header.scss'
 
-const Header = ({ meta, minimal }) => {
+const Header = ({ meta }) => {
+  const minimal = location.pathname === '/' ? false : true
   const classes = minimal ? 'header header--minimal' : 'header'
 
   return (
