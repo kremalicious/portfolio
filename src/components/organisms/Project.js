@@ -20,6 +20,7 @@ const Project = props => {
     <Fragment>
       <Helmet>
         <title>{title}</title>
+        <meta name="description" content={description} />
       </Helmet>
 
       <main className="screen screen--project">
@@ -65,11 +66,13 @@ const Project = props => {
                 </h3>
                 <ul>
                   {!!links &&
-                    Object.keys(links).map(key => (
-                      <li key={key}>
-                        <a href={links[key]}>{key}</a>
-                      </li>
-                    ))}
+                    Object.keys(links).map(key => {
+                      if (links[key]) {
+                        return <li key={key}>
+                            <a href={links[key]}>{key}</a>
+                          </li>
+                      }
+                    })}
                 </ul>
               </div>
             </footer>

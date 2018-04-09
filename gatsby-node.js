@@ -6,8 +6,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   return new Promise((resolve, reject) => {
     const template = path.resolve('src/components/organisms/Project.js')
 
-    resolve(
-      graphql(`
+    resolve(graphql(`
         {
           allProjectsJson {
             edges {
@@ -20,6 +19,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
                   Link
                   GitHub
                   Info
+                  Dribbble
                 }
                 description
                 techstack
@@ -51,8 +51,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               img_more,
               description,
               techstack,
-              links
-            }
+              links,
+            },
           })
         })
 

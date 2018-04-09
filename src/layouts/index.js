@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Head from '../components/molecules/Head'
+import Head from '../components/atoms/Head'
 import FadeIn from '../components/atoms/FadeIn'
 import Header from '../components/molecules/Header'
 import Footer from '../components/molecules/Footer'
@@ -25,24 +25,21 @@ TemplateWrapper.propTypes = {
 export default TemplateWrapper
 
 export const query = graphql`
-         query pageLayoutQueryAndMetaQuery {
-           allDataJson {
-             edges {
-               node {
-                 title
-                 tagline
-                 description
-                 url
-                 social {
-                   Twitter
-                   GitHub
-                   Facebook
-                 }
-               }
-             }
-           }
-           sitePage {
-             jsonName
-           }
-         }
-       `
+  query metaQuery {
+    allDataJson {
+      edges {
+        node {
+          title
+          tagline
+          description
+          url
+          social {
+            Twitter
+            GitHub
+            Facebook
+          }
+        }
+      }
+    }
+  }
+`

@@ -101,10 +101,12 @@
     },
     "description": "Co-designing and leading the front-end development of various ChartMogul web properties. Creating and implementing a UI design system into the ChartMogul application.",
     "techstack": [
-      "Jekyll",
-      "Gulp",
       "SCSS",
       "JavaScript",
+      "PHP",
+      "Jekyll",
+      "Gulp",
+      "WordPress",
       "Travis",
       "AWS S3",
       "Cloudflare",
@@ -144,9 +146,10 @@
       "Link": "https://ezeep.com/"
     },
     "techstack": [
-      "WordPress",
       "SCSS",
       "JavaScript",
+      "PHP",
+      "WordPress",
       "Travis",
       "AWS",
       "Cloudflare",
@@ -165,9 +168,10 @@
     },
     "description": "Designing, developing and writing a showcase website presenting the most beautiful and usable apps created for Android.",
     "techstack": [
-      "WordPress",
       "SCSS",
-      "JavaScript"
+      "JavaScript",
+      "PHP",
+      "WordPress"
     ]
   },
   {
