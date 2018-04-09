@@ -1,5 +1,5 @@
 {
-  "plugins": ["react", "graphql"],
+  "plugins": ["react", "graphql", "compat"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
@@ -18,6 +18,10 @@
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "rules": {
     "quotes": ["error", "single"],
-    "semi": ["error", "never"]
+    "semi": ["error", "never"],
+    "compat/compat": "error"
+  },
+  "settings": {
+    "polyfills": ["promises"]
   }
 }

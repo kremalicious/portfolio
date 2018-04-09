@@ -18,6 +18,7 @@
   "devDependencies": {
     "babel-eslint": "^8.2.2",
     "eslint": "^4.19.1",
+    "eslint-plugin-compat": "^2.2.0",
     "eslint-plugin-graphql": "^1.5.0",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
@@ -33,5 +34,8 @@
     "start": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
     "test": "npm run lint"
-  }
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }
