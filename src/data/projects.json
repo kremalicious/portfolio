@@ -177,9 +177,8 @@
   {
     "title": "Mr. Reader",
     "slug": "mr-reader",
-    "img": "mr-reader.jpg",
-    "img2x": "mr-reader@2x.jpg",
-    "description": ""
+    "img": "mrreader",
+    "description": "Designing the app icon, a custom theme, and various promotion materials for Mr. Reader, a powerful RSS feed reader for iPad."
   },
   {
     "title": "IPP Halle",
@@ -188,7 +187,13 @@
     "links": {
       "Link": "http://ipp-halle.de"
     },
-    "description": ""
+    "description": "",
+    "techstack": [
+      "SCSS",
+      "JavaScript",
+      "PHP",
+      "WordPress"
+    ]
   },
   {
     "title": "iPixelPad",

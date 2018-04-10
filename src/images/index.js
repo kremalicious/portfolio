@@ -11,6 +11,7 @@ import ezeep from './portfolio-ezeep.png'
 import ezeep01 from './portfolio-ezeep-01.png'
 import ezeep02 from './portfolio-ezeep-02.png'
 import exquisitedroid from './portfolio-exquisitedroid.png'
+import mrreader from './portfolio-mrreader.png'
 
 export default {
   oceanprotocol,
@@ -25,5 +26,6 @@ export default {
   ezeep,
   ezeep01,
   ezeep02,
-  exquisitedroid
+  exquisitedroid,
+  mrreader,
 }
