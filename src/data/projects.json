@@ -6,8 +6,10 @@
     "links": {
       "Link": "https://oceanprotocol.com"
     },
-    "description": "Conceptualizing and executing the creative and visual direction of the Ocean Protocol brand. Leading the UI design & development of all Ocean Protocol web properties. \n\nInitial website in collaboration with [Balance](https://balance.io/).",
+    "description": "Conceptualizing, executing and iterating on the creative and visual direction of the Ocean Protocol brand. Leading the UI design & development of all Ocean Protocol web properties. \n\nInitial website in collaboration with [Balance](https://balance.io/).",
     "techstack": [
+      "Sketch",
+      "Affinity Designer",
       "React",
       "SCSS",
       "JavaScript",
@@ -26,6 +28,7 @@
     },
     "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix.",
     "techstack": [
+      "Sketch",
       "Jekyll",
       "Gulp",
       "SCSS",
@@ -44,6 +47,7 @@
     },
     "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix.",
     "techstack": [
+      "Sketch",
       "Jekyll",
       "Gulp",
       "SCSS",
@@ -60,6 +64,7 @@
     },
     "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix.",
     "techstack": [
+      "Sketch",
       "Jekyll",
       "Gulp",
       "SCSS",
@@ -79,6 +84,9 @@
     },
     "description": "Conceptualizing and executing the creative and visual direction of the BigchainDB brand. Leading the UI design & development of all BigchainDB web properties.",
     "techstack": [
+      "Sketch",
+      "Affinity Designer",
+      "Illustrator",
       "Jekyll",
       "Gulp",
       "SCSS",
@@ -101,6 +109,9 @@
     },
     "description": "Co-designing and leading the front-end development of various ChartMogul web properties. Creating and implementing a UI design system into the ChartMogul application.",
     "techstack": [
+      "Sketch",
+      "Affinity Designer",
+      "Illustrator",
       "SCSS",
       "JavaScript",
       "PHP",
@@ -115,7 +126,7 @@
     ]
   },
   {
-    "title": "ShareTheMeal ",
+    "title": "ShareTheMeal",
     "slug": "sharethemeal",
     "img": "sharethemeal",
     "links": {
@@ -123,6 +134,8 @@
     },
     "description": "Co-designing and leading the front-end development of the ShareTheMeal website.",
     "techstack": [
+      "Sketch",
+      "Illustrator",
       "Jekyll",
       "Gulp",
       "SCSS",
@@ -137,15 +150,21 @@
     "title": "ezeep",
     "slug": "ezeep",
     "img": "ezeep",
-    "description": "Conceptualizing and executing the creative and visual direction of the ezeep brand. Leading the UI design & development of all ezeep web properties and marketing materials. Designing all app experiences of ezeep on Windows, macOS, iOS, and Android.",
+    "description": "At ezeep, I created an unprecedented, market-leading & award-winning user experience based on the principles of emotional design way ahead of all competitors.\n\nThis included conceptualizing executing, and iterating on the creative & visual direction of the ezeep brand. I was leading the UI design & development of all ezeep web properties and marketing materials, on top of that I designed all app experiences of ezeep on Windows, macOS, iOS, and Android.\n\nezeep was acquired by [Cortado AG](https://www.cortado.com) in 2015 and became part of their [ThinPrint Cloud Services](https://www.thinprintcloud.com) suite of products.",
     "img_more": [
       "ezeep01",
-      "ezeep02"
+      "ezeep02",
+      "ezeep03",
+      "ezeep04"
     ],
     "links": {
-      "Link": "https://ezeep.com/"
+      "Link": "https://kremalicious.com/enterprise-software-sucks/"
     },
     "techstack": [
+      "Photoshop",
+      "Illustrator",
+      "InDesign",
+      "Sketch",
       "SCSS",
       "JavaScript",
       "PHP",
@@ -168,7 +187,8 @@
     },
     "description": "Designing, developing and writing a showcase website presenting the most beautiful and usable apps created for Android.",
     "techstack": [
-      "SCSS",
+      "Photoshop",
+      "CSS",
       "JavaScript",
       "PHP",
       "WordPress"
@@ -189,7 +209,8 @@
     },
     "description": "",
     "techstack": [
-      "SCSS",
+      "Photoshop",
+      "CSS",
       "JavaScript",
       "PHP",
       "WordPress"
@@ -213,11 +234,18 @@
   {
     "title": "Out Of Whale Oil",
     "slug": "out-of-whale-oil",
-    "img": "out-of-whale-oil.jpg",
+    "img": "outofwhaleoil",
+    "img_more": [
+      "outofwhaleoil01",
+      "outofwhaleoil02"
+    ],
+    "description": "Tribute wallpaper pack inspired by the Futurama movie _Into The Wild Green Yonder_.",
     "links": {
-      "Info": "http://www.kremalicious.com/2009/02/out-of-whale-oil/"
+      "Download": "https://kremalicious.com/out-of-whale-oil/"
     },
-    "description": ""
+    "techstack": [
+      "Photoshop"
+    ]
   },
   {
     "title": "mluBlogs",
@@ -226,7 +254,15 @@
     "links": {
       "Link": "http://blogs.urz-uni-halle.de"
     },
-    "description": ""
+    "description": "",
+    "techstack": [
+      "Photoshop",
+      "SCSS",
+      "JavaScript",
+      "PHP",
+      "WordPress",
+      "Ilias"
+    ]
   },
   {
     "title": "Coffee Cup",
@@ -235,7 +271,10 @@
     "links": {
       "Info": "http://www.kremalicious.com/2008/10/the-finest-coffee-cups-most-incredible-coffee-icons-on-the-web/"
     },
-    "description": ""
+    "description": "",
+    "techstack": [
+      "Photoshop"
+    ]
   },
   {
     "title": "Niépce's Camera Obscura",
@@ -244,7 +283,10 @@
     "links": {
       "Info": "http://www.kremalicious.com/2008/06/new-goodie-niepces-camera-obscura-and-the-history-of-the-first-photograph/"
     },
-    "description": ""
+    "description": "",
+    "techstack": [
+      "Photoshop"
+    ]
   },
   {
     "title": "Allinnia Creative Group",

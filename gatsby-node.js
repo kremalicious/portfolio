@@ -20,6 +20,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
                   GitHub
                   Info
                   Dribbble
+                  Download
                 }
                 description
                 techstack

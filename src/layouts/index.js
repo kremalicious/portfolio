@@ -7,7 +7,7 @@ import Footer from '../components/molecules/Footer'
 import './index.scss'
 
 const TemplateWrapper = props => {
-  const meta = props.data.allContentJson.edges[0].node
+  const meta = props.data.allDataJson.edges[0].node
 
   return <div className="app">
       <Head meta={meta} />
@@ -26,7 +26,7 @@ export default TemplateWrapper
 
 export const query = graphql`
   query metaQuery {
-    allContentJson {
+    allDataJson {
       edges {
         node {
           title
