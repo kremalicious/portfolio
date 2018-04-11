@@ -1,16 +1,16 @@
 import React from 'react'
-import Link from 'react-router-dom/Link'
+import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
 import Social from './Social'
 import './Header.scss'
 
 const Header = ({ meta }) => {
-  const minimal = location.pathname === '/' ? false : true
-  const classes = minimal ? 'header header--minimal' : 'header'
+  const isHomepage = location.pathname === '/'
+  const classes = isHomepage ? 'header' : 'header header--minimal'
 
   return (
     <header className={classes}>
-      <Link className="header__name" to="/">
+      <Link className="header__name" to={'/'}>
         <span className="header__logo">␥</span>
         <h1 className="header__title">{meta.title}</h1>
         <p className="header__description">{meta.tagline}</p>
@@ -22,7 +22,6 @@ const Header = ({ meta }) => {
 }
 
 Header.propTypes = {
-  minimal: PropTypes.bool,
   meta: PropTypes.object,
 }
 

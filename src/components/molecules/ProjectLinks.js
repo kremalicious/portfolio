@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { Chain, GitHub, Dribbble } from '../atoms/Icons'
 import './ProjectLinks.scss'
 
@@ -16,19 +17,24 @@ const LinkIcon = ({ title }) => {
 }
 
 const ProjectLinks = ({ links }) => (
-  <ul className="projectlinks">
-    {!!links &&
-      Object.keys(links).map(key => {
+  <div className="project__links">
+    <h3 className="project__meta__title">
+      Links <span>See the project live on the interwebz.</span>
+    </h3>
+
+    <ul>
+      {Object.keys(links).map(key => {
         if (links[key]) {
           return <li key={key}>
-              <a href={links[key]}>
-                <LinkIcon title={key} />
-                {key}
-              </a>
-            </li>
+            <OutboundLink href={links[key]}>
+              <LinkIcon title={key} />
+              {key}
+            </OutboundLink>
+          </li>
         }
       })}
-  </ul>
+    </ul>
+  </div>
 )
 
 ProjectLinks.propTypes = {

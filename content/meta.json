@@ -1,11 +1,14 @@
 {
   "title": "Matthias Kretschmann",
   "tagline": "Designer & Developer",
-  "description": "",
+  "description": "Portfolio of web &amp; ui designer/developer hybrid Matthias Kretschmann.",
   "url": "https://matthiaskretschmann.com",
+  "email": "m@kretschmann.io",
   "social": {
     "Twitter": "https://twitter.com/kremalicious",
     "GitHub": "https://github.com/kremalicious",
     "Facebook": "https://facebook.com/matthiaskretschmann"
-  }
+  },
+  "available": false,
+  "googleanalytics": "UA-1441794-4"
 }

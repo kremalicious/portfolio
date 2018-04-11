@@ -238,12 +238,6 @@
     "description": ""
   },
   {
-    "title": "Aref Jdey",
-    "slug": "aref-jdey",
-    "img": "aref-jdey.jpg",
-    "description": ""
-  },
-  {
     "title": "Niépce's Camera Obscura",
     "slug": "camera-obscura",
     "img": "camera-obscura.jpg",
@@ -256,15 +250,6 @@
     "title": "Allinnia Creative Group",
     "slug": "allinnia",
     "img": "allinnia.jpg",
-    "description": ""
-  },
-  {
-    "title": "mkretschmann.com v1",
-    "slug": "mkv1",
-    "img": "mkv1.jpg",
-    "links": {
-      "Info": "http://www.kremalicious.com/2009/02/portal-thingy/"
-    },
     "description": ""
   }
 ]

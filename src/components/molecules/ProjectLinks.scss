@@ -1,11 +1,13 @@
 @import 'variables';
 
-.projectlinks {
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
+.project__links {
+    ul {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+    }
 
     li {
         display: block;

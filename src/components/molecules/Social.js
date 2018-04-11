@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { Twitter, GitHub, Facebook } from '../atoms/Icons'
 import './Social.scss'
 
@@ -19,9 +20,9 @@ const Social = ({ meta }) => {
   return (
     <aside className="social">
       {Object.keys(social).map((key, i) => (
-        <a className="social__link" href={social[key]} key={i} title={key}>
+        <OutboundLink className="social__link" href={social[key]} key={i} title={key}>
           <SocialIcon title={key} />
-        </a>
+        </OutboundLink>
       ))}
     </aside>
   )

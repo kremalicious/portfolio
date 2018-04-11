@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import ReactMarkdown from 'react-markdown'
 import Content from '../atoms/Content'
 import FullWidth from '../atoms/FullWidth'
+import ProjectTechstack from '../molecules/ProjectTechstack'
 import ProjectLinks from '../molecules/ProjectLinks'
 import images from '../../images'
 import './Project.scss'
@@ -33,9 +34,9 @@ const Project = props => {
               <img className="project__image" src={images[img]} alt={title} />
             </FullWidth>
 
-            <FullWidth>
-              {!!img_more &&
-                img_more.map(key => (
+            {!!img_more &&
+              <FullWidth>
+                {img_more.map(key => (
                   <img
                     key={key}
                     className="project__image"
@@ -43,27 +44,12 @@ const Project = props => {
                     alt={title}
                   />
                 ))}
-            </FullWidth>
+              </FullWidth>
+            }
 
             <footer className="project__meta">
-              <div className="project__techstack">
-                <h3 className="project__meta__title">
-                  Technologies <span>
-                    The tech stack I was involved with.
-                  </span>
-                </h3>
-                <ul>
-                  {!!techstack &&
-                    techstack.map(tech => <li key={tech}>{tech}</li>)}
-                </ul>
-              </div>
-
-              <div className="project__links">
-                <h3 className="project__meta__title">
-                  Links <span>See the project live on the interwebz.</span>
-                </h3>
-                <ProjectLinks links={links} />
-              </div>
+              {!!techstack && <ProjectTechstack techstack={techstack} />}
+              {!!links && <ProjectLinks links={links} />}
             </footer>
           </Content>
         </article>

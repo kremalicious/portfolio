@@ -20,6 +20,7 @@
     height: 1.35rem;
     box-shadow: 0 3px 5px rgba($brand-main, .1), 0 5px 16px rgba($brand-main, .1);
     border-radius: .25rem;
+    transition-property: transform, background, box-shadow;
 
     &:hover,
     &:focus {

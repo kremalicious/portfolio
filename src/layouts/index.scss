@@ -77,7 +77,7 @@ h6 {
 a {
     color: $brand-cyan;
     text-decoration: none;
-    transition: .2s ease-out;
+    transition: color .2s ease-out;
 
     &:hover,
     &:focus {

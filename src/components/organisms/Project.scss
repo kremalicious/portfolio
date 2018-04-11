@@ -32,24 +32,6 @@
     }
 }
 
-.project__techstack {
-    ul {
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    li {
-        display: inline-block;
-        padding: 0;
-        flex: 0 0 (100% / 3);
-        margin-bottom: $spacer;
-        border-radius: 4rem;
-        font-size: $font-size-small;
-    }
-}
-
 .project__meta__title {
     font-size: $font-size-h3;
     margin-bottom: $spacer * 1.5;

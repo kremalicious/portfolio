@@ -7,7 +7,7 @@ const Footer = ({ meta }) => {
 
   return (
     <footer className="footer">
-      <small>© {year} {meta.title} &mdash; All Rights Reserved</small>
+      <small>&copy; {year} {meta.title} &mdash; All Rights Reserved</small>
     </footer>
   )
 }
