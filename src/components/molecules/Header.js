@@ -5,11 +5,11 @@ import Social from './Social'
 import { Logo } from '../atoms/Icons'
 import './Header.scss'
 
-const Header = ({ meta }) => {
-  const isHomepage = location.pathname === '/'
+const Header = ({ meta, isHomepage}) => {
   const classes = isHomepage ? 'header' : 'header header--minimal'
 
-  return <header className={classes}>
+  return (
+    <header className={classes}>
       <Link className="header__name" to={'/'}>
         <Logo className="header__logo" />
         <h1 className="header__title">{meta.title}</h1>
@@ -18,10 +18,12 @@ const Header = ({ meta }) => {
 
       <Social meta={meta} minimal={!isHomepage} />
     </header>
+  )
 }
 
 Header.propTypes = {
   meta: PropTypes.object,
+  isHomepage: PropTypes.bool,
 }
 
 export default Header
