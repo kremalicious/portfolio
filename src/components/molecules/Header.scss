@@ -98,27 +98,4 @@
         text-align: right;
         justify-content: flex-end;
     }
-
-    .social__link {
-        width: 1rem;
-        height: 1rem;
-        padding: $spacer / 8;
-        margin-left: $spacer / 4;
-        margin-right: $spacer / 4;
-        background: transparent;
-        box-shadow: none;
-        transform: none;
-
-        .icon {
-            fill: $brand-grey-light;
-            transition: .2s ease-out;
-        }
-
-        &:hover,
-        &:focus {
-            .icon {
-                fill: $brand-grey;
-            }
-        }
-    }
 }

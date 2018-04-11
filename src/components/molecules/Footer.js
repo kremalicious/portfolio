@@ -1,15 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Social from './Social'
 import './Footer.scss'
 
 const Footer = ({ meta }) => {
   const year = new Date().getFullYear()
 
-  return (
-    <footer className="footer">
-      <small>&copy; {year} {meta.title} &mdash; All Rights Reserved</small>
+  return <footer className="footer">
+      <Social meta={meta} minimal />
+      <small>
+        &copy; {year} {meta.title} &mdash; All Rights Reserved
+      </small>
     </footer>
-  )
 }
 
 Footer.propTypes = {

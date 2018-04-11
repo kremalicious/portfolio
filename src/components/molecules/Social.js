@@ -14,11 +14,12 @@ const SocialIcon = ({ title }) => {
   }
 }
 
-const Social = ({ meta }) => {
+const Social = ({ meta, minimal }) => {
   const social = meta.social
+  const classes = minimal ? 'social social--minimal' : 'social'
 
   return (
-    <aside className="social">
+    <aside className={classes}>
       {Object.keys(social).map((key, i) => (
         <OutboundLink className="social__link" href={social[key]} key={i} title={key}>
           <SocialIcon title={key} />
@@ -30,6 +31,7 @@ const Social = ({ meta }) => {
 
 Social.propTypes = {
   meta: PropTypes.object,
+  minimal: PropTypes.bool,
 }
 
 export default Social

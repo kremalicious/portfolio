@@ -28,4 +28,27 @@
         transform: translate3d(0, -.2rem, 0);
         box-shadow: 0 6px 10px rgba($brand-main, .1), 0 10px 25px rgba($brand-main, .1);
     }
+
+    .social--minimal & {
+        width: 1rem;
+        height: 1rem;
+        padding: $spacer / 8;
+        margin-left: $spacer / 4;
+        margin-right: $spacer / 4;
+        background: transparent;
+        box-shadow: none;
+        transform: none;
+
+        .icon {
+            fill: $brand-grey-light;
+            transition: .2s ease-out;
+        }
+
+        &:hover,
+        &:focus {
+            .icon {
+                fill: $brand-grey;
+            }
+        }
+    }
 }
