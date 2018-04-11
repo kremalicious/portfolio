@@ -7,8 +7,11 @@ cache:
 testing:
   stage: test
   script:
+    - npm i -g gatsby-cli
+    - export PATH="$PATH:/usr/local/bin/gatsby"
     - npm i
     - npm test
+    - npm run build
   artifacts:
     paths:
       - public
