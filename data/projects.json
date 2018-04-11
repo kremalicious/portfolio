@@ -78,6 +78,10 @@
     "title": "BigchainDB",
     "slug": "bigchaindb",
     "img": "bigchaindb",
+    "img_more": [
+      "bigchaindb01",
+      "bigchaindb02"
+    ],
     "links": {
       "Link": "https://www.bigchaindb.com",
       "GitHub": "https://github.com/bigchaindb/site"
