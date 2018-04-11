@@ -11,10 +11,13 @@
 
 .header__logo {
     display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: $brand-grey-light;
     margin-top: -3rem;
-    font-size: 3rem;
-    color: $brand-grey-light;
-    margin-bottom: $spacer / 2;
+    margin-bottom: $spacer;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .header__title,
@@ -51,8 +54,7 @@
     }
 
     .header__title,
-    .header__description,
-    .header__logo {
+    .header__description {
         color: $brand-grey-light;
         transition: color .2s ease-out;
     }
@@ -67,11 +69,12 @@
 
     .header__logo {
         display: inline-block;
-        margin: 0;
-        font-size: 2rem;
+        width: 1rem;
+        height: 1rem;
         margin-top: -2rem;
         margin-bottom: 0;
-        margin-right: $spacer / 4;
+        margin-right: $spacer / 3;
+        margin-left: 0;
     }
 
     .header__name {

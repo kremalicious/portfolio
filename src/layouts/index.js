@@ -34,10 +34,11 @@ export const query = graphql`
           description
           url
           social {
+            Email
             Blog
             Twitter
             GitHub
-            Facebook
+            Dribbble
           }
         }
       }

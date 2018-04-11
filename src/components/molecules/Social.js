@@ -1,20 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { Blog, Twitter, GitHub, Facebook } from '../atoms/Icons'
+import { Email, Blog, Twitter, GitHub, Dribbble } from '../atoms/Icons'
 import './Social.scss'
 
 const SocialIcon = ({ title }) => {
-  if (title === 'Blog') {
-    return <Blog />
-  } else if (title === 'Twitter') {
-    return <Twitter />
-  } else if (title === 'GitHub') {
-    return <GitHub />
-  } else if (title === 'Facebook') {
-    return <Facebook />
-  } else {
-    return <i />
+  switch (title) {
+    case 'Email':
+      return <Email />
+    case 'Blog':
+      return <Blog />
+    case 'Twitter':
+      return <Twitter />
+    case 'GitHub':
+      return <GitHub />
+    case 'Dribbble':
+      return <Dribbble />
+    default:
+      return null
   }
 }
 

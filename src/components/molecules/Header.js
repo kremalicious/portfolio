@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
 import Social from './Social'
+import { Logo } from '../atoms/Icons'
 import './Header.scss'
 
 const Header = ({ meta }) => {
@@ -10,7 +11,7 @@ const Header = ({ meta }) => {
 
   return <header className={classes}>
       <Link className="header__name" to={'/'}>
-        <span className="header__logo">␥</span>
+        <Logo className="header__logo" />
         <h1 className="header__title">{meta.title}</h1>
         <p className="header__description">{meta.tagline}</p>
       </Link>
