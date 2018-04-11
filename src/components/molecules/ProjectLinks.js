@@ -25,12 +25,14 @@ const ProjectLinks = ({ links }) => (
     <ul>
       {Object.keys(links).map(key => {
         if (links[key]) {
-          return <li key={key}>
-            <OutboundLink href={links[key]}>
-              <LinkIcon title={key} />
-              {key}
-            </OutboundLink>
-          </li>
+          return (
+            <li key={key}>
+              <OutboundLink href={links[key]}>
+                <LinkIcon title={key} />
+                {key}
+              </OutboundLink>
+            </li>
+          )
         }
       })}
     </ul>

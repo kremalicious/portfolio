@@ -8,7 +8,8 @@ const FadeIn = props => (
     classNames="fadein"
     appear={true}
     in={true}
-    timeout={400} />
+    timeout={400}
+  />
 )
 
 export default FadeIn

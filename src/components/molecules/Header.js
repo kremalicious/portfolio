@@ -5,7 +5,7 @@ import Social from './Social'
 import { Logo } from '../atoms/Icons'
 import './Header.scss'
 
-const Header = ({ meta, isHomepage}) => {
+const Header = ({ meta, isHomepage }) => {
   const classes = isHomepage ? 'header' : 'header header--minimal'
 
   return (

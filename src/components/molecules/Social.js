@@ -28,7 +28,12 @@ const Social = ({ meta, minimal }) => {
   return (
     <aside className={classes}>
       {Object.keys(social).map((key, i) => (
-        <OutboundLink className="social__link" href={social[key]} key={i} title={key}>
+        <OutboundLink
+          className="social__link"
+          href={social[key]}
+          key={i}
+          title={key}
+        >
           <SocialIcon title={key} />
         </OutboundLink>
       ))}

@@ -10,12 +10,14 @@ const TemplateWrapper = props => {
   const meta = props.data.allDataJson.edges[0].node
   const isHomepage = props.location.pathname === '/'
 
-  return <div className="app">
+  return (
+    <div className="app">
       <Head meta={meta} />
       <Header meta={meta} isHomepage={isHomepage} />
       <FadeIn>{props.children()}</FadeIn>
       <Footer meta={meta} />
     </div>
+  )
 }
 
 TemplateWrapper.propTypes = {

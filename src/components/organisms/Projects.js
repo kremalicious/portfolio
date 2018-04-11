@@ -7,17 +7,24 @@ import './Projects.scss'
 const Projects = ({ data }) => {
   const projects = data.allProjectsJson.edges
 
-  return <div className="projects full-width">
-      {projects.map(({ node }) =>
+  return (
+    <div className="projects full-width">
+      {projects.map(({ node }) => (
         <Link
           key={node.slug}
           to={`/${node.slug}`}
-          className="projects__project">
-
+          className="projects__project"
+        >
           <h1 className="projects__project__title">{node.title}</h1>
-          <img className="projects__project__image" src={images[node.img]} alt={node.title} />
-        </Link>)}
+          <img
+            className="projects__project__image"
+            src={images[node.img]}
+            alt={node.title}
+          />
+        </Link>
+      ))}
     </div>
+  )
 }
 
 Projects.propTypes = {

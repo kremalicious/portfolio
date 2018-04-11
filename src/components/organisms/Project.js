@@ -18,7 +18,8 @@ const Project = props => {
   const links = project.links
   const techstack = project.techstack
 
-  return <Fragment>
+  return (
+    <Fragment>
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -28,13 +29,17 @@ const Project = props => {
         <article className="project">
           <Content>
             <h1 className="project__title">{title}</h1>
-            <ReactMarkdown source={description} escapeHtml={false} className="project__description" />
+            <ReactMarkdown
+              source={description}
+              escapeHtml={false}
+              className="project__description"
+            />
 
             <FullWidth>
               <img className="project__image" src={images[img]} alt={title} />
             </FullWidth>
 
-            {!!img_more &&
+            {!!img_more && (
               <FullWidth>
                 {img_more.map(key => (
                   <img
@@ -45,7 +50,7 @@ const Project = props => {
                   />
                 ))}
               </FullWidth>
-            }
+            )}
 
             <footer className="project__meta">
               {!!techstack && <ProjectTechstack techstack={techstack} />}
@@ -55,6 +60,7 @@ const Project = props => {
         </article>
       </main>
     </Fragment>
+  )
 }
 
 Project.propTypes = {

@@ -7,9 +7,7 @@ const ProjectTechstack = ({ techstack }) => (
     <h3 className="project__meta__title">
       Tools & Technologies <span>The tech stack I was involved with.</span>
     </h3>
-    <ul>
-      {techstack.map(tech => <li key={tech}>{tech}</li>)}
-    </ul>
+    <ul>{techstack.map(tech => <li key={tech}>{tech}</li>)}</ul>
   </div>
 )
 
