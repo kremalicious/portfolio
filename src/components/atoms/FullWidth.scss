@@ -5,4 +5,17 @@
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    text-align: center;
+
+    img {
+        max-height: 100vh;
+        width: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media (min-width: 2559px) {
+            max-width: 2560px;
+        }
+    }
 }
