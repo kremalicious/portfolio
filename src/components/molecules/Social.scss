@@ -1,7 +1,7 @@
 @import 'variables';
 
 .social {
-    margin-top: $spacer * $line-height;
+    margin-top: $spacer;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -10,38 +10,36 @@
 .social__link {
     margin-left: $spacer / 2;
     margin-right: $spacer / 2;
-    background: $brand-light;
-    padding: $spacer / 4;
+    padding: $spacer / 2;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 1.35rem;
-    height: 1.35rem;
-    box-shadow: 0 3px 5px rgba($brand-main, .1), 0 5px 16px rgba($brand-main, .1);
     border-radius: .25rem;
     transition-property: transform, background, box-shadow;
 
+    .icon {
+        width: 1rem;
+        height: 1rem;
+    }
+
     &:hover,
     &:focus {
-        background: $brand-grey-dimmed;
+        background: $brand-light;
         transform: translate3d(0, -.2rem, 0);
         box-shadow: 0 6px 10px rgba($brand-main, .1), 0 10px 25px rgba($brand-main, .1);
     }
 
     .social--minimal & {
-        width: 1rem;
-        height: 1rem;
-        padding: $spacer / 8;
-        margin-left: $spacer / 4;
-        margin-right: $spacer / 4;
-        background: transparent;
-        box-shadow: none;
-        transform: none;
+        padding: $spacer / 3;
+        margin-left: $spacer / 3;
+        margin-right: $spacer / 3;
 
         .icon {
             fill: $brand-grey-light;
             transition: .2s ease-out;
+            width: .85rem;
+            height: .85rem;
         }
 
         &:hover,

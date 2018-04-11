@@ -2,11 +2,11 @@
 
 .header {
     padding: $spacer;
-    min-height: calc(100vh - #{$spacer * 3});
+    min-height: calc(100vh - #{$spacer});
     display: flex;
-    align-content: center;
     flex-wrap: wrap;
-    text-align: center;
+    align-content: center;
+    justify-content: center;
 }
 
 .header__logo {
@@ -14,7 +14,6 @@
     width: 1.5rem;
     height: 1.5rem;
     fill: $brand-grey-light;
-    margin-top: -3rem;
     margin-bottom: $spacer;
     margin-left: auto;
     margin-right: auto;
@@ -28,29 +27,30 @@
 
 .header__title {
     font-size: $font-size-h3;
-    margin-right: $spacer / 2;
+    margin-right: $spacer / 4;
     color: $brand-main;
 }
 
 .header__description {
     font-size: $font-size-large;
     color: $brand-grey;
+
+    span {
+        opacity: .4;
+    }
 }
 
 .header__name {
-    width: 100%;
+    height: 100%;
     pointer-events: none;
 }
 
 .header--minimal {
     min-height: 0;
-    text-align: left;
-    flex-wrap: nowrap;
-    align-content: flex-start;
-    justify-content: space-between;
 
     @media (min-width: 30rem) {
-        margin-bottom: $spacer;
+        margin-top: $spacer / 2;
+        margin-bottom: $spacer / 2;
     }
 
     .header__title,
@@ -68,13 +68,9 @@
     }
 
     .header__logo {
-        display: inline-block;
         width: 1rem;
         height: 1rem;
-        margin-top: -2rem;
-        margin-bottom: 0;
-        margin-right: $spacer / 3;
-        margin-left: 0;
+        margin-bottom: $spacer / 3;
     }
 
     .header__name {
@@ -94,11 +90,5 @@
                 color: $brand-grey;
             }
         }
-    }
-
-    .social {
-        margin-top: 0;
-        text-align: right;
-        justify-content: flex-end;
     }
 }

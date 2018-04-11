@@ -3,16 +3,13 @@
 .project__links {
     ul {
         padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        width: 100%;
+        margin-left: -($spacer / 2);
     }
 
     li {
-        display: block;
-        flex: 0 0 48%;
-        margin-bottom: 2%;
+        display: inline-block;
+        margin-left: $spacer / 2;
+        margin-bottom: $spacer / 2;
     }
 
     .icon {
@@ -22,22 +19,23 @@
     }
 
     a {
-        display: block;
-        background: darken($brand-light, 5%);
+        display: inline-block;
+        color: $brand-cyan;
         text-align: center;
         border-radius: .25rem;
-        padding: $spacer / 4;
+        padding: $spacer / 4 $spacer;
         transition-property: all;
-        color: $text-color;
+
+        .icon {
+            fill: $brand-cyan;
+            opacity: .85;
+        }
 
         &:hover,
         &:focus {
-            background: $brand-cyan;
-            color: #fff;
-
-            .icon {
-                fill: #fff;
-            }
+            background: $brand-light;
+            transform: translate3d(0, -.2rem, 0);
+            box-shadow: 0 6px 10px rgba($brand-main, .1), 0 10px 25px rgba($brand-main, .1);
         }
 
         &:active {

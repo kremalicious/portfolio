@@ -1,5 +1,11 @@
 @import 'variables';
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html,
 body {
     margin: 0;
@@ -21,7 +27,6 @@ body {
     text-rendering: optimizeLegibility;
     font-display: swap;
     font-feature-settings: 'liga', 'kern';
-    letter-spacing: -.01rem;
 }
 
 p,
@@ -43,7 +48,6 @@ h6 {
     line-height: $line-height-headings;
     color: $color-headings;
     font-weight: $font-weight-headings;
-    letter-spacing: -.04rem;
     margin: 0 0 $spacer;
 }
 

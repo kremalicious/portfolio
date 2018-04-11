@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { Email, Blog, Twitter, GitHub, Dribbble } from '../atoms/Icons'
@@ -21,29 +21,34 @@ const SocialIcon = ({ title }) => {
   }
 }
 
-const Social = ({ meta, minimal }) => {
+const Social = ({ meta, minimal, hide }) => {
   const social = meta.social
   const classes = minimal ? 'social social--minimal' : 'social'
 
   return (
-    <aside className={classes}>
-      {Object.keys(social).map((key, i) => (
-        <OutboundLink
-          className="social__link"
-          href={social[key]}
-          key={i}
-          title={key}
-        >
-          <SocialIcon title={key} />
-        </OutboundLink>
-      ))}
-    </aside>
+    <Fragment>
+      {!hide && (
+        <aside className={classes}>
+          {Object.keys(social).map((key, i) => (
+            <OutboundLink
+              className="social__link"
+              href={social[key]}
+              key={i}
+              title={key}
+            >
+              <SocialIcon title={key} />
+            </OutboundLink>
+          ))}
+        </aside>
+      )}
+    </Fragment>
   )
 }
 
 Social.propTypes = {
   meta: PropTypes.object,
   minimal: PropTypes.bool,
+  hide: PropTypes.bool,
 }
 
 export default Social

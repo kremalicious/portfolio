@@ -12,11 +12,11 @@ const Header = ({ meta, isHomepage }) => {
     <header className={classes}>
       <Link className="header__name" to={'/'}>
         <Logo className="header__logo" />
-        <h1 className="header__title">{meta.title}</h1>
-        <p className="header__description">{meta.tagline}</p>
+        <h1 className="header__title">{meta.title.toLowerCase()}</h1>
+        <p className="header__description"><span>{'{ '}</span> {meta.tagline.toLowerCase()} <span>{' }'}</span></p>
       </Link>
 
-      <Social meta={meta} minimal={!isHomepage} />
+      <Social meta={meta} minimal={!isHomepage} hide={!isHomepage} />
     </header>
   )
 }

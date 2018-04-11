@@ -1,4 +1,4 @@
-const meta = require('./src/data/meta.json')
+const meta = require('./data/meta.json')
 
 module.exports = {
   siteMetadata: {
@@ -18,7 +18,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'data',
-        path: `${__dirname}/src/data/`,
+        path: `${__dirname}/data/`,
       },
     },
     'gatsby-transformer-json',
