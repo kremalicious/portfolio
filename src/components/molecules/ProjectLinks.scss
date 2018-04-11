@@ -15,15 +15,34 @@
         margin-bottom: 2%;
     }
 
+    .icon {
+        margin-right: $spacer / 3;
+        transition: .2s ease-out;
+        margin-bottom: -.1rem;
+    }
+
     a {
         display: block;
         background: darken($brand-light, 5%);
         text-align: center;
         border-radius: .25rem;
         padding: $spacer / 4;
-    }
+        transition-property: all;
+        color: $text-color;
 
-    .icon {
-        margin-right: $spacer / 3;
+        &:hover,
+        &:focus {
+            background: $brand-cyan;
+            color: #fff;
+
+            .icon {
+                fill: #fff;
+            }
+        }
+
+        &:active {
+            transition: none;
+            background: darken($brand-cyan, 5%);
+        }
     }
 }
