@@ -27,6 +27,8 @@ body {
     text-rendering: optimizeLegibility;
     font-display: swap;
     font-feature-settings: 'liga', 'kern';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 p,
