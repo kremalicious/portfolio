@@ -5,7 +5,7 @@
         padding: 0;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
     }
 
     li {
@@ -14,5 +14,7 @@
         flex: 0 0 (100% / 3);
         margin-bottom: $spacer;
         font-size: $font-size-small;
+        text-align: center;
+        background: rgba(#fff, .2);
     }
 }

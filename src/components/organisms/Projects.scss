@@ -9,10 +9,11 @@
 .projects__project {
     position: relative;
     background-color: $brand-grey-light;
-    margin-bottom: $spacer * 4;
+    margin: 0 auto $spacer * 4 auto;
 
     @media (min-width: 85rem) {
         flex: 0 0 calc(50% - #{$spacer / 2});
+        margin: 0;
         margin-bottom: $spacer;
     }
 

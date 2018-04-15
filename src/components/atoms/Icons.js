@@ -64,3 +64,12 @@ export const Email = props => (
     </g>
   </svg>
 )
+
+export const Index = props => <svg className="icon" viewBox="0 0 20 20" width="20" height="20" {...props}>
+      <rect width="9" height="5" />
+      <rect width="9" height="5" y="7" />
+      <rect width="9" height="5" y="14" />
+      <rect width="9" height="5" x="11" />
+      <rect width="9" height="5" x="11" y="7" />
+      <rect width="9" height="5" x="11" y="14" />
+  </svg>
