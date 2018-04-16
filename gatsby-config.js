@@ -8,6 +8,7 @@ module.exports = {
     'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    'gatsby-transformer-json',
     {
       resolve: 'gatsby-plugin-sass',
       options: {
@@ -21,7 +22,6 @@ module.exports = {
         path: `${__dirname}/data/`,
       },
     },
-    'gatsby-transformer-json',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {

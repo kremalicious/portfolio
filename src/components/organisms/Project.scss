@@ -20,8 +20,8 @@
 }
 
 .project__meta {
-    margin-top: $spacer * 4;
-    margin-bottom: $spacer * 4;
+    margin-top: $spacer * 5;
+    margin-bottom: $spacer * 5;
 
     @media (min-width: 40rem) {
         display: flex;
@@ -43,85 +43,5 @@
         font-size: $font-size-base;
         font-family: $font-family-base;
         color: $brand-grey-light;
-    }
-}
-
-.project__nav {
-    display: flex;
-    justify-content: space-between;
-}
-
-.project__nav__image {
-    margin: 0;
-    box-shadow: 0 3px 5px rgba($brand-main, .2), 0 5px 16px rgba($brand-main, .2);
-}
-
-.project__nav__item {
-    flex: 0 0 48%;
-    position: relative;
-
-    &:first-child {
-        text-align: left;
-    }
-
-    &:last-child {
-        text-align: right;
-    }
-
-    @media (min-width: 45rem) {
-        flex-basis: 33%;
-    }
-}
-
-.project__nav__link {
-    &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        z-index: 2;
-        background: transparent;
-        transition: background .2s ease-out;
-    }
-
-    &:hover,
-    &:focus {
-        &::after {
-            background: rgba($brand-cyan, .1);
-        }
-    }
-}
-
-.project__nav__title {
-    font-size: $font-size-small;
-    padding: $spacer / 2 $spacer / 4;
-    margin: 0;
-
-    @media (min-width: 45rem) {
-        font-size: $font-size-base;
-        padding: $spacer / 2 $spacer;
-    }
-}
-
-.project__nav__index {
-    height: 100%;
-    display: block;
-    align-self: center;
-    margin-top: -$spacer;
-
-    &:first-child {
-        margin-left: 48.5%;
-    }
-
-    &:last-child {
-        margin-right: auto;
-    }
-
-    .icon {
-        fill: $brand-grey-light;
-        width: 1.5rem;
-        height: 1.5rem;
     }
 }

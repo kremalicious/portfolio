@@ -6,15 +6,19 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        margin-left: -($spacer / 2);
     }
 
     li {
-        display: inline-block;
-        padding: 0;
-        flex: 0 0 (100% / 3);
-        margin-bottom: $spacer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: $spacer / 4;
+        flex: 1 1 calc((100% / 3) - #{$spacer});
+        margin-bottom: $spacer / 2;
         font-size: $font-size-small;
         text-align: center;
-        background: rgba(#fff, .2);
+        background: rgba(#fff, .15);
+        margin-left: $spacer / 2;
     }
 }

@@ -8,7 +8,7 @@ const Projects = ({ data }) => {
   const projects = data.allProjectsJson.edges
 
   return (
-    <div className="projects full-width">
+    <div className="projects full-width" id="projects">
       {projects.map(({ node }) => (
         <Link
           key={node.slug}

@@ -18,9 +18,16 @@
     border-radius: .25rem;
     transition-property: transform, background, box-shadow;
 
+    &,
+    .icon {
+        transition: .2s ease-out;
+    }
+
     .icon {
         width: 1rem;
         height: 1rem;
+        fill: $brand-grey-light;
+        transition: .2s ease-out;
     }
 
     &:hover,
@@ -28,6 +35,10 @@
         background: $brand-light;
         transform: translate3d(0, -.2rem, 0);
         box-shadow: 0 6px 10px rgba($brand-main, .1), 0 10px 25px rgba($brand-main, .1);
+
+        .icon {
+            fill: $brand-cyan;
+        }
     }
 
     .social--minimal & {
@@ -36,17 +47,8 @@
         margin-right: $spacer / 3;
 
         .icon {
-            fill: $brand-grey-light;
-            transition: .2s ease-out;
             width: .85rem;
             height: .85rem;
-        }
-
-        &:hover,
-        &:focus {
-            .icon {
-                fill: $brand-grey;
-            }
         }
     }
 }

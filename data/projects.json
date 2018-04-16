@@ -154,7 +154,7 @@
     "title": "ezeep",
     "slug": "ezeep",
     "img": "ezeep",
-    "description": "At ezeep, I created an unprecedented, market-leading & award-winning user experience based on the principles of emotional design way ahead of all competitors.\n\nThis included conceptualizing executing, and iterating on the creative & visual direction of the ezeep brand. I was leading the UI design & development of all ezeep web properties and marketing materials, on top of that I designed all app experiences of ezeep on Windows, macOS, iOS, and Android.\n\nezeep was acquired by [Cortado AG](https://www.cortado.com) in 2015 and became part of their [ThinPrint Cloud Services](https://www.thinprintcloud.com) suite of products.",
+    "description": "At ezeep, I created an unprecedented, market-leading & award-winning user experience based on the principles of emotional design way ahead of all competitors. This included conceptualizing executing, and iterating on the creative & visual direction of the ezeep brand.\n\nI was leading the UI design & development of all ezeep touch points and - as a product designer - defined the ezeep product based on user and market research in an iterative process. On top of that, I designed and helped building all app experiences of ezeep on Windows, macOS, iOS, and Android.\n\nezeep was acquired by [Cortado AG](https://www.cortado.com) in 2015 and became part of their [ThinPrint Cloud Services](https://www.thinprintcloud.com) suite of products.",
     "img_more": [
       "ezeep01",
       "ezeep02",
@@ -205,22 +205,6 @@
     "description": "Designing the app icon, a custom theme, and various promotion materials for Mr. Reader, a powerful RSS feed reader for iPad."
   },
   {
-    "title": "IPP Halle",
-    "slug": "ipp-halle",
-    "img": "ipp-halle.png",
-    "links": {
-      "Link": "http://ipp-halle.de"
-    },
-    "description": "",
-    "techstack": [
-      "Photoshop",
-      "CSS",
-      "JavaScript",
-      "PHP",
-      "WordPress"
-    ]
-  },
-  {
     "title": "iPixelPad",
     "slug": "ipixelpad",
     "img": "ipixelpad.jpg",
@@ -258,7 +242,7 @@
     "links": {
       "Link": "http://blogs.urz-uni-halle.de"
     },
-    "description": "",
+    "description": "Conceptualizing & implementing numerous in-house and public facing interfaces for thousands of students and staff. Additionally, conceptualizing, creating and maintaining the blog network & community for all students & staff.",
     "techstack": [
       "Photoshop",
       "SCSS",

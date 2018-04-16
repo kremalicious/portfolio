@@ -1,7 +1,8 @@
 @import 'variables';
 
 .footer {
-    padding: $spacer;
+    margin-top: $spacer * 4;
+    padding: $spacer * 2;
     text-align: center;
     color: $brand-grey-light;
 
