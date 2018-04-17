@@ -3,6 +3,10 @@
     "title": "Ocean Protocol",
     "slug": "oceanprotocol",
     "img": "oceanprotocol",
+    "img_more": [
+      "oceanprotocol01",
+      "oceanprotocol02"
+    ],
     "links": {
       "Link": "https://oceanprotocol.com"
     },
@@ -22,6 +26,10 @@
     "title": "IPDB",
     "slug": "ipdb",
     "img": "ipdb",
+    "img_more": [
+      "ipdb01",
+      "ipdb02"
+    ],
     "links": {
       "Link": "https://ipdb.io",
       "GitHub": "https://github.com/ipdb/website"
@@ -80,7 +88,8 @@
     "img": "bigchaindb",
     "img_more": [
       "bigchaindb01",
-      "bigchaindb02"
+      "bigchaindb02",
+      "bigchaindb03"
     ],
     "links": {
       "Link": "https://www.bigchaindb.com",

@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
-import Social from './Social'
+import FadeIn from '../atoms/FadeIn'
 import { Logo } from '../atoms/Icons'
+import Social from './Social'
 import './Header.scss'
 
 const Header = ({ meta, isHomepage }) => {
@@ -10,13 +11,16 @@ const Header = ({ meta, isHomepage }) => {
 
   return (
     <header className={classes}>
-      <Link className="header__name" to={'/'}>
-        <Logo className="header__logo" />
-        <h1 className="header__title">{meta.title.toLowerCase()}</h1>
-        <p className="header__description"><span>{'{ '}</span> {meta.tagline.toLowerCase()} <span>{' }'}</span></p>
-      </Link>
-
-      <Social meta={meta} minimal={!isHomepage} hide={!isHomepage} />
+      <FadeIn>
+        <Fragment>
+          <Link className="header__name" to={'/'}>
+            <Logo className="header__logo" />
+            <h1 className="header__title">{meta.title.toLowerCase()}</h1>
+            <p className="header__description"><span>{'{ '}</span> {meta.tagline.toLowerCase()} <span>{' }'}</span></p>
+          </Link>
+          <Social meta={meta} minimal={!isHomepage} hide={!isHomepage} />
+        </Fragment>
+      </FadeIn>
     </header>
   )
 }

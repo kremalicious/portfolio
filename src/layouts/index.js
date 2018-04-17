@@ -6,15 +6,15 @@ import Header from '../components/molecules/Header'
 import Footer from '../components/molecules/Footer'
 import './index.scss'
 
-const TemplateWrapper = props => {
-  const meta = props.data.allDataJson.edges[0].node
-  const isHomepage = props.location.pathname === '/'
+const TemplateWrapper = ({ data, location, children }) => {
+  const meta = data.allDataJson.edges[0].node
+  const isHomepage = location.pathname === '/'
 
   return (
     <div className="app">
       <Head meta={meta} />
       <Header meta={meta} isHomepage={isHomepage} />
-      <FadeIn>{props.children()}</FadeIn>
+      <FadeIn>{children()}</FadeIn>
       <Footer meta={meta} />
     </div>
   )
