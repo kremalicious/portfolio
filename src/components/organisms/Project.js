@@ -23,7 +23,8 @@ const Project = ({ pathContext }) => {
     previous,
   } = project
 
-  return <Fragment>
+  return (
+    <Fragment>
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -39,7 +40,8 @@ const Project = ({ pathContext }) => {
               <img className="project__image" src={images[img]} alt={title} />
             </FullWidth>
 
-            {!!img_more && <FullWidth>
+            {!!img_more &&
+              <FullWidth>
                 {img_more.map(key => (
                   <img
                     key={key}
@@ -48,7 +50,8 @@ const Project = ({ pathContext }) => {
                     alt={title}
                   />
                 ))}
-              </FullWidth>}
+              </FullWidth>
+            }
 
             <footer className="project__meta">
               {!!techstack && <ProjectTechstack techstack={techstack} />}
@@ -60,6 +63,7 @@ const Project = ({ pathContext }) => {
         <ProjectNav previous={previous} next={next} />
       </main>
     </Fragment>
+  )
 }
 
 Project.propTypes = {

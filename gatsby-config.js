@@ -9,10 +9,15 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     'gatsby-transformer-json',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-sass',
       options: {
-        includePaths: [`${__dirname}/node_modules`, `${__dirname}/src/styles`],
+        includePaths: [
+          `${__dirname}/node_modules`,
+          `${__dirname}/src/styles`
+        ],
       },
     },
     {
@@ -20,6 +25,13 @@ module.exports = {
       options: {
         name: 'data',
         path: `${__dirname}/data/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/images`,
       },
     },
     {
