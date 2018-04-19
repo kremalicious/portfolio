@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { Chain, GitHub, Dribbble } from '../atoms/Icons'
+import { Chain, GitHub, Dribbble, Info } from '../atoms/Icons'
 import './ProjectLinks.scss'
 
 const LinkIcon = ({ title }) => {
@@ -11,6 +11,8 @@ const LinkIcon = ({ title }) => {
     return <GitHub />
   } else if (title === 'Dribbble') {
     return <Dribbble />
+  } else if (title === 'Info') {
+    return <Info />
   } else {
     return null
   }

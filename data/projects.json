@@ -10,7 +10,7 @@
     "links": {
       "Link": "https://oceanprotocol.com"
     },
-    "description": "Conceptualizing, executing and iterating on the creative and visual direction of the Ocean Protocol brand. Leading the UI design & development of all Ocean Protocol web properties. \n\nInitial website in collaboration with [Balance](https://balance.io/).",
+    "description": "Conceptualizing, executing and iterating on the creative and visual direction of the Ocean Protocol brand. Leading the UI design & development of all Ocean Protocol web properties. \n\nInitial website in collaboration with [Balance](https://balance.io/). Key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).",
     "techstack": [
       "Sketch",
       "Affinity Designer",
@@ -34,7 +34,7 @@
       "Link": "https://ipdb.io",
       "GitHub": "https://github.com/ipdb/website"
     },
-    "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix.",
+    "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix.\n\nKey visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).",
     "techstack": [
       "Sketch",
       "Jekyll",
@@ -95,7 +95,7 @@
       "Link": "https://www.bigchaindb.com",
       "GitHub": "https://github.com/bigchaindb/site"
     },
-    "description": "Conceptualizing and executing the creative and visual direction of the BigchainDB brand. Leading the UI design & development of all BigchainDB web properties.",
+    "description": "Conceptualizing and executing the creative and visual direction of the BigchainDB brand. Leading the UI design & development of all BigchainDB web properties.\n\nKey visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).",
     "techstack": [
       "Sketch",
       "Affinity Designer",
@@ -211,16 +211,22 @@
     "title": "Mr. Reader",
     "slug": "mr-reader",
     "img": "mrreader",
-    "description": "Designing the app icon, a custom theme, and various promotion materials for Mr. Reader, a powerful RSS feed reader for iPad."
+    "description": "Designing the app icon, a custom theme, and various promotion materials for Mr. Reader, a powerful RSS feed reader for iPad.",
+    "techstack": [
+      "Photoshop"
+    ]
   },
   {
     "title": "iPixelPad",
     "slug": "ipixelpad",
-    "img": "ipixelpad.jpg",
+    "img": "ipixelpad",
     "links": {
-      "Info": "http://www.kremalicious.com/2010/02/ipixelpad/"
+      "Info": "https://kremalicious.com/ipixelpad/"
     },
-    "description": ""
+    "description": "So, what to do when everyone seem to release iPad icons but fail to include some crisp small size icons? Pushing the pixels for yourself of course. So here’s my take on the smaller sizes of an Apple iPad icon, called iPixelPad in the sizes 48px, 32px and 16px.",
+    "techstack": [
+      "Photoshop"
+    ]
   },
   {
     "title": "Shortmoves 10",

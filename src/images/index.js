@@ -24,6 +24,7 @@ import mrreader from './portfolio-mrreader.png'
 import outofwhaleoil from './portfolio-outofwhaleoil.png'
 import outofwhaleoil01 from './portfolio-outofwhaleoil-01.png'
 import outofwhaleoil02 from './portfolio-outofwhaleoil-02.png'
+import ipixelpad from './portfolio-ipixelpad.png'
 
 export default {
   oceanprotocol,
@@ -52,4 +53,5 @@ export default {
   outofwhaleoil,
   outofwhaleoil01,
   outofwhaleoil02,
+  ipixelpad,
 }
