@@ -24,28 +24,28 @@ const LinkIcon = ({ title }) => {
 const ProjectLinks = ({ links }) => (
   <div className="project__links">
     <h3 className="project__meta__title">
-      Links <span>See the project live on the interwebz.</span>
+      Links <span>Learn more on the interwebz.</span>
     </h3>
 
     <ul>
-      {Object.keys(links).map(key => {
-        if (links[key]) {
-          return (
-            <li key={key}>
-              <OutboundLink href={links[key]}>
-                <LinkIcon title={key} />
-                {key}
-              </OutboundLink>
-            </li>
-          )
-        }
+      {links.map(link => {
+        const { title, url } = link
+
+        return (
+          <li key={title}>
+            <OutboundLink href={url}>
+              <LinkIcon title={title} />
+              {title}
+            </OutboundLink>
+          </li>
+        )
       })}
     </ul>
   </div>
 )
 
 ProjectLinks.propTypes = {
-  links: PropTypes.object,
+  links: PropTypes.array,
 }
 
 export default ProjectLinks

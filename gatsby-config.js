@@ -17,22 +17,22 @@ module.exports = {
         includePaths: [
           `${__dirname}/node_modules`,
           `${__dirname}/src/styles`
-        ],
-      },
+        ]
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'data',
         path: `${__dirname}/data/`,
-      },
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
         path: `${__dirname}/src/images`,
-      },
+      }
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
@@ -41,7 +41,7 @@ module.exports = {
         head: false,
         anonymize: true,
         respectDNT: true,
-      },
-    },
-  ],
+      }
+    }
+  ]
 }

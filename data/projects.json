@@ -7,9 +7,10 @@
       "oceanprotocol01",
       "oceanprotocol02"
     ],
-    "links": {
-      "Link": "https://oceanprotocol.com"
-    },
+    "links": [
+      { "title": "Link", "url": "https://oceanprotocol.com" },
+      { "title": "GitHub", "url": "https://github.com/oceanprotocol/art" }
+    ],
     "description": "Conceptualizing, executing and iterating on the creative and visual direction of the Ocean Protocol brand. Leading the UI design & development of all Ocean Protocol web properties. \n\nInitial website in collaboration with [Balance](https://balance.io/). Key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).",
     "techstack": [
       "Sketch",
@@ -31,10 +32,16 @@
       "ipdb01",
       "ipdb02"
     ],
-    "links": {
-      "Link": "https://ipdb.io",
-      "GitHub": "https://github.com/ipdb/website"
-    },
+    "links": [
+      {
+        "title": "Link",
+        "url": "https://ipdb.io"
+      },
+      {
+        "title": "GitHub",
+        "url": "https://github.com/ipdb/website"
+      }
+    ],
     "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix.\n\nKey visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).",
     "techstack": [
       "Sketch",
@@ -52,9 +59,12 @@
     "title": "Berlin Innovation Ventures",
     "slug": "biv",
     "img": "biv",
-    "links": {
-      "Link": "http://berlininnovation.vc"
-    },
+    "links": [
+      {
+        "title": "Link",
+        "url": "http://berlininnovation.vc"
+      }
+    ],
     "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix.",
     "techstack": [
       "Sketch",
@@ -69,10 +79,16 @@
     "title": "9984 >> Summit 2017",
     "slug": "9984",
     "img": "ninenineeightfour",
-    "links": {
-      "Link": "https://2017.9984.io",
-      "GitHub": "https://github.com/9984/2017.9984.io"
-    },
+    "links": [
+      {
+        "title": "Link",
+        "url": "https://2017.9984.io"
+      },
+      {
+        "title": "GitHub",
+        "url": "https://github.com/9984/2017.9984.io"
+      }
+    ],
     "description": "Laudem antiopam mea eu. Nam in accusam mediocritatem, eos ad paulo putent, pericula appellantur te ius. Magna debet id cum, probo eloquentiam sea ut. Cu eam graeco disputationi, graece theophrastus no his, duo errem expetendis te. Duo ea soleat ignota temporibus, in vim scaevola salutandi. Postea possit est at, ea vitae necessitatibus vix.",
     "techstack": [
       "Sketch",
@@ -95,11 +111,20 @@
       "bigchaindb02",
       "bigchaindb03"
     ],
-    "links": {
-      "Link": "https://www.bigchaindb.com",
-      "GitHub": "https://github.com/bigchaindb/site",
-      "Dribbble": "https://dribbble.com/shots/2522184-BigchainDB-site"
-    },
+    "links": [
+      {
+        "title": "Link",
+        "url": "https://www.bigchaindb.com"
+      },
+      {
+        "title": "GitHub",
+        "url": "https://github.com/bigchaindb/site"
+      },
+      {
+        "title": "Dribbble",
+        "url": "https://dribbble.com/shots/2522184-BigchainDB-site"
+      }
+    ],
     "description": "Conceptualizing and executing the creative and visual direction of the BigchainDB brand. Leading the UI design & development of all BigchainDB web properties.\n\nKey visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).",
     "techstack": [
       "Sketch",
@@ -123,10 +148,16 @@
       "chartmogul01",
       "chartmogul02"
     ],
-    "links": {
-      "Link": "https://chartmogul.com/stripe/",
-      "Dribbble": "https://dribbble.com/kremalicious/projects/311439-ChartMogul"
-    },
+    "links": [
+      {
+        "title": "Link",
+        "url": "https://chartmogul.com/"
+      },
+      {
+        "title": "Dribbble",
+        "url": "https://dribbble.com/kremalicious/projects/311439-ChartMogul"
+      }
+    ],
     "description": "Co-designing and leading the front-end development of various ChartMogul web properties. Creating and implementing a UI design system into the ChartMogul application.",
     "techstack": [
       "Sketch",
@@ -150,9 +181,12 @@
     "title": "ShareTheMeal",
     "slug": "sharethemeal",
     "img": "sharethemeal",
-    "links": {
-      "Link": "https://sharethemeal.org/"
-    },
+    "links": [
+      {
+        "title": "Link",
+        "url": "https://sharethemeal.org/"
+      }
+    ],
     "description": "Co-designing and leading the front-end development of the ShareTheMeal website.",
     "techstack": [
       "Sketch",
@@ -180,10 +214,16 @@
       "ezeep04",
       "ezeep05"
     ],
-    "links": {
-      "Info": "https://kremalicious.com/enterprise-software-sucks/",
-      "Dribbble": "https://dribbble.com/kremalicious/projects/84318-ezeep"
-    },
+    "links": [
+      {
+        "title": "Info",
+        "url": "https://kremalicious.com/enterprise-software-sucks/"
+      },
+      {
+        "title": "Dribbble",
+        "url": "https://dribbble.com/kremalicious/projects/84318-ezeep"
+      }
+    ],
     "techstack": [
       "Photoshop",
       "Illustrator",
@@ -215,9 +255,12 @@
     "title": "iPixelPad",
     "slug": "ipixelpad",
     "img": "ipixelpad",
-    "links": {
-      "Download": "https://kremalicious.com/ipixelpad/"
-    },
+    "links": [
+      {
+        "title": "Download",
+        "url": "https://kremalicious.com/ipixelpad/"
+      }
+    ],
     "description": "So, what to do when everyone seem to release iPad icons but fail to include some crisp small size icons? Pushing the pixels for yourself of course. So here’s my take on the smaller sizes of an Apple iPad icon, called iPixelPad in the sizes 48px, 32px and 16px.",
     "techstack": [
       "Photoshop"
@@ -232,9 +275,12 @@
       "outofwhaleoil02"
     ],
     "description": "Tribute wallpaper pack inspired by the Futurama movie _Into The Wild Green Yonder_.",
-    "links": {
-      "Download": "https://kremalicious.com/out-of-whale-oil/"
-    },
+    "links": [
+      {
+        "title": "Download",
+        "url": "https://kremalicious.com/out-of-whale-oil/"
+      }
+    ],
     "techstack": [
       "Photoshop"
     ]
@@ -247,9 +293,16 @@
       "unihalle01",
       "unihalle02"
     ],
-    "links": {
-      "Link": "http://blogs.urz-uni-halle.de"
-    },
+    "links": [
+      {
+        "title": "Link",
+        "url": "http://blogs.urz-uni-halle.de"
+      },
+      {
+        "title": "Dribbble",
+        "url": "https://dribbble.com/kremalicious/projects/690029-MLU"
+      }
+    ],
     "description": "I worked for over 3 years at the IT services department of [Martin-Luther-Universität Halle-Wittenberg](http://www.uni-halle.de) where I conceptualized & implemented numerous in-house and public facing interfaces for thousands of students and staff.\n\nAdditionally, I conceptualized, designed, created, and maintained the blog network & community for all students & staff.",
     "techstack": [
       "Photoshop",
@@ -268,9 +321,12 @@
     "title": "Coffee Cup",
     "slug": "coffee-cup-icon",
     "img": "coffeecup",
-    "links": {
-      "Download": "https://kremalicious.com/coffee-cup-icon/"
-    },
+    "links": [
+      {
+        "title": "Download",
+        "url": "https://kremalicious.com/coffee-cup-icon/"
+      }
+    ],
     "description": "Desktop icons showing the fuel of most designers. Released as a goodie on [kremalicious.com](https://kremalicious.com/coffee-cup-icon/).",
     "techstack": [
       "Photoshop"

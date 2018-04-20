@@ -13,17 +13,14 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               node {
                 title
                 slug
+                description
                 img
                 img_more
-                links {
-                  Link
-                  GitHub
-                  Info
-                  Dribbble
-                  Download
-                }
-                description
                 techstack
+                links {
+                  title
+                  url
+                }
               }
               previous {
                 title

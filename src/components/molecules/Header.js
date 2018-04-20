@@ -16,7 +16,10 @@ const Header = ({ meta, isHomepage }) => {
           <Link className="header__name" to={'/'}>
             <Logo className="header__logo" />
             <h1 className="header__title">{meta.title.toLowerCase()}</h1>
-            <p className="header__description"><span>{'{ '}</span> {meta.tagline.toLowerCase()} <span>{' }'}</span></p>
+            <p className="header__description">
+              <span>{'{ '}</span> {meta.tagline.toLowerCase()}{' '}
+              <span>{' }'}</span>
+            </p>
           </Link>
           <Social meta={meta} minimal={!isHomepage} hide={!isHomepage} />
         </Fragment>

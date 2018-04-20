@@ -22,7 +22,7 @@ const SocialIcon = ({ title }) => {
 }
 
 const Social = ({ meta, minimal, hide }) => {
-  const social = meta.social
+  const { social } = meta
   const classes = minimal ? 'social social--minimal' : 'social'
 
   return (

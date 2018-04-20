@@ -3,12 +3,14 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 const Head = ({ meta }) => {
+  const { title, tagline, description } = meta
+
   return (
     <Helmet
-      defaultTitle={`${meta.title.toLowerCase()} { ${meta.tagline.toLowerCase()} }`}
-      titleTemplate={`%s // ${meta.title.toLowerCase()} { ${meta.tagline.toLowerCase()} }`}
+      defaultTitle={`${title.toLowerCase()} { ${tagline.toLowerCase()} }`}
+      titleTemplate={`%s // ${title.toLowerCase()} { ${tagline.toLowerCase()} }`}
     >
-      <meta name="description" content={meta.description} />
+      <meta name="description" content={description} />
       <link rel="stylesheet" href="https://use.typekit.net/dtg3zui.css" />
     </Helmet>
   )

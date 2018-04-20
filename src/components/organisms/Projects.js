@@ -17,10 +17,7 @@ const Projects = ({ data }) => {
           className="projects__project"
         >
           <h1 className="projects__project__title">{node.title}</h1>
-          <ProjectImage
-            src={images[node.img]}
-            alt={node.title}
-          />
+          <ProjectImage src={images[node.img]} alt={node.title} />
         </Link>
       ))}
     </div>
