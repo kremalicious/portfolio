@@ -15,6 +15,7 @@
       "Sketch",
       "Affinity Designer",
       "React",
+      "HTML",
       "SCSS",
       "JavaScript",
       "Travis",
@@ -39,6 +40,7 @@
       "Sketch",
       "Jekyll",
       "Gulp",
+      "HTML",
       "SCSS",
       "JavaScript",
       "Travis",
@@ -58,6 +60,7 @@
       "Sketch",
       "Jekyll",
       "Gulp",
+      "HTML",
       "SCSS",
       "JavaScript"
     ]
@@ -75,6 +78,7 @@
       "Sketch",
       "Jekyll",
       "Gulp",
+      "HTML",
       "SCSS",
       "JavaScript",
       "Travis",
@@ -93,7 +97,8 @@
     ],
     "links": {
       "Link": "https://www.bigchaindb.com",
-      "GitHub": "https://github.com/bigchaindb/site"
+      "GitHub": "https://github.com/bigchaindb/site",
+      "Dribbble": "https://dribbble.com/shots/2522184-BigchainDB-site"
     },
     "description": "Conceptualizing and executing the creative and visual direction of the BigchainDB brand. Leading the UI design & development of all BigchainDB web properties.\n\nKey visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).",
     "techstack": [
@@ -102,6 +107,7 @@
       "Illustrator",
       "Jekyll",
       "Gulp",
+      "HTML",
       "SCSS",
       "JavaScript",
       "Travis",
@@ -118,13 +124,15 @@
       "chartmogul02"
     ],
     "links": {
-      "Link": "https://chartmogul.com/stripe/"
+      "Link": "https://chartmogul.com/stripe/",
+      "Dribbble": "https://dribbble.com/kremalicious/projects/311439-ChartMogul"
     },
     "description": "Co-designing and leading the front-end development of various ChartMogul web properties. Creating and implementing a UI design system into the ChartMogul application.",
     "techstack": [
       "Sketch",
       "Affinity Designer",
       "Illustrator",
+      "HTML",
       "SCSS",
       "JavaScript",
       "PHP",
@@ -151,6 +159,7 @@
       "Illustrator",
       "Jekyll",
       "Gulp",
+      "HTML",
       "SCSS",
       "JavaScript",
       "Travis",
@@ -163,21 +172,24 @@
     "title": "ezeep",
     "slug": "ezeep",
     "img": "ezeep",
-    "description": "At ezeep, I created an unprecedented, market-leading & award-winning user experience based on the principles of emotional design way ahead of all competitors. This included conceptualizing executing, and iterating on the creative & visual direction of the ezeep brand.\n\nI was leading the UI design & development of all ezeep touch points and - as a product designer - defined the ezeep product based on user and market research in an iterative process. On top of that, I designed and helped building all app experiences of ezeep on Windows, macOS, iOS, and Android.\n\nezeep was acquired by [Cortado AG](https://www.cortado.com) in 2015 and became part of their [ThinPrint Cloud Services](https://www.thinprintcloud.com) suite of products.",
+    "description": "From 2012 to 2015 I worked at ezeep, where I created an unprecedented, market-leading & award-winning user experience based on the principles of emotional design way ahead of all competitors. This included conceptualizing executing, and iterating on the creative & visual direction of the ezeep brand.\n\nI was leading the UI design & development of all ezeep touch points and - as a product designer - defined the ezeep product based on user and market research in an iterative process. On top of that, I designed and helped building all app experiences of ezeep on Windows, macOS, iOS, and Android.\n\nezeep was acquired by [Cortado AG](https://www.cortado.com) in 2015 and became part of their [ThinPrint Cloud Services](https://www.thinprintcloud.com) suite of products.",
     "img_more": [
       "ezeep01",
       "ezeep02",
       "ezeep03",
-      "ezeep04"
+      "ezeep04",
+      "ezeep05"
     ],
     "links": {
-      "Link": "https://kremalicious.com/enterprise-software-sucks/"
+      "Info": "https://kremalicious.com/enterprise-software-sucks/",
+      "Dribbble": "https://dribbble.com/kremalicious/projects/84318-ezeep"
     },
     "techstack": [
       "Photoshop",
       "Illustrator",
       "InDesign",
       "Sketch",
+      "HTML",
       "SCSS",
       "JavaScript",
       "PHP",
@@ -191,27 +203,10 @@
     ]
   },
   {
-    "title": "Exquisite Droid",
-    "slug": "exquisitedroid",
-    "img": "exquisitedroid",
-    "links": {
-      "Link": "https://exquisitedroid.com",
-      "Dribbble": "https://dribbble.com/shots/380597-ExquisiteDroid-Header"
-    },
-    "description": "Designing, developing and writing a showcase website presenting the most beautiful and usable apps created for Android.",
-    "techstack": [
-      "Photoshop",
-      "CSS",
-      "JavaScript",
-      "PHP",
-      "WordPress"
-    ]
-  },
-  {
     "title": "Mr. Reader",
     "slug": "mr-reader",
     "img": "mrreader",
-    "description": "Designing the app icon, a custom theme, and various promotion materials for Mr. Reader, a powerful RSS feed reader for iPad.",
+    "description": "I designed the app icon, a custom theme, and various promotion materials for Mr. Reader, a powerful RSS feed reader for iPad.",
     "techstack": [
       "Photoshop"
     ]
@@ -221,18 +216,12 @@
     "slug": "ipixelpad",
     "img": "ipixelpad",
     "links": {
-      "Info": "https://kremalicious.com/ipixelpad/"
+      "Download": "https://kremalicious.com/ipixelpad/"
     },
     "description": "So, what to do when everyone seem to release iPad icons but fail to include some crisp small size icons? Pushing the pixels for yourself of course. So here’s my take on the smaller sizes of an Apple iPad icon, called iPixelPad in the sizes 48px, 32px and 16px.",
     "techstack": [
       "Photoshop"
     ]
-  },
-  {
-    "title": "Shortmoves 10",
-    "slug": "shortmoves10",
-    "img": "shortmoves10.jpg",
-    "description": ""
   },
   {
     "title": "Out Of Whale Oil",
@@ -251,42 +240,38 @@
     ]
   },
   {
-    "title": "mluBlogs",
-    "slug": "mlublogs",
-    "img": "mlublogs.png",
+    "title": "Martin-Luther-Universität Halle-Wittenberg",
+    "slug": "unihalle",
+    "img": "unihalle",
+    "img_more": [
+      "unihalle01",
+      "unihalle02"
+    ],
     "links": {
       "Link": "http://blogs.urz-uni-halle.de"
     },
-    "description": "Conceptualizing & implementing numerous in-house and public facing interfaces for thousands of students and staff. Additionally, conceptualizing, creating and maintaining the blog network & community for all students & staff.",
+    "description": "I worked for over 3 years at the IT services department of [Martin-Luther-Universität Halle-Wittenberg](http://www.uni-halle.de) where I conceptualized & implemented numerous in-house and public facing interfaces for thousands of students and staff.\n\nAdditionally, I conceptualized, designed, created, and maintained the blog network & community for all students & staff.",
     "techstack": [
       "Photoshop",
+      "Illustrator",
+      "HTML",
       "SCSS",
       "JavaScript",
       "PHP",
+      "Ruby on Rails",
       "WordPress",
-      "Ilias"
+      "Ilias",
+      "Stud.IP"
     ]
   },
   {
     "title": "Coffee Cup",
-    "slug": "coffee-cup",
-    "img": "coffee-cup.jpg",
+    "slug": "coffee-cup-icon",
+    "img": "coffeecup",
     "links": {
-      "Info": "http://www.kremalicious.com/2008/10/the-finest-coffee-cups-most-incredible-coffee-icons-on-the-web/"
+      "Download": "https://kremalicious.com/coffee-cup-icon/"
     },
-    "description": "",
-    "techstack": [
-      "Photoshop"
-    ]
-  },
-  {
-    "title": "Niépce's Camera Obscura",
-    "slug": "camera-obscura",
-    "img": "camera-obscura.jpg",
-    "links": {
-      "Info": "http://www.kremalicious.com/2008/06/new-goodie-niepces-camera-obscura-and-the-history-of-the-first-photograph/"
-    },
-    "description": "",
+    "description": "Desktop icons showing the fuel of most designers. Released as a goodie on [kremalicious.com](https://kremalicious.com/coffee-cup-icon/).",
     "techstack": [
       "Photoshop"
     ]
@@ -294,7 +279,18 @@
   {
     "title": "Allinnia Creative Group",
     "slug": "allinnia",
-    "img": "allinnia.jpg",
-    "description": ""
+    "img": "allinnia",
+    "img_more": [
+      "allinnia01",
+      "allinnia02"
+    ],
+    "description": "",
+    "techstack": [
+      "Photoshop",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PHP"
+    ]
   }
 ]

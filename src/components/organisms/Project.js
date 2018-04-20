@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import ReactMarkdown from 'react-markdown'
 import Content from '../atoms/Content'
 import FullWidth from '../atoms/FullWidth'
+import ProjectImage from '../atoms/ProjectImage'
 import ProjectTechstack from '../molecules/ProjectTechstack'
 import ProjectLinks from '../molecules/ProjectLinks'
 import ProjectNav from '../molecules/ProjectNav'
@@ -37,15 +38,17 @@ const Project = ({ pathContext }) => {
             <ReactMarkdown source={description} escapeHtml={false} className="project__description" />
 
             <FullWidth>
-              <img className="project__image" src={images[img]} alt={title} />
+              <ProjectImage
+                src={images[img]}
+                alt={title}
+              />
             </FullWidth>
 
             {!!img_more &&
               <FullWidth>
                 {img_more.map(key => (
-                  <img
+                  <ProjectImage
                     key={key}
-                    className="project__image"
                     src={images[key]}
                     alt={title}
                   />

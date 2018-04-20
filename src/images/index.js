@@ -19,12 +19,19 @@ import ezeep01 from './portfolio-ezeep-01.png'
 import ezeep02 from './portfolio-ezeep-02.png'
 import ezeep03 from './portfolio-ezeep-03.png'
 import ezeep04 from './portfolio-ezeep-04.png'
-import exquisitedroid from './portfolio-exquisitedroid.png'
+import ezeep05 from './portfolio-ezeep-05.png'
 import mrreader from './portfolio-mrreader.png'
 import outofwhaleoil from './portfolio-outofwhaleoil.png'
 import outofwhaleoil01 from './portfolio-outofwhaleoil-01.png'
 import outofwhaleoil02 from './portfolio-outofwhaleoil-02.png'
 import ipixelpad from './portfolio-ipixelpad.png'
+import unihalle from './portfolio-unihalle.png'
+import unihalle01 from './portfolio-unihalle-01.png'
+import unihalle02 from './portfolio-unihalle-02.png'
+import coffeecup from './portfolio-coffeecup.png'
+import allinnia from './portfolio-allinnia.png'
+import allinnia01 from './portfolio-allinnia-01.png'
+import allinnia02 from './portfolio-allinnia-02.png'
 
 export default {
   oceanprotocol,
@@ -48,10 +55,17 @@ export default {
   ezeep02,
   ezeep03,
   ezeep04,
-  exquisitedroid,
+  ezeep05,
   mrreader,
   outofwhaleoil,
   outofwhaleoil01,
   outofwhaleoil02,
   ipixelpad,
+  unihalle,
+  unihalle01,
+  unihalle02,
+  coffeecup,
+  allinnia,
+  allinnia01,
+  allinnia02,
 }
