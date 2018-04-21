@@ -3,9 +3,9 @@
 .project__links {
     ul {
         padding: 0;
-        margin-left: -($spacer / 2);
         display: flex;
         flex-wrap: wrap;
+        margin-left: -($spacer / 2);
     }
 
     li {
