@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import WebFont from 'webfontloader'
 import Head from '../components/atoms/Head'
 import Header from '../components/organisms/Header'
 import Footer from '../components/organisms/Footer'
@@ -13,8 +12,6 @@ const TemplateWrapper = ({ data, location, children }) => {
   return (
     <div className="app">
       <Head meta={meta} />
-      {WebFont.load({ typekit: { id: meta.typekit } })}
-
       <Header meta={meta} isHomepage={isHomepage} />
 
       {children()}
