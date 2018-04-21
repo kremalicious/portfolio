@@ -1,0 +1,19 @@
+@import 'variables';
+
+.availability {
+    position: absolute;
+    bottom: 0;
+    background: rgba($brand-light, .8);
+    border-radius: .25rem;
+    color: $brand-grey-light;
+    z-index: 1;
+    padding: $spacer / 2;
+
+    p { margin-bottom: 0; }
+
+    &.available {
+        color: $brand-main;
+        position: fixed;
+        bottom: $spacer;
+    }
+}

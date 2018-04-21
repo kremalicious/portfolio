@@ -44,6 +44,9 @@ export const query = graphql`
             GitHub
             Dribbble
           }
+          availability
+          typekit
+          googleanalytics
         }
       }
     }

@@ -1,9 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import WebFont from 'webfontloader'
 
 const Head = ({ meta }) => {
-  const { title, tagline, description } = meta
+  const { title, tagline, description, url, typekit } = meta
+
+  WebFont.load({ typekit: { id: typekit } })
 
   return (
     <Helmet
@@ -11,7 +14,9 @@ const Head = ({ meta }) => {
       titleTemplate={`%s // ${title.toLowerCase()} { ${tagline.toLowerCase()} }`}
     >
       <meta name="description" content={description} />
-      <link rel="stylesheet" href="https://use.typekit.net/dtg3zui.css" />
+
+      {window.location.protocol + '//' + window.location.hostname !==
+        `${url}` && <meta content="noindex,nofollow" name="robots" />}
     </Helmet>
   )
 }

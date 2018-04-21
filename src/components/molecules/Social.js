@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { Email, Blog, Twitter, GitHub, Dribbble } from '../atoms/Icons'
+import FadeIn from '../atoms/FadeIn'
 import './Social.scss'
 
 const SocialIcon = ({ title }) => {
@@ -28,18 +29,20 @@ const Social = ({ meta, minimal, hide }) => {
   return (
     <Fragment>
       {!hide && (
-        <aside className={classes}>
-          {Object.keys(social).map((key, i) => (
-            <OutboundLink
-              className="social__link"
-              href={social[key]}
-              key={i}
-              title={key}
-            >
-              <SocialIcon title={key} />
-            </OutboundLink>
-          ))}
-        </aside>
+        <FadeIn>
+          <aside className={classes}>
+            {Object.keys(social).map((key, i) => (
+              <OutboundLink
+                className="social__link"
+                href={social[key]}
+                key={i}
+                title={key}
+              >
+                <SocialIcon title={key} />
+              </OutboundLink>
+            ))}
+          </aside>
+        </FadeIn>
       )}
     </Fragment>
   )

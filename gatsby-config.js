@@ -1,8 +1,9 @@
 const meta = require('./data/meta.json')
+const { url, googleanalytics } = meta
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `${meta.url}`,
+    siteUrl: `${url}`,
   },
   plugins: [
     'gatsby-plugin-react-next',
@@ -37,7 +38,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: `${meta.googleanalytics}`,
+        trackingId: `${googleanalytics}`,
         head: false,
         anonymize: true,
         respectDNT: true,

@@ -1,12 +1,15 @@
 @import 'variables';
 
 .header {
+    position: relative;
     padding: $spacer;
-    min-height: calc(100vh - #{$spacer});
+    height: calc(100vh - #{$spacer});
+    max-height: 1000px;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
+    text-align: center;
 }
 
 .header__logo {
@@ -41,15 +44,14 @@
 }
 
 .header__name {
-    height: 100%;
     pointer-events: none;
 }
 
 .header--minimal {
-    min-height: 0;
+    height: auto;
 
     @media (min-width: 30rem) {
-        margin-top: $spacer / 2;
+        margin-top: $spacer;
         margin-bottom: $spacer;
     }
 

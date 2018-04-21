@@ -63,7 +63,27 @@
     height: 100%;
     display: block;
     align-self: center;
-    margin-top: -$spacer;
+    margin-top: $spacer * 8;
+    transition: .2s ease-out;
+
+    @media (min-width: 45rem) {
+        margin-top: -$spacer;
+    }
+
+    .icon {
+        fill: $brand-grey-light;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    &:hover,
+    &:focus {
+        transform: translate3d(0, -.3rem, 0);
+
+        .icon {
+            fill: $brand-cyan;
+        }
+    }
 
     &:first-child {
         margin-left: 48.5%;
@@ -71,11 +91,5 @@
 
     &:last-child {
         margin-right: auto;
-    }
-
-    .icon {
-        fill: $brand-grey-light;
-        width: 1.5rem;
-        height: 1.5rem;
     }
 }

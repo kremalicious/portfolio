@@ -72,3 +72,13 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       }))
   })
 }
+
+// https://github.com/gatsbyjs/gatsby/issues/2285#issuecomment-333343938
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  if (stage === 'build-html') {
+    config.loader('null', {
+      test: /webfontloader/,
+      loader: 'null-loader',
+    })
+  }
+}

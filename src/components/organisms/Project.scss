@@ -2,7 +2,11 @@
 
 .project {
     .project__image {
-        margin-bottom: $spacer * 6;
+        margin-bottom: $spacer * 3;
+
+        @media (min-width: 30rem) {
+            margin-bottom: $spacer * 6;
+        }
     }
 }
 

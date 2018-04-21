@@ -28,9 +28,7 @@
         width: 100%;
         color: $brand-cyan;
         text-align: center;
-        border-top-left-radius: .25rem;
-        border-top-right-radius: .25rem;
-        border-bottom: 1px solid $brand-cyan;
+        border-radius: .25rem;
         padding: $spacer / 4 $spacer / 2;
         transition-property: all;
         background: rgba(#fff, .15);
