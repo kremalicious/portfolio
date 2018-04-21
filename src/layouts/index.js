@@ -6,7 +6,7 @@ import Footer from '../components/organisms/Footer'
 import './index.scss'
 
 const TemplateWrapper = ({ data, location, children }) => {
-  const meta = data.allDataJson.edges[0].node
+  const meta = data.dataJson
   const isHomepage = location.pathname === '/'
 
   return (
@@ -22,34 +22,30 @@ const TemplateWrapper = ({ data, location, children }) => {
 }
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.any,
-  data: PropTypes.object,
-  location: PropTypes.object,
+  children: PropTypes.func,
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 }
 
 export default TemplateWrapper
 
 export const query = graphql`
   query metaQuery {
-    allDataJson {
-      edges {
-        node {
-          title
-          tagline
-          description
-          url
-          social {
-            Email
-            Blog
-            Twitter
-            GitHub
-            Dribbble
-          }
-          availability
-          typekit
-          googleanalytics
-        }
+    dataJson {
+      title
+      tagline
+      description
+      url
+      social {
+        Email
+        Blog
+        Twitter
+        GitHub
+        Dribbble
       }
+      availability
+      typekit
+      googleanalytics
     }
   }
 `

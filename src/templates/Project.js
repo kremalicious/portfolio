@@ -79,6 +79,7 @@ export const projectQuery = graphql`
   query ProjectBySlug($slug: String!) {
     projectsJson(slug: { eq: $slug }) {
       title
+      slug
       img
       img_more
       description

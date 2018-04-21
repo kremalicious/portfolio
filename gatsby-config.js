@@ -6,26 +6,21 @@ module.exports = {
     siteUrl: `${url}`,
   },
   plugins: [
-    'gatsby-plugin-react-next',
-    'gatsby-plugin-react-helmet',
-    'gatsby-transformer-json',
-    'gatsby-plugin-offline',
-    'gatsby-plugin-remove-trailing-slashes',
     {
       resolve: 'gatsby-plugin-sass',
       options: {
         includePaths: [
           `${__dirname}/node_modules`,
           `${__dirname}/src/styles`
-        ]
-      }
+        ],
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'data',
         path: `${__dirname}/data/`,
-      }
+      },
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
@@ -34,7 +29,11 @@ module.exports = {
         head: false,
         anonymize: true,
         respectDNT: true,
-      }
-    }
-  ]
+      },
+    },
+    'gatsby-plugin-react-next',
+    'gatsby-plugin-react-helmet',
+    'gatsby-transformer-json',
+    'gatsby-plugin-remove-trailing-slashes'
+  ],
 }
