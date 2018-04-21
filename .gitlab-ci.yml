@@ -4,14 +4,30 @@ cache:
   paths:
     - node_modules/
 
+before_script:
+  - sudo apt-get -qq update
+  - sudo apt-get install python python-pip
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
+  - npm i -g gatsby-cli
+  - export PATH="$PATH:/usr/local/bin/gatsby"
+
+stages:
+    - testing
+    - deployment
+
 testing:
   stage: test
   script:
-    - npm i -g gatsby-cli
-    - export PATH="$PATH:/usr/local/bin/gatsby"
     - npm i
     - npm test
     - npm run build
   artifacts:
     paths:
       - public
+
+deployment:
+    stage: deploy
+    script: aws s3 sync ./public s3://beta.matthiaskretschmann.com --delete --acl public-read
+    only:
+        - master
