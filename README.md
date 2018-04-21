@@ -1,11 +1,17 @@
 #  matthiaskretschmann.com
 > Portfolio of Matthias Kretschmann
 
-[![build status](https://www.git.berlin/kremalicious/portfolio/badges/master/build.svg)](https://www.git.berlin/kremalicious/portfolio/commits/master)
+[![pipeline status](https://git.berlin/m/portfolio/badges/master/pipeline.svg)](https://git.berlin/m/portfolio/commits/master)
 
 ## Development
 
 ```bash
 npm i
 npm start
+```
+
+## Deployment
+
+```bash
+npm run deploy
 ```

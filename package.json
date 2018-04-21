@@ -36,7 +36,8 @@
     "build": "gatsby build",
     "start": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "deploy": "./deploy.sh"
   },
   "browserslist": [
     "defaults"
