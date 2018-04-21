@@ -3,8 +3,8 @@ import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
 import FadeIn from '../atoms/FadeIn'
 import { Logo } from '../atoms/Icons'
-import Social from './Social'
-import Availability from './Availability'
+import Social from '../molecules/Social'
+import Availability from '../molecules/Availability'
 import './Header.scss'
 
 const Header = ({ meta, isHomepage }) => {
@@ -17,8 +17,7 @@ const Header = ({ meta, isHomepage }) => {
           <Logo className="header__logo" />
           <h1 className="header__title">{meta.title.toLowerCase()}</h1>
           <p className="header__description">
-            <span>{'{ '}</span> {meta.tagline.toLowerCase()}{' '}
-            <span>{' }'}</span>
+            <span>{'{ '}</span> {meta.tagline.toLowerCase()} <span>{' }'}</span>
           </p>
         </Link>
       </FadeIn>

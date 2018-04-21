@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Head from '../components/atoms/Head'
-import FadeIn from '../components/atoms/FadeIn'
-import Header from '../components/molecules/Header'
-import Footer from '../components/molecules/Footer'
+import Header from '../components/organisms/Header'
+import Footer from '../components/organisms/Footer'
 import './index.scss'
 
 const TemplateWrapper = ({ data, location, children }) => {
@@ -14,14 +13,16 @@ const TemplateWrapper = ({ data, location, children }) => {
     <div className="app">
       <Head meta={meta} />
       <Header meta={meta} isHomepage={isHomepage} />
-      <FadeIn>{children()}</FadeIn>
+
+      {children()}
+
       <Footer meta={meta} />
     </div>
   )
 }
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.any,
   data: PropTypes.object,
   location: PropTypes.object,
 }

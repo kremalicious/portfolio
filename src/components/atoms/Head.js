@@ -9,14 +9,13 @@ class Head extends React.Component {
   }
 
   render() {
-    const { title, tagline, description, url } = this.props.meta
+    const { title, tagline, description } = this.props.meta
 
     return (
       <Helmet
         defaultTitle={`${title.toLowerCase()} { ${tagline.toLowerCase()} }`}
         titleTemplate={`%s // ${title.toLowerCase()} { ${tagline.toLowerCase()} }`}
       >
-
         <meta name="description" content={description} />
 
         <meta content="noindex,nofollow" name="robots" />

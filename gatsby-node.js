@@ -4,7 +4,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
 
   return new Promise((resolve, reject) => {
-    const template = path.resolve('src/components/organisms/Project.js')
+    const template = path.resolve('src/templates/Project.js')
 
     resolve(graphql(`
         {
@@ -40,27 +40,14 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           reject(result.errors)
         }
 
-        result.data.allProjectsJson.edges.forEach(
-          ({ node, previous, next }) => {
+        result.data.allProjectsJson.edges.forEach(({ node, previous, next }) => {
             const slug = node.slug
-            const title = node.title
-            const img = node.img
-            const img_more = node.img_more
-            const description = node.description
-            const links = node.links
-            const techstack = node.techstack
 
             createPage({
-              path: slug,
+              path: `/${slug}/`,
               component: template,
               context: {
-                title,
                 slug,
-                img,
-                img_more,
-                description,
-                techstack,
-                links,
                 previous,
                 next,
               },
@@ -71,6 +58,20 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         resolve()
       }))
   })
+}
+
+// https://github.com/saschajullmann/gatsby-starter-gatsbythemes/blob/master/gatsby-node.js
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  switch (stage) {
+    case 'develop':
+      config.preLoader('eslint-loader', {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+      })
+
+      break
+  }
+  return config
 }
 
 // https://github.com/gatsbyjs/gatsby/issues/2285#issuecomment-333343938

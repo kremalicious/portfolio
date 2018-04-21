@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Social from './Social'
+import Social from '../molecules/Social'
 import './Footer.scss'
 
 const Footer = ({ meta }) => {
