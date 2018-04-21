@@ -19,9 +19,7 @@ class Head extends React.Component {
 
         <meta name="description" content={description} />
 
-        {window.location.protocol + '//' + window.location.hostname !== `${url}` &&
-          <meta content="noindex,nofollow" name="robots" />
-        }
+        <meta content="noindex,nofollow" name="robots" />
       </Helmet>
     )
   }

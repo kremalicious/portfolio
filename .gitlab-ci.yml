@@ -1,19 +1,17 @@
-image: node:latest
-
 cache:
   paths:
     - node_modules/
 
-before_script:
-  - npm i -g gatsby-cli
-  - export PATH="$PATH:/usr/local/bin/gatsby"
-
 stages:
-    - testing
+  - build
+  - deploy
 
-testing:
-  stage: test
+build:
+  image: node:latest
+  stage: build
   script:
+    - npm i -g gatsby-cli
+    - export PATH="$PATH:/usr/local/bin/gatsby"
     - npm i
     - npm test
     - npm run build
@@ -21,8 +19,10 @@ testing:
     paths:
       - public
 
-# deployment:
-#     stage: deploy
-#     script: aws s3 sync ./public s3://beta.matthiaskretschmann.com --delete --acl public-read
-#     only:
-#         - master
+deploy:
+  image: garland/aws-cli-docker:latest
+  stage: deploy
+  script:
+    - aws s3 sync ./public s3://beta.matthiaskretschmann.com --delete --acl public-read
+  only:
+    - master
