@@ -9,10 +9,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sass',
       options: {
-        includePaths: [
-          `${__dirname}/node_modules`,
-          `${__dirname}/src/styles`
-        ],
+        includePaths: [`${__dirname}/node_modules`, `${__dirname}/src/styles`],
       },
     },
     {
@@ -49,5 +46,8 @@ module.exports = {
     'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-json',
+    'gatsby-plugin-remove-trailing-slashes',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
   ],
 }

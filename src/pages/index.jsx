@@ -22,5 +22,12 @@ export const query = graphql`
         }
       }
     }
+    allImageSharp {
+      edges {
+        node {
+          id
+        }
+      }
+    }
   }
 `

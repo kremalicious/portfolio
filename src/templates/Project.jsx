@@ -41,17 +41,17 @@ class Project extends Component {
               className="project__description"
             />
 
-            <FullWidth>
-              <ProjectImage src={images[img]} alt={title} />
+            {/* <FullWidth>
+              <ProjectImage data={this.props.data.mainImage.childImageSharp} alt={title} />
             </FullWidth>
 
             {!!img_more && (
               <FullWidth>
                 {img_more.map(key => (
-                  <ProjectImage key={key} src={images[key]} alt={title} />
+                  <ProjectImage key={key} data={this.props.data.mainImage.childImageSharp} alt={title} />
                 ))}
               </FullWidth>
-            )}
+            )} */}
 
             <footer className="project__meta">
               {!!techstack && <ProjectTechstack techstack={techstack} />}
@@ -74,7 +74,7 @@ Project.propTypes = {
 export default Project
 
 export const projectQuery = graphql`
-  query ProjectBySlug($slug: String!) {
+  query ProjectBySlug($slug: String!, $img: String!) {
     projectsJson(slug: { eq: $slug }) {
       title
       slug
@@ -86,6 +86,13 @@ export const projectQuery = graphql`
         url
       }
       techstack
+    }
+    mainImage: file(relativePath: { eq: $img }) {
+      childImageSharp {
+        sizes(maxWidth: 1440) {
+          ...GatsbyImageSharpSizes
+        }
+      }
     }
   }
 `
