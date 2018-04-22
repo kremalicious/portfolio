@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import withRouter from 'react-router-dom/withRouter'
-import Typekit from 'react-typekit'
 import TransitionGroup from 'react-transition-group/TransitionGroup'
 import Head from '../components/atoms/Head'
 import Header from '../components/organisms/Header'
@@ -27,7 +26,6 @@ const TemplateWrapper = ({ data, location, children }) => {
   return (
     <div className="app">
       <Head meta={meta} />
-      <Typekit kitId={meta.typekit} />
       <Header meta={meta} isHomepage={isHomepage} />
 
       <TransitionGroup appear={true}>
