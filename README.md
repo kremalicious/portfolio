@@ -10,6 +10,12 @@ npm i
 npm start
 ```
 
+Get SVG images
+
+```js
+import { ReactComponent as Logo } from '../../images/logo.svg'
+```
+
 ## Deployment
 
 ```bash

@@ -1,8 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import { Index } from '../atoms/Icons'
 import images from '../../images'
+import { ReactComponent as Index } from '../../images/index.svg'
+
+import '../atoms/Icons.scss'
 import './ProjectNav.scss'
 
 const ProjectNav = ({ previous, next }) => (
@@ -24,7 +26,7 @@ const ProjectNav = ({ previous, next }) => (
       title="Back to projects"
       to={'/#projects'}
     >
-      <Index />
+      <Index className="icon" />
     </Link>
     {next && (
       <div className="project__nav__item">

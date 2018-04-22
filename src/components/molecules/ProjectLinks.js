@@ -1,21 +1,31 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { Chain, GitHub, Dribbble, Info, Download } from '../atoms/Icons'
+
+import { ReactComponent as Link } from '../../images/link.svg'
+import { ReactComponent as Download } from '../../images/download.svg'
+import { ReactComponent as Info } from '../../images/info.svg'
+import { ReactComponent as Styleguide } from '../../images/styleguide.svg'
+import { ReactComponent as GitHub } from '../../images/github.svg'
+import { ReactComponent as Dribbble } from '../../images/dribbble.svg'
+
+import '../atoms/Icons.scss'
 import './ProjectLinks.scss'
 
-const LinkIcon = ({ title }) => {
-  switch (title) {
+const LinkIcon = props => {
+  switch (props.title) {
     case 'Link':
-      return <Chain />
+      return <Link {...props} />
     case 'GitHub':
-      return <GitHub />
+      return <GitHub {...props} />
     case 'Dribbble':
-      return <Dribbble />
+      return <Dribbble {...props} />
     case 'Info':
-      return <Info />
+      return <Info {...props} />
     case 'Download':
-      return <Download />
+      return <Download {...props} />
+    case 'Styleguide':
+      return <Styleguide {...props} />
     default:
       return null
   }
@@ -34,7 +44,7 @@ const ProjectLinks = ({ links }) => (
         return (
           <li key={title}>
             <OutboundLink href={url}>
-              <LinkIcon title={title} />
+              <LinkIcon title={title} className="icon" />
               {title}
             </OutboundLink>
           </li>

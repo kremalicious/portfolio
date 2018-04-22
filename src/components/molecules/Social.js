@@ -1,22 +1,29 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { Email, Blog, Twitter, GitHub, Dribbble } from '../atoms/Icons'
 import { FadeIn } from '../atoms/Animations'
+
+import { ReactComponent as Email } from '../../images/email.svg'
+import { ReactComponent as Blog } from '../../images/blog.svg'
+import { ReactComponent as Twitter } from '../../images/twitter.svg'
+import { ReactComponent as GitHub } from '../../images/github.svg'
+import { ReactComponent as Dribbble } from '../../images/dribbble.svg'
+
+import '../atoms/Icons.scss'
 import './Social.scss'
 
-const SocialIcon = ({ title }) => {
-  switch (title) {
+const SocialIcon = props => {
+  switch (props.title) {
     case 'Email':
-      return <Email />
+      return <Email {...props} />
     case 'Blog':
-      return <Blog />
+      return <Blog {...props} />
     case 'Twitter':
-      return <Twitter />
+      return <Twitter {...props} />
     case 'GitHub':
-      return <GitHub />
+      return <GitHub {...props} />
     case 'Dribbble':
-      return <Dribbble />
+      return <Dribbble {...props} />
     default:
       return null
   }
@@ -38,7 +45,7 @@ const Social = ({ meta, minimal, hide }) => {
                 key={i}
                 title={key}
               >
-                <SocialIcon title={key} />
+                <SocialIcon title={key} className="icon" />
               </OutboundLink>
             ))}
           </aside>

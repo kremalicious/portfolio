@@ -8,10 +8,20 @@
       "oceanprotocol02"
     ],
     "links": [
-      { "title": "Link", "url": "https://oceanprotocol.com" },
-      { "title": "GitHub", "url": "https://github.com/oceanprotocol/art" }
+      {
+        "title": "Link",
+        "url": "https://oceanprotocol.com"
+      },
+      {
+        "title": "Styleguide",
+        "url": "https://oceanprotocol.com/art"
+      },
+      {
+        "title": "GitHub",
+        "url": "https://github.com/oceanprotocol/art"
+      }
     ],
-    "description": "Conceptualizing, executing and iterating on the creative and visual direction of the Ocean Protocol brand. Leading the UI design & development of all Ocean Protocol web properties. \n\nInitial website in collaboration with [Balance](https://balance.io/). Key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).",
+    "description": "Conceptualizing, executing and iterating on the creative and visual direction of the Ocean Protocol brand. Leading the UI design & development of all Ocean Protocol web properties.\n\nInitial website in collaboration with [Balance](https://balance.io/). Key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).",
     "techstack": [
       "Sketch",
       "Affinity Designer",
@@ -36,6 +46,10 @@
       {
         "title": "Link",
         "url": "https://ipdb.io"
+      },
+      {
+        "title": "Styleguide",
+        "url": "https://ipdb.io/styleguide/"
       },
       {
         "title": "GitHub",
@@ -85,6 +99,10 @@
         "url": "https://2017.9984.io"
       },
       {
+        "title": "Styleguide",
+        "url": "https://2017.9984.io/styleguide/"
+      },
+      {
         "title": "GitHub",
         "url": "https://github.com/9984/2017.9984.io"
       }
@@ -115,6 +133,10 @@
       {
         "title": "Link",
         "url": "https://www.bigchaindb.com"
+      },
+      {
+        "title": "Styleguide",
+        "url": "https://www.bigchaindb.com/styleguide/"
       },
       {
         "title": "GitHub",
@@ -152,6 +174,10 @@
       {
         "title": "Link",
         "url": "https://chartmogul.com/"
+      },
+      {
+        "title": "Styleguide",
+        "url": "https://chartmogul.com/styleguide/"
       },
       {
         "title": "Dribbble",
@@ -303,7 +329,7 @@
         "url": "https://dribbble.com/kremalicious/projects/690029-MLU"
       }
     ],
-    "description": "I worked for over 3 years at the IT services department of [Martin-Luther-Universität Halle-Wittenberg](http://www.uni-halle.de) where I conceptualized & implemented numerous in-house and public facing interfaces for thousands of students and staff.\n\nAdditionally, I conceptualized, designed, created, and maintained the blog network & community for all students & staff.",
+    "description": "From 2009 to 2012 I worked at the IT services department of [Martin-Luther-Universität Halle-Wittenberg](http://www.uni-halle.de) where I conceptualized & implemented numerous in-house and public facing interfaces for thousands of students and staff.\n\nAdditionally, I conceptualized, designed, created, and maintained the blog network & community for all students & staff.",
     "techstack": [
       "Photoshop",
       "Illustrator",

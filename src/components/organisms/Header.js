@@ -2,9 +2,9 @@ import React from 'react'
 import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
 import { FadeIn } from '../atoms/Animations'
-import { Logo } from '../atoms/Icons'
 import Social from '../molecules/Social'
 import Availability from '../molecules/Availability'
+import { ReactComponent as Logo } from '../../images/logo.svg'
 import './Header.scss'
 
 const Header = ({ meta, isHomepage }) => {

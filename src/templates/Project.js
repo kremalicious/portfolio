@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import ReactMarkdown from 'react-markdown'
@@ -11,7 +11,7 @@ import ProjectNav from '../components/molecules/ProjectNav'
 import images from '../images'
 import './Project.scss'
 
-class Project extends React.Component {
+class Project extends Component {
   constructor() {
     super()
   }

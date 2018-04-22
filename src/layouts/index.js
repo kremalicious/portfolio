@@ -5,7 +5,7 @@ import TransitionGroup from 'react-transition-group/TransitionGroup'
 import Head from '../components/atoms/Head'
 import Header from '../components/organisms/Header'
 import Footer from '../components/organisms/Footer'
-import { FadeIn } from  '../components/atoms/Animations'
+import { FadeIn } from '../components/atoms/Animations'
 import './index.scss'
 
 class TransitionHandler extends Component {
@@ -31,7 +31,8 @@ const TemplateWrapper = ({ data, location, children }) => {
       <TransitionGroup appear={true}>
         <FadeIn
           key={location.pathname}
-          timeout={{ enter: 300, exit: 200, appear: 300 }}>
+          timeout={{ enter: 300, exit: 200, appear: 300 }}
+        >
           <TransitionHandler location={location}>
             {children()}
           </TransitionHandler>
