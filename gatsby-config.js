@@ -34,6 +34,5 @@ module.exports = {
     'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-json',
-    'gatsby-plugin-remove-trailing-slashes'
   ],
 }

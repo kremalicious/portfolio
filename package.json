@@ -2,6 +2,16 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "lint:js": "eslint ./gatsby-*.js && eslint ./src/**/*.js",
+    "lint:css": "stylelint ./src/**/*.scss",
+    "lint": "npm run lint:js && npm run lint:css",
+    "build": "gatsby build",
+    "start": "gatsby develop",
+    "format": "prettier --write 'src/**/*.js'",
+    "test": "npm run lint",
+    "deploy": "./deploy.sh"
+  },
   "dependencies": {
     "gatsby": "^1.9.253",
     "gatsby-link": "^1.6.41",
@@ -26,16 +36,6 @@
     "prettier": "^1.12.1",
     "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.2.0"
-  },
-  "scripts": {
-    "lint:js": "eslint ./gatsby-*.js && eslint ./src/**/*.js",
-    "lint:css": "stylelint ./src/**/*.scss",
-    "lint": "npm run lint:js && npm run lint:css",
-    "build": "gatsby build",
-    "start": "gatsby develop",
-    "format": "prettier --write 'src/**/*.js'",
-    "test": "npm run lint",
-    "deploy": "./deploy.sh"
   },
   "browserslist": [
     "defaults"
