@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
-import FadeIn from '../atoms/FadeIn'
+import { FadeIn } from '../atoms/Animations'
 import { Logo } from '../atoms/Icons'
 import Social from '../molecules/Social'
 import Availability from '../molecules/Availability'

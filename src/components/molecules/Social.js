@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { Email, Blog, Twitter, GitHub, Dribbble } from '../atoms/Icons'
-import FadeIn from '../atoms/FadeIn'
+import { FadeIn } from '../atoms/Animations'
 import './Social.scss'
 
 const SocialIcon = ({ title }) => {

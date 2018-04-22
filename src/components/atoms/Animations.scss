@@ -1,0 +1,26 @@
+.fadein-appear {
+    opacity: .01;
+
+    &.fadein-appear-active {
+        opacity: 1;
+        transition: 400ms ease-in;
+    }
+}
+
+.fadein-enter {
+    opacity: .01;
+
+    &.fadein-enter-active {
+        opacity: 1;
+        transition: 300ms ease-out;
+    }
+}
+
+.fadein-exit {
+    opacity: 1;
+    transition: 300ms ease-in;
+
+    &.fadein-exit-active {
+        opacity: .01;
+    }
+}

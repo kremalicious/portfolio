@@ -1,8 +1,0 @@
-.fadein-appear {
-    opacity: .01;
-
-    &.fadein-appear-active {
-        opacity: 1;
-        transition: opacity 400ms ease-in;
-    }
-}

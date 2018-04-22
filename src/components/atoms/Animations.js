@@ -1,15 +1,13 @@
 import React from 'react'
 import CSSTransition from 'react-transition-group/CSSTransition'
-import './FadeIn.scss'
+import './Animations.scss'
 
-const FadeIn = props => (
+export const FadeIn = props => (
   <CSSTransition
-    {...props}
     classNames="fadein"
     appear={true}
     in={true}
-    timeout={400}
+    timeout={{ enter: 300, exit: 200, appear: 300 }}
+    {...props}
   />
 )
-
-export default FadeIn

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import FadeIn from '../atoms/FadeIn'
+import { FadeIn } from '../atoms/Animations'
 import './Availability.scss'
 
 const Availability = ({ meta, hide }) => {

@@ -112,3 +112,12 @@ svg {
     flex: 1;
     padding: $spacer;
 }
+
+.transition-group {
+    position: relative;
+}
+
+.transition-container {
+    position: relative;
+    width: 100%;
+}
