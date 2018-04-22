@@ -44,7 +44,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             const slug = node.slug
 
             createPage({
-              path: `/${slug}/`,
+              path: slug,
               component: template,
               context: {
                 slug,

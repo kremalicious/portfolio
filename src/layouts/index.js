@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Typekit from 'react-typekit'
 import Head from '../components/atoms/Head'
 import Header from '../components/organisms/Header'
 import Footer from '../components/organisms/Footer'
@@ -12,6 +13,7 @@ const TemplateWrapper = ({ data, location, children }) => {
   return (
     <div className="app">
       <Head meta={meta} />
+      <Typekit kitId={meta.typekit} />
       <Header meta={meta} isHomepage={isHomepage} />
 
       {children()}
