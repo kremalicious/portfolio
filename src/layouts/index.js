@@ -25,7 +25,7 @@ const TemplateWrapper = ({ data, location, children }) => {
 
   return (
     <div className="app">
-      <Head meta={meta} />
+      <Head meta={meta} location={location} />
       <Header meta={meta} isHomepage={isHomepage} />
 
       <TransitionGroup appear={true}>

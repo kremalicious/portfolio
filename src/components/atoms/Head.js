@@ -1,23 +1,29 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import SEO from './SEO'
 
-const Head = ({ meta }) => {
-  const { title, tagline, description } = meta
+const Head = ({ meta, location }) => {
+  const { title, tagline } = meta
 
   return (
-    <Helmet
-      defaultTitle={`${title.toLowerCase()} { ${tagline.toLowerCase()} }`}
-      titleTemplate={`%s // ${title.toLowerCase()} { ${tagline.toLowerCase()} }`}
-    >
-      <meta name="description" content={description} />
-      <meta content="noindex,nofollow" name="robots" />
-    </Helmet>
+    <Fragment>
+      <Helmet
+        defaultTitle={`${title.toLowerCase()} { ${tagline.toLowerCase()} }`}
+        titleTemplate={`%s // ${title.toLowerCase()} { ${tagline.toLowerCase()} }`}
+      >
+        {location.hostname !== 'matthiaskretschmann.com' && (
+          <meta content="noindex,nofollow" name="robots" />
+        )}
+      </Helmet>
+      <SEO />
+    </Fragment>
   )
 }
 
 Head.propTypes = {
-  meta: PropTypes.object,
+  meta: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 }
 
 export default Head

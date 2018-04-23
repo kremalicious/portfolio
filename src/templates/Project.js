@@ -8,6 +8,7 @@ import ProjectImage from '../components/atoms/ProjectImage'
 import ProjectTechstack from '../components/molecules/ProjectTechstack'
 import ProjectLinks from '../components/molecules/ProjectLinks'
 import ProjectNav from '../components/molecules/ProjectNav'
+import SEO from '../components/atoms/SEO'
 import images from '../images'
 import './Project.scss'
 
@@ -17,22 +18,19 @@ class Project extends Component {
   }
 
   render() {
-    const {
-      title,
-      img,
-      img_more,
-      description,
-      links,
-      techstack,
-    } = this.props.data.projectsJson
-    const { next, previous } = this.props.pathContext
+    const postMeta = this.props.data.projectsJson
+    const pathContext = this.props.pathContext
+
+    const { title, img, img_more, description, links, techstack } = postMeta
+    const { next, previous } = pathContext
 
     return (
       <main className="screen screen--project">
         <Helmet>
           <title>{title}</title>
-          <meta name="description" content={description} />
         </Helmet>
+
+        <SEO postMeta={postMeta} />
 
         <article className="project">
           <Content>
