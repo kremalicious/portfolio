@@ -22,8 +22,7 @@ const Header = ({ meta, isHomepage }) => {
         </Link>
       </FadeIn>
 
-      <Social meta={meta} minimal={!isHomepage} hide={!isHomepage} />
-
+      <Social meta={meta} hide={!isHomepage} />
       <Availability meta={meta} hide={!isHomepage} />
     </header>
   )
