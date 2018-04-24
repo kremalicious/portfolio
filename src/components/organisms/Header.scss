@@ -17,7 +17,7 @@
     width: 1.5rem;
     height: 1.5rem;
     fill: $brand-grey-light;
-    margin-bottom: $spacer;
+    margin-bottom: $spacer / 2;
     margin-left: auto;
     margin-right: auto;
 }
@@ -32,6 +32,7 @@
     font-size: $font-size-h3;
     margin-right: $spacer / 4;
     color: $brand-main;
+    line-height: $line-height;
 }
 
 .header__description {
@@ -63,6 +64,7 @@
 
     .header__title {
         font-size: $font-size-h4;
+        line-height: $line-height-headings;
     }
 
     .header__description {

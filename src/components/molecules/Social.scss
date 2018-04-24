@@ -1,15 +1,15 @@
 @import 'variables';
 
 .social {
-    margin-top: $spacer;
+    margin-top: $spacer * 2;
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
 .social__link {
-    margin-left: $spacer / 2;
-    margin-right: $spacer / 2;
+    margin-left: $spacer / 4;
+    margin-right: $spacer / 4;
     padding: $spacer / 2;
     text-align: center;
     display: flex;
@@ -17,6 +17,11 @@
     justify-content: center;
     border-radius: .25rem;
     transition-property: transform, background, box-shadow;
+
+    @media (min-width: 30rem) {
+        margin-left: $spacer / 2;
+        margin-right: $spacer / 2;
+    }
 
     &,
     .icon {
