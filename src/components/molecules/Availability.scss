@@ -6,8 +6,9 @@
     background: rgba($brand-light, .8);
     border-radius: .25rem;
     color: $brand-grey-light;
-    z-index: 1;
+    z-index: 2;
     padding: $spacer / 2;
+    display: block;
 
     p { margin-bottom: 0; }
 
