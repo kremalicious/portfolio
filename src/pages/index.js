@@ -3,9 +3,7 @@ import PropTypes from 'prop-types'
 import Projects from '../components/organisms/Projects'
 
 const Home = ({ data }) => (
-  <main className="screen screen--home">
-    <Projects data={data} />
-  </main>
+  <Projects data={data} />
 )
 
 Home.propTypes = {

@@ -28,16 +28,18 @@ const TemplateWrapper = ({ data, location, children }) => {
       <Head meta={meta} location={location} />
       <Header meta={meta} isHomepage={isHomepage} />
 
-      <TransitionGroup appear={true}>
-        <FadeIn
-          key={location.pathname}
-          timeout={{ enter: 300, exit: 200, appear: 300 }}
-        >
-          <TransitionHandler location={location}>
-            {children()}
-          </TransitionHandler>
-        </FadeIn>
-      </TransitionGroup>
+      <main className="screen">
+        <TransitionGroup appear={true}>
+          <FadeIn
+            key={location.pathname}
+            timeout={{ enter: 300, exit: 200, appear: 300 }}
+          >
+            <TransitionHandler location={location}>
+              {children()}
+            </TransitionHandler>
+          </FadeIn>
+        </TransitionGroup>
+      </main>
 
       <Footer meta={meta} />
     </div>

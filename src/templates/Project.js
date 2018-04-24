@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import ReactMarkdown from 'react-markdown'
@@ -25,7 +25,7 @@ class Project extends Component {
     const { next, previous } = pathContext
 
     return (
-      <main className="screen screen--project">
+      <Fragment>
         <Helmet>
           <title>{title}</title>
         </Helmet>
@@ -61,7 +61,7 @@ class Project extends Component {
         </article>
 
         <ProjectNav previous={previous} next={next} />
-      </main>
+      </Fragment>
     )
   }
 }
