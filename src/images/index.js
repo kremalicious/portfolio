@@ -20,6 +20,7 @@ import ezeep02 from './portfolio-ezeep-02.png'
 import ezeep03 from './portfolio-ezeep-03.png'
 import ezeep04 from './portfolio-ezeep-04.png'
 import ezeep05 from './portfolio-ezeep-05.png'
+import ezeep06 from './portfolio-ezeep-06.png'
 import mrreader from './portfolio-mrreader.png'
 import outofwhaleoil from './portfolio-outofwhaleoil.png'
 import outofwhaleoil01 from './portfolio-outofwhaleoil-01.png'
@@ -56,6 +57,7 @@ export default {
   ezeep03,
   ezeep04,
   ezeep05,
+  ezeep06,
   mrreader,
   outofwhaleoil,
   outofwhaleoil01,
