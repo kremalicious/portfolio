@@ -24,7 +24,11 @@ class Availability extends Component {
         return e
       }
 
-      window.addEventListener('scroll', this.handleScroll, supportsPassive ? { passive: true } : false)
+      window.addEventListener(
+        'scroll',
+        this.handleScroll,
+        supportsPassive ? { passive: true } : false
+      )
     }
   }
 
@@ -61,9 +65,7 @@ class Availability extends Component {
           <MoveIn>
             <aside
               className={
-                status
-                  ? 'availability available'
-                  : 'availability unavailable'
+                status ? 'availability available' : 'availability unavailable'
               }
             >
               <p

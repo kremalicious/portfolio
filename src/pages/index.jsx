@@ -2,9 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Projects from '../components/organisms/Projects'
 
-const Home = ({ data }) => (
-  <Projects data={data} />
-)
+const Home = ({ data }) => <Projects data={data} />
 
 Home.propTypes = {
   data: PropTypes.object,
