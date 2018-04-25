@@ -9,6 +9,7 @@
     z-index: 2;
     padding: $spacer / 2;
     display: block;
+    transition: opacity .2s ease-out;
 
     p { margin-bottom: 0; }
 
@@ -16,5 +17,9 @@
         color: $brand-main;
         position: fixed;
         bottom: $spacer;
+    }
+
+    a {
+        border-bottom: 1px solid rgba($brand-cyan, .4);
     }
 }

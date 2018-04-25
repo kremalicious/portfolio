@@ -73,7 +73,11 @@ export const query = graphql`
         GitHub
         Dribbble
       }
-      availability
+      availability {
+        status
+        available
+        unavailable
+      }
       typekit
       googleanalytics
     }

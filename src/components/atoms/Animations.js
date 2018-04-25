@@ -11,3 +11,13 @@ export const FadeIn = props => (
     {...props}
   />
 )
+
+export const MoveIn = props => (
+  <CSSTransition
+    classNames="movein"
+    appear={true}
+    in={true}
+    timeout={{ enter: 300, exit: 200, appear: 300 }}
+    {...props}
+  />
+)

@@ -23,7 +23,7 @@ const Header = ({ meta, isHomepage }) => {
       </FadeIn>
 
       <Social meta={meta} hide={!isHomepage} />
-      <Availability meta={meta} hide={!isHomepage} />
+      <Availability meta={meta} hide={!isHomepage && !meta.availability.status} />
     </header>
   )
 }

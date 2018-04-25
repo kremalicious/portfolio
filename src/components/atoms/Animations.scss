@@ -1,18 +1,11 @@
-.fadein-appear {
-    opacity: .01;
-
-    &.fadein-appear-active {
-        opacity: 1;
-        transition: 400ms ease-in;
-    }
-}
-
+.fadein-appear,
 .fadein-enter {
     opacity: .01;
 
+    &.fadein-appear-active,
     &.fadein-enter-active {
         opacity: 1;
-        transition: 300ms ease-out;
+        transition: 400ms ease-in;
     }
 }
 
@@ -22,5 +15,29 @@
 
     &.fadein-exit-active {
         opacity: .01;
+    }
+}
+
+.movein-appear,
+.movein-enter {
+    opacity: .01;
+    transform: translate3d(0, 3rem, 0);
+
+    &.movein-appear-active,
+    &.movein-enter-active {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: 300ms ease-out;
+    }
+}
+
+.movein-exit {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: 100ms ease-out;
+
+    &.movein-exit-active {
+        opacity: .01;
+        transform: translate3d(0, 3rem, 0);
     }
 }

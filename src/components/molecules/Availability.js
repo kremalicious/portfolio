@@ -1,37 +1,82 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, Component } from 'react'
 import PropTypes from 'prop-types'
-import { FadeIn } from '../atoms/Animations'
+import { MoveIn } from '../atoms/Animations'
 import './Availability.scss'
 
-const Availability = ({ meta, hide }) => {
-  const { availability, social } = meta
+class Availability extends Component {
+  constructor(props) {
+    super(props)
+    this.handleScroll = this.handleScroll.bind(this)
+  }
 
-  const available = `👔 Available for new projects. <a href="${
-    social.Email
-  }">Let’s talk</a>!`
-  const unavailable = 'Not available for new projects.'
+  componentDidMount() {
+    if (this.props.meta.availability.status === true) {
+      let supportsPassive = false
 
-  return (
-    <Fragment>
-      {!hide && (
-        <FadeIn>
-          <aside
-            className={
-              availability
-                ? 'availability available'
-                : 'availability unavailable'
-            }
-          >
-            <p
-              dangerouslySetInnerHTML={{
-                __html: availability ? available : unavailable,
-              }}
-            />
-          </aside>
-        </FadeIn>
-      )}
-    </Fragment>
-  )
+      try {
+        const opts = Object.defineProperty({}, 'passive', {
+          get: function() {
+            supportsPassive = true
+          },
+        })
+        window.addEventListener('test', null, opts)
+      } catch (e) {
+        return e
+      }
+
+      window.addEventListener('scroll', this.handleScroll, supportsPassive ? { passive: true } : false)
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll() {
+    let timeout
+    const footer = document.getElementsByClassName('footer')[0]
+    const availability = document.getElementsByClassName('availability')[0]
+
+    if (!timeout) {
+      timeout = setTimeout(function() {
+        timeout = null
+
+        if (footer.getBoundingClientRect().top <= window.innerHeight) {
+          availability.style.opacity = 0
+          window.removeEventListener('scroll', this.handleScroll)
+        } else {
+          availability.style.opacity = 1
+        }
+      }, 300)
+    }
+  }
+
+  render() {
+    const { availability } = this.props.meta
+    const { status, available, unavailable } = availability
+
+    return (
+      <Fragment>
+        {!this.props.hide && (
+          <MoveIn>
+            <aside
+              className={
+                status
+                  ? 'availability available'
+                  : 'availability unavailable'
+              }
+            >
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: status ? available : unavailable,
+                }}
+              />
+            </aside>
+          </MoveIn>
+        )}
+      </Fragment>
+    )
+  }
 }
 
 Availability.propTypes = {

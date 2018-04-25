@@ -10,7 +10,11 @@
     "GitHub": "https://github.com/kremalicious",
     "Dribbble": "https://dribbble.com/kremalicious"
   },
-  "availability": true,
+  "availability": {
+    "status": true,
+    "available": "👔 Available for new projects. <a href=\"mailto:m@kretschmann.io\">Let’s talk</a>!",
+    "unavailable": "Not available for new projects."
+  },
   "typekit": "dtg3zui",
   "googleanalytics": "UA-1441794-4"
 }
