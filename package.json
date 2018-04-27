@@ -13,7 +13,7 @@
     "deploy": "./deploy.sh"
   },
   "dependencies": {
-    "gatsby": "^1.9.254",
+    "gatsby": "^1.9.255",
     "gatsby-link": "^1.6.41",
     "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-react-helmet": "^2.0.11",
@@ -30,6 +30,7 @@
   "devDependencies": {
     "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
+    "eslint-loader": "^2.0.0",
     "eslint-plugin-compat": "^2.2.0",
     "eslint-plugin-graphql": "^2.1.0",
     "eslint-plugin-prettier": "^2.6.0",

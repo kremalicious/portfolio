@@ -1,5 +1,19 @@
 const path = require('path')
 
+// https://github.com/saschajullmann/gatsby-starter-gatsbythemes/blob/master/gatsby-node.js
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  switch (stage) {
+    case 'develop':
+      config.preLoader('eslint-loader', {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+      })
+
+      break
+  }
+  return config
+}
+
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
 
@@ -58,18 +72,4 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         resolve()
       }))
   })
-}
-
-// https://github.com/saschajullmann/gatsby-starter-gatsbythemes/blob/master/gatsby-node.js
-exports.modifyWebpackConfig = ({ config, stage }) => {
-  switch (stage) {
-    case 'develop':
-      config.preLoader('eslint-loader', {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-      })
-
-      break
-  }
-  return config
 }
