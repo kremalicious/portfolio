@@ -10,22 +10,14 @@ Home.propTypes = {
 
 export default Home
 
-export const query = graphql`
+export const IndexQuery = graphql`
   query IndexQuery {
     allProjectsJson {
-      totalCount
       edges {
         node {
           title
           slug
           img
-        }
-      }
-    }
-    allImageSharp {
-      edges {
-        node {
-          id
         }
       }
     }

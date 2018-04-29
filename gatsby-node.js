@@ -54,7 +54,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           reject(result.errors)
         }
 
-        result.data.allProjectsJson.edges.forEach(({ node, previous, next }) => {
+        result.data.allProjectsJson.edges.forEach(
+          ({ node, previous, next }) => {
             const slug = node.slug
             const img = node.img
             const img_more = node.img_more
