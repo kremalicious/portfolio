@@ -1,7 +1,7 @@
 @import 'variables';
 
 .project {
-    .project__image {
+    .project__image-wrap {
         margin-bottom: $spacer * 3;
 
         @media (min-width: 30rem) {

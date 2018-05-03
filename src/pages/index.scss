@@ -1,0 +1,44 @@
+@import 'variables';
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.projects__project {
+    width: 100%;
+    display: block;
+    position: relative;
+    background-color: $brand-grey-light;
+    margin: 0 auto $spacer * 4 auto;
+
+    @media (min-width: 30rem) {
+        margin-bottom: $spacer * 8;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        background: transparent;
+        transition: background .2s ease-out;
+    }
+
+    &:hover,
+    &:focus {
+        &::after {
+            background: rgba($brand-cyan, .05);
+        }
+    }
+}
+
+.projects__project__title {
+    visibility: hidden;
+    font-size: 0;
+    margin: 0;
+}

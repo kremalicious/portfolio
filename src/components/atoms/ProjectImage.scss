@@ -1,14 +1,20 @@
 @import 'variables';
 
-.project__image {
+.project__image-wrap {
     max-height: 100vh;
-    width: auto;
-    display: block;
     margin-left: auto;
     margin-right: auto;
+    display: block;
     box-shadow: 0 3px 5px rgba($brand-main, .2), 0 5px 16px rgba($brand-main, .2);
 
     @media (min-width: 1440px) {
         max-width: 1440px;
+    }
+}
+
+.project__image {
+    img {
+        max-height: 100vh;
+        display: block;
     }
 }

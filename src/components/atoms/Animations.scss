@@ -5,13 +5,13 @@
     &.fadein-appear-active,
     &.fadein-enter-active {
         opacity: 1;
-        transition: 400ms ease-in;
+        transition: 200ms ease-in;
     }
 }
 
 .fadein-exit {
     opacity: 1;
-    transition: 300ms ease-in;
+    transition: 200ms ease-in;
 
     &.fadein-exit-active {
         opacity: .01;

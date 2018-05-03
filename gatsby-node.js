@@ -25,26 +25,15 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           allProjectsJson {
             edges {
               node {
-                title
                 slug
-                description
-                img
-                img_more
-                techstack
-                links {
-                  title
-                  url
-                }
               }
               previous {
                 title
                 slug
-                img
               }
               next {
                 title
                 slug
-                img
               }
             }
           }
@@ -57,16 +46,12 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         result.data.allProjectsJson.edges.forEach(
           ({ node, previous, next }) => {
             const slug = node.slug
-            const img = node.img
-            const img_more = node.img_more
 
             createPage({
               path: slug,
               component: template,
               context: {
                 slug,
-                img,
-                img_more,
                 previous,
                 next,
               },

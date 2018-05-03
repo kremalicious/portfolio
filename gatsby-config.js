@@ -1,3 +1,4 @@
+const path = require('path')
 const meta = require('./data/meta.json')
 const { url, googleanalytics } = meta
 
@@ -6,6 +7,11 @@ module.exports = {
     siteUrl: `${url}`,
   },
   plugins: [
+    'gatsby-plugin-react-next',
+    'gatsby-plugin-react-helmet',
+    'gatsby-transformer-json',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-sass',
       options: {
@@ -16,14 +22,14 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'data',
-        path: `${__dirname}/data/`,
+        path: path.join(__dirname, 'data'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/images/`,
+        path: path.join(__dirname, 'src', 'images'),
       },
     },
     {
@@ -43,10 +49,5 @@ module.exports = {
         // see https://github.com/smooth-code/svgr for a list of all options
       },
     },
-    'gatsby-plugin-react-next',
-    'gatsby-plugin-react-helmet',
-    'gatsby-transformer-json',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
   ],
 }

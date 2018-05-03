@@ -4,11 +4,10 @@ import Helmet from 'react-helmet'
 import ReactMarkdown from 'react-markdown'
 import Content from '../components/atoms/Content'
 import FullWidth from '../components/atoms/FullWidth'
-// import ProjectImage from '../components/atoms/ProjectImage'
-import Img from 'gatsby-image'
+import ProjectImage from '../components/atoms/ProjectImage'
 import ProjectTechstack from '../components/molecules/ProjectTechstack'
 import ProjectLinks from '../components/molecules/ProjectLinks'
-import ProjectNav from '../components/molecules/ProjectNav'
+// import ProjectNav from '../components/molecules/ProjectNav'
 import SEO from '../components/atoms/SEO'
 import './Project.scss'
 
@@ -18,37 +17,39 @@ class Project extends Component {
   }
 
   render() {
-    const postMeta = this.props.data.projectsJson
-    const pathContext = this.props.pathContext
+    const project = this.props.data.allProjectsJson.edges[0]
+    const projectImages = this.props.data.projectImages.edges
+    // const pathContext = this.props.pathContext
 
-    const { title, description, links, techstack } = postMeta
-    const { next, previous } = pathContext
+    const { title, description, links, techstack } = project.node
+    // const { next, previous } = pathContext
 
-    return <Fragment>
+    return (
+      <Fragment>
         <Helmet>
           <title>{title}</title>
         </Helmet>
 
-        <SEO postMeta={postMeta} />
+        <SEO postMeta={project.node} />
 
         <article className="project">
           <Content>
             <h1 className="project__title">{title}</h1>
-            <ReactMarkdown source={description} escapeHtml={false} className="project__description" />
+            <ReactMarkdown
+              source={description}
+              escapeHtml={false}
+              className="project__description"
+            />
 
             <FullWidth>
-              <Img sizes={this.props.data.mainImage.childImageSharp.sizes} alt={title} />
+              {projectImages.map(({ node }) => (
+                <ProjectImage
+                  key={node.id}
+                  sizes={node.sizes}
+                  alt={title}
+                />
+              ))}
             </FullWidth>
-
-            {/* {!!this.props.data.additionalImage && <FullWidth>
-                {this.props.data.additionalImage.map(image => (
-                  <Img
-                    key={image}
-                    sizes={this.props.data.additionalImage.childImageSharp.sizes}
-                    alt={title}
-                  />
-                ))}
-              </FullWidth>} */}
 
             <footer className="project__meta">
               {!!techstack && <ProjectTechstack techstack={techstack} />}
@@ -57,36 +58,42 @@ class Project extends Component {
           </Content>
         </article>
 
-        <ProjectNav previous={previous} next={next} />
+        {/* <ProjectNav previous={previous} next={next} /> */}
       </Fragment>
+    )
   }
 }
 
 Project.propTypes = {
   data: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired,
+  // pathContext: PropTypes.object.isRequired,
 }
 
 export default Project
 
 export const projectQuery = graphql`
-  query ProjectBySlug($slug: String!, $img: String!) {
-    projectsJson(slug: { eq: $slug }) {
-      title
-      slug
-      img
-      img_more
-      description
-      links {
-        title
-        url
+  query ProjectBySlug($slug: String!) {
+    allProjectsJson(filter: { slug: { eq: $slug } }) {
+      edges {
+        node {
+          title
+          slug
+          description
+          links {
+            title
+            url
+          }
+          techstack
+        }
       }
-      techstack
     }
-    mainImage: file(relativePath: { eq: $img }) {
-      childImageSharp {
-        sizes(maxWidth: 1440) {
-          ...GatsbyImageSharpSizes
+    projectImages: allImageSharp(filter: { id: { regex: $slug } }, sort: { fields: [id], order: ASC }) {
+      edges {
+        node {
+          id
+          sizes(maxWidth: 1440) {
+            ...GatsbyImageSharpSizes
+          }
         }
       }
     }
