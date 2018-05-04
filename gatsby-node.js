@@ -30,10 +30,44 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               previous {
                 title
                 slug
+                img {
+                  id
+                  childImageSharp {
+                    sizes(maxWidth: 500) {
+                      base64
+                      tracedSVG
+                      aspectRatio
+                      src
+                      srcSet
+                      srcWebp
+                      srcSetWebp
+                      sizes
+                      originalImg
+                      originalName
+                    }
+                  }
+                }
               }
               next {
                 title
                 slug
+                img {
+                  id
+                  childImageSharp {
+                    sizes(maxWidth: 500) {
+                      base64
+                      tracedSVG
+                      aspectRatio
+                      src
+                      srcSet
+                      srcWebp
+                      srcSetWebp
+                      sizes
+                      originalImg
+                      originalName
+                    }
+                  }
+                }
               }
             }
           }

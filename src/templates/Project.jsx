@@ -7,7 +7,7 @@ import FullWidth from '../components/atoms/FullWidth'
 import ProjectImage from '../components/atoms/ProjectImage'
 import ProjectTechstack from '../components/molecules/ProjectTechstack'
 import ProjectLinks from '../components/molecules/ProjectLinks'
-// import ProjectNav from '../components/molecules/ProjectNav'
+import ProjectNav from '../components/molecules/ProjectNav'
 import SEO from '../components/atoms/SEO'
 import './Project.scss'
 
@@ -17,12 +17,12 @@ class Project extends Component {
   }
 
   render() {
-    const project = this.props.data.allProjectsJson.edges[0]
+    const project = this.props.data.projectsJson
     const projectImages = this.props.data.projectImages.edges
-    // const pathContext = this.props.pathContext
+    const pathContext = this.props.pathContext
 
-    const { title, description, links, techstack } = project.node
-    // const { next, previous } = pathContext
+    const { title, description, links, techstack } = project
+    const { next, previous } = pathContext
 
     return (
       <Fragment>
@@ -30,7 +30,7 @@ class Project extends Component {
           <title>{title}</title>
         </Helmet>
 
-        <SEO postMeta={project.node} />
+        <SEO postMeta={project} />
 
         <article className="project">
           <Content>
@@ -58,7 +58,7 @@ class Project extends Component {
           </Content>
         </article>
 
-        {/* <ProjectNav previous={previous} next={next} /> */}
+        <ProjectNav previous={previous} next={next} />
       </Fragment>
     )
   }
@@ -66,34 +66,28 @@ class Project extends Component {
 
 Project.propTypes = {
   data: PropTypes.object.isRequired,
-  // pathContext: PropTypes.object.isRequired,
+  pathContext: PropTypes.object.isRequired,
 }
 
 export default Project
 
 export const projectQuery = graphql`
   query ProjectBySlug($slug: String!) {
-    allProjectsJson(filter: { slug: { eq: $slug } }) {
-      edges {
-        node {
-          title
-          slug
-          description
-          links {
-            title
-            url
-          }
-          techstack
-        }
+    projectsJson(slug: { eq: $slug }) {
+      title
+      slug
+      description
+      links {
+        title
+        url
       }
+      techstack
     }
     projectImages: allImageSharp(filter: { id: { regex: $slug } }, sort: { fields: [id], order: ASC }) {
       edges {
         node {
           id
-          sizes(maxWidth: 1440) {
-            ...GatsbyImageSharpSizes
-          }
+          ...ProjectImageSizes
         }
       }
     }

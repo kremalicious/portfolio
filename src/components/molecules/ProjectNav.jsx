@@ -11,7 +11,7 @@ const ProjectNav = ({ previous, next }) => (
   <nav className="project__nav full-width">
     {previous && (
       <div className="project__nav__item">
-        <Link className="project__nav__link prev" to={`/${previous.slug}`}>
+        <Link className="project__nav__link prev" to={previous.slug}>
           <Img
             className="project__nav__image"
             sizes={previous.img.childImageSharp.sizes}
@@ -30,7 +30,7 @@ const ProjectNav = ({ previous, next }) => (
     </Link>
     {next && (
       <div className="project__nav__item">
-        <Link className="project__nav__link next" to={`/${next.slug}`}>
+        <Link className="project__nav__link next" to={next.slug}>
           <Img
             className="project__nav__image"
             sizes={next.img.childImageSharp.sizes}

@@ -7,8 +7,10 @@
     display: block;
     box-shadow: 0 3px 5px rgba($brand-main, .2), 0 5px 16px rgba($brand-main, .2);
 
-    @media (min-width: 1440px) {
-        max-width: 1440px;
+    @media (min-width: $projectImageMaxWidth) {
+        max-width: $projectImageMaxWidth;
+        border-radius: .25rem;
+        overflow: hidden;
     }
 }
 

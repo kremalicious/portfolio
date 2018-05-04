@@ -2,28 +2,27 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import ProjectImage from '../components/atoms/ProjectImage'
+import FullWidth from '../components/atoms/FullWidth'
 import './index.scss'
 
 const Home = ({ data }) => {
   const projects = data.allProjectsJson.edges
 
   return (
-    <div className="projects full-width" id="projects">
+    <FullWidth id="projects" className="projects">
       {projects.map(({ node }) => {
         const { slug, title, img } = node
 
         return (
-          <Link
-            key={slug}
-            to={slug}
-            className="projects__project"
-          >
-            <h1 className="projects__project__title">{title}</h1>
-            <ProjectImage sizes={img.childImageSharp.sizes} alt={title} />
-          </Link>
+          <article className="projects__project" key={slug}>
+            <Link to={slug}>
+              <h1 className="projects__project__title">{title}</h1>
+              <ProjectImage sizes={img.childImageSharp.sizes} alt={title} />
+            </Link>
+          </article>
         )
       })}
-    </div>
+    </FullWidth>
   )
 }
 
@@ -42,9 +41,7 @@ export const IndexQuery = graphql`
           slug
           img {
             childImageSharp {
-              sizes(maxWidth: 1440) {
-                ...GatsbyImageSharpSizes
-              }
+              ...ProjectImageSizes
             }
           }
         }
