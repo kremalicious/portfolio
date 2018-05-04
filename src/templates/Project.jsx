@@ -31,20 +31,19 @@ class Project extends Component {
           <title>{title}</title>
         </Helmet>
 
-      <SEO meta={meta} postMeta={project} />
+        <SEO meta={meta} postMeta={project} />
 
         <article className="project">
           <Content>
             <h1 className="project__title">{title}</h1>
-            <ReactMarkdown source={description} escapeHtml={false} className="project__description" />
+            <ReactMarkdown
+              source={description}
+              className="project__description"
+            />
 
             <FullWidth>
               {projectImages.map(({ node }) => (
-                <ProjectImage
-                  key={node.id}
-                  sizes={node.sizes}
-                  alt={title}
-                />
+                <ProjectImage key={node.id} sizes={node.sizes} alt={title} />
               ))}
             </FullWidth>
 

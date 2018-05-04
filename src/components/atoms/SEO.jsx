@@ -38,7 +38,7 @@ SEO.propTypes = {
 
 SEO.defaultProps = {
   postMeta: {},
-  meta: {}
+  meta: {},
 }
 
 export default SEO

@@ -1,6 +1,6 @@
 const path = require('path')
 const yaml = require('js-yaml')
-const meta = yaml.load('./data/meta.yml')
+const meta = yaml.safeLoad('./data/meta.yml')
 const { url, googleanalytics } = meta
 
 module.exports = {
