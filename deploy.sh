@@ -2,7 +2,11 @@
 
 set -e;
 
-aws s3 sync ./public s3://beta.matthiaskretschmann.com --delete --acl public-read
+aws s3 sync \
+  --delete \
+  --acl public-read \
+  ./public \
+  s3://beta.matthiaskretschmann.com
 
 echo "---------------------------------------------"
 echo "         ✓ done deployment "

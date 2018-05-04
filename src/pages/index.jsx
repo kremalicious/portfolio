@@ -6,7 +6,7 @@ import FullWidth from '../components/atoms/FullWidth'
 import './index.scss'
 
 const Home = ({ data }) => {
-  const projects = data.allProjectsJson.edges
+  const projects = data.allProjectsYaml.edges
 
   return (
     <FullWidth id="projects" className="projects">
@@ -34,7 +34,7 @@ export default Home
 
 export const IndexQuery = graphql`
   query IndexQuery {
-    allProjectsJson {
+    allProjectsYaml {
       edges {
         node {
           title

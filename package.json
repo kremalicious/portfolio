@@ -24,9 +24,10 @@
     "gatsby-plugin-sharp": "^1.6.44",
     "gatsby-plugin-svgr": "^1.0.0",
     "gatsby-source-filesystem": "^1.5.35",
-    "gatsby-transformer-json": "^1.0.17",
     "gatsby-transformer-sharp": "^1.6.24",
+    "gatsby-transformer-yaml": "^1.5.16",
     "intersection-observer": "^0.5.0",
+    "js-yaml": "^3.11.0",
     "react-helmet": "^5.2.0",
     "react-markdown": "^3.3.0",
     "react-transition-group": "^2.3.1"

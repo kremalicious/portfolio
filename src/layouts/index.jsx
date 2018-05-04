@@ -20,7 +20,7 @@ class TransitionHandler extends Component {
 }
 
 const TemplateWrapper = ({ data, location, children }) => {
-  const meta = data.dataJson
+  const meta = data.dataYaml
   const isHomepage = location.pathname === '/'
 
   return (
@@ -61,7 +61,7 @@ export default withRouter(TemplateWrapper)
 
 export const query = graphql`
   query metaQuery {
-    dataJson {
+    dataYaml {
       title
       tagline
       description

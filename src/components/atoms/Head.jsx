@@ -16,7 +16,7 @@ const Head = ({ meta, location }) => {
           <meta content="noindex,nofollow" name="robots" />
         )}
       </Helmet>
-      <SEO />
+      <SEO meta={meta} />
     </Fragment>
   )
 }

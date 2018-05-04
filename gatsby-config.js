@@ -1,5 +1,6 @@
 const path = require('path')
-const meta = require('./data/meta.json')
+const yaml = require('js-yaml')
+const meta = yaml.load('./data/meta.yml')
 const { url, googleanalytics } = meta
 
 module.exports = {
@@ -9,7 +10,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-json',
+    'gatsby-transformer-yaml',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {

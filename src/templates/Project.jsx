@@ -17,7 +17,8 @@ class Project extends Component {
   }
 
   render() {
-    const project = this.props.data.projectsJson
+    const meta = this.props.data.dataYaml
+    const project = this.props.data.projectsYaml
     const projectImages = this.props.data.projectImages.edges
     const pathContext = this.props.pathContext
 
@@ -30,20 +31,20 @@ class Project extends Component {
           <title>{title}</title>
         </Helmet>
 
-        <SEO postMeta={project} />
+      <SEO meta={meta} postMeta={project} />
 
         <article className="project">
           <Content>
             <h1 className="project__title">{title}</h1>
-            <ReactMarkdown
-              source={description}
-              escapeHtml={false}
-              className="project__description"
-            />
+            <ReactMarkdown source={description} escapeHtml={false} className="project__description" />
 
             <FullWidth>
               {projectImages.map(({ node }) => (
-                <ProjectImage key={node.id} sizes={node.sizes} alt={title} />
+                <ProjectImage
+                  key={node.id}
+                  sizes={node.sizes}
+                  alt={title}
+                />
               ))}
             </FullWidth>
 
@@ -69,7 +70,7 @@ export default Project
 
 export const projectQuery = graphql`
   query ProjectBySlug($slug: String!) {
-    projectsJson(slug: { eq: $slug }) {
+    projectsYaml(slug: { eq: $slug }) {
       title
       slug
       description
@@ -78,6 +79,26 @@ export const projectQuery = graphql`
         url
       }
       techstack
+    }
+    dataYaml {
+      title
+      tagline
+      description
+      url
+      social {
+        Email
+        Blog
+        Twitter
+        GitHub
+        Dribbble
+      }
+      availability {
+        status
+        available
+        unavailable
+      }
+      typekit
+      googleanalytics
     }
     projectImages: allImageSharp(
       filter: { id: { regex: $slug } }

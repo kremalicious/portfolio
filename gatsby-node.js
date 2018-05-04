@@ -32,7 +32,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
     resolve(graphql(`
         {
-          allProjectsJson {
+          allProjectsYaml {
             edges {
               node {
                 slug
@@ -83,7 +83,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           reject(result.errors)
         }
 
-        result.data.allProjectsJson.edges.forEach(
+        result.data.allProjectsYaml.edges.forEach(
           ({ node, previous, next }) => {
             const slug = node.slug
 

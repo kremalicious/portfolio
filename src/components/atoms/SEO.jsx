@@ -1,9 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
-import meta from '../../../data/meta.json'
 
-const SEO = ({ postMeta }) => {
+const SEO = ({ postMeta, meta }) => {
   const title = postMeta.title || meta.title
   const description = postMeta.description || meta.description
   const image = postMeta.img || meta.img || null
@@ -39,7 +38,7 @@ SEO.propTypes = {
 
 SEO.defaultProps = {
   postMeta: {},
-  meta,
+  meta: {}
 }
 
 export default SEO
