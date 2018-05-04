@@ -14,9 +14,7 @@ const TemplateWrapper = ({ data, location, children }) => {
       <Head meta={meta} location={location} />
       <Header meta={meta} isHomepage={isHomepage} />
 
-      <main className="screen">
-        {children()}
-      </main>
+      <main className="screen">{children()}</main>
 
       <Footer meta={meta} />
     </div>

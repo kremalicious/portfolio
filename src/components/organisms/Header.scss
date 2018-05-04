@@ -46,6 +46,7 @@
 
 .header__name {
     pointer-events: none;
+    display: block;
 }
 
 .header--minimal {
@@ -59,7 +60,6 @@
     .header__title,
     .header__description {
         color: $brand-grey-light;
-        transition: color .2s ease-out;
     }
 
     .header__title {
@@ -82,8 +82,9 @@
 
         &:hover,
         &:focus {
-            .header__logo {
-                color: $brand-cyan;
+            .header__title,
+            .header__description {
+                transition: color .2s ease-out;
             }
 
             .header__title {

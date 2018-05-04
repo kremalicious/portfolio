@@ -43,11 +43,7 @@ class Project extends Component {
 
             <FullWidth>
               {projectImages.map(({ node }) => (
-                <ProjectImage
-                  key={node.id}
-                  sizes={node.sizes}
-                  alt={title}
-                />
+                <ProjectImage key={node.id} sizes={node.sizes} alt={title} />
               ))}
             </FullWidth>
 
@@ -83,7 +79,10 @@ export const projectQuery = graphql`
       }
       techstack
     }
-    projectImages: allImageSharp(filter: { id: { regex: $slug } }, sort: { fields: [id], order: ASC }) {
+    projectImages: allImageSharp(
+      filter: { id: { regex: $slug } }
+      sort: { fields: [id], order: ASC }
+    ) {
       edges {
         node {
           id

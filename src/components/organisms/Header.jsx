@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
-import { FadeIn } from '../atoms/Animations'
 import Social from '../molecules/Social'
 import Availability from '../molecules/Availability'
 import { ReactComponent as Logo } from '../../images/logo.svg'
@@ -12,15 +11,13 @@ const Header = ({ meta, isHomepage }) => {
 
   return (
     <header className={classes}>
-      <FadeIn>
-        <Link className="header__name" to={'/'}>
-          <Logo className="header__logo" />
-          <h1 className="header__title">{meta.title.toLowerCase()}</h1>
-          <p className="header__description">
-            <span>{'{ '}</span> {meta.tagline.toLowerCase()} <span>{' }'}</span>
-          </p>
-        </Link>
-      </FadeIn>
+      <Link className="header__name" to={'/'}>
+        <Logo className="header__logo" />
+        <h1 className="header__title">{meta.title.toLowerCase()}</h1>
+        <p className="header__description">
+          <span>{'{ '}</span> {meta.tagline.toLowerCase()} <span>{' }'}</span>
+        </p>
+      </Link>
 
       <Social meta={meta} hide={!isHomepage} />
       <Availability
