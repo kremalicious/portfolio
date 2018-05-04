@@ -8,6 +8,7 @@ const ProjectImage = ({ sizes, alt }) => (
     className="project__image"
     outerWrapperClassName="project__image-wrap"
     backgroundColor="#6b7f88"
+    fadeIn={false}
     sizes={sizes}
     alt={alt}
   />

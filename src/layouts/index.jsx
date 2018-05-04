@@ -32,7 +32,7 @@ const TemplateWrapper = ({ data, location, children }) => {
         <TransitionGroup appear={true}>
           <FadeIn
             key={location.pathname}
-            timeout={{ enter: 300, exit: 200, appear: 300 }}
+            timeout={{ enter: 200, exit: 150, appear: 200 }}
           >
             <TransitionHandler location={location}>
               {children()}

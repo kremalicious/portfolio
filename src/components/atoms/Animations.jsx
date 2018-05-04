@@ -7,7 +7,7 @@ export const FadeIn = props => (
     classNames="fadein"
     appear={true}
     in={true}
-    timeout={{ enter: 300, exit: 200, appear: 300 }}
+    timeout={{ enter: 200, exit: 200, appear: 200 }}
     {...props}
   />
 )
