@@ -11,7 +11,7 @@
     "Dribbble": "https://dribbble.com/kremalicious"
   },
   "availability": {
-    "status": true,
+    "status": false,
     "available": "👔 Available for new projects. <a href=\"mailto:m@kretschmann.io\">Let’s talk</a>!",
     "unavailable": "Not available for new projects."
   },
