@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
+import 'intersection-observer'
 import './ProjectImage.scss'
 
 const ProjectImage = ({ sizes, alt }) => (

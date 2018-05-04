@@ -14,6 +14,16 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
   return config
 }
 
+// https://github.com/gatsbyjs/gatsby/issues/2288#issuecomment-334467821
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  if (stage === 'build-html') {
+    config.loader('null', {
+      test: /intersection-observer/,
+      loader: 'null-loader',
+    })
+  }
+}
+
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
 
