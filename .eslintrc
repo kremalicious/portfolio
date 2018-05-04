@@ -1,5 +1,36 @@
 {
-  "plugins": ["react", "graphql", "compat"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "react",
+    "graphql",
+    "compat"
+  ],
+  "rules": {
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "never"
+    ],
+    "compat/compat": "error",
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        "declaration": "parens-new-line",
+        "assignment": "parens-new-line",
+        "return": "parens-new-line",
+        "arrow": "parens-new-line",
+        "condition": "parens-new-line",
+        "logical": "parens-new-line",
+        "prop": "parens-new-line"
+      }
+    ]
+  },
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
@@ -14,12 +45,6 @@
   },
   "globals": {
     "graphql": true
-  },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "rules": {
-    "quotes": ["error", "single"],
-    "semi": ["error", "never"],
-    "compat/compat": "error"
   },
   "settings": {
     "polyfills": ["promises"]
