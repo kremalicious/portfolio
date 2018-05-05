@@ -8,7 +8,7 @@
 
 .project__nav__image {
     margin: 0;
-    box-shadow: 0 3px 5px rgba($brand-main, .2), 0 5px 16px rgba($brand-main, .2);
+    box-shadow: 0 3px 5px rgba($brand-main, .15), 0 5px 16px rgba($brand-main, .15);
 }
 
 .project__nav__item {
@@ -41,24 +41,12 @@
 }
 
 .project__nav__title {
-    font-size: $font-size-small;
-    padding: $spacer / 2 $spacer / 4;
-    margin: 0;
-    transition: .2s ease-out;
-
-    @media (min-width: 45rem) {
-        font-size: $font-size-base;
-        padding: $spacer / 2 $spacer;
-    }
+    visibility: hidden;
+    font-size: 0;
 }
 
 .project__nav__link {
-    &:hover,
-    &:focus {
-        .project__nav__title {
-            color: $brand-cyan;
-        }
-    }
+    display: block;
 }
 
 .project__nav__index {

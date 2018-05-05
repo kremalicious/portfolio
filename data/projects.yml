@@ -34,7 +34,7 @@
   slug: "/ipdb/"
   img: "../src/images/portfolio-ipdb-01.png"
   description: >
-    From 2015-2017 I was leading the UI design & development of all IPDB web properties. Additionally, I iterated on the creative and visual direction of the IPDB brand.
+    From 2015-2017 I was leading the UI design & development of all IPDB web properties and additonally iterated on the creative and visual direction of the IPDB brand.
 
     The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it. All design & development is embedded in a continous deployment process via GitHub & Travis.
 
@@ -152,11 +152,13 @@
   slug: "/chartmogul/"
   img: "../src/images/portfolio-chartmogul-01.png"
   description: >
-    From 2015-2017 I was co-designing and leading the UI design & development of various ChartMogul web properties.
+    From 2015-2017 I was co-designing and leading the UI design & development of various ChartMogul web properties. This included the creation of a components-based UI design system and implementing it across all web touch points.
 
-    The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it.
+    The main website with its landing pages is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it, while the blog is running on WordPress with its own custom theme. All embedded in an automated development & deployment workflow via GitHub and Travis.
 
-    Within the ChartMogul application I created and implemented a UI design system.
+    Besides designing and implementing new features, I maintained the front-end of the ChartMogul application and implemented the UI design system by refactoring most of its front-end codebase.
+
+    All branding, design & key visuals directed by Michelle Myung.
 
   techstack:
   - Sketch
@@ -213,7 +215,7 @@
   slug: "/ezeep/"
   img: "../src/images/portfolio-ezeep-01.png"
   description: >
-    From 2012 to 2015 I worked at ezeep, where I created an unprecedented, market-leading & award-winning user experience based on the principles of emotional design way ahead of all competitors. This included conceptualizing executing, and iterating on the creative & visual direction of the ezeep brand.
+    From 2012 to 2015 I worked at ezeep, where we created an unprecedented, market-leading & award-winning user experience based on the principles of emotional design way ahead of all competitors. This included conceptualizing executing, and iterating on the creative & visual direction of the ezeep brand.
 
     I was leading the UI design & development of all ezeep touch points and - as a product designer - defined the ezeep product based on user and market research in an iterative process. On top of that, I designed and helped building all app experiences of ezeep on Windows, macOS, iOS, and Android.
 

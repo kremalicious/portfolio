@@ -43,7 +43,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
                 img {
                   id
                   childImageSharp {
-                    sizes(maxWidth: 500) {
+                    sizes(maxWidth: 500, quality: 80) {
                       aspectRatio
                       src
                       srcSet
@@ -62,7 +62,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
                 img {
                   id
                   childImageSharp {
-                    sizes(maxWidth: 500) {
+                    sizes(maxWidth: 500, quality: 80) {
                       aspectRatio
                       src
                       srcSet
