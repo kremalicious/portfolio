@@ -19,6 +19,8 @@ class TransitionHandler extends Component {
   }
 }
 
+const Main = ({ children }) => <main className="screen">{children}</main>
+
 const TemplateWrapper = ({ data, location, children }) => {
   const meta = data.dataYaml
   const isHomepage = location.pathname === '/'
@@ -28,18 +30,16 @@ const TemplateWrapper = ({ data, location, children }) => {
       <Head meta={meta} location={location} />
       <Header meta={meta} isHomepage={isHomepage} />
 
-      <main className="screen">
-        <TransitionGroup appear={true}>
-          <FadeIn
-            key={location.pathname}
-            timeout={{ enter: 200, exit: 150, appear: 200 }}
-          >
-            <TransitionHandler location={location}>
-              {children()}
-            </TransitionHandler>
-          </FadeIn>
-        </TransitionGroup>
-      </main>
+      <TransitionGroup component={Main} appear={true}>
+        <FadeIn
+          key={location.pathname}
+          timeout={{ enter: 200, exit: 150, appear: 200 }}
+        >
+          <TransitionHandler location={location}>
+            {children()}
+          </TransitionHandler>
+        </FadeIn>
+      </TransitionGroup>
 
       <Footer meta={meta} />
     </div>
@@ -49,6 +49,10 @@ const TemplateWrapper = ({ data, location, children }) => {
 TransitionHandler.propTypes = {
   children: PropTypes.any,
   location: PropTypes.object.isRequired,
+}
+
+Main.propTypes = {
+  children: PropTypes.any,
 }
 
 TemplateWrapper.propTypes = {

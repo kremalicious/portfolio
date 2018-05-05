@@ -2,9 +2,9 @@
 
 .social {
     margin-top: $spacer * 2;
+    width: 100%;
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 
 .social__link {
@@ -16,7 +16,6 @@
     align-items: center;
     justify-content: center;
     border-radius: .25rem;
-    transition-property: transform, background, box-shadow;
 
     @media (min-width: 30rem) {
         margin-left: $spacer / 2;
