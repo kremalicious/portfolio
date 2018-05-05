@@ -9,9 +9,15 @@ const Footer = ({ meta }) => {
   return (
     <footer className="footer">
       <Social meta={meta} minimal />
-      <small>
-        &copy; {year} {meta.title} &mdash; All Rights Reserved
-      </small>
+      <p className="footer__actions">
+        <a href={meta.addressbook}>Add to addressbook</a>
+        <a href={meta.gpg}>PGP/GPG key</a>
+      </p>
+      <p>
+        <small>
+          &copy; {year} {meta.title} &mdash; All Rights Reserved
+        </small>
+      </p>
     </footer>
   )
 }

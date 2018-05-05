@@ -82,6 +82,8 @@ export const query = graphql`
         available
         unavailable
       }
+      gpg
+      addressbook
       typekit
       googleanalytics
     }

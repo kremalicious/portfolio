@@ -83,11 +83,12 @@ h6 {
 a {
     color: $brand-cyan;
     text-decoration: none;
-    transition: color .2s ease-out;
+    transition: .2s ease-out;
 
     &:hover,
     &:focus {
         color: lighten($brand-cyan, 10%);
+        transform: translate3d(0, -.1rem, 0);
     }
 }
 

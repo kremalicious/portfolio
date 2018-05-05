@@ -15,3 +15,21 @@
         margin-bottom: $spacer;
     }
 }
+
+.footer__actions {
+    width: 100%;
+    margin-top: -($spacer / 2);
+    margin-bottom: $spacer * 3;
+
+    a {
+        display: inline-block;
+        padding: 0 $spacer / 4;
+        font-size: $font-size-small;
+        margin-left: $spacer;
+        color: $brand-grey-light;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}

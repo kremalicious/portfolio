@@ -1,21 +1,27 @@
 @import 'variables';
 
 .social {
-    margin-top: $spacer * 2;
+    margin-top: $spacer * $line-height;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
+.social__title {
+    display: block;
+    width: 100%;
+    font-size: $font-size-mini;
+    color: $brand-grey-light;
+    opacity: 0;
+    transform: translate3d(0, .5rem, 0);
+    transition: .2s ease-out;
+}
+
 .social__link {
     margin-left: $spacer / 4;
     margin-right: $spacer / 4;
-    padding: $spacer / 2;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: .25rem;
+    display: block;
 
     @media (min-width: 30rem) {
         margin-left: $spacer / 2;
@@ -31,24 +37,26 @@
         width: 1rem;
         height: 1rem;
         fill: $brand-grey-light;
-        transition: .2s ease-out;
     }
 
     &:hover,
     &:focus {
         background: $brand-light;
-        transform: translate3d(0, -.2rem, 0);
-        box-shadow: 0 6px 10px rgba($brand-main, .1), 0 10px 25px rgba($brand-main, .1);
 
         .icon {
             fill: $brand-cyan;
         }
+
+        .social__title {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
     }
 
     .social--minimal & {
-        padding: $spacer / 3;
-        margin-left: $spacer / 3;
-        margin-right: $spacer / 3;
+        padding: $spacer / 4;
+        margin-left: $spacer / 4;
+        margin-right: $spacer / 4;
 
         .icon {
             width: .85rem;

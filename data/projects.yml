@@ -7,7 +7,7 @@
   description: >
     Since 2017 I'm leading the UI design & development of all Ocean Protocol web properties. Additionally, I conceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.
 
-    The main website is a single-page JavaScript application built with React, pulling its data from JSON files and various micro services I've built over time. All design & development is embedded in a continous deployment process via GitHub & Travis.
+    The main website is a single-page JavaScript application built with React, pulling its data from JSON files and various micro services. All design & development is embedded in a continous deployment process via GitHub & Travis.
 
     Initial website in collaboration with [Balance](https://balance.io/). Key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
   links:
@@ -34,7 +34,7 @@
   slug: "/ipdb/"
   img: "../src/images/portfolio-ipdb-01.png"
   description: >
-    From 2015-2017 I was leading the UI design & development of all IPDB web properties and additonally iterated on the creative and visual direction of the IPDB brand.
+    From 2015–2017 I was leading the UI design & development of all IPDB web properties and additonally iterated on the creative and visual direction of the IPDB brand.
 
     The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it. All design & development is embedded in a continous deployment process via GitHub & Travis.
 
@@ -152,7 +152,7 @@
   slug: "/chartmogul/"
   img: "../src/images/portfolio-chartmogul-01.png"
   description: >
-    From 2015-2017 I was co-designing and leading the UI design & development of various ChartMogul web properties. This included the creation of a components-based UI design system and implementing it across all web touch points.
+    From 2015–2017 I was co-designing and leading the UI design & development of various ChartMogul web properties. This included the creation of a components-based UI design system and implementing it across all web touch points.
 
     The main website with its landing pages is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it, while the blog is running on WordPress with its own custom theme. All embedded in an automated development & deployment workflow via GitHub and Travis.
 
@@ -191,7 +191,9 @@
   slug: "/sharethemeal/"
   img: "../src/images/portfolio-sharethemeal.png"
   description: >
-    Co-designing and leading the front-end development of the ShareTheMeal website.
+    ShareTheMeal is an app from the United Nations World Food Programme (WFP) that enables people to "share their meals" with children in need. In 2015 I was consulting, co-designing and leading the front-end development of the ShareTheMeal website and various parts of the ShareTheMeal apps for iOS & Android.
+
+    The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it, embedded in a continous deployment process via GitHub & Travis.
 
   techstack:
   - Sketch
@@ -209,13 +211,14 @@
   links:
   - title: Link
     url: https://sharethemeal.org/
+
 -
 
   title: ezeep
   slug: "/ezeep/"
   img: "../src/images/portfolio-ezeep-01.png"
   description: >
-    From 2012 to 2015 I worked at ezeep, where we created an unprecedented, market-leading & award-winning user experience based on the principles of emotional design way ahead of all competitors. This included conceptualizing executing, and iterating on the creative & visual direction of the ezeep brand.
+    From 2012–2015 I worked at ezeep, where I helped creating an unprecedented, market-leading & award-winning user experience based on the principles of emotional design way ahead of all competitors. This included conceptualizing executing, and iterating on the creative & visual direction of the ezeep brand.
 
     I was leading the UI design & development of all ezeep touch points and - as a product designer - defined the ezeep product based on user and market research in an iterative process. On top of that, I designed and helped building all app experiences of ezeep on Windows, macOS, iOS, and Android.
 
@@ -262,8 +265,9 @@
   description: >
     So, what to do when everyone seem to release iPad icons but fail to
     include some crisp small size icons? Pushing the pixels for yourself of course.
-    So here’s my take on the smaller sizes of an Apple iPad icon, called iPixelPad
-    in the sizes 48px, 32px and 16px.
+    So here’s my take on the smaller sizes of an Apple iPad icon, called iPixelPad.
+
+    Released as a goodie on [kremalicious.com](https://kremalicious.com/ipixelpad/).
 
   techstack:
   - Photoshop
@@ -279,7 +283,8 @@
   img: "../src/images/portfolio-outofwhaleoil-01.png"
   description: >
     Tribute wallpaper pack inspired by the Futurama movie _Into The Wild
-    Green Yonder_.
+    Green Yonder_. Released as a goodie
+    on [kremalicious.com](https://kremalicious.com/out-of-whale-oil/).
   links:
   - title: Download
     url: https://kremalicious.com/out-of-whale-oil/
@@ -292,7 +297,7 @@
   slug: "/unihalle/"
   img: "../src/images/portfolio-unihalle-01.png"
   description: >
-    From 2009 to 2012 I worked at the IT services department of [Martin-Luther-Universität Halle-Wittenberg](http://www.uni-halle.de) where I conceptualized & implemented numerous in-house and public facing interfaces for thousands of students and staff.
+    From 2009–2012 I worked at the IT services department of [Martin-Luther-Universität Halle-Wittenberg](http://www.uni-halle.de) where I conceptualized, designed & implemented numerous in-house and public facing interfaces for thousands of students and staff.
 
     Additionally, I conceptualized, designed, created, and maintained the blog network & community for all students & staff.
 
@@ -332,10 +337,30 @@
 
 -
 
+  title: Project Purple
+  slug: "/projectpurple/"
+  img: "../src/images/portfolio-projectpurple-01.png"
+  description: >
+    It had been revealed the original iPhone was developed in a locked down building under the name Project Purple and because of the secrecy involved, the team decorated the building with Fight Club references. Perfect story to create a wallpaper out of it.
+
+    Released as a goodie on [kremalicious.com](https://kremalicious.com/projectpurple/).
+
+  techstack:
+  - Photoshop
+
+  links:
+  - title: Download
+    url: https://kremalicious.com/projectpurple/
+
+-
+
   title: Allinnia Creative Group
   slug: "/allinnia/"
   img: "../src/images/portfolio-allinnia-01.png"
-  description: ''
+  description: >
+    In 2009 I created the branding, website, and various key visuals for professional music production studio Allinnia Creative Group, reflecting their own musical compositions.
+
+    The website was built from scratch as a simple PHP application with a store and music listening functionality.
   techstack:
   - Photoshop
   - HTML
@@ -343,3 +368,28 @@
   - JavaScript
   - PHP
 
+-
+
+  title: Aperture Loupe
+  slug: "/apertureloupe/"
+  img: "../src/images/portfolio-apertureloupe-01.png"
+  description: >
+    When Apple released their professional photography app _Aperture_ in 2008, the loupe tool in there was something really novel and just fun to play with. Inspired by that, I created this macOS desktop icon.
+
+  techstack:
+  - Photoshop
+
+-
+
+  title: Adiumeetie
+  slug: "/adiumeetie/"
+  img: "../src/images/portfolio-adiumeetie-01.png"
+  description: >
+    A macOS replacement desktop icon created in 2009 for the popular Mac IM client Adium following the style of atebit’s excellent Tweetie for Mac icon. Released as a goodie on [kremalicious.com](https://kremalicious.com/adiumeetie/).
+
+  techstack:
+  - Photoshop
+
+  links:
+  - title: Download
+    url: https://kremalicious.com/adiumeetie/

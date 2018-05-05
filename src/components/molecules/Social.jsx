@@ -45,6 +45,7 @@ const Social = ({ meta, minimal, hide }) => {
               title={key}
             >
               <SocialIcon title={key} className="icon" />
+              <span className="social__title">{key}</span>
             </OutboundLink>
           ))}
         </aside>
