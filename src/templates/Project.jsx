@@ -24,6 +24,7 @@ class Project extends Component {
 
     const { title, description, links, techstack } = project
     const { next, previous } = pathContext
+    const descriptionWithLineBreaks = description.split('\n').join('\n\n')
 
     return (
       <Fragment>
@@ -37,7 +38,7 @@ class Project extends Component {
           <Content>
             <h1 className="project__title">{title}</h1>
             <ReactMarkdown
-              source={description}
+              source={descriptionWithLineBreaks}
               className="project__description"
             />
 

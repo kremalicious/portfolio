@@ -7,9 +7,7 @@
   description: >
     Since 2017 I'm leading the UI design & development of all Ocean Protocol web properties. Additionally, I conceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.
 
-
     The main website is a single-page JavaScript application built with React, pulling its data from JSON files and various micro services I've built over time. All design & development is embedded in a continous deployment process via GitHub & Travis.
-
 
     Initial website in collaboration with [Balance](https://balance.io/). Key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
   links:
@@ -38,9 +36,7 @@
   description: >
     From 2015-2017 I was leading the UI design & development of all IPDB web properties. Additionally, I iterated on the creative and visual direction of the IPDB brand.
 
-
     The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it. All design & development is embedded in a continous deployment process via GitHub & Travis.
-
 
     Branding and key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
 
@@ -101,9 +97,7 @@
   description: >
     In 2017 I was leading the UI design & development for the 9984 >> Summit, the first joint summit of BigchainDB & IPDB. Additionally, I conceptualized, executed and iterated on the creative and visual direction of the 9984 brand.
 
-
     The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it. All design & development is embedded in a continous deployment process via GitHub & Travis.
-
 
     Branding and key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
   techstack:
@@ -125,9 +119,7 @@
   description: >
     Since 2016 I'm leading the UI design & development of all BigchainDB web properties. I created the initial BigchainDB brand and further conceptualize, execute and iterate on the creative and visual direction of BigchainDB.
 
-
     The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it, pulling data from various external sources and microservices. All design & development is embedded in a continous deployment process via GitHub & Travis.
-
 
     Branding & key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
 
@@ -162,9 +154,7 @@
   description: >
     From 2015-2017 I was co-designing and leading the UI design & development of various ChartMogul web properties.
 
-
     The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it.
-
 
     Within the ChartMogul application I created and implemented a UI design system.
 
@@ -225,9 +215,7 @@
   description: >
     From 2012 to 2015 I worked at ezeep, where I created an unprecedented, market-leading & award-winning user experience based on the principles of emotional design way ahead of all competitors. This included conceptualizing executing, and iterating on the creative & visual direction of the ezeep brand.
 
-
     I was leading the UI design & development of all ezeep touch points and - as a product designer - defined the ezeep product based on user and market research in an iterative process. On top of that, I designed and helped building all app experiences of ezeep on Windows, macOS, iOS, and Android.
-
 
     ezeep was acquired by [Cortado AG](https://www.cortado.com) in 2015 and became part of their [ThinPrint Cloud Services](https://www.thinprintcloud.com) suite of products.
 
@@ -303,7 +291,6 @@
   img: "../src/images/portfolio-unihalle-01.png"
   description: >
     From 2009 to 2012 I worked at the IT services department of [Martin-Luther-Universität Halle-Wittenberg](http://www.uni-halle.de) where I conceptualized & implemented numerous in-house and public facing interfaces for thousands of students and staff.
-
 
     Additionally, I conceptualized, designed, created, and maintained the blog network & community for all students & staff.
 
