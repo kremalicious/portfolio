@@ -50,5 +50,6 @@ module.exports = {
         // see https://github.com/smooth-code/svgr for a list of all options
       },
     },
+    'gatsby-plugin-offline',
   ],
 }
