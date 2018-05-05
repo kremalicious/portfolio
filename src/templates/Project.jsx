@@ -49,8 +49,8 @@ class Project extends Component {
             </FullWidth>
 
             <footer className="project__meta">
-              {!!techstack && <ProjectTechstack techstack={techstack} />}
               {!!links && <ProjectLinks links={links} />}
+              {!!techstack && <ProjectTechstack techstack={techstack} />}
             </footer>
           </Content>
         </article>

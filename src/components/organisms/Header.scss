@@ -54,7 +54,7 @@
 
     @media (min-width: 30rem) {
         margin-top: $spacer;
-        margin-bottom: $spacer;
+        margin-bottom: 0;
     }
 
     .header__title,
@@ -75,6 +75,7 @@
         width: 1rem;
         height: 1rem;
         margin-bottom: $spacer / 3;
+        opacity: .5;
     }
 
     .header__name {
@@ -85,6 +86,11 @@
             .header__title,
             .header__description {
                 transition: color .2s ease-out;
+            }
+
+            .header__logo {
+                opacity: 1;
+                transition: opacity .2s ease-out;
             }
 
             .header__title {
