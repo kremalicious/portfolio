@@ -2,11 +2,11 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 
-const SEO = ({ postMeta, meta }) => {
-  const title = postMeta.title || meta.title
-  const description = postMeta.description || meta.description
-  const image = postMeta.img || meta.img || null
-  const url = postMeta.slug ? `${meta.url}/${postMeta.slug}` : meta.url
+const SEO = ({ project, meta }) => {
+  const title = project.title ? project.title : meta.title
+  const description = project.description ? project.description : meta.description
+  const image = project.img ? project.img.childImageSharp.twitterImage.src : meta.img.childImageSharp.resize.src
+  const url = project.slug ? `${meta.url}/${project.slug}` : meta.url
 
   return (
     <Helmet>
@@ -32,12 +32,12 @@ const SEO = ({ postMeta, meta }) => {
 }
 
 SEO.propTypes = {
-  postMeta: PropTypes.object,
+  project: PropTypes.object,
   meta: PropTypes.object,
 }
 
 SEO.defaultProps = {
-  postMeta: {},
+  project: {},
   meta: {},
 }
 

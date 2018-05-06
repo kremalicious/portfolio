@@ -32,7 +32,7 @@ class Project extends Component {
           <title>{title}</title>
         </Helmet>
 
-        <SEO meta={meta} postMeta={project} />
+        <SEO project={project} meta={meta} />
 
         <article className="project">
           <Content>
@@ -79,6 +79,13 @@ export const projectQuery = graphql`
         url
       }
       techstack
+      img {
+        childImageSharp {
+          twitterImage: resize(width: 980) {
+            src
+          }
+        }
+      }
     }
     dataYaml {
       title
@@ -99,6 +106,13 @@ export const projectQuery = graphql`
       }
       typekit
       googleanalytics
+      img {
+        childImageSharp {
+          resize(width: 980) {
+            src
+          }
+        }
+      }
     }
     projectImages: allImageSharp(
       filter: { id: { regex: $slug } }

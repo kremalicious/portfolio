@@ -81,6 +81,13 @@ export const query = graphql`
           }
         }
       }
+      img {
+        childImageSharp {
+          resize(width: 980) {
+            src
+          }
+        }
+      }
       social {
         Email
         Blog

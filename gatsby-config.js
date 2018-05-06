@@ -13,6 +13,7 @@ module.exports = {
     'gatsby-transformer-yaml',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-sass',
       options: {
@@ -50,6 +51,23 @@ module.exports = {
         // see https://github.com/smooth-code/svgr for a list of all options
       },
     },
-    'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-favicon',
+      options: {
+        logo: './src/images/favicon.png',
+        injectHTML: true,
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: false,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          twitter: false,
+          yandex: true,
+          windows: true,
+        },
+      },
+    },
   ],
 }

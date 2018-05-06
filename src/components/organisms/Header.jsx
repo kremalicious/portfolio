@@ -13,9 +13,7 @@ class Header extends Component {
     const meta = this.props.meta
 
     let classes = 'header'
-    if (!isHomepage) {
-      classes += ' header--minimal'
-    }
+    if (!isHomepage) classes += ' header--minimal'
 
     return (
       <header className={classes}>
