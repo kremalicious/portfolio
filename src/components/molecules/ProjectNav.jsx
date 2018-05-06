@@ -21,11 +21,7 @@ const ProjectNav = ({ previous, next }) => (
         </Link>
       </div>
     )}
-    <Link
-      className="project__nav__index"
-      title="Back to projects"
-      to={'/'}
-    >
+    <Link className="project__nav__index" title="Back to projects" to={'/'}>
       <Index className="icon" />
     </Link>
     {next ? (
@@ -40,12 +36,12 @@ const ProjectNav = ({ previous, next }) => (
         </Link>
       </div>
     ) : (
-        <div className="project__nav__item project__nav__item--end">
-          <div className="project__nav__end">
-            <h3>This is the end</h3>
-            <p>I would rather not show you my websites from 1999.</p>
-          </div>
+      <div className="project__nav__item project__nav__item--end">
+        <div className="project__nav__end">
+          <h3>This is the end</h3>
+          <p>I would rather not show you my websites from 1999.</p>
         </div>
+      </div>
     )}
   </nav>
 )

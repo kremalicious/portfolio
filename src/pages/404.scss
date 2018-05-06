@@ -1,0 +1,22 @@
+@import 'variables';
+
+.content--404 {
+    text-align: center;
+    height: 100%;
+
+    .gif {
+        display: inline-block;
+        width: auto;
+        height: 300px;
+        box-shadow: 0 3px 5px rgba($brand-main, .15), 0 5px 16px rgba($brand-main, .15);
+        margin-top: $spacer / 4;
+        margin-bottom: $spacer / 2;
+    }
+
+    .gif__action {
+        font-size: $font-size-small;
+        padding: $spacer / 6 $spacer / 2;
+        border: 1px solid $brand-cyan;
+        border-radius: 4px;
+    }
+}
