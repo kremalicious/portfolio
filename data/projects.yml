@@ -5,7 +5,7 @@
   slug: "/oceanprotocol/"
   img: "../src/images/portfolio-oceanprotocol-01.png"
   description: >
-    Since 2017 I'm leading the UI design & development of all Ocean Protocol web properties. Additionally, I conceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.
+    Since 2017 I'm leading the UI design & development of Ocean Protocol, iterating on a components-based UI design system spanning all of Ocean Protocol's web properties. Additionally, I conceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.
 
     The main website is a single-page JavaScript application built with React, pulling its data from JSON files and various micro services. All design & development is embedded in a continous deployment process via GitHub & Travis.
 
@@ -50,6 +50,7 @@
   - Travis
   - AWS S3
   - Cloudflare
+  - 3Scale
 
   links:
   - title: Link
@@ -64,7 +65,7 @@
 
   title: Berlin Innovation Ventures
   slug: "/biv/"
-  img: "../src/images/portfolio-biv.png"
+  img: "../src/images/portfolio-biv-01.png"
   description: >
     I designed & developed the website and a basic branding for the new
     Berlin-based VC firm Berlin Innovation Ventures. The main website is a static
@@ -86,7 +87,7 @@
 
   title: 9984 >> Summit 2017
   slug: "/9984/"
-  img: "../src/images/portfolio-9984.png"
+  img: "../src/images/portfolio-9984-01.png"
   links:
   - title: Link
     url: https://2017.9984.io
@@ -117,7 +118,7 @@
   slug: "/bigchaindb/"
   img: "../src/images/portfolio-bigchaindb-01.png"
   description: >
-    Since 2016 I'm leading the UI design & development of all BigchainDB web properties. I created the initial BigchainDB brand and further conceptualize, execute and iterate on the creative and visual direction of BigchainDB.
+    Since 2016 I'm leading the UI design & development of all BigchainDB web properties. I created the initial BigchainDB brand and further conceptualize, execute and iterate on the creative and visual direction of BigchainDB. This includes creating and iterating on a components-based UI design system for all of BigchainDB's web properties.
 
     The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it, pulling data from various external sources and microservices. All design & development is embedded in a continous deployment process via GitHub & Travis.
 
@@ -189,7 +190,7 @@
 
   title: ShareTheMeal
   slug: "/sharethemeal/"
-  img: "../src/images/portfolio-sharethemeal.png"
+  img: "../src/images/portfolio-sharethemeal-01.png"
   description: >
     ShareTheMeal is an app from the United Nations World Food Programme (WFP) that enables people to "share their meals" with children in need. In 2015 I was consulting, co-designing and leading the front-end development of the ShareTheMeal website and various parts of the ShareTheMeal apps for iOS & Android.
 
@@ -251,9 +252,9 @@
 
   title: Mr. Reader
   slug: "/mrreader/"
-  img: "../src/images/portfolio-mrreader.png"
+  img: "../src/images/portfolio-mrreader-01.png"
   description: >
-    I designed the app icon, a custom theme, and various promotion materials for Mr. Reader, a powerful RSS feed reader for iPad.
+    In 2012 I designed the app icon, a custom theme, and various promotion materials for Mr. Reader, a powerful RSS feed reader for iPad.
   techstack:
   - Photoshop
 
@@ -261,7 +262,7 @@
 
   title: iPixelPad
   slug: "/ipixelpad/"
-  img: "../src/images/portfolio-ipixelpad.png"
+  img: "../src/images/portfolio-ipixelpad-01.png"
   description: >
     So, what to do when everyone seem to release iPad icons but fail to
     include some crisp small size icons? Pushing the pixels for yourself of course.
@@ -280,7 +281,7 @@
 
   title: Out Of Whale Oil
   slug: "/outofwhaleoil/"
-  img: "../src/images/portfolio-outofwhaleoil-01.png"
+  img: "../src/images/portfolio-outofwhaleoil-01.jpg"
   description: >
     Tribute wallpaper pack inspired by the Futurama movie _Into The Wild
     Green Yonder_. Released as a goodie
@@ -323,7 +324,7 @@
 
   title: Coffee Cup
   slug: "/coffeecup/"
-  img: "../src/images/portfolio-coffeecup.png"
+  img: "../src/images/portfolio-coffeecup-01.png"
   description: >
     Desktop icons showing the fuel of most designers. Released as a goodie
     on [kremalicious.com](https://kremalicious.com/coffee-cup-icon/).

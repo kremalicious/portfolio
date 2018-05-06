@@ -9,7 +9,7 @@ const Home = ({ data }) => {
   const projects = data.allProjectsYaml.edges
 
   return (
-    <FullWidth id="projects" className="projects">
+    <FullWidth className="projects">
       {projects.map(({ node }) => {
         const { slug, title, img } = node
 

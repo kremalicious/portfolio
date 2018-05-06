@@ -95,3 +95,25 @@
         margin-right: auto;
     }
 }
+
+.project__nav__item--end {
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+}
+
+.project__nav__end {
+    padding-right: $spacer;
+    text-align: left;
+
+    h3 {
+        font-size: $font-size-h3;
+        margin-bottom: $spacer / 4;
+        color: $brand-grey-light;
+    }
+
+    p {
+        margin: 0;
+        color: $brand-grey-light;
+    }
+}

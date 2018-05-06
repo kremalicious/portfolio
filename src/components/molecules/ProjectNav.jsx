@@ -24,11 +24,11 @@ const ProjectNav = ({ previous, next }) => (
     <Link
       className="project__nav__index"
       title="Back to projects"
-      to={'/#projects'}
+      to={'/'}
     >
       <Index className="icon" />
     </Link>
-    {next && (
+    {next ? (
       <div className="project__nav__item">
         <Link className="project__nav__link next" to={next.slug}>
           <Img
@@ -39,6 +39,13 @@ const ProjectNav = ({ previous, next }) => (
           <h1 className="project__nav__title">{next.title}</h1>
         </Link>
       </div>
+    ) : (
+        <div className="project__nav__item project__nav__item--end">
+          <div className="project__nav__end">
+            <h3>This is the end</h3>
+            <p>I would rather not show you my websites from 1999.</p>
+          </div>
+        </div>
     )}
   </nav>
 )
