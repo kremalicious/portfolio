@@ -38,12 +38,7 @@ const Social = ({ meta, minimal, hide }) => {
       <FadeIn timeout={{ enter: 200, exit: 0, appear: 200 }}>
         <aside className={classes}>
           {Object.keys(social).map((key, i) => (
-            <OutboundLink
-              className="social__link"
-              href={social[key]}
-              key={i}
-              title={key}
-            >
+            <OutboundLink className="social__link" href={social[key]} key={i}>
               <SocialIcon title={key} className="icon" />
               <span className="social__title">{key}</span>
             </OutboundLink>

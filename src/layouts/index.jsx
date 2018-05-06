@@ -70,6 +70,17 @@ export const query = graphql`
       tagline
       description
       url
+      email
+      avatar {
+        childImageSharp {
+          original: resize {
+            src
+          }
+          small: resize(width: 256) {
+            src
+          }
+        }
+      }
       social {
         Email
         Blog
@@ -86,6 +97,7 @@ export const query = graphql`
       addressbook
       typekit
       googleanalytics
+      avatarBase64
     }
   }
 `
