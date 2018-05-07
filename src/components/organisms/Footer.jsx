@@ -11,10 +11,16 @@ class Footer extends Component {
     this.handleAddressbookClick = this.handleAddressbookClick.bind(this)
   }
 
+  generateFileName() {
+    // results in 'matthias-kretschmann.vcf'
+    return `${this.props.meta.title.toLowerCase().split(' ').join('-')}.vcf`
+  }
+
   constructVcard() {
     const meta = this.props.meta
     const contact = new vCard()
     const photo = meta.avatarBase64
+
     contact.set('fn', meta.title)
     contact.set('title', meta.tagline)
     contact.set('email', meta.email)
@@ -24,13 +30,14 @@ class Footer extends Component {
     contact.add('x-socialprofile', meta.social.Twitter, { type: 'twitter' })
     contact.add('x-socialprofile', meta.social.GitHub, { type: 'GitHub' })
     contact.set('photo', photo, { encoding: 'b', type: 'JPEG' })
+
     const vcard = contact.toString('3.0')
-    this.downloadVcard(vcard, meta)
+    this.downloadVcard(vcard)
   }
 
-  downloadVcard(vcard, meta) {
+  downloadVcard(vcard) {
     const blob = new Blob([vcard], { type: 'text/x-vcard' })
-    FileSaver.saveAs(blob, `${meta.title.toLowerCase()}.vcf`)
+    FileSaver.saveAs(blob, this.generateFileName())
   }
 
   handleAddressbookClick(e) {
@@ -46,7 +53,7 @@ class Footer extends Component {
       <footer className="footer">
         <Social meta={meta} minimal />
         <p className="footer__actions">
-          <a href="#" onClick={this.handleAddressbookClick}>
+          <a href={`${meta.url}/${this.generateFileName()}`} onClick={this.handleAddressbookClick}>
             Add to addressbook
           </a>
           <a href={meta.gpg}>PGP/GPG key</a>
