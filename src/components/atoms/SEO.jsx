@@ -10,7 +10,7 @@ const SEO = ({ project, meta }) => {
   const image = project.img
     ? project.img.childImageSharp.twitterImage.src
     : meta.img.childImageSharp.resize.src
-  const url = project.slug ? `${meta.url}/${project.slug}` : meta.url
+  const url = project.slug ? `${meta.url}${project.slug}` : meta.url
 
   return (
     <Helmet>
