@@ -6,7 +6,7 @@ aws s3 sync \
   --delete \
   --acl public-read \
   ./public \
-  s3://beta.matthiaskretschmann.com
+  s3://matthiaskretschmann.com
 
 echo "---------------------------------------------"
 echo "         ✓ done deployment "
