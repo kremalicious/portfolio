@@ -25,7 +25,7 @@ addressbook: /vcard-matthias-kretschmann.vcf
 
 typekit: dtg3zui
 googleanalytics: UA-1441794-4
-matomoDomain: https://analytics.kremalicious.com
+matomoUrl: https://analytics.kremalicious.com
 matomoSite: 2
 
 avatarBase64: >
