@@ -21,8 +21,8 @@ ProjectImage.propTypes = {
 
 export const projectImage = graphql`
   fragment ProjectImageSizes on ImageSharp {
-    sizes(maxWidth: 1200, quality: 80) {
-      ...GatsbyImageSharpSizes_withWebp_noBase64
+    sizes(maxWidth: 1200, quality: 85) {
+      ...GatsbyImageSharpSizes_noBase64
     }
   }
 `
