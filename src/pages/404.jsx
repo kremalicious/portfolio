@@ -44,7 +44,8 @@ class NotFound extends Component {
         <h1>Shenanigans, page not found.</h1>
         <p>
           You might want to check the url, or{' '}
-          <Link to={'/'}>go back to the homepage</Link>. Or just check out some fail gifs, entirely your choice.
+          <Link to={'/'}>go back to the homepage</Link>. Or just check out some
+          fail gifs, entirely your choice.
         </p>
 
         <video className="gif" src={this.state.gif} autoPlay loop />

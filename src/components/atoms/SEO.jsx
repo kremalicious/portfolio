@@ -4,8 +4,12 @@ import PropTypes from 'prop-types'
 
 const SEO = ({ project, meta }) => {
   const title = project.title ? project.title : meta.title
-  const description = project.description ? project.description : meta.description
-  const image = project.img ? project.img.childImageSharp.twitterImage.src : meta.img.childImageSharp.resize.src
+  const description = project.description
+    ? project.description
+    : meta.description
+  const image = project.img
+    ? project.img.childImageSharp.twitterImage.src
+    : meta.img.childImageSharp.resize.src
   const url = project.slug ? `${meta.url}/${project.slug}` : meta.url
 
   return (
