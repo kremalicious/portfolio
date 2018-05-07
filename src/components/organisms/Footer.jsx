@@ -13,7 +13,10 @@ class Footer extends Component {
 
   generateFileName() {
     // results in 'matthias-kretschmann.vcf'
-    return `${this.props.meta.title.toLowerCase().split(' ').join('-')}.vcf`
+    return `${this.props.meta.title
+      .toLowerCase()
+      .split(' ')
+      .join('-')}.vcf`
   }
 
   constructVcard() {
@@ -53,7 +56,10 @@ class Footer extends Component {
       <footer className="footer">
         <Social meta={meta} minimal />
         <p className="footer__actions">
-          <a href={`${meta.url}/${this.generateFileName()}`} onClick={this.handleAddressbookClick}>
+          <a
+            href={`${meta.url}/${this.generateFileName()}`}
+            onClick={this.handleAddressbookClick}
+          >
             Add to addressbook
           </a>
           <a href={meta.gpg}>PGP/GPG key</a>
