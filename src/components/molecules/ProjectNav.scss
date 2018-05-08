@@ -1,5 +1,7 @@
 @import 'variables';
 
+$breakpoint-project-nav: 45rem;
+
 .project__nav {
     display: flex;
     flex-wrap: wrap;
@@ -36,7 +38,7 @@
         }
     }
 
-    @media (min-width: 45rem) {
+    @media (min-width: $breakpoint-project-nav) {
         flex-basis: 33%;
 
         &:first-child,
@@ -66,7 +68,7 @@
     order: 3;
     width: 100%;
 
-    @media (min-width: 45rem) {
+    @media (min-width: $breakpoint-project-nav) {
         margin-top: 0;
         margin-left: $spacer * 4;
         margin-right: $spacer * 4;
@@ -107,13 +109,22 @@
     text-align: left;
 
     h3 {
-        font-size: $font-size-h3;
+        font-size: $font-size-h4;
         margin-bottom: $spacer / 4;
         color: $brand-grey-light;
+
+        @media (min-width: $breakpoint-project-nav) {
+            font-size: $font-size-h3;
+        }
     }
 
     p {
         margin: 0;
         color: $brand-grey-light;
+        font-size: $font-size-small;
+
+        @media (min-width: $breakpoint-project-nav) {
+            font-size: $font-size-base;
+        }
     }
 }
