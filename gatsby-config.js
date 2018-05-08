@@ -14,6 +14,7 @@ module.exports = {
     'gatsby-transformer-yaml',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-sass',
