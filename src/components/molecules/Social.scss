@@ -1,13 +1,13 @@
 @import 'variables';
 
-.social {
+.networks {
     margin-top: $spacer * $line-height;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.social__title {
+.networks__title {
     display: block;
     width: 100%;
     font-size: $font-size-mini;
@@ -17,7 +17,7 @@
     transition: .2s ease-out;
 }
 
-.social__link {
+.networks__link {
     margin-left: $spacer / 4;
     margin-right: $spacer / 4;
     text-align: center;
@@ -47,13 +47,13 @@
             fill: $brand-cyan;
         }
 
-        .social__title {
+        .networks__title {
             opacity: 1;
             transform: translate3d(0, 0, 0);
         }
     }
 
-    .social--minimal & {
+    .networks--minimal & {
         padding: $spacer / 4;
         margin-left: $spacer / 4;
         margin-right: $spacer / 4;

@@ -31,16 +31,16 @@ const SocialIcon = props => {
 
 const Social = ({ meta, minimal, hide }) => {
   const { social } = meta
-  const classes = minimal ? 'social social--minimal' : 'social'
+  const classes = minimal ? 'networks networks--minimal' : 'networks'
 
   return (
     !hide && (
       <FadeIn timeout={{ enter: 200, exit: 0, appear: 200 }}>
         <aside className={classes}>
           {Object.keys(social).map((key, i) => (
-            <OutboundLink className="social__link" href={social[key]} key={i}>
+            <OutboundLink className="networks__link" href={social[key]} key={i}>
               <SocialIcon title={key} className="icon" />
-              <span className="social__title">{key}</span>
+              <span className="networks__title">{key}</span>
             </OutboundLink>
           ))}
         </aside>
