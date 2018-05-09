@@ -1,19 +1,5 @@
 const path = require('path')
 
-// https://github.com/saschajullmann/gatsby-starter-gatsbythemes/blob/master/gatsby-node.js
-exports.modifyWebpackConfig = ({ config, stage }) => {
-  switch (stage) {
-    case 'develop':
-      config.preLoader('eslint-loader', {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-      })
-
-      break
-  }
-  return config
-}
-
 // https://github.com/gatsbyjs/gatsby/issues/2288#issuecomment-334467821
 exports.modifyWebpackConfig = ({ config, stage }) => {
   if (stage === 'build-html') {

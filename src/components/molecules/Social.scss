@@ -2,14 +2,16 @@
 
 .networks {
     margin-top: $spacer * $line-height;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     display: flex;
     justify-content: center;
+    max-width: 20rem;
 }
 
 .networks__title {
     display: block;
-    width: 100%;
     font-size: $font-size-mini;
     color: $brand-grey-light;
     opacity: 0;
@@ -18,15 +20,11 @@
 }
 
 .networks__link {
-    margin-left: $spacer / 4;
-    margin-right: $spacer / 4;
+    margin-left: $spacer / 2;
+    margin-right: $spacer / 2;
     text-align: center;
     display: block;
-
-    @media (min-width: 30rem) {
-        margin-left: $spacer / 2;
-        margin-right: $spacer / 2;
-    }
+    flex: 1 1 (100% / 5);
 
     &,
     .icon {
