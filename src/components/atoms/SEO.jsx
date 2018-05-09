@@ -14,6 +14,8 @@ const SEO = ({ project, meta }) => {
 
   return (
     <Helmet>
+      <html lang="en" />
+
       {/* General tags */}
       <meta name="description" content={description} />
       <meta name="image" content={image} />
