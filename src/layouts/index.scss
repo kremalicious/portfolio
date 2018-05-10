@@ -19,7 +19,6 @@ html {
 }
 
 body {
-    background: $body-background-color;
     font-family: $font-family-base;
     font-weight: $font-weight-base;
     font-size: $font-size-base;
@@ -29,12 +28,6 @@ body {
     font-feature-settings: 'liga', 'kern';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: background .2s ease-out;
-
-    &.dark {
-        background: $body-background-color--dark;
-        color: $text-color--dark;
-    }
 }
 
 p,
@@ -118,6 +111,13 @@ svg {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background: $body-background-color;
+    transition: background .2s ease-out;
+
+    &.dark {
+        background: $body-background-color--dark;
+        color: $text-color--dark;
+    }
 }
 
 .screen {

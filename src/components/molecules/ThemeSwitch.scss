@@ -5,15 +5,11 @@
     top: $spacer / 2;
     right: $spacer;
     z-index: 10;
-    opacity: .6;
-
-    .dark & {
-        opacity: .8;
-    }
 
     .icon {
         width: .8rem;
         height: .8rem;
+        margin-top: -.05rem;
         fill: $brand-grey-light;
 
         &:last-child {
@@ -22,16 +18,8 @@
             height: .7rem;
         }
 
-        &.active {
-            fill: $brand-grey;
-        }
-
         .dark & {
             fill: $brand-grey;
-
-            &.active {
-                fill: $brand-grey-light;
-            }
         }
     }
 }
@@ -41,12 +29,15 @@
     align-items: center;
 }
 
+$knob-size: 8px;
+$knob-space: 1px;
+
 .checkbox__faux {
     display: block;
     position: relative;
-    width: 1.15rem;
-    height: .61rem;
-    border: .05rem solid $brand-grey-light;
+    width: ($knob-size + ($knob-space * 2)) * 2;
+    height: $knob-size + ($knob-space * 4);
+    border: 1px solid $brand-grey-light;
     border-radius: 15rem;
     margin-left: $spacer / 3;
     margin-right: $spacer / 3;
@@ -54,20 +45,33 @@
     &::after {
         content: '';
         position: absolute;
-        top: .025rem;
-        left: .05rem;
-        width: .5rem;
-        height: .5rem;
-        background-color: $brand-grey;
+        top: $knob-space;
+        left: $knob-space;
+        width: $knob-size;
+        height: $knob-size;
+        background-color: $brand-grey-light;
         border-radius: 15rem;
         transition: transform .2s $easing;
         transform: translate3d(0, 0, 0);
+    }
+
+    .dark & {
+        border-color: $brand-grey;
+
+        &::after {
+            background-color: $brand-grey;
+        }
     }
 }
 
 .checkbox {
     position: relative;
     cursor: pointer;
+    opacity: .6;
+
+    .dark & {
+        opacity: .8;
+    }
 
     [type="checkbox"],
     .checkbox__label {

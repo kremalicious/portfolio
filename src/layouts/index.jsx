@@ -24,9 +24,15 @@ const Main = ({ children }) => <main className="screen">{children}</main>
 const TemplateWrapper = ({ data, location, children }) => {
   const meta = data.dataYaml
   const isHomepage = location.pathname === '/'
+  const now = new Date().getHours()
+  let classes = 'app'
+
+  if (now >= 19 || now <= 7) {
+    classes += ' dark'
+  }
 
   return (
-    <div className="app">
+    <div className={classes}>
       <Head meta={meta} location={location} />
       <Header meta={meta} isHomepage={isHomepage} />
 

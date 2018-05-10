@@ -7,6 +7,7 @@ $easing:                cubic-bezier(.75, 0, .08, 1);
 
 $brand-main:			#015565;
 $brand-cyan:            #43a699;
+$brand-main-light:      #88bec8;
 $brand-light:           #e7eef4;
 
 $brand-grey:			#6b7f88;
@@ -33,6 +34,7 @@ $text-color-light--dark: $brand-grey;
 
 // Typography
 /////////////////////////////////////
+
 $font-size-root             : 18px;
 
 $font-size-base             : 1rem;
@@ -61,7 +63,7 @@ $font-weight-headings       : 400;
 $line-height-headings       : 1.1;
 
 $color-headings:            $brand-main;
-$color-headings--dark:      lighten($color-headings, 10%);
+$color-headings--dark:      $brand-main-light;
 
 // Components spacing
 /////////////////////////////////////
