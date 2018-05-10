@@ -12,6 +12,8 @@ const Head = ({ meta, location }) => {
         defaultTitle={`${title.toLowerCase()} { ${tagline.toLowerCase()} }`}
         titleTemplate={`%s // ${title.toLowerCase()} { ${tagline.toLowerCase()} }`}
       >
+        <meta name="apple-mobile-web-app-title" content={title.toLowerCase()} />
+
         {location.hostname !== 'matthiaskretschmann.com' && (
           <meta content="noindex,nofollow" name="robots" />
         )}
