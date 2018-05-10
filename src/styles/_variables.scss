@@ -1,5 +1,6 @@
 $typekit:               'dtg3zui';
 $projectImageMaxWidth:  1200px;
+$easing:                cubic-bezier(.75, 0, .08, 1);
 
 // Colors
 /////////////////////////////////////
@@ -13,11 +14,21 @@ $brand-grey-light:		lighten($brand-grey, 15%);
 $brand-grey-dimmed:     lighten($brand-grey, 50%);
 
 
+// Backgrounds
+/////////////////////////////////////
+
+$body-background-color: $brand-light;
+$body-background-color--dark: darken($brand-grey, 30%);
+
+
 // Text Colors
 /////////////////////////////////////
 
 $text-color:            $brand-grey;
 $text-color-light:      $brand-grey-light;
+
+$text-color--dark:      $brand-grey-light;
+$text-color-light--dark: $brand-grey;
 
 
 // Typography
@@ -48,7 +59,9 @@ $font-family-monospace      : Menlo, Monaco, Consolas, 'Courier New', monospace;
 $font-family-headings       : 'brandon-grotesque', 'Avenir Next', 'Helvetica Neue',Helvetica,Arial,sans-serif;
 $font-weight-headings       : 400;
 $line-height-headings       : 1.1;
+
 $color-headings:            $brand-main;
+$color-headings--dark:      lighten($color-headings, 10%);
 
 // Components spacing
 /////////////////////////////////////

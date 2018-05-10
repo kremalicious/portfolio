@@ -19,7 +19,7 @@ html {
 }
 
 body {
-    background: $brand-light;
+    background: $body-background-color;
     font-family: $font-family-base;
     font-weight: $font-weight-base;
     font-size: $font-size-base;
@@ -29,6 +29,12 @@ body {
     font-feature-settings: 'liga', 'kern';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background .2s ease-out;
+
+    &.dark {
+        background: $body-background-color--dark;
+        color: $text-color--dark;
+    }
 }
 
 p,
@@ -39,19 +45,6 @@ ol {
 
 // Headings
 /////////////////////////////////////
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: $font-family-headings;
-    line-height: $line-height-headings;
-    color: $color-headings;
-    font-weight: $font-weight-headings;
-    margin: 0 0 $spacer;
-}
 
 h1 {
     font-size: $font-size-h1;
@@ -75,6 +68,23 @@ h5 {
 
 h6 {
     font-size: $font-size-h6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-family-headings;
+    line-height: $line-height-headings;
+    color: $color-headings;
+    font-weight: $font-weight-headings;
+    margin: 0 0 $spacer;
+
+    .dark & {
+        color: $color-headings--dark;
+    }
 }
 
 // Links

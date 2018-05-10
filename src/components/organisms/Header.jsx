@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { FadeIn } from '../atoms/Animations'
 import Social from '../molecules/Social'
 import Availability from '../molecules/Availability'
+import ThemeSwitch from '../molecules/ThemeSwitch'
 import { ReactComponent as Logo } from '../../images/logo.svg'
 import './Header.scss'
 
@@ -17,6 +18,7 @@ class Header extends Component {
 
     return (
       <header className={classes}>
+        <ThemeSwitch />
         <FadeIn>
           <Link className="header__name" to={'/'}>
             <Logo className="header__logo" />

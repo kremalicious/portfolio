@@ -39,6 +39,10 @@
     font-size: $font-size-large;
     color: $brand-grey;
 
+    .dark & {
+        color: $brand-grey-light;
+    }
+
     span {
         opacity: .4;
     }
@@ -54,13 +58,7 @@
     height: auto;
 
     @media (min-width: 30rem) {
-        margin-top: $spacer;
-        margin-bottom: 0;
-    }
-
-    .header__title,
-    .header__description {
-        color: $brand-grey-light;
+        padding-top: $spacer * 2;
     }
 
     .header__title {
@@ -72,6 +70,15 @@
         font-size: $font-size-base;
     }
 
+    .header__title,
+    .header__description {
+        color: $brand-grey-light;
+
+        .dark & {
+            color: $brand-grey;
+        }
+    }
+
     .header__logo {
         width: 1rem;
         height: 1rem;
@@ -81,6 +88,8 @@
 
     .header__name {
         pointer-events: all;
+        display: inline-block;
+        width: auto;
 
         &:hover,
         &:focus {
@@ -95,11 +104,19 @@
             }
 
             .header__title {
-                color: $brand-main;
+                color: $color-headings;
+
+                .dark & {
+                    color: $color-headings--dark;
+                }
             }
 
             .header__description {
-                color: $brand-grey;
+                color: $text-color;
+
+                .dark & {
+                    color: $text-color--dark;
+                }
             }
         }
     }
