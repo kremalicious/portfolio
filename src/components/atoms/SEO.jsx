@@ -18,21 +18,21 @@ const SEO = ({ project, meta }) => {
 
       {/* General tags */}
       <meta name="description" content={description} />
-      <meta name="image" content={image} />
+      <meta name="image" content={`${meta.url}${image}`} />
       <link rel="canonical" href={url} />
 
       {/* OpenGraph tags */}
       <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={`${meta.url}${image}`} />
 
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={meta.social.Twitter} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={`${meta.url}${image}`} />
     </Helmet>
   )
 }
