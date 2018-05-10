@@ -7,12 +7,16 @@ class ThemeSwitch extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {
-      dark: false
-    }
+    this.state = { dark: false }
   }
 
   componentDidMount() {
+    const now = new Date().getHours()
+
+    if (now >= 19 || now <= 7) {
+      this.setState({ dark: true })
+    }
+
     this.toggleTheme()
   }
 
@@ -22,7 +26,7 @@ class ThemeSwitch extends Component {
 
   isDark = () => this.state.dark === true
 
-  toggleState = () => {
+  handleChange = () => {
     this.setState({ dark: !this.isDark() })
   }
 
@@ -36,11 +40,12 @@ class ThemeSwitch extends Component {
         <label className="checkbox">
           <span className="checkbox__label">Toggle Night Mode</span>
           <input
-            onClick={this.toggleState}
+            onChange={this.handleChange}
             type="checkbox"
             name="toggle"
             value="toggle"
             aria-describedby="toggle"
+            checked={this.state.dark}
           />
           <span
             id="toggle"
