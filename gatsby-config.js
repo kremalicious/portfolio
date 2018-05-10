@@ -51,6 +51,7 @@ module.exports = {
         siteId: `${matomoSite}`,
         siteUrl: `${url}`,
         matomoUrl: `${matomoUrl}`,
+        localScript: '/piwik.js',
       },
     },
     {
