@@ -1,14 +1,15 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import FileSaver from 'file-saver'
 import vCard from '../../lib/vcf/vcard'
 import Social from '../molecules/Social'
 import './Footer.scss'
 
-class Footer extends Component {
+class Footer extends PureComponent {
   constructor(props) {
     super(props)
-    this.handleAddressbookClick = this.handleAddressbookClick.bind(this)
+
+    this.state = { year: new Date().getFullYear() }
   }
 
   generateFileName() {
@@ -43,13 +44,12 @@ class Footer extends Component {
     FileSaver.saveAs(blob, this.generateFileName())
   }
 
-  handleAddressbookClick(e) {
+  handleAddressbookClick = (e) => {
     e.preventDefault()
     this.constructVcard()
   }
 
   render() {
-    const year = new Date().getFullYear()
     const meta = this.props.meta
 
     return (
@@ -66,7 +66,7 @@ class Footer extends Component {
         </p>
         <p>
           <small>
-            &copy; {year} {meta.title} &mdash; All Rights Reserved
+            &copy; {this.state.year} {meta.title} &mdash; All Rights Reserved
           </small>
         </p>
       </footer>

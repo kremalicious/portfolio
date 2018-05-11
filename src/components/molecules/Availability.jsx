@@ -1,12 +1,11 @@
-import React, { Fragment, Component } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { MoveIn } from '../atoms/Animations'
 import './Availability.scss'
 
-class Availability extends Component {
+class Availability extends PureComponent {
   constructor(props) {
     super(props)
-    this.handleScroll = this.handleScroll.bind(this)
   }
 
   componentDidMount() {
@@ -36,7 +35,7 @@ class Availability extends Component {
     window.removeEventListener('scroll', this.handleScroll)
   }
 
-  handleScroll() {
+  handleScroll = () => {
     let timeout
     const footer = document.getElementsByClassName('footer')[0]
     const availability = document.getElementsByClassName('availability')[0]

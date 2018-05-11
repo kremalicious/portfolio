@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
 import { FadeIn } from '../atoms/Animations'
@@ -8,16 +8,35 @@ import ThemeSwitch from '../molecules/ThemeSwitch'
 import { ReactComponent as Logo } from '../../images/logo.svg'
 import './Header.scss'
 
-class Header extends Component {
-  render() {
-    const isHomepage = this.props.isHomepage
-    const meta = this.props.meta
+class Header extends PureComponent {
+  constructor(props) {
+    super(props)
 
-    let classes = 'header'
-    if (!isHomepage) classes += ' header--minimal'
+    this.state = { classes: 'header' }
+  }
+
+  componentDidMount() {
+    this.toggleClasses()
+  }
+
+  componentDidUpdate() {
+    this.toggleClasses()
+  }
+
+  toggleClasses = () => {
+    if (this.props.isHomepage) {
+      this.setState({ classes: 'header' })
+    } else {
+      this.setState({ classes: 'header header--minimal' })
+    }
+  }
+
+  render() {
+    const meta = this.props.meta
+    const isHomepage = this.props.isHomepage
 
     return (
-      <header className={classes}>
+      <header className={this.state.classes}>
         <ThemeSwitch />
         <FadeIn>
           <Link className="header__name" to={'/'}>

@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { FadeIn } from '../atoms/Animations'
 import { ReactComponent as Day } from '../../images/day.svg'
 import { ReactComponent as Night } from '../../images/night.svg'
 import './ThemeSwitch.scss'
 
-class ThemeSwitch extends Component {
+class ThemeSwitch extends PureComponent {
   constructor(props) {
     super(props)
 
@@ -34,7 +34,9 @@ class ThemeSwitch extends Component {
   }
 
   toggleTheme = () => {
-    document.getElementsByClassName('app')[0].classList.toggle('dark', this.state.dark)
+    document
+      .getElementsByClassName('app')[0]
+      .classList.toggle('dark', this.state.dark)
   }
 
   render() {

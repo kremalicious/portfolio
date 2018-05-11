@@ -12,8 +12,14 @@ import SEO from '../components/atoms/SEO'
 import './Project.scss'
 
 class Project extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
+
+    const description = this.props.data.projectsYaml.description
+
+    this.state = {
+      descriptionWithLineBreaks: description.split('\n').join('\n\n')
+    }
   }
 
   render() {
@@ -22,9 +28,8 @@ class Project extends Component {
     const projectImages = this.props.data.projectImages.edges
     const pathContext = this.props.pathContext
 
-    const { title, description, links, techstack } = project
+    const { title, links, techstack } = project
     const { next, previous } = pathContext
-    const descriptionWithLineBreaks = description.split('\n').join('\n\n')
 
     return (
       <Fragment>
@@ -38,7 +43,7 @@ class Project extends Component {
           <Content>
             <h1 className="project__title">{title}</h1>
             <ReactMarkdown
-              source={descriptionWithLineBreaks}
+              source={this.state.descriptionWithLineBreaks}
               className="project__description"
             />
 
