@@ -18,7 +18,7 @@ class Project extends Component {
     const description = this.props.data.projectsYaml.description
 
     this.state = {
-      descriptionWithLineBreaks: description.split('\n').join('\n\n')
+      descriptionWithLineBreaks: description.split('\n').join('\n\n'),
     }
   }
 

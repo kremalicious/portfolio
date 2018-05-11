@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import withRouter from 'react-router-dom/withRouter'
 import TransitionGroup from 'react-transition-group/TransitionGroup'
@@ -24,15 +24,9 @@ const Main = ({ children }) => <main className="screen">{children}</main>
 const TemplateWrapper = ({ data, location, children }) => {
   const meta = data.dataYaml
   const isHomepage = location.pathname === '/'
-  const now = new Date().getHours()
-  let classes = 'app'
-
-  if (now >= 19 || now <= 7) {
-    classes += ' dark'
-  }
 
   return (
-    <div className={classes}>
+    <Fragment>
       <Head meta={meta} location={location} />
       <Header meta={meta} isHomepage={isHomepage} />
 
@@ -48,7 +42,7 @@ const TemplateWrapper = ({ data, location, children }) => {
       </TransitionGroup>
 
       <Footer meta={meta} />
-    </div>
+    </Fragment>
   )
 }
 

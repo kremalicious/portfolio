@@ -44,7 +44,7 @@ class Footer extends PureComponent {
     FileSaver.saveAs(blob, this.generateFileName())
   }
 
-  handleAddressbookClick = (e) => {
+  handleAddressbookClick = e => {
     e.preventDefault()
     this.constructVcard()
   }

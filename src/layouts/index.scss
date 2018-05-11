@@ -107,14 +107,14 @@ svg {
     margin: 0;
 }
 
-.app {
+#___gatsby {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
     background: $body-background-color;
-    transition: background .2s ease-out;
+    transition: .6s $easing;
 
-    &.dark {
+    .dark & {
         background: $body-background-color--dark;
         color: $text-color--dark;
     }
