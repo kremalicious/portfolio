@@ -5,12 +5,20 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
-    box-shadow: 0 3px 5px rgba($brand-main, .15), 0 5px 16px rgba($brand-main, .15);
+    box-shadow:
+        0 3px 5px rgba($brand-main, .15),
+        0 5px 16px rgba($brand-main, .15);
 
     @media (min-width: $projectImageMaxWidth) {
         max-width: $projectImageMaxWidth;
         border-radius: .25rem;
         overflow: hidden;
+    }
+
+    .dark & {
+        box-shadow:
+            0 3px 5px rgba(darken($brand-main, 20%), .15),
+            0 5px 16px rgba(darken($brand-main, 20%), .15);
     }
 }
 

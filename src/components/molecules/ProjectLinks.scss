@@ -40,7 +40,9 @@
         &:hover,
         &:focus {
             transform: translate3d(0, -.1rem, 0);
-            box-shadow: 0 6px 10px rgba($brand-main, .1), 0 10px 25px rgba($brand-main, .1);
+            box-shadow:
+                0 6px 10px rgba($brand-main, .1),
+                0 10px 25px rgba($brand-main, .1);
         }
 
         &:active {

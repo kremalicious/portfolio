@@ -11,7 +11,15 @@ $breakpoint-project-nav: 45rem;
 
 .project__nav__image {
     margin: 0;
-    box-shadow: 0 3px 5px rgba($brand-main, .15), 0 5px 16px rgba($brand-main, .15);
+    box-shadow:
+        0 3px 5px rgba($brand-main, .15),
+        0 5px 16px rgba($brand-main, .15);
+
+    .dark & {
+        box-shadow:
+            0 3px 5px rgba(darken($brand-main, 20%), .15),
+            0 5px 16px rgba(darken($brand-main, 20%), .15);
+    }
 }
 
 .project__nav__item {
