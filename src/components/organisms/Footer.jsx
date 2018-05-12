@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import FileSaver from 'file-saver'
 import vCard from '../../lib/vcf/vcard'
-import Social from '../molecules/Social'
+import Networks from '../molecules/Networks'
 import './Footer.scss'
 
 class Footer extends PureComponent {
@@ -54,7 +54,7 @@ class Footer extends PureComponent {
 
     return (
       <footer className="footer">
-        <Social meta={meta} minimal />
+        <Networks meta={meta} minimal />
         <p className="footer__actions">
           <a
             href={`${meta.url}/${this.generateFileName()}`}

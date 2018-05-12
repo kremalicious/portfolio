@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
 import { FadeIn } from '../atoms/Animations'
-import Social from '../molecules/Social'
+import Networks from '../molecules/Networks'
 import Availability from '../molecules/Availability'
 import ThemeSwitch from '../molecules/ThemeSwitch'
 import { ReactComponent as Logo } from '../../images/logo.svg'
@@ -49,7 +49,7 @@ class Header extends PureComponent {
           </Link>
         </FadeIn>
 
-        <Social meta={meta} hide={!isHomepage} />
+        <Networks meta={meta} hide={!isHomepage} />
 
         <Availability
           meta={meta}

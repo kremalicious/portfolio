@@ -10,9 +10,9 @@ import { ReactComponent as GitHub } from '../../images/github.svg'
 import { ReactComponent as Dribbble } from '../../images/dribbble.svg'
 
 import '../atoms/Icons.scss'
-import './Social.scss'
+import './Networks.scss'
 
-const SocialIcon = props => {
+const NetworkIcon = props => {
   switch (props.title) {
     case 'Email':
       return <Email {...props} />
@@ -29,7 +29,7 @@ const SocialIcon = props => {
   }
 }
 
-class Social extends PureComponent {
+class Network extends PureComponent {
   constructor(props) {
     super(props)
 
@@ -65,7 +65,7 @@ class Social extends PureComponent {
                 href={social[key]}
                 key={i}
               >
-                <SocialIcon title={key} className="icon" />
+                <NetworkIcon title={key} className="icon" />
                 <span className="networks__title">{key}</span>
               </OutboundLink>
             ))}
@@ -76,10 +76,10 @@ class Social extends PureComponent {
   }
 }
 
-Social.propTypes = {
+Network.propTypes = {
   meta: PropTypes.object,
   minimal: PropTypes.bool,
   hide: PropTypes.bool,
 }
 
-export default Social
+export default Network
