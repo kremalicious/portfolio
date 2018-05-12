@@ -104,7 +104,6 @@ export const query = graphql`
       addressbook
       typekit
       googleanalytics
-      avatarBase64
     }
   }
 `
