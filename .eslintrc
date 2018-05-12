@@ -1,37 +1,12 @@
 {
+  "parser": "babel-eslint",
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react"
   ],
-  "plugins": [
-    "react",
-    "graphql",
-    "compat"
-  ],
-  "rules": {
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "never"
-    ],
-    "compat/compat": "error",
-    "react/jsx-wrap-multilines": [
-      "error",
-      {
-        "declaration": "parens-new-line",
-        "assignment": "parens-new-line",
-        "return": "parens-new-line",
-        "arrow": "parens-new-line",
-        "condition": "parens-new-line",
-        "logical": "parens-new-line",
-        "prop": "parens-new-line"
-      }
-    ]
-  },
-  "parser": "babel-eslint",
+  "plugins": ["react", "graphql"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
@@ -47,7 +22,9 @@
   "globals": {
     "graphql": true
   },
-  "settings": {
-    "polyfills": ["promises"]
+  "rules": {
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"],
+    "object-curly-spacing": ["error", "always"]
   }
 }

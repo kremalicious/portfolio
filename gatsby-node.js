@@ -16,7 +16,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   return new Promise((resolve, reject) => {
     const template = path.resolve('src/templates/Project.jsx')
 
-    resolve(graphql(`
+    resolve(
+      graphql(`
         {
           allProjectsYaml {
             edges {
@@ -86,6 +87,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         )
 
         resolve()
-      }))
+      })
+    )
   })
 }

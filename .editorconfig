@@ -1,5 +1,5 @@
-
 # EditorConfig is awesome: http://EditorConfig.org
+root = true
 
 [*]
 indent_style = space
@@ -9,8 +9,6 @@ insert_final_newline = true
 charset = utf-8
 trim_trailing_whitespace = true
 
-[*.scss]
+[{*.svg, *.scss, *.css}]
 indent_size = 4
 
-[*.css]
-indent_size = 4
