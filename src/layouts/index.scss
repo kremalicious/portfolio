@@ -19,6 +19,7 @@ html {
 }
 
 body {
+    background: $body-background-color;
     font-family: $font-family-base;
     font-weight: $font-weight-base;
     font-size: $font-size-base;
@@ -95,7 +96,6 @@ a {
     }
 }
 
-
 // Media
 /////////////////////////////////////
 
@@ -112,7 +112,7 @@ svg {
     min-height: 100vh;
     flex-direction: column;
     background: $body-background-color;
-    transition: .6s $easing;
+    transition: background .6s $easing;
 
     .dark & {
         background: $body-background-color--dark;

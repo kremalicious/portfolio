@@ -93,14 +93,8 @@
 
         &:hover,
         &:focus {
-            .header__title,
-            .header__description {
-                transition: color .2s ease-out;
-            }
-
             .header__logo {
                 opacity: 1;
-                transition: opacity .2s ease-out;
             }
 
             .header__title {
