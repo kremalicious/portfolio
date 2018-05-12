@@ -2,11 +2,23 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 
+function truncate(n, useWordBoundary) {
+  if (this.length <= n) {
+    return this
+  }
+  const subString = this.substr(0, n - 1)
+  return (
+    (useWordBoundary
+      ? subString.substr(0, subString.lastIndexOf(' '))
+      : subString) + '...'
+  )
+}
+
 const SEO = ({ project, meta }) => {
   const title = project.title ? project.title : meta.title
   const description = project.description
-    ? project.description
-    : meta.description
+    ? truncate.apply(project.description, [320, true])
+    : truncate.apply(meta.description, [320, true])
   const image = project.img
     ? project.img.childImageSharp.twitterImage.src
     : meta.img.childImageSharp.resize.src
