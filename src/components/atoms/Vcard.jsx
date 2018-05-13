@@ -8,11 +8,15 @@ class Vcard extends PureComponent {
     super(props)
   }
 
+  // Helper function to create base64 string from avatar image
+  // without the need to read image file from file system
   toDataURL(src, callback, outputFormat) {
     const img = new Image()
     img.crossOrigin = 'Anonymous'
 
     img.onload = function() {
+      // yeah, we're gonna create a fake canvas to render the image
+      // and then create a base64 string from the rendered result
       const canvas = document.createElement('canvas')
       const ctx = canvas.getContext('2d')
       let dataURL
@@ -37,11 +41,13 @@ class Vcard extends PureComponent {
     const contact = new vCard()
     const photoSrc = meta.avatar.childImageSharp.original.src
 
+    // first, convert the avatar to base64,
+    // then construct all vCard elements
     this.toDataURL(
       photoSrc,
       dataUrl => {
-        // stripping this data out of base64 string
-        // is required for vcard for whatever reason
+        // stripping this data out of base64 string is required
+        // for vcard to actually display the image for whatever reason
         const dataUrlCleaned = dataUrl.split('data:image/jpeg;base64,').join('')
         contact.set('photo', dataUrlCleaned, { encoding: 'b', type: 'JPEG' })
         contact.set('fn', meta.title)
@@ -61,6 +67,8 @@ class Vcard extends PureComponent {
     )
   }
 
+  // Construct the download from a blob of the just constructed vCard,
+  // and save it to user's file system
   downloadVcard(vcard) {
     const name = this.props.meta.addressbook.split('/').join('')
     const blob = new Blob([vcard], { type: 'text/x-vcard' })
@@ -75,6 +83,8 @@ class Vcard extends PureComponent {
   render() {
     return (
       <a
+        // href is kinda fake, only there for usability
+        // so user knows what to expect when hovering the link before clicking
         href={this.props.meta.addressbook}
         onClick={this.handleAddressbookClick}
       >

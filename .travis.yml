@@ -1,0 +1,24 @@
+language: node_js
+node_js: node
+
+cache:
+  directories:
+    - node_modules
+    - public
+
+install:
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
+  - npm i -g gatsby-cli
+  - export PATH="$PATH:/usr/local/bin/gatsby"
+  - npm i
+
+script:
+  - npm test
+  - npm run build
+
+after_success:
+  - npm run deploy
+
+notifications:
+    email: false

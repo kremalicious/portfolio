@@ -11,7 +11,7 @@
 
 /* SITE */
 	Typography				    : Brandon Grotesque, FF Tisa Sans Web Pro
-	Software				      : Gatsby.js, React, VS Code, macOS
+	Software				      : Gatsby.js, React, VS Code, Sketch, macOS
 
 
 <!--

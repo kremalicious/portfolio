@@ -1,5 +1,7 @@
 const path = require('path')
 
+// Intersection Observer polyfill
+// requires `npm install intersection-observer`
 // https://github.com/gatsbyjs/gatsby/issues/2288#issuecomment-334467821
 exports.modifyWebpackConfig = ({ config, stage }) => {
   if (stage === 'build-html') {
