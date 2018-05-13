@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import SEO from './SEO'
 
-const Head = ({ meta, location }) => {
+const Head = ({ meta }) => {
   const { title, tagline } = meta
 
   return (
@@ -13,10 +13,6 @@ const Head = ({ meta, location }) => {
         titleTemplate={`%s // ${title.toLowerCase()} { ${tagline.toLowerCase()} }`}
       >
         <meta name="apple-mobile-web-app-title" content={title.toLowerCase()} />
-
-        {location.hostname !== 'matthiaskretschmann.com' && (
-          <meta content="noindex,nofollow" name="robots" />
-        )}
       </Helmet>
       <SEO meta={meta} />
     </Fragment>
@@ -25,7 +21,6 @@ const Head = ({ meta, location }) => {
 
 Head.propTypes = {
   meta: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
 }
 
 export default Head

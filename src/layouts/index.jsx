@@ -27,7 +27,7 @@ const TemplateWrapper = ({ data, location, children }) => {
 
   return (
     <Fragment>
-      <Head meta={meta} location={location} />
+      <Head meta={meta} />
       <Header meta={meta} isHomepage={isHomepage} />
 
       <TransitionGroup component={Main} appear={true}>
