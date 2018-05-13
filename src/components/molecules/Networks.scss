@@ -16,7 +16,7 @@
     color: $brand-grey-light;
     opacity: 0;
     transform: translate3d(0, .5rem, 0);
-    transition: .2s ease-out;
+    transition: .2s $easing;
 }
 
 .networks__link {
@@ -28,7 +28,7 @@
 
     &,
     .icon {
-        transition: .2s ease-out;
+        transition: .2s $easing;
     }
 
     .icon {
@@ -55,6 +55,7 @@
         .icon {
             width: .85rem;
             height: .85rem;
+            opacity: .8;
         }
     }
 }

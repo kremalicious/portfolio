@@ -49,11 +49,13 @@
     "eslint-plugin-compat": "^2.2.0",
     "eslint-plugin-graphql": "^2.1.1",
     "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-react": "^7.8.1",
+    "eslint-plugin-react": "^7.8.2",
     "prettier": "^1.12.1",
     "prettier-stylelint": "^0.4.2",
     "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.2.0"
   },
-  "browserslist": ["defaults"]
+  "browserslist": [
+    "defaults"
+  ]
 }

@@ -33,7 +33,9 @@ class Network extends PureComponent {
   constructor(props) {
     super(props)
 
-    this.state = { classes: 'networks' }
+    this.state = {
+      classes: 'networks',
+    }
   }
 
   componentDidMount() {
@@ -46,23 +48,21 @@ class Network extends PureComponent {
 
   toggleClasses = () => {
     if (this.props.minimal) {
-      this.setState({ classes: 'networks' })
-    } else {
       this.setState({ classes: 'networks networks--minimal' })
+    } else {
+      this.setState({ classes: 'networks' })
     }
   }
 
   render() {
-    const { social } = this.props.meta
-
     return (
       !this.props.hide && (
-        <FadeIn timeout={{ enter: 200, exit: 0, appear: 200 }}>
+        <FadeIn>
           <aside className={this.state.classes}>
-            {Object.keys(social).map((key, i) => (
+            {Object.keys(this.props.meta.social).map((key, i) => (
               <OutboundLink
                 className="networks__link"
-                href={social[key]}
+                href={this.props.meta.social[key]}
                 key={i}
               >
                 <NetworkIcon title={key} className="icon" />

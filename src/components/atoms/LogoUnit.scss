@@ -1,0 +1,57 @@
+@import 'variables';
+
+.logounit__logo {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: $brand-grey-light;
+    margin-bottom: $spacer / 2;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logounit__title,
+.logounit__description {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.logounit__title {
+    font-size: $font-size-h3;
+    margin-right: $spacer / 4;
+    color: $brand-main;
+    line-height: $line-height;
+}
+
+.logounit__description {
+    font-size: $font-size-h4;
+    color: $brand-grey;
+
+    .dark & {
+        color: $brand-grey-light;
+    }
+
+    span {
+        opacity: .4;
+    }
+}
+
+.logounit--minimal {
+    transform: scale(.7);
+    transform-origin: top center;
+    transform-box: border-box;
+
+    .logounit__title,
+    .logounit__description {
+        color: $brand-grey-light;
+
+        .dark & {
+            color: $brand-grey;
+        }
+    }
+
+    .logounit__logo {
+        margin-bottom: $spacer / 3;
+        opacity: .5;
+    }
+}

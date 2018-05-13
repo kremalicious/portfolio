@@ -5,7 +5,7 @@ import { FadeIn } from '../atoms/Animations'
 import Networks from '../molecules/Networks'
 import Availability from '../molecules/Availability'
 import ThemeSwitch from '../molecules/ThemeSwitch'
-import { ReactComponent as Logo } from '../../images/logo.svg'
+import LogoUnit from '../atoms/LogoUnit'
 import './Header.scss'
 
 class Header extends PureComponent {
@@ -39,13 +39,8 @@ class Header extends PureComponent {
       <header className={this.state.classes}>
         <ThemeSwitch />
         <FadeIn>
-          <Link className="header__name" to={'/'}>
-            <Logo className="header__logo" />
-            <h1 className="header__title">{meta.title.toLowerCase()}</h1>
-            <p className="header__description">
-              <span>{'{ '}</span> {meta.tagline.toLowerCase()}{' '}
-              <span>{' }'}</span>
-            </p>
+          <Link className="header__logounit-link" to={'/'}>
+            <LogoUnit meta={meta} minimal={!isHomepage} />
           </Link>
         </FadeIn>
 

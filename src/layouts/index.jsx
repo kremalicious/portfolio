@@ -102,8 +102,6 @@ export const query = graphql`
       }
       gpg
       addressbook
-      typekit
-      googleanalytics
     }
   }
 `

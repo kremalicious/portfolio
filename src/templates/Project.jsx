@@ -109,8 +109,6 @@ export const projectQuery = graphql`
         available
         unavailable
       }
-      typekit
-      googleanalytics
       img {
         childImageSharp {
           resize(width: 980) {

@@ -1,7 +1,8 @@
 @import 'variables';
 
 .footer {
-    padding: $spacer * 2;
+    padding: $spacer;
+    padding-top: $spacer * 4;
     text-align: center;
     color: $text-color-light;
 
@@ -12,7 +13,7 @@
 
     .networks {
         margin-top: 0;
-        margin-bottom: $spacer;
+        margin-bottom: $spacer * 2;
     }
 
     .dark & {
@@ -21,9 +22,6 @@
 }
 
 .footer__actions {
-    width: 100%;
-    margin-bottom: $spacer;
-
     a {
         display: inline-block;
         padding: 0 $spacer / 4;

@@ -8,6 +8,10 @@
         margin-bottom: $spacer * 8;
     }
 
+    &:last-child {
+        margin-bottom: 0;
+    }
+
     a {
         display: block;
         position: relative;
