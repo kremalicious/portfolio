@@ -9,6 +9,7 @@
     "build": "gatsby build",
     "start": "gatsby develop",
     "format": "prettier --write 'src/**/*.{js,jsx}'",
+    "format:css": "prettier-stylelint --write --quiet 'src/**/*.{css,scss}'",
     "test": "npm run lint",
     "deploy": "./deploy.sh"
   },
@@ -50,6 +51,7 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.8.1",
     "prettier": "^1.12.1",
+    "prettier-stylelint": "^0.4.2",
     "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.2.0"
   },

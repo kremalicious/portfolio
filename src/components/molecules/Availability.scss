@@ -14,7 +14,9 @@
         color: $text-color-light--dark;
     }
 
-    p { margin-bottom: 0; }
+    p {
+        margin-bottom: 0;
+    }
 
     &.available {
         background: rgba($brand-light, .8);

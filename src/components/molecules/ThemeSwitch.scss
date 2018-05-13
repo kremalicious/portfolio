@@ -73,7 +73,7 @@ $knob-space: 1px;
         opacity: .8;
     }
 
-    [type="checkbox"],
+    [type='checkbox'],
     .checkbox__label {
         width: 1px;
         height: 1px;
@@ -85,7 +85,7 @@ $knob-space: 1px;
         position: absolute;
     }
 
-    [type="checkbox"] {
+    [type='checkbox'] {
         &:checked {
             + .checkbox__faux-container {
                 .checkbox__faux {
