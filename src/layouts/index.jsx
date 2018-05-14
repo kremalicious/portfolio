@@ -23,6 +23,7 @@ const Main = ({ children }) => <main className="screen">{children}</main>
 
 const TemplateWrapper = ({ data, location, children }) => {
   const meta = data.dataYaml
+  const pkg = data.portfolioJson
   const isHomepage = location.pathname === '/'
 
   return (
@@ -41,7 +42,7 @@ const TemplateWrapper = ({ data, location, children }) => {
         </FadeIn>
       </TransitionGroup>
 
-      <Footer meta={meta} />
+      <Footer meta={meta} pkg={pkg} />
     </Fragment>
   )
 }
@@ -65,6 +66,7 @@ export default withRouter(TemplateWrapper)
 
 export const query = graphql`
   query metaQuery {
+    # the data/meta.yml file
     dataYaml {
       title
       tagline
@@ -102,6 +104,14 @@ export const query = graphql`
       }
       gpg
       addressbook
+    }
+
+    # the package.json file
+    portfolioJson {
+      name
+      homepage
+      repository
+      bugs
     }
   }
 `

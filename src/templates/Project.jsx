@@ -92,6 +92,8 @@ export const projectQuery = graphql`
         }
       }
     }
+
+    # the data/meta.yml file
     dataYaml {
       title
       tagline

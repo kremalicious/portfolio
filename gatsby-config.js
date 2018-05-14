@@ -17,6 +17,20 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-offline',
     {
+      resolve: 'gatsby-transformer-json',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+              name: 'pkg',
+              path: path.join(__dirname, 'package.json'),
+            },
+          },
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sass',
       options: {
         includePaths: [`${__dirname}/node_modules`, `${__dirname}/src/styles`],

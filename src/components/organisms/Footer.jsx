@@ -14,6 +14,7 @@ class Footer extends PureComponent {
 
   render() {
     const meta = this.props.meta
+    const pkg = this.props.pkg
 
     return (
       <footer className="footer">
@@ -23,6 +24,7 @@ class Footer extends PureComponent {
         <p className="footer__actions">
           <Vcard meta={meta} />
           <a href={meta.gpg}>PGP/GPG key</a>
+          <a href={pkg.bugs}>Found a bug?</a>
         </p>
         <p className="footer__copyright">
           <small>
@@ -36,6 +38,7 @@ class Footer extends PureComponent {
 
 Footer.propTypes = {
   meta: PropTypes.object,
+  pkg: PropTypes.object,
 }
 
 export default Footer

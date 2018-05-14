@@ -1,7 +1,11 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "private": true,
+  "homepage": "https://matthiaskretschmann.com",
+  "repository": "github:kremalicious/portfolio",
+  "bugs": "https://github.com/kremalicious/portfolio/issues",
+  "license": "MIT",
+  "author": "Matthias Kretschmann <m@kretschmann.io>",
   "scripts": {
     "lint:js": "eslint ./gatsby-*.{js,jsx} && eslint ./src/**/*.{js,jsx}",
     "lint:css": "stylelint ./src/**/*.{css,scss}",
@@ -51,6 +55,7 @@
     "eslint-plugin-graphql": "^2.1.1",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.8.2",
+    "gatsby-transformer-json": "^1.0.17",
     "ora": "^2.1.0",
     "prepend": "^1.0.2",
     "prettier": "^1.12.1",
