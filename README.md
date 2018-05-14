@@ -5,6 +5,7 @@
 > 👔 Portfolio thingy, built with [Gatsby](https://www.gatsbyjs.org).
 
 [![Build Status](https://travis-ci.com/kremalicious/portfolio.svg?branch=master)](https://travis-ci.com/kremalicious/portfolio)
+[![Greenkeeper badge](https://badges.greenkeeper.io/kremalicious/portfolio.svg)](https://greenkeeper.io/)
 
 ## Table of Contents
 
