@@ -1,11 +1,16 @@
-# [matthiaskretschmann.com](https://matthiaskretschmann.com)
-
-[![image](src/images/twitter-card.png)](https://matthiaskretschmann.com)
-
-> 👔 Portfolio thingy, built with [Gatsby](https://www.gatsbyjs.org).
-
-[![Build Status](https://travis-ci.com/kremalicious/portfolio.svg?branch=master)](https://travis-ci.com/kremalicious/portfolio)
-[![Greenkeeper badge](https://badges.greenkeeper.io/kremalicious/portfolio.svg)](https://greenkeeper.io/)
+<p align="center">
+  <a href="https://matthiaskretschmann.com"><img src="src/images/twitter-card.png" width="600" /></a>
+ </p>
+<p align="center">
+  <strong>👔 Portfolio thingy, built with <a href="https://www.gatsbyjs.org">Gatsby</a>.</strong>
+</p>
+<p align="center">
+  <a href="https://matthiaskretschmann.com">matthiaskretschmann.com</a>
+</p>
+<p align="center">
+  <a href="https://travis-ci.com/kremalicious/portfolio"><img src="https://travis-ci.com/kremalicious/portfolio.svg?branch=master" /></a> 
+  <a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/kremalicious/portfolio.svg" /></a>
+</p>
 
 ## Table of Contents
 
