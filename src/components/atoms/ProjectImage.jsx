@@ -16,7 +16,7 @@ const ProjectImage = ({ sizes, alt }) => (
 
 ProjectImage.propTypes = {
   sizes: PropTypes.object.isRequired,
-  alt: PropTypes.string,
+  alt: PropTypes.string
 }
 
 export const projectImage = graphql`

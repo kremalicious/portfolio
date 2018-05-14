@@ -95,7 +95,7 @@ class Vcard extends PureComponent {
 }
 
 Vcard.propTypes = {
-  meta: PropTypes.object,
+  meta: PropTypes.object
 }
 
 export default Vcard

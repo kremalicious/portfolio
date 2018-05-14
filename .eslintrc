@@ -3,10 +3,9 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "prettier",
-    "prettier/react"
+    "plugin:prettier/recommended"
   ],
-  "plugins": ["react", "graphql"],
+  "plugins": ["react", "graphql", "prettier", "compat"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
@@ -25,6 +24,8 @@
   "rules": {
     "quotes": ["error", "single"],
     "semi": ["error", "never"],
-    "object-curly-spacing": ["error", "always"]
+    "object-curly-spacing": ["error", "always"],
+    "prettier/prettier": "error",
+    "compat/compat": "error"
   }
 }

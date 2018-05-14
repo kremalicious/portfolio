@@ -12,7 +12,7 @@ const ProjectTechstack = ({ techstack }) => (
 )
 
 ProjectTechstack.propTypes = {
-  techstack: PropTypes.array,
+  techstack: PropTypes.array
 }
 
 export default ProjectTechstack

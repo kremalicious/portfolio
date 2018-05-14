@@ -48,7 +48,7 @@ const ProjectNav = ({ previous, next }) => (
 
 ProjectNav.propTypes = {
   previous: PropTypes.object,
-  next: PropTypes.object,
+  next: PropTypes.object
 }
 
 export default ProjectNav

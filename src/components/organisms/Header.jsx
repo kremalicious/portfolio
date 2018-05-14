@@ -57,7 +57,7 @@ class Header extends PureComponent {
 
 Header.propTypes = {
   meta: PropTypes.object,
-  isHomepage: PropTypes.bool,
+  isHomepage: PropTypes.bool
 }
 
 export default Header

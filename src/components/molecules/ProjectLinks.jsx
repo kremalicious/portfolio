@@ -55,7 +55,7 @@ const ProjectLinks = ({ links }) => (
 )
 
 ProjectLinks.propTypes = {
-  links: PropTypes.array,
+  links: PropTypes.array
 }
 
 export default ProjectLinks

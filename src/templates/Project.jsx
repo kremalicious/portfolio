@@ -18,7 +18,7 @@ class Project extends Component {
     const description = this.props.data.projectsYaml.description
 
     this.state = {
-      descriptionWithLineBreaks: description.split('\n').join('\n\n'),
+      descriptionWithLineBreaks: description.split('\n').join('\n\n')
     }
   }
 
@@ -68,7 +68,7 @@ class Project extends Component {
 
 Project.propTypes = {
   data: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired,
+  pathContext: PropTypes.object.isRequired
 }
 
 export default Project

@@ -19,7 +19,7 @@ const LogoUnit = ({ meta, minimal }) => {
 
 LogoUnit.propTypes = {
   meta: PropTypes.object.isRequired,
-  minimal: PropTypes.bool,
+  minimal: PropTypes.bool
 }
 
 export default LogoUnit

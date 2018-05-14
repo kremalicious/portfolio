@@ -34,7 +34,7 @@ class Network extends PureComponent {
     super(props)
 
     this.state = {
-      classes: 'networks',
+      classes: 'networks'
     }
   }
 
@@ -79,7 +79,7 @@ class Network extends PureComponent {
 Network.propTypes = {
   meta: PropTypes.object,
   minimal: PropTypes.bool,
-  hide: PropTypes.bool,
+  hide: PropTypes.bool
 }
 
 export default Network

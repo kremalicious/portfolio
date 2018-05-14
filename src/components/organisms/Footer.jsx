@@ -38,7 +38,7 @@ class Footer extends PureComponent {
 
 Footer.propTypes = {
   meta: PropTypes.object,
-  pkg: PropTypes.object,
+  pkg: PropTypes.object
 }
 
 export default Footer

@@ -27,7 +27,7 @@ const Home = ({ data }) => {
 }
 
 Home.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.object
 }
 
 export default Home

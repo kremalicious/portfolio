@@ -51,12 +51,12 @@ const SEO = ({ project, meta }) => {
 
 SEO.propTypes = {
   project: PropTypes.object,
-  meta: PropTypes.object,
+  meta: PropTypes.object
 }
 
 SEO.defaultProps = {
   project: {},
-  meta: {},
+  meta: {}
 }
 
 export default SEO

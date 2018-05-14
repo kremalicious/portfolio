@@ -20,7 +20,7 @@ const Head = ({ meta }) => {
 }
 
 Head.propTypes = {
-  meta: PropTypes.object.isRequired,
+  meta: PropTypes.object.isRequired
 }
 
 export default Head

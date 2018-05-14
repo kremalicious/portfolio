@@ -49,17 +49,17 @@ const TemplateWrapper = ({ data, location, children }) => {
 
 TransitionHandler.propTypes = {
   children: PropTypes.any,
-  location: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 }
 
 Main.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.any
 }
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
   data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 }
 
 export default withRouter(TemplateWrapper)

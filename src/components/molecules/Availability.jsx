@@ -16,7 +16,7 @@ class Availability extends PureComponent {
         const opts = Object.defineProperty({}, 'passive', {
           get: function() {
             supportsPassive = true
-          },
+          }
         })
         window.addEventListener('test', null, opts)
       } catch (e) {
@@ -69,7 +69,7 @@ class Availability extends PureComponent {
             >
               <p
                 dangerouslySetInnerHTML={{
-                  __html: status ? available : unavailable,
+                  __html: status ? available : unavailable
                 }}
               />
             </aside>
@@ -82,7 +82,7 @@ class Availability extends PureComponent {
 
 Availability.propTypes = {
   meta: PropTypes.object,
-  hide: PropTypes.bool,
+  hide: PropTypes.bool
 }
 
 export default Availability

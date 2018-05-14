@@ -9,7 +9,7 @@ const Content = props => (
 )
 
 Content.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node
 }
 
 export default Content
