@@ -1,12 +1,11 @@
 # [matthiaskretschmann.com](https://matthiaskretschmann.com)
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/kremalicious/portfolio.svg)](https://greenkeeper.io/)
-
 [![image](src/images/twitter-card.png)](https://matthiaskretschmann.com)
 
 > 👔 Portfolio thingy, built with [Gatsby](https://www.gatsbyjs.org).
 
 [![Build Status](https://travis-ci.com/kremalicious/portfolio.svg?branch=master)](https://travis-ci.com/kremalicious/portfolio)
+[![Greenkeeper badge](https://badges.greenkeeper.io/kremalicious/portfolio.svg)](https://greenkeeper.io/)
 
 ## Table of Contents
 
