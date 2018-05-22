@@ -22,6 +22,14 @@ const ProjectMeta = props => {
   )
 }
 
+const ProjectImages = props => (
+  <FullWidth>
+    {props.projectImages.map(({ node }) => (
+      <ProjectImage key={node.id} sizes={node.sizes} alt={props.title} />
+    ))}
+  </FullWidth>
+)
+
 class Project extends Component {
   constructor(props) {
     super(props)
@@ -43,9 +51,7 @@ class Project extends Component {
 
     return (
       <Fragment>
-        <Helmet>
-          <title>{title}</title>
-        </Helmet>
+        <Helmet title={title} />
 
         <SEO project={project} meta={meta} />
 
@@ -56,13 +62,7 @@ class Project extends Component {
               source={this.state.descriptionWithLineBreaks}
               className="project__description"
             />
-
-            <FullWidth>
-              {projectImages.map(({ node }) => (
-                <ProjectImage key={node.id} sizes={node.sizes} alt={title} />
-              ))}
-            </FullWidth>
-
+            <ProjectImages projectImages={projectImages} title={title} />
             <ProjectMeta links={links} techstack={techstack} />
           </Content>
         </article>
@@ -76,6 +76,11 @@ class Project extends Component {
 ProjectMeta.propTypes = {
   links: PropTypes.array,
   techstack: PropTypes.array
+}
+
+ProjectImages.propTypes = {
+  projectImages: PropTypes.array,
+  title: PropTypes.string
 }
 
 Project.propTypes = {

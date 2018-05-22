@@ -1,9 +1,24 @@
 import React, { PureComponent, Fragment } from 'react'
+import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { FadeIn } from '../atoms/Animations'
 import { ReactComponent as Day } from '../../images/day.svg'
 import { ReactComponent as Night } from '../../images/night.svg'
 import './ThemeSwitch.scss'
+
+const ThemeToggle = props => {
+  return (
+    <span
+      id="toggle"
+      className="checkbox__faux-container"
+      aria-live="assertive"
+    >
+      <Day className={props.dark ? 'icon' : 'icon active'} />
+      <span className="checkbox__faux" />
+      <Night className={props.dark ? 'icon active' : 'icon'} />
+    </span>
+  )
+}
 
 class ThemeSwitch extends PureComponent {
   constructor(props) {
@@ -44,21 +59,17 @@ class ThemeSwitch extends PureComponent {
                 aria-describedby="toggle"
                 checked={this.state.dark}
               />
-              <span
-                id="toggle"
-                className="checkbox__faux-container"
-                aria-live="assertive"
-              >
-                <Day className={this.state.dark ? 'icon' : 'icon active'} />
-                <span className="checkbox__faux" />
-                <Night className={this.state.dark ? 'icon active' : 'icon'} />
-              </span>
+              <ThemeToggle dark={this.state.dark} />
             </label>
           </aside>
         </FadeIn>
       </Fragment>
     )
   }
+}
+
+ThemeToggle.propTypes = {
+  dark: PropTypes.bool
 }
 
 export default ThemeSwitch
