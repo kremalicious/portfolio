@@ -278,7 +278,6 @@ vCard.prototype = {
    * @return {String}
    */
   toString: function(version, charset) {
-    // eslint-disable-line no-unused-vars
     version = version || this.version
     return vCard.format(this, version)
   },
