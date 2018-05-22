@@ -6,9 +6,6 @@
   "syntax": "scss",
   "rules": {
       "indentation": 4,
-      "number-leading-zero": "never",
-      "declaration-colon-space-after": "always-single-line",
-      "declaration-colon-newline-after": "always-multi-line",
-      "value-list-comma-newline-after": "always-multi-line"
+      "number-leading-zero": "never"
   }
 }

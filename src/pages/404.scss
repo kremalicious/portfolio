@@ -8,7 +8,8 @@
         display: inline-block;
         width: auto;
         height: 300px;
-        box-shadow: 0 3px 5px rgba($brand-main, .15), 0 5px 16px rgba($brand-main, .15);
+        box-shadow: 0 3px 5px rgba($brand-main, .15),
+            0 5px 16px rgba($brand-main, .15);
         margin-top: $spacer / 4;
         margin-bottom: $spacer / 2;
     }
