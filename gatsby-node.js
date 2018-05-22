@@ -7,7 +7,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
   if (stage === 'build-html') {
     config.loader('null', {
       test: /intersection-observer/,
-      loader: 'null-loader',
+      loader: 'null-loader'
     })
   }
 }
@@ -82,8 +82,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               context: {
                 slug,
                 previous,
-                next,
-              },
+                next
+              }
             })
           }
         )

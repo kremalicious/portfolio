@@ -6,7 +6,7 @@ const { url, googleanalytics, matomoUrl, matomoSite } = meta
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `${url}`,
+    siteUrl: `${url}`
   },
   plugins: [
     'gatsby-plugin-react-next',
@@ -24,31 +24,31 @@ module.exports = {
             resolve: 'gatsby-source-filesystem',
             options: {
               name: 'pkg',
-              path: path.join(__dirname, 'package.json'),
-            },
-          },
-        ],
-      },
+              path: path.join(__dirname, 'package.json')
+            }
+          }
+        ]
+      }
     },
     {
       resolve: 'gatsby-plugin-sass',
       options: {
-        includePaths: [`${__dirname}/node_modules`, `${__dirname}/src/styles`],
-      },
+        includePaths: [`${__dirname}/node_modules`, `${__dirname}/src/styles`]
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'data',
-        path: path.join(__dirname, 'data'),
-      },
+        path: path.join(__dirname, 'data')
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: path.join(__dirname, 'src', 'images'),
-      },
+        path: path.join(__dirname, 'src', 'images')
+      }
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
@@ -56,8 +56,8 @@ module.exports = {
         trackingId: `${googleanalytics}`,
         head: false,
         anonymize: true,
-        respectDNT: true,
-      },
+        respectDNT: true
+      }
     },
     {
       resolve: 'gatsby-plugin-matomo',
@@ -65,16 +65,16 @@ module.exports = {
         siteId: `${matomoSite}`,
         siteUrl: `${url}`,
         matomoUrl: `${matomoUrl}`,
-        localScript: '/piwik.js',
-      },
+        localScript: '/piwik.js'
+      }
     },
     {
       resolve: 'gatsby-plugin-svgr',
       options: {
         icon: false,
-        viewBox: true,
+        viewBox: true
         // see https://github.com/smooth-code/svgr for a list of all options
-      },
+      }
     },
     {
       resolve: 'gatsby-plugin-favicon',
@@ -90,9 +90,9 @@ module.exports = {
           firefox: true,
           twitter: false,
           yandex: true,
-          windows: true,
-        },
-      },
-    },
-  ],
+          windows: true
+        }
+      }
+    }
+  ]
 }

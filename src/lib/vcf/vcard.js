@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 /**
  * vCard
  * @constructor
@@ -275,7 +277,8 @@ vCard.prototype = {
    * @param  {String} charset
    * @return {String}
    */
-  toString: function(version, charset) { // eslint-disable-line no-unused-vars
+  toString: function(version, charset) {
+    // eslint-disable-line no-unused-vars
     version = version || this.version
     return vCard.format(this, version)
   },
@@ -313,7 +316,7 @@ vCard.prototype = {
    */
   toJSON: function() {
     return this.toJCard(this.version)
-  },
+  }
 }
 
 // Exports

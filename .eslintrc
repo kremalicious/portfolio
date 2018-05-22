@@ -5,7 +5,7 @@
     "plugin:react/recommended",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["react", "graphql", "prettier", "compat"],
+  "plugins": ["react", "graphql", "prettier"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
@@ -25,7 +25,6 @@
     "quotes": ["error", "single"],
     "semi": ["error", "never"],
     "object-curly-spacing": ["error", "always"],
-    "prettier/prettier": "error",
-    "compat/compat": "error"
+    "prettier/prettier": "error"
   }
 }

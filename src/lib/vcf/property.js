@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 /**
  * vCard Property
  * @constructor
@@ -86,8 +88,7 @@ Property.prototype = {
    * @param  {String} version
    * @return {String}
    */
-  toString: function(version) { // eslint-disable-line no-unused-vars
-
+  toString: function(version) {
     var propName =
       (this.group ? this.group + '.' : '') + capitalDashCase(this._field)
     var keys = Object.keys(this)
@@ -138,7 +139,7 @@ Property.prototype = {
     }
 
     return data
-  },
+  }
 }
 
 // Exports
