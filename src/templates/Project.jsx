@@ -11,6 +11,17 @@ import ProjectNav from '../components/molecules/ProjectNav'
 import SEO from '../components/atoms/SEO'
 import './Project.scss'
 
+const ProjectMeta = props => {
+  const { links, techstack } = props
+
+  return (
+    <footer className="project__meta">
+      {!!links && <ProjectLinks links={links} />}
+      {!!techstack && <ProjectTechstack techstack={techstack} />}
+    </footer>
+  )
+}
+
 class Project extends Component {
   constructor(props) {
     super(props)
@@ -27,7 +38,6 @@ class Project extends Component {
     const project = this.props.data.projectsYaml
     const projectImages = this.props.data.projectImages.edges
     const pathContext = this.props.pathContext
-
     const { title, links, techstack } = project
     const { next, previous } = pathContext
 
@@ -53,10 +63,7 @@ class Project extends Component {
               ))}
             </FullWidth>
 
-            <footer className="project__meta">
-              {!!links && <ProjectLinks links={links} />}
-              {!!techstack && <ProjectTechstack techstack={techstack} />}
-            </footer>
+            <ProjectMeta links={links} techstack={techstack} />
           </Content>
         </article>
 
@@ -64,6 +71,11 @@ class Project extends Component {
       </Fragment>
     )
   }
+}
+
+ProjectMeta.propTypes = {
+  links: PropTypes.array,
+  techstack: PropTypes.array
 }
 
 Project.propTypes = {
