@@ -13,6 +13,9 @@ const Head = ({ meta }) => {
         titleTemplate={`%s // ${title.toLowerCase()} { ${tagline.toLowerCase()} }`}
       >
         <meta name="apple-mobile-web-app-title" content={title.toLowerCase()} />
+
+        <link rel="dns-prefetch" href="https://use.typekit.net/" />
+        <link rel="dns-prefetch" href="https://p.typekit.net/" />
       </Helmet>
       <SEO meta={meta} />
     </Fragment>
