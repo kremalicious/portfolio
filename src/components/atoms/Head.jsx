@@ -2,9 +2,10 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import SEO from './SEO'
+import Typekit from './Typekit'
 
 const Head = ({ meta }) => {
-  const { title, tagline } = meta
+  const { title, tagline, typekitID } = meta
 
   return (
     <Fragment>
@@ -13,10 +14,10 @@ const Head = ({ meta }) => {
         titleTemplate={`%s // ${title.toLowerCase()} { ${tagline.toLowerCase()} }`}
       >
         <meta name="apple-mobile-web-app-title" content={title.toLowerCase()} />
-
-        <link rel="dns-prefetch" href="https://use.typekit.net/" />
-        <link rel="dns-prefetch" href="https://p.typekit.net/" />
       </Helmet>
+
+      {typekitID && <Typekit id={typekitID} />}
+
       <SEO meta={meta} />
     </Fragment>
   )

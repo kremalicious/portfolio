@@ -23,6 +23,8 @@ availability:
 gpg: https://kretschmann.io/pub.gpg
 addressbook: /matthias-kretschmann.vcf
 
+typekitID: dtg3zui
+
 # Analytics tools
 googleanalytics: UA-1441794-4
 matomoUrl: https://analytics.kremalicious.com

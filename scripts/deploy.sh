@@ -14,9 +14,9 @@ set -e;
 if [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
 
     aws s3 sync \
-  --delete \
-  --acl public-read \
-  ./public s3://"$AWS_S3_BUCKET_BETA"
+      --delete \
+      --acl public-read \
+      ./public s3://"$AWS_S3_BUCKET_BETA"
 
 ##
 ## check for master push which is no pull request
@@ -24,9 +24,9 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; th
 elif [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] || [ "$TRAVIS" != true ]; then
 
   aws s3 sync \
-  --delete \
-  --acl public-read \
-  ./public s3://"$AWS_S3_BUCKET"
+    --delete \
+    --acl public-read \
+    ./public s3://"$AWS_S3_BUCKET"
 
   echo "---------------------------------------------"
   echo "         ✓ done deployment "

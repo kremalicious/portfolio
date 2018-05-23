@@ -1,5 +1,4 @@
 @import 'variables';
-@import url('https://use.typekit.net/#{$typekit}.css');
 
 *,
 *::before,
@@ -16,6 +15,11 @@ body {
 
 html {
     font-size: $font-size-root;
+
+    &.wf-loading,
+    &.wf-inactive {
+        font-size: $font-size-root - 2px;
+    }
 }
 
 body {

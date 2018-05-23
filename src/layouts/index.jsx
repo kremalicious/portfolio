@@ -104,6 +104,7 @@ export const query = graphql`
       }
       gpg
       addressbook
+      typekitID
     }
 
     # the package.json file
