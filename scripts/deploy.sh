@@ -4,29 +4,30 @@
 # AWS_ACCESS_KEY_ID
 # AWS_SECRET_ACCESS_KEY
 # AWS_DEFAULT_REGION
-# AWS_S3_BUCKET
+AWS_S3_BUCKET="matthiaskretschmann.com"
+AWS_S3_BUCKET_BETA="beta.matthiaskretschmann.com"
 #
 set -e;
+
+function s3sync {
+  aws s3 sync ./public s3://"$1" --exclude "*.html" --exclude "*.js" --cache-control max-age=31536000,public --delete --acl public-read
+
+  aws s3 sync ./public s3://"$1" --exclude "*" --include "*.html" --include "*.js" --cache-control max-age=0,no-cache,no-store,must-revalidate --delete --acl public-read
+}
 
 ##
 ## check for pull request against master
 ##
 if [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
 
-    aws s3 sync \
-      --delete \
-      --acl public-read \
-      ./public s3://"$AWS_S3_BUCKET_BETA"
+  s3sync $AWS_S3_BUCKET_BETA
 
 ##
 ## check for master push which is no pull request
 ##
 elif [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] || [ "$TRAVIS" != true ]; then
 
-  aws s3 sync \
-    --delete \
-    --acl public-read \
-    ./public s3://"$AWS_S3_BUCKET"
+  s3sync $AWS_S3_BUCKET
 
   echo "---------------------------------------------"
   echo "         ✓ done deployment "
