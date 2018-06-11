@@ -29,12 +29,12 @@
         margin-left: $spacer;
         color: $text-color-light;
 
-        :global(.dark) & {
-            color: $text-color-light--dark;
-        }
-
         &:first-child {
             margin-left: 0;
+        }
+
+        :global(.dark) & {
+            color: $text-color-light--dark;
         }
     }
 }

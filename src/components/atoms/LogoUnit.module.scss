@@ -45,6 +45,7 @@
     transform-origin: top center;
     transform-box: border-box;
 
+    // stylelint-disable no-descending-specificity
     .logounit__title,
     .logounit__description {
         color: $brand-grey-light;
@@ -53,6 +54,7 @@
             color: $brand-grey;
         }
     }
+    // stylelint-enable no-descending-specificity
 
     .logounit__logo {
         margin-bottom: $spacer / 3;
