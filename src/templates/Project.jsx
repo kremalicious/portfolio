@@ -43,11 +43,10 @@ class Project extends Component {
 
   render() {
     const meta = this.props.data.dataYaml
+    const projects = this.props.data.allProjectsYaml.edges
     const project = this.props.data.projectsYaml
     const projectImages = this.props.data.projectImages.edges
-    const pathContext = this.props.pathContext
     const { title, links, techstack } = project
-    const { next, previous } = pathContext
 
     return (
       <Fragment>
@@ -67,7 +66,7 @@ class Project extends Component {
           </Content>
         </article>
 
-        <ProjectNav previous={previous} next={next} />
+        <ProjectNav projects={projects} />
       </Fragment>
     )
   }
@@ -90,7 +89,7 @@ Project.propTypes = {
 
 export default Project
 
-export const projectQuery = graphql`
+export const projectAndProjectsQuery = graphql`
   query ProjectBySlug($slug: String!) {
     projectsYaml(slug: { eq: $slug }) {
       title
@@ -136,6 +135,7 @@ export const projectQuery = graphql`
         }
       }
     }
+
     projectImages: allImageSharp(
       filter: { id: { regex: $slug } }
       sort: { fields: [id], order: ASC }
@@ -144,6 +144,20 @@ export const projectQuery = graphql`
         node {
           id
           ...ProjectImageSizes
+        }
+      }
+    }
+
+    allProjectsYaml {
+      edges {
+        node {
+          title
+          slug
+          img {
+            childImageSharp {
+              ...ProjectImageSizes
+            }
+          }
         }
       }
     }
