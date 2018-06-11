@@ -31,7 +31,7 @@
     font-size: $font-size-h4;
     color: $brand-grey;
 
-    .dark & {
+    :global(.dark) & {
         color: $brand-grey-light;
     }
 
@@ -49,7 +49,7 @@
     .logounit__description {
         color: $brand-grey-light;
 
-        .dark & {
+        :global(.dark) & {
             color: $brand-grey;
         }
     }
