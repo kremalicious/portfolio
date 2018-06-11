@@ -16,7 +16,7 @@
         margin-bottom: $spacer * 2;
     }
 
-    .dark & {
+    :global(.dark) & {
         color: $text-color-light--dark;
     }
 }
@@ -29,12 +29,12 @@
         margin-left: $spacer;
         color: $text-color-light;
 
-        .dark & {
-            color: $text-color-light--dark;
-        }
-
         &:first-child {
             margin-left: 0;
+        }
+
+        :global(.dark) & {
+            color: $text-color-light--dark;
         }
     }
 }

@@ -31,7 +31,7 @@
     font-size: $font-size-h4;
     color: $brand-grey;
 
-    .dark & {
+    :global(.dark) & {
         color: $brand-grey-light;
     }
 
@@ -45,14 +45,16 @@
     transform-origin: top center;
     transform-box: border-box;
 
+    // stylelint-disable no-descending-specificity
     .logounit__title,
     .logounit__description {
         color: $brand-grey-light;
 
-        .dark & {
+        :global(.dark) & {
             color: $brand-grey;
         }
     }
+    // stylelint-enable no-descending-specificity
 
     .logounit__logo {
         margin-bottom: $spacer / 3;

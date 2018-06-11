@@ -21,6 +21,11 @@
         margin-bottom: $spacer / 2;
         flex: 0 0 calc(50% - #{$spacer / 2});
         font-size: $font-size-base;
+
+        :global(.dark) & {
+            background: darken($body-background-color--dark, 1%);
+            color: $brand-grey;
+        }
     }
 }
 

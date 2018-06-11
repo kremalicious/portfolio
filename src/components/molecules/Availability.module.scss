@@ -10,7 +10,7 @@
     display: block;
     transition: opacity .2s ease-out;
 
-    .dark & {
+    :global(.dark) & {
         color: $text-color-light--dark;
     }
 
@@ -24,7 +24,7 @@
         position: fixed;
         bottom: $spacer;
 
-        .dark & {
+        :global(.dark) & {
             background: rgba($body-background-color--dark, .8);
             color: $brand-light;
         }

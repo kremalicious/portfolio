@@ -1,12 +1,24 @@
 @import 'variables';
 
-$breakpoint-project-nav: 45rem;
-
 .projectNav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    overflow: hidden;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.item {
+    display: inline-block;
+    width: 40vw;
+    margin-left: $spacer * 2;
+
+    &:last-child {
+        margin-right: $spacer * 2;
+    }
 }
 
 .image {
@@ -14,52 +26,10 @@ $breakpoint-project-nav: 45rem;
     box-shadow: 0 3px 5px rgba($brand-main, .15),
         0 5px 16px rgba($brand-main, .15);
 
-    .dark & {
+    :global(.dark) & {
         box-shadow: 0 3px 5px rgba(darken($brand-main, 20%), .15),
             0 5px 16px rgba(darken($brand-main, 20%), .15);
     }
-}
-
-.item {
-    flex: 1 1 46%;
-    position: relative;
-    transition: .2s ease-out;
-    max-width: 500px;
-
-    &:first-child {
-        margin-right: $spacer / 2;
-
-        &:hover,
-        &:focus {
-            transform: translate3d(-.5rem, 0, 0);
-        }
-    }
-
-    /* stylelint-disable no-descending-specificity */
-    &:last-child {
-        margin-left: $spacer / 2;
-
-        &:hover,
-        &:focus {
-            transform: translate3d(.5rem, 0, 0);
-        }
-    }
-    /* stylelint-enable no-descending-specificity */
-
-    @media (min-width: $breakpoint-project-nav) {
-        flex-basis: 33%;
-
-        &:first-child,
-        &:last-child {
-            margin: 0;
-        }
-    }
-}
-
-.itemEnd {
-    pointer-events: none;
-    display: flex;
-    align-items: center;
 }
 
 .title {
@@ -69,70 +39,4 @@ $breakpoint-project-nav: 45rem;
 
 .link {
     display: block;
-}
-
-.index {
-    height: 100%;
-    display: block;
-    align-self: center;
-    margin-top: $spacer * 2;
-    margin-left: $spacer;
-    margin-right: $spacer;
-    transition: .2s ease-out;
-    order: 3;
-    width: 100%;
-
-    @media (min-width: $breakpoint-project-nav) {
-        margin-top: 0;
-        margin-left: $spacer * 4;
-        margin-right: $spacer * 4;
-        order: initial;
-        width: auto;
-    }
-
-    svg {
-        fill: $brand-grey-light;
-        width: 1.5rem;
-        height: 1.5rem;
-    }
-
-    &:hover,
-    &:focus {
-        svg {
-            fill: $brand-cyan;
-        }
-    }
-
-    &:first-child {
-        margin-left: 48.5%;
-    }
-
-    &:last-child {
-        margin-right: auto;
-    }
-}
-
-.end {
-    padding-right: $spacer;
-    text-align: left;
-
-    h3 {
-        font-size: $font-size-h4;
-        margin-bottom: $spacer / 4;
-        color: $brand-grey-light;
-
-        @media (min-width: $breakpoint-project-nav) {
-            font-size: $font-size-h3;
-        }
-    }
-
-    p {
-        margin: 0;
-        color: $brand-grey-light;
-        font-size: $font-size-small;
-
-        @media (min-width: $breakpoint-project-nav) {
-            font-size: $font-size-base;
-        }
-    }
 }
