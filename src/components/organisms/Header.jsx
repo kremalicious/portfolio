@@ -6,7 +6,7 @@ import Networks from '../molecules/Networks'
 import Availability from '../molecules/Availability'
 import ThemeSwitch from '../molecules/ThemeSwitch'
 import LogoUnit from '../atoms/LogoUnit'
-import './Header.scss'
+import styles from './Header.module.scss'
 
 class Header extends PureComponent {
   constructor(props) {
@@ -25,9 +25,9 @@ class Header extends PureComponent {
 
   toggleClasses = () => {
     if (this.props.isHomepage) {
-      this.setState({ classes: 'header' })
+      this.setState({ classes: styles.header })
     } else {
-      this.setState({ classes: 'header header--minimal' })
+      this.setState({ classes: `${styles.header} ${styles.minimal}` })
     }
   }
 
@@ -39,7 +39,7 @@ class Header extends PureComponent {
       <header className={this.state.classes}>
         <ThemeSwitch />
         <FadeIn>
-          <Link className="header__logounit-link" to={'/'}>
+          <Link className={styles.header__link} to={'/'}>
             <LogoUnit meta={meta} minimal={!isHomepage} />
           </Link>
         </FadeIn>

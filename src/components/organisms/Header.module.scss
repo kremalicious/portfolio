@@ -12,20 +12,20 @@
     text-align: center;
 }
 
-.header__logounit-link {
+.header__link {
     pointer-events: none;
     display: block;
     width: 100%;
 }
 
-.header--minimal {
+.minimal {
     height: auto;
 
     @media (min-width: 30rem) {
         padding-top: $spacer * 2;
     }
 
-    .header__logounit-link {
+    .header__link {
         pointer-events: all;
         width: auto;
     }

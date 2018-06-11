@@ -1,6 +1,6 @@
 @import 'variables';
 
-.project__links {
+.projectLinks {
     ul {
         padding: 0;
         display: flex;
@@ -17,7 +17,7 @@
         margin-bottom: $spacer / 2;
     }
 
-    .icon {
+    svg {
         margin-right: $spacer / 3;
         transition: .2s ease-out;
         margin-bottom: -.1rem;
@@ -33,7 +33,7 @@
         transition-property: all;
         background: rgba(#fff, .15);
 
-        .icon {
+        svg {
             fill: $brand-grey-light;
         }
 
@@ -48,5 +48,18 @@
             transition: none;
             background: rgba(#fff, .15);
         }
+    }
+}
+
+.title {
+    font-size: $font-size-h3;
+    margin-bottom: $spacer * 1.5;
+
+    span {
+        display: block;
+        margin-top: $spacer / 3;
+        font-size: $font-size-base;
+        font-family: $font-family-base;
+        color: $brand-grey-light;
     }
 }

@@ -1,6 +1,6 @@
 @import 'variables';
 
-.project__techstack {
+.projectTechstack {
     ul {
         padding: 0;
         display: flex;
@@ -21,5 +21,18 @@
         margin-bottom: $spacer / 2;
         flex: 0 0 calc(50% - #{$spacer / 2});
         font-size: $font-size-base;
+    }
+}
+
+.title {
+    font-size: $font-size-h3;
+    margin-bottom: $spacer * 1.5;
+
+    span {
+        display: block;
+        margin-top: $spacer / 3;
+        font-size: $font-size-base;
+        font-family: $font-family-base;
+        color: $brand-grey-light;
     }
 }

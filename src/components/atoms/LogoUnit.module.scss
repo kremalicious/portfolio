@@ -1,5 +1,9 @@
 @import 'variables';
 
+.logounit {
+    display: block;
+}
+
 .logounit__logo {
     display: block;
     width: 1.5rem;
@@ -36,7 +40,7 @@
     }
 }
 
-.logounit--minimal {
+.minimal {
     transform: scale(.7);
     transform-origin: top center;
     transform-box: border-box;

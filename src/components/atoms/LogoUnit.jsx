@@ -1,16 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { ReactComponent as Logo } from '../../images/logo.svg'
-import './LogoUnit.scss'
+import styles from './LogoUnit.module.scss'
 
 const LogoUnit = ({ meta, minimal }) => {
-  const classes = minimal ? 'logounit logounit--minimal' : 'logounit'
+  const classes = minimal
+    ? `${styles.logounit} ${styles.minimal}`
+    : styles.logounit
 
   return (
     <div className={classes}>
-      <Logo className="logounit__logo" />
-      <h1 className="logounit__title">{meta.title.toLowerCase()}</h1>
-      <p className="logounit__description">
+      <Logo className={styles.logounit__logo} />
+      <h1 className={styles.logounit__title}>{meta.title.toLowerCase()}</h1>
+      <p className={styles.logounit__description}>
         <span>{'{ '}</span> {meta.tagline.toLowerCase()} <span>{' }'}</span>
       </p>
     </div>

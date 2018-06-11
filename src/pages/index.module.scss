@@ -1,6 +1,6 @@
 @import 'variables';
 
-.projects__project {
+.project {
     text-align: center;
     margin-bottom: $spacer * 4;
 
@@ -42,7 +42,7 @@
     }
 }
 
-.projects__project__title {
+.title {
     visibility: hidden;
     font-size: 0;
     margin: 0;

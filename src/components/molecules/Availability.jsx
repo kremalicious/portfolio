@@ -1,7 +1,7 @@
 import React, { Fragment, PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { MoveIn } from '../atoms/Animations'
-import './Availability.scss'
+import styles from './Availability.module.scss'
 
 class Availability extends PureComponent {
   constructor(props) {
@@ -64,7 +64,9 @@ class Availability extends PureComponent {
           <MoveIn>
             <aside
               className={
-                status ? 'availability available' : 'availability unavailable'
+                status
+                  ? `${styles.availability} ${styles.available}`
+                  : `${styles.availability} ${styles.unavailable}`
               }
             >
               <p
