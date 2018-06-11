@@ -48,6 +48,16 @@
             transition: none;
             background: rgba(#fff, .15);
         }
+
+        :global(.dark) & {
+            background: darken($body-background-color--dark, 1%);
+
+            &:hover,
+            &:focus {
+                box-shadow: 0 6px 10px rgba(darken($brand-main, 20%), .1),
+                    0 10px 25px rgba(darken($brand-main, 20%), .1);
+            }
+        }
     }
 }
 
