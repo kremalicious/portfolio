@@ -4,18 +4,18 @@ import Helmet from 'react-helmet'
 import { FadeIn } from '../atoms/Animations'
 import { ReactComponent as Day } from '../../images/day.svg'
 import { ReactComponent as Night } from '../../images/night.svg'
-import './ThemeSwitch.scss'
+import styles from './ThemeSwitch.module.scss'
 
 const ThemeToggle = props => {
   return (
     <span
       id="toggle"
-      className="checkbox__faux-container"
+      className={styles.checkboxContainer}
       aria-live="assertive"
     >
-      <Day className={props.dark ? 'icon' : 'icon active'} />
-      <span className="checkbox__faux" />
-      <Night className={props.dark ? 'icon active' : 'icon'} />
+      <Day className={props.dark ? null : 'active'} />
+      <span className={styles.checkboxFake} />
+      <Night className={props.dark ? 'active' : null} />
     </span>
   )
 }
@@ -48,9 +48,9 @@ class ThemeSwitch extends PureComponent {
           <body className={this.state.dark ? 'dark' : null} />
         </Helmet>
         <FadeIn>
-          <aside className="themeswitch">
-            <label className="checkbox">
-              <span className="checkbox__label">Toggle Night Mode</span>
+          <aside className={styles.themeSwitch}>
+            <label className={styles.checkbox}>
+              <span className={styles.label}>Toggle Night Mode</span>
               <input
                 onChange={this.handleChange}
                 type="checkbox"

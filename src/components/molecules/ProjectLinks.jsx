@@ -9,8 +9,8 @@ import { ReactComponent as Styleguide } from '../../images/styleguide.svg'
 import { ReactComponent as GitHub } from '../../images/github.svg'
 import { ReactComponent as Dribbble } from '../../images/dribbble.svg'
 
-import '../atoms/Icons.scss'
-import './ProjectLinks.scss'
+import icons from '../atoms/Icons.module.scss'
+import styles from './ProjectLinks.module.scss'
 
 const LinkIcon = props => {
   switch (props.title) {
@@ -32,8 +32,8 @@ const LinkIcon = props => {
 }
 
 const ProjectLinks = ({ links }) => (
-  <div className="project__links">
-    <h3 className="project__meta__title">
+  <div className={styles.projectLinks}>
+    <h3 className={styles.title}>
       Links <span>Learn more on the interwebz.</span>
     </h3>
 
@@ -44,7 +44,7 @@ const ProjectLinks = ({ links }) => (
         return (
           <li key={title}>
             <OutboundLink href={url}>
-              <LinkIcon title={title} className="icon" />
+              <LinkIcon title={title} className={icons.icon} />
               {title}
             </OutboundLink>
           </li>

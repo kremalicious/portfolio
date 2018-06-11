@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import ProjectImage from '../components/atoms/ProjectImage'
 import FullWidth from '../components/atoms/FullWidth'
-import './index.scss'
+import styles from './index.module.scss'
 
 const Home = ({ data }) => {
   const projects = data.allProjectsYaml.edges
@@ -14,9 +14,9 @@ const Home = ({ data }) => {
         const { slug, title, img } = node
 
         return (
-          <article className="projects__project" key={slug}>
+          <article className={styles.project} key={slug}>
             <Link to={slug}>
-              <h1 className="projects__project__title">{title}</h1>
+              <h1 className={styles.title}>{title}</h1>
               <ProjectImage sizes={img.childImageSharp.sizes} alt={title} />
             </Link>
           </article>

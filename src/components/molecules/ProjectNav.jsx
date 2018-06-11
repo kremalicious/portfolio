@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
+import FullWidth from '../atoms/FullWidth'
 import { ReactComponent as Index } from '../../images/index.svg'
 
-import '../atoms/Icons.scss'
-import './ProjectNav.scss'
+import icons from '../atoms/Icons.module.scss'
+import styles from './ProjectNav.module.scss'
 
 const ProjectNavLink = ({ previous, next }) => {
   const slug = previous ? previous.slug : next.slug
@@ -13,36 +14,38 @@ const ProjectNavLink = ({ previous, next }) => {
   const img = previous ? previous.img : next.img
 
   return (
-    <div className="project__nav__item">
-      <Link className="project__nav__link prev" to={slug}>
+    <div className={styles.item}>
+      <Link className={styles.link + ' prev'} to={slug}>
         <Img
-          className="project__nav__image"
+          className={styles.image}
           sizes={img.childImageSharp.sizes}
           alt={title}
         />
-        <h1 className="project__nav__title">{title}</h1>
+        <h1 className={styles.title}>{title}</h1>
       </Link>
     </div>
   )
 }
 
 const ProjectNav = ({ previous, next }) => (
-  <nav className="project__nav full-width">
-    {previous && <ProjectNavLink previous={previous} />}
-    <Link className="project__nav__index" title="Back to projects" to={'/'}>
-      <Index className="icon" />
-    </Link>
-    {next ? (
-      <ProjectNavLink next={next} />
-    ) : (
-      <div className="project__nav__item project__nav__item--end">
-        <div className="project__nav__end">
-          <h3>This is the end</h3>
-          <p>I would rather not show you my websites from 1999.</p>
+  <FullWidth>
+    <nav className={styles.projectNav}>
+      {previous && <ProjectNavLink previous={previous} />}
+      <Link className={styles.index} title="Back to projects" to={'/'}>
+        <Index className={icons.icon} />
+      </Link>
+      {next ? (
+        <ProjectNavLink next={next} />
+      ) : (
+        <div className={`${styles.item} ${styles.itemEnd}`}>
+          <div className={styles.end}>
+            <h3>This is the end</h3>
+            <p>I would rather not show you my websites from 1999.</p>
+          </div>
         </div>
-      </div>
-    )}
-  </nav>
+      )}
+    </nav>
+  </FullWidth>
 )
 
 ProjectNavLink.propTypes = {

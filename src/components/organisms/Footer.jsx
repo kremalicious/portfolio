@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Vcard from '../atoms/Vcard'
 import LogoUnit from '../atoms/LogoUnit'
 import Networks from '../molecules/Networks'
-import './Footer.scss'
+import styles from './Footer.module.scss'
 
 class Footer extends PureComponent {
   constructor(props) {
@@ -17,16 +17,16 @@ class Footer extends PureComponent {
     const pkg = this.props.pkg
 
     return (
-      <footer className="footer">
+      <footer className={styles.footer}>
         <LogoUnit meta={meta} minimal />
         <Networks meta={meta} minimal />
 
-        <p className="footer__actions">
+        <p className={styles.footer__actions}>
           <Vcard meta={meta} />
           <a href={meta.gpg}>PGP/GPG key</a>
           <a href={pkg.bugs}>Found a bug?</a>
         </p>
-        <p className="footer__copyright">
+        <p className={styles.footer__copyright}>
           <small>
             &copy; {this.state.year} {meta.title} &mdash; All Rights Reserved
           </small>

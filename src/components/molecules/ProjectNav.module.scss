@@ -2,14 +2,14 @@
 
 $breakpoint-project-nav: 45rem;
 
-.project__nav {
+.projectNav {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     overflow: hidden;
 }
 
-.project__nav__image {
+.image {
     margin: 0;
     box-shadow: 0 3px 5px rgba($brand-main, .15),
         0 5px 16px rgba($brand-main, .15);
@@ -20,7 +20,7 @@ $breakpoint-project-nav: 45rem;
     }
 }
 
-.project__nav__item {
+.item {
     flex: 1 1 46%;
     position: relative;
     transition: .2s ease-out;
@@ -56,16 +56,22 @@ $breakpoint-project-nav: 45rem;
     }
 }
 
-.project__nav__title {
+.itemEnd {
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+}
+
+.title {
     visibility: hidden;
     font-size: 0;
 }
 
-.project__nav__link {
+.link {
     display: block;
 }
 
-.project__nav__index {
+.index {
     height: 100%;
     display: block;
     align-self: center;
@@ -84,7 +90,7 @@ $breakpoint-project-nav: 45rem;
         width: auto;
     }
 
-    .icon {
+    svg {
         fill: $brand-grey-light;
         width: 1.5rem;
         height: 1.5rem;
@@ -92,7 +98,7 @@ $breakpoint-project-nav: 45rem;
 
     &:hover,
     &:focus {
-        .icon {
+        svg {
             fill: $brand-cyan;
         }
     }
@@ -106,13 +112,7 @@ $breakpoint-project-nav: 45rem;
     }
 }
 
-.project__nav__item--end {
-    pointer-events: none;
-    display: flex;
-    align-items: center;
-}
-
-.project__nav__end {
+.end {
     padding-right: $spacer;
     text-align: left;
 

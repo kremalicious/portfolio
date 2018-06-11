@@ -9,8 +9,8 @@ import { ReactComponent as Twitter } from '../../images/twitter.svg'
 import { ReactComponent as GitHub } from '../../images/github.svg'
 import { ReactComponent as Dribbble } from '../../images/dribbble.svg'
 
-import '../atoms/Icons.scss'
-import './Networks.scss'
+import icons from '../atoms/Icons.module.scss'
+import styles from './Networks.module.scss'
 
 const NetworkIcon = props => {
   switch (props.title) {
@@ -34,7 +34,7 @@ class Network extends PureComponent {
     super(props)
 
     this.state = {
-      classes: 'networks'
+      classes: styles.networks
     }
   }
 
@@ -48,9 +48,9 @@ class Network extends PureComponent {
 
   toggleClasses = () => {
     if (this.props.minimal) {
-      this.setState({ classes: 'networks networks--minimal' })
+      this.setState({ classes: `${styles.networks} ${styles.minimal}` })
     } else {
-      this.setState({ classes: 'networks' })
+      this.setState({ classes: styles.networks })
     }
   }
 
@@ -61,12 +61,12 @@ class Network extends PureComponent {
           <aside className={this.state.classes}>
             {Object.keys(this.props.meta.social).map((key, i) => (
               <OutboundLink
-                className="networks__link"
+                className={styles.link}
                 href={this.props.meta.social[key]}
                 key={i}
               >
-                <NetworkIcon title={key} className="icon" />
-                <span className="networks__title">{key}</span>
+                <NetworkIcon title={key} className={icons.icon} />
+                <span className={styles.title}>{key}</span>
               </OutboundLink>
             ))}
           </aside>
