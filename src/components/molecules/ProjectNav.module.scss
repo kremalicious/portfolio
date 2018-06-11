@@ -1,9 +1,8 @@
 @import 'variables';
 
-$breakpoint-project-nav: 45rem;
-
 .projectNav {
     white-space: nowrap;
+    overflow-y: hidden;
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
 
@@ -14,12 +13,8 @@ $breakpoint-project-nav: 45rem;
 
 .item {
     display: inline-block;
-    width: 45vw;
-    margin-left: $spacer;
-
-    &:last-child {
-        margin-right: $spacer * 2;
-    }
+    width: 40vw;
+    margin-right: $spacer * 2;
 }
 
 .image {

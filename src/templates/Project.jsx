@@ -66,7 +66,7 @@ class Project extends Component {
           </Content>
         </article>
 
-        <ProjectNav projects={projects} />
+        <ProjectNav projects={projects} project={project} />
       </Fragment>
     )
   }
