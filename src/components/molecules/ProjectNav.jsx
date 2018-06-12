@@ -5,22 +5,15 @@ import Img from 'gatsby-image'
 import FullWidth from '../atoms/FullWidth'
 import styles from './ProjectNav.module.scss'
 
-const ProjectItem = ({ title, slug, img, current }) => (
-  <div className={styles.item} id={current ? 'current' : null}>
-    <Link className={styles.link} to={slug}>
-      <Img
-        className={styles.image}
-        sizes={img.childImageSharp.sizes}
-        alt={title}
-      />
-      <h1 className={styles.title}>{title}</h1>
-    </Link>
-  </div>
-)
-
 class ProjectNav extends Component {
   constructor(props) {
     super(props)
+
+    this.scrollToCurrent = this.scrollToCurrent.bind(this)
+  }
+
+  componentDidMount() {
+    this.scrollToCurrent()
   }
 
   componentDidUpdate() {
@@ -28,13 +21,12 @@ class ProjectNav extends Component {
   }
 
   scrollToCurrent = () => {
-    const container = window.document.getElementById('scrollContainer')
-    const current = window.document.getElementById('current')
+    const current = this.currentItem
     const currentLeft = current.getBoundingClientRect().left
     const currentWidth = current.clientWidth
     const finalPosition = currentLeft - window.innerWidth / 2 + currentWidth / 2
 
-    container.scrollLeft = finalPosition
+    this.scrollContainer.scrollLeft = finalPosition
   }
 
   render() {
@@ -42,31 +34,38 @@ class ProjectNav extends Component {
 
     return (
       <FullWidth>
-        <nav className={styles.projectNav} id="scrollContainer">
+        <nav
+          className={styles.projectNav}
+          ref={node => {
+            this.scrollContainer = node
+          }}
+        >
           {projects.map(({ node }) => {
             const current = node.slug === project.slug
 
             return (
-              <ProjectItem
+              <div
+                className={styles.item}
                 key={node.slug}
-                title={node.title}
-                current={current}
-                slug={node.slug}
-                img={node.img}
-              />
+                ref={node => {
+                  if (current) this.currentItem = node
+                }}
+              >
+                <Link className={styles.link} to={node.slug}>
+                  <Img
+                    className={styles.image}
+                    sizes={node.img.childImageSharp.sizes}
+                    alt={node.title}
+                  />
+                  <h1 className={styles.title}>{node.title}</h1>
+                </Link>
+              </div>
             )
           })}
         </nav>
       </FullWidth>
     )
   }
-}
-
-ProjectItem.propTypes = {
-  current: PropTypes.bool,
-  title: PropTypes.string,
-  slug: PropTypes.string,
-  img: PropTypes.object
 }
 
 ProjectNav.propTypes = {
