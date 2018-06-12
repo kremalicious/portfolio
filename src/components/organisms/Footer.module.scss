@@ -26,15 +26,17 @@
         display: inline-block;
         padding: 0 $spacer / 4;
         font-size: $font-size-small;
-        margin-left: $spacer;
+        margin-left: $spacer / 2;
+        margin-right: $spacer / 2;
+        margin-bottom: $spacer / 2;
         color: $text-color-light;
-
-        &:first-child {
-            margin-left: 0;
-        }
 
         :global(.dark) & {
             color: $text-color-light--dark;
         }
     }
+}
+
+.footer__copyright {
+    opacity: .6;
 }

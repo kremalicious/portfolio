@@ -1,6 +1,7 @@
 @import 'variables';
 
 .projectNav {
+    composes: fullWidth from '../atoms/FullWidth.module.scss';
     white-space: nowrap;
     overflow-y: hidden;
     overflow-x: scroll;
@@ -13,11 +14,16 @@
 
 .item {
     display: inline-block;
-    width: 40vw;
-    margin-left: $spacer * 2;
+    width: 60vw;
+    margin-left: $spacer;
 
     &:last-child {
         margin-right: $spacer * 2;
+    }
+
+    @media (min-width: 30rem) {
+        width: 40vw;
+        margin-left: $spacer * 2;
     }
 }
 
