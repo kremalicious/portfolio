@@ -9,7 +9,7 @@ const ProjectImage = ({ sizes, alt }) => (
     className="project__image"
     outerWrapperClassName="project__image-wrap"
     backgroundColor="#6b7f88"
-    sizes={sizes}
+    fluid={sizes}
     alt={alt}
   />
 )
@@ -21,7 +21,7 @@ ProjectImage.propTypes = {
 
 export const projectImage = graphql`
   fragment ProjectImageSizes on ImageSharp {
-    sizes(maxWidth: 1200, quality: 85) {
+    fluid(maxWidth: 1200, quality: 85) {
       ...GatsbyImageSharpSizes_noBase64
     }
   }

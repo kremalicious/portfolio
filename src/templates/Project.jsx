@@ -1,7 +1,8 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import ReactMarkdown from 'react-markdown'
+import Layout from '../components/Layout'
 import Content from '../components/atoms/Content'
 import FullWidth from '../components/atoms/FullWidth'
 import ProjectImage from '../components/atoms/ProjectImage'
@@ -25,7 +26,7 @@ const ProjectMeta = props => {
 const ProjectImages = props => (
   <FullWidth>
     {props.projectImages.map(({ node }) => (
-      <ProjectImage key={node.id} sizes={node.sizes} alt={props.title} />
+      <ProjectImage key={node.id} fluid={node.sizes} alt={props.title} />
     ))}
   </FullWidth>
 )
@@ -49,7 +50,7 @@ class Project extends Component {
     const { title, links, techstack } = project
 
     return (
-      <Fragment>
+      <Layout>
         <Helmet title={title} />
 
         <SEO project={project} meta={meta} />
@@ -67,7 +68,7 @@ class Project extends Component {
         </article>
 
         <ProjectNav projects={projects} project={project} />
-      </Fragment>
+      </Layout>
     )
   }
 }
@@ -83,8 +84,7 @@ ProjectImages.propTypes = {
 }
 
 Project.propTypes = {
-  data: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired
 }
 
 export default Project
