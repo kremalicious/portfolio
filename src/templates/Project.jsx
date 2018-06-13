@@ -155,7 +155,9 @@ export const projectAndProjectsQuery = graphql`
           slug
           img {
             childImageSharp {
-              ...ProjectImageSizes
+              sizes(maxWidth: 500, quality: 85) {
+                ...GatsbyImageSharpSizes_noBase64
+              }
             }
           }
         }

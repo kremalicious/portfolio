@@ -23,6 +23,7 @@
 
     @media (min-width: 30rem) {
         width: 40vw;
+        max-width: 500px;
         margin-left: $spacer * 2;
     }
 }
