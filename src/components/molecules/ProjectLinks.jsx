@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import { ReactComponent as Link } from '../../images/link.svg'
 import { ReactComponent as Download } from '../../images/download.svg'
@@ -43,10 +42,10 @@ const ProjectLinks = ({ links }) => (
 
         return (
           <li key={title}>
-            <OutboundLink href={url}>
+            <a href={url}>
               <LinkIcon title={title} className={icons.icon} />
               {title}
-            </OutboundLink>
+            </a>
           </li>
         )
       })}

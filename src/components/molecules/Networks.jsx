@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { FadeIn } from '../atoms/Animations'
 
 import { ReactComponent as Email } from '../../images/email.svg'
@@ -60,14 +59,14 @@ class Network extends PureComponent {
         <FadeIn>
           <aside className={this.state.classes}>
             {Object.keys(this.props.meta.social).map((key, i) => (
-              <OutboundLink
+              <a
                 className={styles.link}
                 href={this.props.meta.social[key]}
                 key={i}
               >
                 <NetworkIcon title={key} className={icons.icon} />
                 <span className={styles.title}>{key}</span>
-              </OutboundLink>
+              </a>
             ))}
           </aside>
         </FadeIn>

@@ -2,7 +2,7 @@ const path = require('path')
 const fs = require('fs')
 const yaml = require('js-yaml')
 const meta = yaml.load(fs.readFileSync('./data/meta.yml', 'utf8'))
-const { url, googleanalytics, matomoUrl, matomoSite } = meta
+const { url, matomoUrl, matomoSite } = meta
 
 module.exports = {
   siteMetadata: {
@@ -48,15 +48,6 @@ module.exports = {
       options: {
         name: 'images',
         path: path.join(__dirname, 'src', 'images')
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: `${googleanalytics}`,
-        head: false,
-        anonymize: true,
-        respectDNT: true
       }
     },
     {
