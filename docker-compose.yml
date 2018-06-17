@@ -1,0 +1,8 @@
+version: '3'
+services:
+  gatsby:
+    build: .
+    volumes:
+      - .:/portfolio
+    ports:
+     - "8000:8000"

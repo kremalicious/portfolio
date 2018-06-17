@@ -11,7 +11,7 @@
     "lint:css": "stylelint ./src/**/*.{css,scss}",
     "lint": "npm run lint:js && npm run lint:css",
     "build": "gatsby build",
-    "start": "gatsby develop",
+    "start": "docker-compose up",
     "format": "prettier --write 'src/**/*.{js,jsx}'",
     "format:css": "prettier-stylelint --write --quiet 'src/**/*.{css,scss}'",
     "test": "npm run lint",
