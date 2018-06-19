@@ -1,5 +1,28 @@
 const path = require('path')
 
+// Intersection Observer polyfill
+// requires `npm install intersection-observer`
+// https://github.com/gatsbyjs/gatsby/issues/2288#issuecomment-334467821
+exports.onCreateWebpackConfig = ({ actions, loaders, stage }) => {
+  const { setWebpackConfig } = actions
+
+  if (stage === 'build-html') {
+    const nullRule = {
+      test: /intersection-observer/,
+      use: [loaders.null()]
+    }
+
+    setWebpackConfig({
+      module: {
+        rules: [nullRule]
+      }
+    })
+  }
+}
+
+//
+// Create project pages from projects.yml
+//
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
@@ -14,44 +37,6 @@ exports.createPages = ({ actions, graphql }) => {
               node {
                 slug
               }
-              previous {
-                title
-                slug
-                img {
-                  id
-                  childImageSharp {
-                    fluid(maxWidth: 500, quality: 80) {
-                      aspectRatio
-                      src
-                      srcSet
-                      srcWebp
-                      srcSetWebp
-                      sizes
-                      originalImg
-                      originalName
-                    }
-                  }
-                }
-              }
-              next {
-                title
-                slug
-                img {
-                  id
-                  childImageSharp {
-                    fluid(maxWidth: 500, quality: 80) {
-                      aspectRatio
-                      src
-                      srcSet
-                      srcWebp
-                      srcSetWebp
-                      sizes
-                      originalImg
-                      originalName
-                    }
-                  }
-                }
-              }
             }
           }
         }
@@ -60,21 +45,17 @@ exports.createPages = ({ actions, graphql }) => {
           reject(result.errors)
         }
 
-        result.data.allProjectsYaml.edges.forEach(
-          ({ node, previous, next }) => {
-            const slug = node.slug
+        result.data.allProjectsYaml.edges.forEach(({ node }) => {
+          const slug = node.slug
 
-            createPage({
-              path: slug,
-              component: template,
-              context: {
-                slug,
-                previous,
-                next
-              }
-            })
-          }
-        )
+          createPage({
+            path: slug,
+            component: template,
+            context: {
+              slug
+            }
+          })
+        })
 
         resolve()
       })

@@ -7,10 +7,6 @@ cache:
     - public
 
 install:
-  - pip install --user awscli
-  - export PATH=$PATH:$HOME/.local/bin
-  - npm i -g gatsby-cli
-  - export PATH="$PATH:/usr/local/bin/gatsby"
   - npm i
 
 script:
@@ -18,9 +14,9 @@ script:
   - npm run build
 
 after_success:
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
   - npm run deploy
 
 notifications:
   email: false
-  slack:
-    secure: v/sqm2fgXTi7RJIjVsaJz1i3bV/WNFyTkLLto2p/fXjoWHVWJBdodANTTH+9lgkbft6JdBcU4WDLDkLP8VKlR9JffFc1DvbxGmF3VTfP2kJcnCbo+koLHBtzR1oRwDB1aulp6+II0ROPS9OyOv+Xx45bj4jOt9y/r0Qcp2V5fKvSUEwEecxaTmvBEn3fvZ9COSgL8ufq9hCCT/6r3Bxl0Pp28Fj23pLwuM6tCKjriM4w5WY0xY2Sv4unz6u7LNec5DZH3QZPH4/pdRVBmC3rxt3quw8IMt6NNXG3ODUPRqS7GB44Q+k8L+15Dn5Cx22o92wULpXKTDvHmLLj2lej50V0cyoj7U4SbDkVOohUG23fn10/AzvZogYA2ugf3YXKJCBbyyloJV6jFnZAAvKRSD8B5PFnuhf+uLEAfX9Of1FLNO2c7XIQa86ht5xrpsRFCzNCFhtyHNc8pXwSv7EUv7K2bccCGKv0a7DxYquP0OB3OSkI6tvRc3mvYpe5k2WKNHFRByud14ywGxMn0FYBwtsHbW3QJ/z/WaFYS2hJXjtpjHQW1wNDy+67UTiZFi1anovUHoZvkrIKtRqY1eyXPJB31TqPHWSX0er0IfdhfE3o9mMuoSVUip6S29eY7hhVk5S3IsK1YlPAFW8pa9OPiUBt8z+gbf8WN23qi61Bn7g=

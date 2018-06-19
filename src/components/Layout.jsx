@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import withRouter from 'react-router-dom/withRouter'
 import TransitionGroup from 'react-transition-group/TransitionGroup'
+import { StaticQuery } from 'gatsby'
 import Head from './atoms/Head'
 import Header from './organisms/Header'
 import Footer from './organisms/Footer'
@@ -116,8 +117,7 @@ Main.propTypes = {
 }
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-  data: PropTypes.object.isRequired,
+  children: PropTypes.any,
   location: PropTypes.object.isRequired
 }
 

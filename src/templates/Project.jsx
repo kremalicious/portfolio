@@ -26,7 +26,7 @@ const ProjectMeta = props => {
 const ProjectImages = props => (
   <FullWidth>
     {props.projectImages.map(({ node }) => (
-      <ProjectImage key={node.id} fluid={node.sizes} alt={props.title} />
+      <ProjectImage key={node.id} fluid={node.fluid} alt={props.title} />
     ))}
   </FullWidth>
 )
@@ -137,13 +137,13 @@ export const projectAndProjectsQuery = graphql`
     }
 
     projectImages: allImageSharp(
-      filter: { id: { regex: $slug } }
+      filter: { fluid: { originalName: { regex: $slug } } }
       sort: { fields: [id], order: ASC }
     ) {
       edges {
         node {
           id
-          ...ProjectImageSizes
+          ...ProjectImageFluid
         }
       }
     }
@@ -155,8 +155,8 @@ export const projectAndProjectsQuery = graphql`
           slug
           img {
             childImageSharp {
-              sizes(maxWidth: 500, quality: 85) {
-                ...GatsbyImageSharpSizes_noBase64
+              fluid(maxWidth: 500, quality: 85) {
+                ...GatsbyImageSharpFluid_noBase64
               }
             }
           }

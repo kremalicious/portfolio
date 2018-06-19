@@ -19,7 +19,7 @@ const Home = ({ data }) => {
             <article className={styles.project} key={slug}>
               <Link to={slug}>
                 <h1 className={styles.title}>{title}</h1>
-                <ProjectImage fluid={img.childImageSharp.sizes} alt={title} />
+                <ProjectImage fluid={img.childImageSharp.fluid} alt={title} />
               </Link>
             </article>
           )
@@ -44,7 +44,7 @@ export const IndexQuery = graphql`
           slug
           img {
             childImageSharp {
-              ...ProjectImageSizes
+              ...ProjectImageFluid
             }
           }
         }

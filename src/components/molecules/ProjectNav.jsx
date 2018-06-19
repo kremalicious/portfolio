@@ -8,7 +8,7 @@ const ProjectLink = ({ node }) => (
   <Link className={styles.link} to={node.slug}>
     <Img
       className={styles.image}
-      fluid={node.img.childImageSharp.sizes}
+      fluid={node.img.childImageSharp.fluid}
       alt={node.title}
     />
     <h1 className={styles.title}>{node.title}</h1>
