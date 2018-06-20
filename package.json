@@ -49,7 +49,6 @@
     "vcf": "^2.0.1"
   },
   "devDependencies": {
-    "@types/prop-types": "^15.5.3",
     "babel-eslint": "^8.2.3",
     "eslint": "^5.0.0",
     "eslint-config-prettier": "^2.9.0",

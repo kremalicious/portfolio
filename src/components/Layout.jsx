@@ -7,7 +7,6 @@ import Head from './atoms/Head'
 import Header from './organisms/Header'
 import Footer from './organisms/Footer'
 import { FadeIn } from './atoms/Animations'
-import './Layout.scss'
 
 class TransitionHandler extends Component {
   shouldComponentUpdate() {

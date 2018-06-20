@@ -15,11 +15,6 @@ body {
 
 html {
     font-size: $font-size-root;
-
-    &.wf-loading,
-    &.wf-inactive {
-        font-size: $font-size-root - 2px;
-    }
 }
 
 body {
@@ -115,11 +110,11 @@ svg {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background: $body-background-color;
+    background-color: $body-background-color;
     transition: background .6s $easing;
 
     .dark & {
-        background: $body-background-color--dark;
+        background-color: $body-background-color--dark;
         color: $text-color--dark;
     }
 }
