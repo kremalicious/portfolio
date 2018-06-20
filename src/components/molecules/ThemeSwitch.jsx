@@ -2,20 +2,20 @@ import React, { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { FadeIn } from '../atoms/Animations'
-// import { ReactComponent as Day } from '../../images/day.svg'
-// import { ReactComponent as Night } from '../../images/night.svg'
+import Day from '../svg/Day'
+import Night from '../svg/Night'
 import styles from './ThemeSwitch.module.scss'
 
-const ThemeToggle = () => {
+const ThemeToggle = props => {
   return (
     <span
       id="toggle"
       className={styles.checkboxContainer}
       aria-live="assertive"
     >
-      {/* <Day className={props.dark ? null : 'active'} /> */}
+      <Day className={props.dark ? null : 'active'} />
       <span className={styles.checkboxFake} />
-      {/* <Night className={props.dark ? 'active' : null} /> */}
+      <Night className={props.dark ? 'active' : null} />
     </span>
   )
 }

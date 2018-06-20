@@ -10,13 +10,14 @@
     "lint:js": "eslint ./gatsby-*.{js,jsx} && eslint ./src/**/*.{js,jsx}",
     "lint:css": "stylelint ./src/**/*.{css,scss}",
     "lint": "npm run lint:js && npm run lint:css",
-    "build": "./node_modules/gatsby/dist/bin/gatsby.js build",
-    "start": "./node_modules/gatsby/dist/bin/gatsby.js develop",
+    "build": "npm run svg && ./node_modules/gatsby/dist/bin/gatsby.js build",
+    "start": "npm run svg && ./node_modules/gatsby/dist/bin/gatsby.js develop",
     "format": "prettier --write 'src/**/*.{js,jsx}'",
     "format:css": "prettier-stylelint --write --quiet 'src/**/*.{css,scss}'",
     "test": "npm run lint",
     "deploy": "./scripts/deploy.sh",
-    "new": "node ./scripts/new-project.js"
+    "new": "node ./scripts/new-project.js",
+    "svg": "./scripts/svg.sh"
   },
   "dependencies": {
     "camel-case": "^3.0.0",
@@ -31,7 +32,6 @@
     "gatsby-plugin-sass": "next",
     "gatsby-plugin-sharp": "next",
     "gatsby-plugin-sitemap": "next",
-    "gatsby-plugin-svgr": "github:plag/gatsby-plugin-svgr#gatsby2-compatibility",
     "gatsby-source-filesystem": "next",
     "gatsby-transformer-json": "next",
     "gatsby-transformer-sharp": "next",
@@ -49,6 +49,7 @@
     "vcf": "^2.0.1"
   },
   "devDependencies": {
+    "@svgr/cli": "^2.0.0",
     "babel-eslint": "^8.2.3",
     "eslint": "^5.0.0",
     "eslint-config-prettier": "^2.9.0",

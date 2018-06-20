@@ -59,14 +59,6 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-svgr',
-      options: {
-        icon: false,
-        viewBox: true
-        // see https://github.com/smooth-code/svgr for a list of all options
-      }
-    },
-    {
       resolve: 'gatsby-plugin-favicon',
       options: {
         logo: './src/images/favicon.png',

@@ -2,31 +2,31 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { FadeIn } from '../atoms/Animations'
 
-// import { ReactComponent as Email } from '../../images/email.svg'
-// import { ReactComponent as Blog } from '../../images/blog.svg'
-// import { ReactComponent as Twitter } from '../../images/twitter.svg'
-// import { ReactComponent as GitHub } from '../../images/github.svg'
-// import { ReactComponent as Dribbble } from '../../images/dribbble.svg'
+import Email from '../svg/Email'
+import Blog from '../svg/Blog'
+import Twitter from '../svg/Twitter'
+import GitHub from '../svg/Github'
+import Dribbble from '../svg/Dribbble'
 
-// import icons from '../atoms/Icons.module.scss'
+import icons from '../atoms/Icons.module.scss'
 import styles from './Networks.module.scss'
 
-// const NetworkIcon = props => {
-//   switch (props.title) {
-//     case 'Email':
-//       return <Email {...props} />
-//     case 'Blog':
-//       return <Blog {...props} />
-//     case 'Twitter':
-//       return <Twitter {...props} />
-//     case 'GitHub':
-//       return <GitHub {...props} />
-//     case 'Dribbble':
-//       return <Dribbble {...props} />
-//     default:
-//       return null
-//   }
-// }
+const NetworkIcon = props => {
+  switch (props.title) {
+    case 'Email':
+      return <Email {...props} />
+    case 'Blog':
+      return <Blog {...props} />
+    case 'Twitter':
+      return <Twitter {...props} />
+    case 'GitHub':
+      return <GitHub {...props} />
+    case 'Dribbble':
+      return <Dribbble {...props} />
+    default:
+      return null
+  }
+}
 
 class Network extends PureComponent {
   constructor(props) {
@@ -64,7 +64,7 @@ class Network extends PureComponent {
                 href={this.props.meta.social[key]}
                 key={i}
               >
-                {/* <NetworkIcon title={key} className={icons.icon} /> */}
+                <NetworkIcon title={key} className={icons.icon} />
                 <span className={styles.title}>{key}</span>
               </a>
             ))}

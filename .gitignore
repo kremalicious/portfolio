@@ -11,3 +11,4 @@ yarn-debug.log*
 yarn.lock
 package-lock.json
 plugins/gatsby-plugin-matomo
+src/components/svg
