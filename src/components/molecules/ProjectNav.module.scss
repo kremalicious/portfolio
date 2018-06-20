@@ -7,7 +7,8 @@
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
 
-    &::-webkit-scrollbar {
+    &::-webkit-scrollbar,
+    &::-moz-scrollbar {
         display: none;
     }
 }
