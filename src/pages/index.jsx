@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
+import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import ProjectImage from '../components/atoms/ProjectImage'
 import FullWidth from '../components/atoms/FullWidth'

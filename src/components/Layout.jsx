@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import withRouter from 'react-router-dom/withRouter'
 import TransitionGroup from 'react-transition-group/TransitionGroup'
-import { StaticQuery } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import Head from './atoms/Head'
 import Header from './organisms/Header'
 import Footer from './organisms/Footer'
@@ -107,16 +107,16 @@ const TemplateWrapper = ({ children, location }) => {
 }
 
 TransitionHandler.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.any.isRequired,
   location: PropTypes.object.isRequired
 }
 
 Main.propTypes = {
-  children: PropTypes.any
+  children: PropTypes.any.isRequired
 }
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.any.isRequired,
   location: PropTypes.object.isRequired
 }
 
