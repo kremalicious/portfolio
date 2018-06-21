@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
-const TypekitScript = props => (
+const TypekitScript = typekitID => (
   <script>
     {`
         (function(d) {
             var config = {
-                kitId: '${props.id}',
+                kitId: '${typekitID}',
                 scriptTimeout: 3000,
                 async: true
             },
@@ -17,13 +18,30 @@ const TypekitScript = props => (
   </script>
 )
 
-const Typekit = props => (
-  <Helmet>
-    <link rel="dns-prefetch" href="https://use.typekit.net/" />
-    <link rel="dns-prefetch" href="https://p.typekit.net/" />
+const Typekit = () => (
+  <StaticQuery
+    query={graphql`
+      query TypekitQuery {
+        dataYaml {
+          typekitID
+        }
+      }
+    `}
+    render={data => {
+      const { typekitID } = data.dataYaml
 
-    {TypekitScript(props)}
-  </Helmet>
+      return (
+        typekitID && (
+          <Helmet>
+            <link rel="dns-prefetch" href="https://use.typekit.net/" />
+            <link rel="dns-prefetch" href="https://p.typekit.net/" />
+
+            {TypekitScript(typekitID)}
+          </Helmet>
+        )
+      )
+    }}
+  />
 )
 
 export default Typekit

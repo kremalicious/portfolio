@@ -46,10 +46,7 @@ class Header extends PureComponent {
 
         <Networks meta={meta} hide={!isHomepage} />
 
-        <Availability
-          meta={meta}
-          hide={!isHomepage && !meta.availability.status}
-        />
+        <Availability hide={!isHomepage && !meta.availability.status} />
       </header>
     )
   }

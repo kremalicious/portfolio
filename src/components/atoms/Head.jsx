@@ -5,7 +5,7 @@ import SEO from './SEO'
 import Typekit from './Typekit'
 
 const Head = ({ meta }) => {
-  const { title, tagline, typekitID } = meta
+  const { title, tagline } = meta
 
   return (
     <Fragment>
@@ -16,7 +16,7 @@ const Head = ({ meta }) => {
         <meta name="apple-mobile-web-app-title" content={title.toLowerCase()} />
       </Helmet>
 
-      {typekitID && <Typekit id={typekitID} />}
+      <Typekit />
 
       <SEO meta={meta} />
     </Fragment>

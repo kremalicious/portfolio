@@ -61,12 +61,9 @@ const TemplateWrapper = ({ children, location }) => {
             }
             availability {
               status
-              available
-              unavailable
             }
             gpg
             addressbook
-            typekitID
           }
 
           # the package.json file
