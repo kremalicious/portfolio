@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Link from 'gatsby'
+import { Link } from 'gatsby'
 import giphyAPI from 'giphy-js-sdk-core'
 import Layout from '../components/Layout'
 import Content from '../components/atoms/Content'

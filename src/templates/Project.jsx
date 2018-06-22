@@ -45,7 +45,6 @@ class Project extends Component {
 
   render() {
     const meta = this.props.data.dataYaml
-    const projects = this.props.data.allProjectsYaml.edges
     const project = this.props.data.projectsYaml
     const projectImages = this.props.data.projectImages.edges
     const { title, links, techstack } = project
@@ -68,7 +67,7 @@ class Project extends Component {
           </Content>
         </article>
 
-        <ProjectNav projects={projects} project={project} />
+        <ProjectNav slug={project.slug} />
       </Layout>
     )
   }
@@ -123,11 +122,6 @@ export const projectAndProjectsQuery = graphql`
         GitHub
         Dribbble
       }
-      availability {
-        status
-        available
-        unavailable
-      }
       img {
         childImageSharp {
           resize(width: 980) {
@@ -145,22 +139,6 @@ export const projectAndProjectsQuery = graphql`
         node {
           id
           ...ProjectImageFluid
-        }
-      }
-    }
-
-    allProjectsYaml {
-      edges {
-        node {
-          title
-          slug
-          img {
-            childImageSharp {
-              fluid(maxWidth: 500, quality: 85) {
-                ...GatsbyImageSharpFluid_noBase64
-              }
-            }
-          }
         }
       }
     }
