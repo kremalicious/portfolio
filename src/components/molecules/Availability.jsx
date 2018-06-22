@@ -4,23 +4,6 @@ import { StaticQuery, graphql } from 'gatsby'
 import { MoveIn } from '../atoms/Animations'
 import styles from './Availability.module.scss'
 
-const AvailabilityElementQuery = ({ render }) => (
-  <StaticQuery
-    query={graphql`
-      query AvailabilityQuery {
-        dataYaml {
-          availability {
-            status
-            available
-            unavailable
-          }
-        }
-      }
-    `}
-    render={render}
-  />
-)
-
 class Availability extends PureComponent {
   constructor(props) {
     super(props)
@@ -28,7 +11,18 @@ class Availability extends PureComponent {
 
   render() {
     return (
-      <AvailabilityElementQuery
+      <StaticQuery
+        query={graphql`
+          query AvailabilityQuery {
+            dataYaml {
+              availability {
+                status
+                available
+                unavailable
+              }
+            }
+          }
+        `}
         render={data => {
           const { availability } = data.dataYaml
           const { status, available, unavailable } = availability
@@ -62,10 +56,6 @@ class Availability extends PureComponent {
 
 Availability.propTypes = {
   hide: PropTypes.bool
-}
-
-AvailabilityElementQuery.propTypes = {
-  render: PropTypes.func
 }
 
 export default Availability

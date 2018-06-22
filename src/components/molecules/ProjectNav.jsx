@@ -15,31 +15,6 @@ const ProjectLink = ({ node }) => (
   </Link>
 )
 
-const ProjectNavQuery = ({ render }) => (
-  <StaticQuery
-    query={graphql`
-      query ProjectsNavQuery {
-        allProjectsYaml {
-          edges {
-            node {
-              title
-              slug
-              img {
-                childImageSharp {
-                  fluid(maxWidth: 500, quality: 85) {
-                    ...GatsbyImageSharpFluid_noBase64
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    `}
-    render={render}
-  />
-)
-
 class ProjectNav extends Component {
   constructor(props) {
     super(props)
@@ -68,7 +43,26 @@ class ProjectNav extends Component {
     const { slug } = this.props
 
     return (
-      <ProjectNavQuery
+      <StaticQuery
+        query={graphql`
+          query ProjectsNavQuery {
+            allProjectsYaml {
+              edges {
+                node {
+                  title
+                  slug
+                  img {
+                    childImageSharp {
+                      fluid(maxWidth: 500, quality: 85) {
+                        ...GatsbyImageSharpFluid_noBase64
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `}
         render={data => {
           const projects = data.allProjectsYaml.edges
 
@@ -108,10 +102,6 @@ ProjectLink.propTypes = {
 
 ProjectNav.propTypes = {
   slug: PropTypes.string
-}
-
-ProjectNavQuery.propTypes = {
-  render: PropTypes.func
 }
 
 export default ProjectNav
