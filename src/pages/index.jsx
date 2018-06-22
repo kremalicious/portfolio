@@ -6,11 +6,11 @@ import ProjectImage from '../components/atoms/ProjectImage'
 import FullWidth from '../components/atoms/FullWidth'
 import styles from './index.module.scss'
 
-const Home = ({ data }) => {
+const Home = ({ data, location }) => {
   const projects = data.allProjectsYaml.edges
 
   return (
-    <Layout>
+    <Layout location={location}>
       <FullWidth className="projects">
         {projects.map(({ node }) => {
           const { slug, title, img } = node
@@ -30,7 +30,8 @@ const Home = ({ data }) => {
 }
 
 Home.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.object,
+  location: PropTypes.object
 }
 
 export default Home

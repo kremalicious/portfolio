@@ -50,7 +50,7 @@ class Project extends Component {
     const { title, links, techstack } = project
 
     return (
-      <Layout>
+      <Layout location={this.props.location}>
         <Helmet title={title} />
 
         <SEO project={project} meta={meta} />
@@ -84,7 +84,8 @@ ProjectImages.propTypes = {
 }
 
 Project.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 }
 
 export default Project

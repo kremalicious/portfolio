@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import giphyAPI from 'giphy-js-sdk-core'
 import Layout from '../components/Layout'
@@ -41,7 +42,7 @@ class NotFound extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout location={this.props.location}>
         <Content className="content content--404">
           <h1>Shenanigans, page not found.</h1>
           <p>
@@ -61,6 +62,10 @@ class NotFound extends Component {
       </Layout>
     )
   }
+}
+
+NotFound.propTypes = {
+  location: PropTypes.object
 }
 
 export default NotFound
