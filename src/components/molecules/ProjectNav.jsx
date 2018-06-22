@@ -111,7 +111,7 @@ ProjectNav.propTypes = {
 }
 
 ProjectNavQuery.propTypes = {
-  render: PropTypes.any
+  render: PropTypes.func
 }
 
 export default ProjectNav
