@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import FullWidth from '../atoms/FullWidth'
 import styles from './ProjectNav.module.scss'
 
 const ProjectLink = ({ node }) => (
@@ -67,28 +68,30 @@ class ProjectNav extends Component {
           const projects = data.allProjectsYaml.edges
 
           return (
-            <nav
-              className={styles.projectNav}
-              ref={node => {
-                this.scrollContainer = node
-              }}
-            >
-              {projects.map(({ node }) => {
-                const current = node.slug === slug
+            <FullWidth>
+              <nav
+                className={styles.projectNav}
+                ref={node => {
+                  this.scrollContainer = node
+                }}
+              >
+                {projects.map(({ node }) => {
+                  const current = node.slug === slug
 
-                return (
-                  <div
-                    className={styles.item}
-                    key={node.slug}
-                    ref={node => {
-                      if (current) this.currentItem = node
-                    }}
-                  >
-                    <ProjectLink node={node} />
-                  </div>
-                )
-              })}
-            </nav>
+                  return (
+                    <div
+                      className={styles.item}
+                      key={node.slug}
+                      ref={node => {
+                        if (current) this.currentItem = node
+                      }}
+                    >
+                      <ProjectLink node={node} />
+                    </div>
+                  )
+                })}
+              </nav>
+            </FullWidth>
           )
         }}
       />
