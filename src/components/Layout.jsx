@@ -7,6 +7,7 @@ import Head from './atoms/Head'
 import Header from './organisms/Header'
 import Footer from './organisms/Footer'
 import { FadeIn } from './atoms/Animations'
+import styles from './Layout.module.scss'
 
 class TransitionHandler extends Component {
   shouldComponentUpdate() {
@@ -15,11 +16,11 @@ class TransitionHandler extends Component {
 
   render() {
     const { children } = this.props
-    return <div className="transition-container">{children}</div>
+    return <div className={styles.transitionContainer}>{children}</div>
   }
 }
 
-const Main = ({ children }) => <main className="screen">{children}</main>
+const Main = ({ children }) => <main className={styles.screen}>{children}</main>
 
 const TemplateWrapper = ({ children, location }) => {
   const isHomepage = location.pathname === '/'
@@ -84,7 +85,11 @@ const TemplateWrapper = ({ children, location }) => {
             <Head meta={meta} />
             <Header meta={meta} isHomepage={isHomepage} />
 
-            <TransitionGroup component={Main} appear={true}>
+            <TransitionGroup
+              className={styles.TransitionGroup}
+              component={Main}
+              appear={true}
+            >
               <FadeIn
                 key={location.pathname}
                 timeout={{ enter: 200, exit: 150, appear: 200 }}

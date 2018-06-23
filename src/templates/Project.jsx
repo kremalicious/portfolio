@@ -11,13 +11,14 @@ import ProjectTechstack from '../components/molecules/ProjectTechstack'
 import ProjectLinks from '../components/molecules/ProjectLinks'
 import ProjectNav from '../components/molecules/ProjectNav'
 import SEO from '../components/atoms/SEO'
-import './Project.scss'
+
+import styles from './Project.module.scss'
 
 const ProjectMeta = props => {
   const { links, techstack } = props
 
   return (
-    <footer className="project__meta">
+    <footer className={styles.project__meta}>
       {!!links && <ProjectLinks links={links} />}
       {!!techstack && <ProjectTechstack techstack={techstack} />}
     </footer>
@@ -27,7 +28,9 @@ const ProjectMeta = props => {
 const ProjectImages = props => (
   <FullWidth>
     {props.projectImages.map(({ node }) => (
-      <ProjectImage key={node.id} fluid={node.fluid} alt={props.title} />
+      <div className={styles.spacer} key={node.id}>
+        <ProjectImage fluid={node.fluid} alt={props.title} />
+      </div>
     ))}
   </FullWidth>
 )
@@ -55,12 +58,12 @@ class Project extends Component {
 
         <SEO project={project} meta={meta} />
 
-        <article className="project">
+        <article className={styles.project}>
           <Content>
-            <h1 className="project__title">{title}</h1>
+            <h1 className={styles.project__title}>{title}</h1>
             <ReactMarkdown
               source={this.state.descriptionWithLineBreaks}
-              className="project__description"
+              className={styles.project__description}
             />
             <ProjectImages projectImages={projectImages} title={title} />
             <ProjectMeta links={links} techstack={techstack} />

@@ -2,15 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import './ProjectImage.scss'
+import styles from './ProjectImage.module.scss'
 
-const ProjectImage = ({ fluid, alt }) => (
+const ProjectImage = props => (
   <Img
-    className="project__image"
-    outerWrapperClassName="project__image-wrap"
+    className={styles.project__image}
+    outerWrapperClassName={styles.project__imagewrap}
     backgroundColor="#6b7f88"
-    fluid={fluid}
-    alt={alt}
+    fluid={props.fluid}
+    alt={props.alt}
   />
 )
 

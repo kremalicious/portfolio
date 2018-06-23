@@ -1,12 +1,13 @@
 @import 'variables';
+@import '../components/atoms/ProjectImage.module';
 
-.project {
-    .project__image-wrap {
-        margin-bottom: $spacer * 3;
+// .project__imagewrap {
+.spacer {
+    //composes: project__imagewrap from '../components/atoms/ProjectImage.module';
+    margin-bottom: $spacer * 3;
 
-        @media (min-width: 30rem) {
-            margin-bottom: $spacer * 6;
-        }
+    @media (min-width: 30rem) {
+        margin-bottom: $spacer * 6;
     }
 }
 

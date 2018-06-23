@@ -1,0 +1,15 @@
+@import 'variables';
+
+.screen {
+    flex: 1;
+    padding: $spacer;
+}
+
+.transitionGroup {
+    position: relative;
+}
+
+.transitionContainer {
+    position: relative;
+    width: 100%;
+}
