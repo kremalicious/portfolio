@@ -1,28 +1,12 @@
-import React, { Component, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import withRouter from 'react-router-dom/withRouter'
-import TransitionGroup from 'react-transition-group/TransitionGroup'
 import { StaticQuery, graphql } from 'gatsby'
 import Head from './atoms/Head'
 import Header from './organisms/Header'
 import Footer from './organisms/Footer'
-import { FadeIn } from './atoms/Animations'
 import styles from './Layout.module.scss'
 
-class TransitionHandler extends Component {
-  shouldComponentUpdate() {
-    return this.props.location.pathname === window.location.pathname
-  }
-
-  render() {
-    const { children } = this.props
-    return <div className={styles.transitionContainer}>{children}</div>
-  }
-}
-
-const Main = ({ children }) => <main className={styles.screen}>{children}</main>
-
-const TemplateWrapper = ({ children, location }) => {
+const Layout = ({ children, location }) => {
   const isHomepage = location.pathname === '/'
 
   return (
@@ -66,41 +50,21 @@ const TemplateWrapper = ({ children, location }) => {
             gpg
             addressbook
           }
-
-          # the package.json file
-          portfolioJson {
-            name
-            homepage
-            repository
-            bugs
-          }
         }
       `}
       render={data => {
         const meta = data.dataYaml
-        const pkg = data.portfolioJson
 
         return (
           <Fragment>
             <Head meta={meta} />
             <Header meta={meta} isHomepage={isHomepage} />
 
-            <TransitionGroup
-              className={styles.TransitionGroup}
-              component={Main}
-              appear={true}
-            >
-              <FadeIn
-                key={location.pathname}
-                timeout={{ enter: 200, exit: 150, appear: 200 }}
-              >
-                <TransitionHandler location={location}>
-                  {children}
-                </TransitionHandler>
-              </FadeIn>
-            </TransitionGroup>
+            <main className={styles.screen} location={location}>
+              {children}
+            </main>
 
-            <Footer meta={meta} pkg={pkg} />
+            <Footer meta={meta} />
           </Fragment>
         )
       }}
@@ -108,18 +72,9 @@ const TemplateWrapper = ({ children, location }) => {
   )
 }
 
-TransitionHandler.propTypes = {
+Layout.propTypes = {
   children: PropTypes.any.isRequired,
   location: PropTypes.object.isRequired
 }
 
-Main.propTypes = {
-  children: PropTypes.any.isRequired
-}
-
-TemplateWrapper.propTypes = {
-  children: PropTypes.any.isRequired,
-  location: PropTypes.object.isRequired
-}
-
-export default withRouter(TemplateWrapper)
+export default Layout

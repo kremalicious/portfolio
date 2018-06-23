@@ -28,7 +28,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
-    background-color: $body-background-color;
+    background: $body-background-color;
     transition: background .6s $easing;
 
     &.dark {
