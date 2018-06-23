@@ -23,7 +23,7 @@ const path = require('path')
 //
 // Create project pages from projects.yml
 //
-exports.createPages = ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
