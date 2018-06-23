@@ -20,15 +20,24 @@ class ProjectNav extends Component {
   constructor(props) {
     super(props)
 
+    this.state = {
+      scrolledToCurrent: false
+    }
+
     this.scrollToCurrent = this.scrollToCurrent.bind(this)
   }
 
   componentDidMount() {
     this.scrollToCurrent()
+    this.setState({ scrolledToCurrent: true })
   }
 
   componentDidUpdate() {
     this.scrollToCurrent()
+  }
+
+  componentWillUnmount() {
+    this.setState({ scrolledToCurrent: false })
   }
 
   scrollToCurrent = () => {
