@@ -3,6 +3,7 @@
 .project {
     text-align: center;
     margin-bottom: $spacer * 4;
+    position: relative;
 
     @media (min-width: 30rem) {
         margin-bottom: $spacer * 8;
@@ -43,7 +44,9 @@
 }
 
 .title {
-    visibility: hidden;
-    font-size: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
     margin: 0;
 }
