@@ -15,19 +15,19 @@
 
 ## Table of Contents
 
-* [Features](#features)
-  * [One data file to rule all pages](#one-data-file-to-rule-all-pages)
-  * [Theme switcher](#theme-switcher)
-  * [SEO component](#seo-component)
-  * [Client-side vCard creation](#client-side-vcard-creation)
-  * [Matomo (formerly Piwik) analytics tracking](#matomo-formerly-piwik-analytics-tracking)
-  * [Project images](#project-images)
-  * [Importing SVG assets](#importing-svg-assets)
-* [Development](#development)
-  * [Linting](#linting)
-  * [Add a new project](#add-a-new-project)
-* [Deployment](#deployment)
-* [Licenses](#licenses)
+- [Features](#features)
+  - [One data file to rule all pages](#one-data-file-to-rule-all-pages)
+  - [Theme switcher](#theme-switcher)
+  - [SEO component](#seo-component)
+  - [Client-side vCard creation](#client-side-vcard-creation)
+  - [Matomo (formerly Piwik) analytics tracking](#matomo-formerly-piwik-analytics-tracking)
+  - [Project images](#project-images)
+  - [Importing SVG assets](#importing-svg-assets)
+- [Development](#development)
+  - [Linting](#linting)
+  - [Add a new project](#add-a-new-project)
+- [Deployment](#deployment)
+- [Licenses](#licenses)
 
 ---
 
@@ -79,10 +79,10 @@ All project images use one single component defined in [`src/components/atoms/Pr
 
 ### Importing SVG assets
 
-Makes use of `gatsby-plugin-svgr` so SVG assets can be imported like so:
+All SVG assets under `src/images/` will be converted to React components before every build. Makes use of `SVGR` so SVG assets can be imported like so:
 
 ```js
-import { ReactComponent as Logo } from '../images/logo.svg'
+import Logo from './components/svg/Logo'
 ```
 
 ## Development
@@ -133,8 +133,8 @@ portfolio-SLUG-03.png
 
 Automatic deployments are triggered upon successful tests & builds on Travis:
 
-* push to `master` initiates a live deployment
-* any Pull Request, and subsequent pushes to it, initiates a beta deployment
+- push to `master` initiates a live deployment
+- any Pull Request, and subsequent pushes to it, initiates a beta deployment
 
 The deploy command simply calls the [`scripts/deploy.sh`](scripts/deploy.sh) script, syncing the contents of the `public/` folder to S3:
 
