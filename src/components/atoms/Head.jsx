@@ -14,6 +14,7 @@ const Head = ({ meta }) => {
         titleTemplate={`%s // ${title.toLowerCase()} { ${tagline.toLowerCase()} }`}
       >
         <meta name="apple-mobile-web-app-title" content={title.toLowerCase()} />
+        <meta name="theme-color" content="#e7eef4" />
       </Helmet>
 
       {typekitID && <Typekit id={typekitID} />}
