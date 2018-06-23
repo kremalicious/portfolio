@@ -3,22 +3,22 @@ const path = require('path')
 // Intersection Observer polyfill
 // requires `npm install intersection-observer`
 // https://github.com/gatsbyjs/gatsby/issues/2288#issuecomment-334467821
-exports.onCreateWebpackConfig = ({ actions, loaders, stage }) => {
-  const { setWebpackConfig } = actions
+// exports.onCreateWebpackConfig = ({ actions, loaders, stage }) => {
+//   const { setWebpackConfig } = actions
 
-  if (stage === 'build-html') {
-    const nullRule = {
-      test: /intersection-observer/,
-      use: [loaders.null()]
-    }
+//   if (stage === 'build-html') {
+//     const nullRule = {
+//       test: /intersection-observer/,
+//       use: [loaders.null()]
+//     }
 
-    setWebpackConfig({
-      module: {
-        rules: [nullRule]
-      }
-    })
-  }
-}
+//     setWebpackConfig({
+//       module: {
+//         rules: [nullRule]
+//       }
+//     })
+//   }
+// }
 
 //
 // Create project pages from projects.yml
