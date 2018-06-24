@@ -17,12 +17,24 @@ class ThemeSwitch extends PureComponent {
   constructor(props) {
     super(props)
 
-    if (localStorage.getItem('dark') === 'true') {
-      this.state = { dark: true }
-    } else if (localStorage.getItem('dark') === 'false') {
-      this.state = { dark: null }
+    this.state = { dark: null }
+  }
+
+  isDark = () => this.state.dark === true
+
+  darkLocalStorageMode = darkLocalStorage => {
+    if (darkLocalStorage === 'true') {
+      this.setState({ dark: true })
     } else {
-      this.state = { dark: null }
+      this.setState({ dark: false })
+    }
+  }
+
+  darkMode = now => {
+    if (!this.isDark() && (now >= 19 || now <= 7)) {
+      this.setState({ dark: true })
+    } else {
+      this.setState({ dark: null })
     }
   }
 
@@ -30,18 +42,16 @@ class ThemeSwitch extends PureComponent {
     const now = new Date().getHours()
     const darkLocalStorage = localStorage.getItem('dark')
 
-    if (darkLocalStorage) return
-
-    if (now >= 19 || now <= 7) {
-      this.setState({ dark: true })
+    if (darkLocalStorage) {
+      this.darkLocalStorageMode(darkLocalStorage)
+    } else {
+      this.darkMode(now)
     }
   }
 
-  isDark = () => this.state.dark === true
-
-  handleChange = () => {
-    this.setState({ dark: !this.isDark() })
-    localStorage.setItem('dark', !this.isDark())
+  handleChange = event => {
+    this.setState({ dark: event.target.checked })
+    localStorage.setItem('dark', event.target.checked)
   }
 
   render() {
