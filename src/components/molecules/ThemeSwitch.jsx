@@ -58,7 +58,7 @@ class ThemeSwitch extends PureComponent {
     return (
       <Fragment>
         <Helmet>
-          <body className={this.state.dark ? 'dark' : null} />
+          <body className={this.isDark() ? 'dark' : null} />
         </Helmet>
         <aside className={styles.themeSwitch}>
           <label className={styles.checkbox}>
@@ -69,9 +69,9 @@ class ThemeSwitch extends PureComponent {
               name="toggle"
               value="toggle"
               aria-describedby="toggle"
-              checked={this.state.dark}
+              checked={this.isDark()}
             />
-            <ThemeToggle dark={this.state.dark} />
+            <ThemeToggle dark={this.isDark()} />
           </label>
         </aside>
       </Fragment>
