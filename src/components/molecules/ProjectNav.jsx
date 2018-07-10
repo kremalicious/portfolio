@@ -46,7 +46,7 @@ class ProjectNav extends Component {
     const currentWidth = current.clientWidth
     const finalPosition = currentLeft - window.innerWidth / 2 + currentWidth / 2
 
-    this.scrollContainer.scrollLeft = finalPosition
+    this.scrollContainer.scrollLeft += finalPosition
   }
 
   render() {
@@ -80,9 +80,7 @@ class ProjectNav extends Component {
             <FullWidth>
               <nav
                 className={styles.projectNav}
-                ref={node => {
-                  this.scrollContainer = node
-                }}
+                ref={node => (this.scrollContainer = node)}
               >
                 {projects.map(({ node }) => {
                   const current = node.slug === slug
@@ -91,9 +89,7 @@ class ProjectNav extends Component {
                     <div
                       className={styles.item}
                       key={node.slug}
-                      ref={node => {
-                        if (current) this.currentItem = node
-                      }}
+                      ref={node => current && (this.currentItem = node)}
                     >
                       <ProjectLink node={node} />
                     </div>
