@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Button from '../atoms/Button'
 import Link from '../svg/Link'
 import Download from '../svg/Download'
 import Info from '../svg/Info'
@@ -42,10 +43,10 @@ const ProjectLinks = ({ links }) => (
 
         return (
           <li key={title}>
-            <a href={url}>
+            <Button href={url}>
               <LinkIcon title={title} className={icons.icon} />
               {title}
-            </a>
+            </Button>
           </li>
         )
       })}
