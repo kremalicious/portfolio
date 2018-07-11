@@ -13,7 +13,7 @@ class Availability extends PureComponent {
     return (
       <StaticQuery
         query={graphql`
-          query AvailabilityQuery {
+          query {
             dataYaml {
               availability {
                 status

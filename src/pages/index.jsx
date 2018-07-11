@@ -37,7 +37,7 @@ Home.propTypes = {
 export default Home
 
 export const IndexQuery = graphql`
-  query IndexQuery {
+  query {
     allProjectsYaml {
       edges {
         node {

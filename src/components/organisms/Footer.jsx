@@ -19,7 +19,7 @@ class Footer extends PureComponent {
     return (
       <StaticQuery
         query={graphql`
-          query FooterQuery {
+          query {
             # the package.json file
             portfolioJson {
               name

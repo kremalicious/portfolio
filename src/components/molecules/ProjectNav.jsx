@@ -55,7 +55,7 @@ class ProjectNav extends Component {
     return (
       <StaticQuery
         query={graphql`
-          query ProjectsNavQuery {
+          query {
             allProjectsYaml {
               edges {
                 node {

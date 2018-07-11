@@ -12,7 +12,7 @@ const Layout = ({ children, location }) => {
   return (
     <StaticQuery
       query={graphql`
-        query LayoutQuery {
+        query {
           # the data/meta.yml file
           dataYaml {
             title

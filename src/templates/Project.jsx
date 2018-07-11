@@ -80,7 +80,7 @@ Project.propTypes = {
 export default Project
 
 export const projectAndProjectsQuery = graphql`
-  query ProjectBySlug($slug: String!) {
+  query($slug: String!) {
     projectsYaml(slug: { eq: $slug }) {
       title
       slug

@@ -21,7 +21,7 @@ const TypekitScript = typekitID => (
 const Typekit = () => (
   <StaticQuery
     query={graphql`
-      query TypekitQuery {
+      query {
         dataYaml {
           typekitID
         }
