@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import ReactMarkdown from 'react-markdown'
@@ -14,66 +14,52 @@ import SEO from '../components/atoms/SEO'
 
 import styles from './Project.module.scss'
 
-const ProjectMeta = props => {
-  const { links, techstack } = props
+const ProjectMeta = ({ links, techstack }) => (
+  <footer className={styles.project__meta}>
+    {!!links && <ProjectLinks links={links} />}
+    {!!techstack && <ProjectTechstack techstack={techstack} />}
+  </footer>
+)
 
-  return (
-    <footer className={styles.project__meta}>
-      {!!links && <ProjectLinks links={links} />}
-      {!!techstack && <ProjectTechstack techstack={techstack} />}
-    </footer>
-  )
-}
-
-const ProjectImages = props => (
+const ProjectImages = ({ projectImages, title }) => (
   <FullWidth>
-    {props.projectImages.map(({ node }) => (
+    {projectImages.map(({ node }) => (
       <div className={styles.spacer} key={node.id}>
-        <ProjectImage fluid={node.fluid} alt={props.title} />
+        <ProjectImage fluid={node.fluid} alt={title} />
       </div>
     ))}
   </FullWidth>
 )
 
-class Project extends Component {
-  constructor(props) {
-    super(props)
+const Project = ({ data, location }) => {
+  const meta = data.dataYaml
+  const project = data.projectsYaml
+  const projectImages = data.projectImages.edges
+  const { title, links, techstack } = project
+  const description = data.projectsYaml.description
+  const descriptionWithLineBreaks = description.split('\n').join('\n\n')
 
-    const description = this.props.data.projectsYaml.description
+  return (
+    <Layout location={location}>
+      <Helmet title={title} />
 
-    this.state = {
-      descriptionWithLineBreaks: description.split('\n').join('\n\n')
-    }
-  }
+      <SEO project={project} meta={meta} />
 
-  render() {
-    const meta = this.props.data.dataYaml
-    const project = this.props.data.projectsYaml
-    const projectImages = this.props.data.projectImages.edges
-    const { title, links, techstack } = project
+      <article className={styles.project}>
+        <Content>
+          <h1 className={styles.project__title}>{title}</h1>
+          <ReactMarkdown
+            source={descriptionWithLineBreaks}
+            className={styles.project__description}
+          />
+          <ProjectImages projectImages={projectImages} title={title} />
+          <ProjectMeta links={links} techstack={techstack} />
+        </Content>
+      </article>
 
-    return (
-      <Layout location={this.props.location}>
-        <Helmet title={title} />
-
-        <SEO project={project} meta={meta} />
-
-        <article className={styles.project}>
-          <Content>
-            <h1 className={styles.project__title}>{title}</h1>
-            <ReactMarkdown
-              source={this.state.descriptionWithLineBreaks}
-              className={styles.project__description}
-            />
-            <ProjectImages projectImages={projectImages} title={title} />
-            <ProjectMeta links={links} techstack={techstack} />
-          </Content>
-        </article>
-
-        <ProjectNav slug={project.slug} />
-      </Layout>
-    )
-  }
+      <ProjectNav slug={project.slug} />
+    </Layout>
+  )
 }
 
 ProjectMeta.propTypes = {
