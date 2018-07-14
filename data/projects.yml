@@ -7,7 +7,7 @@
   description: >
     Since 2017 I'm leading the UI design & development of Ocean Protocol, iterating on a components-based UI design system spanning all of Ocean Protocol's web properties. Additionally, I conceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.
 
-    The main website is a single-page JavaScript application built with React, pulling its data from JSON files and various micro services. All design & development is embedded in a continous deployment process via GitHub & Travis.
+    Most web interfaces are single-page JavaScript applications built with React, pulling their data from JSON files and various micro services. All design & development is embedded in a continous deployment process via GitHub & Travis.
 
     Initial website in collaboration with [Balance](https://balance.io/). Key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
   links:
@@ -67,9 +67,7 @@
   slug: "/biv/"
   img: "../src/images/portfolio-biv-01.png"
   description: >
-    I designed & developed the website and a basic branding for the new
-    Berlin-based VC firm Berlin Innovation Ventures. The main website is a static
-    site built with Jekyll and a custom Gulp-based build pipeline in front of it.
+    I designed & developed the website and a basic branding for the Berlin-based VC firm Berlin Innovation Ventures. The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it.
 
   techstack:
   - Sketch
@@ -85,7 +83,7 @@
 
 -
 
-  title: 9984 >> Summit 2017
+  title: "9984 >> Summit 2017"
   slug: "/9984/"
   img: "../src/images/portfolio-9984-01.png"
   links:
@@ -100,7 +98,7 @@
 
     The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it. All design & development is embedded in a continous deployment process via GitHub & Travis.
 
-    Branding and key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
+    Branding and key visuals in collaboration with [Cristina Vulpe](https://www.linkedin.com/in/cristina-vulpe-41469262) & [Wojciech Hupert](https://twitter.com/wojciechhupert).
   techstack:
   - Sketch
   - Jekyll
@@ -254,7 +252,7 @@
   slug: "/mrreader/"
   img: "../src/images/portfolio-mrreader-01.png"
   description: >
-    In 2012 I designed the app icon, a custom theme, and various promotion materials for Mr. Reader, a powerful RSS feed reader for iPad.
+    While working with indy iOS developer Curious Times in 2012, I designed the app icon, a custom theme, and various promotion materials for Mr. Reader, a powerful and highly loved RSS feed reader for iPad.
   techstack:
   - Photoshop
 
@@ -390,3 +388,19 @@
   links:
   - title: Download
     url: https://kremalicious.com/adiumeetie/
+
+-
+
+  title: "Niépce's Camera Obscura"
+  slug: "/niepces-camera-obscura/"
+  img: "../src/images/portfolio-niepces-camera-obscura-01.jpg"
+  description: >
+    In 2008 I used the camera obscura as it was used by Nicéphore Niépce in 1826 to create an Aperture and iPhoto replacement icon.
+
+    Nicéphore Niépce made it first possible to preserve an image taken with a camera obscura in 1826 or 1827 by using a special mixture of bitumen on a glass or metal plate, naming it Heliography. This first preserved image 'View from the Window at Le Gras' is the one you can see in the iPhoto icon.
+  links:
+  - title: Info
+    url: https://kremalicious.com/niepces-camera-obscura-and-the-history-of-the-first-photograph/
+  techstack:
+  - Photoshop
+

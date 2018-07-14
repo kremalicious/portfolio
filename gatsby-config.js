@@ -9,12 +9,20 @@ module.exports = {
     siteUrl: `${url}`
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-transformer-yaml',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-sitemap',
-    // 'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-transformer-yaml',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+              name: 'data',
+              path: path.join(__dirname, 'data')
+            }
+          }
+        ]
+      }
+    },
     {
       resolve: 'gatsby-transformer-json',
       options: {
@@ -33,13 +41,6 @@ module.exports = {
       resolve: 'gatsby-plugin-sass',
       options: {
         includePaths: [`${__dirname}/node_modules`, `${__dirname}/src/styles`]
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'data',
-        path: path.join(__dirname, 'data')
       }
     },
     {
@@ -75,6 +76,11 @@ module.exports = {
           windows: true
         }
       }
-    }
+    },
+    'gatsby-plugin-react-helmet',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-sitemap'
+    // 'gatsby-plugin-offline'
   ]
 }
