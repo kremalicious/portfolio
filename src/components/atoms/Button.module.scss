@@ -12,6 +12,12 @@
     border: .05rem solid rgba($brand-cyan, .75);
     font-size: $font-size-small;
     text-transform: uppercase;
+    cursor: pointer;
+
+    @media (min-width: 30rem) {
+        display: inline-block;
+        width: auto;
+    }
 
     svg {
         fill: $brand-grey-light;

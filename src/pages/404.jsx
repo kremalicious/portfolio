@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import giphyAPI from 'giphy-js-sdk-core'
 import Layout from '../components/Layout'
 import Content from '../components/atoms/Content'
+import Button from '../components/atoms/Button'
 import './404.scss'
 
 // Famous last words:
@@ -48,15 +49,15 @@ class NotFound extends Component {
           <p>
             You might want to check the url, or{' '}
             <Link to={'/'}>go back to the homepage</Link>. Or just check out
-            some fail gifs, entirely your choice.
+            some cat fail gifs, entirely your choice.
           </p>
 
           <video className="gif" src={this.state.gif} autoPlay loop />
 
           <div>
-            <a className="gif__action" href="#" onClick={this.handleClick}>
+            <Button onClick={this.handleClick}>
               Show me another cat fail gif
-            </a>
+            </Button>
           </div>
         </Content>
       </Layout>

@@ -16,6 +16,11 @@
         margin-left: $spacer / 2;
         margin-bottom: $spacer / 2;
     }
+
+    a {
+        display: block;
+        width: 100%;
+    }
 }
 
 .title {
