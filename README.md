@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://matthiaskretschmann.com"><img src="src/images/twitter-card.png" width="600" /></a>
+  <a href="https://matthiaskretschmann.com"><img src="src/images/twitter-card.png" /></a>
  </p>
 <p align="center">
   <strong>👔 Portfolio thingy, built with <a href="https://www.gatsbyjs.org">Gatsby</a>.</strong>
@@ -23,6 +23,7 @@
   - [Matomo (formerly Piwik) analytics tracking](#matomo-formerly-piwik-analytics-tracking)
   - [Project images](#project-images)
   - [Importing SVG assets](#importing-svg-assets)
+  - [Typekit component](#typekit-component)
 - [Development](#development)
   - [Linting](#linting)
   - [Add a new project](#add-a-new-project)
@@ -33,9 +34,7 @@
 
 ## Features
 
-The whole [portfolio](https://matthiaskretschmann.com) is a React-based Single Page App built with [Gatsby](https://www.gatsbyjs.org).
-
-Despite being built with React, and despite all the project images making it a very image-heavy portfolio, Gatsby makes the final site super fast. So fast, it's almost unreal and feels like magic. And makes it work without JavaScript by server-side rendering all routes. [And so much more](https://www.gatsbyjs.org/features/).
+The whole [portfolio](https://matthiaskretschmann.com) is a React-based Single Page App built with [Gatsby v2](https://www.gatsbyjs.org).
 
 ### One data file to rule all pages
 
@@ -69,8 +68,6 @@ Site sends usage statistics to my own [Matomo](https://matomo.org) installation.
 
 All project images live under `src/images` and are automatically attached to each project based on the inclusion of the project's `slug` in their filenames.
 
-_(TODO: automatically add the inital image to each project node, so it doesn't have to be defined in the projects.yml file.)_
-
 All project images make use of the excellent [gatsby-image](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-image) plugin, working in tandem with [gatsby-plugin-sharp](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sharp) and [gatsby-transformer-sharp](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-sharp).
 
 All together, Gatsby automatically generates all required image sizes for delivering responsible, responsive images to visitors, including lazy loading of all images. Also includes the [intersection-observer polyfill](https://github.com/w3c/IntersectionObserver) to make lazy loading work properly in Safari.
@@ -84,6 +81,14 @@ All SVG assets under `src/images/` will be converted to React components before 
 ```js
 import Logo from './components/svg/Logo'
 ```
+
+That's done with a simple bash script under [`src/scripts/svg.sh`](src/scripts/svg.sh)
+
+### Typekit component
+
+Includes a component for adding the Typekit snippet.
+
+If you want to know how, have a look at the respective component under [`src/components/atoms/Typekit.jsx`](src/components/atoms/Typekit.jsx)
 
 ## Development
 
