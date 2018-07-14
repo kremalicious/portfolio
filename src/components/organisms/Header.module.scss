@@ -20,9 +20,11 @@
 
 .minimal {
     height: auto;
+    padding-top: $spacer * 2;
+    padding-bottom: 0;
 
     @media (min-width: 30rem) {
-        padding-top: $spacer * 2;
+        padding-bottom: $spacer / 2;
     }
 
     .header__link {
