@@ -19,8 +19,6 @@ RUN apk update && \
   libpng-dev \
   && rm -rf /var/cache/apk/*
 
-RUN npm install --global gatsby-cli --no-optional
-
 RUN mkdir -p /portfolio
 WORKDIR /portfolio
 VOLUME /portfolio

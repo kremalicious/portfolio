@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import FileSaver from 'file-saver'
-import vCard from '../../lib/vcf/vcard'
+import vCard from 'vcf'
 
 class Vcard extends PureComponent {
   constructor(props) {

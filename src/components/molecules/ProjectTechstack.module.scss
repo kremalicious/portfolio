@@ -16,11 +16,12 @@
         text-align: center;
         background: rgba(#fff, .15);
         border-radius: .25rem;
+        border: .05rem solid transparent;
         color: $brand-grey-light;
         margin-left: $spacer / 2;
         margin-bottom: $spacer / 2;
         flex: 0 0 calc(50% - #{$spacer / 2});
-        font-size: $font-size-base;
+        font-size: $font-size-small;
 
         :global(.dark) & {
             background: darken($body-background-color--dark, 1%);

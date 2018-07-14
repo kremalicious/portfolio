@@ -25,11 +25,13 @@
     margin-right: $spacer / 4;
     color: $brand-main;
     line-height: $line-height;
+    transition: color .2s ease-out;
 }
 
 .logounit__description {
     font-size: $font-size-h4;
     color: $brand-grey;
+    transition: color .2s ease-out;
 
     :global(.dark) & {
         color: $brand-grey-light;

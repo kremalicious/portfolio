@@ -1,6 +1,6 @@
 @import 'variables';
 
-.project__image-wrap {
+.project__imagewrap {
     max-height: 100vh;
     margin-left: auto;
     margin-right: auto;
@@ -14,7 +14,7 @@
         overflow: hidden;
     }
 
-    .dark & {
+    :global(.dark) & {
         box-shadow: 0 3px 5px rgba(darken($brand-main, 20%), .15),
             0 5px 16px rgba(darken($brand-main, 20%), .15);
     }

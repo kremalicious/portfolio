@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import { FadeIn } from '../atoms/Animations'
 import Networks from '../molecules/Networks'
 import Availability from '../molecules/Availability'
 import ThemeSwitch from '../molecules/ThemeSwitch'
@@ -11,53 +10,34 @@ import styles from './Header.module.scss'
 class Header extends PureComponent {
   constructor(props) {
     super(props)
-
-    this.state = { classes: 'header' }
-  }
-
-  componentDidMount() {
-    this.toggleClasses()
-  }
-
-  componentDidUpdate() {
-    this.toggleClasses()
-  }
-
-  toggleClasses = () => {
-    if (this.props.isHomepage) {
-      this.setState({ classes: styles.header })
-    } else {
-      this.setState({ classes: `${styles.header} ${styles.minimal}` })
-    }
   }
 
   render() {
-    const meta = this.props.meta
-    const isHomepage = this.props.isHomepage
+    const { isHomepage, meta } = this.props
 
     return (
-      <header className={this.state.classes}>
+      <header
+        className={
+          isHomepage ? `${styles.header}` : `${styles.header} ${styles.minimal}`
+        }
+      >
         <ThemeSwitch />
-        <FadeIn>
-          <Link className={styles.header__link} to={'/'}>
-            <LogoUnit meta={meta} minimal={!isHomepage} />
-          </Link>
-        </FadeIn>
+
+        <Link className={styles.header__link} to={'/'}>
+          <LogoUnit meta={meta} minimal={!isHomepage} />
+        </Link>
 
         <Networks meta={meta} hide={!isHomepage} />
 
-        <Availability
-          meta={meta}
-          hide={!isHomepage && !meta.availability.status}
-        />
+        <Availability hide={!isHomepage && !meta.availability.status} />
       </header>
     )
   }
 }
 
 Header.propTypes = {
-  meta: PropTypes.object,
-  isHomepage: PropTypes.bool
+  isHomepage: PropTypes.bool,
+  meta: PropTypes.object
 }
 
 export default Header

@@ -1,28 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import 'intersection-observer'
-import './ProjectImage.scss'
+import styles from './ProjectImage.module.scss'
 
-const ProjectImage = ({ sizes, alt }) => (
+const ProjectImage = props => (
   <Img
-    className="project__image"
-    outerWrapperClassName="project__image-wrap"
+    className={styles.project__image}
+    outerWrapperClassName={styles.project__imagewrap}
     backgroundColor="#6b7f88"
-    sizes={sizes}
-    alt={alt}
+    fluid={props.fluid}
+    alt={props.alt}
   />
 )
 
 ProjectImage.propTypes = {
-  sizes: PropTypes.object.isRequired,
+  fluid: PropTypes.object.isRequired,
   alt: PropTypes.string
 }
 
 export const projectImage = graphql`
-  fragment ProjectImageSizes on ImageSharp {
-    sizes(maxWidth: 1200, quality: 85) {
-      ...GatsbyImageSharpSizes_noBase64
+  fragment ProjectImageFluid on ImageSharp {
+    fluid(maxWidth: 1200, quality: 85) {
+      ...GatsbyImageSharpFluid_withWebp
     }
   }
 `

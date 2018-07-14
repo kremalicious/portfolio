@@ -2,20 +2,19 @@ const path = require('path')
 const fs = require('fs')
 const yaml = require('js-yaml')
 const meta = yaml.load(fs.readFileSync('./data/meta.yml', 'utf8'))
-const { url, matomoUrl, matomoSite } = meta
+const { url, matomoSite, matomoUrl } = meta
 
 module.exports = {
   siteMetadata: {
     siteUrl: `${url}`
   },
   plugins: [
-    'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-yaml',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-offline',
+    // 'gatsby-plugin-offline',
     {
       resolve: 'gatsby-transformer-json',
       options: {
@@ -57,14 +56,6 @@ module.exports = {
         siteUrl: `${url}`,
         matomoUrl: `${matomoUrl}`,
         localScript: '/piwik.js'
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-svgr',
-      options: {
-        icon: false,
-        viewBox: true
-        // see https://github.com/smooth-code/svgr for a list of all options
       }
     },
     {

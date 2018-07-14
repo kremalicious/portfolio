@@ -5,7 +5,7 @@ import SEO from './SEO'
 import Typekit from './Typekit'
 
 const Head = ({ meta }) => {
-  const { title, tagline, typekitID } = meta
+  const { title, tagline } = meta
 
   return (
     <Fragment>
@@ -17,7 +17,7 @@ const Head = ({ meta }) => {
         <meta name="theme-color" content="#e7eef4" />
       </Helmet>
 
-      {typekitID && <Typekit id={typekitID} />}
+      <Typekit />
 
       <SEO meta={meta} />
     </Fragment>

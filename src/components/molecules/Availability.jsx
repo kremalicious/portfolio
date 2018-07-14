@@ -1,5 +1,6 @@
 import React, { Fragment, PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
 import { MoveIn } from '../atoms/Animations'
 import styles from './Availability.module.scss'
 
@@ -9,35 +10,51 @@ class Availability extends PureComponent {
   }
 
   render() {
-    const { availability } = this.props.meta
-    const { status, available, unavailable } = availability
-
     return (
-      <Fragment>
-        {!this.props.hide && (
-          <MoveIn>
-            <aside
-              className={
+      <StaticQuery
+        query={graphql`
+          query {
+            dataYaml {
+              availability {
                 status
-                  ? `${styles.availability} ${styles.available}`
-                  : `${styles.availability} ${styles.unavailable}`
+                available
+                unavailable
               }
-            >
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: status ? available : unavailable
-                }}
-              />
-            </aside>
-          </MoveIn>
-        )}
-      </Fragment>
+            }
+          }
+        `}
+        render={data => {
+          const { availability } = data.dataYaml
+          const { status, available, unavailable } = availability
+
+          return (
+            <Fragment>
+              {!this.props.hide && (
+                <MoveIn>
+                  <aside
+                    className={
+                      status
+                        ? `${styles.availability} ${styles.available}`
+                        : `${styles.availability} ${styles.unavailable}`
+                    }
+                  >
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: status ? available : unavailable
+                      }}
+                    />
+                  </aside>
+                </MoveIn>
+              )}
+            </Fragment>
+          )
+        }}
+      />
     )
   }
 }
 
 Availability.propTypes = {
-  meta: PropTypes.object,
   hide: PropTypes.bool
 }
 

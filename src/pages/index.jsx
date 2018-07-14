@@ -1,39 +1,43 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
+import { Link, graphql } from 'gatsby'
+import Layout from '../components/Layout'
 import ProjectImage from '../components/atoms/ProjectImage'
 import FullWidth from '../components/atoms/FullWidth'
 import styles from './index.module.scss'
 
-const Home = ({ data }) => {
+const Home = ({ data, location }) => {
   const projects = data.allProjectsYaml.edges
 
   return (
-    <FullWidth className="projects">
-      {projects.map(({ node }) => {
-        const { slug, title, img } = node
+    <Layout location={location}>
+      <FullWidth className="projects">
+        {projects.map(({ node }) => {
+          const { slug, title, img } = node
 
-        return (
-          <article className={styles.project} key={slug}>
-            <Link to={slug}>
-              <h1 className={styles.title}>{title}</h1>
-              <ProjectImage sizes={img.childImageSharp.sizes} alt={title} />
-            </Link>
-          </article>
-        )
-      })}
-    </FullWidth>
+          return (
+            <article className={styles.project} key={slug}>
+              <Link to={slug}>
+                <h1 className={styles.title}>{title}</h1>
+                <ProjectImage fluid={img.childImageSharp.fluid} alt={title} />
+              </Link>
+            </article>
+          )
+        })}
+      </FullWidth>
+    </Layout>
   )
 }
 
 Home.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.object,
+  location: PropTypes.object
 }
 
 export default Home
 
 export const IndexQuery = graphql`
-  query IndexQuery {
+  query {
     allProjectsYaml {
       edges {
         node {
@@ -41,7 +45,7 @@ export const IndexQuery = graphql`
           slug
           img {
             childImageSharp {
-              ...ProjectImageSizes
+              ...ProjectImageFluid
             }
           }
         }

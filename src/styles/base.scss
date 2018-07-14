@@ -10,20 +10,14 @@ html,
 body {
     margin: 0;
     padding: 0;
-    height: 100%;
 }
 
 html {
     font-size: $font-size-root;
-
-    &.wf-loading,
-    &.wf-inactive {
-        font-size: $font-size-root - 2px;
-    }
+    background: $body-background-color;
 }
 
 body {
-    background: $body-background-color;
     font-family: $font-family-base;
     font-weight: $font-weight-base;
     font-size: $font-size-base;
@@ -33,6 +27,14 @@ body {
     font-feature-settings: 'liga', 'kern';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    background: $body-background-color;
+    transition: background .6s $easing;
+
+    &.dark {
+        background-color: $body-background-color--dark;
+        color: $text-color--dark;
+    }
 }
 
 p,
@@ -115,25 +117,4 @@ svg {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background: $body-background-color;
-    transition: background .6s $easing;
-
-    .dark & {
-        background: $body-background-color--dark;
-        color: $text-color--dark;
-    }
-}
-
-.screen {
-    flex: 1;
-    padding: $spacer;
-}
-
-.transition-group {
-    position: relative;
-}
-
-.transition-container {
-    position: relative;
-    width: 100%;
 }

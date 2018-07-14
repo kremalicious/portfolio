@@ -16,49 +16,6 @@
         margin-left: $spacer / 2;
         margin-bottom: $spacer / 2;
     }
-
-    svg {
-        margin-right: $spacer / 3;
-        transition: .2s ease-out;
-        margin-bottom: -.1rem;
-    }
-
-    a {
-        display: block;
-        width: 100%;
-        color: $brand-cyan;
-        text-align: center;
-        border-radius: .25rem;
-        padding: $spacer / 4 $spacer / 2;
-        transition-property: all;
-        background: rgba(#fff, .15);
-
-        svg {
-            fill: $brand-grey-light;
-        }
-
-        &:hover,
-        &:focus {
-            transform: translate3d(0, -.1rem, 0);
-            box-shadow: 0 6px 10px rgba($brand-main, .1),
-                0 10px 25px rgba($brand-main, .1);
-        }
-
-        &:active {
-            transition: none;
-            background: rgba(#fff, .15);
-        }
-
-        :global(.dark) & {
-            background: darken($body-background-color--dark, 1%);
-
-            &:hover,
-            &:focus {
-                box-shadow: 0 6px 10px rgba(darken($brand-main, 20%), .1),
-                    0 10px 25px rgba(darken($brand-main, 20%), .1);
-            }
-        }
-    }
 }
 
 .title {

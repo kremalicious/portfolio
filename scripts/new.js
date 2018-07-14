@@ -4,7 +4,7 @@ const prepend = require('prepend')
 const slugify = require('slugify')
 const ora = require('ora')
 
-const templatePath = path.join(__dirname, 'new-project.yml')
+const templatePath = path.join(__dirname, 'new.yml')
 const template = fs.readFileSync(templatePath).toString()
 
 const spinner = ora('Adding new project').start()

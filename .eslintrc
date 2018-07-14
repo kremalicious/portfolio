@@ -18,9 +18,6 @@
     "node": true,
     "es6": true
   },
-  "globals": {
-    "graphql": true
-  },
   "rules": {
     "quotes": ["error", "single"],
     "semi": ["error", "never"],
