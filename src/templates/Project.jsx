@@ -123,7 +123,7 @@ export const projectAndProjectsQuery = graphql`
 
     projectImages: allImageSharp(
       filter: { fluid: { originalName: { regex: $slug } } }
-      sort: { fields: [id], order: ASC }
+      sort: { fields: [fluid___originalName], order: ASC }
     ) {
       edges {
         node {
