@@ -55,7 +55,7 @@
     "eslint-plugin-graphql": "^2.1.1",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.10.0",
-    "ora": "^2.1.0",
+    "ora": "^3.0.0",
     "prepend": "^1.0.2",
     "prettier": "^1.13.7",
     "prettier-stylelint": "^0.4.2",
