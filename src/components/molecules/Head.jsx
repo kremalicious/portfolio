@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import SEO from './SEO'
-import Typekit from './Typekit'
+import SEO from '../atoms/SEO'
+import Typekit from '../atoms/Typekit'
 
 const Head = ({ meta }) => {
   const { title, tagline } = meta
