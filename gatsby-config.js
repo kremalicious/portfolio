@@ -2,7 +2,7 @@ const path = require('path')
 const fs = require('fs')
 const yaml = require('js-yaml')
 const meta = yaml.load(fs.readFileSync('./data/meta.yml', 'utf8'))
-const { url, matomoSite, matomoUrl } = meta
+const { url, matomoSite, matomoUrl, title, tagline } = meta
 
 module.exports = {
   siteMetadata: {
@@ -64,6 +64,21 @@ module.exports = {
       options: {
         logo: './src/images/favicon.png',
         injectHTML: true,
+
+        // WebApp Manifest Configuration
+        appName: title.toLowerCase(),
+        appDescription: tagline.toLowerCase(),
+        developerName: title,
+        developerURL: url,
+        dir: 'auto',
+        lang: 'en-US',
+        background: '#e7eef4',
+        theme_color: '#88bec8',
+        display: 'standalone',
+        orientation: 'any',
+        start_url: '/?homescreen=1',
+        version: '1.0',
+
         icons: {
           android: true,
           appleIcon: true,
