@@ -60,9 +60,7 @@ const Layout = ({ children, location }) => {
             <Head meta={meta} />
             <Header meta={meta} isHomepage={isHomepage} />
 
-            <main className={styles.screen} location={location}>
-              {children}
-            </main>
+            <main className={styles.screen}>{children}</main>
 
             <Footer meta={meta} />
           </Fragment>

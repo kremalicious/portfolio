@@ -60,36 +60,15 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-favicon',
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        logo: './src/images/favicon.png',
-        injectHTML: true,
-
-        // WebApp Manifest Configuration
-        appName: title.toLowerCase(),
-        appDescription: `${title.toLowerCase()} { ${tagline.toLowerCase()} }`,
-        developerName: title,
-        developerURL: url,
-        dir: 'auto',
-        lang: 'en-US',
-        background: '#e7eef4',
+        name: title.toLowerCase(),
+        short_name: 'mk',
+        start_url: '/',
+        background_color: '#e7eef4',
         theme_color: '#88bec8',
-        display: 'standalone',
-        orientation: 'any',
-        start_url: '/?homescreen=1',
-        version: '1.0',
-
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: false,
-          coast: false,
-          favicons: true,
-          firefox: true,
-          twitter: false,
-          yandex: true,
-          windows: true
-        }
+        display: 'minimal-ui',
+        icon: 'src/images/favicon.png'
       }
     },
     'gatsby-plugin-react-helmet',
