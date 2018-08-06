@@ -67,7 +67,7 @@ module.exports = {
 
         // WebApp Manifest Configuration
         appName: title.toLowerCase(),
-        appDescription: tagline.toLowerCase(),
+        appDescription: `${title.toLowerCase()} { ${tagline.toLowerCase()} }`,
         developerName: title,
         developerURL: url,
         dir: 'auto',
@@ -95,7 +95,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-sitemap'
-    // 'gatsby-plugin-offline'
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-offline'
   ]
 }
