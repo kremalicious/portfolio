@@ -11,19 +11,21 @@ const Home = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <FullWidth className="projects">
-        {projects.map(({ node }) => {
-          const { slug, title, img } = node
+      <FullWidth>
+        <div className={styles.projects}>
+          {projects.map(({ node }) => {
+            const { slug, title, img } = node
 
-          return (
-            <article className={styles.project} key={slug}>
-              <Link to={slug}>
-                <h1 className={styles.title}>{title}</h1>
-                <ProjectImage fluid={img.childImageSharp.fluid} alt={title} />
-              </Link>
-            </article>
-          )
-        })}
+            return (
+              <article className={styles.project} key={slug}>
+                <Link to={slug}>
+                  <h1 className={styles.title}>{title}</h1>
+                  <ProjectImage fluid={img.childImageSharp.fluid} alt={title} />
+                </Link>
+              </article>
+            )
+          })}
+        </div>
       </FullWidth>
     </Layout>
   )
@@ -45,7 +47,9 @@ export const IndexQuery = graphql`
           slug
           img {
             childImageSharp {
-              ...ProjectImageFluid
+              fluid(maxWidth: 990, quality: 85) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
             }
           }
         }
