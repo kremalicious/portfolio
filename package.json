@@ -50,7 +50,7 @@
     "@svgr/cli": "^2.1.1",
     "babel-eslint": "^8.2.6",
     "eslint": "^5.3.0",
-    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-prettier": "^3.0.0",
     "eslint-loader": "^2.1.0",
     "eslint-plugin-graphql": "^2.1.1",
     "eslint-plugin-prettier": "^2.6.2",
