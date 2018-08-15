@@ -7,8 +7,6 @@ import Footer from './organisms/Footer'
 import styles from './Layout.module.scss'
 
 const Layout = ({ children, location }) => {
-  const isHomepage = location.pathname === '/'
-
   return (
     <StaticQuery
       query={graphql`
@@ -54,6 +52,7 @@ const Layout = ({ children, location }) => {
       `}
       render={data => {
         const meta = data.dataYaml
+        const isHomepage = location.pathname === '/'
 
         return (
           <Fragment>

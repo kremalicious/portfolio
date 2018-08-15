@@ -18,19 +18,19 @@
         margin-bottom: 0;
     }
 
-    &.available {
-        background: rgba($brand-light, .8);
-        color: $brand-main;
-        position: fixed;
-        bottom: $spacer;
-
-        :global(.dark) & {
-            background: rgba($body-background-color--dark, .8);
-            color: $brand-light;
-        }
-    }
-
     a {
         border-bottom: 1px solid rgba($brand-cyan, .4);
+    }
+}
+
+.available {
+    background: rgba($brand-light, .8);
+    color: $brand-main;
+    position: fixed;
+    bottom: $spacer;
+
+    :global(.dark) & {
+        background: rgba($body-background-color--dark, .8);
+        color: $brand-light;
     }
 }

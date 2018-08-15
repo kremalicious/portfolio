@@ -35,7 +35,7 @@ class Availability extends PureComponent {
                     className={
                       status
                         ? `${styles.availability} ${styles.available}`
-                        : `${styles.availability} ${styles.unavailable}`
+                        : `${styles.availability}`
                     }
                   >
                     <p
