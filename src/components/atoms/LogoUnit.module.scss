@@ -43,6 +43,7 @@
 }
 
 .minimal {
+    composes: logounit;
     transform: scale(.7);
     transform-origin: top center;
     transform-box: border-box;

@@ -1,4 +1,4 @@
-require('./src/styles/base.scss')
+require('./src/styles/global.scss')
 
 exports.onClientEntry = () => {
   // IntersectionObserver polyfill for gatsby-image (Safari, IE)

@@ -19,6 +19,7 @@
 }
 
 .minimal {
+    composes: header;
     height: auto;
     padding-top: $spacer * 2;
     padding-bottom: 0;

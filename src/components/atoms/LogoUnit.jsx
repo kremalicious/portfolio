@@ -4,9 +4,7 @@ import Logo from '../svg/Logo'
 import styles from './LogoUnit.module.scss'
 
 const LogoUnit = ({ meta, minimal }) => {
-  const classes = minimal
-    ? `${styles.logounit} ${styles.minimal}`
-    : styles.logounit
+  const classes = minimal ? styles.minimal : styles.logounit
 
   return (
     <div className={classes}>

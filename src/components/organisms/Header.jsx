@@ -16,11 +16,7 @@ class Header extends PureComponent {
     const { isHomepage, meta } = this.props
 
     return (
-      <header
-        className={
-          isHomepage ? `${styles.header}` : `${styles.header} ${styles.minimal}`
-        }
-      >
+      <header className={isHomepage ? styles.header : styles.minimal}>
         <ThemeSwitch />
 
         <Link className={styles.header__link} to={'/'}>
