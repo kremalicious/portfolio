@@ -10,13 +10,30 @@ import styles from './Header.module.scss'
 class Header extends PureComponent {
   constructor(props) {
     super(props)
+
+    this.state = { minimal: false }
+  }
+
+  checkMinimal = () => {
+    const { isHomepage } = this.props
+
+    this.setState({ minimal: !isHomepage })
+  }
+
+  componentDidMount() {
+    this.checkMinimal()
+  }
+
+  componentDidUpdate() {
+    this.checkMinimal()
   }
 
   render() {
     const { isHomepage, meta } = this.props
+    const { minimal } = this.state
 
     return (
-      <header className={isHomepage ? styles.header : styles.minimal}>
+      <header className={minimal ? styles.minimal : styles.header}>
         <ThemeSwitch />
 
         <Link className={styles.header__link} to={'/'}>
