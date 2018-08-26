@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
 import { FadeIn } from '../atoms/Animations'
 
 import Email from '../svg/Email'
@@ -55,28 +56,44 @@ class Network extends PureComponent {
 
   render() {
     return (
-      !this.props.hide && (
-        <FadeIn>
-          <aside className={this.state.classes}>
-            {Object.keys(this.props.meta.social).map((key, i) => (
-              <a
-                className={styles.link}
-                href={this.props.meta.social[key]}
-                key={i}
-              >
-                <NetworkIcon title={key} className={icons.icon} />
-                <span className={styles.title}>{key}</span>
-              </a>
-            ))}
-          </aside>
-        </FadeIn>
-      )
+      <StaticQuery
+        query={graphql`
+          query {
+            dataYaml {
+              social {
+                Email
+                Blog
+                Twitter
+                GitHub
+                Dribbble
+              }
+            }
+          }
+        `}
+        render={data => {
+          const meta = data.dataYaml
+
+          return (
+            !this.props.hide && (
+              <FadeIn>
+                <aside className={this.state.classes}>
+                  {Object.keys(meta.social).map((key, i) => (
+                    <a className={styles.link} href={meta.social[key]} key={i}>
+                      <NetworkIcon title={key} className={icons.icon} />
+                      <span className={styles.title}>{key}</span>
+                    </a>
+                  ))}
+                </aside>
+              </FadeIn>
+            )
+          )
+        }}
+      />
     )
   }
 }
 
 Network.propTypes = {
-  meta: PropTypes.object,
   minimal: PropTypes.bool,
   hide: PropTypes.bool
 }

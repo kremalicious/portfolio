@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import Vcard from '../atoms/Vcard'
 import LogoUnit from '../atoms/LogoUnit'
@@ -14,8 +13,6 @@ class Footer extends PureComponent {
   }
 
   render() {
-    const meta = this.props.meta
-
     return (
       <StaticQuery
         query={graphql`
@@ -27,18 +24,24 @@ class Footer extends PureComponent {
               repository
               bugs
             }
+
+            dataYaml {
+              title
+              gpg
+            }
           }
         `}
         render={data => {
           const pkg = data.portfolioJson
+          const meta = data.dataYaml
 
           return (
             <footer className={styles.footer}>
-              <LogoUnit meta={meta} minimal />
-              <Networks meta={meta} minimal />
+              <LogoUnit minimal />
+              <Networks minimal />
 
               <p className={styles.footer__actions}>
-                <Vcard meta={meta} />
+                <Vcard />
                 <a href={meta.gpg}>PGP/GPG key</a>
                 <a href={pkg.bugs}>Found a bug?</a>
               </p>
@@ -54,11 +57,6 @@ class Footer extends PureComponent {
       />
     )
   }
-}
-
-Footer.propTypes = {
-  meta: PropTypes.object,
-  pkg: PropTypes.object
 }
 
 export default Footer
