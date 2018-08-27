@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
-import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
+import { Link, StaticQuery, graphql } from 'gatsby'
 import Networks from '../molecules/Networks'
 import Availability from '../molecules/Availability'
 import ThemeSwitch from '../molecules/ThemeSwitch'
@@ -29,28 +29,44 @@ class Header extends PureComponent {
   }
 
   render() {
-    const { isHomepage, meta } = this.props
+    const { isHomepage } = this.props
     const { minimal } = this.state
 
     return (
-      <header className={minimal ? styles.minimal : styles.header}>
-        <ThemeSwitch />
+      <StaticQuery
+        query={graphql`
+          query {
+            dataYaml {
+              availability {
+                status
+              }
+            }
+          }
+        `}
+        render={data => {
+          const meta = data.dataYaml
 
-        <Link className={styles.header__link} to={'/'}>
-          <LogoUnit meta={meta} minimal={!isHomepage} />
-        </Link>
+          return (
+            <header className={minimal ? styles.minimal : styles.header}>
+              <ThemeSwitch />
 
-        <Networks meta={meta} hide={!isHomepage} />
+              <Link className={styles.header__link} to={'/'}>
+                <LogoUnit minimal={!isHomepage} />
+              </Link>
 
-        <Availability hide={!isHomepage && !meta.availability.status} />
-      </header>
+              <Networks hide={!isHomepage} />
+
+              <Availability hide={!isHomepage && !meta.availability.status} />
+            </header>
+          )
+        }}
+      />
     )
   }
 }
 
 Header.propTypes = {
-  isHomepage: PropTypes.bool,
-  meta: PropTypes.object
+  isHomepage: PropTypes.bool
 }
 
 export default Header

@@ -4,13 +4,13 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styles from './ProjectImage.module.scss'
 
-const ProjectImage = props => (
+const ProjectImage = ({ fluid, alt }) => (
   <Img
     className={styles.project__image}
     outerWrapperClassName={styles.project__imagewrap}
     backgroundColor="#6b7f88"
-    fluid={props.fluid}
-    alt={props.alt}
+    fluid={fluid}
+    alt={alt}
   />
 )
 

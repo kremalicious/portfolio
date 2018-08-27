@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
 
 function truncate(n, useWordBoundary) {
   if (this.length <= n) {
@@ -14,49 +15,80 @@ function truncate(n, useWordBoundary) {
   )
 }
 
-const SEO = ({ project, meta }) => {
-  const title = project.title ? project.title : meta.title
-  const description = project.description
-    ? truncate.apply(project.description, [320, true])
-    : truncate.apply(meta.description, [320, true])
-  const image = project.img
-    ? project.img.childImageSharp.twitterImage.src
-    : meta.img.childImageSharp.resize.src
-  const url = project.slug ? `${meta.url}${project.slug}` : meta.url
+const SEO = ({ project }) => (
+  <StaticQuery
+    query={graphql`
+      query {
+        dataYaml {
+          title
+          tagline
+          description
+          url
+          email
+          img {
+            childImageSharp {
+              resize(width: 980) {
+                src
+              }
+            }
+          }
+          social {
+            Email
+            Blog
+            Twitter
+            GitHub
+            Dribbble
+          }
+          gpg
+          addressbook
+        }
+      }
+    `}
+    render={data => {
+      const meta = data.dataYaml
 
-  return (
-    <Helmet>
-      <html lang="en" />
+      const title = project.title ? project.title : meta.title
+      const description = project.description
+        ? truncate.apply(project.description, [320, true])
+        : truncate.apply(meta.description, [320, true])
+      const image = project.img
+        ? project.img.childImageSharp.twitterImage.src
+        : meta.img.childImageSharp.resize.src
+      const url = project.slug ? `${meta.url}${project.slug}` : meta.url
 
-      {/* General tags */}
-      <meta name="description" content={description} />
-      <meta name="image" content={`${meta.url}${image}`} />
-      <link rel="canonical" href={url} />
+      return (
+        <Helmet>
+          <html lang="en" />
 
-      {/* OpenGraph tags */}
-      <meta property="og:url" content={url} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={`${meta.url}${image}`} />
+          {/* General tags */}
+          <meta name="description" content={description} />
+          <meta name="image" content={`${meta.url}${image}`} />
+          <link rel="canonical" href={url} />
 
-      {/* Twitter Card tags */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={meta.social.Twitter} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={`${meta.url}${image}`} />
-    </Helmet>
-  )
-}
+          {/* OpenGraph tags */}
+          <meta property="og:url" content={url} />
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={description} />
+          <meta property="og:image" content={`${meta.url}${image}`} />
+
+          {/* Twitter Card tags */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:creator" content={meta.social.Twitter} />
+          <meta name="twitter:title" content={title} />
+          <meta name="twitter:description" content={description} />
+          <meta name="twitter:image" content={`${meta.url}${image}`} />
+        </Helmet>
+      )
+    }}
+  />
+)
 
 SEO.propTypes = {
-  project: PropTypes.object,
-  meta: PropTypes.object
+  project: PropTypes.object
 }
 
 SEO.defaultProps = {
-  project: {},
-  meta: {}
+  project: {}
 }
 
 export default SEO

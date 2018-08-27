@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
 import Logo from '../svg/Logo'
 import styles from './LogoUnit.module.scss'
 
@@ -25,23 +26,39 @@ class LogoUnit extends PureComponent {
   }
 
   render() {
-    const { meta } = this.props
-    const { minimal } = this.state
-
     return (
-      <div className={minimal ? styles.minimal : styles.logounit}>
-        <Logo className={styles.logounit__logo} />
-        <h1 className={styles.logounit__title}>{meta.title.toLowerCase()}</h1>
-        <p className={styles.logounit__description}>
-          <span>{'{ '}</span> {meta.tagline.toLowerCase()} <span>{' }'}</span>
-        </p>
-      </div>
+      <StaticQuery
+        query={graphql`
+          query {
+            dataYaml {
+              title
+              tagline
+            }
+          }
+        `}
+        render={data => {
+          const meta = data.dataYaml
+          const { minimal } = this.state
+
+          return (
+            <div className={minimal ? styles.minimal : styles.logounit}>
+              <Logo className={styles.logounit__logo} />
+              <h1 className={styles.logounit__title}>
+                {meta.title.toLowerCase()}
+              </h1>
+              <p className={styles.logounit__description}>
+                <span>{'{ '}</span> {meta.tagline.toLowerCase()}{' '}
+                <span>{' }'}</span>
+              </p>
+            </div>
+          )
+        }}
+      />
     )
   }
 }
 
 LogoUnit.propTypes = {
-  meta: PropTypes.object.isRequired,
   minimal: PropTypes.bool
 }
 

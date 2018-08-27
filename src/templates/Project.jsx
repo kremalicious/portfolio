@@ -32,7 +32,6 @@ const ProjectImages = ({ projectImages, title }) => (
 )
 
 const Project = ({ data, location }) => {
-  const meta = data.dataYaml
   const project = data.projectsYaml
   const projectImages = data.projectImages.edges
   const { title, links, techstack } = project
@@ -43,7 +42,7 @@ const Project = ({ data, location }) => {
     <Layout location={location}>
       <Helmet title={title} />
 
-      <SEO project={project} meta={meta} />
+      <SEO project={project} />
 
       <article className={styles.project}>
         <Content>
@@ -93,28 +92,6 @@ export const projectAndProjectsQuery = graphql`
       img {
         childImageSharp {
           twitterImage: resize(width: 980) {
-            src
-          }
-        }
-      }
-    }
-
-    # the data/meta.yml file
-    dataYaml {
-      title
-      tagline
-      description
-      url
-      social {
-        Email
-        Blog
-        Twitter
-        GitHub
-        Dribbble
-      }
-      img {
-        childImageSharp {
-          resize(width: 980) {
             src
           }
         }
