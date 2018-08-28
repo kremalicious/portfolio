@@ -1,5 +1,18 @@
-version: "2"
+version: '2'
 checks:
   method-lines:
-      config:
-        threshold: 50 # Gatsby's StaticQuery makes render functions pretty long
+    config:
+      threshold: 50 # Gatsby's StaticQuery makes render functions pretty long
+plugins:
+  eslint:
+    enabled: true
+    channel: 'eslint-4'
+    config:
+      extensions:
+        - .js
+        - .jsx
+  stylelint:
+    enabled: true
+  editorconfig:
+    enabled: true
+    channel: beta
