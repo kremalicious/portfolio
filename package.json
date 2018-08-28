@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "@svgr/cli": "^2.2.0",
-    "babel-eslint": "^8.2.6",
+    "babel-eslint": "^9.0.0",
     "eslint": "^5.4.0",
     "eslint-config-prettier": "^3.0.1",
     "eslint-loader": "^2.1.0",
