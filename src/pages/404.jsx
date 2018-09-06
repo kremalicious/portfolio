@@ -12,10 +12,11 @@ import './404.scss'
 const giphyClient = giphyAPI('LfXRwufRyt6PK414G2kKJBv3L8NdnxyR')
 const tag = 'fail-cat'
 
-class NotFound extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { gif: '' }
+export default class NotFound extends Component {
+  state = { gif: '' }
+
+  static propTypes = {
+    location: PropTypes.object
   }
 
   componentDidMount() {
@@ -62,9 +63,3 @@ class NotFound extends Component {
     )
   }
 }
-
-NotFound.propTypes = {
-  location: PropTypes.object
-}
-
-export default NotFound

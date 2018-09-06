@@ -16,10 +16,8 @@ const query = graphql`
   }
 `
 
-class Availability extends PureComponent {
-  constructor(props) {
-    super(props)
-  }
+export default class Availability extends PureComponent {
+  static propTypes = { hide: PropTypes.bool }
 
   render() {
     return (
@@ -55,9 +53,3 @@ class Availability extends PureComponent {
     )
   }
 }
-
-Availability.propTypes = {
-  hide: PropTypes.bool
-}
-
-export default Availability

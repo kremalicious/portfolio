@@ -43,13 +43,14 @@ const NetworkIcon = props => {
   }
 }
 
-class Network extends PureComponent {
-  constructor(props) {
-    super(props)
+export default class Network extends PureComponent {
+  static propTypes = {
+    minimal: PropTypes.bool,
+    hide: PropTypes.bool
+  }
 
-    this.state = {
-      classes: styles.networks
-    }
+  state = {
+    classes: styles.networks
   }
 
   componentDidMount() {
@@ -94,10 +95,3 @@ class Network extends PureComponent {
     )
   }
 }
-
-Network.propTypes = {
-  minimal: PropTypes.bool,
-  hide: PropTypes.bool
-}
-
-export default Network

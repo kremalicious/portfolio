@@ -36,15 +36,9 @@ const ProjectLink = ({ node }) => (
   </Link>
 )
 
-class ProjectNav extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      scrolledToCurrent: false
-    }
-
-    this.scrollToCurrent = this.scrollToCurrent.bind(this)
+export default class ProjectNav extends Component {
+  state = {
+    scrolledToCurrent: false
   }
 
   componentDidMount() {
@@ -113,5 +107,3 @@ ProjectLink.propTypes = {
 ProjectNav.propTypes = {
   slug: PropTypes.string
 }
-
-export default ProjectNav

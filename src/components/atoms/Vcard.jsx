@@ -37,56 +37,9 @@ const Vcard = () => (
     render={data => {
       const meta = data.dataYaml
 
-      const constructVcard = () => {
-        const contact = new vCard()
-        const photoSrc = meta.avatar.childImageSharp.original.src
-
-        // first, convert the avatar to base64,
-        // then construct all vCard elements
-        toDataURL(
-          photoSrc,
-          dataUrl => {
-            // stripping this data out of base64 string is required
-            // for vcard to actually display the image for whatever reason
-            const dataUrlCleaned = dataUrl
-              .split('data:image/jpeg;base64,')
-              .join('')
-            contact.set('photo', dataUrlCleaned, {
-              encoding: 'b',
-              type: 'JPEG'
-            })
-            contact.set('fn', meta.title)
-            contact.set('title', meta.tagline)
-            contact.set('email', meta.email)
-            contact.set('url', meta.url, { type: 'Portfolio' })
-            contact.add('url', meta.social.Blog, { type: 'Blog' })
-            contact.set('nickname', 'kremalicious')
-            contact.add('x-socialprofile', meta.social.Twitter, {
-              type: 'twitter'
-            })
-            contact.add('x-socialprofile', meta.social.GitHub, {
-              type: 'GitHub'
-            })
-
-            const vcard = contact.toString('3.0')
-
-            downloadVcard(vcard)
-          },
-          'image/jpeg'
-        )
-      }
-
-      // Construct the download from a blob of the just constructed vCard,
-      // and save it to user's file system
-      const downloadVcard = vcard => {
-        const name = meta.addressbook.split('/').join('')
-        const blob = new Blob([vcard], { type: 'text/x-vcard' })
-        FileSaver.saveAs(blob, name)
-      }
-
       const handleAddressbookClick = e => {
         e.preventDefault()
-        constructVcard()
+        constructVcard(meta)
       }
 
       return (
@@ -102,6 +55,43 @@ const Vcard = () => (
     }}
   />
 )
+
+// Construct the download from a blob of the just constructed vCard,
+// and save it to user's file system
+const downloadVcard = (vcard, meta) => {
+  const name = meta.addressbook.split('/').join('')
+  const blob = new Blob([vcard], { type: 'text/x-vcard' })
+  FileSaver.saveAs(blob, name)
+}
+
+const constructVcard = meta => {
+  const contact = new vCard()
+  const photoSrc = meta.avatar.childImageSharp.original.src
+
+  // first, convert the avatar to base64, then construct all vCard elements
+  toDataURL(
+    photoSrc,
+    dataUrl => {
+      // stripping this data out of base64 string is required
+      // for vcard to actually display the image for whatever reason
+      const dataUrlCleaned = dataUrl.split('data:image/jpeg;base64,').join('')
+      contact.set('photo', dataUrlCleaned, { encoding: 'b', type: 'JPEG' })
+      contact.set('fn', meta.title)
+      contact.set('title', meta.tagline)
+      contact.set('email', meta.email)
+      contact.set('url', meta.url, { type: 'Portfolio' })
+      contact.add('url', meta.social.Blog, { type: 'Blog' })
+      contact.set('nickname', 'kremalicious')
+      contact.add('x-socialprofile', meta.social.Twitter, { type: 'twitter' })
+      contact.add('x-socialprofile', meta.social.GitHub, { type: 'GitHub' })
+
+      const vcard = contact.toString('3.0')
+
+      downloadVcard(vcard, meta)
+    },
+    'image/jpeg'
+  )
+}
 
 // Helper function to create base64 string from avatar image
 // without the need to read image file from file system

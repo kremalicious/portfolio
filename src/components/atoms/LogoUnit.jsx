@@ -14,10 +14,10 @@ const query = graphql`
 `
 
 class LogoUnit extends PureComponent {
-  constructor(props) {
-    super(props)
+  state = { minimal: false }
 
-    this.state = { minimal: false }
+  static propTypes = {
+    minimal: PropTypes.bool
   }
 
   checkMinimal = () => {
@@ -58,10 +58,6 @@ class LogoUnit extends PureComponent {
       />
     )
   }
-}
-
-LogoUnit.propTypes = {
-  minimal: PropTypes.bool
 }
 
 export default LogoUnit

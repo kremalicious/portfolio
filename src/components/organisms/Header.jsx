@@ -17,12 +17,8 @@ const query = graphql`
   }
 `
 
-class Header extends PureComponent {
-  constructor(props) {
-    super(props)
-
-    this.state = { minimal: false }
-  }
+export default class Header extends PureComponent {
+  state = { minimal: false }
 
   checkMinimal = () => {
     const { isHomepage } = this.props
@@ -70,5 +66,3 @@ class Header extends PureComponent {
 Header.propTypes = {
   isHomepage: PropTypes.bool
 }
-
-export default Header
