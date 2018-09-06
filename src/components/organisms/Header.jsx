@@ -7,12 +7,18 @@ import ThemeSwitch from '../molecules/ThemeSwitch'
 import LogoUnit from '../atoms/LogoUnit'
 import styles from './Header.module.scss'
 
-class Header extends PureComponent {
-  constructor(props) {
-    super(props)
-
-    this.state = { minimal: false }
+const query = graphql`
+  query {
+    dataYaml {
+      availability {
+        status
+      }
+    }
   }
+`
+
+export default class Header extends PureComponent {
+  state = { minimal: false }
 
   checkMinimal = () => {
     const { isHomepage } = this.props
@@ -34,15 +40,7 @@ class Header extends PureComponent {
 
     return (
       <StaticQuery
-        query={graphql`
-          query {
-            dataYaml {
-              availability {
-                status
-              }
-            }
-          }
-        `}
+        query={query}
         render={data => {
           const meta = data.dataYaml
 
@@ -68,5 +66,3 @@ class Header extends PureComponent {
 Header.propTypes = {
   isHomepage: PropTypes.bool
 }
-
-export default Header

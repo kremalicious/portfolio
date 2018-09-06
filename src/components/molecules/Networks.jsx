@@ -12,6 +12,20 @@ import Dribbble from '../svg/Dribbble'
 import icons from '../atoms/Icons.module.scss'
 import styles from './Networks.module.scss'
 
+const query = graphql`
+  query {
+    dataYaml {
+      social {
+        Email
+        Blog
+        Twitter
+        GitHub
+        Dribbble
+      }
+    }
+  }
+`
+
 const NetworkIcon = props => {
   switch (props.title) {
     case 'Email':
@@ -29,13 +43,14 @@ const NetworkIcon = props => {
   }
 }
 
-class Network extends PureComponent {
-  constructor(props) {
-    super(props)
+export default class Network extends PureComponent {
+  static propTypes = {
+    minimal: PropTypes.bool,
+    hide: PropTypes.bool
+  }
 
-    this.state = {
-      classes: styles.networks
-    }
+  state = {
+    classes: styles.networks
   }
 
   componentDidMount() {
@@ -57,19 +72,7 @@ class Network extends PureComponent {
   render() {
     return (
       <StaticQuery
-        query={graphql`
-          query {
-            dataYaml {
-              social {
-                Email
-                Blog
-                Twitter
-                GitHub
-                Dribbble
-              }
-            }
-          }
-        `}
+        query={query}
         render={data => {
           const meta = data.dataYaml
 
@@ -92,10 +95,3 @@ class Network extends PureComponent {
     )
   }
 }
-
-Network.propTypes = {
-  minimal: PropTypes.bool,
-  hide: PropTypes.bool
-}
-
-export default Network

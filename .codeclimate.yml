@@ -1,5 +1,0 @@
-version: "2"
-checks:
-  method-lines:
-      config:
-        threshold: 50 # Gatsby's StaticQuery makes render functions pretty long

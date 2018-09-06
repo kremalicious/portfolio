@@ -5,20 +5,20 @@ import Day from '../svg/Day'
 import Night from '../svg/Night'
 import styles from './ThemeSwitch.module.scss'
 
-const ThemeToggle = props => (
+const ThemeToggle = ({ dark }) => (
   <span id="toggle" className={styles.checkboxContainer} aria-live="assertive">
-    <Day className={props.dark ? null : 'active'} />
+    <Day className={dark ? null : 'active'} />
     <span className={styles.checkboxFake} />
-    <Night className={props.dark ? 'active' : null} />
+    <Night className={dark ? 'active' : null} />
   </span>
 )
 
-class ThemeSwitch extends PureComponent {
-  constructor(props) {
-    super(props)
+ThemeToggle.propTypes = {
+  dark: PropTypes.bool
+}
 
-    this.state = { dark: null }
-  }
+export default class ThemeSwitch extends PureComponent {
+  state = { dark: null }
 
   isDark = () => this.state.dark === true
 
@@ -78,9 +78,3 @@ class ThemeSwitch extends PureComponent {
     )
   }
 }
-
-ThemeToggle.propTypes = {
-  dark: PropTypes.bool
-}
-
-export default ThemeSwitch

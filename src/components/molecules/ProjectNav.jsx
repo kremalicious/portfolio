@@ -5,6 +5,26 @@ import Img from 'gatsby-image'
 import FullWidth from '../atoms/FullWidth'
 import styles from './ProjectNav.module.scss'
 
+const query = graphql`
+  query {
+    allProjectsYaml {
+      edges {
+        node {
+          title
+          slug
+          img {
+            childImageSharp {
+              fluid(maxWidth: 500, quality: 85) {
+                ...GatsbyImageSharpFluid_noBase64
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
 const ProjectLink = ({ node }) => (
   <Link className={styles.link} to={node.slug}>
     <Img
@@ -16,15 +36,9 @@ const ProjectLink = ({ node }) => (
   </Link>
 )
 
-class ProjectNav extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      scrolledToCurrent: false
-    }
-
-    this.scrollToCurrent = this.scrollToCurrent.bind(this)
+export default class ProjectNav extends Component {
+  state = {
+    scrolledToCurrent: false
   }
 
   componentDidMount() {
@@ -54,25 +68,7 @@ class ProjectNav extends Component {
 
     return (
       <StaticQuery
-        query={graphql`
-          query {
-            allProjectsYaml {
-              edges {
-                node {
-                  title
-                  slug
-                  img {
-                    childImageSharp {
-                      fluid(maxWidth: 500, quality: 85) {
-                        ...GatsbyImageSharpFluid_noBase64
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        `}
+        query={query}
         render={data => {
           const projects = data.allProjectsYaml.edges
 
@@ -111,5 +107,3 @@ ProjectLink.propTypes = {
 ProjectNav.propTypes = {
   slug: PropTypes.string
 }
-
-export default ProjectNav

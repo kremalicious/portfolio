@@ -4,16 +4,18 @@ import { StaticQuery, graphql } from 'gatsby'
 import SEO from '../atoms/SEO'
 import Typekit from '../atoms/Typekit'
 
+const query = graphql`
+  query {
+    dataYaml {
+      title
+      tagline
+    }
+  }
+`
+
 const Head = () => (
   <StaticQuery
-    query={graphql`
-      query {
-        dataYaml {
-          title
-          tagline
-        }
-      }
-    `}
+    query={query}
     render={data => {
       const { title, tagline } = data.dataYaml
 
