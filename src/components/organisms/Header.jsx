@@ -7,6 +7,16 @@ import ThemeSwitch from '../molecules/ThemeSwitch'
 import LogoUnit from '../atoms/LogoUnit'
 import styles from './Header.module.scss'
 
+const query = graphql`
+  query {
+    dataYaml {
+      availability {
+        status
+      }
+    }
+  }
+`
+
 class Header extends PureComponent {
   constructor(props) {
     super(props)
@@ -34,15 +44,7 @@ class Header extends PureComponent {
 
     return (
       <StaticQuery
-        query={graphql`
-          query {
-            dataYaml {
-              availability {
-                status
-              }
-            }
-          }
-        `}
+        query={query}
         render={data => {
           const meta = data.dataYaml
 

@@ -5,6 +5,23 @@ import LogoUnit from '../atoms/LogoUnit'
 import Networks from '../molecules/Networks'
 import styles from './Footer.module.scss'
 
+const query = graphql`
+  query {
+    # the package.json file
+    portfolioJson {
+      name
+      homepage
+      repository
+      bugs
+    }
+
+    dataYaml {
+      title
+      gpg
+    }
+  }
+`
+
 class Footer extends PureComponent {
   constructor(props) {
     super(props)
@@ -15,22 +32,7 @@ class Footer extends PureComponent {
   render() {
     return (
       <StaticQuery
-        query={graphql`
-          query {
-            # the package.json file
-            portfolioJson {
-              name
-              homepage
-              repository
-              bugs
-            }
-
-            dataYaml {
-              title
-              gpg
-            }
-          }
-        `}
+        query={query}
         render={data => {
           const pkg = data.portfolioJson
           const meta = data.dataYaml

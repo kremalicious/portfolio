@@ -16,8 +16,6 @@ class NotFound extends Component {
   constructor(props) {
     super(props)
     this.state = { gif: '' }
-
-    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount() {
@@ -36,7 +34,7 @@ class NotFound extends Component {
       })
   }
 
-  handleClick(e) {
+  handleClick = e => {
     e.preventDefault()
     this.getRandomGif()
   }

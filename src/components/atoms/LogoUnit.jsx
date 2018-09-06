@@ -4,6 +4,15 @@ import { StaticQuery, graphql } from 'gatsby'
 import Logo from '../svg/Logo'
 import styles from './LogoUnit.module.scss'
 
+const query = graphql`
+  query {
+    dataYaml {
+      title
+      tagline
+    }
+  }
+`
+
 class LogoUnit extends PureComponent {
   constructor(props) {
     super(props)
@@ -28,14 +37,7 @@ class LogoUnit extends PureComponent {
   render() {
     return (
       <StaticQuery
-        query={graphql`
-          query {
-            dataYaml {
-              title
-              tagline
-            }
-          }
-        `}
+        query={query}
         render={data => {
           const meta = data.dataYaml
           const { minimal } = this.state

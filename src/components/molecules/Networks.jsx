@@ -12,6 +12,20 @@ import Dribbble from '../svg/Dribbble'
 import icons from '../atoms/Icons.module.scss'
 import styles from './Networks.module.scss'
 
+const query = graphql`
+  query {
+    dataYaml {
+      social {
+        Email
+        Blog
+        Twitter
+        GitHub
+        Dribbble
+      }
+    }
+  }
+`
+
 const NetworkIcon = props => {
   switch (props.title) {
     case 'Email':
@@ -57,19 +71,7 @@ class Network extends PureComponent {
   render() {
     return (
       <StaticQuery
-        query={graphql`
-          query {
-            dataYaml {
-              social {
-                Email
-                Blog
-                Twitter
-                GitHub
-                Dribbble
-              }
-            }
-          }
-        `}
+        query={query}
         render={data => {
           const meta = data.dataYaml
 

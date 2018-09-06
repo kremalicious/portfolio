@@ -3,35 +3,37 @@ import { StaticQuery, graphql } from 'gatsby'
 import FileSaver from 'file-saver'
 import vCard from 'vcf'
 
-const Vcard = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        dataYaml {
-          title
-          tagline
-          description
-          url
-          email
-          avatar {
-            childImageSharp {
-              original: resize {
-                src
-              }
-            }
+const query = graphql`
+  query {
+    dataYaml {
+      title
+      tagline
+      description
+      url
+      email
+      avatar {
+        childImageSharp {
+          original: resize {
+            src
           }
-          social {
-            Email
-            Blog
-            Twitter
-            GitHub
-            Dribbble
-          }
-          gpg
-          addressbook
         }
       }
-    `}
+      social {
+        Email
+        Blog
+        Twitter
+        GitHub
+        Dribbble
+      }
+      gpg
+      addressbook
+    }
+  }
+`
+
+const Vcard = () => (
+  <StaticQuery
+    query={query}
     render={data => {
       const meta = data.dataYaml
 

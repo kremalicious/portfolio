@@ -15,35 +15,37 @@ function truncate(n, useWordBoundary) {
   )
 }
 
-const SEO = ({ project }) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        dataYaml {
-          title
-          tagline
-          description
-          url
-          email
-          img {
-            childImageSharp {
-              resize(width: 980) {
-                src
-              }
-            }
+const query = graphql`
+  query {
+    dataYaml {
+      title
+      tagline
+      description
+      url
+      email
+      img {
+        childImageSharp {
+          resize(width: 980) {
+            src
           }
-          social {
-            Email
-            Blog
-            Twitter
-            GitHub
-            Dribbble
-          }
-          gpg
-          addressbook
         }
       }
-    `}
+      social {
+        Email
+        Blog
+        Twitter
+        GitHub
+        Dribbble
+      }
+      gpg
+      addressbook
+    }
+  }
+`
+
+const SEO = ({ project }) => (
+  <StaticQuery
+    query={query}
     render={data => {
       const meta = data.dataYaml
 

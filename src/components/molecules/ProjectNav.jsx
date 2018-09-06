@@ -5,6 +5,26 @@ import Img from 'gatsby-image'
 import FullWidth from '../atoms/FullWidth'
 import styles from './ProjectNav.module.scss'
 
+const query = graphql`
+  query {
+    allProjectsYaml {
+      edges {
+        node {
+          title
+          slug
+          img {
+            childImageSharp {
+              fluid(maxWidth: 500, quality: 85) {
+                ...GatsbyImageSharpFluid_noBase64
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
 const ProjectLink = ({ node }) => (
   <Link className={styles.link} to={node.slug}>
     <Img
@@ -54,25 +74,7 @@ class ProjectNav extends Component {
 
     return (
       <StaticQuery
-        query={graphql`
-          query {
-            allProjectsYaml {
-              edges {
-                node {
-                  title
-                  slug
-                  img {
-                    childImageSharp {
-                      fluid(maxWidth: 500, quality: 85) {
-                        ...GatsbyImageSharpFluid_noBase64
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        `}
+        query={query}
         render={data => {
           const projects = data.allProjectsYaml.edges
 
