@@ -47,7 +47,7 @@ export const IndexQuery = graphql`
           slug
           img {
             childImageSharp {
-              fluid(maxWidth: 990, quality: 85) {
+              fluid(maxWidth: 980, quality: 85) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }

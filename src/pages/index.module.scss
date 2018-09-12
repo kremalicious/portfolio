@@ -5,15 +5,16 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        max-width: $projectImageMaxWidth;
+        max-width: calc(#{$projectImageMaxWidth} + #{$spacer * 2});
         margin: 0 auto;
+        padding: $spacer $spacer * 2;
     }
 }
 
 .project {
-    flex: 0 0 calc(50% - #{$spacer * 2});
+    flex: 0 0 calc(50% - #{$spacer});
     text-align: center;
-    margin-bottom: $spacer * 4;
+    margin-bottom: $spacer * 2;
     position: relative;
 
     &:last-child {
