@@ -8,7 +8,6 @@
     z-index: 2;
     padding: $spacer / 2;
     display: block;
-    transition: opacity .2s ease-out;
 
     :global(.dark) & {
         color: $text-color-light--dark;

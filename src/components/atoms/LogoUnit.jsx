@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
+
 import Logo from '../svg/Logo'
 import styles from './LogoUnit.module.scss'
 

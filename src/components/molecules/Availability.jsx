@@ -1,7 +1,8 @@
 import React, { Fragment, PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import { MoveIn } from '../atoms/Animations'
+
+// import { MoveIn } from '../atoms/Animations'
 import styles from './Availability.module.scss'
 
 const query = graphql`
@@ -30,21 +31,19 @@ export default class Availability extends PureComponent {
           return (
             <Fragment>
               {!this.props.hide && (
-                <MoveIn>
-                  <aside
-                    className={
-                      status
-                        ? `${styles.availability} ${styles.available}`
-                        : `${styles.availability}`
-                    }
-                  >
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: status ? available : unavailable
-                      }}
-                    />
-                  </aside>
-                </MoveIn>
+                <aside
+                  className={
+                    status
+                      ? `${styles.availability} ${styles.available}`
+                      : `${styles.availability}`
+                  }
+                >
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: status ? available : unavailable
+                    }}
+                  />
+                </aside>
               )}
             </Fragment>
           )

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import { FadeIn } from '../atoms/Animations'
+import posed from 'react-pose'
 
 import Email from '../svg/Email'
 import Blog from '../svg/Blog'
@@ -43,6 +43,21 @@ const NetworkIcon = props => {
   }
 }
 
+const AnimatedContainer = posed.div({
+  enter: {
+    y: 0,
+    transition: {
+      ease: 'easeInOut'
+    }
+  },
+  exit: {
+    y: '-100%',
+    transition: {
+      ease: 'easeInOut'
+    }
+  }
+})
+
 export default class Network extends PureComponent {
   static propTypes = {
     minimal: PropTypes.bool,
@@ -78,7 +93,7 @@ export default class Network extends PureComponent {
 
           return (
             !this.props.hide && (
-              <FadeIn>
+              <AnimatedContainer>
                 <aside className={this.state.classes}>
                   {Object.keys(meta.social).map((key, i) => (
                     <a className={styles.link} href={meta.social[key]} key={i}>
@@ -87,7 +102,7 @@ export default class Network extends PureComponent {
                     </a>
                   ))}
                 </aside>
-              </FadeIn>
+              </AnimatedContainer>
             )
           )
         }}
