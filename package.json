@@ -44,7 +44,6 @@
     "react-helmet": "^5.2.0",
     "react-markdown": "^3.6.0",
     "react-pose": "^3.3.0",
-    "react-transition-group": "^2.4.0",
     "vcf": "^2.0.1"
   },
   "devDependencies": {

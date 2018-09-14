@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import posed, { PoseGroup } from 'react-pose'
+import { moveInBottom } from '../atoms/Transitions'
 
 import Logo from '../svg/Logo'
 import styles from './LogoUnit.module.scss'
@@ -15,18 +16,7 @@ const query = graphql`
   }
 `
 
-const Animation = posed.div({
-  enter: {
-    opacity: 1,
-    y: 0,
-    transition: { type: 'spring' }
-  },
-  exit: {
-    opacity: 0,
-    y: '2rem',
-    transition: { type: 'spring' }
-  }
-})
+const Animation = posed.div(moveInBottom)
 
 class LogoUnit extends PureComponent {
   state = { minimal: false }

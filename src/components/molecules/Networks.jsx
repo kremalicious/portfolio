@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import posed, { PoseGroup } from 'react-pose'
+import { moveInTop } from '../atoms/Transitions'
 
 import Email from '../svg/Email'
 import Blog from '../svg/Blog'
@@ -43,18 +44,7 @@ const NetworkIcon = props => {
   }
 }
 
-const Animation = posed.aside({
-  enter: {
-    opacity: 1,
-    y: 0,
-    transition: { type: 'spring' }
-  },
-  exit: {
-    opacity: 0,
-    y: '-2rem',
-    transition: { type: 'spring' }
-  }
-})
+const Animation = posed.aside(moveInTop)
 
 export default class Network extends PureComponent {
   static propTypes = {

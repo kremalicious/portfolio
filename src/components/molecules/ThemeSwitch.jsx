@@ -2,22 +2,13 @@ import React, { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import posed, { PoseGroup } from 'react-pose'
+import { fadeIn } from '../atoms/Transitions'
+
 import Day from '../svg/Day'
 import Night from '../svg/Night'
 import styles from './ThemeSwitch.module.scss'
 
-const Animation = posed.aside({
-  enter: {
-    opacity: 1,
-    y: 0,
-    transition: { type: 'spring' }
-  },
-  exit: {
-    opacity: 0,
-    y: '-2rem',
-    transition: { type: 'spring' }
-  }
-})
+const Animation = posed.aside(fadeIn)
 
 const ThemeToggle = ({ dark }) => (
   <span id="toggle" className={styles.checkboxContainer} aria-live="assertive">
