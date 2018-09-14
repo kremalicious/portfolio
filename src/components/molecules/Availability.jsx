@@ -1,8 +1,8 @@
-import React, { Fragment, PureComponent } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
+import posed, { PoseGroup } from 'react-pose'
 
-// import { MoveIn } from '../atoms/Animations'
 import styles from './Availability.module.scss'
 
 const query = graphql`
@@ -17,6 +17,19 @@ const query = graphql`
   }
 `
 
+const Animation = posed.aside({
+  enter: {
+    opacity: 1,
+    y: 0,
+    transition: { type: 'spring' }
+  },
+  exit: {
+    opacity: 0,
+    y: '2rem',
+    transition: { type: 'spring' }
+  }
+})
+
 export default class Availability extends PureComponent {
   static propTypes = { hide: PropTypes.bool }
 
@@ -29,9 +42,9 @@ export default class Availability extends PureComponent {
           const { status, available, unavailable } = availability
 
           return (
-            <Fragment>
-              {!this.props.hide && (
-                <aside
+            !this.props.hide && (
+              <PoseGroup animateOnMount={true}>
+                <Animation
                   className={
                     status
                       ? `${styles.availability} ${styles.available}`
@@ -43,9 +56,9 @@ export default class Availability extends PureComponent {
                       __html: status ? available : unavailable
                     }}
                   />
-                </aside>
-              )}
-            </Fragment>
+                </Animation>
+              </PoseGroup>
+            )
           )
         }}
       />

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import posed from 'react-pose'
+import posed, { PoseGroup } from 'react-pose'
 
 import Email from '../svg/Email'
 import Blog from '../svg/Blog'
@@ -43,18 +43,16 @@ const NetworkIcon = props => {
   }
 }
 
-const AnimatedContainer = posed.div({
+const Animation = posed.aside({
   enter: {
+    opacity: 1,
     y: 0,
-    transition: {
-      ease: 'easeInOut'
-    }
+    transition: { type: 'spring' }
   },
   exit: {
-    y: '-100%',
-    transition: {
-      ease: 'easeInOut'
-    }
+    opacity: 0,
+    y: '-2rem',
+    transition: { type: 'spring' }
   }
 })
 
@@ -93,16 +91,16 @@ export default class Network extends PureComponent {
 
           return (
             !this.props.hide && (
-              <AnimatedContainer>
-                <aside className={this.state.classes}>
+              <PoseGroup animateOnMount={true}>
+                <Animation className={this.state.classes}>
                   {Object.keys(meta.social).map((key, i) => (
                     <a className={styles.link} href={meta.social[key]} key={i}>
                       <NetworkIcon title={key} className={icons.icon} />
                       <span className={styles.title}>{key}</span>
                     </a>
                   ))}
-                </aside>
-              </AnimatedContainer>
+                </Animation>
+              </PoseGroup>
             )
           )
         }}

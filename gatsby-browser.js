@@ -6,5 +6,5 @@ if (typeof window !== 'undefined' && !window.IntersectionObserver) {
   import('intersection-observer')
 }
 
-// Page Transitions
+// Page Transitions & Layout
 export const wrapPageElement = wrapPageElementWithTransition

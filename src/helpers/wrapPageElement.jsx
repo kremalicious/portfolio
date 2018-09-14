@@ -1,8 +1,8 @@
 import React from 'react'
-import Transition from '../components/Transition'
+import Layout from '../components/Layout'
 
 const wrapPageElement = ({ element, props }) => (
-  <Transition {...props}>{element}</Transition>
+  <Layout {...props}>{element}</Layout>
 )
 
 export default wrapPageElement
