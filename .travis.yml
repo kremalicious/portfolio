@@ -1,5 +1,9 @@
+sudo: required
 language: node_js
 node_js: node
+
+addons:
+  chrome: stable
 
 cache:
   directories:
@@ -8,6 +12,12 @@ cache:
 
 install:
   - npm i
+
+before_script:
+  - export DISPLAY=:99.0
+  - export CHROME_PATH="$(pwd)/chrome-linux/chrome"
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3 # wait for xvfb to boot
 
 script:
   - npm test
