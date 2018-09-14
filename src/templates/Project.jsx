@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import ReactMarkdown from 'react-markdown'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
 import Content from '../components/atoms/Content'
 import FullWidth from '../components/atoms/FullWidth'
 import ProjectImage from '../components/atoms/ProjectImage'
@@ -31,7 +30,7 @@ const ProjectImages = ({ projectImages, title }) => (
   </FullWidth>
 )
 
-const Project = ({ data, location }) => {
+const Project = ({ data }) => {
   const project = data.projectsYaml
   const projectImages = data.projectImages.edges
   const { title, links, techstack } = project
@@ -39,7 +38,7 @@ const Project = ({ data, location }) => {
   const descriptionWithLineBreaks = description.split('\n').join('\n\n')
 
   return (
-    <Layout location={location}>
+    <Fragment>
       <Helmet title={title} />
 
       <SEO project={project} />
@@ -57,7 +56,7 @@ const Project = ({ data, location }) => {
       </article>
 
       <ProjectNav slug={project.slug} />
-    </Layout>
+    </Fragment>
   )
 }
 

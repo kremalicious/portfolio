@@ -1,8 +1,10 @@
-require('./src/styles/global.scss')
+import wrapPageElementWithTransition from './src/helpers/wrapPageElement'
+import './src/styles/global.scss'
 
-exports.onClientEntry = () => {
-  // IntersectionObserver polyfill for gatsby-image (Safari, IE)
-  if (typeof window.IntersectionObserver === 'undefined') {
-    require('intersection-observer')
-  }
+// IntersectionObserver polyfill for gatsby-image (Safari, IE)
+if (typeof window !== 'undefined' && !window.IntersectionObserver) {
+  import('intersection-observer')
 }
+
+// Page Transitions & Layout
+export const wrapPageElement = wrapPageElementWithTransition

@@ -1,28 +1,41 @@
-import React, { Fragment } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
+import posed, { PoseGroup } from 'react-pose'
+import { fadeIn } from './atoms/Transitions'
 import Head from './molecules/Head'
 import Header from './organisms/Header'
 import Footer from './organisms/Footer'
 import styles from './Layout.module.scss'
 
-const Layout = ({ children, location }) => {
-  const isHomepage = location.pathname === '/'
+const timeout = 250
 
-  return (
-    <Fragment>
-      <Head />
-      <Header isHomepage={isHomepage} />
+export default class Layout extends PureComponent {
+  static propTypes = {
+    children: PropTypes.any.isRequired,
+    location: PropTypes.object.isRequired
+  }
 
-      <main className={styles.screen}>{children}</main>
+  render() {
+    const { children, location } = this.props
+    const isHomepage = location.pathname === '/'
 
-      <Footer />
-    </Fragment>
-  )
+    const RoutesContainer = posed.div(fadeIn)
+
+    return (
+      <Fragment>
+        <Head />
+        <PoseGroup animateOnMount={true}>
+          <RoutesContainer
+            key={location.pathname}
+            delay={timeout}
+            delayChildren={timeout}
+          >
+            <Header isHomepage={isHomepage} />
+            <main className={styles.screen}>{children}</main>
+          </RoutesContainer>
+        </PoseGroup>
+        <Footer />
+      </Fragment>
+    )
+  }
 }
-
-Layout.propTypes = {
-  children: PropTypes.any.isRequired,
-  location: PropTypes.object.isRequired
-}
-
-export default Layout

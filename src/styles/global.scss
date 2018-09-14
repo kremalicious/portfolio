@@ -29,7 +29,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
     background: $body-background-color;
-    transition: background .6s $easing;
+    transition: background .2s $easing;
 
     &.dark {
         background-color: $body-background-color--dark;
