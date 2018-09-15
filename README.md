@@ -17,6 +17,7 @@
 ## Table of Contents
 
 - [Features](#features)
+  - [Lighthouse score](#lighthouse-score)
   - [One data file to rule all pages](#one-data-file-to-rule-all-pages)
   - [Theme switcher](#theme-switcher)
   - [SEO component](#seo-component)
@@ -36,6 +37,10 @@
 ## Features
 
 The whole [portfolio](https://matthiaskretschmann.com) is a React-based Single Page App built with [Gatsby v2](https://www.gatsbyjs.org).
+
+### Lighthouse score
+
+[![Lighthouse scores](https://lighthouse.now.sh/?perf=99&pwa=100&a11y=100&bp=100&seo=100)](https://travis-ci.com/kremalicious/portfolio)
 
 ### One data file to rule all pages
 

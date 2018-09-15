@@ -29,14 +29,19 @@
 
 .logounit__description {
     font-size: $font-size-h4;
-    color: $brand-grey;
+    color: $brand-grey-light;
 
-    :global(.dark) & {
-        color: $brand-grey-light;
+    &::before,
+    &::after {
+        opacity: .4;
     }
 
-    span {
-        opacity: .4;
+    &::before {
+        content: '{ ';
+    }
+
+    &::after {
+        content: ' }';
     }
 }
 
@@ -49,11 +54,7 @@
     // stylelint-disable no-descending-specificity
     .logounit__title,
     .logounit__description {
-        color: $brand-grey-light;
-
-        :global(.dark) & {
-            color: $brand-grey;
-        }
+        color: $text-color-light--dark;
     }
     // stylelint-enable no-descending-specificity
 

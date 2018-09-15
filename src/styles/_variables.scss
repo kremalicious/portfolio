@@ -9,7 +9,7 @@ $brand-cyan: #43a699;
 $brand-main-light: #88bec8;
 $brand-light: #e7eef4;
 
-$brand-grey: #6b7f88;
+$brand-grey: #4e5d63;
 $brand-grey-light: lighten($brand-grey, 15%);
 $brand-grey-dimmed: lighten($brand-grey, 50%);
 
@@ -17,7 +17,7 @@ $brand-grey-dimmed: lighten($brand-grey, 50%);
 /////////////////////////////////////
 
 $body-background-color: $brand-light;
-$body-background-color--dark: darken($brand-grey, 30%);
+$body-background-color--dark: darken($brand-grey, 22%);
 
 // Text Colors
 /////////////////////////////////////
@@ -25,8 +25,8 @@ $body-background-color--dark: darken($brand-grey, 30%);
 $text-color: $brand-grey;
 $text-color-light: $brand-grey-light;
 
-$text-color--dark: $brand-grey-light;
-$text-color-light--dark: $brand-grey;
+$text-color--dark: lighten($brand-grey-light, 5%);
+$text-color-light--dark: lighten($brand-grey-light, 5%);
 
 // Typography
 /////////////////////////////////////
