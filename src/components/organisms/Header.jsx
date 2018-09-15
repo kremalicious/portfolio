@@ -4,7 +4,7 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import Networks from '../molecules/Networks'
 import Availability from '../molecules/Availability'
 import ThemeSwitch from '../molecules/ThemeSwitch'
-import LogoUnit from '../atoms/LogoUnit'
+import LogoUnit from '../molecules/LogoUnit'
 import styles from './Header.module.scss'
 
 const query = graphql`

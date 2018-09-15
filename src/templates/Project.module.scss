@@ -1,9 +1,7 @@
 @import 'variables';
-@import '../components/atoms/ProjectImage.module';
+@import '../components/molecules/ProjectImage.module';
 
-// .project__imagewrap {
 .spacer {
-    //composes: project__imagewrap from '../components/atoms/ProjectImage.module';
     margin-bottom: $spacer * 3;
 
     @media (min-width: 30rem) {

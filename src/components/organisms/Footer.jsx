@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import Vcard from '../atoms/Vcard'
-import LogoUnit from '../atoms/LogoUnit'
+import LogoUnit from '../molecules/LogoUnit'
 import Networks from '../molecules/Networks'
 import styles from './Footer.module.scss'
 
