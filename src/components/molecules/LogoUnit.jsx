@@ -18,7 +18,7 @@ const query = graphql`
 
 const Animation = posed.div(moveInBottom)
 
-class LogoUnit extends PureComponent {
+export default class LogoUnit extends PureComponent {
   state = { minimal: false }
 
   static propTypes = {
@@ -44,7 +44,7 @@ class LogoUnit extends PureComponent {
       <StaticQuery
         query={query}
         render={data => {
-          const meta = data.dataYaml
+          const { title, tagline } = data.dataYaml
           const { minimal } = this.state
 
           return (
@@ -53,11 +53,10 @@ class LogoUnit extends PureComponent {
                 <div className={minimal ? styles.minimal : styles.logounit}>
                   <Logo className={styles.logounit__logo} />
                   <h1 className={styles.logounit__title}>
-                    {meta.title.toLowerCase()}
+                    {title.toLowerCase()}
                   </h1>
                   <p className={styles.logounit__description}>
-                    <span>{'{ '}</span> {meta.tagline.toLowerCase()}{' '}
-                    <span>{' }'}</span>
+                    {tagline.toLowerCase()}
                   </p>
                 </div>
               </Animation>
@@ -68,5 +67,3 @@ class LogoUnit extends PureComponent {
     )
   }
 }
-
-export default LogoUnit
