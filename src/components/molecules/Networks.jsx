@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import posed, { PoseGroup } from 'react-pose'
+import posed from 'react-pose'
 import { moveInTop } from '../atoms/Transitions'
 
 import Email from '../svg/Email'
@@ -81,16 +81,14 @@ export default class Network extends PureComponent {
 
           return (
             !this.props.hide && (
-              <PoseGroup animateOnMount={true}>
-                <Animation className={this.state.classes}>
-                  {Object.keys(meta.social).map((key, i) => (
-                    <a className={styles.link} href={meta.social[key]} key={i}>
-                      <NetworkIcon title={key} className={icons.icon} />
-                      <span className={styles.title}>{key}</span>
-                    </a>
-                  ))}
-                </Animation>
-              </PoseGroup>
+              <Animation className={this.state.classes}>
+                {Object.keys(meta.social).map((key, i) => (
+                  <a className={styles.link} href={meta.social[key]} key={i}>
+                    <NetworkIcon title={key} className={icons.icon} />
+                    <span className={styles.title}>{key}</span>
+                  </a>
+                ))}
+              </Animation>
             )
           )
         }}

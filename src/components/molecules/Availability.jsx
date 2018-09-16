@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import posed, { PoseGroup } from 'react-pose'
+import posed from 'react-pose'
 import { fadeIn } from '../atoms/Transitions'
 import styles from './Availability.module.scss'
 
@@ -32,21 +32,19 @@ export default class Availability extends PureComponent {
 
           return (
             !this.props.hide && (
-              <PoseGroup animateOnMount={true}>
-                <Animation
-                  className={
-                    status
-                      ? `${styles.availability} ${styles.available}`
-                      : `${styles.availability}`
-                  }
-                >
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: status ? available : unavailable
-                    }}
-                  />
-                </Animation>
-              </PoseGroup>
+              <Animation
+                className={
+                  status
+                    ? `${styles.availability} ${styles.available}`
+                    : `${styles.availability}`
+                }
+              >
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: status ? available : unavailable
+                  }}
+                />
+              </Animation>
             )
           )
         }}
