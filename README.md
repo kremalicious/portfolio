@@ -40,7 +40,7 @@ The whole [portfolio](https://matthiaskretschmann.com) is a React-based Single P
 
 ### Lighthouse score
 
-[![Lighthouse scores](https://lighthouse.now.sh/?perf=99&pwa=100&a11y=100&bp=100&seo=100)](https://travis-ci.com/kremalicious/portfolio)
+[![Lighthouse scores](https://lighthouse.now.sh/?perf=100&pwa=100&a11y=100&bp=100&seo=100)](https://travis-ci.com/kremalicious/portfolio)
 
 ### One data file to rule all pages
 

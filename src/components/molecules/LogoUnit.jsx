@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import posed, { PoseGroup } from 'react-pose'
+import posed from 'react-pose'
 import { moveInBottom } from '../atoms/Transitions'
 
 import Logo from '../svg/Logo'
@@ -48,19 +48,17 @@ export default class LogoUnit extends PureComponent {
           const { minimal } = this.state
 
           return (
-            <PoseGroup animateOnMount={true}>
-              <Animation>
-                <div className={minimal ? styles.minimal : styles.logounit}>
-                  <Logo className={styles.logounit__logo} />
-                  <h1 className={styles.logounit__title}>
-                    {title.toLowerCase()}
-                  </h1>
-                  <p className={styles.logounit__description}>
-                    {tagline.toLowerCase()}
-                  </p>
-                </div>
-              </Animation>
-            </PoseGroup>
+            <Animation>
+              <div className={minimal ? styles.minimal : styles.logounit}>
+                <Logo className={styles.logounit__logo} />
+                <h1 className={styles.logounit__title}>
+                  {title.toLowerCase()}
+                </h1>
+                <p className={styles.logounit__description}>
+                  {tagline.toLowerCase()}
+                </p>
+              </div>
+            </Animation>
           )
         }}
       />

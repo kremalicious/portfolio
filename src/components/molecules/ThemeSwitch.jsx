@@ -1,7 +1,8 @@
 import React, { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import posed, { PoseGroup } from 'react-pose'
+import posed from 'react-pose'
+import { Consumer } from '../../store/createContext'
 import { fadeIn } from '../atoms/Transitions'
 
 import Day from '../svg/Day'
@@ -22,66 +23,41 @@ ThemeToggle.propTypes = {
   dark: PropTypes.bool
 }
 
+const ThemeToggleInput = ({ dark, toggleDark }) => (
+  <input
+    onChange={toggleDark}
+    type="checkbox"
+    name="toggle"
+    value="toggle"
+    aria-describedby="toggle"
+    checked={dark}
+  />
+)
+
+ThemeToggleInput.propTypes = {
+  dark: PropTypes.bool,
+  toggleDark: PropTypes.func
+}
+
 export default class ThemeSwitch extends PureComponent {
-  state = { dark: null }
-
-  isDark = () => this.state.dark === true
-
-  darkLocalStorageMode = darkLocalStorage => {
-    if (darkLocalStorage === 'true') {
-      this.setState({ dark: true })
-    } else {
-      this.setState({ dark: false })
-    }
-  }
-
-  darkMode = now => {
-    if (!this.isDark() && (now >= 19 || now <= 7)) {
-      this.setState({ dark: true })
-    } else {
-      this.setState({ dark: null })
-    }
-  }
-
-  componentDidMount() {
-    const now = new Date().getHours()
-    const darkLocalStorage = localStorage.getItem('dark')
-
-    if (darkLocalStorage) {
-      this.darkLocalStorageMode(darkLocalStorage)
-    } else {
-      this.darkMode(now)
-    }
-  }
-
-  handleChange = event => {
-    this.setState({ dark: event.target.checked })
-    localStorage.setItem('dark', event.target.checked)
-  }
-
   render() {
     return (
-      <Fragment>
-        <Helmet>
-          <body className={this.isDark() ? 'dark' : null} />
-        </Helmet>
-        <PoseGroup animateOnMount={true}>
-          <Animation className={styles.themeSwitch}>
-            <label className={styles.checkbox}>
-              <span className={styles.label}>Toggle Night Mode</span>
-              <input
-                onChange={this.handleChange}
-                type="checkbox"
-                name="toggle"
-                value="toggle"
-                aria-describedby="toggle"
-                checked={this.isDark()}
-              />
-              <ThemeToggle dark={this.isDark()} />
-            </label>
-          </Animation>
-        </PoseGroup>
-      </Fragment>
+      <Consumer>
+        {({ dark, toggleDark }) => (
+          <Fragment>
+            <Helmet>
+              <body className={dark ? 'dark' : null} />
+            </Helmet>
+            <Animation className={styles.themeSwitch}>
+              <label className={styles.checkbox}>
+                <span className={styles.label}>Toggle Night Mode</span>
+                <ThemeToggleInput dark={dark} toggleDark={toggleDark} />
+                <ThemeToggle dark={dark} />
+              </label>
+            </Animation>
+          </Fragment>
+        )}
+      </Consumer>
     )
   }
 }
