@@ -78,7 +78,7 @@ All project images make use of the excellent [gatsby-image](https://github.com/g
 
 All together, Gatsby automatically generates all required image sizes for delivering responsible, responsive images to visitors, including lazy loading of all images. Also includes the [intersection-observer polyfill](https://github.com/w3c/IntersectionObserver) to make lazy loading work properly in Safari.
 
-All project images use one single component defined in [`src/components/atoms/ProjectImage.jsx`](src/components/atoms/ProjectImage.jsx). In there, one main GraphQL query fragment is defined, which then gets used throughout other GraphQL queries.
+All project images use one single component defined in [`src/components/molecules/ProjectImage.jsx`](src/components/atoms/ProjectImage.jsx). In there, one main GraphQL query fragment is defined, which then gets used throughout other GraphQL queries.
 
 ### 💎 Importing SVG assets
 
@@ -88,7 +88,7 @@ All SVG assets under `src/images/` will be converted to React components before 
 import Logo from './components/svg/Logo'
 ```
 
-That's done with a simple bash script under [`src/scripts/svg.sh`](src/scripts/svg.sh)
+That's done with a simple bash script under [`scripts/svg.sh`](src/scripts/svg.sh)
 
 ### 🍬 Typekit component
 
