@@ -22,7 +22,7 @@ ProjectImage.propTypes = {
 export const projectImage = graphql`
   fragment ProjectImageFluid on ImageSharp {
     fluid(maxWidth: 1200, quality: 85) {
-      ...GatsbyImageSharpFluid_withWebp
+      ...GatsbyImageSharpFluid_withWebp_noBase64
     }
   }
 `
