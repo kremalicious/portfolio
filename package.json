@@ -7,11 +7,12 @@
   "license": "MIT",
   "author": "Matthias Kretschmann <m@kretschmann.io>",
   "scripts": {
+    "start": "npm run dev",
     "lint:js": "eslint ./gatsby-*.js && eslint ./src/**/*.{js,jsx}",
     "lint:css": "stylelint ./src/**/*.{css,scss}",
     "lint": "npm run svg && npm run lint:js && npm run lint:css",
     "build": "npm run svg && ./node_modules/gatsby/dist/bin/gatsby.js build",
-    "start": "npm run svg && ./node_modules/gatsby/dist/bin/gatsby.js develop",
+    "dev": "npm run svg && ./node_modules/gatsby/dist/bin/gatsby.js develop",
     "format": "prettier --write 'src/**/*.{js,jsx}'",
     "format:css": "prettier-stylelint --write --quiet 'src/**/*.{css,scss}'",
     "test": "npm run lint && ./node_modules/.bin/ava **/*.test.js --verbose",
