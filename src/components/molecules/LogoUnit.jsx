@@ -19,7 +19,7 @@ const query = graphql`
 const Animation = posed.div(moveInBottom)
 
 export default class LogoUnit extends PureComponent {
-  state = { minimal: false }
+  state = { isMinimal: false }
 
   static propTypes = {
     minimal: PropTypes.bool
@@ -28,7 +28,7 @@ export default class LogoUnit extends PureComponent {
   checkMinimal = () => {
     const { minimal } = this.props
 
-    this.setState({ minimal: minimal })
+    this.setState({ isMinimal: minimal })
   }
 
   componentDidMount() {
@@ -45,11 +45,11 @@ export default class LogoUnit extends PureComponent {
         query={query}
         render={data => {
           const { title, tagline } = data.dataYaml
-          const { minimal } = this.state
+          const { isMinimal } = this.state
 
           return (
             <Animation>
-              <div className={minimal ? styles.minimal : styles.logounit}>
+              <div className={isMinimal ? styles.minimal : styles.logounit}>
                 <Logo className={styles.logounit__logo} />
                 <h1 className={styles.logounit__title}>
                   {title.toLowerCase()}

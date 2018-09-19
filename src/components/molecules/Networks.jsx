@@ -46,14 +46,14 @@ const NetworkIcon = props => {
 
 const Animation = posed.aside(moveInTop)
 
-export default class Network extends PureComponent {
+export default class Networks extends PureComponent {
+  state = {
+    classes: styles.networks
+  }
+
   static propTypes = {
     minimal: PropTypes.bool,
     hide: PropTypes.bool
-  }
-
-  state = {
-    classes: styles.networks
   }
 
   componentDidMount() {

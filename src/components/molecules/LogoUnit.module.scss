@@ -54,7 +54,11 @@
     // stylelint-disable no-descending-specificity
     .logounit__title,
     .logounit__description {
-        color: $text-color-light--dark;
+        color: $text-color-light;
+
+        :global(.dark) & {
+            color: $text-color-light--dark;
+        }
     }
     // stylelint-enable no-descending-specificity
 

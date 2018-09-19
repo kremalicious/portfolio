@@ -18,12 +18,12 @@ const query = graphql`
 `
 
 export default class Header extends PureComponent {
-  state = { minimal: false }
+  state = { isMinimal: this.props.minimal }
 
   checkMinimal = () => {
-    const { isHomepage } = this.props
+    const { minimal } = this.props
 
-    this.setState({ minimal: !isHomepage })
+    this.setState({ isMinimal: minimal })
   }
 
   componentDidMount() {
@@ -35,8 +35,7 @@ export default class Header extends PureComponent {
   }
 
   render() {
-    const { isHomepage } = this.props
-    const { minimal } = this.state
+    const { isMinimal } = this.state
 
     return (
       <StaticQuery
@@ -45,16 +44,16 @@ export default class Header extends PureComponent {
           const meta = data.dataYaml
 
           return (
-            <header className={minimal ? styles.minimal : styles.header}>
+            <header className={isMinimal ? styles.minimal : styles.header}>
               <ThemeSwitch />
 
               <Link className={styles.header__link} to={'/'}>
-                <LogoUnit minimal={!isHomepage} />
+                <LogoUnit minimal={isMinimal} />
               </Link>
 
-              <Networks hide={!isHomepage} />
+              <Networks hide={isMinimal} />
 
-              <Availability hide={!isHomepage && !meta.availability.status} />
+              <Availability hide={isMinimal && !meta.availability.status} />
             </header>
           )
         }}
@@ -64,5 +63,5 @@ export default class Header extends PureComponent {
 }
 
 Header.propTypes = {
-  isHomepage: PropTypes.bool
+  minimal: PropTypes.bool
 }

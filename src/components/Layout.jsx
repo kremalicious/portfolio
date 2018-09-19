@@ -30,7 +30,7 @@ export default class Layout extends PureComponent {
             delay={timeout}
             delayChildren={timeout}
           >
-            <Header isHomepage={isHomepage} />
+            <Header minimal={!isHomepage} />
             <main className={styles.screen}>{children}</main>
           </RoutesContainer>
         </PoseGroup>
