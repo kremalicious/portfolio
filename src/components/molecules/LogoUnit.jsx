@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import posed from 'react-pose'
 import { moveInBottom } from '../atoms/Transitions'
 
-import Logo from '../svg/Logo'
+import { ReactComponent as Logo } from '../../images/logo.svg'
 import styles from './LogoUnit.module.scss'
 
 const query = graphql`

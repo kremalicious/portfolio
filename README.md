@@ -87,13 +87,13 @@ All project images use one single component defined in [`src/components/molecule
 
 ### 💎 Importing SVG assets
 
-All SVG assets under `src/images/` will be converted to React components before every build. Makes use of `SVGR` so SVG assets can be imported like so:
+All SVG assets under `src/images/` will be converted to React components with the help of [gatsby-plugin-svgr](https://github.com/zabute/gatsby-plugin-svgr). Makes use of [SVGR](https://github.com/smooth-code/svgr) so SVG assets can be imported like so:
 
 ```js
-import Logo from './components/svg/Logo'
-```
+import { ReactComponent as Logo } from './components/svg/Logo'
 
-That's done with a simple bash script under [`scripts/svg.sh`](scripts/svg.sh)
+<Logo />
+```
 
 ### 🍬 Typekit component
 

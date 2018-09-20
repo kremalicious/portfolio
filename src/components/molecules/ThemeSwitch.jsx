@@ -5,8 +5,8 @@ import posed from 'react-pose'
 import { Consumer } from '../../store/createContext'
 import { fadeIn } from '../atoms/Transitions'
 
-import Day from '../svg/Day'
-import Night from '../svg/Night'
+import { ReactComponent as Day } from '../../images/day.svg'
+import { ReactComponent as Night } from '../../images/night.svg'
 import styles from './ThemeSwitch.module.scss'
 
 const Animation = posed.aside(fadeIn)

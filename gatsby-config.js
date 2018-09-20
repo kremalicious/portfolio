@@ -51,6 +51,12 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-plugin-svgr',
+      options: {
+        icon: true
+      }
+    },
+    {
       resolve: 'gatsby-plugin-matomo',
       options: {
         siteId: `${matomoSite}`,
