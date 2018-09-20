@@ -16,22 +16,22 @@
 
 ## Table of Contents
 
-- [🎉 Features](#features)
-  - [⛵️ Lighthouse score](#lighthouse-score)
-  - [💍 One data file to rule all pages](#one-data-file-to-rule-all-pages)
-  - [💅 Theme switcher](#theme-switcher)
-  - [🏆 SEO component](#seo-component)
-  - [📇 Client-side vCard creation](#client-side-vcard-creation)
-  - [💫 Page transitions](#page-transitions)
-  - [📈 Matomo (formerly Piwik) analytics tracking](#matomo-formerly-piwik-analytics-tracking)
-  - [🖼 Project images](#project-images)
-  - [💎 Importing SVG assets](#importing-svg-assets)
-  - [🍬 Typekit component](#typekit-component)
-- [✨ Development](#development)
-  - [🔮 Linting](#linting)
-  - [🎈 Add a new project](#add-a-new-project)
-- [🚚 Deployment](#deployment)
-- [🏛 Licenses](#licenses)
+- [🎉 Features](#-features)
+  - [⛵️ Lighthouse score](#-lighthouse-score)
+  - [💍 One data file to rule all pages](#-one-data-file-to-rule-all-pages)
+  - [💅 Theme switcher](#-theme-switcher)
+  - [🏆 SEO component](#-seo-component)
+  - [📇 Client-side vCard creation](#-client-side-vcard-creation)
+  - [💫 Page transitions](#-page-transitions)
+  - [📈 Matomo (formerly Piwik) analytics tracking](#-matomo-formerly-piwik-analytics-tracking)
+  - [🖼 Project images](#-project-images)
+  - [💎 Importing SVG assets](#-importing-svg-assets)
+  - [🍬 Typekit component](#-typekit-component)
+- [✨ Development](#-development)
+  - [🔮 Linting](#-linting)
+  - [🎈 Add a new project](#-add-a-new-project)
+- [🚚 Deployment](#-deployment)
+- [🏛 Licenses](#-licenses)
 
 ---
 
@@ -69,7 +69,7 @@ If you want to know how, have a look at the respective component under [`src/com
 
 ### 💫 Page transitions
 
-Includes mechanism for transitioning between route changes with full page transitions defined with [react-pose](https://popmotion.io/pose/). Mechanism ~~stolen~~ inspired by [gatsby-universal](https://github.com/fabe/gatsby-universal)
+Includes mechanism for transitioning between route changes with full page transitions defined with [react-pose](https://popmotion.io/pose/). Mechanism ~~stolen~~ inspired by [gatsby-universal](https://github.com/fabe/gatsby-universal).
 
 ### 📈 Matomo (formerly Piwik) analytics tracking
 
