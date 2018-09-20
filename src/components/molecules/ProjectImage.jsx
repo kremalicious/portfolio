@@ -6,8 +6,7 @@ import styles from './ProjectImage.module.scss'
 
 const ProjectImage = ({ fluid, alt }) => (
   <Img
-    className={styles.project__image}
-    outerWrapperClassName={styles.project__imagewrap}
+    className={styles.projectImage}
     backgroundColor="#6b7f88"
     fluid={fluid}
     alt={alt}
