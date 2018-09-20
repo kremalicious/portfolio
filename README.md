@@ -22,6 +22,7 @@
   - [💅 Theme switcher](#theme-switcher)
   - [🏆 SEO component](#seo-component)
   - [📇 Client-side vCard creation](#client-side-vcard-creation)
+  - [💫 Page transitions](#page-transitions)
   - [📈 Matomo (formerly Piwik) analytics tracking](#matomo-formerly-piwik-analytics-tracking)
   - [🖼 Project images](#project-images)
   - [💎 Importing SVG assets](#importing-svg-assets)
@@ -65,6 +66,10 @@ If you want to know how, have a look at the respective component under [`src/com
 The _Add to addressbook_ link in the footer automatically creates a downloadable vCard file on the client-side, based on data defined in `data/meta.yml`.
 
 If you want to know how, have a look at the respective component under [`src/components/atoms/Vcard.jsx`](src/components/atoms/Vcard.jsx)
+
+### 💫 Page transitions
+
+Includes mechanism for transitioning between route changes with full page transitions defined with [react-pose](https://popmotion.io/pose/). Mechanism ~~stolen~~ inspired by [gatsby-universal](https://github.com/fabe/gatsby-universal)
 
 ### 📈 Matomo (formerly Piwik) analytics tracking
 

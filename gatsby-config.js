@@ -2,7 +2,7 @@ const path = require('path')
 const fs = require('fs')
 const yaml = require('js-yaml')
 const meta = yaml.load(fs.readFileSync('./data/meta.yml', 'utf8'))
-const { url, matomoSite, matomoUrl, title } = meta
+const { title, description, url, matomoSite, matomoUrl } = meta
 
 module.exports = {
   siteMetadata: {
@@ -60,15 +60,37 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: 'gatsby-plugin-favicon',
       options: {
-        name: title.toLowerCase(),
-        short_name: 'mk',
-        start_url: '/',
-        background_color: '#e7eef4',
+        logo: './src/images/favicon.png',
+
+        // WebApp Manifest Configuration
+        appName: title.toLowerCase(),
+        appDescription: description,
+        developerName: null,
+        developerURL: null,
+        dir: 'auto',
+        lang: 'en-US',
+        background: '#e7eef4',
         theme_color: '#88bec8',
         display: 'minimal-ui',
-        icon: 'src/images/favicon.png'
+        orientation: 'any',
+        start_url: '/?homescreen=1',
+        short_name: 'mk',
+        version: '1.0',
+
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          opengraph: false,
+          twitter: false,
+          yandex: false,
+          windows: false
+        }
       }
     },
     'gatsby-plugin-react-helmet',
