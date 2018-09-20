@@ -17,10 +17,6 @@
             width: .7rem;
             height: .7rem;
         }
-
-        :global(.dark) & {
-            fill: $brand-grey;
-        }
     }
 }
 
@@ -54,24 +50,11 @@ $knob-space: 1px;
         transition: transform .2s $easing;
         transform: translate3d(0, 0, 0);
     }
-
-    :global(.dark) & {
-        border-color: $brand-grey;
-
-        &::after {
-            background-color: $brand-grey;
-        }
-    }
 }
 
 .checkbox {
     position: relative;
     cursor: pointer;
-    opacity: .6;
-
-    :global(.dark) & {
-        opacity: .8;
-    }
 
     [type='checkbox'],
     .label {
