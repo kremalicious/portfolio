@@ -103,10 +103,16 @@ If you want to know how, have a look at the respective component under [`src/com
 
 ## ✨ Development
 
+You can simply use [Docker](https://www.docker.com) & [Docker Compose](https://docs.docker.com/compose/) or install and run dependencies on your local system.
+
 ```bash
 git clone git@github.com:kremalicious/portfolio.git
 cd portfolio/
 
+# use Docker
+docker-compose up
+
+# or go with local system
 npm i
 npm start
 ```
