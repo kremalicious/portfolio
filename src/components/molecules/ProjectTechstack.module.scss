@@ -25,7 +25,7 @@
 
         :global(.dark) & {
             background: darken($body-background-color--dark, 1%);
-            color: $brand-grey;
+            color: $text-color--dark;
         }
     }
 }
