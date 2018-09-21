@@ -22,6 +22,4 @@ WORKDIR /portfolio
 
 COPY package.json .
 
-RUN npm install --quiet && npm cache clean --force
-
-#CMD [ "npm", "run", "dev" ]
+RUN npm install && npm cache clean --force
