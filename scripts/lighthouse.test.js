@@ -1,7 +1,7 @@
-const chromeLauncher = require('chrome-launcher')
-const { test } = require('ava')
-const lighthouse = require('lighthouse')
-const { siteUrl } = require('../gatsby-config').siteMetadata
+import * as chromeLauncher from 'chrome-launcher'
+import { test } from 'ava'
+import lighthouse from 'lighthouse'
+import { siteMetadata } from '../gatsby-config'
 
 const launchChromeAndRunLighthouse = (
   url,
@@ -17,8 +17,8 @@ const launchChromeAndRunLighthouse = (
 
 let scores
 test.before(async () => {
-  console.log(`Auditing ${siteUrl}.\n`) // eslint-disable-line no-console
-  scores = await launchChromeAndRunLighthouse(siteUrl).then(
+  console.log(`Auditing ${siteMetadata.siteUrl}.\n`) // eslint-disable-line no-console
+  scores = await launchChromeAndRunLighthouse(siteMetadata.siteUrl).then(
     ({ categories }) => categories
   )
 })
@@ -26,7 +26,7 @@ test.before(async () => {
 const logScore = score => `Is ${score * 100}.`
 
 const testOutput = (t, metric) => {
-  const score = scores[metric].score
+  const { score } = scores[metric]
   t.log(logScore(score))
   return score >= 0.9 ? t.pass() : t.fail()
 }

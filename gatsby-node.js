@@ -21,19 +21,15 @@ exports.createPages = async ({ actions, graphql }) => {
           }
         }
       `).then(result => {
-        if (result.errors) {
-          reject(result.errors)
-        }
+        if (result.errors) reject(result.errors)
 
         result.data.allProjectsYaml.edges.forEach(({ node }) => {
-          const slug = node.slug
+          const { slug } = node
 
           createPage({
             path: slug,
             component: template,
-            context: {
-              slug
-            }
+            context: { slug }
           })
         })
 

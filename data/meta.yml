@@ -1,4 +1,3 @@
----
 title: Matthias Kretschmann
 tagline: Designer & Developer
 description: Portfolio of web &amp; ui designer/developer hybrid Matthias Kretschmann.
@@ -16,7 +15,7 @@ social:
 
 availability:
   status: false
-  available: "👔 Available for new projects. <a href=\"mailto:m@kretschmann.io\">Let’s talk</a>!"
+  available: '👔 Available for new projects. <a href="mailto:m@kretschmann.io">Let’s talk</a>!'
   unavailable: Not available for new projects.
 
 # Footer actions

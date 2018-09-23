@@ -1,12 +1,10 @@
--
-
-  title: TITLE
-  slug: "/SLUG/"
-  img: "../src/images/portfolio-SLUG-01.png"
+- title: TITLE
+  slug: '/SLUG/'
+  img: '../src/images/portfolio-SLUG-01.png'
   description: >
     Markdown can be used here.
   links:
-  - title: Link
-    url: https://url
+    - title: Link
+      url: https://url
   techstack:
-  - Tech used
+    - Tech used

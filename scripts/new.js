@@ -1,8 +1,8 @@
-const fs = require('fs')
-const path = require('path')
-const prepend = require('prepend')
-const slugify = require('slugify')
-const ora = require('ora')
+import fs from 'fs'
+import path from 'path'
+import prepend from 'prepend'
+import slugify from 'slugify'
+import ora from 'ora'
 
 const templatePath = path.join(__dirname, 'new.yml')
 const template = fs.readFileSync(templatePath).toString()
@@ -11,7 +11,6 @@ const spinner = ora('Adding new project').start()
 
 if (!process.argv[2]) {
   spinner.fail('Use the format `npm run new -- Title of project`')
-  return
 }
 
 const title = process.argv[2]
@@ -26,8 +25,6 @@ const newContents = template
   .join(titleSlug)
 
 prepend(projects, newContents, error => {
-  if (error) {
-    spinner.fail(error)
-  }
+  if (error) spinner.fail(error)
   spinner.succeed(`Added '${title}' to top of projects.yml file.`)
 })
