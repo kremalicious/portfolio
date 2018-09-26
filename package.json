@@ -53,7 +53,7 @@
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "ava": "^0.25.0",
-    "babel-eslint": "^9.0.0",
+    "babel-eslint": "^10.0.0",
     "chrome-launcher": "^0.10.4",
     "eslint": "^5.6.0",
     "eslint-config-prettier": "^3.1.0",
