@@ -1,6 +1,6 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import FileSaver from 'file-saver'
+import saveAs from 'file-saver'
 import vCard from 'vcf'
 
 const query = graphql`
@@ -61,7 +61,7 @@ const Vcard = () => (
 const downloadVcard = (vcard, meta) => {
   const name = meta.addressbook.split('/').join('')
   const blob = new Blob([vcard], { type: 'text/x-vcard' })
-  FileSaver.saveAs(blob, name)
+  saveAs(blob, name)
 }
 
 const constructVcard = meta => {
