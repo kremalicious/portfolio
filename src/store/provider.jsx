@@ -68,13 +68,13 @@ export default class AppProvider extends PureComponent {
   //
   darkMode() {
     const now = new Date().getHours()
-
+    const { location } = this.state
     // fallback times, in hours
     let sunrise = 7
     let sunset = 19
 
     // times based on detected country code
-    if (this.state.location && this.state.location !== 'XX') {
+    if (location && location !== 'XX' && location !== 'T1') {
       const country = this.state.location.toLowerCase()
       const times = SunCalc.getTimes(
         new Date(),
