@@ -25,7 +25,7 @@ ThemeToggle.propTypes = {
 
 const ThemeToggleInput = ({ dark, toggleDark }) => (
   <input
-    onChange={toggleDark}
+    onChange={toggleDark()}
     type="checkbox"
     name="toggle"
     value="toggle"
