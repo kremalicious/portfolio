@@ -22,8 +22,8 @@
   },
   "dependencies": {
     "file-saver": "^2.0.0-rc.3",
-    "gatsby": "^2.0.20",
-    "gatsby-image": "^2.0.13",
+    "gatsby": "^2.0.22",
+    "gatsby-image": "^2.0.14",
     "gatsby-plugin-favicon": "^3.1.4",
     "gatsby-plugin-matomo": "^0.5.0",
     "gatsby-plugin-offline": "^2.0.6",
@@ -44,7 +44,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
-    "react-markdown": "^4.0.2",
+    "react-markdown": "^4.0.3",
     "react-pose": "^3.3.6",
     "suncalc": "^1.8.0",
     "vcf": "^2.0.1"
@@ -56,7 +56,7 @@
     "ava": "^0.25.0",
     "babel-eslint": "^10.0.0",
     "chrome-launcher": "^0.10.5",
-    "eslint": "^5.6.1",
+    "eslint": "^5.7.0",
     "eslint-config-prettier": "^3.1.0",
     "eslint-loader": "^2.1.0",
     "eslint-plugin-graphql": "^2.1.1",
