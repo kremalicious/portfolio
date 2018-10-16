@@ -1,6 +1,17 @@
 @import 'variables';
 
 .screen {
-    flex: 1;
-    padding: $spacer;
+    margin-top: $spacer * $line-height;
+
+    > article {
+        display: grid;
+        grid-template-columns:
+            [full-start] minmax($spacer, 1fr)
+            [main-start] minmax(0, $screen-sm) [main-end]
+            minmax($spacer, 1fr) [full-end];
+
+        > * {
+            grid-column: main;
+        }
+    }
 }

@@ -2,29 +2,26 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import ProjectImage from '../components/molecules/ProjectImage'
-import FullWidth from '../components/atoms/FullWidth'
 import styles from './index.module.scss'
 
 const Home = ({ data }) => {
   const projects = data.allProjectsYaml.edges
 
   return (
-    <FullWidth>
-      <div className={styles.projects}>
-        {projects.map(({ node }) => {
-          const { slug, title, img } = node
+    <div className={styles.projects}>
+      {projects.map(({ node }) => {
+        const { slug, title, img } = node
 
-          return (
-            <article className={styles.project} key={slug}>
-              <Link to={slug}>
-                <h1 className={styles.title}>{title}</h1>
-                <ProjectImage fluid={img.childImageSharp.fluid} alt={title} />
-              </Link>
-            </article>
-          )
-        })}
-      </div>
-    </FullWidth>
+        return (
+          <article className={styles.project} key={slug}>
+            <Link to={slug}>
+              <h1 className={styles.title}>{title}</h1>
+              <ProjectImage fluid={img.childImageSharp.fluid} alt={title} />
+            </Link>
+          </article>
+        )
+      })}
+    </div>
   )
 }
 

@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import giphyAPI from 'giphy-js-sdk-core'
-import Content from '../components/atoms/Content'
 import Button from '../components/atoms/Button'
-import './404.scss'
+import styles from './404.module.scss'
 
 // Famous last words:
 // "It's just the 404 page so why not expose the dev API key"
@@ -41,7 +40,7 @@ export default class NotFound extends Component {
 
   render() {
     return (
-      <Content className="content content--404">
+      <article className={styles.content}>
         <h1>Shenanigans, page not found.</h1>
         <p>
           You might want to check the url, or{' '}
@@ -56,7 +55,7 @@ export default class NotFound extends Component {
             Show me another cat fail gif
           </Button>
         </div>
-      </Content>
+      </article>
     )
   }
 }

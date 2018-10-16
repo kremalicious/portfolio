@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import ReactMarkdown from 'react-markdown'
 import { graphql } from 'gatsby'
-import Content from '../components/atoms/Content'
 import FullWidth from '../components/atoms/FullWidth'
 import ProjectImage from '../components/molecules/ProjectImage'
 import ProjectTechstack from '../components/molecules/ProjectTechstack'
@@ -43,16 +42,16 @@ const Project = ({ data }) => {
 
       <SEO project={project} />
 
-      <article className={styles.project}>
-        <Content>
+      <article>
+        <header>
           <h1 className={styles.project__title}>{title}</h1>
-          <ReactMarkdown
-            source={descriptionWithLineBreaks}
-            className={styles.project__description}
-          />
-          <ProjectImages projectImages={projectImages} title={title} />
-          <ProjectMeta links={links} techstack={techstack} />
-        </Content>
+        </header>
+        <ReactMarkdown
+          source={descriptionWithLineBreaks}
+          className={styles.project__description}
+        />
+        <ProjectImages projectImages={projectImages} title={title} />
+        <ProjectMeta links={links} techstack={techstack} />
       </article>
 
       <ProjectNav slug={project.slug} />
