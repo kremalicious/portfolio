@@ -3,18 +3,15 @@
 .projectLinks {
     ul {
         padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: -($spacer / 2);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: $spacer / 2;
     }
 
     li {
         display: flex;
         align-items: center;
         justify-content: center;
-        flex: 0 0 calc(50% - #{$spacer / 2});
-        margin-left: $spacer / 2;
-        margin-bottom: $spacer / 2;
     }
 
     a {

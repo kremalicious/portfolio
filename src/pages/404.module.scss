@@ -1,19 +1,18 @@
 @import 'variables';
 
-.content--404 {
+.content {
     text-align: center;
     height: 100%;
     max-width: 35rem;
     margin-left: auto;
     margin-right: auto;
 
-    .gif {
-        display: inline-block;
+    video {
+        display: block;
         width: auto;
         height: 300px;
         box-shadow: 0 3px 5px rgba($brand-main, .15),
             0 5px 16px rgba($brand-main, .15);
-        margin-top: $spacer / 4;
-        margin-bottom: $spacer / 2;
+        margin: $spacer / 4 auto $spacer / 2 auto;
     }
 }

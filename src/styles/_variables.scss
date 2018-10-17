@@ -67,3 +67,11 @@ $color-headings--dark: $brand-main-light;
 /////////////////////////////////////
 
 $spacer: ($font-size-base * $line-height);
+
+// Responsive breakpoints
+/////////////////////////////////////
+
+$screen-xs: 30em;
+$screen-sm: 40em;
+$screen-md: 60em;
+$screen-lg: 70em;

@@ -3,9 +3,9 @@
 .projectTechstack {
     ul {
         padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: -($spacer / 2);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: $spacer / 2;
     }
 
     li {
@@ -18,9 +18,6 @@
         border-radius: .25rem;
         border: .05rem solid transparent;
         color: $brand-grey-light;
-        margin-left: $spacer / 2;
-        margin-bottom: $spacer / 2;
-        flex: 0 0 calc(50% - #{$spacer / 2});
         font-size: $font-size-small;
 
         :global(.dark) & {

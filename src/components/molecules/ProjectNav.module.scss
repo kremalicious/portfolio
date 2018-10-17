@@ -4,7 +4,7 @@
     // composes: fullWidth from '../atoms/FullWidth.module.scss';
     white-space: nowrap;
     overflow-y: hidden;
-    overflow-x: scroll;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 
     &::-webkit-scrollbar,
@@ -22,7 +22,7 @@
         margin-right: $spacer * 2;
     }
 
-    @media (min-width: 30rem) {
+    @media (min-width: $screen-xs) {
         width: 40vw;
         max-width: 500px;
         margin-left: $spacer * 2;

@@ -1,13 +1,15 @@
 @import 'variables';
 
 .projects {
-    @media (min-width: 55rem) {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: $spacer * 3;
+
+    @media (min-width: $screen-md) {
+        grid-template-columns: 1fr 1fr;
         max-width: calc(#{$projectImageMaxWidth} + #{$spacer * 2});
         margin: 0 auto;
-        padding: $spacer $spacer * 2;
+        padding: $spacer $spacer * 3;
     }
 }
 
@@ -26,23 +28,11 @@
 }
 
 .project {
-    flex: 0 0 calc(50% - #{$spacer});
-    text-align: center;
-    margin-bottom: $spacer * 6;
     position: relative;
-
-    @media (min-width: 55rem) {
-        margin-bottom: $spacer * 2;
-    }
-
-    &:last-child {
-        margin-bottom: 0;
-    }
 
     a {
         display: block;
         position: relative;
-        margin: 0 auto;
 
         &::after {
             content: '';
