@@ -1,7 +1,7 @@
 @import 'variables';
 @import '../components/molecules/ProjectImage.module';
 
-.spacer {
+.imageWrap {
     margin-bottom: $spacer * 3;
 
     @media (min-width: $screen-xs) {
@@ -9,7 +9,7 @@
     }
 }
 
-.project__title {
+.title {
     font-size: $font-size-h2;
 
     @media (min-width: $screen-xs) {
@@ -17,12 +17,12 @@
     }
 }
 
-.project__description {
+.description {
     font-size: $font-size-base;
     margin-bottom: $spacer * 2;
 }
 
-.project__meta {
+.meta {
     margin-top: -($spacer);
     margin-bottom: $spacer * 5;
     display: grid;
@@ -35,7 +35,7 @@
     }
 }
 
-.project__meta__title {
+.metaTitle {
     font-size: $font-size-h3;
     margin-bottom: $spacer * 1.5;
 

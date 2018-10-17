@@ -9,11 +9,10 @@ import ProjectTechstack from '../components/molecules/ProjectTechstack'
 import ProjectLinks from '../components/molecules/ProjectLinks'
 import ProjectNav from '../components/molecules/ProjectNav'
 import SEO from '../components/atoms/SEO'
-
 import styles from './Project.module.scss'
 
 const ProjectMeta = ({ links, techstack }) => (
-  <footer className={styles.project__meta}>
+  <footer className={styles.meta}>
     {!!links && <ProjectLinks links={links} />}
     {!!techstack && <ProjectTechstack techstack={techstack} />}
   </footer>
@@ -22,7 +21,7 @@ const ProjectMeta = ({ links, techstack }) => (
 const ProjectImages = ({ projectImages, title }) => (
   <FullWidth>
     {projectImages.map(({ node }) => (
-      <div className={styles.spacer} key={node.id}>
+      <div className={styles.imageWrap} key={node.id}>
         <ProjectImage fluid={node.fluid} alt={title} />
       </div>
     ))}
@@ -44,11 +43,11 @@ const Project = ({ data }) => {
 
       <article>
         <header>
-          <h1 className={styles.project__title}>{title}</h1>
+          <h1 className={styles.title}>{title}</h1>
         </header>
         <ReactMarkdown
           source={descriptionWithLineBreaks}
-          className={styles.project__description}
+          className={styles.description}
         />
         <ProjectImages projectImages={projectImages} title={title} />
         <ProjectMeta links={links} techstack={techstack} />
