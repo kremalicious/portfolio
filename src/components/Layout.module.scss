@@ -7,7 +7,7 @@
         display: grid;
         grid-template-columns:
             [full-start] minmax($spacer, 1fr)
-            [main-start] minmax(0, $screen-sm) [main-end]
+            [main-start] minmax(0, 38rem) [main-end]
             minmax($spacer, 1fr) [full-end];
 
         > * {

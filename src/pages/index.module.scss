@@ -3,11 +3,10 @@
 .projects {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: $spacer * 6;
+    grid-gap: $spacer * 3;
 
     @media (min-width: $screen-md) {
         grid-template-columns: 1fr 1fr;
-        grid-gap: $spacer * 3;
         max-width: calc(#{$projectImageMaxWidth} + #{$spacer * 2});
         margin: 0 auto;
         padding: $spacer $spacer * 3;

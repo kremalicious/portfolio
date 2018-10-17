@@ -21,16 +21,14 @@ export default class NotFound extends Component {
     this.getRandomGif()
   }
 
-  getRandomGif() {
-    giphyClient
-      .random('gifs', { tag })
-      .then(response => {
-        const gif = response.data.images.original.mp4
-        this.setState({ gif })
-      })
-      .catch(err => {
-        return err
-      })
+  async getRandomGif() {
+    try {
+      let response = await giphyClient.random('gifs', { tag })
+      const gif = response.data.images.original.mp4
+      this.setState({ gif })
+    } catch (error) {
+      return error
+    }
   }
 
   handleClick = e => {
@@ -44,16 +42,16 @@ export default class NotFound extends Component {
         <h1>Shenanigans, page not found.</h1>
         <p>
           You might want to check the url, or{' '}
-          <Link to={'/'}>go back to the homepage</Link>. Or just check out some
-          cat fail gifs, entirely your choice.
+          <Link to={'/'}>go back to the homepage</Link>. Or just check out some{' '}
+          {tag} gifs, entirely your choice.
         </p>
 
         <video className="gif" src={this.state.gif} autoPlay loop />
 
         <div>
-          <Button onClick={this.handleClick}>
-            Show me another cat fail gif
-          </Button>
+          <Button
+            onClick={this.handleClick}
+          >{`Get another '${tag}' gif`}</Button>
         </div>
       </article>
     )

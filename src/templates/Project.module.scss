@@ -19,14 +19,15 @@
 
 .project__description {
     font-size: $font-size-base;
-    margin-bottom: $spacer * 3;
+    margin-bottom: $spacer * 2;
 }
 
 .project__meta {
+    margin-top: -($spacer);
     margin-bottom: $spacer * 5;
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: $spacer;
+    grid-gap: $spacer * 2;
 
     @media (min-width: $screen-sm) {
         grid-template-columns: 1fr 1fr;
