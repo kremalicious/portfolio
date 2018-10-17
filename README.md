@@ -45,35 +45,56 @@ The whole [portfolio](https://matthiaskretschmann.com) is a React-based Single P
 
 ### 💍 One data file to rule all pages
 
-All content is powered by one YAML file, [`data/projects.yml`](data/projects.yml) where all the portfolio's projects are defined. The project description itself is transformed from Markdown.
+All content is powered by one YAML file where all the portfolio's projects are defined. The project description itself is transformed from Markdown written inside the YAML file.
 
-Gatsby automatically creates pages from each item in that file utilizing the [`src/templates/Project.jsx`](src/templates/Project.jsx) template.
+Gatsby automatically creates pages from each item in that file utilizing the [`Project.jsx`](src/templates/Project.jsx) template.
+
+- [`data/projects.yml`](data/projects.yml)
+- [`src/templates/Project.jsx`](src/templates/Project.jsx)
 
 ### 💅 Theme switcher
 
 Includes a theme switcher which allows user to toggle between a light and a dark theme. Switching between them also happens automatically based on user's local sunset and sunrise times. Uses Cloudflare's geo location HTTP header functionality.
 
-If you want to know how, have a look at the respective component under [`src/components/molecules/ThemeSwitch.jsx`](src/components/molecules/ThemeSwitch.jsx)
+If a visitor has set the theme manually that selection is remembered in localStorage, and is restored on next visit.
+
+If you want to know how, have a look at the respective components:
+
+- [`src/components/molecules/ThemeSwitch.jsx`](src/components/molecules/ThemeSwitch.jsx)
+- [`src/store/provider.jsx`](src/store/provider.jsx)
 
 ### 🏆 SEO component
 
 Includes a SEO component which automatically switches all required `meta` tags for search engines, Twitter Cards, and Facebook OpenGraph tags based on the browsed route/page.
 
-If you want to know how, have a look at the respective component under [`src/components/atoms/SEO.jsx`](src/components/atoms/SEO.jsx)
+If you want to know how, have a look at the respective component:
+
+- [`src/components/atoms/SEO.jsx`](src/components/atoms/SEO.jsx)
 
 ### 📇 Client-side vCard creation
 
 The _Add to addressbook_ link in the footer automatically creates a downloadable vCard file on the client-side, based on data defined in `data/meta.yml`.
 
-If you want to know how, have a look at the respective component under [`src/components/atoms/Vcard.jsx`](src/components/atoms/Vcard.jsx)
+If you want to know how, have a look at the respective component:
+
+- [`src/components/atoms/Vcard.jsx`](src/components/atoms/Vcard.jsx)
 
 ### 💫 Page transitions
 
 Includes mechanism for transitioning between route changes with full page transitions defined with [react-pose](https://popmotion.io/pose/). Mechanism ~~stolen~~ inspired by [gatsby-universal](https://github.com/fabe/gatsby-universal).
 
+If you want to know how, have a look at the respective components:
+
+- [`src/components/Layout.jsx`](src/components/Layout.jsx)
+- [`src/helpers/wrapPageElement.jsx`](src/helpers/wrapPageElement.jsx)
+- [`gatsby-browser.js`](gatsby-browser.js)
+- [`gatsby-ssr.js`](gatsby-ssr.js)
+
 ### 📈 Matomo (formerly Piwik) analytics tracking
 
 Site sends usage statistics to my own [Matomo](https://matomo.org) installation. To make this work in Gatsby, I created and open sourced a plugin, [gatsby-plugin-matomo](https://github.com/kremalicious/gatsby-plugin-matomo), which is in use on this site.
+
+- [gatsby-plugin-matomo](https://github.com/kremalicious/gatsby-plugin-matomo)
 
 ### 🖼 Project images
 
@@ -83,7 +104,9 @@ All project images make use of the excellent [gatsby-image](https://github.com/g
 
 All together, Gatsby automatically generates all required image sizes for delivering responsible, responsive images to visitors, including lazy loading of all images. Also includes the [intersection-observer polyfill](https://github.com/w3c/IntersectionObserver) to make lazy loading work properly in Safari.
 
-All project images use one single component defined in [`src/components/molecules/ProjectImage.jsx`](src/components/molecules/ProjectImage.jsx). In there, one main GraphQL query fragment is defined, which then gets used throughout other GraphQL queries.
+All project images use one single component where one main GraphQL query fragment is defined, which then gets used throughout other GraphQL queries.
+
+- [`src/components/molecules/ProjectImage.jsx`](src/components/molecules/ProjectImage.jsx)
 
 ### 💎 Importing SVG assets
 
@@ -99,7 +122,9 @@ import { ReactComponent as Logo } from './components/svg/Logo'
 
 Includes a component for adding the Typekit snippet.
 
-If you want to know how, have a look at the respective component under [`src/components/atoms/Typekit.jsx`](src/components/atoms/Typekit.jsx)
+If you want to know how, have a look at the respective component:
+
+- [`src/components/atoms/Typekit.jsx`](src/components/atoms/Typekit.jsx)
 
 ## ✨ Development
 
