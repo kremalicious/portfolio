@@ -11,6 +11,28 @@
     &::-moz-scrollbar {
         display: none;
     }
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: lighten($brand-grey-light, 25%);
+
+        :global(.dark) & {
+            background: lighten($body-background-color--dark, 15%);
+        }
+    }
+
+    // stylelint-disable-next-line no-descending-specificity
+    &::-webkit-scrollbar-track {
+        background: darken($body-background-color, 2%);
+
+        :global(.dark) & {
+            background: lighten($body-background-color--dark, 2%);
+        }
+    }
 }
 
 .item {
