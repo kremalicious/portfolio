@@ -45,7 +45,7 @@
     "react-dom": "^16.6.0",
     "react-helmet": "^5.2.0",
     "react-markdown": "^4.0.3",
-    "react-pose": "^3.3.7",
+    "react-pose": "^4.0.0",
     "suncalc": "^1.8.0",
     "vcf": "^2.0.1"
   },
