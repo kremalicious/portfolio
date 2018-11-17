@@ -1,21 +1,25 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styles from './ProjectImage.module.scss'
 
-const ProjectImage = ({ fluid, alt }) => (
-  <Img
-    className={styles.projectImage}
-    backgroundColor="#6b7f88"
-    fluid={fluid}
-    alt={alt}
-  />
-)
+export default class ProjectImage extends PureComponent {
+  static propTypes = {
+    fluid: PropTypes.object.isRequired,
+    alt: PropTypes.string
+  }
 
-ProjectImage.propTypes = {
-  fluid: PropTypes.object.isRequired,
-  alt: PropTypes.string
+  render() {
+    return (
+      <Img
+        className={styles.projectImage}
+        backgroundColor="#6b7f88"
+        fluid={this.props.fluid}
+        alt={this.props.alt}
+      />
+    )
+  }
 }
 
 export const projectImage = graphql`
@@ -25,5 +29,3 @@ export const projectImage = graphql`
     }
   }
 `
-
-export default ProjectImage
