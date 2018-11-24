@@ -84,6 +84,7 @@ export const projectAndProjectsQuery = graphql`
       links {
         title
         url
+        type
       }
       techstack
       img {

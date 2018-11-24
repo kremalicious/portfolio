@@ -8,16 +8,25 @@
 
     Initial website in collaboration with [Balance](https://balance.io/). Key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
   links:
-    - title: Link
+    - title: oceanprotocol.com
+      type: website
       url: https://oceanprotocol.com
+    - title: docs.oceanprotocol.com
+      type: website
+      url: https://docs.oceanprotocol.com
     - title: Styleguide
       url: https://oceanprotocol.com/art
-    - title: GitHub
+    - title: '@oceanprotocol/art'
+      type: github
       url: https://github.com/oceanprotocol/art
+    - title: '@oceanprotocol/docs'
+      type: github
+      url: https://github.com/oceanprotocol/docs
   techstack:
     - Sketch
     - Affinity Designer
     - React
+    - Gatsby
     - HTML
     - SCSS
     - JavaScript

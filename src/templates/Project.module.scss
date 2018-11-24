@@ -30,7 +30,7 @@
     grid-gap: $spacer * 2;
 
     @media (min-width: $screen-sm) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 2fr 3fr;
         grid-gap: $spacer * 2;
     }
 }

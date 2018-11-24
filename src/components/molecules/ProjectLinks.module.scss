@@ -3,20 +3,20 @@
 .projectLinks {
     ul {
         padding: 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: $spacer / 2;
     }
 
     li {
         display: flex;
         align-items: center;
-        justify-content: center;
+        white-space: nowrap;
+        margin-bottom: $spacer / 2.1;
     }
 
     a {
         display: block;
         width: 100%;
+        text-transform: none;
+        text-align: left;
     }
 }
 

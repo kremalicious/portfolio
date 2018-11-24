@@ -12,8 +12,27 @@ import { ReactComponent as Dribbble } from '../../images/dribbble.svg'
 import icons from '../atoms/Icons.module.scss'
 import styles from './ProjectLinks.module.scss'
 
-const LinkIcon = props => {
-  switch (props.title) {
+const LinkIcon = ({ title, type, ...props }) => {
+  if (type) {
+    switch (type) {
+      case 'website':
+        return <Link {...props} />
+      case 'github':
+        return <GitHub {...props} />
+      case 'dribbble':
+        return <Dribbble {...props} />
+      case 'info':
+        return <Info {...props} />
+      case 'download':
+        return <Download {...props} />
+      case 'styleguide':
+        return <Styleguide {...props} />
+      default:
+        return null
+    }
+  }
+
+  switch (title) {
     case 'Link':
       return <Link {...props} />
     case 'GitHub':
@@ -39,12 +58,12 @@ const ProjectLinks = ({ links }) => (
 
     <ul>
       {links.map(link => {
-        const { title, url } = link
+        const { title, url, type } = link
 
         return (
           <li key={title}>
             <Button href={url}>
-              <LinkIcon title={title} className={icons.icon} />
+              <LinkIcon title={title} type={type} className={icons.icon} />
               {title}
             </Button>
           </li>
