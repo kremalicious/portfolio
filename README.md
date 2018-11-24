@@ -1,9 +1,9 @@
 <p align="center">
   <a href="https://matthiaskretschmann.com"><img src="src/images/github-header.png" /></a>
  </p>
-<p align="center">
-  <strong>👔 Portfolio thingy, built with <a href="https://www.gatsbyjs.org">Gatsby</a>.</strong>
-</p>
+<h2 align="center">
+  👔 Portfolio thingy, built with <a href="https://www.gatsbyjs.org">Gatsby</a>.
+</h2>
 <p align="center">
   <a href="https://matthiaskretschmann.com">matthiaskretschmann.com</a>
 </p>
@@ -12,8 +12,6 @@
   <a href="https://codeclimate.com/github/kremalicious/portfolio/maintainability"><img src="https://api.codeclimate.com/v1/badges/8f561ec93e0f8c6b15d9/maintainability" /></a>
   <a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/kremalicious/portfolio.svg" /></a>
 </p>
-
-## Table of Contents
 
 - [🎉 Features](#-features)
   - [⛵️ Lighthouse score](#-lighthouse-score)
@@ -192,11 +190,11 @@ The deploymeng script can be used locally too, the branch checks are only happen
 
 ## 🏛 Licenses
 
-All images and projects are plain ol' copyright:
-
 **© Copyright 2018 Matthias Kretschmann**
 
-Most displayed projects are subject to the copyright of their respective owners.
+All images and projects are plain ol' copyright, most displayed projects are subject to the copyright of their respective owners.
+
+Don't care if you fork & play with it, but you're not allowed to publish anything from it as a whole without my written permission. Also please be aware, the combination of typography, colors & layout makes up my brand identity. So please don't just clone everything, but rather do a remix!
 
 All the rest, like all code and documentation, is under:
 
