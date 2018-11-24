@@ -57,6 +57,29 @@
                 color: #fff;
                 transform: translate3d(0, 0, 0);
             }
+
+            .imageCount {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
         }
+    }
+}
+
+.imageCount {
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    color: $brand-grey-dimmed;
+    font-size: $font-size-mini;
+    padding: $spacer / 6 $spacer / 2;
+    background: rgba($brand-cyan, .9);
+    z-index: 10;
+    opacity: 0;
+    transform: translate3d(0, $spacer / 2, 0);
+    transition: transform .25s ease-out;
+
+    svg {
+        fill: $brand-grey-dimmed;
     }
 }

@@ -10,7 +10,6 @@
 <p align="center">
   <a href="https://travis-ci.com/kremalicious/portfolio"><img src="https://travis-ci.com/kremalicious/portfolio.svg?branch=master" /></a>
   <a href="https://codeclimate.com/github/kremalicious/portfolio/maintainability"><img src="https://api.codeclimate.com/v1/badges/8f561ec93e0f8c6b15d9/maintainability" /></a>
-  <a href="https://www.codacy.com/app/kremalicious/portfolio?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kremalicious/portfolio&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/c3bccea20dfd49c59b3956afd60998d8"/></a>
   <a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/kremalicious/portfolio.svg" /></a>
 </p>
 

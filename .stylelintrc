@@ -7,6 +7,7 @@
   "syntax": "scss",
   "rules": {
       "indentation": 4,
-      "number-leading-zero": "never"
+      "number-leading-zero": "never",
+      "no-descending-specificity": null
   }
 }
