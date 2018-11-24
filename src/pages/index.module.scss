@@ -57,19 +57,29 @@
                 color: #fff;
                 transform: translate3d(0, 0, 0);
             }
+
+            .imageCount {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
         }
     }
 }
 
 .imageCount {
     position: absolute;
-    bottom: $spacer / 4;
-    right: $spacer / 2;
-    color: $brand-light;
+    bottom: 10%;
+    right: 0;
+    color: $brand-grey-dimmed;
     font-size: $font-size-mini;
-    opacity: .85;
+    padding: $spacer / 6 $spacer / 2;
+    background: rgba($brand-cyan, .9);
+    z-index: 10;
+    opacity: 0;
+    transform: translate3d(0, $spacer / 2, 0);
+    transition: transform .25s ease-out;
 
     svg {
-        fill: $brand-light;
+        fill: $brand-grey-dimmed;
     }
 }
