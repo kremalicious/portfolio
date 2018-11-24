@@ -1,8 +1,8 @@
-import React, { PureComponent, Fragment } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import posed, { PoseGroup } from 'react-pose'
 import { fadeIn } from './atoms/Transitions'
-import Head from './molecules/Head'
+import Typekit from './atoms/Typekit'
 import Header from './organisms/Header'
 import Footer from './organisms/Footer'
 import styles from './Layout.module.scss'
@@ -27,8 +27,9 @@ export default class Layout extends PureComponent {
     const RoutesContainer = posed.div(fadeIn)
 
     return (
-      <Fragment>
-        <Head />
+      <>
+        <Typekit />
+
         <PoseGroup animateOnMount={true}>
           <RoutesContainer
             key={location.pathname}
@@ -39,8 +40,9 @@ export default class Layout extends PureComponent {
             <main className={styles.screen}>{children}</main>
           </RoutesContainer>
         </PoseGroup>
+
         <Footer />
-      </Fragment>
+      </>
     )
   }
 }

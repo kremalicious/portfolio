@@ -1,6 +1,5 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import ReactMarkdown from 'react-markdown'
 import { graphql } from 'gatsby'
 import FullWidth from '../components/atoms/FullWidth'
@@ -36,9 +35,7 @@ const Project = ({ data }) => {
   const descriptionWithLineBreaks = description.split('\n').join('\n\n')
 
   return (
-    <Fragment>
-      <Helmet title={title} />
-
+    <>
       <SEO project={project} />
 
       <article>
@@ -54,7 +51,7 @@ const Project = ({ data }) => {
       </article>
 
       <ProjectNav slug={project.slug} />
-    </Fragment>
+    </>
   )
 }
 
