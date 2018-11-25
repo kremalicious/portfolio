@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import giphyAPI from 'giphy-js-sdk-core'
+import SEO from '../components/atoms/SEO'
 import Button from '../components/atoms/Button'
 import styles from './404.module.scss'
 
@@ -38,22 +39,26 @@ export default class NotFound extends Component {
 
   render() {
     return (
-      <article className={styles.content}>
-        <h1>Shenanigans, page not found.</h1>
-        <p>
-          You might want to check the url, or{' '}
-          <Link to={'/'}>go back to the homepage</Link>. Or just check out some{' '}
-          {tag} gifs, entirely your choice.
-        </p>
+      <>
+        <SEO />
 
-        <video className="gif" src={this.state.gif} autoPlay loop />
+        <article className={styles.content}>
+          <h1>Shenanigans, page not found.</h1>
+          <p>
+            You might want to check the url, or{' '}
+            <Link to={'/'}>go back to the homepage</Link>. Or just check out
+            some {tag} gifs, entirely your choice.
+          </p>
 
-        <div>
-          <Button
-            onClick={this.handleClick}
-          >{`Get another '${tag}' gif`}</Button>
-        </div>
-      </article>
+          <video className="gif" src={this.state.gif} autoPlay loop />
+
+          <div>
+            <Button
+              onClick={this.handleClick}
+            >{`Get another '${tag}' gif`}</Button>
+          </div>
+        </article>
+      </>
     )
   }
 }

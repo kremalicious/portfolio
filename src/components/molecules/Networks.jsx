@@ -27,20 +27,22 @@ const query = graphql`
   }
 `
 
-const NetworkIcon = props => {
-  switch (props.title) {
-    case 'Email':
-      return <Email {...props} />
-    case 'Blog':
-      return <Blog {...props} />
-    case 'Twitter':
-      return <Twitter {...props} />
-    case 'GitHub':
-      return <GitHub {...props} />
-    case 'Dribbble':
-      return <Dribbble {...props} />
-    default:
-      return null
+class NetworkIcon extends PureComponent {
+  render() {
+    switch (this.props.title) {
+      case 'Email':
+        return <Email {...this.props} />
+      case 'Blog':
+        return <Blog {...this.props} />
+      case 'Twitter':
+        return <Twitter {...this.props} />
+      case 'GitHub':
+        return <GitHub {...this.props} />
+      case 'Dribbble':
+        return <Dribbble {...this.props} />
+      default:
+        return null
+    }
   }
 }
 

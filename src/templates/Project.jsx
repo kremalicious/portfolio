@@ -1,7 +1,5 @@
-import React, { Fragment } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import ReactMarkdown from 'react-markdown'
 import { graphql } from 'gatsby'
 import FullWidth from '../components/atoms/FullWidth'
 import ProjectImage from '../components/molecules/ProjectImage'
@@ -11,12 +9,23 @@ import ProjectNav from '../components/molecules/ProjectNav'
 import SEO from '../components/atoms/SEO'
 import styles from './Project.module.scss'
 
-const ProjectMeta = ({ links, techstack }) => (
-  <footer className={styles.meta}>
-    {!!links && <ProjectLinks links={links} />}
-    {!!techstack && <ProjectTechstack techstack={techstack} />}
-  </footer>
-)
+class ProjectMeta extends PureComponent {
+  static propTypes = {
+    links: PropTypes.array,
+    techstack: PropTypes.array
+  }
+
+  render() {
+    const { links, techstack } = this.props
+
+    return (
+      <footer className={styles.meta}>
+        {!!links && <ProjectLinks links={links} />}
+        {!!techstack && <ProjectTechstack techstack={techstack} />}
+      </footer>
+    )
+  }
+}
 
 const ProjectImages = ({ projectImages, title }) => (
   <FullWidth>
@@ -28,52 +37,44 @@ const ProjectImages = ({ projectImages, title }) => (
   </FullWidth>
 )
 
-const Project = ({ data }) => {
-  const project = data.projectsYaml
-  const projectImages = data.projectImages.edges
-  const { title, links, techstack } = project
-  const description = data.projectsYaml.description
-  const descriptionWithLineBreaks = description.split('\n').join('\n\n')
-
-  return (
-    <Fragment>
-      <Helmet title={title} />
-
-      <SEO project={project} />
-
-      <article>
-        <header>
-          <h1 className={styles.title}>{title}</h1>
-        </header>
-        <ReactMarkdown
-          source={descriptionWithLineBreaks}
-          className={styles.description}
-        />
-        <ProjectImages projectImages={projectImages} title={title} />
-        <ProjectMeta links={links} techstack={techstack} />
-      </article>
-
-      <ProjectNav slug={project.slug} />
-    </Fragment>
-  )
-}
-
-ProjectMeta.propTypes = {
-  links: PropTypes.array,
-  techstack: PropTypes.array
-}
-
 ProjectImages.propTypes = {
   projectImages: PropTypes.array,
   title: PropTypes.string
 }
 
-Project.propTypes = {
-  data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
-}
+export default class Project extends PureComponent {
+  static propTypes = {
+    data: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired
+  }
 
-export default Project
+  render() {
+    const project = this.props.data.projectsYaml
+    const projectImages = this.props.data.projectImages.edges
+    const descriptionHtml = this.props.data.projectsYaml.fields.descriptionHtml
+    const { title, links, techstack } = project
+
+    return (
+      <>
+        <SEO project={project} />
+
+        <article>
+          <header>
+            <h1 className={styles.title}>{title}</h1>
+          </header>
+          <div
+            className={styles.description}
+            dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+          />
+          <ProjectImages projectImages={projectImages} title={title} />
+          <ProjectMeta links={links} techstack={techstack} />
+        </article>
+
+        <ProjectNav slug={project.slug} />
+      </>
+    )
+  }
+}
 
 export const projectAndProjectsQuery = graphql`
   query($slug: String!) {
@@ -81,6 +82,9 @@ export const projectAndProjectsQuery = graphql`
       title
       slug
       description
+      fields {
+        descriptionHtml
+      }
       links {
         title
         url

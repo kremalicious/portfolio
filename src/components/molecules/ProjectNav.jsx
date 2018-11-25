@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
@@ -24,18 +24,24 @@ const query = graphql`
   }
 `
 
-const ProjectLink = ({ node }) => (
-  <Link className={styles.link} to={node.slug}>
-    <Img
-      className={styles.image}
-      fluid={node.img.childImageSharp.fluid}
-      alt={node.title}
-    />
-    <h1 className={styles.title}>{node.title}</h1>
-  </Link>
-)
+class ProjectLink extends PureComponent {
+  render() {
+    const { node } = this.props
 
-export default class ProjectNav extends Component {
+    return (
+      <Link className={styles.link} to={node.slug}>
+        <Img
+          className={styles.image}
+          fluid={node.img.childImageSharp.fluid}
+          alt={node.title}
+        />
+        <h1 className={styles.title}>{node.title}</h1>
+      </Link>
+    )
+  }
+}
+
+export default class ProjectNav extends PureComponent {
   state = {
     scrolledToCurrent: false
   }

@@ -42,10 +42,11 @@ The whole [portfolio](https://matthiaskretschmann.com) is a React-based Single P
 
 ### 💍 One data file to rule all pages
 
-All content is powered by one YAML file where all the portfolio's projects are defined. The project description itself is transformed from Markdown written inside the YAML file.
+All content is powered by one YAML file where all the portfolio's projects are defined. The project description itself is transformed from Markdown written inside the YAML file int HTML on build time.
 
 Gatsby automatically creates pages from each item in that file utilizing the [`Project.jsx`](src/templates/Project.jsx) template.
 
+- [`gatsby-node.js`](gatsby-node.js)
 - [`data/projects.yml`](data/projects.yml)
 - [`src/templates/Project.jsx`](src/templates/Project.jsx)
 

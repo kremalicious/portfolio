@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
 import Vcard from '../atoms/Vcard'
 import LogoUnit from '../molecules/LogoUnit'
 import Networks from '../molecules/Networks'
@@ -23,32 +22,29 @@ const query = graphql`
   }
 `
 
-const FooterMarkup = ({ meta, pkg, year }) => (
-  <footer className={styles.footer}>
-    <LogoUnit minimal />
-    <Networks minimal />
-
-    <p className={styles.footer__actions}>
-      <Vcard />
-      <a href={meta.gpg}>PGP/GPG key</a>
-      <a href={pkg.bugs}>Found a bug?</a>
-    </p>
-    <p className={styles.footer__copyright}>
-      <small>
-        &copy; {year} {meta.title} &mdash; All Rights Reserved
-      </small>
-    </p>
-  </footer>
-)
-
-FooterMarkup.propTypes = {
-  meta: PropTypes.object,
-  pkg: PropTypes.object,
-  year: PropTypes.number
-}
-
 export default class Footer extends PureComponent {
   state = { year: new Date().getFullYear() }
+
+  FooterMarkup = ({ meta, pkg, year }) => (
+    <footer className={styles.footer}>
+      <Link to={'/'}>
+        <LogoUnit minimal />
+      </Link>
+
+      <Networks minimal />
+
+      <p className={styles.footer__actions}>
+        <Vcard />
+        <a href={meta.gpg}>PGP/GPG key</a>
+        <a href={pkg.bugs}>Found a bug?</a>
+      </p>
+      <p className={styles.footer__copyright}>
+        <small>
+          &copy; {year} {meta.title} &mdash; All Rights Reserved
+        </small>
+      </p>
+    </footer>
+  )
 
   render() {
     return (
@@ -58,7 +54,9 @@ export default class Footer extends PureComponent {
           const pkg = data.portfolioJson
           const meta = data.dataYaml
 
-          return <FooterMarkup year={this.state.year} pkg={pkg} meta={meta} />
+          return (
+            <this.FooterMarkup year={this.state.year} pkg={pkg} meta={meta} />
+          )
         }}
       />
     )
