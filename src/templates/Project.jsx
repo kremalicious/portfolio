@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ReactMarkdown from 'react-markdown'
 import { graphql } from 'gatsby'
 import FullWidth from '../components/atoms/FullWidth'
 import ProjectImage from '../components/molecules/ProjectImage'
@@ -42,9 +41,9 @@ const Project = ({ data }) => {
         <header>
           <h1 className={styles.title}>{title}</h1>
         </header>
-        <ReactMarkdown
-          source={descriptionWithLineBreaks}
+          <div
           className={styles.description}
+            dangerouslySetInnerHTML={{ __html: descriptionHtml }}
         />
         <ProjectImages projectImages={projectImages} title={title} />
         <ProjectMeta links={links} techstack={techstack} />
