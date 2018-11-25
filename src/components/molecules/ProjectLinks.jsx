@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import Button from '../atoms/Button'
@@ -50,31 +50,33 @@ const LinkIcon = ({ title, type, ...props }) => {
   }
 }
 
-const ProjectLinks = ({ links }) => (
-  <div className={styles.projectLinks}>
-    <h3 className={styles.title}>
-      Links <span>Learn more on the interwebz.</span>
-    </h3>
+export default class ProjectLinks extends PureComponent {
+  static propTypes = {
+    links: PropTypes.array
+  }
 
-    <ul>
-      {links.map(link => {
-        const { title, url, type } = link
+  render() {
+    return (
+      <div className={styles.projectLinks}>
+        <h3 className={styles.title}>
+          Links <span>Learn more on the interwebz.</span>
+        </h3>
 
-        return (
-          <li key={title}>
-            <Button href={url}>
-              <LinkIcon title={title} type={type} className={icons.icon} />
-              {title}
-            </Button>
-          </li>
-        )
-      })}
-    </ul>
-  </div>
-)
+        <ul>
+          {this.props.links.map(link => {
+            const { title, url, type } = link
 
-ProjectLinks.propTypes = {
-  links: PropTypes.array
+            return (
+              <li key={title}>
+                <Button href={url}>
+                  <LinkIcon title={title} type={type} className={icons.icon} />
+                  {title}
+                </Button>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+    )
+  }
 }
-
-export default ProjectLinks

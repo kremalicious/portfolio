@@ -34,7 +34,6 @@ const Typekit = () => (
       return (
         typekitID && (
           <Helmet>
-            <link rel="dns-prefetch" href="https://use.typekit.net/" />
             <link rel="dns-prefetch" href="https://p.typekit.net/" />
 
             {TypekitScript(typekitID)}

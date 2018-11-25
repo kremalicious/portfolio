@@ -18,6 +18,10 @@ const query = graphql`
 `
 
 export default class Header extends PureComponent {
+  static propTypes = {
+    minimal: PropTypes.bool
+  }
+
   state = { isMinimal: this.props.minimal }
 
   checkMinimal = () => {
@@ -60,8 +64,4 @@ export default class Header extends PureComponent {
       />
     )
   }
-}
-
-Header.propTypes = {
-  minimal: PropTypes.bool
 }
