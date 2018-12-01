@@ -6,13 +6,32 @@
 # AWS_DEFAULT_REGION
 AWS_S3_BUCKET="matthiaskretschmann.com"
 AWS_S3_BUCKET_BETA="beta.matthiaskretschmann.com"
+SITEMAP_URL="https%3A%2F%2Fmatthiaskretschmann.com%2Fsitemap.xml"
 #
 set -e;
 
 function s3sync {
-  aws s3 sync ./public s3://"$1" --exclude "*.html" --exclude "*.js" --cache-control max-age=31536000,public --delete --acl public-read
+  aws s3 sync ./public s3://"$1" \
+    --exclude "*" \
+    --include "*.js" \
+    --include "*.css" \
+    --include "static/*" \
+    --include "icons/*" \
+    --exclude "sw.js" \
+    --exclude "workbox*/*" \
+    --cache-control public,max-age=31536000,immutable \
+    --delete \
+    --acl public-read \
+    --quiet
 
-  aws s3 sync ./public s3://"$1" --exclude "*" --include "*.html" --include "*.js" --cache-control max-age=0,no-cache,no-store,must-revalidate --delete --acl public-read
+  aws s3 sync ./public s3://"$1" \
+    --exclude "*" \
+    --include "*.html" \
+    --include "sw.js" \
+    --cache-control public,max-age=0,must-revalidate \
+    --delete \
+    --acl public-read \
+    --quiet
 }
 
 ##
@@ -28,6 +47,12 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; th
 elif [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] || [ "$TRAVIS" != true ]; then
 
   s3sync $AWS_S3_BUCKET
+
+    # ping search engines
+  # returns: HTTP_STATUSCODE URL
+  curl -sL -w "%{http_code} %{url_effective}\\n" \
+    "http://www.google.com/webmasters/tools/ping?sitemap=$SITEMAP_URL" -o /dev/null \
+    "http://www.bing.com/webmaster/ping.aspx?siteMap=$SITEMAP_URL" -o /dev/null
 
   echo "---------------------------------------------"
   echo "         ✓ done deployment "
