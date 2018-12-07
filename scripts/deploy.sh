@@ -21,8 +21,7 @@ function s3sync {
     --exclude "workbox*/*" \
     --cache-control public,max-age=31536000,immutable \
     --delete \
-    --acl public-read \
-    --quiet
+    --acl public-read
 
   aws s3 sync ./public s3://"$1" \
     --exclude "*" \
@@ -30,8 +29,7 @@ function s3sync {
     --include "sw.js" \
     --cache-control public,max-age=0,must-revalidate \
     --delete \
-    --acl public-read \
-    --quiet
+    --acl public-read
 }
 
 ##
