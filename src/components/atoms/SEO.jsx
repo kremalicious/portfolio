@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
@@ -43,59 +43,63 @@ const query = graphql`
   }
 `
 
-const SEO = ({ project }) => (
-  <StaticQuery
-    query={query}
-    render={data => {
-      const meta = data.dataYaml
+export default class SEO extends PureComponent {
+  static propTypes = {
+    project: PropTypes.object
+  }
 
-      const title = project.title || meta.title
-      const description = project.description
-        ? truncate.apply(project.description, [320, true])
-        : truncate.apply(meta.description, [320, true])
-      const image = project.img
-        ? project.img.childImageSharp.twitterImage.src
-        : meta.img.childImageSharp.resize.src
-      const url = project.slug ? `${meta.url}${project.slug}` : meta.url
+  static defaultProps = {
+    project: {}
+  }
 
-      return (
-        <Helmet
-          defaultTitle={`${meta.title.toLowerCase()} { ${meta.tagline.toLowerCase()} }`}
-          titleTemplate={`%s // ${meta.title.toLowerCase()} { ${meta.tagline.toLowerCase()} }`}
-        >
-          <html lang="en" />
+  render() {
+    const { project } = this.props
 
-          <title>{title}</title>
+    return (
+      <StaticQuery
+        query={query}
+        render={data => {
+          const meta = data.dataYaml
 
-          {/* General tags */}
-          <meta name="description" content={description} />
-          <meta name="image" content={`${meta.url}${image}`} />
-          <link rel="canonical" href={url} />
+          const title = project.title || meta.title
+          const description = project.description
+            ? truncate.apply(project.description, [320, true])
+            : truncate.apply(meta.description, [320, true])
+          const image = project.img
+            ? project.img.childImageSharp.twitterImage.src
+            : meta.img.childImageSharp.resize.src
+          const url = project.slug ? `${meta.url}${project.slug}` : meta.url
 
-          {/* OpenGraph tags */}
-          <meta property="og:url" content={url} />
-          <meta property="og:title" content={title} />
-          <meta property="og:description" content={description} />
-          <meta property="og:image" content={`${meta.url}${image}`} />
+          return (
+            <Helmet
+              defaultTitle={`${meta.title.toLowerCase()} { ${meta.tagline.toLowerCase()} }`}
+              titleTemplate={`%s // ${meta.title.toLowerCase()} { ${meta.tagline.toLowerCase()} }`}
+            >
+              <html lang="en" />
 
-          {/* Twitter Card tags */}
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:creator" content={meta.social.Twitter} />
-          <meta name="twitter:title" content={title} />
-          <meta name="twitter:description" content={description} />
-          <meta name="twitter:image" content={`${meta.url}${image}`} />
-        </Helmet>
-      )
-    }}
-  />
-)
+              <title>{title}</title>
 
-SEO.propTypes = {
-  project: PropTypes.object
+              {/* General tags */}
+              <meta name="description" content={description} />
+              <meta name="image" content={`${meta.url}${image}`} />
+              <link rel="canonical" href={url} />
+
+              {/* OpenGraph tags */}
+              <meta property="og:url" content={url} />
+              <meta property="og:title" content={title} />
+              <meta property="og:description" content={description} />
+              <meta property="og:image" content={`${meta.url}${image}`} />
+
+              {/* Twitter Card tags */}
+              <meta name="twitter:card" content="summary_large_image" />
+              <meta name="twitter:creator" content={meta.social.Twitter} />
+              <meta name="twitter:title" content={title} />
+              <meta name="twitter:description" content={description} />
+              <meta name="twitter:image" content={`${meta.url}${image}`} />
+            </Helmet>
+          )
+        }}
+      />
+    )
+  }
 }
-
-SEO.defaultProps = {
-  project: {}
-}
-
-export default SEO

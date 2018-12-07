@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import posed from 'react-pose'
 import { moveInBottom } from '../atoms/Transitions'
-
 import { ReactComponent as Logo } from '../../images/logo.svg'
 import styles from './LogoUnit.module.scss'
 
@@ -19,24 +18,8 @@ const query = graphql`
 const Animation = posed.div(moveInBottom)
 
 export default class LogoUnit extends PureComponent {
-  state = { isMinimal: false }
-
   static propTypes = {
     minimal: PropTypes.bool
-  }
-
-  checkMinimal = () => {
-    const { minimal } = this.props
-
-    this.setState({ isMinimal: minimal })
-  }
-
-  componentDidMount() {
-    this.checkMinimal()
-  }
-
-  componentDidUpdate() {
-    this.checkMinimal()
   }
 
   render() {
@@ -45,11 +28,11 @@ export default class LogoUnit extends PureComponent {
         query={query}
         render={data => {
           const { title, tagline } = data.dataYaml
-          const { isMinimal } = this.state
+          const { minimal } = this.props
 
           return (
             <Animation>
-              <div className={isMinimal ? styles.minimal : styles.logounit}>
+              <div className={minimal ? styles.minimal : styles.logounit}>
                 <Logo className={styles.logounit__logo} />
                 <h1 className={styles.logounit__title}>
                   {title.toLowerCase()}
