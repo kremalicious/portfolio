@@ -14,9 +14,10 @@ function s3sync {
   aws s3 sync ./public s3://"$1" \
     --exclude "*" \
     --include "*.js" \
+    --include "*.map" \
     --include "*.css" \
     --include "static/*" \
-    --include "icons/*" \
+    --include "*.png" \
     --exclude "sw.js" \
     --exclude "workbox*/*" \
     --cache-control public,max-age=31536000,immutable \
@@ -27,6 +28,8 @@ function s3sync {
     --exclude "*" \
     --include "*.html" \
     --include "sw.js" \
+    --include "chunk-map.json" \
+    --include "sitemap.xml" \
     --cache-control public,max-age=0,must-revalidate \
     --delete \
     --acl public-read
