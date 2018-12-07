@@ -50,7 +50,6 @@ const SEO = ({ project }) => (
       const meta = data.dataYaml
 
       const title = project.title || meta.title
-      const tagline = meta.tagline
       const description = project.description
         ? truncate.apply(project.description, [320, true])
         : truncate.apply(meta.description, [320, true])
@@ -61,8 +60,8 @@ const SEO = ({ project }) => (
 
       return (
         <Helmet
-          defaultTitle={`${title.toLowerCase()} { ${tagline.toLowerCase()} }`}
-          titleTemplate={`%s // ${title.toLowerCase()} { ${tagline.toLowerCase()} }`}
+          defaultTitle={`${meta.title.toLowerCase()} { ${meta.tagline.toLowerCase()} }`}
+          titleTemplate={`%s // ${meta.title.toLowerCase()} { ${meta.tagline.toLowerCase()} }`}
         >
           <html lang="en" />
 
