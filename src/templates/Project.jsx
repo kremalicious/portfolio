@@ -27,19 +27,23 @@ class ProjectMeta extends PureComponent {
   }
 }
 
-const ProjectImages = ({ projectImages, title }) => (
-  <FullWidth>
-    {projectImages.map(({ node }) => (
-      <div className={styles.imageWrap} key={node.id}>
-        <ProjectImage fluid={node.fluid} alt={title} />
-      </div>
-    ))}
-  </FullWidth>
-)
+class ProjectImages extends PureComponent {
+  static propTypes = {
+    projectImages: PropTypes.array,
+    title: PropTypes.string
+  }
 
-ProjectImages.propTypes = {
-  projectImages: PropTypes.array,
-  title: PropTypes.string
+  render() {
+    return (
+      <FullWidth>
+        {this.props.projectImages.map(({ node }) => (
+          <div className={styles.imageWrap} key={node.id}>
+            <ProjectImage fluid={node.fluid} alt={this.props.title} />
+          </div>
+        ))}
+      </FullWidth>
+    )
+  }
 }
 
 export default class Project extends PureComponent {
@@ -49,9 +53,10 @@ export default class Project extends PureComponent {
   }
 
   render() {
-    const project = this.props.data.projectsYaml
-    const projectImages = this.props.data.projectImages.edges
-    const descriptionHtml = this.props.data.projectsYaml.fields.descriptionHtml
+    const { data } = this.props
+    const project = data.projectsYaml
+    const projectImages = data.projectImages.edges
+    const descriptionHtml = data.projectsYaml.fields.descriptionHtml
     const { title, links, techstack } = project
 
     return (
@@ -76,14 +81,14 @@ export default class Project extends PureComponent {
   }
 }
 
-export const projectAndProjectsQuery = graphql`
+export const projectQuery = graphql`
   query($slug: String!) {
     projectsYaml(slug: { eq: $slug }) {
       title
       slug
-      description
       fields {
         descriptionHtml
+        excerpt
       }
       links {
         title

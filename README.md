@@ -14,7 +14,7 @@
 </p>
 
 - [🎉 Features](#-features)
-  - [⛵️ Lighthouse score](#-lighthouse-score)
+  - [⛵️ Lighthouse score](#️-lighthouse-score)
   - [💍 One data file to rule all pages](#-one-data-file-to-rule-all-pages)
   - [💅 Theme switcher](#-theme-switcher)
   - [🏆 SEO component](#-seo-component)

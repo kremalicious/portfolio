@@ -23,5 +23,10 @@
     "semi": ["error", "never"],
     "object-curly-spacing": ["error", "always"],
     "prettier/prettier": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "16"
+    }
   }
 }

@@ -22,24 +22,8 @@ export default class Header extends PureComponent {
     minimal: PropTypes.bool
   }
 
-  state = { isMinimal: this.props.minimal }
-
-  checkMinimal = () => {
-    const { minimal } = this.props
-
-    this.setState({ isMinimal: minimal })
-  }
-
-  componentDidMount() {
-    this.checkMinimal()
-  }
-
-  componentDidUpdate() {
-    this.checkMinimal()
-  }
-
   render() {
-    const { isMinimal } = this.state
+    const { minimal } = this.props
 
     return (
       <StaticQuery
@@ -48,16 +32,16 @@ export default class Header extends PureComponent {
           const meta = data.dataYaml
 
           return (
-            <header className={isMinimal ? styles.minimal : styles.header}>
+            <header className={minimal ? styles.minimal : styles.header}>
               <ThemeSwitch />
 
               <Link className={styles.header__link} to={'/'}>
-                <LogoUnit minimal={isMinimal} />
+                <LogoUnit minimal={minimal} />
               </Link>
 
-              <Networks hide={isMinimal} />
+              <Networks hide={minimal} />
 
-              <Availability hide={isMinimal && !meta.availability.status} />
+              <Availability hide={minimal && !meta.availability.status} />
             </header>
           )
         }}
