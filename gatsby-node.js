@@ -3,6 +3,18 @@ const remark = require('remark')
 const markdown = require('remark-parse')
 const html = require('remark-html')
 
+function truncate(n, useWordBoundary) {
+  if (this.length <= n) {
+    return this
+  }
+  const subString = this.substr(0, n - 1)
+  return (
+    (useWordBoundary
+      ? subString.substr(0, subString.lastIndexOf(' '))
+      : subString) + '...'
+  )
+}
+
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
 
@@ -28,6 +40,15 @@ exports.onCreateNode = ({ node, actions }) => {
       node,
       name: 'descriptionHtml',
       value: descriptionHtml
+    })
+
+    // Create excerpt from description
+    const excerpt = truncate.apply(description, [320, true])
+
+    createNodeField({
+      node,
+      name: 'excerpt',
+      value: excerpt
     })
   }
 }

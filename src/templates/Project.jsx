@@ -86,9 +86,9 @@ export const projectQuery = graphql`
     projectsYaml(slug: { eq: $slug }) {
       title
       slug
-      description
       fields {
         descriptionHtml
+        excerpt
       }
       links {
         title

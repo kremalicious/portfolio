@@ -3,18 +3,6 @@ import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
-function truncate(n, useWordBoundary) {
-  if (this.length <= n) {
-    return this
-  }
-  const subString = this.substr(0, n - 1)
-  return (
-    (useWordBoundary
-      ? subString.substr(0, subString.lastIndexOf(' '))
-      : subString) + '...'
-  )
-}
-
 const query = graphql`
   query {
     dataYaml {
@@ -22,7 +10,6 @@ const query = graphql`
       tagline
       description
       url
-      email
       img {
         childImageSharp {
           resize(width: 980) {
@@ -31,11 +18,7 @@ const query = graphql`
         }
       }
       social {
-        Email
-        Blog
         Twitter
-        GitHub
-        Dribbble
       }
       gpg
       addressbook
@@ -48,10 +31,6 @@ export default class SEO extends PureComponent {
     project: PropTypes.object
   }
 
-  static defaultProps = {
-    project: {}
-  }
-
   render() {
     const { project } = this.props
 
@@ -61,23 +40,25 @@ export default class SEO extends PureComponent {
         render={data => {
           const meta = data.dataYaml
 
-          const title = project.title || meta.title
-          const description = project.description
-            ? truncate.apply(project.description, [320, true])
-            : truncate.apply(meta.description, [320, true])
-          const image = project.img
-            ? project.img.childImageSharp.twitterImage.src
-            : meta.img.childImageSharp.resize.src
-          const url = project.slug ? `${meta.url}${project.slug}` : meta.url
+          const title = (project && project.title) || meta.title
+          const description =
+            project && project.fields.excerpt
+              ? project.fields.excerpt
+              : meta.description
+          const image =
+            project && project.img
+              ? project.img.childImageSharp.twitterImage.src
+              : meta.img.childImageSharp.resize.src
+          const url =
+            project && project.slug ? `${meta.url}${project.slug}` : meta.url
 
           return (
             <Helmet
               defaultTitle={`${meta.title.toLowerCase()} { ${meta.tagline.toLowerCase()} }`}
               titleTemplate={`%s // ${meta.title.toLowerCase()} { ${meta.tagline.toLowerCase()} }`}
+              title={title}
             >
               <html lang="en" />
-
-              <title>{title}</title>
 
               {/* General tags */}
               <meta name="description" content={description} />
