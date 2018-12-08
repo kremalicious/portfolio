@@ -9,6 +9,7 @@
   "author": "Matthias Kretschmann <m@kretschmann.io>",
   "scripts": {
     "start": "./node_modules/gatsby/dist/bin/gatsby.js develop",
+    "ssr": "npm run build && serve -s public/",
     "lint:js": "eslint ./gatsby-*.js && eslint ./src/**/*.{js,jsx}",
     "lint:css": "stylelint ./src/**/*.{css,scss}",
     "lint": "npm run lint:js && npm run lint:css",

@@ -5,6 +5,7 @@ import Networks from '../molecules/Networks'
 import Availability from '../molecules/Availability'
 import ThemeSwitch from '../molecules/ThemeSwitch'
 import LogoUnit from '../molecules/LogoUnit'
+import HostnameCheck from '../atoms/HostnameCheck'
 import styles from './Header.module.scss'
 
 const query = graphql`
@@ -32,17 +33,20 @@ export default class Header extends PureComponent {
           const meta = data.dataYaml
 
           return (
-            <header className={minimal ? styles.minimal : styles.header}>
-              <ThemeSwitch />
+            <>
+              <HostnameCheck />
+              <header className={minimal ? styles.minimal : styles.header}>
+                <ThemeSwitch />
 
-              <Link className={styles.header__link} to={'/'}>
-                <LogoUnit minimal={minimal} />
-              </Link>
+                <Link className={styles.header__link} to={'/'}>
+                  <LogoUnit minimal={minimal} />
+                </Link>
 
-              <Networks hide={minimal} />
+                <Networks hide={minimal} />
 
-              <Availability hide={minimal && !meta.availability.status} />
-            </header>
+                <Availability hide={minimal && !meta.availability.status} />
+              </header>
+            </>
           )
         }}
       />
