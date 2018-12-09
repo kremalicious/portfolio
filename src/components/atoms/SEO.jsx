@@ -76,7 +76,7 @@ export default class SEO extends PureComponent {
         render={data => {
           const { project } = this.props
           const meta = data.dataYaml
-          const title = (project && project.title) || meta.title
+          const title = (project && project.title) || null
           const description =
             (project && project.fields.excerpt) || meta.description
           const image =
