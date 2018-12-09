@@ -1,0 +1,22 @@
+@import 'variables';
+
+.hostnameInfo {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    padding: $spacer / 3;
+    font-size: $font-size-small;
+    font-weight: bold;
+    background: rgba($brand-light, .8);
+
+    :global(.dark) & {
+        background: rgba($body-background-color--dark, .8);
+    }
+
+    p {
+        margin: auto;
+        margin-bottom: 0;
+        max-width: $screen-lg;
+        text-align: center;
+    }
+}

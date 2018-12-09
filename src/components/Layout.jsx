@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import posed, { PoseGroup } from 'react-pose'
 import { fadeIn } from './atoms/Transitions'
 import Typekit from './atoms/Typekit'
+import HostnameCheck from './atoms/HostnameCheck'
 import Header from './organisms/Header'
 import Footer from './organisms/Footer'
 import styles from './Layout.module.scss'
@@ -29,6 +30,7 @@ export default class Layout extends PureComponent {
     return (
       <>
         <Typekit />
+        <HostnameCheck />
 
         <PoseGroup animateOnMount={true}>
           <RoutesContainer

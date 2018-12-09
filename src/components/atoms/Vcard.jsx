@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import saveAs from 'file-saver'
 import vCard from 'vcf'
@@ -31,30 +31,34 @@ const query = graphql`
   }
 `
 
-const Vcard = () => (
-  <StaticQuery
-    query={query}
-    render={data => {
-      const meta = data.dataYaml
+export default class Vcard extends PureComponent {
+  render() {
+    return (
+      <StaticQuery
+        query={query}
+        render={data => {
+          const meta = data.dataYaml
 
-      const handleAddressbookClick = e => {
-        e.preventDefault()
-        constructVcard(meta)
-      }
+          const handleAddressbookClick = e => {
+            e.preventDefault()
+            constructVcard(meta)
+          }
 
-      return (
-        <a
-          // href is kinda fake, only there for usability
-          // so user knows what to expect when hovering the link before clicking
-          href={meta.addressbook}
-          onClick={handleAddressbookClick}
-        >
-          Add to addressbook
-        </a>
-      )
-    }}
-  />
-)
+          return (
+            <a
+              // href is kinda fake, only there for usability
+              // so user knows what to expect when hovering the link before clicking
+              href={meta.addressbook}
+              onClick={handleAddressbookClick}
+            >
+              Add to addressbook
+            </a>
+          )
+        }}
+      />
+    )
+  }
+}
 
 // Construct the download from a blob of the just constructed vCard,
 // and save it to user's file system
@@ -120,5 +124,3 @@ const toDataURL = (src, callback, outputFormat) => {
     img.src = src
   }
 }
-
-export default Vcard
