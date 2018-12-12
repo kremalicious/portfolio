@@ -2,7 +2,11 @@ import React, { PureComponent } from 'react'
 import Helmet from 'react-helmet'
 import styles from './HostnameCheck.module.scss'
 
-const allowedHosts = ['matthiaskretschmann.com', 'beta.matthiaskretschmann.com']
+const allowedHosts = [
+  'matthiaskretschmann.com',
+  'beta.matthiaskretschmann.com',
+  'localhost'
+]
 
 export default class HostnameInfo extends PureComponent {
   checkAllowedHost = () => {
