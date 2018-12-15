@@ -23,8 +23,8 @@
   },
   "dependencies": {
     "file-saver": "^2.0.0",
-    "gatsby": "^2.0.64",
-    "gatsby-image": "^2.0.22",
+    "gatsby": "^2.0.67",
+    "gatsby-image": "^2.0.25",
     "gatsby-plugin-favicon": "^3.1.4",
     "gatsby-plugin-matomo": "^0.6.0",
     "gatsby-plugin-offline": "^2.0.19",
@@ -33,7 +33,7 @@
     "gatsby-plugin-sharp": "^2.0.15",
     "gatsby-plugin-sitemap": "^2.0.3",
     "gatsby-plugin-svgr": "^2.0.1",
-    "gatsby-source-filesystem": "^2.0.11",
+    "gatsby-source-filesystem": "^2.0.12",
     "gatsby-transformer-json": "^2.1.6",
     "gatsby-transformer-sharp": "^2.1.9",
     "gatsby-transformer-yaml": "^2.1.6",
@@ -53,8 +53,8 @@
     "vcf": "^2.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.0",
-    "@babel/node": "^7.2.0",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.2.0",
     "@svgr/webpack": "^4.1.0",
