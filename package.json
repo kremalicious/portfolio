@@ -57,7 +57,7 @@
     "@babel/node": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
     "@svgr/webpack": "^4.1.0",
-    "ava": "^0.25.0",
+    "ava": "^1.0.1",
     "babel-eslint": "^10.0.1",
     "chrome-launcher": "^0.10.5",
     "eslint": "^5.10.0",
