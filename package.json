@@ -55,6 +55,7 @@
   "devDependencies": {
     "@babel/core": "^7.2.0",
     "@babel/node": "^7.2.0",
+    "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.2.0",
     "@svgr/webpack": "^4.1.0",
     "ava": "^1.0.1",

@@ -1,5 +1,6 @@
+import '@babel/polyfill'
 import * as chromeLauncher from 'chrome-launcher'
-import { test } from 'ava'
+import test from 'ava'
 import lighthouse from 'lighthouse'
 import { siteMetadata } from '../gatsby-config'
 
