@@ -28,6 +28,10 @@ const query = graphql`
 `
 
 class NetworkIcon extends PureComponent {
+  static propTypes = {
+    title: PropTypes.string
+  }
+
   render() {
     switch (this.props.title) {
       case 'Email':
