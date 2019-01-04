@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Link, StaticQuery, graphql } from 'gatsby'
+import classNames from 'classnames'
 import Networks from '../molecules/Networks'
 import Availability from '../molecules/Availability'
 import ThemeSwitch from '../molecules/ThemeSwitch'
@@ -25,6 +26,10 @@ export default class Header extends PureComponent {
   render() {
     const { minimal } = this.props
 
+    let headerClasses = classNames([styles.header], {
+      [styles.minimal]: minimal
+    })
+
     return (
       <StaticQuery
         query={query}
@@ -32,10 +37,10 @@ export default class Header extends PureComponent {
           const meta = data.dataYaml
 
           return (
-            <header className={minimal ? styles.minimal : styles.header}>
+            <header className={headerClasses}>
               <ThemeSwitch />
 
-              <Link className={styles.header__link} to={'/'}>
+              <Link className={styles.link} to={'/'}>
                 <LogoUnit minimal={minimal} />
               </Link>
 

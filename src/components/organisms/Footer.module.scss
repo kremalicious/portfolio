@@ -21,7 +21,7 @@
     }
 }
 
-.footer__actions {
+.actions {
     a {
         display: inline-block;
         padding: 0 $spacer / 4;
@@ -34,5 +34,11 @@
         :global(.dark) & {
             color: $text-color-light--dark;
         }
+    }
+}
+
+.copyright {
+    a {
+        color: inherit;
     }
 }

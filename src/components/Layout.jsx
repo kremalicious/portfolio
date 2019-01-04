@@ -14,6 +14,7 @@ import styles from './Layout.module.scss'
 // }
 
 const timeout = 250
+const RoutesContainer = posed.div(fadeIn)
 
 export default class Layout extends PureComponent {
   static propTypes = {
@@ -24,8 +25,6 @@ export default class Layout extends PureComponent {
   render() {
     const { children, location } = this.props
     const isHomepage = location.pathname === '/'
-
-    const RoutesContainer = posed.div(fadeIn)
 
     return (
       <>

@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import posed from 'react-pose'
+import classNames from 'classnames'
 import { moveInTop } from '../atoms/Transitions'
 
 import { ReactComponent as Email } from '../../images/email.svg'
@@ -50,33 +51,24 @@ class NetworkIcon extends PureComponent {
   }
 }
 
-const Animation = posed.aside(moveInTop)
-
 export default class Networks extends PureComponent {
-  state = {
-    classes: styles.networks
-  }
-
   static propTypes = {
     minimal: PropTypes.bool,
     hide: PropTypes.bool
   }
 
-  componentDidMount() {
-    this.toggleClasses()
-  }
+  Animation = posed.aside(moveInTop)
 
-  componentDidUpdate() {
-    this.toggleClasses()
-  }
+  linkClasses = key =>
+    classNames({
+      'u-url': key !== 'Email',
+      'u-email': key === 'Email',
+      [styles.link]: true
+    })
 
-  toggleClasses = () => {
-    if (this.props.minimal) {
-      this.setState({ classes: `${styles.networks} ${styles.minimal}` })
-    } else {
-      this.setState({ classes: styles.networks })
-    }
-  }
+  wrapClasses = classNames([styles.networks], {
+    [styles.minimal]: this.props.minimal
+  })
 
   render() {
     return (
@@ -87,14 +79,18 @@ export default class Networks extends PureComponent {
 
           return (
             !this.props.hide && (
-              <Animation className={this.state.classes}>
+              <this.Animation className={this.wrapClasses}>
                 {Object.keys(meta.social).map((key, i) => (
-                  <a className={styles.link} href={meta.social[key]} key={i}>
+                  <a
+                    className={this.linkClasses(key)}
+                    href={meta.social[key]}
+                    key={i}
+                  >
                     <NetworkIcon title={key} className={icons.icon} />
                     <span className={styles.title}>{key}</span>
                   </a>
                 ))}
-              </Animation>
+              </this.Animation>
             )
           )
         }}
