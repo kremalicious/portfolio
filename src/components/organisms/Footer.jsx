@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
+import classNames from 'classnames'
 import Vcard from '../atoms/Vcard'
 import LogoUnit from '../molecules/LogoUnit'
 import Networks from '../molecules/Networks'
@@ -17,30 +18,39 @@ const query = graphql`
 
     dataYaml {
       title
+      url
       gpg
     }
   }
 `
 
+let classes = classNames('h-card', [styles.footer])
+
 export default class Footer extends PureComponent {
   state = { year: new Date().getFullYear() }
 
   FooterMarkup = ({ meta, pkg, year }) => (
-    <footer className={styles.footer}>
+    <footer className={classes}>
       <Link to={'/'}>
         <LogoUnit minimal />
       </Link>
 
       <Networks minimal />
 
-      <p className={styles.footer__actions}>
+      <p className={styles.actions}>
         <Vcard />
-        <a href={meta.gpg}>PGP/GPG key</a>
+        <a className="u-key" href={meta.gpg}>
+          PGP/GPG key
+        </a>
         <a href={pkg.bugs}>Found a bug?</a>
       </p>
-      <p className={styles.footer__copyright}>
+      <p className={styles.copyright}>
         <small>
-          &copy; {year} {meta.title} &mdash; All Rights Reserved
+          &copy; {year}{' '}
+          <a className="u-url" href={meta.url}>
+            {meta.title}
+          </a>{' '}
+          &mdash; All Rights Reserved
         </small>
       </p>
     </footer>

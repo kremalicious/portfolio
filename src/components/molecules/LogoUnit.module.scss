@@ -4,7 +4,7 @@
     display: block;
 }
 
-.logounit__logo {
+.logo {
     display: block;
     width: 1.5rem;
     height: 1.5rem;
@@ -14,20 +14,20 @@
     margin-right: auto;
 }
 
-.logounit__title,
-.logounit__description {
+.title,
+.description {
     display: inline-block;
     margin-bottom: 0;
 }
 
-.logounit__title {
+.title {
     font-size: $font-size-h3;
     margin-right: $spacer / 4;
     color: $brand-main;
     line-height: $line-height;
 }
 
-.logounit__description {
+.description {
     font-size: $font-size-h4;
     color: $brand-grey-light;
 
@@ -46,13 +46,12 @@
 }
 
 .minimal {
-    composes: logounit;
     transform: scale(.7);
     transform-origin: top center;
     transform-box: border-box;
 
-    .logounit__title,
-    .logounit__description {
+    .title,
+    .description {
         color: $text-color-light;
 
         :global(.dark) & {
@@ -60,7 +59,7 @@
         }
     }
 
-    .logounit__logo {
+    .logo {
         margin-bottom: $spacer / 3;
         opacity: .5;
     }
