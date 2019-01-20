@@ -38,7 +38,7 @@ The whole [portfolio](https://matthiaskretschmann.com) is a React-based Single P
 
 ### ⛵️ Lighthouse score
 
-[![Lighthouse scores](https://lighthouse.now.sh/?perf=100&pwa=100&a11y=100&bp=100&seo=100)](https://travis-ci.com/kremalicious/portfolio)
+![Lighthouse scores](https://lighthouse.now.sh/?perf=100&pwa=100&a11y=100&bp=100&seo=100)
 
 ### 💍 One data file to rule all pages
 
@@ -113,7 +113,7 @@ All SVG assets under `src/images/` will be converted to React components with th
 ```js
 import { ReactComponent as Logo } from './components/svg/Logo'
 
-<Logo />
+return <Logo />
 ```
 
 ### 🍬 Typekit component
@@ -167,7 +167,7 @@ Then continue modifying the new entry in [`data/projects.yml`](data/projects.yml
 
 Finally, add as many images as needed with the file name format and put into `src/images/`:
 
-```
+```text
 portfolio-SLUG-01.png
 portfolio-SLUG-02.png
 portfolio-SLUG-03.png
