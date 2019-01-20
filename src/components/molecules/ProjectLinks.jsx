@@ -50,6 +50,11 @@ const LinkIcon = ({ title, type, ...props }) => {
   }
 }
 
+LinkIcon.propTypes = {
+  title: PropTypes.string,
+  type: PropTypes.string
+}
+
 export default class ProjectLinks extends PureComponent {
   static propTypes = {
     links: PropTypes.array
