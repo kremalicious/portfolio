@@ -26,15 +26,15 @@ export default class Header extends PureComponent {
   render() {
     const { minimal } = this.props
 
-    let headerClasses = classNames([styles.header], {
-      [styles.minimal]: minimal
-    })
-
     return (
       <StaticQuery
         query={query}
         render={data => {
           const meta = data.dataYaml
+
+          let headerClasses = classNames([styles.header], {
+            [styles.minimal]: minimal
+          })
 
           return (
             <header className={headerClasses}>
