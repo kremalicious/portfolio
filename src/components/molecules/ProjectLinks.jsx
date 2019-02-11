@@ -13,36 +13,25 @@ import icons from '../atoms/Icons.module.scss'
 import styles from './ProjectLinks.module.scss'
 
 const LinkIcon = ({ title, type, ...props }) => {
-  if (type) {
-    switch (type) {
-      case 'website':
-        return <Link {...props} />
-      case 'github':
-        return <GitHub {...props} />
-      case 'dribbble':
-        return <Dribbble {...props} />
-      case 'info':
-        return <Info {...props} />
-      case 'download':
-        return <Download {...props} />
-      case 'styleguide':
-        return <Styleguide {...props} />
-      default:
-        return null
-    }
-  }
+  let typeOrTitle = type ? type : title
 
-  switch (title) {
+  switch (typeOrTitle) {
+    case 'website':
     case 'Link':
       return <Link {...props} />
+    case 'github':
     case 'GitHub':
       return <GitHub {...props} />
+    case 'dribbble':
     case 'Dribbble':
       return <Dribbble {...props} />
+    case 'info':
     case 'Info':
       return <Info {...props} />
+    case 'download':
     case 'Download':
       return <Download {...props} />
+    case 'styleguide':
     case 'Styleguide':
       return <Styleguide {...props} />
     default:
