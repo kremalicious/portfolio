@@ -41,6 +41,10 @@ class ProjectLink extends PureComponent {
   }
 }
 
+ProjectLink.propTypes = {
+  node: PropTypes.object
+}
+
 export default class ProjectNav extends PureComponent {
   state = {
     scrolledToCurrent: false
@@ -68,6 +72,20 @@ export default class ProjectNav extends PureComponent {
     this.scrollContainer.scrollLeft += finalPosition
   }
 
+  Project({ node, slug }) {
+    const current = node.slug === slug
+
+    return (
+      <div
+        className={styles.item}
+        key={node.slug}
+        ref={node => current && (this.currentItem = node)}
+      >
+        <ProjectLink node={node} />
+      </div>
+    )
+  }
+
   render() {
     const { slug } = this.props
 
@@ -82,29 +100,15 @@ export default class ProjectNav extends PureComponent {
               className={styles.projectNav}
               ref={node => (this.scrollContainer = node)}
             >
-              {projects.map(({ node }) => {
-                const current = node.slug === slug
-
-                return (
-                  <div
-                    className={styles.item}
-                    key={node.slug}
-                    ref={node => current && (this.currentItem = node)}
-                  >
-                    <ProjectLink node={node} />
-                  </div>
-                )
-              })}
+              {projects.map(({ node }) => (
+                <this.Project key={node.id} node={node} slug={slug} />
+              ))}
             </nav>
           )
         }}
       />
     )
   }
-}
-
-ProjectLink.propTypes = {
-  node: PropTypes.object
 }
 
 ProjectNav.propTypes = {
