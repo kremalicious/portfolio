@@ -51,12 +51,12 @@ export default class ProjectNav extends PureComponent {
   }
 
   componentDidMount() {
-    this.scrollToCurrent()
+    // this.scrollToCurrent()
     this.setState({ scrolledToCurrent: true })
   }
 
   componentDidUpdate() {
-    this.scrollToCurrent()
+    // this.scrollToCurrent()
   }
 
   componentWillUnmount() {
@@ -72,14 +72,14 @@ export default class ProjectNav extends PureComponent {
     this.scrollContainer.scrollLeft += finalPosition
   }
 
-  Project({ node, slug }) {
-    const current = node.slug === slug
+  Project({ node }) {
+    // const current = node.slug === slug
 
     return (
       <div
         className={styles.item}
         key={node.slug}
-        ref={node => current && (this.currentItem = node)}
+        // ref={node => current && (this.currentItem = node)}
       >
         <ProjectLink node={node} />
       </div>
@@ -98,7 +98,7 @@ export default class ProjectNav extends PureComponent {
           return (
             <nav
               className={styles.projectNav}
-              ref={node => (this.scrollContainer = node)}
+              // ref={node => (this.scrollContainer = node)}
             >
               {projects.map(({ node }) => (
                 <this.Project key={node.id} node={node} slug={slug} />
