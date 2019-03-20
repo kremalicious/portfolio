@@ -1,13 +1,12 @@
 @import 'variables';
 
 .availability {
-    position: absolute;
-    bottom: 0;
     border-radius: .25rem;
     color: $text-color-light;
     z-index: 2;
     padding: $spacer / 2;
     display: block;
+    margin-top: auto;
 
     :global(.dark) & {
         color: $text-color-light--dark;
@@ -27,6 +26,8 @@
     color: $brand-main;
     position: fixed;
     bottom: $spacer;
+    left: 50%;
+    transform: translateX(-50%);
 
     :global(.dark) & {
         background: rgba($body-background-color--dark, .8);

@@ -3,13 +3,13 @@
 .header {
     position: relative;
     padding: $spacer;
-    height: calc(100vh - #{$spacer});
+    padding-top: 30vh;
+    min-height: calc(100vh - #{$spacer});
     max-height: 1000px;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .link {
@@ -19,7 +19,7 @@
 }
 
 .minimal {
-    height: auto;
+    min-height: 0;
     padding-top: $spacer * 2;
     padding-bottom: 0;
 
