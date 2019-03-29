@@ -24,32 +24,6 @@ const query = graphql`
   }
 `
 
-class Project extends PureComponent {
-  static propTypes = {
-    node: PropTypes.object.isRequired,
-    currentSlug: PropTypes.string.isRequired,
-    refCurrentItem: PropTypes.any
-  }
-
-  render() {
-    const { node, currentSlug, refCurrentItem } = this.props
-    const isCurrent = node.slug === currentSlug
-
-    return (
-      <div className={styles.item} ref={isCurrent ? refCurrentItem : null}>
-        <Link className={styles.link} to={node.slug}>
-          <Img
-            className={styles.image}
-            fluid={node.img.childImageSharp.fluid}
-            alt={node.title}
-          />
-          <h1 className={styles.title}>{node.title}</h1>
-        </Link>
-      </div>
-    )
-  }
-}
-
 export default class ProjectNav extends PureComponent {
   static propTypes = {
     currentSlug: PropTypes.string.isRequired
@@ -82,18 +56,26 @@ export default class ProjectNav extends PureComponent {
       activeRect.width / 2
 
     scrollContainer.scrollLeft += this.state.scrollLeftPosition
+    this.setState({ scrollLeftPosition })
+  }
 
-    this.setState(state => {
-      return {
-        ...state,
-        scrollLeftPosition
-      }
-    })
+  Project({ node, refCurrentItem }) {
+    return (
+      <div className={styles.item} ref={refCurrentItem}>
+        <Link className={styles.link} to={node.slug}>
+          <Img
+            className={styles.image}
+            fluid={node.img.childImageSharp.fluid}
+            alt={node.title}
+          />
+          <h1 className={styles.title}>{node.title}</h1>
+        </Link>
+      </div>
+    )
   }
 
   render() {
     const { currentSlug } = this.props
-
     return (
       <StaticQuery
         query={query}
@@ -102,14 +84,17 @@ export default class ProjectNav extends PureComponent {
 
           return (
             <nav className={styles.projectNav} ref={this.scrollContainer}>
-              {projects.map(({ node }) => (
-                <Project
-                  key={node.id}
-                  node={node}
-                  currentSlug={currentSlug}
-                  refCurrentItem={this.currentItem}
-                />
-              ))}
+              {projects.map(({ node }) => {
+                const isCurrent = node.slug === currentSlug
+
+                return (
+                  <this.Project
+                    key={node.slug}
+                    node={node}
+                    refCurrentItem={isCurrent ? this.currentItem : null}
+                  />
+                )
+              })}
             </nav>
           )
         }}
