@@ -75,7 +75,7 @@ export default class Project extends PureComponent {
           <ProjectMeta links={links} techstack={techstack} />
         </article>
 
-        <ProjectNav slug={project.slug} />
+        <ProjectNav currentSlug={project.slug} />
       </>
     )
   }
