@@ -17,7 +17,7 @@ const title = process.argv[2]
 spinner.text = `Adding '${title}'.`
 
 const titleSlug = slugify(title, { lower: true })
-const projects = path.join(__dirname, '..', 'data', 'projects.yml')
+const projects = path.join(__dirname, '..', 'content', 'projects.yml')
 const newContents = template
   .split('TITLE')
   .join(title)

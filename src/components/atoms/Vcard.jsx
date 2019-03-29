@@ -5,7 +5,7 @@ import vCard from 'vcf'
 
 const query = graphql`
   query {
-    dataYaml {
+    contentYaml {
       title
       tagline
       description
@@ -37,7 +37,7 @@ export default class Vcard extends PureComponent {
       <StaticQuery
         query={query}
         render={data => {
-          const meta = data.dataYaml
+          const meta = data.contentYaml
 
           const handleAddressbookClick = e => {
             e.preventDefault()

@@ -7,7 +7,7 @@ import styles from './Availability.module.scss'
 
 const query = graphql`
   query {
-    dataYaml {
+    contentYaml {
       availability {
         status
         available
@@ -27,7 +27,7 @@ export default class Availability extends PureComponent {
       <StaticQuery
         query={query}
         render={data => {
-          const { availability } = data.dataYaml
+          const { availability } = data.contentYaml
           const { status, available, unavailable } = availability
           const className = status
             ? `${styles.availability} ${styles.available}`

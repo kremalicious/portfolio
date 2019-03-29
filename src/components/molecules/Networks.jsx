@@ -16,7 +16,7 @@ import styles from './Networks.module.scss'
 
 const query = graphql`
   query {
-    dataYaml {
+    contentYaml {
       social {
         Email
         Blog
@@ -75,7 +75,7 @@ export default class Networks extends PureComponent {
       <StaticQuery
         query={query}
         render={data => {
-          const meta = data.dataYaml
+          const meta = data.contentYaml
 
           return (
             !this.props.hide && (

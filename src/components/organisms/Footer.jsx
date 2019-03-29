@@ -16,7 +16,7 @@ const query = graphql`
       bugs
     }
 
-    dataYaml {
+    contentYaml {
       title
       url
       gpg
@@ -62,7 +62,7 @@ export default class Footer extends PureComponent {
         query={query}
         render={data => {
           const pkg = data.portfolioJson
-          const meta = data.dataYaml
+          const meta = data.contentYaml
 
           return (
             <this.FooterMarkup year={this.state.year} pkg={pkg} meta={meta} />

@@ -10,7 +10,7 @@ import styles from './Header.module.scss'
 
 const query = graphql`
   query {
-    dataYaml {
+    contentYaml {
       availability {
         status
       }
@@ -30,7 +30,7 @@ export default class Header extends PureComponent {
       <StaticQuery
         query={query}
         render={data => {
-          const meta = data.dataYaml
+          const meta = data.contentYaml
 
           let headerClasses = classNames([styles.header], {
             [styles.minimal]: minimal

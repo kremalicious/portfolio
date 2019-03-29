@@ -9,7 +9,7 @@ import styles from './LogoUnit.module.scss'
 
 const query = graphql`
   query {
-    dataYaml {
+    contentYaml {
       title
       tagline
     }
@@ -34,7 +34,7 @@ export default class LogoUnit extends PureComponent {
       <StaticQuery
         query={query}
         render={data => {
-          const { title, tagline } = data.dataYaml
+          const { title, tagline } = data.contentYaml
 
           return (
             <div className={wrapClasses}>

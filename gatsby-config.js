@@ -1,7 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 const yaml = require('js-yaml')
-const meta = yaml.load(fs.readFileSync('./data/meta.yml', 'utf8'))
+const meta = yaml.load(fs.readFileSync('./content/meta.yml', 'utf8'))
 const { title, description, url, matomoSite, matomoUrl } = meta
 
 module.exports = {
@@ -16,8 +16,8 @@ module.exports = {
           {
             resolve: 'gatsby-source-filesystem',
             options: {
-              name: 'data',
-              path: path.join(__dirname, 'data')
+              name: 'content',
+              path: path.join(__dirname, 'content')
             }
           }
         ]

@@ -42,19 +42,19 @@ The whole [portfolio](https://matthiaskretschmann.com) is a React-based Single P
 
 ### 💍 One data file to rule all pages
 
-All content is powered by one YAML file where all the portfolio's projects are defined. The project description itself is transformed from Markdown written inside the YAML file int HTML on build time.
+All content is powered by one YAML file where all the portfolio's projects are defined. The project description itself is transformed from Markdown written inside the YAML file into HTML on build time.
 
 Gatsby automatically creates pages from each item in that file utilizing the [`Project.jsx`](src/templates/Project.jsx) template.
 
 - [`gatsby-node.js`](gatsby-node.js)
-- [`data/projects.yml`](data/projects.yml)
+- [`content/projects.yml`](content/projects.yml)
 - [`src/templates/Project.jsx`](src/templates/Project.jsx)
 
 ### 💅 Theme switcher
 
 Includes a theme switcher which allows user to toggle between a light and a dark theme. Switching between them also happens automatically based on user's local sunset and sunrise times. Uses Cloudflare's geo location HTTP header functionality.
 
-If a visitor has set the theme manually that selection is remembered in localStorage, and is restored on next visit.
+If a visitor has set the theme manually that selection is remembered in `localStorage`, and is restored on next visit.
 
 If you want to know how, have a look at the respective components:
 
@@ -71,7 +71,7 @@ If you want to know how, have a look at the respective component:
 
 ### 📇 Client-side vCard creation
 
-The _Add to addressbook_ link in the footer automatically creates a downloadable vCard file on the client-side, based on data defined in `data/meta.yml`.
+The _Add to addressbook_ link in the footer automatically creates a downloadable vCard file on the client-side, based on data defined in `content/meta.yml`.
 
 If you want to know how, have a look at the respective component:
 
@@ -96,7 +96,7 @@ Site sends usage statistics to my own [Matomo](https://matomo.org) installation.
 
 ### 🖼 Project images
 
-All project images live under `src/images` and are automatically attached to each project based on the inclusion of the project's `slug` in their filenames.
+All project images live under `content/images` and are automatically attached to each project based on the inclusion of the project's `slug` in their filenames.
 
 All project images make use of the excellent [gatsby-image](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-image) plugin, working in tandem with [gatsby-plugin-sharp](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sharp) and [gatsby-transformer-sharp](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-sharp).
 
@@ -163,14 +163,14 @@ To add a new project, run the following command. This adds a new item to the top
 npm run new -- "Hello"
 ```
 
-Then continue modifying the new entry in [`data/projects.yml`](data/projects.yml).
+Then continue modifying the new entry in [`content/projects.yml`](content/projects.yml).
 
-Finally, add as many images as needed with the file name format and put into `src/images/`:
+Finally, add as many images as needed with the file name format and put into `content/images/`:
 
 ```text
-portfolio-SLUG-01.png
-portfolio-SLUG-02.png
-portfolio-SLUG-03.png
+SLUG-01.png
+SLUG-02.png
+SLUG-03.png
 ...
 ```
 

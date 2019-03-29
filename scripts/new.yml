@@ -1,6 +1,6 @@
 - title: TITLE
   slug: '/SLUG/'
-  img: '../src/images/portfolio-SLUG-01.png'
+  img: 'images/SLUG-01.png'
   description: >
     Markdown can be used here.
   links:

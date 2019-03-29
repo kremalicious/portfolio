@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 const query = graphql`
   query {
-    dataYaml {
+    contentYaml {
       title
       tagline
       description
@@ -75,7 +75,7 @@ export default class SEO extends PureComponent {
         query={query}
         render={data => {
           const { project } = this.props
-          const meta = data.dataYaml
+          const meta = data.contentYaml
           const title = (project && project.title) || null
           const description =
             (project && project.fields.excerpt) || meta.description
