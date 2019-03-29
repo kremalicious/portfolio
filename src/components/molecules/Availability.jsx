@@ -29,21 +29,15 @@ export default class Availability extends PureComponent {
         render={data => {
           const { availability } = data.dataYaml
           const { status, available, unavailable } = availability
+          const className = status
+            ? `${styles.availability} ${styles.available}`
+            : `${styles.availability}`
+          const html = status ? available : unavailable
 
           return (
             !this.props.hide && (
-              <Animation
-                className={
-                  status
-                    ? `${styles.availability} ${styles.available}`
-                    : `${styles.availability}`
-                }
-              >
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: status ? available : unavailable
-                  }}
-                />
+              <Animation className={className}>
+                <p dangerouslySetInnerHTML={{ __html: html }} />
               </Animation>
             )
           )

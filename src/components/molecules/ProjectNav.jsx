@@ -24,70 +24,75 @@ const query = graphql`
   }
 `
 
-class ProjectLink extends PureComponent {
+class Project extends PureComponent {
+  static propTypes = {
+    node: PropTypes.object.isRequired,
+    currentSlug: PropTypes.string.isRequired,
+    refCurrentItem: PropTypes.any
+  }
+
   render() {
-    const { node } = this.props
+    const { node, currentSlug, refCurrentItem } = this.props
+    const isCurrent = node.slug === currentSlug
 
     return (
-      <Link className={styles.link} to={node.slug}>
-        <Img
-          className={styles.image}
-          fluid={node.img.childImageSharp.fluid}
-          alt={node.title}
-        />
-        <h1 className={styles.title}>{node.title}</h1>
-      </Link>
-    )
-  }
-}
-
-ProjectLink.propTypes = {
-  node: PropTypes.object
-}
-
-export default class ProjectNav extends PureComponent {
-  state = {
-    scrolledToCurrent: false
-  }
-
-  componentDidMount() {
-    // this.scrollToCurrent()
-    this.setState({ scrolledToCurrent: true })
-  }
-
-  componentDidUpdate() {
-    // this.scrollToCurrent()
-  }
-
-  componentWillUnmount() {
-    this.setState({ scrolledToCurrent: false })
-  }
-
-  scrollToCurrent = () => {
-    const current = this.currentItem
-    const currentLeft = current.getBoundingClientRect().left
-    const currentWidth = current.clientWidth
-    const finalPosition = currentLeft - window.innerWidth / 2 + currentWidth / 2
-
-    this.scrollContainer.scrollLeft += finalPosition
-  }
-
-  Project({ node }) {
-    // const current = node.slug === slug
-
-    return (
-      <div
-        className={styles.item}
-        key={node.slug}
-        // ref={node => current && (this.currentItem = node)}
-      >
-        <ProjectLink node={node} />
+      <div className={styles.item} ref={isCurrent ? refCurrentItem : null}>
+        <Link className={styles.link} to={node.slug}>
+          <Img
+            className={styles.image}
+            fluid={node.img.childImageSharp.fluid}
+            alt={node.title}
+          />
+          <h1 className={styles.title}>{node.title}</h1>
+        </Link>
       </div>
     )
   }
+}
+
+export default class ProjectNav extends PureComponent {
+  static propTypes = {
+    currentSlug: PropTypes.string.isRequired
+  }
+
+  state = {
+    scrollLeftPosition: 0
+  }
+
+  scrollContainer = React.createRef()
+  currentItem = React.createRef()
+
+  componentDidMount() {
+    this.scrollToCurrent()
+  }
+
+  componentDidUpdate() {
+    this.scrollToCurrent()
+  }
+
+  scrollToCurrent = () => {
+    const scrollContainer = this.scrollContainer.current
+    const activeItem = this.currentItem.current
+    const scrollRect = scrollContainer.getBoundingClientRect()
+    const activeRect = activeItem.getBoundingClientRect()
+    const scrollLeftPosition =
+      activeRect.left -
+      scrollRect.left -
+      scrollRect.width / 2 +
+      activeRect.width / 2
+
+    scrollContainer.scrollLeft += this.state.scrollLeftPosition
+
+    this.setState(state => {
+      return {
+        ...state,
+        scrollLeftPosition
+      }
+    })
+  }
 
   render() {
-    const { slug } = this.props
+    const { currentSlug } = this.props
 
     return (
       <StaticQuery
@@ -96,12 +101,14 @@ export default class ProjectNav extends PureComponent {
           const projects = data.allProjectsYaml.edges
 
           return (
-            <nav
-              className={styles.projectNav}
-              // ref={node => (this.scrollContainer = node)}
-            >
+            <nav className={styles.projectNav} ref={this.scrollContainer}>
               {projects.map(({ node }) => (
-                <this.Project key={node.id} node={node} slug={slug} />
+                <Project
+                  key={node.id}
+                  node={node}
+                  currentSlug={currentSlug}
+                  refCurrentItem={this.currentItem}
+                />
               ))}
             </nav>
           )
@@ -109,8 +116,4 @@ export default class ProjectNav extends PureComponent {
       />
     )
   }
-}
-
-ProjectNav.propTypes = {
-  slug: PropTypes.string
 }
