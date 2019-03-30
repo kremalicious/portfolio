@@ -30,6 +30,24 @@ function s3sync {
     --acl public-read
 }
 
+# purge full Cloudflare cache
+# https://api.cloudflare.com/#zone-purge-all-files
+function purge {
+  curl -X POST "https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE/purge_cache" \
+    -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
+    -H "X-Auth-Key: $CLOUDFLARE_KEY" \
+    -H "Content-Type: application/json" \
+    --data '{"purge_everything":true}'
+}
+
+# ping search engines
+# returns: HTTP_STATUSCODE URL
+function ping {
+  curl -sL -w "%{http_code} %{url_effective}\\n" \
+    "http://www.google.com/webmasters/tools/ping?sitemap=$SITEMAP_URL" -o /dev/null \
+    "http://www.bing.com/webmaster/ping.aspx?siteMap=$SITEMAP_URL" -o /dev/null
+}
+
 ##
 ## check for pull request against master
 ##
@@ -44,11 +62,9 @@ elif [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] |
 
   s3sync $AWS_S3_BUCKET
 
-    # ping search engines
-  # returns: HTTP_STATUSCODE URL
-  curl -sL -w "%{http_code} %{url_effective}\\n" \
-    "http://www.google.com/webmasters/tools/ping?sitemap=$SITEMAP_URL" -o /dev/null \
-    "http://www.bing.com/webmaster/ping.aspx?siteMap=$SITEMAP_URL" -o /dev/null
+  purge
+
+  ping
 
   echo "---------------------------------------------"
   echo "         ✓ done deployment "
