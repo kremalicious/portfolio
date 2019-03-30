@@ -187,7 +187,14 @@ The deploy command simply calls the [`scripts/deploy.sh`](scripts/deploy.sh) scr
 npm run deploy
 ```
 
-The deploymeng script can be used locally too, the branch checks are only happening for Travis builds, allowing to deploy any branch from local machine.
+Upon live deployment, deploy script also purges the Cloudflare cache, and pings search engines. Travis requires the following environment variables to be setup for successful deployments:
+
+- `AWS_ACCESS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
+- `AWS_DEFAULT_REGION`
+- `CLOUDFLARE_EMAIL`
+- `CLOUDFLARE_ZONE`
+- `CLOUDFLARE_KEY`
 
 ## 🏛 Licenses
 
