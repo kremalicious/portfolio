@@ -71,7 +71,7 @@
     bottom: 10%;
     right: 0;
     color: $brand-grey-dimmed;
-    font-size: $font-size-mini;
+    font-size: $font-size-small;
     padding: $spacer / 6 $spacer / 2;
     background: rgba($brand-cyan, .9);
     z-index: 10;
@@ -81,5 +81,7 @@
 
     svg {
         fill: $brand-grey-dimmed;
+        width: $font-size-mini;
+        height: $font-size-mini;
     }
 }

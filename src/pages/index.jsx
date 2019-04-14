@@ -79,7 +79,9 @@ export const IndexQuery = graphql`
       }
     }
 
-    projectImageFiles: allFile(filter: { name: { regex: "/portfolio/" } }) {
+    projectImageFiles: allFile(
+      filter: { absolutePath: { regex: "/portfolio/" } }
+    ) {
       edges {
         node {
           name
