@@ -1,9 +1,6 @@
-sudo: required
+dist: xenial
 language: node_js
 node_js: node
-
-addons:
-  chrome: beta
 
 cache:
   directories:
