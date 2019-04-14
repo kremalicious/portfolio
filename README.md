@@ -10,6 +10,7 @@
 <p align="center">
   <a href="https://travis-ci.com/kremalicious/portfolio"><img src="https://travis-ci.com/kremalicious/portfolio.svg?branch=master" /></a>
   <a href="https://codeclimate.com/github/kremalicious/portfolio/maintainability"><img src="https://api.codeclimate.com/v1/badges/8f561ec93e0f8c6b15d9/maintainability" /></a>
+  <a href="https://codeclimate.com/github/kremalicious/portfolio/test_coverage"><img src="https://api.codeclimate.com/v1/badges/8f561ec93e0f8c6b15d9/test_coverage" /></a>
   <a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/kremalicious/portfolio.svg" /></a>
 </p>
 
@@ -26,6 +27,7 @@
   - [🍬 Typekit component](#-typekit-component)
 - [✨ Development](#-development)
   - [🔮 Linting](#-linting)
+  - [👩‍🔬 Testing](#-testing)
   - [🎈 Add a new project](#-add-a-new-project)
 - [🚚 Deployment](#-deployment)
 - [🏛 Licenses](#-licenses)
@@ -154,6 +156,18 @@ To automatically format all code files:
 npm run format
 npm run format:css
 ```
+
+### 👩‍🔬 Testing
+
+Test suite is setup with [Jest](https://jestjs.io) and [react-testing-library](https://github.com/kentcdodds/react-testing-library).
+
+To run all tests, including all linting tests:
+
+```bash
+npm test
+```
+
+All test files live beside the respective component. Testing setup, fixtures, and mocks can be found in `./jest.config.js` and `./jest` folder.
 
 ### 🎈 Add a new project
 

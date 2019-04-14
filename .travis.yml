@@ -1,9 +1,6 @@
-sudo: required
+dist: xenial
 language: node_js
 node_js: node
-
-addons:
-  chrome: beta
 
 cache:
   directories:
@@ -13,9 +10,18 @@ cache:
 install:
   - npm i
 
+before_script:
+  # https://docs.codeclimate.com/docs/travis-ci-test-coverage
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
 script:
   - npm test
   - npm run build
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 after_success:
   - pip install --user awscli
