@@ -1,0 +1,40 @@
+{
+  "contentYaml": {
+    "title": "Matthias Kretschmann",
+    "tagline": "Designer & Developer",
+    "description": "Portfolio of web &amp; ui designer/developer hybrid Matthias Kretschmann.",
+    "url": "https://matthiaskretschmann.com",
+    "email": "m@kretschmann.io",
+    "avatar": {
+      "childImageSharp": {
+        "fluid": {
+          "src": "/static/b45f45aa8d98d4e4019a242d38f2f248/bc3a8/avatar.jpg"
+        }
+      }
+    },
+    "img": {
+      "childImageSharp": {
+        "resize": {
+          "src": "/static/5ecbb5694b0b2152aa71398164af38b2/da1a7/twitter-card.png"
+        }
+      }
+    },
+    "social": {
+      "Email": "mailto:m@kretschmann.io",
+      "Blog": "https://kremalicious.com",
+      "Twitter": "https://twitter.com/kremalicious",
+      "GitHub": "https://github.com/kremalicious",
+      "Dribbble": "https://dribbble.com/kremalicious"
+    },
+    "availability": {
+      "status": false,
+      "available": "👔 Available for new projects. <a href=\"mailto:m@kretschmann.io\">Let’s talk</a>!",
+      "unavailable": "Not available for new projects."
+    },
+    "gpg": "https://kretschmann.io/pub.gpg",
+    "addressbook": "/matthias-kretschmann.vcf",
+    "typekitID": "dtg3zui",
+    "matomoUrl": "https://analytics.kremalicious.com",
+    "matomoSite": 2
+  }
+}
