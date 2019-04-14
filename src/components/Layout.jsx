@@ -25,7 +25,7 @@ const query = graphql`
   }
 `
 
-const LayoutMarkup = ({ children, isHomepage, allowedHosts }) => (
+const LayoutMarkup = ({ children, isHomepage, allowedHosts, location }) => (
   <>
     <Typekit />
     <HostnameCheck allowedHosts={allowedHosts} />
