@@ -1,0 +1,727 @@
+{
+  "allProjectsYaml": {
+    "edges": [
+      {
+        "node": {
+          "title": "Ocean Protocol",
+          "slug": "/oceanprotocol/",
+          "img": {
+            "childImageSharp": {
+              "fluid": {
+                "aspectRatio": 1.8,
+                "src": "/static/4bfe75568d863d8aab3bd7670c7e1680/55230/oceanprotocol-01.png",
+                "srcSet": "/static/4bfe75568d863d8aab3bd7670c7e1680/566d0/oceanprotocol-01.png 300w,\n/static/4bfe75568d863d8aab3bd7670c7e1680/bd9e5/oceanprotocol-01.png 600w,\n/static/4bfe75568d863d8aab3bd7670c7e1680/55230/oceanprotocol-01.png 1200w,\n/static/4bfe75568d863d8aab3bd7670c7e1680/ea0ed/oceanprotocol-01.png 1800w,\n/static/4bfe75568d863d8aab3bd7670c7e1680/9f094/oceanprotocol-01.png 2400w,\n/static/4bfe75568d863d8aab3bd7670c7e1680/1a778/oceanprotocol-01.png 2880w",
+                "srcWebp": "/static/4bfe75568d863d8aab3bd7670c7e1680/a1b27/oceanprotocol-01.webp",
+                "srcSetWebp": "/static/4bfe75568d863d8aab3bd7670c7e1680/91d38/oceanprotocol-01.webp 300w,\n/static/4bfe75568d863d8aab3bd7670c7e1680/2ead2/oceanprotocol-01.webp 600w,\n/static/4bfe75568d863d8aab3bd7670c7e1680/a1b27/oceanprotocol-01.webp 1200w,\n/static/4bfe75568d863d8aab3bd7670c7e1680/aae66/oceanprotocol-01.webp 1800w,\n/static/4bfe75568d863d8aab3bd7670c7e1680/6de27/oceanprotocol-01.webp 2400w,\n/static/4bfe75568d863d8aab3bd7670c7e1680/d8a41/oceanprotocol-01.webp 2880w",
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "originalImg": "/static/4bfe75568d863d8aab3bd7670c7e1680/1a778/oceanprotocol-01.png",
+                "originalName": "oceanprotocol-01.png",
+                "presentationWidth": 1200,
+                "presentationHeight": 667
+              }
+            }
+          },
+          "description": "Since 2017 I'm leading the UI design & development of Ocean Protocol, iterating on a components-based UI design system spanning all of Ocean Protocol's web properties. Additionally, I conceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.\nMost web interfaces are single-page JavaScript applications built with React, pulling their data from JSON files and various micro services. All design & development is embedded in a continous deployment process via GitHub & Travis.\nInitial website in collaboration with [Balance](https://balance.io/). Key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).\n",
+          "links": [
+            {
+              "title": "oceanprotocol.com",
+              "type": "website",
+              "url": "https://oceanprotocol.com"
+            },
+            {
+              "title": "docs.oceanprotocol.com",
+              "type": "website",
+              "url": "https://docs.oceanprotocol.com"
+            },
+            {
+              "title": "Styleguide",
+              "type": null,
+              "url": "https://oceanprotocol.com/art"
+            },
+            {
+              "title": "@oceanprotocol/art",
+              "type": "github",
+              "url": "https://github.com/oceanprotocol/art"
+            },
+            {
+              "title": "@oceanprotocol/docs",
+              "type": "github",
+              "url": "https://github.com/oceanprotocol/docs"
+            }
+          ],
+          "techstack": [
+            "Sketch",
+            "Affinity Designer",
+            "React",
+            "Gatsby",
+            "HTML",
+            "SCSS",
+            "JavaScript",
+            "Travis",
+            "AWS S3",
+            "Cloudflare"
+          ]
+        }
+      },
+      {
+        "node": {
+          "title": "IPDB",
+          "slug": "/ipdb/",
+          "img": {
+            "childImageSharp": {
+              "fluid": {
+                "aspectRatio": 1.8,
+                "src": "/static/acb1835345fea2d0585c1091a7a5e2c1/55230/ipdb-01.png",
+                "srcSet": "/static/acb1835345fea2d0585c1091a7a5e2c1/566d0/ipdb-01.png 300w,\n/static/acb1835345fea2d0585c1091a7a5e2c1/bd9e5/ipdb-01.png 600w,\n/static/acb1835345fea2d0585c1091a7a5e2c1/55230/ipdb-01.png 1200w,\n/static/acb1835345fea2d0585c1091a7a5e2c1/ea0ed/ipdb-01.png 1800w,\n/static/acb1835345fea2d0585c1091a7a5e2c1/9f094/ipdb-01.png 2400w,\n/static/acb1835345fea2d0585c1091a7a5e2c1/1a778/ipdb-01.png 2880w",
+                "srcWebp": "/static/acb1835345fea2d0585c1091a7a5e2c1/a1b27/ipdb-01.webp",
+                "srcSetWebp": "/static/acb1835345fea2d0585c1091a7a5e2c1/91d38/ipdb-01.webp 300w,\n/static/acb1835345fea2d0585c1091a7a5e2c1/2ead2/ipdb-01.webp 600w,\n/static/acb1835345fea2d0585c1091a7a5e2c1/a1b27/ipdb-01.webp 1200w,\n/static/acb1835345fea2d0585c1091a7a5e2c1/aae66/ipdb-01.webp 1800w,\n/static/acb1835345fea2d0585c1091a7a5e2c1/6de27/ipdb-01.webp 2400w,\n/static/acb1835345fea2d0585c1091a7a5e2c1/d8a41/ipdb-01.webp 2880w",
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "originalImg": "/static/acb1835345fea2d0585c1091a7a5e2c1/1a778/ipdb-01.png",
+                "originalName": "ipdb-01.png",
+                "presentationWidth": 1200,
+                "presentationHeight": 667
+              }
+            }
+          },
+          "description": "From 2015–2017 I was leading the UI design & development of all IPDB web properties and additonally iterated on the creative and visual direction of the IPDB brand.\nThe main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it. All design & development is embedded in a continous deployment process via GitHub & Travis.\nBranding and key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).\n",
+          "links": [
+            {
+              "title": "Link",
+              "type": null,
+              "url": "https://ipdb.io"
+            },
+            {
+              "title": "Styleguide",
+              "type": null,
+              "url": "https://ipdb.io/styleguide/"
+            },
+            {
+              "title": "GitHub",
+              "type": null,
+              "url": "https://github.com/ipdb/website"
+            }
+          ],
+          "techstack": [
+            "Sketch",
+            "Jekyll",
+            "Gulp",
+            "HTML",
+            "SCSS",
+            "JavaScript",
+            "Travis",
+            "AWS S3",
+            "Cloudflare",
+            "3Scale"
+          ]
+        }
+      },
+      {
+        "node": {
+          "title": "Berlin Innovation Ventures",
+          "slug": "/biv/",
+          "img": {
+            "childImageSharp": {
+              "fluid": {
+                "aspectRatio": 1.8,
+                "src": "/static/ed917fad5fb6829ce2234fabcbea9b49/55230/biv-01.png",
+                "srcSet": "/static/ed917fad5fb6829ce2234fabcbea9b49/566d0/biv-01.png 300w,\n/static/ed917fad5fb6829ce2234fabcbea9b49/bd9e5/biv-01.png 600w,\n/static/ed917fad5fb6829ce2234fabcbea9b49/55230/biv-01.png 1200w,\n/static/ed917fad5fb6829ce2234fabcbea9b49/ea0ed/biv-01.png 1800w,\n/static/ed917fad5fb6829ce2234fabcbea9b49/9f094/biv-01.png 2400w,\n/static/ed917fad5fb6829ce2234fabcbea9b49/1a778/biv-01.png 2880w",
+                "srcWebp": "/static/ed917fad5fb6829ce2234fabcbea9b49/a1b27/biv-01.webp",
+                "srcSetWebp": "/static/ed917fad5fb6829ce2234fabcbea9b49/91d38/biv-01.webp 300w,\n/static/ed917fad5fb6829ce2234fabcbea9b49/2ead2/biv-01.webp 600w,\n/static/ed917fad5fb6829ce2234fabcbea9b49/a1b27/biv-01.webp 1200w,\n/static/ed917fad5fb6829ce2234fabcbea9b49/aae66/biv-01.webp 1800w,\n/static/ed917fad5fb6829ce2234fabcbea9b49/6de27/biv-01.webp 2400w,\n/static/ed917fad5fb6829ce2234fabcbea9b49/d8a41/biv-01.webp 2880w",
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "originalImg": "/static/ed917fad5fb6829ce2234fabcbea9b49/1a778/biv-01.png",
+                "originalName": "biv-01.png",
+                "presentationWidth": 1200,
+                "presentationHeight": 667
+              }
+            }
+          },
+          "description": "I designed & developed the website and a basic branding for the Berlin-based VC firm Berlin Innovation Ventures. The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it.\n",
+          "links": [
+            {
+              "title": "Link",
+              "type": null,
+              "url": "http://berlininnovation.vc"
+            }
+          ],
+          "techstack": [
+            "Sketch",
+            "Jekyll",
+            "Gulp",
+            "HTML",
+            "SCSS",
+            "JavaScript"
+          ]
+        }
+      },
+      {
+        "node": {
+          "title": "9984 >> Summit 2017",
+          "slug": "/9984/",
+          "img": {
+            "childImageSharp": {
+              "fluid": {
+                "aspectRatio": 1.8,
+                "src": "/static/ce6c8319412d8d0b8c659f67d173a97c/55230/9984-01.png",
+                "srcSet": "/static/ce6c8319412d8d0b8c659f67d173a97c/566d0/9984-01.png 300w,\n/static/ce6c8319412d8d0b8c659f67d173a97c/bd9e5/9984-01.png 600w,\n/static/ce6c8319412d8d0b8c659f67d173a97c/55230/9984-01.png 1200w,\n/static/ce6c8319412d8d0b8c659f67d173a97c/ea0ed/9984-01.png 1800w,\n/static/ce6c8319412d8d0b8c659f67d173a97c/9f094/9984-01.png 2400w,\n/static/ce6c8319412d8d0b8c659f67d173a97c/1a778/9984-01.png 2880w",
+                "srcWebp": "/static/ce6c8319412d8d0b8c659f67d173a97c/a1b27/9984-01.webp",
+                "srcSetWebp": "/static/ce6c8319412d8d0b8c659f67d173a97c/91d38/9984-01.webp 300w,\n/static/ce6c8319412d8d0b8c659f67d173a97c/2ead2/9984-01.webp 600w,\n/static/ce6c8319412d8d0b8c659f67d173a97c/a1b27/9984-01.webp 1200w,\n/static/ce6c8319412d8d0b8c659f67d173a97c/aae66/9984-01.webp 1800w,\n/static/ce6c8319412d8d0b8c659f67d173a97c/6de27/9984-01.webp 2400w,\n/static/ce6c8319412d8d0b8c659f67d173a97c/d8a41/9984-01.webp 2880w",
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "originalImg": "/static/ce6c8319412d8d0b8c659f67d173a97c/1a778/9984-01.png",
+                "originalName": "9984-01.png",
+                "presentationWidth": 1200,
+                "presentationHeight": 667
+              }
+            }
+          },
+          "description": "In 2017 I was leading the UI design & development for the 9984 >> Summit, the first joint summit of BigchainDB & IPDB. Additionally, I conceptualized, executed and iterated on the creative and visual direction of the 9984 brand.\nThe main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it. All design & development is embedded in a continous deployment process via GitHub & Travis.\nBranding and key visuals in collaboration with [Cristina Vulpe](https://www.linkedin.com/in/cristina-vulpe-41469262) & [Wojciech Hupert](https://twitter.com/wojciechhupert).\n",
+          "links": [
+            {
+              "title": "Link",
+              "type": null,
+              "url": "https://2017.9984.io"
+            },
+            {
+              "title": "Styleguide",
+              "type": null,
+              "url": "https://2017.9984.io/styleguide/"
+            },
+            {
+              "title": "GitHub",
+              "type": null,
+              "url": "https://github.com/9984/2017.9984.io"
+            }
+          ],
+          "techstack": [
+            "Sketch",
+            "Jekyll",
+            "Gulp",
+            "HTML",
+            "SCSS",
+            "JavaScript",
+            "Travis",
+            "AWS S3",
+            "Cloudflare"
+          ]
+        }
+      },
+      {
+        "node": {
+          "title": "BigchainDB",
+          "slug": "/bigchaindb/",
+          "img": {
+            "childImageSharp": {
+              "fluid": {
+                "aspectRatio": 1.8,
+                "src": "/static/fad33c2d37f62e5be6f9c155583ba3fc/55230/bigchaindb-01.png",
+                "srcSet": "/static/fad33c2d37f62e5be6f9c155583ba3fc/566d0/bigchaindb-01.png 300w,\n/static/fad33c2d37f62e5be6f9c155583ba3fc/bd9e5/bigchaindb-01.png 600w,\n/static/fad33c2d37f62e5be6f9c155583ba3fc/55230/bigchaindb-01.png 1200w,\n/static/fad33c2d37f62e5be6f9c155583ba3fc/ea0ed/bigchaindb-01.png 1800w,\n/static/fad33c2d37f62e5be6f9c155583ba3fc/9f094/bigchaindb-01.png 2400w,\n/static/fad33c2d37f62e5be6f9c155583ba3fc/1a778/bigchaindb-01.png 2880w",
+                "srcWebp": "/static/fad33c2d37f62e5be6f9c155583ba3fc/a1b27/bigchaindb-01.webp",
+                "srcSetWebp": "/static/fad33c2d37f62e5be6f9c155583ba3fc/91d38/bigchaindb-01.webp 300w,\n/static/fad33c2d37f62e5be6f9c155583ba3fc/2ead2/bigchaindb-01.webp 600w,\n/static/fad33c2d37f62e5be6f9c155583ba3fc/a1b27/bigchaindb-01.webp 1200w,\n/static/fad33c2d37f62e5be6f9c155583ba3fc/aae66/bigchaindb-01.webp 1800w,\n/static/fad33c2d37f62e5be6f9c155583ba3fc/6de27/bigchaindb-01.webp 2400w,\n/static/fad33c2d37f62e5be6f9c155583ba3fc/d8a41/bigchaindb-01.webp 2880w",
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "originalImg": "/static/fad33c2d37f62e5be6f9c155583ba3fc/1a778/bigchaindb-01.png",
+                "originalName": "bigchaindb-01.png",
+                "presentationWidth": 1200,
+                "presentationHeight": 667
+              }
+            }
+          },
+          "description": "Since 2016 I'm leading the UI design & development of all BigchainDB web properties. I created the initial BigchainDB brand and further conceptualize, execute and iterate on the creative and visual direction of BigchainDB. This includes creating and iterating on a components-based UI design system for all of BigchainDB's web properties.\nThe main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it, pulling data from various external sources and microservices. All design & development is embedded in a continous deployment process via GitHub & Travis.\nBranding & key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).\n",
+          "links": [
+            {
+              "title": "Link",
+              "type": null,
+              "url": "https://www.bigchaindb.com"
+            },
+            {
+              "title": "Styleguide",
+              "type": null,
+              "url": "https://www.bigchaindb.com/styleguide/"
+            },
+            {
+              "title": "GitHub",
+              "type": null,
+              "url": "https://github.com/bigchaindb/site"
+            },
+            {
+              "title": "Dribbble",
+              "type": null,
+              "url": "https://dribbble.com/shots/2522184-BigchainDB-site"
+            }
+          ],
+          "techstack": [
+            "Sketch",
+            "Affinity Designer",
+            "Illustrator",
+            "Jekyll",
+            "Gulp",
+            "HTML",
+            "SCSS",
+            "JavaScript",
+            "Travis",
+            "AWS S3",
+            "Cloudflare"
+          ]
+        }
+      },
+      {
+        "node": {
+          "title": "ChartMogul",
+          "slug": "/chartmogul/",
+          "img": {
+            "childImageSharp": {
+              "fluid": {
+                "aspectRatio": 1.8,
+                "src": "/static/65f6e4c810abdf72631369b5b196a0fa/55230/chartmogul-01.png",
+                "srcSet": "/static/65f6e4c810abdf72631369b5b196a0fa/566d0/chartmogul-01.png 300w,\n/static/65f6e4c810abdf72631369b5b196a0fa/bd9e5/chartmogul-01.png 600w,\n/static/65f6e4c810abdf72631369b5b196a0fa/55230/chartmogul-01.png 1200w,\n/static/65f6e4c810abdf72631369b5b196a0fa/ea0ed/chartmogul-01.png 1800w,\n/static/65f6e4c810abdf72631369b5b196a0fa/9f094/chartmogul-01.png 2400w,\n/static/65f6e4c810abdf72631369b5b196a0fa/1a778/chartmogul-01.png 2880w",
+                "srcWebp": "/static/65f6e4c810abdf72631369b5b196a0fa/a1b27/chartmogul-01.webp",
+                "srcSetWebp": "/static/65f6e4c810abdf72631369b5b196a0fa/91d38/chartmogul-01.webp 300w,\n/static/65f6e4c810abdf72631369b5b196a0fa/2ead2/chartmogul-01.webp 600w,\n/static/65f6e4c810abdf72631369b5b196a0fa/a1b27/chartmogul-01.webp 1200w,\n/static/65f6e4c810abdf72631369b5b196a0fa/aae66/chartmogul-01.webp 1800w,\n/static/65f6e4c810abdf72631369b5b196a0fa/6de27/chartmogul-01.webp 2400w,\n/static/65f6e4c810abdf72631369b5b196a0fa/d8a41/chartmogul-01.webp 2880w",
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "originalImg": "/static/65f6e4c810abdf72631369b5b196a0fa/1a778/chartmogul-01.png",
+                "originalName": "chartmogul-01.png",
+                "presentationWidth": 1200,
+                "presentationHeight": 667
+              }
+            }
+          },
+          "description": "From 2015–2017 I was co-designing and leading the UI design & development of various ChartMogul web properties. This included the creation of a components-based UI design system and implementing it across all web touch points.\nThe main website with its landing pages is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it, while the blog is running on WordPress with its own custom theme. All embedded in an automated development & deployment workflow via GitHub and Travis.\nBesides designing and implementing new features, I maintained the front-end of the ChartMogul application and implemented the UI design system by refactoring most of its front-end codebase.\nAll branding, design & key visuals directed by Michelle Myung.\n",
+          "links": [
+            {
+              "title": "Link",
+              "type": null,
+              "url": "https://chartmogul.com/"
+            },
+            {
+              "title": "Styleguide",
+              "type": null,
+              "url": "https://chartmogul.com/styleguide/"
+            },
+            {
+              "title": "Dribbble",
+              "type": null,
+              "url": "https://dribbble.com/kremalicious/projects/311439-ChartMogul"
+            }
+          ],
+          "techstack": [
+            "Sketch",
+            "Affinity Designer",
+            "Illustrator",
+            "HTML",
+            "SCSS",
+            "JavaScript",
+            "PHP",
+            "Jekyll",
+            "Gulp",
+            "WordPress",
+            "Travis",
+            "AWS S3",
+            "Cloudflare",
+            "Ruby on Rails",
+            "Backbone.js"
+          ]
+        }
+      },
+      {
+        "node": {
+          "title": "ShareTheMeal",
+          "slug": "/sharethemeal/",
+          "img": {
+            "childImageSharp": {
+              "fluid": {
+                "aspectRatio": 1.8,
+                "src": "/static/d00971ec082602b2f0757e795ef3669e/55230/sharethemeal-01.png",
+                "srcSet": "/static/d00971ec082602b2f0757e795ef3669e/566d0/sharethemeal-01.png 300w,\n/static/d00971ec082602b2f0757e795ef3669e/bd9e5/sharethemeal-01.png 600w,\n/static/d00971ec082602b2f0757e795ef3669e/55230/sharethemeal-01.png 1200w,\n/static/d00971ec082602b2f0757e795ef3669e/ea0ed/sharethemeal-01.png 1800w,\n/static/d00971ec082602b2f0757e795ef3669e/9f094/sharethemeal-01.png 2400w,\n/static/d00971ec082602b2f0757e795ef3669e/1a778/sharethemeal-01.png 2880w",
+                "srcWebp": "/static/d00971ec082602b2f0757e795ef3669e/a1b27/sharethemeal-01.webp",
+                "srcSetWebp": "/static/d00971ec082602b2f0757e795ef3669e/91d38/sharethemeal-01.webp 300w,\n/static/d00971ec082602b2f0757e795ef3669e/2ead2/sharethemeal-01.webp 600w,\n/static/d00971ec082602b2f0757e795ef3669e/a1b27/sharethemeal-01.webp 1200w,\n/static/d00971ec082602b2f0757e795ef3669e/aae66/sharethemeal-01.webp 1800w,\n/static/d00971ec082602b2f0757e795ef3669e/6de27/sharethemeal-01.webp 2400w,\n/static/d00971ec082602b2f0757e795ef3669e/d8a41/sharethemeal-01.webp 2880w",
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "originalImg": "/static/d00971ec082602b2f0757e795ef3669e/1a778/sharethemeal-01.png",
+                "originalName": "sharethemeal-01.png",
+                "presentationWidth": 1200,
+                "presentationHeight": 667
+              }
+            }
+          },
+          "description": "ShareTheMeal is an app from the United Nations World Food Programme (WFP) that enables people to \"share their meals\" with children in need. In 2015 I was consulting, co-designing and leading the front-end development of the ShareTheMeal website and various parts of the ShareTheMeal apps for iOS & Android.\nThe main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it, embedded in a continous deployment process via GitHub & Travis.\n",
+          "links": [
+            {
+              "title": "Link",
+              "type": null,
+              "url": "https://sharethemeal.org/"
+            }
+          ],
+          "techstack": [
+            "Sketch",
+            "Illustrator",
+            "Jekyll",
+            "Gulp",
+            "HTML",
+            "SCSS",
+            "JavaScript",
+            "Travis",
+            "AWS S3",
+            "Cloudflare",
+            "Node.js"
+          ]
+        }
+      },
+      {
+        "node": {
+          "title": "ezeep",
+          "slug": "/ezeep/",
+          "img": {
+            "childImageSharp": {
+              "fluid": {
+                "aspectRatio": 1.8,
+                "src": "/static/0bf3f682179b1dd551b43b3533d0f103/55230/ezeep-01.png",
+                "srcSet": "/static/0bf3f682179b1dd551b43b3533d0f103/566d0/ezeep-01.png 300w,\n/static/0bf3f682179b1dd551b43b3533d0f103/bd9e5/ezeep-01.png 600w,\n/static/0bf3f682179b1dd551b43b3533d0f103/55230/ezeep-01.png 1200w,\n/static/0bf3f682179b1dd551b43b3533d0f103/ea0ed/ezeep-01.png 1800w,\n/static/0bf3f682179b1dd551b43b3533d0f103/9f094/ezeep-01.png 2400w,\n/static/0bf3f682179b1dd551b43b3533d0f103/1a778/ezeep-01.png 2880w",
+                "srcWebp": "/static/0bf3f682179b1dd551b43b3533d0f103/a1b27/ezeep-01.webp",
+                "srcSetWebp": "/static/0bf3f682179b1dd551b43b3533d0f103/91d38/ezeep-01.webp 300w,\n/static/0bf3f682179b1dd551b43b3533d0f103/2ead2/ezeep-01.webp 600w,\n/static/0bf3f682179b1dd551b43b3533d0f103/a1b27/ezeep-01.webp 1200w,\n/static/0bf3f682179b1dd551b43b3533d0f103/aae66/ezeep-01.webp 1800w,\n/static/0bf3f682179b1dd551b43b3533d0f103/6de27/ezeep-01.webp 2400w,\n/static/0bf3f682179b1dd551b43b3533d0f103/d8a41/ezeep-01.webp 2880w",
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "originalImg": "/static/0bf3f682179b1dd551b43b3533d0f103/1a778/ezeep-01.png",
+                "originalName": "ezeep-01.png",
+                "presentationWidth": 1200,
+                "presentationHeight": 667
+              }
+            }
+          },
+          "description": "From 2012–2015 I worked at ezeep, where I helped creating an unprecedented, market-leading & award-winning user experience based on the principles of emotional design way ahead of all competitors. This included conceptualizing executing, and iterating on the creative & visual direction of the ezeep brand.\nI was leading the UI design & development of all ezeep touch points and - as a product designer - defined the ezeep product based on user and market research in an iterative process. On top of that, I designed and helped building all app experiences of ezeep on Windows, macOS, iOS, and Android.\nezeep was acquired by [Cortado AG](https://www.cortado.com) in 2015 and became part of their [ThinPrint Cloud Services](https://www.thinprintcloud.com) suite of products.\n",
+          "links": [
+            {
+              "title": "Info",
+              "type": null,
+              "url": "https://kremalicious.com/enterprise-software-sucks/"
+            },
+            {
+              "title": "Dribbble",
+              "type": null,
+              "url": "https://dribbble.com/kremalicious/projects/84318-ezeep"
+            }
+          ],
+          "techstack": [
+            "Photoshop",
+            "Illustrator",
+            "InDesign",
+            "Sketch",
+            "HTML",
+            "SCSS",
+            "JavaScript",
+            "PHP",
+            "WordPress",
+            "Travis",
+            "AWS",
+            "Cloudflare",
+            "Node.js",
+            "Backbone.js",
+            "Electron"
+          ]
+        }
+      },
+      {
+        "node": {
+          "title": "Mr. Reader",
+          "slug": "/mrreader/",
+          "img": {
+            "childImageSharp": {
+              "fluid": {
+                "aspectRatio": 1.8,
+                "src": "/static/7d47f4d930476068faaa9e3b76a0c639/55230/mrreader-01.png",
+                "srcSet": "/static/7d47f4d930476068faaa9e3b76a0c639/566d0/mrreader-01.png 300w,\n/static/7d47f4d930476068faaa9e3b76a0c639/bd9e5/mrreader-01.png 600w,\n/static/7d47f4d930476068faaa9e3b76a0c639/55230/mrreader-01.png 1200w,\n/static/7d47f4d930476068faaa9e3b76a0c639/ea0ed/mrreader-01.png 1800w,\n/static/7d47f4d930476068faaa9e3b76a0c639/9f094/mrreader-01.png 2400w,\n/static/7d47f4d930476068faaa9e3b76a0c639/1a778/mrreader-01.png 2880w",
+                "srcWebp": "/static/7d47f4d930476068faaa9e3b76a0c639/a1b27/mrreader-01.webp",
+                "srcSetWebp": "/static/7d47f4d930476068faaa9e3b76a0c639/91d38/mrreader-01.webp 300w,\n/static/7d47f4d930476068faaa9e3b76a0c639/2ead2/mrreader-01.webp 600w,\n/static/7d47f4d930476068faaa9e3b76a0c639/a1b27/mrreader-01.webp 1200w,\n/static/7d47f4d930476068faaa9e3b76a0c639/aae66/mrreader-01.webp 1800w,\n/static/7d47f4d930476068faaa9e3b76a0c639/6de27/mrreader-01.webp 2400w,\n/static/7d47f4d930476068faaa9e3b76a0c639/d8a41/mrreader-01.webp 2880w",
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "originalImg": "/static/7d47f4d930476068faaa9e3b76a0c639/1a778/mrreader-01.png",
+                "originalName": "mrreader-01.png",
+                "presentationWidth": 1200,
+                "presentationHeight": 667
+              }
+            }
+          },
+          "description": "While working with indy iOS developer Curious Times in 2012, I designed the app icon, a custom theme, and various promotion materials for Mr. Reader, a powerful and highly loved RSS feed reader for iPad.\n",
+          "links": null,
+          "techstack": ["Photoshop"]
+        }
+      },
+      {
+        "node": {
+          "title": "iPixelPad",
+          "slug": "/ipixelpad/",
+          "img": {
+            "childImageSharp": {
+              "fluid": {
+                "aspectRatio": 1.8,
+                "src": "/static/6f255d7df0c12b2ec3bd78e92e87e121/55230/ipixelpad-01.png",
+                "srcSet": "/static/6f255d7df0c12b2ec3bd78e92e87e121/566d0/ipixelpad-01.png 300w,\n/static/6f255d7df0c12b2ec3bd78e92e87e121/bd9e5/ipixelpad-01.png 600w,\n/static/6f255d7df0c12b2ec3bd78e92e87e121/55230/ipixelpad-01.png 1200w,\n/static/6f255d7df0c12b2ec3bd78e92e87e121/ea0ed/ipixelpad-01.png 1800w,\n/static/6f255d7df0c12b2ec3bd78e92e87e121/9f094/ipixelpad-01.png 2400w,\n/static/6f255d7df0c12b2ec3bd78e92e87e121/1a778/ipixelpad-01.png 2880w",
+                "srcWebp": "/static/6f255d7df0c12b2ec3bd78e92e87e121/a1b27/ipixelpad-01.webp",
+                "srcSetWebp": "/static/6f255d7df0c12b2ec3bd78e92e87e121/91d38/ipixelpad-01.webp 300w,\n/static/6f255d7df0c12b2ec3bd78e92e87e121/2ead2/ipixelpad-01.webp 600w,\n/static/6f255d7df0c12b2ec3bd78e92e87e121/a1b27/ipixelpad-01.webp 1200w,\n/static/6f255d7df0c12b2ec3bd78e92e87e121/aae66/ipixelpad-01.webp 1800w,\n/static/6f255d7df0c12b2ec3bd78e92e87e121/6de27/ipixelpad-01.webp 2400w,\n/static/6f255d7df0c12b2ec3bd78e92e87e121/d8a41/ipixelpad-01.webp 2880w",
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "originalImg": "/static/6f255d7df0c12b2ec3bd78e92e87e121/1a778/ipixelpad-01.png",
+                "originalName": "ipixelpad-01.png",
+                "presentationWidth": 1200,
+                "presentationHeight": 667
+              }
+            }
+          },
+          "description": "So, what to do when everyone seem to release iPad icons but fail to include some crisp small size icons? Pushing the pixels for yourself of course. So here’s my take on the smaller sizes of an Apple iPad icon, called iPixelPad.\nReleased as a goodie on [kremalicious.com](https://kremalicious.com/ipixelpad/).\n",
+          "links": [
+            {
+              "title": "Download",
+              "type": null,
+              "url": "https://kremalicious.com/ipixelpad/"
+            }
+          ],
+          "techstack": ["Photoshop"]
+        }
+      },
+      {
+        "node": {
+          "title": "Out Of Whale Oil",
+          "slug": "/outofwhaleoil/",
+          "img": {
+            "childImageSharp": {
+              "fluid": {
+                "aspectRatio": 1.8,
+                "src": "/static/86ce88b849146660420149407ae47868/40570/outofwhaleoil-01.jpg",
+                "srcSet": "/static/86ce88b849146660420149407ae47868/7bafc/outofwhaleoil-01.jpg 300w,\n/static/86ce88b849146660420149407ae47868/a5a41/outofwhaleoil-01.jpg 600w,\n/static/86ce88b849146660420149407ae47868/40570/outofwhaleoil-01.jpg 1200w,\n/static/86ce88b849146660420149407ae47868/6a8f4/outofwhaleoil-01.jpg 1800w,\n/static/86ce88b849146660420149407ae47868/3e55d/outofwhaleoil-01.jpg 2400w,\n/static/86ce88b849146660420149407ae47868/c7ccf/outofwhaleoil-01.jpg 2880w",
+                "srcWebp": "/static/86ce88b849146660420149407ae47868/a1b27/outofwhaleoil-01.webp",
+                "srcSetWebp": "/static/86ce88b849146660420149407ae47868/91d38/outofwhaleoil-01.webp 300w,\n/static/86ce88b849146660420149407ae47868/2ead2/outofwhaleoil-01.webp 600w,\n/static/86ce88b849146660420149407ae47868/a1b27/outofwhaleoil-01.webp 1200w,\n/static/86ce88b849146660420149407ae47868/aae66/outofwhaleoil-01.webp 1800w,\n/static/86ce88b849146660420149407ae47868/6de27/outofwhaleoil-01.webp 2400w,\n/static/86ce88b849146660420149407ae47868/d8a41/outofwhaleoil-01.webp 2880w",
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "originalImg": "/static/86ce88b849146660420149407ae47868/c7ccf/outofwhaleoil-01.jpg",
+                "originalName": "outofwhaleoil-01.jpg",
+                "presentationWidth": 1200,
+                "presentationHeight": 667
+              }
+            }
+          },
+          "description": "Tribute wallpaper pack inspired by the Futurama movie _Into The Wild Green Yonder_. Released as a goodie on [kremalicious.com](https://kremalicious.com/out-of-whale-oil/).\n",
+          "links": [
+            {
+              "title": "Download",
+              "type": null,
+              "url": "https://kremalicious.com/out-of-whale-oil/"
+            }
+          ],
+          "techstack": ["Photoshop"]
+        }
+      },
+      {
+        "node": {
+          "title": "Martin-Luther-Universität Halle-Wittenberg",
+          "slug": "/unihalle/",
+          "img": {
+            "childImageSharp": {
+              "fluid": {
+                "aspectRatio": 1.8,
+                "src": "/static/abcea3265322bfbc06599d7eb173e57a/55230/unihalle-01.png",
+                "srcSet": "/static/abcea3265322bfbc06599d7eb173e57a/566d0/unihalle-01.png 300w,\n/static/abcea3265322bfbc06599d7eb173e57a/bd9e5/unihalle-01.png 600w,\n/static/abcea3265322bfbc06599d7eb173e57a/55230/unihalle-01.png 1200w,\n/static/abcea3265322bfbc06599d7eb173e57a/ea0ed/unihalle-01.png 1800w,\n/static/abcea3265322bfbc06599d7eb173e57a/9f094/unihalle-01.png 2400w,\n/static/abcea3265322bfbc06599d7eb173e57a/1a778/unihalle-01.png 2880w",
+                "srcWebp": "/static/abcea3265322bfbc06599d7eb173e57a/a1b27/unihalle-01.webp",
+                "srcSetWebp": "/static/abcea3265322bfbc06599d7eb173e57a/91d38/unihalle-01.webp 300w,\n/static/abcea3265322bfbc06599d7eb173e57a/2ead2/unihalle-01.webp 600w,\n/static/abcea3265322bfbc06599d7eb173e57a/a1b27/unihalle-01.webp 1200w,\n/static/abcea3265322bfbc06599d7eb173e57a/aae66/unihalle-01.webp 1800w,\n/static/abcea3265322bfbc06599d7eb173e57a/6de27/unihalle-01.webp 2400w,\n/static/abcea3265322bfbc06599d7eb173e57a/d8a41/unihalle-01.webp 2880w",
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "originalImg": "/static/abcea3265322bfbc06599d7eb173e57a/1a778/unihalle-01.png",
+                "originalName": "unihalle-01.png",
+                "presentationWidth": 1200,
+                "presentationHeight": 667
+              }
+            }
+          },
+          "description": "From 2009–2012 I worked at the IT services department of [Martin-Luther-Universität Halle-Wittenberg](http://www.uni-halle.de) where I conceptualized, designed & implemented numerous in-house and public facing interfaces for thousands of students and staff.\nAdditionally, I conceptualized, designed, created, and maintained the blog network & community for all students & staff.\n",
+          "links": [
+            {
+              "title": "Link",
+              "type": null,
+              "url": "http://blogs.urz-uni-halle.de"
+            },
+            {
+              "title": "Dribbble",
+              "type": null,
+              "url": "https://dribbble.com/kremalicious/projects/690029-MLU"
+            }
+          ],
+          "techstack": [
+            "Photoshop",
+            "Illustrator",
+            "HTML",
+            "SCSS",
+            "JavaScript",
+            "PHP",
+            "Ruby on Rails",
+            "WordPress",
+            "Ilias",
+            "Stud.IP"
+          ]
+        }
+      },
+      {
+        "node": {
+          "title": "Coffee Cup",
+          "slug": "/coffeecup/",
+          "img": {
+            "childImageSharp": {
+              "fluid": {
+                "aspectRatio": 1.8,
+                "src": "/static/c6b5a93dc77983bf55a511a6847cbbbe/55230/coffeecup-01.png",
+                "srcSet": "/static/c6b5a93dc77983bf55a511a6847cbbbe/566d0/coffeecup-01.png 300w,\n/static/c6b5a93dc77983bf55a511a6847cbbbe/bd9e5/coffeecup-01.png 600w,\n/static/c6b5a93dc77983bf55a511a6847cbbbe/55230/coffeecup-01.png 1200w,\n/static/c6b5a93dc77983bf55a511a6847cbbbe/ea0ed/coffeecup-01.png 1800w,\n/static/c6b5a93dc77983bf55a511a6847cbbbe/9f094/coffeecup-01.png 2400w,\n/static/c6b5a93dc77983bf55a511a6847cbbbe/1a778/coffeecup-01.png 2880w",
+                "srcWebp": "/static/c6b5a93dc77983bf55a511a6847cbbbe/a1b27/coffeecup-01.webp",
+                "srcSetWebp": "/static/c6b5a93dc77983bf55a511a6847cbbbe/91d38/coffeecup-01.webp 300w,\n/static/c6b5a93dc77983bf55a511a6847cbbbe/2ead2/coffeecup-01.webp 600w,\n/static/c6b5a93dc77983bf55a511a6847cbbbe/a1b27/coffeecup-01.webp 1200w,\n/static/c6b5a93dc77983bf55a511a6847cbbbe/aae66/coffeecup-01.webp 1800w,\n/static/c6b5a93dc77983bf55a511a6847cbbbe/6de27/coffeecup-01.webp 2400w,\n/static/c6b5a93dc77983bf55a511a6847cbbbe/d8a41/coffeecup-01.webp 2880w",
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "originalImg": "/static/c6b5a93dc77983bf55a511a6847cbbbe/1a778/coffeecup-01.png",
+                "originalName": "coffeecup-01.png",
+                "presentationWidth": 1200,
+                "presentationHeight": 667
+              }
+            }
+          },
+          "description": "Desktop icons showing the fuel of most designers. Released as a goodie on [kremalicious.com](https://kremalicious.com/coffee-cup-icon/).\n",
+          "links": [
+            {
+              "title": "Download",
+              "type": null,
+              "url": "https://kremalicious.com/coffee-cup-icon/"
+            }
+          ],
+          "techstack": ["Photoshop"]
+        }
+      },
+      {
+        "node": {
+          "title": "Project Purple",
+          "slug": "/projectpurple/",
+          "img": {
+            "childImageSharp": {
+              "fluid": {
+                "aspectRatio": 1.8,
+                "src": "/static/8cc647e8b1490931daa6580a40883e29/55230/projectpurple-01.png",
+                "srcSet": "/static/8cc647e8b1490931daa6580a40883e29/566d0/projectpurple-01.png 300w,\n/static/8cc647e8b1490931daa6580a40883e29/bd9e5/projectpurple-01.png 600w,\n/static/8cc647e8b1490931daa6580a40883e29/55230/projectpurple-01.png 1200w,\n/static/8cc647e8b1490931daa6580a40883e29/ea0ed/projectpurple-01.png 1800w,\n/static/8cc647e8b1490931daa6580a40883e29/9f094/projectpurple-01.png 2400w,\n/static/8cc647e8b1490931daa6580a40883e29/1a778/projectpurple-01.png 2880w",
+                "srcWebp": "/static/8cc647e8b1490931daa6580a40883e29/a1b27/projectpurple-01.webp",
+                "srcSetWebp": "/static/8cc647e8b1490931daa6580a40883e29/91d38/projectpurple-01.webp 300w,\n/static/8cc647e8b1490931daa6580a40883e29/2ead2/projectpurple-01.webp 600w,\n/static/8cc647e8b1490931daa6580a40883e29/a1b27/projectpurple-01.webp 1200w,\n/static/8cc647e8b1490931daa6580a40883e29/aae66/projectpurple-01.webp 1800w,\n/static/8cc647e8b1490931daa6580a40883e29/6de27/projectpurple-01.webp 2400w,\n/static/8cc647e8b1490931daa6580a40883e29/d8a41/projectpurple-01.webp 2880w",
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "originalImg": "/static/8cc647e8b1490931daa6580a40883e29/1a778/projectpurple-01.png",
+                "originalName": "projectpurple-01.png",
+                "presentationWidth": 1200,
+                "presentationHeight": 667
+              }
+            }
+          },
+          "description": "It had been revealed the original iPhone was developed in a locked down building under the name Project Purple and because of the secrecy involved, the team decorated the building with Fight Club references. Perfect story to create a wallpaper out of it.\nReleased as a goodie on [kremalicious.com](https://kremalicious.com/projectpurple/).\n",
+          "links": [
+            {
+              "title": "Download",
+              "type": null,
+              "url": "https://kremalicious.com/projectpurple/"
+            }
+          ],
+          "techstack": ["Photoshop"]
+        }
+      },
+      {
+        "node": {
+          "title": "Allinnia Creative Group",
+          "slug": "/allinnia/",
+          "img": {
+            "childImageSharp": {
+              "fluid": {
+                "aspectRatio": 1.8,
+                "src": "/static/d86855c9ee74e8dfbf169ded0631f5c3/55230/allinnia-01.png",
+                "srcSet": "/static/d86855c9ee74e8dfbf169ded0631f5c3/566d0/allinnia-01.png 300w,\n/static/d86855c9ee74e8dfbf169ded0631f5c3/bd9e5/allinnia-01.png 600w,\n/static/d86855c9ee74e8dfbf169ded0631f5c3/55230/allinnia-01.png 1200w,\n/static/d86855c9ee74e8dfbf169ded0631f5c3/ea0ed/allinnia-01.png 1800w,\n/static/d86855c9ee74e8dfbf169ded0631f5c3/9f094/allinnia-01.png 2400w,\n/static/d86855c9ee74e8dfbf169ded0631f5c3/1a778/allinnia-01.png 2880w",
+                "srcWebp": "/static/d86855c9ee74e8dfbf169ded0631f5c3/a1b27/allinnia-01.webp",
+                "srcSetWebp": "/static/d86855c9ee74e8dfbf169ded0631f5c3/91d38/allinnia-01.webp 300w,\n/static/d86855c9ee74e8dfbf169ded0631f5c3/2ead2/allinnia-01.webp 600w,\n/static/d86855c9ee74e8dfbf169ded0631f5c3/a1b27/allinnia-01.webp 1200w,\n/static/d86855c9ee74e8dfbf169ded0631f5c3/aae66/allinnia-01.webp 1800w,\n/static/d86855c9ee74e8dfbf169ded0631f5c3/6de27/allinnia-01.webp 2400w,\n/static/d86855c9ee74e8dfbf169ded0631f5c3/d8a41/allinnia-01.webp 2880w",
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "originalImg": "/static/d86855c9ee74e8dfbf169ded0631f5c3/1a778/allinnia-01.png",
+                "originalName": "allinnia-01.png",
+                "presentationWidth": 1200,
+                "presentationHeight": 667
+              }
+            }
+          },
+          "description": "In 2009 I created the branding, website, and various key visuals for professional music production studio Allinnia Creative Group, reflecting their own musical compositions.\nThe website was built from scratch as a simple PHP application with a store and music listening functionality.\n",
+          "links": null,
+          "techstack": ["Photoshop", "HTML", "CSS", "JavaScript", "PHP"]
+        }
+      },
+      {
+        "node": {
+          "title": "Aperture Loupe",
+          "slug": "/apertureloupe/",
+          "img": {
+            "childImageSharp": {
+              "fluid": {
+                "aspectRatio": 1.8,
+                "src": "/static/04fa21ff7752ace46c954f5995deb0d5/55230/apertureloupe-01.png",
+                "srcSet": "/static/04fa21ff7752ace46c954f5995deb0d5/566d0/apertureloupe-01.png 300w,\n/static/04fa21ff7752ace46c954f5995deb0d5/bd9e5/apertureloupe-01.png 600w,\n/static/04fa21ff7752ace46c954f5995deb0d5/55230/apertureloupe-01.png 1200w,\n/static/04fa21ff7752ace46c954f5995deb0d5/ea0ed/apertureloupe-01.png 1800w,\n/static/04fa21ff7752ace46c954f5995deb0d5/9f094/apertureloupe-01.png 2400w,\n/static/04fa21ff7752ace46c954f5995deb0d5/1a778/apertureloupe-01.png 2880w",
+                "srcWebp": "/static/04fa21ff7752ace46c954f5995deb0d5/a1b27/apertureloupe-01.webp",
+                "srcSetWebp": "/static/04fa21ff7752ace46c954f5995deb0d5/91d38/apertureloupe-01.webp 300w,\n/static/04fa21ff7752ace46c954f5995deb0d5/2ead2/apertureloupe-01.webp 600w,\n/static/04fa21ff7752ace46c954f5995deb0d5/a1b27/apertureloupe-01.webp 1200w,\n/static/04fa21ff7752ace46c954f5995deb0d5/aae66/apertureloupe-01.webp 1800w,\n/static/04fa21ff7752ace46c954f5995deb0d5/6de27/apertureloupe-01.webp 2400w,\n/static/04fa21ff7752ace46c954f5995deb0d5/d8a41/apertureloupe-01.webp 2880w",
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "originalImg": "/static/04fa21ff7752ace46c954f5995deb0d5/1a778/apertureloupe-01.png",
+                "originalName": "apertureloupe-01.png",
+                "presentationWidth": 1200,
+                "presentationHeight": 667
+              }
+            }
+          },
+          "description": "When Apple released their professional photography app _Aperture_ in 2008, the loupe tool in there was something really novel and just fun to play with. Inspired by that, I created this macOS desktop icon.\n",
+          "links": null,
+          "techstack": ["Photoshop"]
+        }
+      },
+      {
+        "node": {
+          "title": "Adiumeetie",
+          "slug": "/adiumeetie/",
+          "img": {
+            "childImageSharp": {
+              "fluid": {
+                "aspectRatio": 1.8,
+                "src": "/static/d58bb3fcb97a3fbaa31ec8f1e4703c7e/55230/adiumeetie-01.png",
+                "srcSet": "/static/d58bb3fcb97a3fbaa31ec8f1e4703c7e/566d0/adiumeetie-01.png 300w,\n/static/d58bb3fcb97a3fbaa31ec8f1e4703c7e/bd9e5/adiumeetie-01.png 600w,\n/static/d58bb3fcb97a3fbaa31ec8f1e4703c7e/55230/adiumeetie-01.png 1200w,\n/static/d58bb3fcb97a3fbaa31ec8f1e4703c7e/ea0ed/adiumeetie-01.png 1800w,\n/static/d58bb3fcb97a3fbaa31ec8f1e4703c7e/9f094/adiumeetie-01.png 2400w,\n/static/d58bb3fcb97a3fbaa31ec8f1e4703c7e/1a778/adiumeetie-01.png 2880w",
+                "srcWebp": "/static/d58bb3fcb97a3fbaa31ec8f1e4703c7e/a1b27/adiumeetie-01.webp",
+                "srcSetWebp": "/static/d58bb3fcb97a3fbaa31ec8f1e4703c7e/91d38/adiumeetie-01.webp 300w,\n/static/d58bb3fcb97a3fbaa31ec8f1e4703c7e/2ead2/adiumeetie-01.webp 600w,\n/static/d58bb3fcb97a3fbaa31ec8f1e4703c7e/a1b27/adiumeetie-01.webp 1200w,\n/static/d58bb3fcb97a3fbaa31ec8f1e4703c7e/aae66/adiumeetie-01.webp 1800w,\n/static/d58bb3fcb97a3fbaa31ec8f1e4703c7e/6de27/adiumeetie-01.webp 2400w,\n/static/d58bb3fcb97a3fbaa31ec8f1e4703c7e/d8a41/adiumeetie-01.webp 2880w",
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "originalImg": "/static/d58bb3fcb97a3fbaa31ec8f1e4703c7e/1a778/adiumeetie-01.png",
+                "originalName": "adiumeetie-01.png",
+                "presentationWidth": 1200,
+                "presentationHeight": 667
+              }
+            }
+          },
+          "description": "A macOS replacement desktop icon created in 2009 for the popular Mac IM client Adium following the style of atebit’s excellent Tweetie for Mac icon. Released as a goodie on [kremalicious.com](https://kremalicious.com/adiumeetie/).\n",
+          "links": [
+            {
+              "title": "Download",
+              "type": null,
+              "url": "https://kremalicious.com/adiumeetie/"
+            }
+          ],
+          "techstack": ["Photoshop"]
+        }
+      },
+      {
+        "node": {
+          "title": "Niépce's Camera Obscura",
+          "slug": "/niepces-camera-obscura/",
+          "img": {
+            "childImageSharp": {
+              "fluid": {
+                "aspectRatio": 1.8,
+                "src": "/static/d40b5eff60152eada7bbbc6c03f5c8a8/40570/niepces-camera-obscura-01.jpg",
+                "srcSet": "/static/d40b5eff60152eada7bbbc6c03f5c8a8/7bafc/niepces-camera-obscura-01.jpg 300w,\n/static/d40b5eff60152eada7bbbc6c03f5c8a8/a5a41/niepces-camera-obscura-01.jpg 600w,\n/static/d40b5eff60152eada7bbbc6c03f5c8a8/40570/niepces-camera-obscura-01.jpg 1200w,\n/static/d40b5eff60152eada7bbbc6c03f5c8a8/6a8f4/niepces-camera-obscura-01.jpg 1800w,\n/static/d40b5eff60152eada7bbbc6c03f5c8a8/3e55d/niepces-camera-obscura-01.jpg 2400w,\n/static/d40b5eff60152eada7bbbc6c03f5c8a8/c7ccf/niepces-camera-obscura-01.jpg 2880w",
+                "srcWebp": "/static/d40b5eff60152eada7bbbc6c03f5c8a8/a1b27/niepces-camera-obscura-01.webp",
+                "srcSetWebp": "/static/d40b5eff60152eada7bbbc6c03f5c8a8/91d38/niepces-camera-obscura-01.webp 300w,\n/static/d40b5eff60152eada7bbbc6c03f5c8a8/2ead2/niepces-camera-obscura-01.webp 600w,\n/static/d40b5eff60152eada7bbbc6c03f5c8a8/a1b27/niepces-camera-obscura-01.webp 1200w,\n/static/d40b5eff60152eada7bbbc6c03f5c8a8/aae66/niepces-camera-obscura-01.webp 1800w,\n/static/d40b5eff60152eada7bbbc6c03f5c8a8/6de27/niepces-camera-obscura-01.webp 2400w,\n/static/d40b5eff60152eada7bbbc6c03f5c8a8/d8a41/niepces-camera-obscura-01.webp 2880w",
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "originalImg": "/static/d40b5eff60152eada7bbbc6c03f5c8a8/c7ccf/niepces-camera-obscura-01.jpg",
+                "originalName": "niepces-camera-obscura-01.jpg",
+                "presentationWidth": 1200,
+                "presentationHeight": 667
+              }
+            }
+          },
+          "description": "In 2008 I used the camera obscura as it was used by Nicéphore Niépce in 1826 to create an Aperture and iPhoto replacement icon.\nNicéphore Niépce made it first possible to preserve an image taken with a camera obscura in 1826 or 1827 by using a special mixture of bitumen on a glass or metal plate, naming it Heliography. This first preserved image 'View from the Window at Le Gras' is the one you can see in the iPhoto icon.\n",
+          "links": [
+            {
+              "title": "Info",
+              "type": null,
+              "url": "https://kremalicious.com/niepces-camera-obscura-and-the-history-of-the-first-photograph/"
+            }
+          ],
+          "techstack": ["Photoshop"]
+        }
+      }
+    ]
+  }
+}
