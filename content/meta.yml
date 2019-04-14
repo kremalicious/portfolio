@@ -27,3 +27,8 @@ typekitID: dtg3zui
 # Analytics tools
 matomoUrl: https://analytics.kremalicious.com
 matomoSite: 2
+
+allowedHosts:
+  - matthiaskretschmann.com
+  - beta.matthiaskretschmann.com
+  - localhost

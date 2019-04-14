@@ -1,17 +1,16 @@
 import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import styles from './HostnameCheck.module.scss'
 
-const allowedHosts = [
-  'matthiaskretschmann.com',
-  'beta.matthiaskretschmann.com',
-  'localhost'
-]
+export default class HostnameCheck extends PureComponent {
+  static propTypes = {
+    allowedHosts: PropTypes.array.isRequired
+  }
 
-export default class HostnameInfo extends PureComponent {
   checkAllowedHost = () => {
     if (typeof window !== 'undefined' && window.location) {
-      return allowedHosts.includes(window.location.hostname)
+      return this.props.allowedHosts.includes(window.location.hostname)
     }
   }
 
