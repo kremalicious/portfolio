@@ -26,6 +26,7 @@
   - [🍬 Typekit component](#-typekit-component)
 - [✨ Development](#-development)
   - [🔮 Linting](#-linting)
+  - [👩‍🔬 Testing](#-testing)
   - [🎈 Add a new project](#-add-a-new-project)
 - [🚚 Deployment](#-deployment)
 - [🏛 Licenses](#-licenses)
@@ -154,6 +155,18 @@ To automatically format all code files:
 npm run format
 npm run format:css
 ```
+
+### 👩‍🔬 Testing
+
+Test suite is setup with [Jest](https://jestjs.io) and [react-testing-library](https://github.com/kentcdodds/react-testing-library).
+
+To run all tests, including all linting tests:
+
+```bash
+npm test
+```
+
+All test files live beside the respective component. Testing setup, fixtures, and mocks can be found in `./jest.config.js` and `./jest` folder.
 
 ### 🎈 Add a new project
 
