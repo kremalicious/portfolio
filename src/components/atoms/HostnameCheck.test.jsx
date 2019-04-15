@@ -12,6 +12,7 @@ describe('HostnameCheck', () => {
     const allowedHosts = ['hello.com']
     const { container } = render(<HostnameCheck allowedHosts={allowedHosts} />)
     expect(container.firstChild).toHaveTextContent('do a remix')
+    expect(container.firstChild).toBeInTheDocument()
   })
 
   it('does not render if on correct hostname', () => {

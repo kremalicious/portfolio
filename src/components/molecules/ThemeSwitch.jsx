@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import posed from 'react-pose'
@@ -44,7 +44,7 @@ export default class ThemeSwitch extends PureComponent {
     return (
       <Consumer>
         {({ dark, toggleDark }) => (
-          <Fragment>
+          <>
             <Helmet>
               <body className={dark ? 'dark' : null} />
             </Helmet>
@@ -55,7 +55,7 @@ export default class ThemeSwitch extends PureComponent {
                 <ThemeToggle dark={dark} />
               </label>
             </Animation>
-          </Fragment>
+          </>
         )}
       </Consumer>
     )

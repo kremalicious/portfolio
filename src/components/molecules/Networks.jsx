@@ -1,100 +1,51 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
 import posed from 'react-pose'
 import classNames from 'classnames'
 import { moveInTop } from '../atoms/Transitions'
-
-import { ReactComponent as Email } from '../../images/email.svg'
-import { ReactComponent as Blog } from '../../images/blog.svg'
-import { ReactComponent as Twitter } from '../../images/twitter.svg'
-import { ReactComponent as GitHub } from '../../images/github.svg'
-import { ReactComponent as Dribbble } from '../../images/dribbble.svg'
-
+import LinkIcon from '../atoms/LinkIcon'
+import { useMeta } from '../../hooks/use-meta'
 import icons from '../atoms/Icons.module.scss'
 import styles from './Networks.module.scss'
 
-const query = graphql`
-  query {
-    contentYaml {
-      social {
-        Email
-        Blog
-        Twitter
-        GitHub
-        Dribbble
-      }
-    }
-  }
-`
+const Animation = posed.aside(moveInTop)
 
-class NetworkIcon extends PureComponent {
-  static propTypes = {
-    title: PropTypes.string
-  }
-
-  render() {
-    switch (this.props.title) {
-      case 'Email':
-        return <Email {...this.props} />
-      case 'Blog':
-        return <Blog {...this.props} />
-      case 'Twitter':
-        return <Twitter {...this.props} />
-      case 'GitHub':
-        return <GitHub {...this.props} />
-      case 'Dribbble':
-        return <Dribbble {...this.props} />
-      default:
-        return null
-    }
-  }
-}
-
-export default class Networks extends PureComponent {
-  static propTypes = {
-    minimal: PropTypes.bool,
-    hide: PropTypes.bool
-  }
-
-  Animation = posed.aside(moveInTop)
-
-  linkClasses = key =>
-    classNames({
-      'u-url': key !== 'Email',
-      'u-email': key === 'Email',
-      [styles.link]: true
-    })
-
-  wrapClasses = classNames([styles.networks], {
-    [styles.minimal]: this.props.minimal
+const linkClasses = key =>
+  classNames({
+    'u-url': key !== 'Email',
+    'u-email': key === 'Email',
+    [styles.link]: true
   })
 
-  render() {
-    return (
-      <StaticQuery
-        query={query}
-        render={data => {
-          const meta = data.contentYaml
+const Networks = ({ small, hide }) => {
+  const { social } = useMeta()
 
-          return (
-            !this.props.hide && (
-              <this.Animation className={this.wrapClasses}>
-                {Object.keys(meta.social).map((key, i) => (
-                  <a
-                    className={this.linkClasses(key)}
-                    href={meta.social[key]}
-                    key={i}
-                  >
-                    <NetworkIcon title={key} className={icons.icon} />
-                    <span className={styles.title}>{key}</span>
-                  </a>
-                ))}
-              </this.Animation>
-            )
-          )
-        }}
-      />
+  const wrapClasses = classNames([styles.networks], {
+    [styles.small]: small
+  })
+
+  return (
+    !hide && (
+      <Animation className={wrapClasses}>
+        {Object.keys(social).map((key, i) => (
+          <a
+            className={linkClasses(key)}
+            href={social[key]}
+            key={i}
+            data-testid={`network-${key.toLowerCase()}`}
+          >
+            <LinkIcon title={key} className={icons.icon} />
+            <span className={styles.title}>{key}</span>
+          </a>
+        ))}
+      </Animation>
     )
-  }
+  )
 }
+
+Networks.propTypes = {
+  small: PropTypes.bool,
+  hide: PropTypes.bool
+}
+
+export default Networks
