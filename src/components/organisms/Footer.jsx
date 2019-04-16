@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import classNames from 'classnames'
 import Vcard from '../atoms/Vcard'
@@ -24,12 +25,10 @@ const query = graphql`
   }
 `
 
-let classes = classNames('h-card', [styles.footer])
+export const FooterMarkup = ({ pkg, meta, year }) => {
+  const classes = classNames('h-card', [styles.footer])
 
-export default class Footer extends PureComponent {
-  state = { year: new Date().getFullYear() }
-
-  FooterMarkup = ({ meta, pkg, year }) => (
+  return (
     <footer className={classes}>
       <Link to={'/'}>
         <LogoUnit minimal />
@@ -55,6 +54,16 @@ export default class Footer extends PureComponent {
       </p>
     </footer>
   )
+}
+
+FooterMarkup.propTypes = {
+  pkg: PropTypes.object.isRequired,
+  meta: PropTypes.object.isRequired,
+  year: PropTypes.number.isRequired
+}
+
+export default class Footer extends PureComponent {
+  state = { year: new Date().getFullYear() }
 
   render() {
     return (
@@ -64,9 +73,7 @@ export default class Footer extends PureComponent {
           const pkg = data.portfolioJson
           const meta = data.contentYaml
 
-          return (
-            <this.FooterMarkup year={this.state.year} pkg={pkg} meta={meta} />
-          )
+          return <FooterMarkup year={this.state.year} pkg={pkg} meta={meta} />
         }}
       />
     )

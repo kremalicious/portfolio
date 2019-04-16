@@ -18,6 +18,7 @@
     "format": "prettier --write 'src/**/*.{js,jsx}'",
     "format:css": "prettier-stylelint --write --quiet 'src/**/*.{css,scss}'",
     "test": "npm run lint && jest --coverage",
+    "test:watch": "npm run lint && jest --coverage --watch",
     "deploy": "./scripts/deploy.sh",
     "new": "babel-node ./scripts/new.js"
   },

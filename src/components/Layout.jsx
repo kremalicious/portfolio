@@ -25,59 +25,62 @@ const query = graphql`
   }
 `
 
-const LayoutMarkup = ({ children, isHomepage, allowedHosts, location }) => (
-  <>
-    <Typekit />
-    <HostnameCheck allowedHosts={allowedHosts} />
+const LayoutMarkup = ({ children, data, location }) => {
+  const { allowedHosts } = data.contentYaml
+  const isHomepage = location.pathname === '/'
 
-    <PoseGroup animateOnMount={true}>
-      <RoutesContainer
-        key={location.pathname}
-        delay={timeout}
-        delayChildren={timeout}
-      >
-        <Header minimal={!isHomepage} />
-        <main className={styles.screen}>{children}</main>
-      </RoutesContainer>
-    </PoseGroup>
+  return (
+    <>
+      <Typekit />
+      <HostnameCheck allowedHosts={allowedHosts} />
 
-    <Footer />
-  </>
-)
+      <PoseGroup animateOnMount={true}>
+        <RoutesContainer
+          key={location.pathname}
+          delay={timeout}
+          delayChildren={timeout}
+        >
+          <Header minimal={!isHomepage} />
+          <main className={styles.screen}>{children}</main>
+        </RoutesContainer>
+      </PoseGroup>
+
+      <Footer />
+    </>
+  )
+}
 
 LayoutMarkup.propTypes = {
   children: PropTypes.any.isRequired,
-  isHomepage: PropTypes.bool.isRequired,
-  allowedHosts: PropTypes.array.isRequired,
-  location: PropTypes.object.isRequired
+  data: PropTypes.shape({
+    contentYaml: PropTypes.shape({
+      allowedHosts: PropTypes.array.isRequired
+    }).isRequired
+  }).isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired
+  }).isRequired
 }
 
 export default class Layout extends PureComponent {
   static propTypes = {
     children: PropTypes.any.isRequired,
-    location: PropTypes.object.isRequired
+    location: PropTypes.shape({
+      pathname: PropTypes.string.isRequired
+    }).isRequired
   }
 
   render() {
     const { children, location } = this.props
-    const isHomepage = location.pathname === '/'
 
     return (
       <StaticQuery
         query={query}
-        render={data => {
-          const { allowedHosts } = data.contentYaml
-
-          return (
-            <LayoutMarkup
-              isHomepage={isHomepage}
-              allowedHosts={allowedHosts}
-              location={location}
-            >
-              {children}
-            </LayoutMarkup>
-          )
-        }}
+        render={data => (
+          <LayoutMarkup data={data} location={location}>
+            {children}
+          </LayoutMarkup>
+        )}
       />
     )
   }

@@ -13,7 +13,7 @@ const query = graphql`
       email
       avatar {
         childImageSharp {
-          original: resize {
+          resize {
             src
           }
         }
@@ -62,15 +62,16 @@ export default class Vcard extends PureComponent {
 
 // Construct the download from a blob of the just constructed vCard,
 // and save it to user's file system
-const downloadVcard = (vcard, meta) => {
-  const name = meta.addressbook.split('/').join('')
+export const downloadVcard = (vcard, meta) => {
+  const { addressbook } = meta
+  const name = addressbook.split('/').join('')
   const blob = new Blob([vcard], { type: 'text/x-vcard' })
   saveAs(blob, name)
 }
 
-const constructVcard = meta => {
+export const constructVcard = meta => {
   const contact = new vCard()
-  const photoSrc = meta.avatar.childImageSharp.original.src
+  const photoSrc = meta.avatar.childImageSharp.resize.src
 
   // first, convert the avatar to base64, then construct all vCard elements
   toDataURL(
@@ -99,7 +100,7 @@ const constructVcard = meta => {
 
 // Helper function to create base64 string from avatar image
 // without the need to read image file from file system
-const toDataURL = (src, callback, outputFormat) => {
+export const toDataURL = (src, callback, outputFormat) => {
   const img = new Image()
   img.crossOrigin = 'Anonymous'
 
@@ -118,6 +119,7 @@ const toDataURL = (src, callback, outputFormat) => {
   }
 
   img.src = src
+
   if (img.complete || img.complete === undefined) {
     img.src =
       'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=='

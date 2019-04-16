@@ -23,28 +23,26 @@ export default class AppProvider extends PureComponent {
   getCountry = async () => {
     let trace = []
 
-    await fetch('/cdn-cgi/trace?no-cache=1')
-      .then(data => {
-        let lines
+    try {
+      const data = await fetch('/cdn-cgi/trace?no-cache=1')
+      const text = await data.text()
+      const lines = text.split('\n')
 
-        data.text().then(text => {
-          lines = text.split('\n')
+      let keyValue
 
-          let keyValue
+      lines.forEach(line => {
+        keyValue = line.split('=')
+        trace[keyValue[0]] = decodeURIComponent(keyValue[1] || '')
 
-          lines.forEach(line => {
-            keyValue = line.split('=')
-            trace[keyValue[0]] = decodeURIComponent(keyValue[1] || '')
-
-            if (keyValue[0] === 'loc' && trace['loc'] !== 'XX') {
-              this.setState({ location: trace['loc'] })
-            } else {
-              return
-            }
-          })
-        })
+        if (keyValue[0] === 'loc' && trace['loc'] !== 'XX') {
+          this.setState({ location: trace['loc'] })
+        } else {
+          return
+        }
       })
-      .catch(() => null) // fail silently
+    } catch (error) {
+      return null // fail silently
+    }
   }
 
   setDark() {
