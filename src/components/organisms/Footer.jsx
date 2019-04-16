@@ -11,9 +11,6 @@ const query = graphql`
   query {
     # the package.json file
     portfolioJson {
-      name
-      homepage
-      repository
       bugs
     }
 
@@ -25,7 +22,7 @@ const query = graphql`
   }
 `
 
-export const FooterMarkup = ({ pkg, meta, year }) => {
+const FooterMarkup = ({ pkg, meta, year }) => {
   const classes = classNames('h-card', [styles.footer])
 
   return (

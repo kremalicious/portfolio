@@ -5,9 +5,7 @@ import { useMeta } from './use-meta'
 import data from '../../jest/__fixtures__/meta.json'
 
 beforeEach(() => {
-  useStaticQuery.mockImplementationOnce(() => {
-    return { ...data }
-  })
+  useStaticQuery.mockImplementationOnce(() => ({ ...data }))
 })
 
 describe('useMeta', () => {

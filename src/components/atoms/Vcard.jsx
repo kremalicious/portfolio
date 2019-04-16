@@ -41,7 +41,7 @@ export default class Vcard extends PureComponent {
 
           const handleAddressbookClick = e => {
             e.preventDefault()
-            constructVcard(meta)
+            init(meta)
           }
 
           return (
@@ -60,6 +60,16 @@ export default class Vcard extends PureComponent {
   }
 }
 
+export const init = async meta => {
+  const photoSrc = meta.avatar.childImageSharp.resize.src
+
+  // first, convert the avatar to base64, then construct all vCard elements
+  const dataUrl = await toDataURL(photoSrc, 'image/jpeg')
+  const vcard = await constructVcard(dataUrl, meta)
+
+  downloadVcard(vcard, meta)
+}
+
 // Construct the download from a blob of the just constructed vCard,
 // and save it to user's file system
 export const downloadVcard = (vcard, meta) => {
@@ -69,60 +79,54 @@ export const downloadVcard = (vcard, meta) => {
   saveAs(blob, name)
 }
 
-export const constructVcard = meta => {
+export const constructVcard = async (dataUrl, meta) => {
   const contact = new vCard()
-  const photoSrc = meta.avatar.childImageSharp.resize.src
 
-  // first, convert the avatar to base64, then construct all vCard elements
-  toDataURL(
-    photoSrc,
-    dataUrl => {
-      // stripping this data out of base64 string is required
-      // for vcard to actually display the image for whatever reason
-      const dataUrlCleaned = dataUrl.split('data:image/jpeg;base64,').join('')
-      contact.set('photo', dataUrlCleaned, { encoding: 'b', type: 'JPEG' })
-      contact.set('fn', meta.title)
-      contact.set('title', meta.tagline)
-      contact.set('email', meta.email)
-      contact.set('url', meta.url, { type: 'Portfolio' })
-      contact.add('url', meta.social.Blog, { type: 'Blog' })
-      contact.set('nickname', 'kremalicious')
-      contact.add('x-socialprofile', meta.social.Twitter, { type: 'twitter' })
-      contact.add('x-socialprofile', meta.social.GitHub, { type: 'GitHub' })
+  // stripping this data out of base64 string is required
+  // for vcard to actually display the image for whatever reason
+  // const dataUrlCleaned = dataUrl.split('data:image/jpeg;base64,').join('')
+  // contact.set('photo', dataUrlCleaned, { encoding: 'b', type: 'JPEG' })
+  contact.set('fn', meta.title)
+  contact.set('title', meta.tagline)
+  contact.set('email', meta.email)
+  contact.set('url', meta.url, { type: 'Portfolio' })
+  contact.add('url', meta.social.Blog, { type: 'Blog' })
+  contact.set('nickname', 'kremalicious')
+  contact.add('x-socialprofile', meta.social.Twitter, { type: 'twitter' })
+  contact.add('x-socialprofile', meta.social.GitHub, { type: 'GitHub' })
 
-      const vcard = contact.toString('3.0')
+  const vcard = contact.toString('3.0')
 
-      downloadVcard(vcard, meta)
-    },
-    'image/jpeg'
-  )
+  return vcard
 }
 
 // Helper function to create base64 string from avatar image
 // without the need to read image file from file system
-export const toDataURL = (src, callback, outputFormat) => {
+export const toDataURL = async (photoSrc, outputFormat) => {
   const img = new Image()
   img.crossOrigin = 'Anonymous'
+  img.src = photoSrc
 
-  img.onload = function() {
-    // yeah, we're gonna create a fake canvas to render the image
-    // and then create a base64 string from the rendered result
-    const canvas = document.createElement('canvas')
-    const ctx = canvas.getContext('2d')
-    let dataURL
+  img.onload = () => {}
 
-    canvas.height = this.naturalHeight
-    canvas.width = this.naturalWidth
-    ctx.drawImage(this, 0, 0)
-    dataURL = canvas.toDataURL(outputFormat)
-    callback(dataURL)
-  }
+  // yeah, we're gonna create a fake canvas to render the image
+  // and then create a base64 string from the rendered result
+  const canvas = document.createElement('canvas')
+  const ctx = canvas.getContext('2d')
+  let dataURL
 
-  img.src = src
+  canvas.height = img.naturalHeight
+  canvas.width = img.naturalWidth
+  ctx.drawImage(img, 0, 0)
+  dataURL = canvas.toDataURL(outputFormat)
 
-  if (img.complete || img.complete === undefined) {
-    img.src =
-      'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=='
-    img.src = src
-  }
+  // img.src = photoSrc
+
+  // if (img.complete || img.complete === undefined) {
+  //   img.src =
+  //     'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=='
+  //   img.src = photoSrc
+  // }
+
+  return dataURL
 }

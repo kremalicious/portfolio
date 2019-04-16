@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-testing-library'
-import AppProvider from '../../store/provider'
+import AppProvider from '../../store/Provider'
 import ThemeSwitch from './ThemeSwitch'
 
 describe('ThemeSwitch', () => {
