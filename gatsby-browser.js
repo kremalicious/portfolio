@@ -1,6 +1,6 @@
 import './src/styles/global.scss'
 import React from 'react'
-import AppProvider from './src/store/provider'
+import AppProvider from './src/store/Provider'
 import wrapPageElementWithTransition from './src/helpers/wrapPageElement'
 
 // IntersectionObserver polyfill for gatsby-image (Safari, IE)

@@ -9,6 +9,9 @@
       "childImageSharp": {
         "fluid": {
           "src": "/static/b45f45aa8d98d4e4019a242d38f2f248/bc3a8/avatar.jpg"
+        },
+        "resize": {
+          "src": "/static/b45f45aa8d98d4e4019a242d38f2f248/bc3a8/avatar.jpg"
         }
       }
     },

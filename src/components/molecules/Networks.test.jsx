@@ -5,9 +5,7 @@ import Networks from './Networks'
 import data from '../../../jest/__fixtures__/meta.json'
 
 beforeEach(() => {
-  useStaticQuery.mockImplementationOnce(() => {
-    return { ...data }
-  })
+  useStaticQuery.mockImplementationOnce(() => ({ ...data }))
 })
 
 describe('Networks', () => {

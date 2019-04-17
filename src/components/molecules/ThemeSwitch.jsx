@@ -48,7 +48,10 @@ export default class ThemeSwitch extends PureComponent {
             <Helmet>
               <body className={dark ? 'dark' : null} />
             </Helmet>
-            <Animation className={styles.themeSwitch}>
+            <Animation
+              className={styles.themeSwitch}
+              data-testid={'theme-switch'}
+            >
               <label className={styles.checkbox}>
                 <span className={styles.label}>Toggle Night Mode</span>
                 <ThemeToggleInput dark={dark} toggleDark={toggleDark} />
