@@ -41,7 +41,7 @@
     "gatsby-transformer-yaml": "^2.1.11",
     "giphy-js-sdk-core": "^1.0.6",
     "graphql": "^14.2.1",
-    "intersection-observer": "^0.5.1",
+    "intersection-observer": "^0.6.0",
     "js-yaml": "^3.13.1",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
