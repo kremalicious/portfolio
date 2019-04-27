@@ -1,17 +1,45 @@
 import React from 'react'
-import { render } from 'react-testing-library'
-import AppProvider from '../../store/Provider'
+import { render, fireEvent, cleanup } from 'react-testing-library'
+import { Provider } from '../../store/createContext'
 import ThemeSwitch from './ThemeSwitch'
 
 describe('ThemeSwitch', () => {
+  afterEach(cleanup)
+  const toggleDark = jest.fn()
+
   it('renders correctly', () => {
-    const { getByTestId } = render(
-      <AppProvider>
+    const { container } = render(
+      <Provider value={{ dark: false, toggleDark: () => toggleDark }}>
         <ThemeSwitch />
-      </AppProvider>
+      </Provider>
     )
 
-    expect(getByTestId('theme-switch')).toBeInTheDocument()
-    expect(getByTestId('theme-switch').nodeName).toBe('ASIDE')
+    const switchContainer = container.querySelector('aside')
+
+    expect(switchContainer).toBeInTheDocument()
+  })
+
+  it('switches when it is dark', () => {
+    const { container } = render(
+      <Provider value={{ dark: true, toggleDark: () => toggleDark }}>
+        <ThemeSwitch />
+      </Provider>
+    )
+
+    const toggle = container.querySelector('input')
+    expect(toggle).toHaveAttribute('checked')
+  })
+
+  it('checkbox can be changed', () => {
+    const { container } = render(
+      <Provider value={{ dark: false, toggleDark: () => toggleDark }}>
+        <ThemeSwitch />
+      </Provider>
+    )
+
+    const toggle = container.querySelector('input')
+    expect(toggle.checked).toBeFalsy()
+    fireEvent.change(toggle, { target: { checked: true } })
+    expect(toggle.checked).toBeTruthy()
   })
 })
