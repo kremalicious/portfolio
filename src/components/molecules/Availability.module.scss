@@ -1,7 +1,7 @@
 @import 'variables';
 
 .availability {
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     color: $text-color-light;
     z-index: 2;
     padding: $spacer / 2;
@@ -17,12 +17,12 @@
     }
 
     a {
-        border-bottom: 1px solid rgba($brand-cyan, .4);
+        border-bottom: 1px solid rgba($brand-cyan, 0.4);
     }
 }
 
 .available {
-    background: rgba($brand-light, .8);
+    background: rgba($brand-light, 0.8);
     color: $brand-main;
     position: fixed;
     bottom: $spacer;
@@ -30,7 +30,7 @@
     transform: translateX(-50%);
 
     :global(.dark) & {
-        background: rgba($body-background-color--dark, .8);
+        background: rgba($body-background-color--dark, 0.8);
         color: $brand-light;
     }
 }

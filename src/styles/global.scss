@@ -29,7 +29,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
     background: $body-background-color;
-    transition: background .2s $easing;
+    transition: background 0.2s $easing;
 
     &.dark {
         background-color: $body-background-color--dark;
@@ -93,12 +93,12 @@ h6 {
 a {
     color: $brand-cyan;
     text-decoration: none;
-    transition: .2s ease-out;
+    transition: 0.2s ease-out;
 
     &:hover,
     &:focus {
         color: lighten($brand-cyan, 10%);
-        transform: translate3d(0, -.1rem, 0);
+        transform: translate3d(0, -0.1rem, 0);
     }
 }
 

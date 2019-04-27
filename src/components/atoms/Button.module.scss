@@ -5,11 +5,11 @@
     width: 100%;
     color: $brand-cyan;
     text-align: center;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     padding: $spacer / 4 $spacer / 2;
     transition-property: all;
-    background: rgba(#fff, .15);
-    border: .05rem solid rgba($brand-cyan, .75);
+    background: rgba(#fff, 0.15);
+    border: 0.05rem solid rgba($brand-cyan, 0.75);
     font-size: $font-size-small;
     text-transform: uppercase;
     cursor: pointer;
@@ -22,8 +22,8 @@
     svg {
         fill: $brand-grey-light;
         margin-right: $spacer / 3;
-        transition: .2s ease-out;
-        margin-bottom: -.1rem;
+        transition: 0.2s ease-out;
+        margin-bottom: -0.1rem;
         width: $font-size-small;
         height: $font-size-small;
     }
@@ -31,15 +31,15 @@
     &:hover,
     &:focus {
         color: lighten($brand-cyan, 10%);
-        border-color: rgba(lighten($brand-cyan, 10%), .75);
-        transform: translate3d(0, -.1rem, 0);
-        box-shadow: 0 6px 10px rgba($brand-main, .1),
-            0 10px 25px rgba($brand-main, .05);
+        border-color: rgba(lighten($brand-cyan, 10%), 0.75);
+        transform: translate3d(0, -0.1rem, 0);
+        box-shadow: 0 6px 10px rgba($brand-main, 0.1),
+            0 10px 25px rgba($brand-main, 0.05);
     }
 
     &:active {
         transition: none;
-        background: rgba(#fff, .15);
+        background: rgba(#fff, 0.15);
     }
 
     :global(.dark) & {
@@ -47,8 +47,8 @@
 
         &:hover,
         &:focus {
-            box-shadow: 0 6px 10px rgba(darken($brand-main, 20%), .1),
-                0 10px 25px rgba(darken($brand-main, 20%), .2);
+            box-shadow: 0 6px 10px rgba(darken($brand-main, 20%), 0.1),
+                0 10px 25px rgba(darken($brand-main, 20%), 0.2);
         }
     }
 }
