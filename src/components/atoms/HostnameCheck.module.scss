@@ -7,10 +7,10 @@
     padding: $spacer / 3;
     font-size: $font-size-small;
     font-weight: bold;
-    background: rgba($brand-light, 0.8);
+    background: rgba($brand-light, .8);
 
     :global(.dark) & {
-        background: rgba($body-background-color--dark, 0.8);
+        background: rgba($body-background-color--dark, .8);
     }
 
     p {

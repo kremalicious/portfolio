@@ -33,7 +33,7 @@
 
     &::before,
     &::after {
-        opacity: 0.4;
+        opacity: .4;
     }
 
     &::before {
@@ -46,7 +46,7 @@
 }
 
 .minimal {
-    transform: scale(0.7);
+    transform: scale(.7);
     transform-origin: top center;
     transform-box: border-box;
 
@@ -61,6 +61,6 @@
 
     .logo {
         margin-bottom: $spacer / 3;
-        opacity: 0.5;
+        opacity: .5;
     }
 }

@@ -15,8 +15,8 @@
     font-size: $font-size-mini;
     color: $brand-grey-light;
     opacity: 0;
-    transform: translate3d(0, 0.5rem, 0);
-    transition: 0.2s $easing;
+    transform: translate3d(0, .5rem, 0);
+    transition: .2s $easing;
 }
 
 .link {
@@ -28,7 +28,7 @@
 
     &,
     svg {
-        transition: 0.2s $easing;
+        transition: .2s $easing;
     }
 
     svg {
@@ -57,8 +57,8 @@
 
     /* stylelint-disable no-descending-specificity */
     svg {
-        width: 0.75rem;
-        height: 0.75rem;
-        opacity: 0.8;
+        width: .75rem;
+        height: .75rem;
+        opacity: .8;
     }
 }

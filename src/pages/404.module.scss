@@ -11,8 +11,8 @@
         display: block;
         width: auto;
         height: 300px;
-        box-shadow: 0 3px 5px rgba($brand-main, 0.15),
-            0 5px 16px rgba($brand-main, 0.15);
+        box-shadow: 0 3px 5px rgba($brand-main, .15),
+            0 5px 16px rgba($brand-main, .15);
         margin: $spacer / 4 auto $spacer / 2 auto;
     }
 }
