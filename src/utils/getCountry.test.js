@@ -1,7 +1,5 @@
 import { getCountry } from './getCountry'
 
-const responseMock = 'loc=DE'
-
 const mockFetch = data =>
   jest.fn().mockImplementationOnce(() =>
     Promise.resolve({
@@ -13,15 +11,21 @@ const mockFetch = data =>
   )
 
 describe('getCountry', () => {
-  beforeEach(() => {
-    global.fetch = mockFetch(responseMock)
-  })
-
   it('fetches and returns correct value', async () => {
+    global.fetch = mockFetch('loc=DE')
     const country = await getCountry()
 
     expect(global.fetch).toHaveBeenCalledTimes(1)
     expect(global.fetch).toHaveBeenCalledWith('/cdn-cgi/trace?no-cache=1')
     expect(country).toBe('DE')
+  })
+
+  it('returns nothing when XX country', async () => {
+    global.fetch = mockFetch('loc=XX')
+    const country = await getCountry()
+
+    expect(global.fetch).toHaveBeenCalledTimes(1)
+    expect(global.fetch).toHaveBeenCalledWith('/cdn-cgi/trace?no-cache=1')
+    expect(country).toBe(undefined)
   })
 })

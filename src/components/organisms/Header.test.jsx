@@ -19,4 +19,13 @@ describe('Header', () => {
     )
     expect(container.firstChild).toBeInTheDocument()
   })
+
+  it('Availability can be hidden', () => {
+    const { container } = render(
+      <Provider value={{ dark: false, toggleDark: () => null }}>
+        <Header minimal={true} />
+      </Provider>
+    )
+    expect(container.querySelector('.availability')).not.toBeInTheDocument()
+  })
 })
