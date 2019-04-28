@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-testing-library'
+import { render, fireEvent, waitForElement } from 'react-testing-library'
 import { StaticQuery } from 'gatsby'
 import Vcard, { constructVcard, toDataURL, init } from './Vcard'
 import data from '../../../jest/__fixtures__/meta.json'
@@ -14,6 +14,13 @@ describe('Vcard', () => {
   it('renders correctly', () => {
     const { container } = render(<Vcard />)
     expect(container.firstChild).toBeInTheDocument()
+  })
+
+  it('Button click starts download', async () => {
+    const { container } = render(<Vcard />)
+    fireEvent.click(container.firstChild)
+    await waitForElement(() => global.URL.createObjectURL)
+    expect(global.URL.createObjectURL).toHaveBeenCalledTimes(1)
   })
 
   it('combined vCard download process finishes', async () => {
