@@ -1,7 +1,10 @@
-import './src/styles/global.scss'
 import React from 'react'
-import AppProvider from './src/store/Provider'
-import wrapPageElementWithTransition from './src/helpers/wrapPageElement'
+import PropTypes from 'prop-types'
+import AppProvider from './src/store/AppProvider'
+import wrapPageElementWithLayout from './src/helpers/wrapPageElement'
+
+// Global styles
+import './src/styles/global.scss'
 
 // IntersectionObserver polyfill for gatsby-image (Safari, IE)
 if (typeof window !== 'undefined' && !window.IntersectionObserver) {
@@ -9,10 +12,13 @@ if (typeof window !== 'undefined' && !window.IntersectionObserver) {
 }
 
 // React Context in Browser
-// eslint-disable-next-line
 export const wrapRootElement = ({ element }) => {
   return <AppProvider>{element}</AppProvider>
 }
 
-// Page Transitions & Layout
-export const wrapPageElement = wrapPageElementWithTransition
+wrapRootElement.propTypes = {
+  element: PropTypes.any
+}
+
+// Layout with Page Transitions
+export const wrapPageElement = wrapPageElementWithLayout

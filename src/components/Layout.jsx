@@ -14,9 +14,6 @@ import styles from './Layout.module.scss'
 //   whyDidYouUpdate(React)
 // }
 
-const timeout = 250
-const RoutesContainer = posed.div(fadeIn)
-
 const query = graphql`
   query {
     contentYaml {
@@ -25,42 +22,8 @@ const query = graphql`
   }
 `
 
-const LayoutMarkup = ({ children, data, location }) => {
-  const { allowedHosts } = data.contentYaml
-  const isHomepage = location.pathname === '/'
-
-  return (
-    <>
-      <Typekit />
-      <HostnameCheck allowedHosts={allowedHosts} />
-
-      <PoseGroup animateOnMount={true}>
-        <RoutesContainer
-          key={location.pathname}
-          delay={timeout}
-          delayChildren={timeout}
-        >
-          <Header minimal={!isHomepage} />
-          <main className={styles.screen}>{children}</main>
-        </RoutesContainer>
-      </PoseGroup>
-
-      <Footer />
-    </>
-  )
-}
-
-LayoutMarkup.propTypes = {
-  children: PropTypes.any.isRequired,
-  data: PropTypes.shape({
-    contentYaml: PropTypes.shape({
-      allowedHosts: PropTypes.array.isRequired
-    }).isRequired
-  }).isRequired,
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired
-  }).isRequired
-}
+const timeout = 200
+const RoutesContainer = posed.div(fadeIn)
 
 export default class Layout extends PureComponent {
   static propTypes = {
@@ -72,15 +35,34 @@ export default class Layout extends PureComponent {
 
   render() {
     const { children, location } = this.props
+    const isHomepage = location.pathname === '/'
 
     return (
       <StaticQuery
         query={query}
-        render={data => (
-          <LayoutMarkup data={data} location={location}>
-            {children}
-          </LayoutMarkup>
-        )}
+        render={data => {
+          const { allowedHosts } = data.contentYaml
+
+          return (
+            <>
+              <Typekit />
+              <HostnameCheck allowedHosts={allowedHosts} />
+
+              <PoseGroup animateOnMount={true}>
+                <RoutesContainer
+                  key={location.pathname}
+                  delay={timeout}
+                  delayChildren={timeout}
+                >
+                  <Header minimal={!isHomepage} />
+                  <main className={styles.screen}>{children}</main>
+                </RoutesContainer>
+              </PoseGroup>
+
+              <Footer />
+            </>
+          )
+        }}
       />
     )
   }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { renderToString } from 'react-dom/server'
-import AppProvider from './src/store/Provider'
-import wrapPageElementWithTransition from './src/helpers/wrapPageElement'
+import AppProvider from './src/store/AppProvider'
+import wrapPageElementWithLayout from './src/helpers/wrapPageElement'
 
 export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString }) => {
   // React Context in SSR/build
@@ -9,5 +9,5 @@ export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString }) => {
   replaceBodyHTMLString(renderToString(<ConnectedBody />))
 }
 
-// Page Transitions & Layout
-export const wrapPageElement = wrapPageElementWithTransition
+// Layout with Page Transitions
+export const wrapPageElement = wrapPageElementWithLayout
