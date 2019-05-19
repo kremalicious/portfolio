@@ -52,7 +52,7 @@
     "remark-html": "^9.0.0",
     "remark-parse": "^6.0.3",
     "suncalc": "^1.8.0",
-    "terser": "^3.17.0",
+    "terser": "^4.0.0",
     "vcf": "^2.0.4"
   },
   "devDependencies": {
