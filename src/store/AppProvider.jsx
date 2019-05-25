@@ -8,7 +8,7 @@ export default class AppProvider extends PureComponent {
   state = {
     dark: false,
     toggleDark: () => this.toggleDark,
-    location: null
+    geolocation: null
   }
 
   static propTypes = {
@@ -21,8 +21,8 @@ export default class AppProvider extends PureComponent {
 
   async componentDidMount() {
     this.mounted = true
-    const location = await getCountry()
-    this.setState({ location })
+    const geolocation = await getCountry()
+    this.setState({ geolocation })
     this.checkDark()
   }
 
@@ -46,8 +46,8 @@ export default class AppProvider extends PureComponent {
   // All the checks to see if we should go dark or light
   //
   async checkTimes() {
-    const { location, dark } = this.state
-    const { sunset, sunrise } = await getLocationTimes(location)
+    const { geolocation, dark } = this.state
+    const { sunset, sunrise } = await getLocationTimes(geolocation)
     const now = new Date().getHours()
     const weWantItDarkTimes = now >= sunset || now <= sunrise
 
