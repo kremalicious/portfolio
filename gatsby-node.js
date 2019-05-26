@@ -23,6 +23,9 @@ function truncate(n, useWordBoundary) {
   )
 }
 
+//
+// Get GitHub repos
+//
 async function getGithubRepos(data) {
   const allRepos = await axios.get(
     `https://api.github.com/users/${data.user}/repos?per_page=100`
@@ -36,6 +39,9 @@ async function getGithubRepos(data) {
   return repos
 }
 
+//
+// Get GitHub repos once and store for later build stages
+//
 let repos
 
 exports.onPreBootstrap = async () => {
@@ -52,6 +58,22 @@ exports.onPreBootstrap = async () => {
   } catch (error) {
     throw Error(error.message)
   }
+}
+
+//
+// Add repos to front page's context
+//
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions
+
+  if (page.path === '/')
+    createPage({
+      ...page,
+      context: {
+        ...page.context,
+        repos
+      }
+    })
 }
 
 exports.onCreateNode = ({ node, actions }) => {
@@ -90,20 +112,6 @@ exports.onCreateNode = ({ node, actions }) => {
       value: excerpt
     })
   }
-}
-
-exports.onCreatePage = async ({ page, actions }) => {
-  const { createPage } = actions
-
-  // Add repos to front page's context
-  if (page.path === '/')
-    createPage({
-      ...page,
-      context: {
-        ...page.context,
-        repos
-      }
-    })
 }
 
 //

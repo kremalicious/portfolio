@@ -17,6 +17,7 @@
 - [🎉 Features](#-features)
   - [⛵️ Lighthouse score](#️-lighthouse-score)
   - [💍 One data file to rule all pages](#-one-data-file-to-rule-all-pages)
+  - [🐱 GitHub repositories](#-github-repositories)
   - [💅 Theme switcher](#-theme-switcher)
   - [🏆 SEO component](#-seo-component)
   - [📇 Client-side vCard creation](#-client-side-vcard-creation)
@@ -51,6 +52,18 @@ Gatsby automatically creates pages from each item in that file utilizing the [`P
 - [`gatsby-node.js`](gatsby-node.js)
 - [`content/projects.yml`](content/projects.yml)
 - [`src/templates/Project.jsx`](src/templates/Project.jsx)
+
+### 🐱 GitHub repositories
+
+The open source section at the bottom of the front page shows selected GitHub repositories, sourced from GitHub.
+
+On build time, all my public repositories are fetched from GitHub, then filtered against the ones defined in `content/repos.yml`, sorted by the last push date, and provided via the page context of the front page.
+
+If you want to know how, have a look at the respective components:
+
+- [`gatsby-node.js`](gatsby-node.js)
+- [`content/repos.yml`](content/repos.yml)
+- [`src/components/molecules/Repository.jsx`](src/components/molecules/Repository.jsx)
 
 ### 💅 Theme switcher
 
