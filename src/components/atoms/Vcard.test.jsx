@@ -24,14 +24,14 @@ describe('Vcard', () => {
   })
 
   it('combined vCard download process finishes', async () => {
-    await init(data.contentYaml)
+    await init(data.metaYaml)
     expect(global.URL.createObjectURL).toHaveBeenCalledTimes(1)
   })
 
   it('vCard can be constructed', async () => {
     const vcard = await constructVcard(
       'data:image/jpeg;base64,00',
-      data.contentYaml
+      data.metaYaml
     )
     expect(vcard).toBeDefined()
   })

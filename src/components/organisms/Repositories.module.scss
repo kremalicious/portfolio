@@ -1,0 +1,29 @@
+@import 'variables';
+
+.section {
+    max-width: calc(#{$projectImageMaxWidth} - #{$spacer * 2});
+    margin: $spacer * 3 auto 0 auto;
+    padding-left: $spacer;
+    padding-right: $spacer;
+}
+
+.sectionTitle {
+    font-size: $font-size-h3;
+    margin-bottom: $spacer * 2;
+    text-align: center;
+}
+
+.repos {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: $spacer * 2;
+
+    @media (min-width: $screen-sm) {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: $spacer * 2;
+    }
+
+    @media (min-width: $screen-md) {
+        grid-gap: $spacer * 3;
+    }
+}

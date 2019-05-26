@@ -2,7 +2,7 @@ const path = require('path')
 const fs = require('fs')
 const yaml = require('js-yaml')
 const meta = yaml.load(fs.readFileSync('./content/meta.yml', 'utf8'))
-const { title, description, url, matomoSite, matomoUrl } = meta
+const { title, description, url, matomoSite, matomoUrl } = meta[0]
 
 module.exports = {
   siteMetadata: {

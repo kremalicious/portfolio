@@ -10,6 +10,7 @@ import { ReactComponent as Dribbble } from '../../images/dribbble.svg'
 import { ReactComponent as Email } from '../../images/email.svg'
 import { ReactComponent as Blog } from '../../images/blog.svg'
 import { ReactComponent as Twitter } from '../../images/twitter.svg'
+import { ReactComponent as Star } from '../../images/star.svg'
 
 const LinkIcon = ({ title, type, ...props }) => {
   let typeOrTitle = type ? type : title
@@ -39,6 +40,8 @@ const LinkIcon = ({ title, type, ...props }) => {
       return <Blog {...props} />
     case 'Twitter':
       return <Twitter {...props} />
+    case 'star':
+      return <Star {...props} />
     default:
       return null
   }

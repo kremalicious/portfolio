@@ -1,7 +1,15 @@
+/* eslint-disable no-console */
+
 const path = require('path')
 const remark = require('remark')
 const markdown = require('remark-parse')
 const html = require('remark-html')
+const axios = require('axios')
+const fs = require('fs')
+const yaml = require('js-yaml')
+const reposYaml = yaml.load(fs.readFileSync('./content/repos.yml', 'utf8'))
+const { performance } = require('perf_hooks')
+const chalk = require('chalk')
 
 function truncate(n, useWordBoundary) {
   if (this.length <= n) {
@@ -13,6 +21,59 @@ function truncate(n, useWordBoundary) {
       ? subString.substr(0, subString.lastIndexOf(' '))
       : subString) + '...'
   )
+}
+
+//
+// Get GitHub repos
+//
+async function getGithubRepos(data) {
+  const allRepos = await axios.get(
+    `https://api.github.com/users/${data.user}/repos?per_page=100`
+  )
+  const repos = allRepos.data
+    // filter by what's defined in content/repos.yml
+    .filter(({ name }) => data.repos.includes(name))
+    // sort by pushed to, newest first
+    .sort((a, b) => b.pushed_at.localeCompare(a.pushed_at))
+
+  return repos
+}
+
+//
+// Get GitHub repos once and store for later build stages
+//
+let repos
+
+exports.onPreBootstrap = async () => {
+  const t0 = performance.now()
+
+  try {
+    repos = await getGithubRepos(reposYaml[0])
+    const t1 = performance.now()
+    const ms = t1 - t0
+    const s = ((ms / 1000) % 60).toFixed(3)
+    console.log(
+      chalk.green('success ') + `getGithubRepos: ${repos.length} repos - ${s} s`
+    )
+  } catch (error) {
+    throw Error(error.message)
+  }
+}
+
+//
+// Add repos to front page's context
+//
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions
+
+  if (page.path === '/')
+    createPage({
+      ...page,
+      context: {
+        ...page.context,
+        repos
+      }
+    })
 }
 
 exports.onCreateNode = ({ node, actions }) => {

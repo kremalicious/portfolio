@@ -10,7 +10,7 @@ beforeEach(() => {
 
 describe('Networks', () => {
   it('renders correctly from data file values', () => {
-    const { social } = data.contentYaml
+    const { social } = data.metaYaml
     const { container, getByTestId } = render(<Networks />)
 
     expect(container.firstChild).toBeInTheDocument()

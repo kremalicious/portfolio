@@ -1,7 +1,7 @@
 @import 'variables';
 
 .availability {
-    border-radius: .25rem;
+    border-radius: $border-radius;
     color: $text-color-light;
     z-index: 2;
     padding: $spacer / 2;
