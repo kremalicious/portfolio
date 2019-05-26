@@ -8,6 +8,8 @@ const axios = require('axios')
 const fs = require('fs')
 const yaml = require('js-yaml')
 const reposYaml = yaml.load(fs.readFileSync('./content/repos.yml', 'utf8'))
+const { performance } = require('perf_hooks')
+const chalk = require('chalk')
 
 function truncate(n, useWordBoundary) {
   if (this.length <= n) {
@@ -37,11 +39,18 @@ async function getGithubRepos(data) {
 let repos
 
 exports.onPreBootstrap = async () => {
+  const t0 = performance.now()
+
   try {
     repos = await getGithubRepos(reposYaml[0])
-    console.log(`success getGithubRepos: ${repos.length} repos`)
+    const t1 = performance.now()
+    const ms = t1 - t0
+    const s = ((ms / 1000) % 60).toFixed(3)
+    console.log(
+      chalk.green('success ') + `getGithubRepos: ${repos.length} repos - ${s} s`
+    )
   } catch (error) {
-    console.error(error.message)
+    throw Error(error.message)
   }
 }
 

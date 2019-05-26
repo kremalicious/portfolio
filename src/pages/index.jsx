@@ -21,8 +21,7 @@ function getImageCount(images, slug) {
 export default class Home extends PureComponent {
   static propTypes = {
     data: PropTypes.object.isRequired,
-    pageContext: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired
+    pageContext: PropTypes.object.isRequired
   }
 
   render() {

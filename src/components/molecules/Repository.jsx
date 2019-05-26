@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ReactComponent as Star } from '../../images/star.svg'
-import styles from './Repository.module.scss'
 import LinkIcon from '../atoms/LinkIcon'
+import styles from './Repository.module.scss'
 
 const Repository = ({ repo }) => {
   const { name, description, html_url, homepage, stargazers_count } = repo
@@ -32,7 +31,7 @@ const Repository = ({ repo }) => {
         </a>
 
         <a href={`${html_url}/stargazers`}>
-          <Star /> {stargazers_count}
+          <LinkIcon title="star" /> {stargazers_count}
         </a>
       </p>
     </div>
