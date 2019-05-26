@@ -7,7 +7,7 @@ import { getCountry } from '../utils/getCountry'
 export default class AppProvider extends PureComponent {
   state = {
     dark: false,
-    toggleDark: () => this.toggleDark,
+    toggleDark: () => this.toggleDark(),
     geolocation: null
   }
 

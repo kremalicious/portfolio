@@ -13,19 +13,19 @@ const Animation = posed.aside(fadeIn)
 
 const ThemeToggle = ({ dark }) => (
   <span id="toggle" className={styles.checkboxContainer} aria-live="assertive">
-    <Day className={dark ? null : 'active'} />
+    <Day className={!dark ? null : 'active'} />
     <span className={styles.checkboxFake} />
     <Night className={dark ? 'active' : null} />
   </span>
 )
 
 ThemeToggle.propTypes = {
-  dark: PropTypes.bool
+  dark: PropTypes.bool.isRequired
 }
 
 const ThemeToggleInput = ({ dark, toggleDark }) => (
   <input
-    onChange={toggleDark()}
+    onChange={() => toggleDark()}
     type="checkbox"
     name="toggle"
     value="toggle"
@@ -35,8 +35,8 @@ const ThemeToggleInput = ({ dark, toggleDark }) => (
 )
 
 ThemeToggleInput.propTypes = {
-  dark: PropTypes.bool,
-  toggleDark: PropTypes.func
+  dark: PropTypes.bool.isRequired,
+  toggleDark: PropTypes.func.isRequired
 }
 
 export default class ThemeSwitch extends PureComponent {
