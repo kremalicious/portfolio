@@ -20,12 +20,13 @@ function getImageCount(images, slug) {
 
 export default class Home extends PureComponent {
   static propTypes = {
-    data: PropTypes.object,
-    location: PropTypes.object
+    data: PropTypes.object.isRequired,
+    pageContext: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired
   }
 
   render() {
-    const { data } = this.props
+    const { data, pageContext } = this.props
     const projects = data.allProjectsYaml.edges
     const images = data.projectImageFiles.edges
 
@@ -58,7 +59,7 @@ export default class Home extends PureComponent {
           })}
         </div>
 
-        <Repositories user={data.reposYaml.user} repos={data.reposYaml.repos} />
+        <Repositories repos={pageContext.repos} />
       </>
     )
   }
@@ -90,11 +91,6 @@ export const IndexQuery = graphql`
           name
         }
       }
-    }
-
-    reposYaml {
-      user
-      repos
     }
   }
 `

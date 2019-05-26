@@ -1,7 +1,13 @@
+/* eslint-disable no-console */
+
 const path = require('path')
 const remark = require('remark')
 const markdown = require('remark-parse')
 const html = require('remark-html')
+const axios = require('axios')
+const fs = require('fs')
+const yaml = require('js-yaml')
+const reposYaml = yaml.load(fs.readFileSync('./content/repos.yml', 'utf8'))
 
 function truncate(n, useWordBoundary) {
   if (this.length <= n) {
@@ -13,6 +19,30 @@ function truncate(n, useWordBoundary) {
       ? subString.substr(0, subString.lastIndexOf(' '))
       : subString) + '...'
   )
+}
+
+async function getGithubRepos(data) {
+  const allRepos = await axios.get(
+    `https://api.github.com/users/${data.user}/repos?per_page=100`
+  )
+  const repos = allRepos.data
+    // filter by what's defined in content/repos.yml
+    .filter(({ name }) => data.repos.includes(name))
+    // sort by pushed to, newest first
+    .sort((a, b) => b.pushed_at.localeCompare(a.pushed_at))
+
+  return repos
+}
+
+let repos
+
+exports.onPreBootstrap = async () => {
+  try {
+    repos = await getGithubRepos(reposYaml[0])
+    console.log(`success getGithubRepos: ${repos.length} repos`)
+  } catch (error) {
+    console.error(error.message)
+  }
 }
 
 exports.onCreateNode = ({ node, actions }) => {
@@ -51,6 +81,20 @@ exports.onCreateNode = ({ node, actions }) => {
       value: excerpt
     })
   }
+}
+
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions
+
+  // Add repos to front page's context
+  if (page.path === '/')
+    createPage({
+      ...page,
+      context: {
+        ...page.context,
+        repos
+      }
+    })
 }
 
 //
