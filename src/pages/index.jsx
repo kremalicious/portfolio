@@ -5,6 +5,7 @@ import SEO from '../components/atoms/SEO'
 import ProjectImage from '../components/molecules/ProjectImage'
 import { ReactComponent as Images } from '../images/images.svg'
 import styles from './index.module.scss'
+import Repositories from '../components/organisms/Repositories'
 
 function getImageCount(images, slug) {
   let array = []
@@ -56,6 +57,8 @@ export default class Home extends PureComponent {
             )
           })}
         </div>
+
+        <Repositories user={data.reposYaml.user} repos={data.reposYaml.repos} />
       </>
     )
   }
@@ -87,6 +90,11 @@ export const IndexQuery = graphql`
           name
         }
       }
+    }
+
+    reposYaml {
+      user
+      repos
     }
   }
 `

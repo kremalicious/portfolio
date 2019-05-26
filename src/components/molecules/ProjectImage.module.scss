@@ -9,7 +9,7 @@
 
     @media (min-width: $projectImageMaxWidth) {
         max-width: $projectImageMaxWidth;
-        border-radius: .25rem;
+        border-radius: $border-radius;
         overflow: hidden;
     }
 

@@ -5,14 +5,14 @@ import { getLocationTimes } from '../utils/getLocationTimes'
 import { getCountry } from '../utils/getCountry'
 
 export default class AppProvider extends PureComponent {
+  static propTypes = {
+    children: PropTypes.any.isRequired
+  }
+
   state = {
     dark: false,
     toggleDark: () => this.toggleDark(),
     geolocation: null
-  }
-
-  static propTypes = {
-    children: PropTypes.any.isRequired
   }
 
   store = typeof localStorage === 'undefined' ? null : localStorage
@@ -21,6 +21,7 @@ export default class AppProvider extends PureComponent {
 
   async componentDidMount() {
     this.mounted = true
+
     const geolocation = await getCountry()
     this.setState({ geolocation })
     this.checkDark()
@@ -30,16 +31,12 @@ export default class AppProvider extends PureComponent {
     this.mounted = false
   }
 
-  setDark() {
-    this.mounted && this.setState({ dark: true })
-  }
-
-  setLight() {
-    this.mounted && this.setState({ dark: false })
+  setDark(dark) {
+    this.mounted && this.setState({ dark })
   }
 
   darkLocalStorageMode(darkLocalStorage) {
-    darkLocalStorage === 'true' ? this.setDark() : this.setLight()
+    darkLocalStorage === 'true' ? this.setDark(true) : this.setDark(false)
   }
 
   //
@@ -51,7 +48,7 @@ export default class AppProvider extends PureComponent {
     const now = new Date().getHours()
     const weWantItDarkTimes = now >= sunset || now <= sunrise
 
-    !dark && weWantItDarkTimes ? this.setDark() : this.setLight()
+    !dark && weWantItDarkTimes ? this.setDark(true) : this.setDark(false)
   }
 
   async checkDark() {

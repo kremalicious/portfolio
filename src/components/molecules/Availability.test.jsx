@@ -14,7 +14,7 @@ describe('Availability', () => {
   it('renders correctly when status: true', () => {
     useStaticQuery.mockImplementationOnce(() => {
       return {
-        contentYaml: {
+        metaYaml: {
           availability: {
             status: true,
             available: 'I am available.',
@@ -32,7 +32,7 @@ describe('Availability', () => {
   it('renders correctly when status: false', () => {
     useStaticQuery.mockImplementationOnce(() => {
       return {
-        contentYaml: {
+        metaYaml: {
           availability: {
             status: false,
             available: 'I am available.',

@@ -1,0 +1,59 @@
+@import 'variables';
+
+.repo {
+    padding: $spacer;
+    border-radius: $border-radius;
+    background: rgba(#fff, .15);
+    box-shadow: 0 3px 5px rgba($brand-main, .1),
+        0 5px 16px rgba($brand-main, .1);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    :global(.dark) & {
+        background: darken($body-background-color--dark, 1%);
+        box-shadow: 0 3px 5px rgba(darken($brand-main, 20%), .1),
+            0 5px 16px rgba(darken($brand-main, 20%), .1);
+    }
+
+    > * {
+        width: 100%;
+    }
+
+    p {
+        font-size: $font-size-small;
+    }
+
+    p:last-child {
+        margin: 0;
+    }
+}
+
+.repoTitle {
+    font-size: $font-size-h4;
+    margin-bottom: $spacer / 2;
+}
+
+.meta {
+    font-size: $font-size-small;
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        display: inline-block;
+        color: $brand-grey-light;
+        font-variant-numeric: lining-nums;
+
+        &:hover,
+        &:focus {
+            color: $brand-cyan;
+        }
+    }
+
+    svg {
+        fill: currentColor;
+        width: $font-size-mini;
+        height: $font-size-mini;
+    }
+}

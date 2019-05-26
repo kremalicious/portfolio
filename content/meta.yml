@@ -1,34 +1,34 @@
-title: Matthias Kretschmann
-tagline: Designer & Developer
-description: Portfolio of web &amp; ui designer/developer hybrid Matthias Kretschmann.
-url: https://matthiaskretschmann.com
-email: m@kretschmann.io
-avatar: ../src/images/avatar.jpg
-img: ../src/images/twitter-card.png
+- title: Matthias Kretschmann
+  tagline: Designer & Developer
+  description: Portfolio of web &amp; ui designer/developer hybrid Matthias Kretschmann.
+  url: https://matthiaskretschmann.com
+  email: m@kretschmann.io
+  avatar: ../src/images/avatar.jpg
+  img: ../src/images/twitter-card.png
 
-social:
-  Email: mailto:m@kretschmann.io
-  Blog: https://kremalicious.com
-  Twitter: https://twitter.com/kremalicious
-  GitHub: https://github.com/kremalicious
-  Dribbble: https://dribbble.com/kremalicious
+  social:
+    Email: mailto:m@kretschmann.io
+    Blog: https://kremalicious.com
+    Twitter: https://twitter.com/kremalicious
+    GitHub: https://github.com/kremalicious
+    Dribbble: https://dribbble.com/kremalicious
 
-availability:
-  status: false
-  available: '👔 Available for new projects. <a href="mailto:m@kretschmann.io">Let’s talk</a>!'
-  unavailable: Not available for new projects.
+  availability:
+    status: false
+    available: '👔 Available for new projects. <a href="mailto:m@kretschmann.io">Let’s talk</a>!'
+    unavailable: Not available for new projects.
 
-# Footer actions
-gpg: https://kretschmann.io/pub.gpg
-addressbook: /matthias-kretschmann.vcf
+  # Footer actions
+  gpg: https://kretschmann.io/pub.gpg
+  addressbook: /matthias-kretschmann.vcf
 
-typekitID: dtg3zui
+  typekitID: dtg3zui
 
-# Analytics tools
-matomoUrl: https://analytics.kremalicious.com
-matomoSite: 2
+  # Analytics tools
+  matomoUrl: https://analytics.kremalicious.com
+  matomoSite: 2
 
-allowedHosts:
-  - matthiaskretschmann.com
-  - beta.matthiaskretschmann.com
-  - localhost
+  allowedHosts:
+    - matthiaskretschmann.com
+    - beta.matthiaskretschmann.com
+    - localhost

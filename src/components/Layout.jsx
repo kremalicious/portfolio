@@ -16,7 +16,7 @@ import styles from './Layout.module.scss'
 
 const query = graphql`
   query {
-    contentYaml {
+    metaYaml {
       allowedHosts
     }
   }
@@ -41,7 +41,7 @@ export default class Layout extends PureComponent {
       <StaticQuery
         query={query}
         render={data => {
-          const { allowedHosts } = data.contentYaml
+          const { allowedHosts } = data.metaYaml
 
           return (
             <>

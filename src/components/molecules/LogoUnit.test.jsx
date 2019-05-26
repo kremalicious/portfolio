@@ -10,7 +10,7 @@ beforeEach(() => {
 
 describe('LogoUnit', () => {
   it('renders correctly from data file values', () => {
-    const { title, tagline } = data.contentYaml
+    const { title, tagline } = data.metaYaml
     const { container, getByTestId } = render(<LogoUnit />)
 
     expect(container.firstChild).toBeInTheDocument()

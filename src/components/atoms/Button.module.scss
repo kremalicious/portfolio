@@ -5,7 +5,7 @@
     width: 100%;
     color: $brand-cyan;
     text-align: center;
-    border-radius: .25rem;
+    border-radius: $border-radius;
     padding: $spacer / 4 $spacer / 2;
     transition-property: all;
     background: rgba(#fff, .15);

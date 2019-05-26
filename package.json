@@ -23,6 +23,7 @@
     "new": "babel-node ./scripts/new.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "file-saver": "^2.0.1",
     "gatsby": "^2.7.1",

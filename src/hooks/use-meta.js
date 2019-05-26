@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 const query = graphql`
   query Meta {
-    contentYaml {
+    metaYaml {
       title
       tagline
       description
@@ -31,6 +31,6 @@ const query = graphql`
 `
 
 export const useMeta = () => {
-  const { contentYaml } = useStaticQuery(query)
-  return contentYaml
+  const { metaYaml } = useStaticQuery(query)
+  return metaYaml
 }

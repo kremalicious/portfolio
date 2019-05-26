@@ -15,7 +15,7 @@
         padding: $spacer / 4;
         text-align: center;
         background: rgba(#fff, .15);
-        border-radius: .25rem;
+        border-radius: $border-radius;
         border: .05rem solid transparent;
         color: $brand-grey-light;
         font-size: $font-size-small;
