@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent, waitForElement } from 'react-testing-library'
+import { render, fireEvent, waitForElement } from '@testing-library/react'
 import { StaticQuery } from 'gatsby'
 import Vcard, { constructVcard, toDataURL, init } from './Vcard'
 import data from '../../../jest/__fixtures__/meta.json'

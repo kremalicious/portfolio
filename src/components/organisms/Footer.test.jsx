@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-testing-library'
+import { render } from '@testing-library/react'
 import { StaticQuery, useStaticQuery } from 'gatsby'
 import Footer from './Footer'
 import data from '../../../jest/__fixtures__/meta.json'

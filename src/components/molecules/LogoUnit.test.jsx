@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-testing-library'
+import { render } from '@testing-library/react'
 import { StaticQuery } from 'gatsby'
 import LogoUnit from './LogoUnit'
 import data from '../../../jest/__fixtures__/meta.json'

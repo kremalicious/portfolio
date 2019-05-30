@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-testing-library'
+import { render } from '@testing-library/react'
 import { StaticQuery, useStaticQuery } from 'gatsby'
 import Header from './Header'
 import { Provider } from '../../store/createContext'
