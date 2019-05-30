@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-testing-library'
+import { render } from '@testing-library/react'
 import Repositories from './Repositories'
 import repos from '../../../jest/__fixtures__/repos.json'
 
