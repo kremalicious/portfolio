@@ -1,7 +1,9 @@
 @import 'variables';
 
 .logounit {
+    pointer-events: none;
     display: block;
+    width: 100%;
 }
 
 .logo {
@@ -46,9 +48,16 @@
 }
 
 .minimal {
-    transform: scale(.7);
-    transform-origin: top center;
-    transform-box: border-box;
+    pointer-events: all;
+    width: auto;
+
+    &,
+    &:hover,
+    &:focus {
+        transform: scale(.7);
+        transform-origin: top center;
+        transform-box: border-box;
+    }
 
     .title,
     .description {

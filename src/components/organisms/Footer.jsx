@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import classNames from 'classnames'
 import Vcard from '../atoms/Vcard'
 import LogoUnit from '../molecules/LogoUnit'
@@ -27,9 +27,7 @@ const FooterMarkup = ({ pkg, meta, year }) => {
 
   return (
     <footer className={classes}>
-      <Link to={'/'}>
-        <LogoUnit minimal />
-      </Link>
+      <LogoUnit minimal />
 
       <Networks minimal />
 

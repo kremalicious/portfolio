@@ -12,19 +12,8 @@
     justify-content: flex-start;
 }
 
-.link {
-    pointer-events: none;
-    display: block;
-    width: 100%;
-}
-
 .minimal {
     min-height: 0;
     padding-top: $spacer * 2;
     padding-bottom: 0;
-
-    .link {
-        pointer-events: all;
-        width: auto;
-    }
 }

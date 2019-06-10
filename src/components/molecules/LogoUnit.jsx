@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
 import posed from 'react-pose'
 import classNames from 'classnames'
 import { moveInBottom } from '../atoms/Transitions'
@@ -23,14 +23,14 @@ export default class LogoUnit extends PureComponent {
 
   Animation = posed.div(moveInBottom)
 
-  wrapClasses = classNames([styles.logounit], {
-    [styles.minimal]: this.props.minimal
-  })
-
   nameClasses = classNames('p-name', [styles.title])
   descriptionClasses = classNames('p-job-title', [styles.description])
 
   render() {
+    const wrapClasses = classNames([styles.logounit], {
+      [styles.minimal]: this.props.minimal
+    })
+
     return (
       <StaticQuery
         query={query}
@@ -38,20 +38,15 @@ export default class LogoUnit extends PureComponent {
           const { title, tagline } = data.metaYaml
 
           return (
-            <div className={this.wrapClasses}>
-              <this.Animation>
+            <this.Animation>
+              <Link className={wrapClasses} to={'/'}>
                 <Logo className={styles.logo} />
-                <h1 data-testid="logo-title" className={this.nameClasses}>
-                  {title.toLowerCase()}
-                </h1>
-                <p
-                  data-testid="logo-tagline"
-                  className={this.descriptionClasses}
-                >
+                <h1 className={this.nameClasses}>{title.toLowerCase()}</h1>
+                <p className={this.descriptionClasses}>
                   {tagline.toLowerCase()}
                 </p>
-              </this.Animation>
-            </div>
+              </Link>
+            </this.Animation>
           )
         }}
       />
