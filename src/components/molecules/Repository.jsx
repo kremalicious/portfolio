@@ -21,7 +21,7 @@ const Repository = ({ repo }) => {
         {name === 'portfolio' || name === 'blog'
           ? null
           : homepage && (
-              <a href={homepage}>
+              <a href={homepage} title={`Learn more about ${name}`}>
                 <LinkIcon title="website" /> Learn more
               </a>
             )}
