@@ -23,14 +23,14 @@ export default class LogoUnit extends PureComponent {
 
   Animation = posed.div(moveInBottom)
 
-  wrapClasses = classNames([styles.logounit], {
-    [styles.minimal]: this.props.minimal
-  })
-
   nameClasses = classNames('p-name', [styles.title])
   descriptionClasses = classNames('p-job-title', [styles.description])
 
   render() {
+    const wrapClasses = classNames([styles.logounit], {
+      [styles.minimal]: this.props.minimal
+    })
+
     return (
       <StaticQuery
         query={query}
@@ -38,7 +38,7 @@ export default class LogoUnit extends PureComponent {
           const { title, tagline } = data.metaYaml
 
           return (
-            <div className={this.wrapClasses}>
+            <div className={wrapClasses}>
               <this.Animation>
                 <Logo className={styles.logo} />
                 <h1 data-testid="logo-title" className={this.nameClasses}>
