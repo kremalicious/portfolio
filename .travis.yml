@@ -3,8 +3,8 @@ language: node_js
 node_js: node
 
 cache:
+  npm: true
   directories:
-    - node_modules
     - public
 
 # will run `npm install` automatically here
@@ -31,6 +31,7 @@ after_success:
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
   - npm run deploy
+  - npm run lh -- https://beta.matthiaskretschmann.com
 
 notifications:
   email: false

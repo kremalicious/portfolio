@@ -20,7 +20,8 @@
     "test": "npm run lint && jest --coverage",
     "test:watch": "npm run lint && jest --coverage --watch",
     "deploy": "./scripts/deploy.sh",
-    "new": "babel-node ./scripts/new.js"
+    "new": "babel-node ./scripts/new.js",
+    "lh": "lighthousebot --pwa=90 --perf=90 --a11y=90 --bp=90 --seo 90 --runner=wpt"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -77,6 +78,7 @@
     "jest": "^24.7.1",
     "jest-canvas-mock": "^2.0.0",
     "jest-dom": "^3.4.0",
+    "lighthousebot": "git+https://github.com/GoogleChromeLabs/lighthousebot.git",
     "ora": "^3.4.0",
     "prepend": "^1.0.2",
     "prettier": "^1.18.2",

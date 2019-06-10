@@ -28,7 +28,8 @@ function truncate(n, useWordBoundary) {
 //
 async function getGithubRepos(data) {
   const allRepos = await axios.get(
-    `https://api.github.com/users/${data.user}/repos?per_page=100`
+    `https://api.github.com/users/${data.user}/repos?per_page=100`,
+    { headers: { 'User-Agent': 'kremalicious/portfolio' } }
   )
   const repos = allRepos.data
     // filter by what's defined in content/repos.yml
