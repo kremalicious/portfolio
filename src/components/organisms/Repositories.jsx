@@ -10,6 +10,8 @@ export default class Repositories extends PureComponent {
   }
 
   render() {
+    if (!this.props.repos) return null
+
     return (
       <section className={styles.section}>
         <h1 className={styles.sectionTitle}>Open Source Projects</h1>

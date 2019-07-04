@@ -37,7 +37,21 @@ async function getGithubRepos(data) {
     // sort by pushed to, newest first
     .sort((a, b) => b.pushed_at.localeCompare(a.pushed_at))
 
-  return repos
+  // reduce data output by reconstructing repo objects
+  const reposReduced = []
+  let holder = {}
+
+  for (let repo of repos) {
+    holder.name = repo.name
+    holder.description = repo.description
+    holder.html_url = repo.html_url
+    holder.homepage = repo.homepage
+    holder.stargazers_count = repo.stargazers_count
+    reposReduced.push(holder)
+    holder = {}
+  }
+
+  return reposReduced
 }
 
 //
