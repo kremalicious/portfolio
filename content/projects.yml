@@ -1,27 +1,33 @@
 - title: Ocean Protocol
-  slug: '/oceanprotocol/'
-  img: 'images/oceanprotocol-01.png'
+  slug: /oceanprotocol/
+  img: images/oceanprotocol-01.png
   description: >
     Since 2017 I'm leading the UI design & development of Ocean Protocol, iterating on a components-based UI design system spanning all of Ocean Protocol's web properties. Additionally, I conceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.
 
-    Most web interfaces are single-page JavaScript applications built with React, pulling their data from JSON files and various micro services. All design & development is embedded in a continous deployment process via GitHub & Travis.
+    Most web interfaces are single-page JavaScript applications built with React, pulling their data from JSON files and various micro services. All design & development is embedded in a continuous deployment process via GitHub & Travis.
 
     Initial website in collaboration with [Balance](https://balance.io/). Key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
   links:
     - title: oceanprotocol.com
       type: website
       url: https://oceanprotocol.com
+    - title: Styleguide
+      url: https://oceanprotocol.com/art
     - title: docs.oceanprotocol.com
       type: website
       url: https://docs.oceanprotocol.com
-    - title: Styleguide
-      url: https://oceanprotocol.com/art
+    - title: commons.oceanprotocol.com
+      type: website
+      url: https://commons.oceanprotocol.com
     - title: '@oceanprotocol/art'
       type: github
       url: https://github.com/oceanprotocol/art
     - title: '@oceanprotocol/docs'
       type: github
       url: https://github.com/oceanprotocol/docs
+    - title: '@oceanprotocol/commons'
+      type: github
+      url: https://github.com/oceanprotocol/commons
   techstack:
     - Sketch
     - Affinity Designer
@@ -33,14 +39,17 @@
     - Travis
     - AWS S3
     - Cloudflare
+    - Docker
+    - Kubernetes
+    - Cypress
 
 - title: IPDB
-  slug: '/ipdb/'
+  slug: /ipdb/
   img: 'images/ipdb-01.png'
   description: >
-    From 2015–2017 I was leading the UI design & development of all IPDB web properties and additonally iterated on the creative and visual direction of the IPDB brand.
+    From 2015–2017 I was leading the UI design & development of all IPDB web properties and additionally iterated on the creative and visual direction of the IPDB brand.
 
-    The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it. All design & development is embedded in a continous deployment process via GitHub & Travis.
+    The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it. All design & development is embedded in a continuous deployment process via GitHub & Travis.
 
     Branding and key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
 
@@ -65,8 +74,8 @@
       url: https://github.com/ipdb/website
 
 - title: Berlin Innovation Ventures
-  slug: '/biv/'
-  img: 'images/biv-01.png'
+  slug: /biv/
+  img: images/biv-01.png
   description: >
     I designed & developed the website and a basic branding for the Berlin-based VC firm Berlin Innovation Ventures. The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it.
 
@@ -83,8 +92,8 @@
       url: http://berlininnovation.vc
 
 - title: '9984 >> Summit 2017'
-  slug: '/9984/'
-  img: 'images/9984-01.png'
+  slug: /9984/
+  img: images/9984-01.png
   links:
     - title: Link
       url: https://2017.9984.io
@@ -95,7 +104,7 @@
   description: >
     In 2017 I was leading the UI design & development for the 9984 >> Summit, the first joint summit of BigchainDB & IPDB. Additionally, I conceptualized, executed and iterated on the creative and visual direction of the 9984 brand.
 
-    The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it. All design & development is embedded in a continous deployment process via GitHub & Travis.
+    The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it. All design & development is embedded in a continuous deployment process via GitHub & Travis.
 
     Branding and key visuals in collaboration with [Cristina Vulpe](https://www.linkedin.com/in/cristina-vulpe-41469262) & [Wojciech Hupert](https://twitter.com/wojciechhupert).
   techstack:
@@ -110,16 +119,17 @@
     - Cloudflare
 
 - title: BigchainDB
-  slug: '/bigchaindb/'
-  img: 'images/bigchaindb-01.png'
+  slug: /bigchaindb/
+  img: images/bigchaindb-01.png
   description: >
-    Since 2016 I'm leading the UI design & development of all BigchainDB web properties. I created the initial BigchainDB brand and further conceptualize, execute and iterate on the creative and visual direction of BigchainDB. This includes creating and iterating on a components-based UI design system for all of BigchainDB's web properties.
+    From 2016–2019 I was leading the UI design & development of all BigchainDB web properties. I created the initial BigchainDB brand and further conceptualized, executed and iterated on the creative and visual direction of BigchainDB. This included creating and iterating on a components-based UI design system for all of BigchainDB's web properties.
 
-    The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it, pulling data from various external sources and microservices. All design & development is embedded in a continous deployment process via GitHub & Travis.
+    The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it, pulling data from various external sources and microservices. All design & development is embedded in a continuous deployment process via GitHub & Travis.
 
     Branding & key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
 
   techstack:
+    - BigchainDB
     - Sketch
     - Affinity Designer
     - Illustrator
@@ -143,8 +153,8 @@
       url: https://dribbble.com/shots/2522184-BigchainDB-site
 
 - title: ChartMogul
-  slug: '/chartmogul/'
-  img: 'images/chartmogul-01.png'
+  slug: /chartmogul/
+  img: images/chartmogul-01.png
   description: >
     From 2015–2017 I was co-designing and leading the UI design & development of various ChartMogul web properties. This included the creation of a components-based UI design system and implementing it across all web touch points.
 
@@ -180,12 +190,12 @@
       url: https://dribbble.com/kremalicious/projects/311439-ChartMogul
 
 - title: ShareTheMeal
-  slug: '/sharethemeal/'
-  img: 'images/sharethemeal-01.png'
+  slug: /sharethemeal/
+  img: images/sharethemeal-01.png
   description: >
     ShareTheMeal is an app from the United Nations World Food Programme (WFP) that enables people to "share their meals" with children in need. In 2015 I was consulting, co-designing and leading the front-end development of the ShareTheMeal website and various parts of the ShareTheMeal apps for iOS & Android.
 
-    The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it, embedded in a continous deployment process via GitHub & Travis.
+    The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it, embedded in a continuous deployment process via GitHub & Travis.
 
   techstack:
     - Sketch
@@ -205,8 +215,8 @@
       url: https://sharethemeal.org/
 
 - title: ezeep
-  slug: '/ezeep/'
-  img: 'images/ezeep-01.png'
+  slug: /ezeep/
+  img: images/ezeep-01.png
   description: >
     From 2012–2015 I worked at ezeep, where I helped creating an unprecedented, market-leading & award-winning user experience based on the principles of emotional design way ahead of all competitors. This included conceptualizing executing, and iterating on the creative & visual direction of the ezeep brand.
 
@@ -238,16 +248,16 @@
       url: https://dribbble.com/kremalicious/projects/84318-ezeep
 
 - title: Mr. Reader
-  slug: '/mrreader/'
-  img: 'images/mrreader-01.png'
+  slug: /mrreader/
+  img: images/mrreader-01.png
   description: >
     While working with indy iOS developer Curious Times in 2012, I designed the app icon, a custom theme, and various promotion materials for Mr. Reader, a powerful and highly loved RSS feed reader for iPad.
   techstack:
     - Photoshop
 
 - title: iPixelPad
-  slug: '/ipixelpad/'
-  img: 'images/ipixelpad-01.png'
+  slug: /ipixelpad/
+  img: images/ipixelpad-01.png
   description: >
     So, what to do when everyone seem to release iPad icons but fail to include some crisp small size icons? Pushing the pixels for yourself of course. So here’s my take on the smaller sizes of an Apple iPad icon, called iPixelPad.
 
@@ -261,8 +271,8 @@
       url: https://kremalicious.com/ipixelpad/
 
 - title: Out Of Whale Oil
-  slug: '/outofwhaleoil/'
-  img: 'images/outofwhaleoil-01.jpg'
+  slug: /outofwhaleoil/
+  img: images/outofwhaleoil-01.jpg
   description: >
     Tribute wallpaper pack inspired by the Futurama movie _Into The Wild Green Yonder_. Released as a goodie on [kremalicious.com](https://kremalicious.com/out-of-whale-oil/).
   links:
@@ -271,9 +281,9 @@
   techstack:
     - Photoshop
 
-- title: Martin-Luther-Universität Halle-Wittenberg
-  slug: '/unihalle/'
-  img: 'images/unihalle-01.png'
+- title: 'Martin-Luther-Universität Halle-Wittenberg'
+  slug: /unihalle/
+  img: images/unihalle-01.png
   description: >
     From 2009–2012 I worked at the IT services department of [Martin-Luther-Universität Halle-Wittenberg](http://www.uni-halle.de) where I conceptualized, designed & implemented numerous in-house and public facing interfaces for thousands of students and staff.
 
@@ -298,8 +308,8 @@
       url: https://dribbble.com/kremalicious/projects/690029-MLU
 
 - title: Coffee Cup
-  slug: '/coffeecup/'
-  img: 'images/coffeecup-01.png'
+  slug: /coffeecup/
+  img: images/coffeecup-01.png
   description: >
     Desktop icons showing the fuel of most designers. Released as a goodie
     on [kremalicious.com](https://kremalicious.com/coffee-cup-icon/).
@@ -312,8 +322,8 @@
       url: https://kremalicious.com/coffee-cup-icon/
 
 - title: Project Purple
-  slug: '/projectpurple/'
-  img: 'images/projectpurple-01.png'
+  slug: /projectpurple/
+  img: images/projectpurple-01.png
   description: >
     It had been revealed the original iPhone was developed in a locked down building under the name Project Purple and because of the secrecy involved, the team decorated the building with Fight Club references. Perfect story to create a wallpaper out of it.
 
@@ -327,8 +337,8 @@
       url: https://kremalicious.com/projectpurple/
 
 - title: Allinnia Creative Group
-  slug: '/allinnia/'
-  img: 'images/allinnia-01.png'
+  slug: /allinnia/
+  img: images/allinnia-01.png
   description: >
     In 2009 I created the branding, website, and various key visuals for professional music production studio Allinnia Creative Group, reflecting their own musical compositions.
 
@@ -341,8 +351,8 @@
     - PHP
 
 - title: Aperture Loupe
-  slug: '/apertureloupe/'
-  img: 'images/apertureloupe-01.png'
+  slug: /apertureloupe/
+  img: images/apertureloupe-01.png
   description: >
     When Apple released their professional photography app _Aperture_ in 2008, the loupe tool in there was something really novel and just fun to play with. Inspired by that, I created this macOS desktop icon.
 
@@ -350,8 +360,8 @@
     - Photoshop
 
 - title: Adiumeetie
-  slug: '/adiumeetie/'
-  img: 'images/adiumeetie-01.png'
+  slug: /adiumeetie/
+  img: images/adiumeetie-01.png
   description: >
     A macOS replacement desktop icon created in 2009 for the popular Mac IM client Adium following the style of atebit’s excellent Tweetie for Mac icon. Released as a goodie on [kremalicious.com](https://kremalicious.com/adiumeetie/).
 
@@ -363,8 +373,8 @@
       url: https://kremalicious.com/adiumeetie/
 
 - title: "Niépce's Camera Obscura"
-  slug: '/niepces-camera-obscura/'
-  img: 'images/niepces-camera-obscura-01.jpg'
+  slug: /niepces-camera-obscura/
+  img: images/niepces-camera-obscura-01.jpg
   description: >
     In 2008 I used the camera obscura as it was used by Nicéphore Niépce in 1826 to create an Aperture and iPhoto replacement icon.
 
