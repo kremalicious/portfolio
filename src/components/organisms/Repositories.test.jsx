@@ -8,4 +8,9 @@ describe('Repositories', () => {
     const { container } = render(<Repositories repos={repos} />)
     expect(container.firstChild).toBeInTheDocument()
   })
+
+  it('return nothing when no repos are passed', () => {
+    const { container } = render(<Repositories />)
+    expect(container.firstChild).not.toBeInTheDocument()
+  })
 })

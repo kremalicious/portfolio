@@ -6,7 +6,7 @@ import styles from './Repositories.module.scss'
 
 export default class Repositories extends PureComponent {
   static propTypes = {
-    repos: PropTypes.array.isRequired
+    repos: PropTypes.array
   }
 
   render() {
