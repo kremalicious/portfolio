@@ -7,25 +7,22 @@ cache:
   directories:
     - public
 
-# will run `npm install` automatically here
-
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install python3-pip
   - sudo -H pip3 install --upgrade pip
 
 before_script:
-  # https://docs.codeclimate.com/docs/travis-ci-test-coverage
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+  - "./cc-test-reporter before-build"
 
 script:
   - npm test
   - npm run build
 
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
 
 after_success:
   - pip install --user awscli
@@ -36,4 +33,4 @@ after_success:
 notifications:
   email: false
   slack:
-    secure: TFQ8YZ9ZbmTXK8KZ1vRtDfbimwgC+e/m4cyT5rdD8za1+rhUKJ7FVDg6aqPQuURQbsk/jR/BjTEIKEnvg7tB3GyQayaUDA/J2DE3ok1KJKsZku0H+ombvk7iAeqhxghDx9R/+yWKGFShgEE7mMYGGgOM8Udb9UIfVwXvx+4OnD0tXzKiEE0Zdg3TP+25ex05T9o3VPxLaPLSZCFC+7YwAE8foGG5pmT/tReCuiIUwupxcNcqY6wovxFeEzDXqdQ0jsrZz+HZsVqZUu4Z7TjAkIyL9y5QrAbPQ2dBiTxG5VsgR8YJsyK5DPJ7DeBielLaGOoakC4U5RIvR1jPwIDWcpd/UY3AZsSc3bLbtNn2/E2cbGFzMFiO+qBZmBOxS6tDM7SvlDNYD/wDINv/Bpa4MHN6h3mY1TpgYSFf8Gke/dlZcGmRhDoG1uC8BKSIDT9+o3rhIxv8sYKDuN7U0zY02jGU5kfzQkKqKP9rl4zI+Zj0ClkjUa4t1CUNDuExmjtsrp2JQzSGmTy/ofpqizDiK+P84nCxv5BmNV8ZEE/d6AD8TBNp1jjeGmT43U34TjirtBPyDVHl7BDicw7TnwnvOsR1Xqs5l7f2XleQsb4zHqHQQzGByuF9uSAwUJYe2MCJMAy34qrVCe8vrLPhCA7lMj5uamMTPYbMD48Df/AmeRw=
+    secure: L/4F9a/2rZ32kCkypn6242HYD9PDd9XY8Ir751rIncn5kRH9beEOV96z9ya9zEZnz42nmCXmGQh5rjxJyeNJmRv+qJa6zoFx3mSkE/cJToIkuir/87gadJLk8wWnFkg5Cu0k0SacBy6iCoilUAo2BC1jJiyPOqCH/0VP8sseEh+0GGuda+LtGVZpfcyHXTN7PRhefq/ERyzIARgEamQSEGyTkTuU5HvV3z5azwUQri04E1sLIiuITZIoRw1H6rydEOrH5R8Jw629XMvurztu5T7C+zY32fno7NjWsQ2BDzf7uoCmEfaS7sNk1S8rI5RLyGzPQdrT57Dmd9WW4Yj+8U2BHIMIoRNqM62B7iALpzWHpjFwbsbABsqyM78kmcaNdiT5X/zst8DYsTSklTcVLfUCJR+KT2SVhQcevyxHtUVegre0YuYmzDee9Pg35VCtHDKBjvuUgUoKA0/hLhMHMcEKLetCTJ6iTmhnQWMsuznhlo0UgoXPWWOKi08KW6NPUhzqffD/71sO1gSXWzYMx3kWHiT42mUZL72SAYA33fJyMtfQCdztaVqPEP4t7YVAf6XK47oi7/hZ6pHAWf2YioryBzw0M+b3KzZvLLXgpIPJO5GaqRtkRpVIC91Xc7iQTBnhhgf37HAyOsxR4LZsAq66GwzGJWshx7EY5ZqVHVs=
