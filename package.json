@@ -48,7 +48,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-pose": "^4.0.8",
-    "remark": "^10.0.1",
+    "remark": "^11.0.0",
     "remark-html": "^9.0.1",
     "remark-parse": "^6.0.3",
     "suncalc": "^1.8.0",
