@@ -50,7 +50,7 @@
     "react-pose": "^4.0.8",
     "remark": "^10.0.1",
     "remark-html": "^9.0.1",
-    "remark-parse": "^6.0.3",
+    "remark-parse": "^7.0.0",
     "suncalc": "^1.8.0",
     "vcf": "^2.0.4"
   },
