@@ -11,38 +11,20 @@ module.exports = {
     siteUrl: `${url}`
   },
   plugins: [
+    'gatsby-transformer-yaml',
+    'gatsby-transformer-json',
     {
-      resolve: 'gatsby-transformer-yaml',
+      resolve: 'gatsby-source-filesystem',
       options: {
-        plugins: [
-          {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-              name: 'content',
-              path: path.join(__dirname, 'content')
-            }
-          }
-        ]
+        name: 'content',
+        path: path.join(__dirname, 'content')
       }
     },
     {
-      resolve: 'gatsby-transformer-json',
+      resolve: 'gatsby-source-filesystem',
       options: {
-        plugins: [
-          {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-              name: 'pkg',
-              path: path.join(__dirname, 'package.json')
-            }
-          }
-        ]
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-sass',
-      options: {
-        includePaths: [`${__dirname}/node_modules`, `${__dirname}/src/styles`]
+        name: 'pkg',
+        path: path.join(__dirname, 'package.json')
       }
     },
     {
@@ -50,6 +32,12 @@ module.exports = {
       options: {
         name: 'images',
         path: path.join(__dirname, 'src', 'images')
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        includePaths: [`${__dirname}/node_modules`, `${__dirname}/src/styles`]
       }
     },
     {

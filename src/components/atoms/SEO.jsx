@@ -1,7 +1,14 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
-import { useMeta } from '../../hooks/use-meta'
+import { useMeta } from '../../hooks/use-meta'`
+import { useResume } from '../../hooks/use-resume'
+
+const MetaTags = ({ title, description, url, image, meta }) => {
+  const resume = useResume()
+  const twitterHandle = resume.basics.profiles.filter(
+    ({ network }) => network === 'Twitter'
+  )[0].username
 
 const MetaTags = ({ title, description, url, image, meta }) => (
   <Helmet
@@ -24,7 +31,7 @@ const MetaTags = ({ title, description, url, image, meta }) => (
 
     {/* Twitter Card tags */}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content={meta.social.Twitter} />
+    <meta name="twitter:creator" content={twitterHandle} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${meta.url}${image}`} />

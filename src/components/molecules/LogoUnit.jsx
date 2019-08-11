@@ -8,7 +8,8 @@ import { ReactComponent as Logo } from '../../images/logo.svg'
 import styles from './LogoUnit.module.scss'
 
 LogoUnit.propTypes = {
-  minimal: PropTypes.bool
+  minimal: PropTypes.bool,
+  isResume: PropTypes.bool
 }
 
 export default function LogoUnit({ minimal }) {

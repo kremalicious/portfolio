@@ -2,20 +2,34 @@ import React from 'react'
 import saveAs from 'file-saver'
 import vCard from 'vcf'
 import { useMeta } from '../../hooks/use-meta'
+import { useResume } from '../../hooks/use-resume'
 
 export default function Vcard() {
   const metaYaml = useMeta()
+  const { basics } = useResume()
+  const data = useStaticQuery(query)
+  const photoSrc = basics.picture.childImageSharp.fixed.src
+  const { name, label, email, profiles } = basics
+
+  const meta = {
+    ...metaYaml,
+    photoSrc,
+    name,
+    label,
+    email,
+    profiles
+  }
 
   const handleAddressbookClick = e => {
     e.preventDefault()
-    init(metaYaml)
+    init(meta)
   }
 
   return (
     <a
       // href is kinda fake, only there for usability
       // so user knows what to expect when hovering the link before clicking
-      href={metaYaml.addressbook}
+      href={meta.addressbook}
       onClick={handleAddressbookClick}
     >
       Add to addressbook
@@ -24,10 +38,8 @@ export default function Vcard() {
 }
 
 export const init = async meta => {
-  const photoSrc = meta.avatar.childImageSharp.resize.src
-
   // first, convert the avatar to base64, then construct all vCard elements
-  const dataUrl = await toDataURL(photoSrc, 'image/jpeg')
+  const dataUrl = await toDataURL(meta.photoSrc, 'image/jpeg')
   const vcard = await constructVcard(dataUrl, meta)
 
   downloadVcard(vcard, meta)
@@ -49,12 +61,12 @@ export const constructVcard = async (dataUrl, meta) => {
   // for vcard to actually display the image for whatever reason
   // const dataUrlCleaned = dataUrl.split('data:image/jpeg;base64,').join('')
   // contact.set('photo', dataUrlCleaned, { encoding: 'b', type: 'JPEG' })
-  contact.set('fn', meta.title)
-  contact.set('title', meta.tagline)
+  contact.set('fn', meta.name)
+  contact.set('title', meta.label)
   contact.set('email', meta.email)
+  contact.set('nickname', 'kremalicious')
   contact.set('url', meta.url, { type: 'Portfolio' })
   contact.add('url', meta.social.Blog, { type: 'Blog' })
-  contact.set('nickname', 'kremalicious')
   contact.add('x-socialprofile', meta.social.Twitter, { type: 'twitter' })
   contact.add('x-socialprofile', meta.social.GitHub, { type: 'GitHub' })
 

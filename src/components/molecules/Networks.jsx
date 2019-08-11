@@ -4,7 +4,24 @@ import posed from 'react-pose'
 import { moveInTop } from '../atoms/Transitions'
 import Icon from '../atoms/Icon'
 import { useMeta } from '../../hooks/use-meta'
+import { useResume } from '../../hooks/use-resume'
 import styles from './Networks.module.scss'
+
+const NetworkLink = ({ name, url }) => (
+  <a
+    className={linkClasses(name)}
+    href={url}
+    data-testid={`network-${name.toLowerCase()}`}
+  >
+    <Icon name={name} />
+    <span className={styles.title}>{name}</span>
+  </a>
+)
+
+NetworkLink.propTypes = {
+  name: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
+}
 
 export default function Networks({ small, hide }) {
   const { social } = useMeta()
@@ -17,17 +34,15 @@ export default function Networks({ small, hide }) {
 
   return (
     <Animation className={small ? styles.small : styles.networks}>
-      {Object.keys(social).map((key, i) => (
-        <a
-          className={linkClasses(key)}
-          href={social[key]}
-          key={i}
-          data-testid={`network-${key.toLowerCase()}`}
-        >
-          <Icon name={key} />
-          <span className={styles.title}>{key}</span>
-        </a>
-      ))}
+      <NetworkLink name={'Email'} url={`mailto:${basics.email}`} />
+
+        {profiles.map(profile => (
+          <NetworkLink
+            key={profile.network}
+            name={profile.network}
+            url={profile.url}
+          />
+        ))}
     </Animation>
   )
 }

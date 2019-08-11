@@ -21,11 +21,11 @@
 }
 
 .link {
-    margin-left: $spacer / 2;
-    margin-right: $spacer / 2;
+    margin-left: $spacer / $line-height;
+    margin-right: $spacer / $line-height;
     margin-bottom: $spacer / 2;
     text-align: center;
-    display: block;
+    display: inline-block;
     flex: 0 1;
     min-width: 2.5rem;
 
