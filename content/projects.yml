@@ -66,10 +66,6 @@
     - 3Scale
 
   links:
-    - title: Link
-      url: https://ipdb.io
-    - title: Styleguide
-      url: https://ipdb.io/styleguide/
     - title: GitHub
       url: https://github.com/ipdb/website
 
