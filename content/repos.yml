@@ -1,10 +1,10 @@
-- user: kremalicious
-  repos:
-    - portfolio
-    - blog
-    - blowfish
-    - gatsby-plugin-matomo
-    - gatsby-redirect-from
-    - hyper-mac-pro
-    - appstorebadges
-    - kbdfun
+- kremalicious/portfolio
+- kremalicious/blog
+- kremalicious/blowfish
+- kremalicious/gatsby-plugin-matomo
+- kremalicious/gatsby-redirect-from
+- kremalicious/hyper-mac-pro
+- kremalicious/appstorebadges
+- kremalicious/kbdfun
+- oceanprotocol/commons
+- oceanprotocol/squid-js

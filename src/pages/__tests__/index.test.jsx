@@ -19,7 +19,8 @@ describe('Home', () => {
   const pageContext = {
     repos: [
       {
-        name: 'Hello'
+        name: 'hello',
+        full_name: 'kremalicious/hello'
       }
     ]
   }

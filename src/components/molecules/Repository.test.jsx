@@ -12,6 +12,7 @@ describe('Repository', () => {
   it('uses html_url as main link for portfolio & blog', () => {
     const repo1 = {
       name: 'portfolio',
+      full_name: 'kremalicious/portfolio',
       html_url: 'html_url'
     }
 
@@ -24,6 +25,7 @@ describe('Repository', () => {
   it('renders homepage link when provided', () => {
     const repo = {
       name: 'Hello',
+      full_name: 'kremalicious/hello',
       homepage: 'hello'
     }
 
@@ -32,7 +34,7 @@ describe('Repository', () => {
   })
 
   it('renders no link without homepage', () => {
-    const repo = { name: 'Hello' }
+    const repo = { name: 'Hello', full_name: 'repo/hello' }
 
     const { container } = render(<Repository repo={repo} />)
     expect(container.querySelectorAll('p:last-child a').length).toBe(2)

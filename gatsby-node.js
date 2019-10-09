@@ -27,31 +27,32 @@ function truncate(n, useWordBoundary) {
 // Get GitHub repos
 //
 async function getGithubRepos(data) {
-  const allRepos = await axios.get(
-    `https://api.github.com/users/${data.user}/repos?per_page=100`,
-    { headers: { 'User-Agent': 'kremalicious/portfolio' } }
-  )
-  const repos = allRepos.data
-    // filter by what's defined in content/repos.yml
-    .filter(({ name }) => data.repos.includes(name))
-    // sort by pushed to, newest first
-    .sort((a, b) => b.pushed_at.localeCompare(a.pushed_at))
-
-  // reduce data output by reconstructing repo objects
-  const reposReduced = []
+  let repos = []
   let holder = {}
 
-  for (let repo of repos) {
-    holder.name = repo.name
-    holder.description = repo.description
-    holder.html_url = repo.html_url
-    holder.homepage = repo.homepage
-    holder.stargazers_count = repo.stargazers_count
-    reposReduced.push(holder)
+  for (let item of data) {
+    const user = item.split('/')[0]
+    const repoName = item.split('/')[1]
+    const repo = await axios.get(
+      `https://api.github.com/repos/${user}/${repoName}`,
+      { headers: { 'User-Agent': 'kremalicious/portfolio' } }
+    )
+
+    holder.name = repo.data.name
+    holder.full_name = repo.data.full_name
+    holder.description = repo.data.description
+    holder.html_url = repo.data.html_url
+    holder.homepage = repo.data.homepage
+    holder.stargazers_count = repo.data.stargazers_count
+    holder.pushed_at = repo.data.pushed_at
+    repos.push(holder)
     holder = {}
   }
 
-  return reposReduced
+  // sort by pushed to, newest first
+  repos = repos.sort((a, b) => b.pushed_at.localeCompare(a.pushed_at))
+
+  return repos
 }
 
 //
@@ -63,7 +64,7 @@ exports.onPreBootstrap = async () => {
   const t0 = performance.now()
 
   try {
-    repos = await getGithubRepos(reposYaml[0])
+    repos = await getGithubRepos(reposYaml)
     const t1 = performance.now()
     const ms = t1 - t0
     const s = ((ms / 1000) % 60).toFixed(3)
