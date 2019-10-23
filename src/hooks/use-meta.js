@@ -14,6 +14,7 @@ const query = graphql`
         Twitter
         GitHub
         Dribbble
+        Keybase
       }
       availability {
         status
