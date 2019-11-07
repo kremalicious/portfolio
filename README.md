@@ -119,7 +119,7 @@ All together, Gatsby automatically generates all required image sizes for delive
 
 All project images use one single component where one main GraphQL query fragment is defined, which then gets used throughout other GraphQL queries.
 
-- [`src/components/molecules/ProjectImage.jsx`](src/components/molecules/ProjectImage.jsx)
+- [`src/components/atoms/ProjectImage.jsx`](src/components/atoms/ProjectImage.jsx)
 
 ### 💎 Importing SVG assets
 
