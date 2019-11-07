@@ -36,12 +36,15 @@
     - HTML
     - SCSS
     - JavaScript
+    - TypeScript
     - Travis
     - AWS S3
     - Cloudflare
+    - Ethereum
     - Docker
     - Kubernetes
     - Cypress
+    - IPFS
 
 - title: IPDB
   slug: /ipdb/

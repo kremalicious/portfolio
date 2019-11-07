@@ -14,7 +14,7 @@ export default class ProjectImage extends PureComponent {
     return (
       <Img
         className={styles.projectImage}
-        backgroundColor="#6b7f88"
+        backgroundColor="transparent"
         fluid={this.props.fluid}
         alt={this.props.alt}
       />
