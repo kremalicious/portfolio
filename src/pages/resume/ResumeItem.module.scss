@@ -4,21 +4,26 @@
     padding-bottom: $spacer * 3;
     padding-left: $spacer;
     position: relative;
-    border-left: 1px solid $brand-grey-light;
+    border-left: 1px solid rgba($brand-grey-light, 0.25);
 
     &::before {
         content: '';
         display: block;
-        width: 1rem;
-        height: 1rem;
+        width: $font-size-small;
+        height: $font-size-small;
         border-radius: 50%;
         background: $brand-grey-light;
         position: absolute;
-        left: -0.5rem;
+        left: -($font-size-small / 2);
+        top: 0.1rem;
     }
 
     p:last-child {
         margin-bottom: 0;
+    }
+
+    &:last-child {
+        border: none;
     }
 }
 

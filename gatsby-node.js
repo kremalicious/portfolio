@@ -2,7 +2,7 @@
 
 const path = require('path')
 const remark = require('remark')
-const markdown = require('remark-parse')
+const parse = require('remark-parse')
 const html = require('remark-html')
 const axios = require('axios')
 const fs = require('fs')
@@ -111,7 +111,7 @@ exports.onCreateNode = ({ node, actions }) => {
     let descriptionHtml
 
     remark()
-      .use(markdown, { gfm: true, commonmark: true, pedantic: true })
+      .use(parse, { gfm: true, commonmark: true, pedantic: true })
       .use(html)
       .process(descriptionWithLineBreaks, (err, file) => {
         if (err) throw Error('Could not transform project description')

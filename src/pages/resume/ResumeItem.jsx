@@ -1,14 +1,43 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import remark from 'remark'
+import remark2react from 'remark-react'
+import parse from 'remark-parse'
+import html from 'remark-html'
+import breaks from 'remark-breaks'
 import styles from './ResumeItem.module.scss'
 
-export default function ResumeItem({ workPlace, eduPlace }) {
-  const title = workPlace ? workPlace.company : eduPlace.institution
-  const subTitle = workPlace ? workPlace.position : eduPlace.area
-  const text = workPlace ? workPlace.summary : eduPlace.studyType
-  const { startDate, endDate } = workPlace || eduPlace
+export const markdownOutput = text =>
+  remark()
+    .use(parse, { gfm: true, commonmark: true, pedantic: true })
+    .use(html)
+    .use(breaks)
+    .use(remark2react)
+    .processSync(text).contents
 
-  const dateStart = new Date(startDate).getFullYear()
+export default function ResumeItem({ workPlace, eduPlace, award }) {
+  const title = workPlace
+    ? workPlace.company
+    : award
+    ? award.title
+    : eduPlace.institution
+  const subTitle = workPlace
+    ? workPlace.position
+    : award
+    ? award.awarder
+    : eduPlace.area
+  const text = workPlace
+    ? workPlace.summary
+    : award && award.summary
+    ? award.summary
+    : eduPlace
+    ? eduPlace.studyType
+    : null
+  const { startDate, endDate, date } = workPlace || eduPlace || award
+
+  const dateStart = date
+    ? new Date(date).getFullYear()
+    : new Date(startDate).getFullYear()
   const dateEnd = endDate && new Date(endDate).getFullYear()
   const isSameYear = dateStart === dateEnd
 
@@ -16,13 +45,15 @@ export default function ResumeItem({ workPlace, eduPlace }) {
     <div className={styles.resumeItem}>
       <span className={styles.time}>
         {dateStart}
-        {dateEnd ? !isSameYear && `–${dateEnd}` : '–present'}{' '}
+        {dateEnd
+          ? !isSameYear && `–${dateEnd}`
+          : !date
+          ? '–present'
+          : null}{' '}
       </span>
       <h4 className={styles.title}>{title}</h4>
       <h5 className={styles.subTitle}>{subTitle}</h5>
-      <p>
-        <em>{text}</em>
-      </p>
+      {text && markdownOutput(text)}
     </div>
   )
 }
@@ -41,5 +72,11 @@ ResumeItem.propTypes = {
     institution: PropTypes.string.isRequired,
     area: PropTypes.string.isRequired,
     studyType: PropTypes.string
+  }),
+  award: PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    awarder: PropTypes.string.isRequired,
+    summary: PropTypes.string
   })
 }

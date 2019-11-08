@@ -7,28 +7,12 @@ const query = graphql`
       tagline
       description
       url
-      email
       img {
         childImageSharp {
           resize(width: 980) {
             src
           }
         }
-      }
-      avatar {
-        childImageSharp {
-          resize {
-            src
-          }
-        }
-      }
-      social {
-        Mail
-        Blog
-        Twitter
-        GitHub
-        Dribbble
-        Keybase
       }
       availability {
         status

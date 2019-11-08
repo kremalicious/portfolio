@@ -18,9 +18,13 @@ export default function Header({ minimal, isResume }) {
   return (
     <header className={minimal ? styles.minimal : styles.header}>
       <ThemeSwitch />
-      <LogoUnit minimal={minimal} isResume={isResume} />
-      <Networks hide={minimal} />
-      <Availability hide={minimal && !availability.status} />
+      {!isResume && (
+        <>
+          <LogoUnit minimal={minimal} isResume={isResume} />
+          <Networks hide={minimal} />
+          <Availability hide={minimal && !availability.status} />
+        </>
+      )}
     </header>
   )
 }

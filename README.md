@@ -19,7 +19,7 @@
   - [💍 One data file to rule all pages](#-one-data-file-to-rule-all-pages)
   - [🐱 GitHub repositories](#-github-repositories)
   - [💅 Theme switcher](#-theme-switcher)
-  - [🗂 Resume](#-resume)
+  - [🗂 JSON Resume](#-json-resume)
   - [🏆 SEO component](#-seo-component)
   - [📇 Client-side vCard creation](#-client-side-vcard-creation)
   - [💫 Page transitions](#-page-transitions)
@@ -77,14 +77,14 @@ If you want to know how, have a look at the respective components:
 - [`src/components/molecules/ThemeSwitch.jsx`](src/components/molecules/ThemeSwitch.jsx)
 - [`src/hooks/use-dark-mode.jsx`](src/hooks/use-dark-mode.jsx)
 
-### 🗂 Resume
+### 🗂 JSON Resume
 
-Resume page based on [JSON Resume](https://jsonresume.org) standard.
+Resume page based on [JSON Resume](https://jsonresume.org) standard. Most metadata and social profiles are defined in [`content/resume.json`](content/resume.json) and used throughout the site.
 
 If you want to know how, have a look at the respective components:
 
-- [`src/pages/resume.jsx`](src/pages/resume.jsx)
 - [`content/resume.json`](content/resume.json)
+- [`src/pages/resume.jsx`](src/pages/resume.jsx)
 - [`src/hooks/use-resume.js`](src/hooks/use-resume.js)
 
 ### 🏆 SEO component

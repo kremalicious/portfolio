@@ -3,9 +3,11 @@ import PropTypes from 'prop-types'
 import posed from 'react-pose'
 import { moveInTop } from '../atoms/Transitions'
 import Icon from '../atoms/Icon'
-import { useMeta } from '../../hooks/use-meta'
 import { useResume } from '../../hooks/use-resume'
 import styles from './Networks.module.scss'
+
+const linkClasses = key =>
+  key === 'Email' ? `u-email ${styles.link}` : `u-url ${styles.link}`
 
 const NetworkLink = ({ name, url }) => (
   <a
@@ -24,25 +26,22 @@ NetworkLink.propTypes = {
 }
 
 export default function Networks({ small, hide }) {
-  const { social } = useMeta()
+  const { basics } = useResume()
   if (hide) return null
 
   const Animation = posed.aside(moveInTop)
-
-  const linkClasses = key =>
-    key === 'Email' ? `u-email ${styles.link}` : `u-url ${styles.link}`
 
   return (
     <Animation className={small ? styles.small : styles.networks}>
       <NetworkLink name={'Email'} url={`mailto:${basics.email}`} />
 
-        {profiles.map(profile => (
-          <NetworkLink
-            key={profile.network}
-            name={profile.network}
-            url={profile.url}
-          />
-        ))}
+      {basics.profiles.map(profile => (
+        <NetworkLink
+          key={profile.network}
+          name={profile.network}
+          url={profile.url}
+        />
+      ))}
     </Animation>
   )
 }

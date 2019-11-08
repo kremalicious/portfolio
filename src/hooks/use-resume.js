@@ -23,7 +23,6 @@ const query = graphql`
         }
         location {
           city
-          country
           countryCode
         }
       }
@@ -51,6 +50,12 @@ const query = graphql`
         endDate
         summary
         highlights
+      }
+      awards {
+        title
+        date
+        awarder
+        summary
       }
     }
   }

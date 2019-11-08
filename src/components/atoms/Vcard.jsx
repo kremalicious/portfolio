@@ -7,7 +7,6 @@ import { useResume } from '../../hooks/use-resume'
 export default function Vcard() {
   const metaYaml = useMeta()
   const { basics } = useResume()
-  const data = useStaticQuery(query)
   const photoSrc = basics.picture.childImageSharp.fixed.src
   const { name, label, email, profiles } = basics
 
@@ -56,6 +55,12 @@ export const downloadVcard = (vcard, meta) => {
 
 export const constructVcard = async (dataUrl, meta) => {
   const contact = new vCard()
+  const blog = meta.profiles.filter(({ network }) => network === 'Blog')[0].url
+  const twitter = meta.profiles.filter(
+    ({ network }) => network === 'Twitter'
+  )[0].url
+  const github = meta.profiles.filter(({ network }) => network === 'GitHub')[0]
+    .url
 
   // stripping this data out of base64 string is required
   // for vcard to actually display the image for whatever reason
@@ -66,9 +71,9 @@ export const constructVcard = async (dataUrl, meta) => {
   contact.set('email', meta.email)
   contact.set('nickname', 'kremalicious')
   contact.set('url', meta.url, { type: 'Portfolio' })
-  contact.add('url', meta.social.Blog, { type: 'Blog' })
-  contact.add('x-socialprofile', meta.social.Twitter, { type: 'twitter' })
-  contact.add('x-socialprofile', meta.social.GitHub, { type: 'GitHub' })
+  contact.add('url', blog, { type: 'Blog' })
+  contact.add('x-socialprofile', twitter, { type: 'twitter' })
+  contact.add('x-socialprofile', github, { type: 'GitHub' })
 
   const vcard = contact.toString('3.0')
 

@@ -7,7 +7,8 @@ import styles from './index.module.scss'
 import ResumeItem from './ResumeItem'
 
 export default function Resume() {
-  const { basics, education, languages, work } = useResume()
+  const { basics, education, languages, work, awards } = useResume()
+  const { name, label, email, website, location } = basics
 
   return (
     <>
@@ -16,25 +17,25 @@ export default function Resume() {
       <div className={styles.resume}>
         <header>
           <p>Résumé</p>
-          <h1 className={styles.title}>{basics.name}</h1>
-          <h2 className={styles.label}>{basics.label}</h2>
+          <h1 className={styles.title}>{name}</h1>
+          <h2 className={styles.label}>{label}</h2>
         </header>
 
         <div>
           <ul className={styles.contact}>
             <li>
-              <a href={basics.website}>
+              <a href={website}>
                 <LinkIcon type="website" />
-                {basics.website.replace('https://', '')}
+                Portfolio
               </a>
             </li>
             <li>
               <LinkIcon type="Email" />
-              {basics.email}
+              <a href={`mailto:${email}`}>Email</a>
             </li>
             <li>
               <LinkIcon type="Info" />
-              {basics.location.city}
+              {location.city}, {location.countryCode}
             </li>
             <li>
               <LinkIcon type="Info" />
@@ -53,6 +54,15 @@ export default function Resume() {
         <div>
           {work.map(workPlace => (
             <ResumeItem key={shortid.generate()} workPlace={workPlace} />
+          ))}
+        </div>
+
+        <div>
+          <h3 className={styles.subTitle}>Awards</h3>
+        </div>
+        <div>
+          {awards.map(award => (
+            <ResumeItem key={shortid.generate()} award={award} />
           ))}
         </div>
 

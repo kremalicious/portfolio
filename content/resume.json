@@ -34,7 +34,6 @@
     ],
     "location": {
       "city": "Berlin",
-      "country": "Germany",
       "countryCode": "DE"
     }
   },
@@ -44,7 +43,7 @@
       "position": "Lead UI Designer & Developer",
       "website": "https://oceanprotocol.com",
       "startDate": "2017-01-01",
-      "summary": "Leading the UI design & development of Ocean Protocol, iterating on a components-based UI design system spanning all of Ocean Protocol's web properties. Additionally, I conceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.",
+      "summary": "Leading the UI design & development of Ocean Protocol's user interfaces, iterating on a components-based UI design system spanning all of Ocean Protocol's web properties. \n\nConceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.\n\nAs a core developer leading the execution of [multiple user interfaces](/oceanprotocol) and core components.",
       "highlights": ["Started the company"]
     },
     {
@@ -53,7 +52,7 @@
       "website": "https://bigchaindb.com",
       "startDate": "2016-12-01",
       "endDate": "2018-12-31",
-      "summary": "Leading the UI design & development of all BigchainDB web properties. I created the initial BigchainDB brand and further conceptualized, executed and iterated on the creative and visual direction of BigchainDB. This included creating and iterating on a components-based UI design system for all of BigchainDB's web properties.",
+      "summary": "Leading the UI design & development of all BigchainDB web properties. I created the initial BigchainDB brand and further conceptualized, executed and iterated on the creative and visual direction of BigchainDB. This included creating and iterating on a components-based UI design system for all of [BigchainDB's user interfaces](/bigchaindb).",
       "highlights": ["Started the company"]
     },
     {
@@ -71,7 +70,7 @@
       "website": "https://chartmogul.com",
       "startDate": "2015-07-15",
       "endDate": "2017-02-01",
-      "summary": "Co-designing and leading the UI design & development of various ChartMogul web properties. This included the creation of a components-based UI design system and implementing it across all web touch points. Besides designing and implementing new features, I maintained the front-end of the ChartMogul application and implemented the UI design system by refactoring most of its front-end codebase.",
+      "summary": "Co-designing and leading the UI design & development of various [ChartMogul web properties](/chartmogul). This included the creation of a components-based UI design system and implementing it across all web touch points.\n\nBesides designing and implementing new features, I maintained the front-end of the ChartMogul application and implemented the UI design system by refactoring most of its front-end codebase.",
       "highlights": ["Started the company"]
     },
     {
@@ -80,7 +79,7 @@
       "website": "https://sharethemeal.org",
       "startDate": "2014-10-01",
       "endDate": "2015-06-01",
-      "summary": "...",
+      "summary": "[app and website](/sharethemeal)",
       "highlights": ["Started the company"]
     },
     {
@@ -89,21 +88,21 @@
       "website": "https://ezeep.com",
       "startDate": "2012-01-01",
       "endDate": "2014-09-01",
-      "summary": "Creating an unprecedented, market-leading & award-winning user experience around printing based on the principles of emotional design way ahead of all competitors. This included defining the product based on user & market research in an iterative process and designing & building ezeep’s numerous touch points, like the web app, web site, desktop apps for Windows & Mac OS X and apps for iOS & Android. On top of that I created the corporate identity and a consistent visual branding including the logo."
+      "summary": "Creating an unprecedented, market-leading & award-winning user experience around printing based on the principles of emotional design way ahead of all competitors.\n\nThis included defining the product based on user & market research in an iterative process and designing & building [ezeep’s numerous touch points](/ezeep), like the web app, web site, desktop apps for Windows & Mac OS X and apps for iOS & Android.\n\nOn top of that I created the corporate identity and a consistent visual branding, including the logo."
     },
     {
       "company": "Martin Luther University Halle-Wittenberg",
       "position": "UI/UX Designer & Front End Developer",
       "startDate": "2009-02-01",
       "endDate": "2012-01-01",
-      "summary": "Conceptualizing & implementing numerous in-house and public facing interfaces for thousands of students and staff. Additionally, conceptualizing, creating and maintaining the blog network & community for all students & staff."
+      "summary": "Conceptualizing & implementing [numerous in-house and public facing interfaces](/unihalle) for thousands of students and staff. Additionally, conceptualizing, creating and maintaining the blog network & community for all students & staff."
     },
     {
       "company": "Harz University of Applied Sciences",
       "position": "Consultant & Teacher",
       "startDate": "2011-02-01",
       "endDate": "2011-05-01",
-      "summary": "Conceptualizing a web design & development university seminar and building a responsive & fluid grid framework with a basic HTML/CSS template for students of Media Informatics at the Harz University of Applied Sciences to learn and use."
+      "summary": "Conceptualizing a web design & development university seminar and building a [responsive & fluid grid framework](https://github.com/kremalicious/hsresponsive) with a basic HTML/CSS template for students of Media Informatics at the Harz University of Applied Sciences to learn and use."
     },
     {
       "company": "Martin Luther University Halle-Wittenberg",
@@ -144,7 +143,7 @@
     {
       "institution": "Martin Luther University Halle-Wittenberg",
       "area": "Media/Communication Science & Art History",
-      "studyType": "Bachelor",
+      "studyType": "Bachelor of Arts",
       "startDate": "2008-01-01",
       "endDate": "2012-01-01"
     },
@@ -160,7 +159,8 @@
     {
       "title": "German Design Award",
       "date": "2015-11-01",
-      "awarder": "ezeep GmbH"
+      "awarder": "ezeep GmbH",
+      "summary": "Nominated in the category _Interactive User Experience (Excellent Communications Design)_"
     },
     {
       "title": "CeBIT Preview Award",
@@ -226,12 +226,12 @@
   ],
   "languages": [
     {
-      "language": "German",
-      "fluency": "Native speaker"
-    },
-    {
       "language": "English",
       "fluency": "Advanced speaker"
+    },
+    {
+      "language": "German",
+      "fluency": "Native speaker"
     }
   ]
 }

@@ -46,13 +46,14 @@
     }
 
     @media (min-width: $screen-md) {
-        margin-top: $spacer * 2;
+        margin-top: $spacer * 2.25;
     }
 }
 
 .subTitle {
     font-size: $font-size-h3;
     margin-bottom: 0;
+    margin-top: -($spacer / 3);
 }
 
 @media print {
