@@ -3,17 +3,17 @@
 .repo {
     padding: $spacer;
     border-radius: $border-radius;
-    background: rgba(#fff, .15);
-    box-shadow: 0 3px 5px rgba($brand-main, .1),
-        0 5px 16px rgba($brand-main, .1);
+    background: rgba(#fff, 0.15);
+    box-shadow: 0 3px 5px rgba($brand-main, 0.1),
+        0 5px 16px rgba($brand-main, 0.1);
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
 
     :global(.dark) & {
         background: darken($body-background-color--dark, 1%);
-        box-shadow: 0 3px 5px rgba(darken($brand-main, 20%), .1),
-            0 5px 16px rgba(darken($brand-main, 20%), .1);
+        box-shadow: 0 3px 5px rgba(darken($brand-main, 20%), 0.1),
+            0 5px 16px rgba(darken($brand-main, 20%), 0.1);
     }
 
     > * {

@@ -35,7 +35,7 @@
 
     &::before,
     &::after {
-        opacity: .4;
+        opacity: 0.4;
     }
 
     &::before {
@@ -54,7 +54,7 @@
     &,
     &:hover,
     &:focus {
-        transform: scale(.7);
+        transform: scale(0.7);
         transform-origin: top center;
         transform-box: border-box;
     }
@@ -70,6 +70,6 @@
 
     .logo {
         margin-bottom: $spacer / 3;
-        opacity: .5;
+        opacity: 0.5;
     }
 }

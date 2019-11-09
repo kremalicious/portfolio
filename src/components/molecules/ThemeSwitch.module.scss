@@ -7,15 +7,15 @@
     z-index: 10;
 
     svg {
-        width: .8rem;
-        height: .8rem;
-        margin-top: -.05rem;
+        width: 0.8rem;
+        height: 0.8rem;
+        margin-top: -0.05rem;
         fill: $brand-grey-light;
 
         &:last-child {
-            margin-top: -.1rem;
-            width: .7rem;
-            height: .7rem;
+            margin-top: -0.1rem;
+            width: 0.7rem;
+            height: 0.7rem;
         }
     }
 }
@@ -47,7 +47,7 @@ $knob-space: 1px;
         height: $knob-size;
         background-color: $brand-grey-light;
         border-radius: 15rem;
-        transition: transform .2s $easing;
+        transition: transform 0.2s $easing;
         transform: translate3d(0, 0, 0);
     }
 }
