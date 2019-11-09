@@ -72,10 +72,11 @@ module.exports = {
         short_name: 'mk',
         start_url: '/',
         background_color: '#e7eef4',
-        theme_color: '#88bec8',
+        theme_color: '#e7eef4',
         icon: 'src/images/favicon.png',
-        display: 'minimal-ui',
-        cache_busting_mode: 'name'
+        display: 'standalone',
+        cache_busting_mode: 'name',
+        theme_color_in_head: false // dynamically set in ThemeSwitch
       }
     },
     'gatsby-plugin-react-helmet',

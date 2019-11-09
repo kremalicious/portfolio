@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { Provider } from './createContext'
+import Context from './createContext'
 import { getLocationTimes } from '../utils/getLocationTimes'
 import { getCountry } from '../utils/getCountry'
 
@@ -10,7 +10,7 @@ export default class AppProvider extends PureComponent {
   }
 
   state = {
-    dark: false,
+    darkMode: false,
     toggleDark: () => this.toggleDark(),
     geolocation: null
   }
@@ -31,8 +31,8 @@ export default class AppProvider extends PureComponent {
     this.mounted = false
   }
 
-  setDark(dark) {
-    this.mounted && this.setState({ dark })
+  setDark(darkMode) {
+    this.mounted && this.setState({ darkMode })
   }
 
   darkLocalStorageMode(darkLocalStorage) {
@@ -43,16 +43,16 @@ export default class AppProvider extends PureComponent {
   // All the checks to see if we should go dark or light
   //
   async checkTimes() {
-    const { geolocation, dark } = this.state
-    const { sunset, sunrise } = await getLocationTimes(geolocation)
+    const { geolocation, darkMode } = this.state
+    const { sunset, sunrise } = getLocationTimes(geolocation)
     const now = new Date().getHours()
     const weWantItDarkTimes = now >= sunset || now <= sunrise
 
-    !dark && weWantItDarkTimes ? this.setDark(true) : this.setDark(false)
+    !darkMode && weWantItDarkTimes ? this.setDark(true) : this.setDark(false)
   }
 
   async checkDark() {
-    const darkLocalStorage = await this.store.getItem('dark')
+    const darkLocalStorage = await this.store.getItem('darkMode')
 
     darkLocalStorage
       ? this.darkLocalStorageMode(darkLocalStorage)
@@ -60,11 +60,15 @@ export default class AppProvider extends PureComponent {
   }
 
   toggleDark = () => {
-    this.setState({ dark: !this.state.dark })
-    this.store && this.store.setItem('dark', !this.state.dark)
+    this.setState({ darkMode: !this.state.darkMode })
+    this.store && this.store.setItem('darkMode', !this.state.darkMode)
   }
 
   render() {
-    return <Provider value={this.state}>{this.props.children}</Provider>
+    return (
+      <Context.Provider value={this.state}>
+        {this.props.children}
+      </Context.Provider>
+    )
   }
 }

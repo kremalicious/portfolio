@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import posed from 'react-pose'
-import { Consumer } from '../../store/createContext'
+import Context from '../../store/createContext'
 import { fadeIn } from '../atoms/Transitions'
 
 import { ReactComponent as Day } from '../../images/day.svg'
@@ -39,25 +39,23 @@ ThemeToggleInput.propTypes = {
   toggleDark: PropTypes.func.isRequired
 }
 
-export default class ThemeSwitch extends PureComponent {
-  render() {
-    return (
-      <Consumer>
-        {({ dark, toggleDark }) => (
-          <>
-            <Helmet>
-              <body className={dark ? 'dark' : null} />
-            </Helmet>
-            <Animation className={styles.themeSwitch}>
-              <label className={styles.checkbox}>
-                <span className={styles.label}>Toggle Night Mode</span>
-                <ThemeToggleInput dark={dark} toggleDark={toggleDark} />
-                <ThemeToggle dark={dark} />
-              </label>
-            </Animation>
-          </>
-        )}
-      </Consumer>
-    )
-  }
+export default function ThemeSwitch() {
+  const { darkMode, toggleDark } = useContext(Context)
+  const themeColor = darkMode ? '#1d2224' : '#e7eef4'
+
+  return (
+    <>
+      <Helmet>
+        <body className={darkMode ? 'dark' : null} />
+        <meta content={themeColor} name="theme-color" />
+      </Helmet>
+      <Animation className={styles.themeSwitch}>
+        <label className={styles.checkbox}>
+          <span className={styles.label}>Toggle Night Mode</span>
+          <ThemeToggleInput dark={darkMode} toggleDark={toggleDark} />
+          <ThemeToggle dark={darkMode} />
+        </label>
+      </Animation>
+    </>
+  )
 }

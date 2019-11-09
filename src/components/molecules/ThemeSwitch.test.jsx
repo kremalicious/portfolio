@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, fireEvent, cleanup } from '@testing-library/react'
-import { Provider } from '../../store/createContext'
+import Context from '../../store/createContext'
 import ThemeSwitch from './ThemeSwitch'
 
 describe('ThemeSwitch', () => {
@@ -9,9 +9,11 @@ describe('ThemeSwitch', () => {
 
   it('renders correctly', () => {
     const { container } = render(
-      <Provider value={{ dark: false, toggleDark: () => toggleDark }}>
+      <Context.Provider
+        value={{ darkMode: false, toggleDark: () => toggleDark }}
+      >
         <ThemeSwitch />
-      </Provider>
+      </Context.Provider>
     )
 
     const switchContainer = container.querySelector('aside')
@@ -21,9 +23,11 @@ describe('ThemeSwitch', () => {
 
   it('switches when it is dark', () => {
     const { container } = render(
-      <Provider value={{ dark: true, toggleDark: () => toggleDark }}>
+      <Context.Provider
+        value={{ darkMode: true, toggleDark: () => toggleDark }}
+      >
         <ThemeSwitch />
-      </Provider>
+      </Context.Provider>
     )
 
     const toggle = container.querySelector('input')
@@ -32,9 +36,11 @@ describe('ThemeSwitch', () => {
 
   it('checkbox can be changed', () => {
     const { container } = render(
-      <Provider value={{ dark: false, toggleDark: () => toggleDark }}>
+      <Context.Provider
+        value={{ darkMode: false, toggleDark: () => toggleDark }}
+      >
         <ThemeSwitch />
-      </Provider>
+      </Context.Provider>
     )
 
     const toggle = container.querySelector('input')

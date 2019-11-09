@@ -2,7 +2,7 @@ import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import { LocalStorageMock } from '@react-mock/localstorage'
 import AppProvider from './AppProvider.jsx'
-import { Consumer } from './createContext.jsx'
+import Context from './createContext.jsx'
 
 describe('AppProvider', () => {
   it('renders correctly', () => {
@@ -15,13 +15,13 @@ describe('AppProvider', () => {
     const { getByTestId } = render(
       <LocalStorageMock items={{ dark: 'true' }}>
         <AppProvider>
-          <Consumer>
+          <Context.Consumer>
             {state => (
               <button data-testid="toggle" onClick={() => state.toggleDark()}>
                 Toggle
               </button>
             )}
-          </Consumer>
+          </Context.Consumer>
         </AppProvider>
       </LocalStorageMock>
     )
