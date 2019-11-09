@@ -16,6 +16,7 @@ function s3sync {
     --exclude "*.html" \
     --exclude "sw.js" \
     --exclude "*page-data.json" \
+    --exclude "*app-data.json" \
     --exclude "chunk-map.json" \
     --exclude "sitemap.xml" \
     --exclude ".iconstats.json" \
@@ -30,6 +31,7 @@ function s3sync {
     --include "*.html" \
     --include "sw.js" \
     --include "*page-data.json" \
+    --include "*app-data.json" \
     --include "chunk-map.json" \
     --include "sitemap.xml" \
     --include ".iconstats.json" \
