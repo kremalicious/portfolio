@@ -47,7 +47,11 @@ export default function ThemeSwitch() {
     <>
       <Helmet>
         <body className={darkMode ? 'dark' : null} />
-        <meta content={themeColor} name="theme-color" />
+        <meta name="theme-color" content={themeColor} />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
       </Helmet>
       <Animation className={styles.themeSwitch}>
         <label className={styles.checkbox}>
