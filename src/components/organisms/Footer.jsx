@@ -1,7 +1,6 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
-import classNames from 'classnames'
+import { graphql, useStaticQuery } from 'gatsby'
 import Vcard from '../atoms/Vcard'
 import LogoUnit from '../molecules/LogoUnit'
 import Networks from '../molecules/Networks'
@@ -22,34 +21,29 @@ const query = graphql`
   }
 `
 
-const FooterMarkup = ({ pkg, meta, year }) => {
-  const classes = classNames('h-card', [styles.footer])
+const FooterMarkup = ({ pkg, meta, year }) => (
+  <footer className={`h-card ${styles.footer}`}>
+    <LogoUnit minimal />
+    <Networks minimal />
 
-  return (
-    <footer className={classes}>
-      <LogoUnit minimal />
-
-      <Networks minimal />
-
-      <p className={styles.actions}>
-        <Vcard />
-        <a className="u-key" href={meta.gpg}>
-          PGP/GPG key
-        </a>
-        <a href={pkg.bugs}>Found a bug?</a>
-      </p>
-      <p className={styles.copyright}>
-        <small>
-          &copy; {year}{' '}
-          <a className="u-url" href={meta.url}>
-            {meta.title}
-          </a>{' '}
-          &mdash; All Rights Reserved
-        </small>
-      </p>
-    </footer>
-  )
-}
+    <p className={styles.actions}>
+      <Vcard />
+      <a className="u-key" href={meta.gpg}>
+        PGP/GPG key
+      </a>
+      <a href={pkg.bugs}>Found a bug?</a>
+    </p>
+    <p className={styles.copyright}>
+      <small>
+        &copy; {year}{' '}
+        <a className="u-url" href={meta.url}>
+          {meta.title}
+        </a>{' '}
+        &mdash; All Rights Reserved
+      </small>
+    </p>
+  </footer>
+)
 
 FooterMarkup.propTypes = {
   pkg: PropTypes.object.isRequired,
@@ -57,20 +51,11 @@ FooterMarkup.propTypes = {
   year: PropTypes.number.isRequired
 }
 
-export default class Footer extends PureComponent {
-  state = { year: new Date().getFullYear() }
+export default function Footer() {
+  const data = useStaticQuery(query)
+  const pkg = data.portfolioJson
+  const meta = data.metaYaml
+  const year = new Date().getFullYear()
 
-  render() {
-    return (
-      <StaticQuery
-        query={query}
-        render={data => {
-          const pkg = data.portfolioJson
-          const meta = data.metaYaml
-
-          return <FooterMarkup year={this.state.year} pkg={pkg} meta={meta} />
-        }}
-      />
-    )
-  }
+  return <FooterMarkup year={year} pkg={pkg} meta={meta} />
 }

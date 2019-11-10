@@ -13,7 +13,7 @@ describe('Header', () => {
 
   it('renders correctly', () => {
     const { container } = render(
-      <Context.Provider value={{ dark: false, toggleDark: () => null }}>
+      <Context.Provider value={{ darkMode: false, toggleDark: () => null }}>
         <Header />
       </Context.Provider>
     )
@@ -22,7 +22,7 @@ describe('Header', () => {
 
   it('Availability can be hidden', () => {
     const { container } = render(
-      <Context.Provider value={{ dark: false, toggleDark: () => null }}>
+      <Context.Provider value={{ darkMode: false, toggleDark: () => null }}>
         <Header minimal={true} />
       </Context.Provider>
     )

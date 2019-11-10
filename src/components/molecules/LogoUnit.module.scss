@@ -48,8 +48,8 @@
 }
 
 .minimal {
+    composes: logounit;
     pointer-events: all;
-    width: auto;
 
     &,
     &:hover,

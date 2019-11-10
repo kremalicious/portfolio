@@ -35,7 +35,12 @@ async function getGithubRepos(data) {
     const repoName = item.split('/')[1]
     const repo = await axios.get(
       `https://api.github.com/repos/${user}/${repoName}`,
-      { headers: { 'User-Agent': 'kremalicious/portfolio' } }
+      {
+        headers: {
+          'User-Agent': 'kremalicious/portfolio',
+          Authorization: `token ${process.env.GITHUB_TOKEN}`
+        }
+      }
     )
 
     holder.name = repo.data.name
