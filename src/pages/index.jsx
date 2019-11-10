@@ -1,6 +1,7 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
+import shortid from 'shortid'
 import SEO from '../components/atoms/SEO'
 import ProjectImage from '../components/atoms/ProjectImage'
 import { ReactComponent as Images } from '../images/images.svg'
@@ -18,50 +19,60 @@ function getImageCount(images, slug) {
   return array.length
 }
 
-export default class Home extends PureComponent {
-  static propTypes = {
-    data: PropTypes.object.isRequired,
-    pageContext: PropTypes.object.isRequired
-  }
+Project.propTypes = {
+  node: PropTypes.shape({
+    slug: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    img: PropTypes.object.isRequired
+  }),
+  images: PropTypes.array.isRequired
+}
 
-  render() {
-    const { data, pageContext } = this.props
-    const projects = data.allProjectsYaml.edges
-    const images = data.projectImageFiles.edges
+function Project({ node, images }) {
+  const { slug, title, img } = node
+  const imageCount = getImageCount(images, slug)
 
-    return (
-      <>
-        <SEO />
+  return (
+    <article className={styles.project} key={slug}>
+      <Link to={slug}>
+        <h1 className={styles.title}>{title}</h1>
+        <ProjectImage fluid={img.childImageSharp.fluid} alt={title} />
 
-        <div className={styles.projects}>
-          {projects.map(({ node }) => {
-            const { slug, title, img } = node
-            const imageCount = getImageCount(images, slug)
+        {imageCount > 1 && (
+          <small
+            className={styles.imageCount}
+            title={`${imageCount} project images`}
+          >
+            <Images /> {imageCount}
+          </small>
+        )}
+      </Link>
+    </article>
+  )
+}
 
-            return (
-              <article className={styles.project} key={slug}>
-                <Link to={slug}>
-                  <h1 className={styles.title}>{title}</h1>
-                  <ProjectImage fluid={img.childImageSharp.fluid} alt={title} />
+Home.propTypes = {
+  data: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired
+}
 
-                  {imageCount > 1 && (
-                    <small
-                      className={styles.imageCount}
-                      title={`${imageCount} project images`}
-                    >
-                      <Images /> {imageCount}
-                    </small>
-                  )}
-                </Link>
-              </article>
-            )
-          })}
-        </div>
+export default function Home({ data, pageContext }) {
+  const projects = data.allProjectsYaml.edges
+  const images = data.projectImageFiles.edges
 
-        <Repositories repos={pageContext.repos} />
-      </>
-    )
-  }
+  return (
+    <>
+      <SEO />
+
+      <div className={styles.projects}>
+        {projects.map(({ node }) => (
+          <Project key={shortid.generate()} node={node} images={images} />
+        ))}
+      </div>
+
+      <Repositories repos={pageContext.repos} />
+    </>
+  )
 }
 
 export const IndexQuery = graphql`

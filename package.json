@@ -51,6 +51,7 @@
     "remark": "^11.0.1",
     "remark-html": "^10.0.0",
     "remark-parse": "^7.0.1",
+    "shortid": "^2.2.15",
     "suncalc": "^1.8.0",
     "vcf": "^2.0.6"
   },

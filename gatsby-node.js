@@ -26,6 +26,13 @@ function truncate(n, useWordBoundary) {
 //
 // Get GitHub repos
 //
+const gitHubConfig = {
+  headers: {
+    'User-Agent': 'kremalicious/portfolio',
+    Authorization: `token ${process.env.GITHUB_TOKEN}`
+  }
+}
+
 async function getGithubRepos(data) {
   let repos = []
   let holder = {}
@@ -35,12 +42,7 @@ async function getGithubRepos(data) {
     const repoName = item.split('/')[1]
     const repo = await axios.get(
       `https://api.github.com/repos/${user}/${repoName}`,
-      {
-        headers: {
-          'User-Agent': 'kremalicious/portfolio',
-          Authorization: `token ${process.env.GITHUB_TOKEN}`
-        }
-      }
+      gitHubConfig
     )
 
     holder.name = repo.data.name
