@@ -52,10 +52,8 @@ FooterMarkup.propTypes = {
 }
 
 export default function Footer() {
-  const data = useStaticQuery(query)
-  const pkg = data.portfolioJson
-  const meta = data.metaYaml
+  const { metaYaml, portfolioJson } = useStaticQuery(query)
   const year = new Date().getFullYear()
 
-  return <FooterMarkup year={year} pkg={pkg} meta={meta} />
+  return <FooterMarkup year={year} pkg={portfolioJson} meta={metaYaml} />
 }

@@ -21,8 +21,8 @@ LogoUnit.propTypes = {
 
 export default function LogoUnit({ minimal }) {
   const data = useStaticQuery(query)
-  const Animation = posed.div(moveInBottom)
   const { title, tagline } = data.metaYaml
+  const Animation = posed.div(moveInBottom)
 
   return (
     <Animation>

@@ -1,11 +1,15 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { StaticQuery } from 'gatsby'
+import { useStaticQuery } from 'gatsby'
 import LogoUnit from './LogoUnit'
 import data from '../../../jest/__fixtures__/meta.json'
 
 beforeEach(() => {
-  StaticQuery.mockImplementationOnce(({ render }) => render({ ...data }))
+  useStaticQuery.mockImplementationOnce(() => {
+    return {
+      ...data
+    }
+  })
 })
 
 describe('LogoUnit', () => {
@@ -26,8 +30,6 @@ describe('LogoUnit', () => {
     const { container } = render(<LogoUnit minimal={true} />)
 
     expect(container.firstChild).toBeInTheDocument()
-    expect(container.querySelector('.logounit').className).toMatch(
-      /logounit minimal/
-    )
+    expect(container.querySelector('.minimal')).toBeInTheDocument()
   })
 })

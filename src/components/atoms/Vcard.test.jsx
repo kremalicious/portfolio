@@ -1,12 +1,16 @@
 import React from 'react'
 import { render, fireEvent, waitForElement } from '@testing-library/react'
-import { StaticQuery } from 'gatsby'
+import { useStaticQuery } from 'gatsby'
 import Vcard, { constructVcard, toDataURL, init } from './Vcard'
 import data from '../../../jest/__fixtures__/meta.json'
 
 describe('Vcard', () => {
   beforeEach(() => {
-    StaticQuery.mockImplementationOnce(({ render }) => render({ ...data }))
+    useStaticQuery.mockImplementationOnce(() => {
+      return {
+        ...data
+      }
+    })
 
     global.URL.createObjectURL = jest.fn()
   })

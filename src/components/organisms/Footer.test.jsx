@@ -1,18 +1,17 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { StaticQuery, useStaticQuery } from 'gatsby'
+import { useStaticQuery } from 'gatsby'
 import Footer from './Footer'
 import data from '../../../jest/__fixtures__/meta.json'
 
-describe('Header', () => {
+describe('Footer', () => {
   beforeEach(() => {
-    StaticQuery.mockImplementation(({ render }) =>
-      render({
+    useStaticQuery.mockImplementation(() => {
+      return {
         ...data,
         portfolioJson: { bugs: '' }
-      })
-    )
-    useStaticQuery.mockImplementation(() => ({ ...data }))
+      }
+    })
   })
 
   it('renders correctly', () => {

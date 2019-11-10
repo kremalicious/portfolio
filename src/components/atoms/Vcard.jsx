@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 import saveAs from 'file-saver'
 import vCard from 'vcf'
 
@@ -31,33 +31,24 @@ const query = graphql`
   }
 `
 
-export default class Vcard extends PureComponent {
-  render() {
-    return (
-      <StaticQuery
-        query={query}
-        render={data => {
-          const meta = data.metaYaml
+export default function Vcard() {
+  const { metaYaml } = useStaticQuery(query)
 
-          const handleAddressbookClick = e => {
-            e.preventDefault()
-            init(meta)
-          }
-
-          return (
-            <a
-              // href is kinda fake, only there for usability
-              // so user knows what to expect when hovering the link before clicking
-              href={meta.addressbook}
-              onClick={handleAddressbookClick}
-            >
-              Add to addressbook
-            </a>
-          )
-        }}
-      />
-    )
+  const handleAddressbookClick = e => {
+    e.preventDefault()
+    init(metaYaml)
   }
+
+  return (
+    <a
+      // href is kinda fake, only there for usability
+      // so user knows what to expect when hovering the link before clicking
+      href={metaYaml.addressbook}
+      onClick={handleAddressbookClick}
+    >
+      Add to addressbook
+    </a>
+  )
 }
 
 export const init = async meta => {

@@ -5,7 +5,11 @@ import Networks from './Networks'
 import data from '../../../jest/__fixtures__/meta.json'
 
 beforeEach(() => {
-  useStaticQuery.mockImplementationOnce(() => ({ ...data }))
+  useStaticQuery.mockImplementationOnce(() => {
+    return {
+      ...data
+    }
+  })
 })
 
 describe('Networks', () => {
@@ -26,7 +30,7 @@ describe('Networks', () => {
     const { container } = render(<Networks small={true} />)
 
     expect(container.firstChild).toBeInTheDocument()
-    expect(container.firstChild.className).toMatch(/networks small/)
+    expect(container.querySelector('.small')).toBeInTheDocument()
   })
 
   it('can be hidden', () => {
