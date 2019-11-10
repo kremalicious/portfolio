@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import posed, { PoseGroup } from 'react-pose'
-import { StaticQuery, graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import { fadeIn } from './atoms/Transitions'
 import Typekit from './atoms/Typekit'
 import HostnameCheck from './atoms/HostnameCheck'
@@ -22,48 +22,38 @@ const query = graphql`
   }
 `
 
-const timeout = 200
-const RoutesContainer = posed.div(fadeIn)
+Layout.propTypes = {
+  children: PropTypes.any.isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired
+  }).isRequired
+}
 
-export default class Layout extends PureComponent {
-  static propTypes = {
-    children: PropTypes.any.isRequired,
-    location: PropTypes.shape({
-      pathname: PropTypes.string.isRequired
-    }).isRequired
-  }
+export default function Layout({ children, location }) {
+  const { metaYaml } = useStaticQuery(query)
+  const timeout = 200
+  const RoutesContainer = posed.div(fadeIn)
+  const isHomepage =
+    location.pathname === '/' ||
+    location.pathname === '/offline-plugin-app-shell-fallback/'
 
-  render() {
-    const { children, location } = this.props
-    const isHomepage = location.pathname === '/'
+  return (
+    <>
+      <Typekit />
+      <HostnameCheck allowedHosts={metaYaml.allowedHosts} />
 
-    return (
-      <StaticQuery
-        query={query}
-        render={data => {
-          const { allowedHosts } = data.metaYaml
+      <PoseGroup animateOnMount={true}>
+        <RoutesContainer
+          key={location.pathname}
+          delay={timeout}
+          delayChildren={timeout}
+        >
+          <Header minimal={!isHomepage} />
+          <main className={styles.screen}>{children}</main>
+        </RoutesContainer>
+      </PoseGroup>
 
-          return (
-            <>
-              <Typekit />
-              <HostnameCheck allowedHosts={allowedHosts} />
-
-              <PoseGroup animateOnMount={true}>
-                <RoutesContainer
-                  key={location.pathname}
-                  delay={timeout}
-                  delayChildren={timeout}
-                >
-                  <Header minimal={!isHomepage} />
-                  <main className={styles.screen}>{children}</main>
-                </RoutesContainer>
-              </PoseGroup>
-
-              <Footer />
-            </>
-          )
-        }}
-      />
-    )
-  }
+      <Footer />
+    </>
+  )
 }
