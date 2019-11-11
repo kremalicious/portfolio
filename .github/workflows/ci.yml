@@ -80,3 +80,26 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+  lighthouse:
+    needs: deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Audit Beta using Lighthouse
+        if: success() && github.event_name == 'pull_request'
+        uses: treosh/lighthouse-ci-action@v2
+        with:
+          urls: 'https://beta.matthiaskretschmann.com'
+          configPath: './.github/workflows/lighthouserc.json'
+          temporaryPublicStorage: 'true'
+
+      - name: Audit Live using Lighthouse
+        if: success() && github.ref == 'refs/heads/master'
+        uses: treosh/lighthouse-ci-action@v2
+        with:
+          urls: 'https://matthiaskretschmann.com'
+          configPath: './.github/workflows/lighthouserc.json'
+          temporaryPublicStorage: 'true'
