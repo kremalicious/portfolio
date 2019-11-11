@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import posed from 'react-pose'
-import Context from '../../store/createContext'
+import useDarkMode from '../../hooks/use-dark-mode'
 import { fadeIn } from '../atoms/Transitions'
 
 import { ReactComponent as Day } from '../../images/day.svg'
@@ -40,7 +40,7 @@ ThemeToggleInput.propTypes = {
 }
 
 export default function ThemeSwitch() {
-  const { darkMode, toggleDark } = useContext(Context)
+  const { darkMode, toggleDark } = useDarkMode()
   const themeColor = darkMode ? '#1d2224' : '#e7eef4'
 
   return (

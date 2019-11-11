@@ -74,7 +74,7 @@ If a visitor has set the theme manually that selection is remembered in `localSt
 If you want to know how, have a look at the respective components:
 
 - [`src/components/molecules/ThemeSwitch.jsx`](src/components/molecules/ThemeSwitch.jsx)
-- [`src/store/provider.jsx`](src/store/provider.jsx)
+- [`src/hooks/use-dark-mode.jsx`](src/hooks/use-dark-mode.jsx)
 
 ### 🏆 SEO component
 
