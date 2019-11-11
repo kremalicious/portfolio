@@ -21,7 +21,7 @@ export default function useDarkMode() {
       const weWantItDarkTimes = now >= sunset || now <= sunrise
       weWantItDarkTimes && setDarkMode(true)
     }
-  }, [darkLocalStorage])
+  }, [darkLocalStorage, darkMode])
 
   function toggleDark() {
     setDarkMode(!darkMode)
