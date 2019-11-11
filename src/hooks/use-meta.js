@@ -8,6 +8,20 @@ const query = graphql`
       description
       url
       email
+      img {
+        childImageSharp {
+          resize(width: 980) {
+            src
+          }
+        }
+      }
+      avatar {
+        childImageSharp {
+          resize {
+            src
+          }
+        }
+      }
       social {
         Email
         Blog

@@ -1,38 +1,10 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
 import saveAs from 'file-saver'
 import vCard from 'vcf'
-
-const query = graphql`
-  query {
-    metaYaml {
-      title
-      tagline
-      description
-      url
-      email
-      avatar {
-        childImageSharp {
-          resize {
-            src
-          }
-        }
-      }
-      social {
-        Email
-        Blog
-        Twitter
-        GitHub
-        Dribbble
-      }
-      gpg
-      addressbook
-    }
-  }
-`
+import { useMeta } from '../../hooks/use-meta'
 
 export default function Vcard() {
-  const { metaYaml } = useStaticQuery(query)
+  const metaYaml = useMeta()
 
   const handleAddressbookClick = e => {
     e.preventDefault()

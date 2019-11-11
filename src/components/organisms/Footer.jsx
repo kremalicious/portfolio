@@ -5,18 +5,13 @@ import Vcard from '../atoms/Vcard'
 import LogoUnit from '../molecules/LogoUnit'
 import Networks from '../molecules/Networks'
 import styles from './Footer.module.scss'
+import { useMeta } from '../../hooks/use-meta'
 
 const query = graphql`
   query {
     # the package.json file
     portfolioJson {
       bugs
-    }
-
-    metaYaml {
-      title
-      url
-      gpg
     }
   }
 `
@@ -52,7 +47,8 @@ FooterMarkup.propTypes = {
 }
 
 export default function Footer() {
-  const { metaYaml, portfolioJson } = useStaticQuery(query)
+  const metaYaml = useMeta()
+  const { portfolioJson } = useStaticQuery(query)
   const year = new Date().getFullYear()
 
   return <FooterMarkup year={year} pkg={portfolioJson} meta={metaYaml} />

@@ -1,6 +1,6 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+import { useMeta } from '../../hooks/use-meta'
 
 const TypekitScript = typekitID => (
   <script>
@@ -17,33 +17,18 @@ const TypekitScript = typekitID => (
   </script>
 )
 
-const query = graphql`
-  query {
-    metaYaml {
-      typekitID
-    }
-  }
-`
+const Typekit = () => {
+  const { typekitID } = useMeta()
 
-const Typekit = () => (
-  <StaticQuery
-    query={query}
-    render={data => {
-      const { typekitID } = data.metaYaml
+  return typekitID ? (
+    <Helmet>
+      <link rel="preconnect" href="https://typekit.com" />
+      <link rel="preconnect" href="https://use.typekit.net" />
+      <link rel="preconnect" href="https://p.typekit.net" />
 
-      return (
-        typekitID && (
-          <Helmet>
-            <link rel="preconnect" href="https://typekit.com" />
-            <link rel="preconnect" href="https://use.typekit.net" />
-            <link rel="preconnect" href="https://p.typekit.net" />
-
-            {TypekitScript(typekitID)}
-          </Helmet>
-        )
-      )
-    }}
-  />
-)
+      {TypekitScript(typekitID)}
+    </Helmet>
+  ) : null
+}
 
 export default Typekit

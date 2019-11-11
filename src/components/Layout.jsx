@@ -1,26 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import posed, { PoseGroup } from 'react-pose'
-import { graphql, useStaticQuery } from 'gatsby'
 import { fadeIn } from './atoms/Transitions'
 import Typekit from './atoms/Typekit'
 import HostnameCheck from './atoms/HostnameCheck'
 import Header from './organisms/Header'
 import Footer from './organisms/Footer'
 import styles from './Layout.module.scss'
+import { useMeta } from '../hooks/use-meta'
 
 // if (process.env.NODE_ENV !== 'production') {
 //   const { whyDidYouUpdate } = require('why-did-you-update')
 //   whyDidYouUpdate(React)
 // }
-
-const query = graphql`
-  query {
-    metaYaml {
-      allowedHosts
-    }
-  }
-`
 
 Layout.propTypes = {
   children: PropTypes.any.isRequired,
@@ -30,7 +22,7 @@ Layout.propTypes = {
 }
 
 export default function Layout({ children, location }) {
-  const { metaYaml } = useStaticQuery(query)
+  const { allowedHosts } = useMeta()
   const timeout = 200
   const RoutesContainer = posed.div(fadeIn)
   const isHomepage =
@@ -40,7 +32,7 @@ export default function Layout({ children, location }) {
   return (
     <>
       <Typekit />
-      <HostnameCheck allowedHosts={metaYaml.allowedHosts} />
+      <HostnameCheck allowedHosts={allowedHosts} />
 
       <PoseGroup animateOnMount={true}>
         <RoutesContainer

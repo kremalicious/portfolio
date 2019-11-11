@@ -1,27 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { Link } from 'gatsby'
 import posed from 'react-pose'
+import { useMeta } from '../../hooks/use-meta'
 import { moveInBottom } from '../atoms/Transitions'
 import { ReactComponent as Logo } from '../../images/logo.svg'
 import styles from './LogoUnit.module.scss'
-
-const query = graphql`
-  query {
-    metaYaml {
-      title
-      tagline
-    }
-  }
-`
 
 LogoUnit.propTypes = {
   minimal: PropTypes.bool
 }
 
 export default function LogoUnit({ minimal }) {
-  const data = useStaticQuery(query)
-  const { title, tagline } = data.metaYaml
+  const { title, tagline } = useMeta()
   const Animation = posed.div(moveInBottom)
 
   return (
