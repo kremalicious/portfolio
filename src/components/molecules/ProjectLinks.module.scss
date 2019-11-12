@@ -18,6 +18,11 @@
         text-transform: none;
         text-align: left;
     }
+
+    svg {
+        width: $font-size-small;
+        height: $font-size-small;
+    }
 }
 
 .title {

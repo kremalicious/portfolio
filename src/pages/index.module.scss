@@ -68,20 +68,18 @@
 
 .imageCount {
     position: absolute;
-    bottom: 10%;
-    right: 0;
-    color: $brand-grey-dimmed;
+    bottom: 5%;
+    right: 2%;
+    color: $brand-cyan;
     font-size: $font-size-small;
-    padding: $spacer / 6 $spacer / 2;
-    background: rgba($brand-cyan, 0.9);
     z-index: 10;
     opacity: 0;
     transform: translate3d(0, $spacer / 2, 0);
     transition: transform 0.25s ease-out;
 
     svg {
-        fill: $brand-grey-dimmed;
-        width: $font-size-mini;
-        height: $font-size-mini;
+        fill: currentColor;
+        width: $font-size-base;
+        height: $font-size-base;
     }
 }

@@ -36,6 +36,8 @@
 
     svg {
         fill: $brand-grey-light;
+        width: 24px;
+        height: 24px;
     }
 
     &:hover,
@@ -56,15 +58,15 @@
 
     .link {
         padding: $spacer / 4;
-        margin-left: $spacer / 4;
-        margin-right: $spacer / 4;
+        margin-left: $spacer / 7;
+        margin-right: $spacer / 7;
         margin-bottom: $spacer / 4;
     }
 
     /* stylelint-disable no-descending-specificity */
     svg {
-        width: $font-size-small;
-        height: $font-size-small;
+        width: $font-size-base;
+        height: $font-size-base;
         opacity: 0.8;
     }
 }

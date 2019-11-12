@@ -19,7 +19,7 @@ const query = graphql`
 const FooterMarkup = ({ pkg, meta, year }) => (
   <footer className={`h-card ${styles.footer}`}>
     <LogoUnit minimal />
-    <Networks minimal />
+    <Networks small />
 
     <p className={styles.actions}>
       <Vcard />

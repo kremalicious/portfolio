@@ -53,8 +53,9 @@
 
     svg {
         fill: currentColor;
-        width: $font-size-mini;
-        height: $font-size-mini;
-        margin-right: $spacer / 8;
+        width: $font-size-small;
+        height: $font-size-small;
+        margin-right: $spacer / 12;
+        margin-bottom: -($spacer / 12);
     }
 }

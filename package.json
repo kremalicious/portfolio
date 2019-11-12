@@ -8,8 +8,7 @@
   "license": "MIT",
   "author": "Matthias Kretschmann <m@kretschmann.io>",
   "scripts": {
-    "start": "gatsby develop",
-    "start:docker": "gatsby develop --host 0.0.0.0",
+    "start": "gatsby develop --host 0.0.0.0",
     "ssr": "npm run build && serve -s public/",
     "lint:js": "eslint ./gatsby-*.js && eslint ./src/**/*.{js,jsx}",
     "lint:css": "stylelint ./src/**/*.{css,scss}",

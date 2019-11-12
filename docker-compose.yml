@@ -2,7 +2,7 @@ version: '3'
 services:
   dev:
     build: .
-    command: npm run start:docker
+    command: npm start
     volumes:
       - .:/portfolio
       - /portfolio/node_modules

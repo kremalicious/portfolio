@@ -7,15 +7,14 @@
     z-index: 10;
 
     svg {
-        width: 0.8rem;
-        height: 0.8rem;
+        width: $font-size-base;
+        height: $font-size-base;
         margin-top: -0.05rem;
         fill: $brand-grey-light;
 
         &:last-child {
-            margin-top: -0.1rem;
-            width: 0.7rem;
-            height: 0.7rem;
+            width: $font-size-small;
+            height: $font-size-small;
         }
     }
 }
@@ -25,7 +24,7 @@
     align-items: center;
 }
 
-$knob-size: 8px;
+$knob-size: 7px;
 $knob-space: 1px;
 
 .checkboxFake {
