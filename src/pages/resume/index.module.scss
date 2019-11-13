@@ -33,7 +33,8 @@
     list-style: none;
     padding: 0;
 
-    li {
+    li,
+    p {
         margin-bottom: $spacer / 4;
     }
 
@@ -62,6 +63,31 @@
         height: $font-size-large;
         margin-right: $spacer / 4;
         stroke: $brand-grey-light;
+    }
+}
+
+.languages {
+    svg {
+        display: inline-block;
+    }
+
+    p {
+        margin-left: $spacer / 1.1;
+
+        &:first-of-type {
+            margin-left: 0;
+            display: inline-block;
+        }
+    }
+
+    span {
+        font-size: $font-size-small;
+        margin-left: $spacer / 4;
+        color: $brand-grey-light;
+
+        :global(.dark) & {
+            color: $brand-grey;
+        }
     }
 }
 
