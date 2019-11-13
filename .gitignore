@@ -10,3 +10,4 @@ npm-debug.log*
 yarn-debug.log*
 plugins/gatsby-plugin-matomo
 coverage
+.env
