@@ -34,16 +34,16 @@ export default function Repository({ repo }) {
           : !isExternal &&
             homepage && (
               <a href={homepage}>
-                <Icon name="website" /> More info
+                <Icon name="Compass" /> More info
               </a>
             )}
 
         <a href={html_url}>
-          <Icon name="github" /> GitHub
+          <Icon name="GitHub" /> GitHub
         </a>
 
         <a href={`${html_url}/stargazers`}>
-          <Icon name="star" /> {stargazers_count}
+          <Icon name="Star" /> {stargazers_count}
         </a>
       </p>
     </div>

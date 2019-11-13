@@ -11,9 +11,9 @@ const Animation = posed.aside(fadeIn)
 
 const ThemeToggle = ({ dark }) => (
   <span id="toggle" className={styles.checkboxContainer} aria-live="assertive">
-    <Icon name="day" className={!dark ? null : 'active'} />
+    <Icon name="Sun" className={!dark ? null : 'active'} />
     <span className={styles.checkboxFake} />
-    <Icon name="night" className={dark ? 'active' : null} />
+    <Icon name="Moon" className={dark ? 'active' : null} />
   </span>
 )
 

@@ -23,7 +23,7 @@ const query = graphql`
         }
       }
       social {
-        Email
+        Mail
         Blog
         Twitter
         GitHub

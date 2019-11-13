@@ -43,7 +43,7 @@ function Project({ node, images }) {
             className={styles.imageCount}
             title={`${imageCount} project images`}
           >
-            <Icon name="image" /> {imageCount}
+            <Icon name="Image" /> {imageCount}
           </small>
         )}
       </Link>

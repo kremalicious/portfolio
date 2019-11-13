@@ -9,24 +9,24 @@
     Initial website in collaboration with [Balance](https://balance.io/). Key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
   links:
     - title: oceanprotocol.com
-      icon: website
+      icon: Compass
       url: https://oceanprotocol.com
     - title: Styleguide
       url: https://oceanprotocol.com/art
     - title: docs.oceanprotocol.com
-      icon: website
+      icon: Compass
       url: https://docs.oceanprotocol.com
     - title: commons.oceanprotocol.com
-      icon: website
+      icon: Compass
       url: https://commons.oceanprotocol.com
     - title: '@oceanprotocol/art'
-      icon: github
+      icon: GitHub
       url: https://github.com/oceanprotocol/art
     - title: '@oceanprotocol/docs'
-      icon: github
+      icon: GitHub
       url: https://github.com/oceanprotocol/docs
     - title: '@oceanprotocol/commons'
-      icon: github
+      icon: GitHub
       url: https://github.com/oceanprotocol/commons
   techstack:
     - Sketch
@@ -267,7 +267,7 @@
 
   links:
     - title: Info & Download
-      icon: download
+      url: https://kremalicious.com/ipixelpad/
 
 - title: Out Of Whale Oil
   slug: /outofwhaleoil/
@@ -276,7 +276,7 @@
     Tribute wallpaper pack inspired by the Futurama movie _Into The Wild Green Yonder_. Released as a goodie on [kremalicious.com](https://kremalicious.com/out-of-whale-oil/).
   links:
     - title: Info & Download
-      icon: download
+      url: https://kremalicious.com/out-of-whale-oil/
   techstack:
     - Photoshop
 
@@ -318,7 +318,6 @@
 
   links:
     - title: Info & Download
-      icon: download
       url: https://kremalicious.com/coffee-cup-icon/
 
 - title: Project Purple
@@ -334,7 +333,6 @@
 
   links:
     - title: Info & Download
-      icon: download
       url: https://kremalicious.com/projectpurple/
 
 - title: Allinnia Creative Group
