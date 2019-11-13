@@ -8,7 +8,5 @@ yarn-error.log
 
 npm-debug.log*
 yarn-debug.log*
-yarn.lock
-package-lock.json
 plugins/gatsby-plugin-matomo
 coverage
