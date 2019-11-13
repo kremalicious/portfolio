@@ -1,16 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { useStaticQuery } from 'gatsby'
 import LogoUnit from './LogoUnit'
 import data from '../../../jest/__fixtures__/meta.json'
-
-beforeEach(() => {
-  useStaticQuery.mockImplementationOnce(() => {
-    return {
-      ...data
-    }
-  })
-})
 
 describe('LogoUnit', () => {
   it('renders correctly from data file values', () => {

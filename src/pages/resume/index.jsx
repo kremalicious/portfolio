@@ -1,7 +1,7 @@
 import React from 'react'
 import shortid from 'shortid'
 import SEO from '../../components/atoms/SEO'
-import LinkIcon from '../../components/atoms/LinkIcon'
+import Icon from '../../components/atoms/Icon'
 import { useResume } from '../../hooks/use-resume'
 import styles from './index.module.scss'
 import ResumeItem from './ResumeItem'
@@ -25,20 +25,20 @@ export default function Resume() {
           <ul className={styles.contact}>
             <li>
               <a href={website}>
-                <LinkIcon type="website" />
+                <Icon name="Compass" />
                 Portfolio
               </a>
             </li>
             <li>
-              <LinkIcon type="Email" />
+              <Icon name="Mail" />
               <a href={`mailto:${email}`}>Email</a>
             </li>
             <li>
-              <LinkIcon type="Info" />
+              <Icon name="MapPin" />
               {location.city}, {location.countryCode}
             </li>
             <li>
-              <LinkIcon type="Info" />
+              <Icon name="Mic" />
               {languages.map(item => (
                 <span
                   key={item.language}
@@ -49,7 +49,10 @@ export default function Resume() {
         </div>
 
         <div>
-          <h3 className={styles.subTitle}>Work</h3>
+          <h3 className={styles.subTitle}>
+            <Icon name="Briefcase" />
+            Work
+          </h3>
         </div>
         <div>
           {work.map(workPlace => (
@@ -58,7 +61,10 @@ export default function Resume() {
         </div>
 
         <div>
-          <h3 className={styles.subTitle}>Awards</h3>
+          <h3 className={styles.subTitle}>
+            <Icon name="Award" />
+            Awards
+          </h3>
         </div>
         <div>
           {awards.map(award => (
@@ -67,7 +73,10 @@ export default function Resume() {
         </div>
 
         <div>
-          <h3 className={styles.subTitle}>Education</h3>
+          <h3 className={styles.subTitle}>
+            <Icon name="BookOpen" />
+            Education
+          </h3>
         </div>
         <div>
           {education.map(eduPlace => (

@@ -33,7 +33,7 @@ export default function Networks({ small, hide }) {
 
   return (
     <Animation className={small ? styles.small : styles.networks}>
-      <NetworkLink name={'Email'} url={`mailto:${basics.email}`} />
+      <NetworkLink name="Mail" url={`mailto:${basics.email}`} />
 
       {basics.profiles.map(profile => (
         <NetworkLink

@@ -4,6 +4,13 @@
     "tagline": "Designer & Developer",
     "description": "Portfolio of web &amp; ui designer/developer hybrid Matthias Kretschmann.",
     "url": "https://matthiaskretschmann.com",
+    "img": {
+      "childImageSharp": {
+        "resize": {
+          "src": "/static/5ecbb5694b0b2152aa71398164af38b2/da1a7/twitter-card.png"
+        }
+      }
+    },
     "availability": {
       "status": false,
       "available": "👔 Available for new projects. <a href=\"mailto:m@kretschmann.io\">Let’s talk</a>!",

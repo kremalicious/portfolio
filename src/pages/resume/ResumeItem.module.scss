@@ -4,7 +4,7 @@
     padding-bottom: $spacer * 3;
     padding-left: $spacer;
     position: relative;
-    border-left: 1px solid rgba($brand-grey-light, 0.25);
+    border-left: 0.1rem solid rgba($brand-grey-light, 0.25);
 
     &::before {
         content: '';
@@ -14,7 +14,7 @@
         border-radius: 50%;
         background: $brand-grey-light;
         position: absolute;
-        left: -($font-size-small / 2);
+        left: -($font-size-small / 1.8);
         top: 0.1rem;
     }
 

@@ -1,16 +1,8 @@
 import React from 'react'
 import { render, cleanup, wait } from '@testing-library/react'
-import { useStaticQuery } from 'gatsby'
 import Header from './Header'
-import data from '../../../jest/__fixtures__/meta.json'
 
 describe('Header', () => {
-  beforeEach(() => {
-    useStaticQuery.mockImplementation(() => {
-      return { ...data }
-    })
-  })
-
   afterEach(cleanup)
 
   it('renders correctly', async () => {
