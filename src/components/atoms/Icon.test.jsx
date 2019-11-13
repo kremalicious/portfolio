@@ -1,42 +1,40 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 
-import LinkIcon from './LinkIcon'
+import Icon from './Icon'
 
-describe('LinkIcon', () => {
+describe('Icon', () => {
   it('renders correctly', () => {
-    const { container, rerender } = render(
-      <LinkIcon title={'my project'} type={'website'} />
-    )
+    const { container, rerender } = render(<Icon name={'website'} />)
     expect(container.firstChild.nodeName).toBe('svg')
 
-    rerender(<LinkIcon type={'github'} />)
+    rerender(<Icon name={'github'} />)
     expect(container.firstChild.nodeName).toBe('svg')
 
-    rerender(<LinkIcon type={'dribbble'} />)
+    rerender(<Icon name={'dribbble'} />)
     expect(container.firstChild.nodeName).toBe('svg')
 
-    rerender(<LinkIcon type={'info'} />)
+    rerender(<Icon name={'info'} />)
     expect(container.firstChild.nodeName).toBe('svg')
 
-    rerender(<LinkIcon type={'download'} />)
+    rerender(<Icon name={'download'} />)
     expect(container.firstChild.nodeName).toBe('svg')
 
-    rerender(<LinkIcon type={'styleguide'} />)
+    rerender(<Icon name={'styleguide'} />)
     expect(container.firstChild.nodeName).toBe('svg')
 
-    rerender(<LinkIcon title={'Email'} />)
+    rerender(<Icon name={'Email'} />)
     expect(container.firstChild.nodeName).toBe('svg')
 
-    rerender(<LinkIcon title={'Blog'} />)
+    rerender(<Icon name={'Blog'} />)
     expect(container.firstChild.nodeName).toBe('svg')
 
-    rerender(<LinkIcon title={'Twitter'} />)
+    rerender(<Icon name={'Twitter'} />)
     expect(container.firstChild.nodeName).toBe('svg')
   })
 
   it('does not render with unknown type', () => {
-    const { container } = render(<LinkIcon type={'whatever'} />)
+    const { container } = render(<Icon name={'whatever'} />)
     expect(container.firstChild).not.toBeInTheDocument()
   })
 })

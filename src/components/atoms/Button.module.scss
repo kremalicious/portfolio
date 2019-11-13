@@ -20,9 +20,8 @@
     }
 
     svg {
-        fill: $brand-grey-light;
-        margin-right: $spacer / 3;
-        transition: 0.2s ease-out;
+        margin-right: $spacer / 4;
+        transition: 0.2s $easing;
         margin-bottom: -0.1rem;
         width: $font-size-small;
         height: $font-size-small;

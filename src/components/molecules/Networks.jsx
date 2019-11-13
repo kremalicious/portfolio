@@ -2,9 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import posed from 'react-pose'
 import { moveInTop } from '../atoms/Transitions'
-import LinkIcon from '../atoms/LinkIcon'
+import Icon from '../atoms/Icon'
 import { useMeta } from '../../hooks/use-meta'
-import icons from '../atoms/Icons.module.scss'
 import styles from './Networks.module.scss'
 
 export default function Networks({ small, hide }) {
@@ -25,7 +24,7 @@ export default function Networks({ small, hide }) {
           key={i}
           data-testid={`network-${key.toLowerCase()}`}
         >
-          <LinkIcon title={key} className={icons.icon} />
+          <Icon name={key} />
           <span className={styles.title}>{key}</span>
         </a>
       ))}

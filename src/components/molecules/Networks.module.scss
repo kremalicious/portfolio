@@ -35,7 +35,7 @@
     }
 
     svg {
-        fill: $brand-grey-light;
+        stroke: $brand-grey-light;
         width: 24px;
         height: 24px;
     }
@@ -43,7 +43,7 @@
     &:hover,
     &:focus {
         svg {
-            fill: $brand-cyan;
+            stroke: $brand-cyan;
         }
 
         .title {
@@ -63,7 +63,6 @@
         margin-bottom: $spacer / 4;
     }
 
-    /* stylelint-disable no-descending-specificity */
     svg {
         width: $font-size-base;
         height: $font-size-base;

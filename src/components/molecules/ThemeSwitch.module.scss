@@ -7,14 +7,14 @@
     z-index: 10;
 
     svg {
+        stroke: $brand-grey-light;
         width: $font-size-base;
         height: $font-size-base;
         margin-top: -0.05rem;
-        fill: $brand-grey-light;
 
         &:last-child {
-            width: $font-size-small;
-            height: $font-size-small;
+            width: $font-size-base * 0.9;
+            height: $font-size-base * 0.9;
         }
     }
 }

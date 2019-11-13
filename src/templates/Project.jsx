@@ -93,7 +93,7 @@ export const projectQuery = graphql`
       links {
         title
         url
-        type
+        icon
       }
       techstack
       img {

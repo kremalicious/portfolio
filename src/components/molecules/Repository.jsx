@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import LinkIcon from '../atoms/LinkIcon'
+import Icon from '../atoms/Icon'
 import styles from './Repository.module.scss'
 
 export default function Repository({ repo }) {
@@ -34,16 +34,16 @@ export default function Repository({ repo }) {
           : !isExternal &&
             homepage && (
               <a href={homepage}>
-                <LinkIcon title="website" /> More info
+                <Icon name="website" /> More info
               </a>
             )}
 
         <a href={html_url}>
-          <LinkIcon title="github" /> GitHub
+          <Icon name="github" /> GitHub
         </a>
 
         <a href={`${html_url}/stargazers`}>
-          <LinkIcon title="star" /> {stargazers_count}
+          <Icon name="star" /> {stargazers_count}
         </a>
       </p>
     </div>

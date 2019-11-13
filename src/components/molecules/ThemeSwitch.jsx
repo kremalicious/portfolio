@@ -4,18 +4,16 @@ import Helmet from 'react-helmet'
 import posed from 'react-pose'
 import useDarkMode from '../../hooks/use-dark-mode'
 import { fadeIn } from '../atoms/Transitions'
-
-import { ReactComponent as Day } from '../../images/day.svg'
-import { ReactComponent as Night } from '../../images/night.svg'
+import Icon from '../atoms/Icon'
 import styles from './ThemeSwitch.module.scss'
 
 const Animation = posed.aside(fadeIn)
 
 const ThemeToggle = ({ dark }) => (
   <span id="toggle" className={styles.checkboxContainer} aria-live="assertive">
-    <Day className={!dark ? null : 'active'} />
+    <Icon name="day" className={!dark ? null : 'active'} />
     <span className={styles.checkboxFake} />
-    <Night className={dark ? 'active' : null} />
+    <Icon name="night" className={dark ? 'active' : null} />
   </span>
 )
 

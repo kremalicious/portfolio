@@ -6,18 +6,22 @@ describe('ProjectLinks', () => {
   const links = [
     {
       title: 'my project',
-      type: 'website',
+      icon: 'website',
       url: 'https://hello.com'
+    },
+    {
+      title: 'GitHub',
+      url: 'https://github.com'
     }
   ]
 
   it('renders correctly', () => {
-    const { container, getByTestId } = render(<ProjectLinks links={links} />)
+    const { container, getAllByTestId } = render(<ProjectLinks links={links} />)
 
     expect(container.firstChild).toBeInTheDocument()
-    expect(getByTestId('link').nodeName).toBe('A')
-    expect(getByTestId('link').textContent).toBe('my project')
-    expect(getByTestId('link').attributes.href.textContent).toBe(
+    expect(getAllByTestId('link')[0].nodeName).toBe('A')
+    expect(getAllByTestId('link')[0].textContent).toBe('my project')
+    expect(getAllByTestId('link')[0].attributes.href.textContent).toBe(
       'https://hello.com'
     )
   })

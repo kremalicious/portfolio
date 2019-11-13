@@ -1,0 +1,12 @@
+@import 'variables';
+
+.icon {
+    width: $font-size-base;
+    height: $font-size-base;
+    stroke: currentColor;
+    stroke-width: 0.1rem;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    vertical-align: baseline;
+}

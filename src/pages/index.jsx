@@ -4,9 +4,9 @@ import { Link, graphql } from 'gatsby'
 import shortid from 'shortid'
 import SEO from '../components/atoms/SEO'
 import ProjectImage from '../components/atoms/ProjectImage'
-import { ReactComponent as Images } from '../images/images.svg'
 import styles from './index.module.scss'
 import Repositories from '../components/organisms/Repositories'
+import Icon from '../components/atoms/Icon'
 
 function getImageCount(images, slug) {
   let array = []
@@ -43,7 +43,7 @@ function Project({ node, images }) {
             className={styles.imageCount}
             title={`${imageCount} project images`}
           >
-            <Images /> {imageCount}
+            <Icon name="image" /> {imageCount}
           </small>
         )}
       </Link>

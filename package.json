@@ -45,6 +45,7 @@
     "intersection-observer": "^0.7.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-feather": "^2.0.3",
     "react-helmet": "^5.2.1",
     "react-pose": "^4.0.9",
     "remark": "^11.0.2",
