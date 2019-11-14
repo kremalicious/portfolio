@@ -20,22 +20,25 @@ jobs:
       - name: Cache node modules
         uses: actions/cache@v1
         with:
-          path: node_modules
-          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.OS }}-build-${{ env.cache-name }}-
-            ${{ runner.OS }}-build-
-            ${{ runner.OS }}-
+            ${{ runner.os }}-node-
+
+      - name: Cache Gatsby build output
+        uses: actions/cache@v1
+        with:
+          path: public
+          key: ${{ runner.os }}-public
 
       - name: Install Dependencies
-        run: |
-          npm ci
+        run: npm ci
+
       - name: Test
-        run: |
-          npm test
+        run: npm test
+
       - name: Build
-        run: |
-          npm run build --if-present
+        run: npm run build --if-present
         env:
           CI: true
           GATSBY_GITHUB_TOKEN: ${{ secrets.GATSBY_GITHUB_TOKEN }}
