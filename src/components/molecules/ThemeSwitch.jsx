@@ -1,13 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import posed from 'react-pose'
 import useDarkMode from '../../hooks/use-dark-mode'
-import { fadeIn } from '../atoms/Transitions'
 import Icon from '../atoms/Icon'
 import styles from './ThemeSwitch.module.scss'
-
-const Animation = posed.aside(fadeIn)
 
 const ThemeToggle = ({ dark }) => (
   <span id="toggle" className={styles.checkboxContainer} aria-live="assertive">
@@ -51,13 +47,13 @@ export default function ThemeSwitch() {
           content="black-translucent"
         />
       </Helmet>
-      <Animation className={styles.themeSwitch}>
+      <aside className={styles.themeSwitch}>
         <label className={styles.checkbox}>
           <span className={styles.label}>Toggle Night Mode</span>
           <ThemeToggleInput dark={darkMode} toggleDark={toggleDark} />
           <ThemeToggle dark={darkMode} />
         </label>
-      </Animation>
+      </aside>
     </>
   )
 }
