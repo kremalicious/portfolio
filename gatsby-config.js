@@ -4,9 +4,7 @@ const yaml = require('js-yaml')
 const meta = yaml.load(fs.readFileSync('./content/meta.yml', 'utf8'))
 const { title, url, matomoSite, matomoUrl } = meta[0]
 
-require('dotenv').config({
-  path: '.env'
-})
+require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
