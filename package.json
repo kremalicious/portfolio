@@ -32,7 +32,7 @@
     "gatsby-plugin-offline": "^3.0.21",
     "gatsby-plugin-react-helmet": "^3.1.15",
     "gatsby-plugin-sass": "^2.1.23",
-    "gatsby-plugin-sharp": "^2.3.0",
+    "gatsby-plugin-sharp": "2.2.39",
     "gatsby-plugin-sitemap": "^2.2.21",
     "gatsby-plugin-svgr": "^2.0.2",
     "gatsby-plugin-webpack-size": "^1.0.0",
