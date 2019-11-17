@@ -49,7 +49,6 @@ const query = graphql`
         startDate
         endDate
         summary
-        highlights
       }
       awards {
         title

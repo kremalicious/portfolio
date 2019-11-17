@@ -39,21 +39,19 @@ export default function Vcard() {
 export const init = async meta => {
   // first, convert the avatar to base64, then construct all vCard elements
   const dataUrl = await toDataURL(meta.photoSrc, 'image/jpeg')
-  const vcard = await constructVcard(dataUrl, meta)
+  const vcard = await constructVcard(meta, dataUrl)
 
-  downloadVcard(vcard, meta)
-}
-
-// Construct the download from a blob of the just constructed vCard,
-// and save it to user's file system
-export const downloadVcard = (vcard, meta) => {
+  // Construct the download from a blob of the just constructed vCard,
   const { addressbook } = meta
   const name = addressbook.split('/').join('')
-  const blob = new Blob([vcard], { type: 'text/x-vcard' })
+  const blob = new Blob([vcard], {
+    type: 'text/x-vcard'
+  })
+  // save it to user's file system
   saveAs(blob, name)
 }
 
-export const constructVcard = async (dataUrl, meta) => {
+export const constructVcard = async meta => {
   const contact = new vCard()
   const blog = meta.profiles.filter(({ network }) => network === 'Blog')[0].url
   const twitter = meta.profiles.filter(
@@ -82,7 +80,7 @@ export const constructVcard = async (dataUrl, meta) => {
 
 // Helper function to create base64 string from avatar image
 // without the need to read image file from file system
-export const toDataURL = async (photoSrc, outputFormat) => {
+export async function toDataURL(photoSrc, outputFormat) {
   const img = new Image()
   img.crossOrigin = 'Anonymous'
   img.src = photoSrc

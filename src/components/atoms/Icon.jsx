@@ -15,7 +15,12 @@ import {
   FileText,
   Key,
   Image,
-  Mail
+  Mail,
+  MapPin,
+  Globe,
+  Briefcase,
+  Award,
+  BookOpen
 } from 'react-feather'
 import { ReactComponent as Dribbble } from '../../images/dribbble.svg'
 import styles from './Icon.module.scss'
@@ -41,7 +46,12 @@ const Icon = ({ name, ...props }) => {
     FileText,
     Key,
     Image,
-    Mail
+    Mail,
+    MapPin,
+    Globe,
+    Briefcase,
+    Award,
+    BookOpen
   }
 
   const IconMapped = components[name]

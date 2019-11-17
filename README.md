@@ -18,8 +18,8 @@
   - [⛵️ Lighthouse score](#️-lighthouse-score)
   - [💍 One data file to rule all pages](#-one-data-file-to-rule-all-pages)
   - [🐱 GitHub repositories](#-github-repositories)
+  - 🗂 JSON Resume](#-json-resume)
   - [💅 Theme switcher](#-theme-switcher)
-  - [🗂 JSON Resume](#-json-resume)
   - [🏆 SEO component](#-seo-component)
   - [📇 Client-side vCard creation](#-client-side-vcard-creation)
   - [💫 Page transitions](#-page-transitions)
@@ -66,6 +66,16 @@ If you want to know how, have a look at the respective components:
 - [`content/repos.yml`](content/repos.yml)
 - [`src/components/molecules/Repository.jsx`](src/components/molecules/Repository.jsx)
 
+### 🗂 JSON Resume
+
+Resume page based on [JSON Resume](https://jsonresume.org) standard. Most site metadata and social profiles are defined in [`content/resume.json`](content/resume.json) and used throughout the site.
+
+If you want to know how, have a look at the respective components:
+
+- [`content/resume.json`](content/resume.json)
+- [`src/pages/resume/index.jsx`](src/pages/resume/index.jsx)
+- [`src/hooks/use-resume.js`](src/hooks/use-resume.js)
+
 ### 💅 Theme switcher
 
 Includes a theme switcher which allows user to toggle between a light and a dark theme. Switching between them also happens automatically based on user's local sunset and sunrise times. Uses Cloudflare's geo location HTTP header functionality.
@@ -76,16 +86,6 @@ If you want to know how, have a look at the respective components:
 
 - [`src/components/molecules/ThemeSwitch.jsx`](src/components/molecules/ThemeSwitch.jsx)
 - [`src/hooks/use-dark-mode.jsx`](src/hooks/use-dark-mode.jsx)
-
-### 🗂 JSON Resume
-
-Resume page based on [JSON Resume](https://jsonresume.org) standard. Most metadata and social profiles are defined in [`content/resume.json`](content/resume.json) and used throughout the site.
-
-If you want to know how, have a look at the respective components:
-
-- [`content/resume.json`](content/resume.json)
-- [`src/pages/resume.jsx`](src/pages/resume.jsx)
-- [`src/hooks/use-resume.js`](src/hooks/use-resume.js)
 
 ### 🏆 SEO component
 

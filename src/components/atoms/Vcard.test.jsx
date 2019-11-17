@@ -1,7 +1,16 @@
 import React from 'react'
 import { render, fireEvent, waitForElement } from '@testing-library/react'
 import Vcard, { constructVcard, toDataURL, init } from './Vcard'
-import data from '../../../jest/__fixtures__/meta.json'
+import meta from '../../../jest/__fixtures__/meta.json'
+import resume from '../../../jest/__fixtures__/resume.json'
+
+const metaMock = {
+  ...meta.metaYaml,
+  name: resume.contentJson.basics.name,
+  label: resume.contentJson.basics.label,
+  email: resume.contentJson.basics.email,
+  profiles: [...resume.contentJson.basics.profiles]
+}
 
 describe('Vcard', () => {
   beforeEach(() => {
@@ -21,15 +30,12 @@ describe('Vcard', () => {
   })
 
   it('combined vCard download process finishes', async () => {
-    await init(data.metaYaml)
+    await init(metaMock)
     expect(global.URL.createObjectURL).toHaveBeenCalledTimes(1)
   })
 
   it('vCard can be constructed', async () => {
-    const vcard = await constructVcard(
-      'data:image/jpeg;base64,00',
-      data.metaYaml
-    )
+    const vcard = await constructVcard(metaMock, 'data:image/jpeg;base64,00')
     expect(vcard).toBeDefined()
   })
 
