@@ -147,6 +147,10 @@ You can simply use [Docker](https://www.docker.com) & [Docker Compose](https://d
 git clone git@github.com:kremalicious/portfolio.git
 cd portfolio/
 
+# GATSBY_GITHUB_TOKEN is required for some parts
+cp .env.sample .env
+vi .env
+
 # use Docker
 docker-compose up
 
