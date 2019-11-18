@@ -1,17 +1,22 @@
 name: Test
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: ['10', '12', '13']
+
     steps:
       - uses: actions/checkout@v1
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
+          node-version: ${{ matrix.node-version }}
 
       - name: Cache node modules
         uses: actions/cache@v1
@@ -26,14 +31,9 @@ jobs:
           path: public
           key: ${{ runner.os }}-public
 
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Test
-        run: npm test
-
-      - name: Build
-        run: npm run build
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
         env:
           CI: true
           GATSBY_GITHUB_TOKEN: ${{ secrets.GATSBY_GITHUB_TOKEN }}
