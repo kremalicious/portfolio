@@ -92,11 +92,24 @@
 }
 
 @media print {
-    .resume {
-        grid-template-columns: 1fr;
+    :global(html) {
+        font-size: 8pt;
     }
 
-    :global(html) {
-        font-size: 10pt;
+    body {
+        background: #fff !important;
+        margin: 1cm 1.5cm;
+    }
+
+    p {
+        color: silver;
+    }
+
+    .title {
+        margin-bottom: 0;
+    }
+
+    .resume {
+        grid-template-columns: 1fr;
     }
 }

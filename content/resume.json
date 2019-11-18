@@ -228,5 +228,9 @@
       "language": "German",
       "fluency": "Native speaker"
     }
-  ]
+  ],
+  "meta": {
+    "canonical": "https://matthiaskretschmann.com/resume",
+    "lastModified": ""
+  }
 }
