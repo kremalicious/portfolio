@@ -2,13 +2,15 @@ const path = require('path')
 const fs = require('fs')
 const yaml = require('js-yaml')
 const meta = yaml.load(fs.readFileSync('./content/meta.yml', 'utf8'))
-const { title, url, matomoSite, matomoUrl } = meta[0]
+const resume = require('./content/resume.json')
+const { matomoSite, matomoUrl } = meta[0]
+const { name, website } = resume.basics
 
 require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `${url}`
+    siteUrl: `${website}`
   },
   plugins: [
     'gatsby-transformer-yaml',
@@ -50,7 +52,7 @@ module.exports = {
       resolve: 'gatsby-plugin-matomo',
       options: {
         siteId: `${matomoSite}`,
-        siteUrl: `${url}`,
+        siteUrl: `${website}`,
         matomoUrl: `${matomoUrl}`,
         localScript: '/piwik.js'
       }
@@ -58,7 +60,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: title.toLowerCase(),
+        name: name.toLowerCase(),
         short_name: 'mk',
         start_url: '/',
         background_color: '#e7eef4',

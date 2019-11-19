@@ -1,9 +1,6 @@
-# more personal metadata can be found in ./resume.json
+# most personal metadata can be found in ./resume.json
 
-- title: Matthias Kretschmann
-  tagline: Designer & Developer
-  description: Portfolio of web &amp; ui designer/developer hybrid Matthias Kretschmann.
-  url: https://matthiaskretschmann.com
+- description: Portfolio of web &amp; ui designer/developer hybrid Matthias Kretschmann.
   img: ../src/images/twitter-card.png
 
   availability:

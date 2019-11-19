@@ -3,10 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 const query = graphql`
   query Meta {
     metaYaml {
-      title
-      tagline
       description
-      url
       img {
         childImageSharp {
           resize(width: 980) {
