@@ -7,7 +7,7 @@ import html from 'remark-html'
 import breaks from 'remark-breaks'
 import styles from './ResumeItem.module.scss'
 
-export const markdownOutput = text =>
+const markdownOutput = text =>
   remark()
     .use(parse, { gfm: true, commonmark: true, pedantic: true })
     .use(html)
@@ -15,17 +15,23 @@ export const markdownOutput = text =>
     .use(remark2react)
     .processSync(text).contents
 
-export default function ResumeItem({ workPlace, eduPlace, award }) {
+function normalizeData(workPlace, eduPlace, award) {
   const title = workPlace
     ? workPlace.company
     : award
     ? award.title
-    : eduPlace.institution
+    : eduPlace
+    ? eduPlace.institution
+    : null
+
   const subTitle = workPlace
     ? workPlace.position
     : award
     ? award.awarder
-    : eduPlace.area
+    : eduPlace
+    ? eduPlace.area
+    : null
+
   const text = workPlace
     ? workPlace.summary
     : award && award.summary
@@ -33,7 +39,18 @@ export default function ResumeItem({ workPlace, eduPlace, award }) {
     : eduPlace
     ? eduPlace.studyType
     : null
+
   const { startDate, endDate, date } = workPlace || eduPlace || award
+
+  return { title, subTitle, text, startDate, endDate, date }
+}
+
+export default function ResumeItem({ workPlace, eduPlace, award }) {
+  const { title, subTitle, text, startDate, endDate, date } = normalizeData(
+    workPlace,
+    eduPlace,
+    award
+  )
 
   const dateStart = date
     ? new Date(date).getFullYear()
