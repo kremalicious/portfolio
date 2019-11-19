@@ -8,18 +8,23 @@ import styles from './Header.module.scss'
 import { useMeta } from '../../hooks/use-meta'
 
 Header.propTypes = {
-  minimal: PropTypes.bool
+  minimal: PropTypes.bool,
+  hide: PropTypes.bool
 }
 
-export default function Header({ minimal }) {
+export default function Header({ minimal, hide }) {
   const { availability } = useMeta()
 
   return (
     <header className={minimal ? styles.minimal : styles.header}>
       <ThemeSwitch />
-      <LogoUnit minimal={minimal} />
-      <Networks hide={minimal} />
-      <Availability hide={minimal && !availability.status} />
+      {!hide && (
+        <>
+          <LogoUnit minimal={minimal} />
+          <Networks hide={minimal} />
+          <Availability hide={minimal && !availability.status} />
+        </>
+      )}
     </header>
   )
 }

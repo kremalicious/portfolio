@@ -17,6 +17,10 @@
             height: $font-size-base * 0.9;
         }
     }
+
+    @media print {
+        display: none;
+    }
 }
 
 .checkboxContainer {

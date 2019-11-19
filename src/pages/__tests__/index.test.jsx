@@ -1,17 +1,8 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { StaticQuery, useStaticQuery } from 'gatsby'
 import Home from '../index'
-import meta from '../../../jest/__fixtures__/meta.json'
 import projects from '../../../jest/__fixtures__/projects.json'
 import projectImageFiles from '../../../jest/__fixtures__/projectImageFiles.json'
-
-beforeEach(() => {
-  StaticQuery.mockImplementation(({ render }) => render({ ...meta }))
-  useStaticQuery.mockImplementation(() => {
-    return { ...meta }
-  })
-})
 
 describe('Home', () => {
   const data = {

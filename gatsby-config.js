@@ -2,47 +2,31 @@ const path = require('path')
 const fs = require('fs')
 const yaml = require('js-yaml')
 const meta = yaml.load(fs.readFileSync('./content/meta.yml', 'utf8'))
-const { title, url, matomoSite, matomoUrl } = meta[0]
+const resume = require('./content/resume.json')
+const { matomoSite, matomoUrl } = meta[0]
+const { name, website } = resume.basics
 
 require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `${url}`
+    siteUrl: `${website}`
   },
   plugins: [
+    'gatsby-transformer-yaml',
+    'gatsby-transformer-json',
     {
-      resolve: 'gatsby-transformer-yaml',
+      resolve: 'gatsby-source-filesystem',
       options: {
-        plugins: [
-          {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-              name: 'content',
-              path: path.join(__dirname, 'content')
-            }
-          }
-        ]
+        name: 'content',
+        path: path.join(__dirname, 'content')
       }
     },
     {
-      resolve: 'gatsby-transformer-json',
+      resolve: 'gatsby-source-filesystem',
       options: {
-        plugins: [
-          {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-              name: 'pkg',
-              path: path.join(__dirname, 'package.json')
-            }
-          }
-        ]
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-sass',
-      options: {
-        includePaths: [`${__dirname}/node_modules`, `${__dirname}/src/styles`]
+        name: 'pkg',
+        path: path.join(__dirname, 'package.json')
       }
     },
     {
@@ -50,6 +34,12 @@ module.exports = {
       options: {
         name: 'images',
         path: path.join(__dirname, 'src', 'images')
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        includePaths: [`${__dirname}/node_modules`, `${__dirname}/src/styles`]
       }
     },
     {
@@ -62,7 +52,7 @@ module.exports = {
       resolve: 'gatsby-plugin-matomo',
       options: {
         siteId: `${matomoSite}`,
-        siteUrl: `${url}`,
+        siteUrl: `${website}`,
         matomoUrl: `${matomoUrl}`,
         localScript: '/piwik.js'
       }
@@ -70,7 +60,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: title.toLowerCase(),
+        name: name.toLowerCase(),
         short_name: 'mk',
         start_url: '/',
         background_color: '#e7eef4',

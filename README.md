@@ -16,6 +16,7 @@
 
 - [🎉 Features](#-features)
   - [⛵️ Lighthouse score](#️-lighthouse-score)
+  - [🗂 JSON Resume](#-json-resume)
   - [💍 One data file to rule all pages](#-one-data-file-to-rule-all-pages)
   - [🐱 GitHub repositories](#-github-repositories)
   - [💅 Theme switcher](#-theme-switcher)
@@ -37,27 +38,39 @@
 
 ## 🎉 Features
 
-The whole [portfolio](https://matthiaskretschmann.com) is a React-based Single Page App built with [Gatsby v2](https://www.gatsbyjs.org).
+The whole [portfolio](https://matthiaskretschmann.com) is a React-based single page app built with [Gatsby v2](https://www.gatsbyjs.org).
+
+Most metadata is powered by one `resume.json` file based on [🗂 JSON Resume](#-json-resume), and one `projects.yml` file to [define the displayed projects](#-one-data-file-to-rule-all-pages).
 
 ### ⛵️ Lighthouse score
 
 ![Lighthouse scores](https://lighthouse.now.sh/?perf=100&pwa=100&a11y=100&bp=100&seo=100)
 
+### 🗂 JSON Resume
+
+Most site metadata and social profiles are defined in [`content/resume.json`](content/resume.json) based on the [JSON Resume](https://jsonresume.org) standard and used throughout the site as a custom React hook. Additionally, a resume page is created under `/resume`.
+
+If you want to know how, have a look at the respective components:
+
+- [`content/resume.json`](content/resume.json)
+- [`src/pages/resume/index.jsx`](src/pages/resume/index.jsx)
+- [`src/hooks/use-resume.js`](src/hooks/use-resume.js)
+
 ### 💍 One data file to rule all pages
 
-All content is powered by one YAML file where all the portfolio's projects are defined. The project description itself is transformed from Markdown written inside the YAML file into HTML on build time.
+All displayed project content is powered by one YAML file where all the portfolio's projects are defined. The project description itself is transformed from Markdown written inside the YAML file into HTML on build time.
 
 Gatsby automatically creates pages from each item in that file utilizing the [`Project.jsx`](src/templates/Project.jsx) template.
 
-- [`gatsby-node.js`](gatsby-node.js)
 - [`content/projects.yml`](content/projects.yml)
+- [`gatsby-node.js`](gatsby-node.js)
 - [`src/templates/Project.jsx`](src/templates/Project.jsx)
 
 ### 🐱 GitHub repositories
 
 The open source section at the bottom of the front page shows selected GitHub repositories, sourced from GitHub.
 
-On build time, all my public repositories are fetched from GitHub, then filtered against the ones defined in `content/repos.yml`, sorted by the last push date, and provided via the page context of the front page.
+On build time, all my public repositories are fetched from GitHub, then filtered against the ones defined in `content/repos.yml`, sorted by the last push date, and provided via the `pageContext` of the front page.
 
 If you want to know how, have a look at the respective components:
 

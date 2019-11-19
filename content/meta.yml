@@ -1,18 +1,7 @@
-- title: Matthias Kretschmann
-  tagline: Designer & Developer
-  description: Portfolio of web &amp; ui designer/developer hybrid Matthias Kretschmann.
-  url: https://matthiaskretschmann.com
-  email: m@kretschmann.io
-  avatar: ../src/images/avatar.jpg
-  img: ../src/images/twitter-card.png
+# most personal metadata can be found in ./resume.json
 
-  social:
-    Mail: mailto:m@kretschmann.io
-    Blog: https://kremalicious.com
-    Twitter: https://twitter.com/kremalicious
-    GitHub: https://github.com/kremalicious
-    Dribbble: https://dribbble.com/kremalicious
-    Keybase: https://keybase.io/kremalicious
+- description: Portfolio of web &amp; ui designer/developer hybrid Matthias Kretschmann.
+  img: ../src/images/twitter-card.png
 
   availability:
     status: false
