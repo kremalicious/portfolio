@@ -25,7 +25,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "file-saver": "^2.0.2",
-    "gatsby": "^2.17.17",
+    "gatsby": "^2.18.0",
     "gatsby-image": "^2.2.33",
     "gatsby-plugin-manifest": "^2.2.29",
     "gatsby-plugin-matomo": "^0.7.2",
@@ -70,7 +70,7 @@
     "babel-preset-gatsby": "^0.2.22",
     "chalk": "^3.0.0",
     "eslint": "^6.6.0",
-    "eslint-config-prettier": "^6.6.0",
+    "eslint-config-prettier": "^6.7.0",
     "eslint-loader": "^3.0.2",
     "eslint-plugin-graphql": "^3.1.0",
     "eslint-plugin-prettier": "^3.1.1",
