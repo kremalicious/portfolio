@@ -40,21 +40,25 @@ function normalizeData(workPlace, eduPlace, award) {
     ? eduPlace.studyType
     : null
 
-  const { startDate, endDate, date } = workPlace || eduPlace || award
+  const startDate = award
+    ? award.date
+    : (workPlace && workPlace.startDate) || (eduPlace && eduPlace.startDate)
 
-  return { title, subTitle, text, startDate, endDate, date }
+  const endDate = award
+    ? null
+    : (workPlace && workPlace.endDate) || (eduPlace && eduPlace.endDate)
+
+  return { title, subTitle, text, startDate, endDate }
 }
 
 export default function ResumeItem({ workPlace, eduPlace, award }) {
-  const { title, subTitle, text, startDate, endDate, date } = normalizeData(
+  const { title, subTitle, text, startDate, endDate } = normalizeData(
     workPlace,
     eduPlace,
     award
   )
 
-  const dateStart = date
-    ? new Date(date).getFullYear()
-    : new Date(startDate).getFullYear()
+  const dateStart = new Date(startDate).getFullYear()
   const dateEnd = endDate && new Date(endDate).getFullYear()
   const isSameYear = dateStart === dateEnd
 
@@ -62,11 +66,7 @@ export default function ResumeItem({ workPlace, eduPlace, award }) {
     <div className={styles.resumeItem}>
       <span className={styles.time}>
         {dateStart}
-        {dateEnd
-          ? !isSameYear && `–${dateEnd}`
-          : !date
-          ? '–present'
-          : null}{' '}
+        {dateEnd ? !isSameYear && `–${dateEnd}` : '–present'}{' '}
       </span>
       <h4 className={styles.title}>{title}</h4>
       <h5 className={styles.subTitle}>{subTitle}</h5>
