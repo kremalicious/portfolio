@@ -28,7 +28,8 @@ export default function Layout({ children, location }) {
   const isHomepage =
     location.pathname === '/' ||
     location.pathname === '/offline-plugin-app-shell-fallback/'
-  const isResume = location.pathname === '/resume'
+  const isResume =
+    location.pathname === '/resume' || location.pathname === '/resume/'
 
   return (
     <>
@@ -41,7 +42,7 @@ export default function Layout({ children, location }) {
           delay={timeout}
           delayChildren={timeout}
         >
-          <Header minimal={!isHomepage} isResume={isResume} />
+          <Header minimal={!isHomepage} hide={isResume} />
           <main className={styles.screen}>{children}</main>
         </RoutesContainer>
       </PoseGroup>

@@ -4,50 +4,18 @@ import SEO from '../../components/atoms/SEO'
 import Icon from '../../components/atoms/Icon'
 import { useResume } from '../../hooks/use-resume'
 import styles from './index.module.scss'
+import Header from './Header'
 import ResumeItem from './ResumeItem'
 
 export default function Resume() {
-  const { basics, education, languages, work, awards } = useResume()
-  const { name, label, email, website, location } = basics
+  const { education, work, awards } = useResume()
 
   return (
     <>
       <SEO />
 
       <div className={styles.resume}>
-        <header>
-          <p>Résumé</p>
-          <h1 className={styles.title}>{name}</h1>
-          <h2 className={styles.label}>{label}</h2>
-        </header>
-
-        <div>
-          <ul className={styles.contact}>
-            <li>
-              <a href={website}>
-                <Icon name="Compass" />
-                Portfolio
-              </a>
-            </li>
-            <li>
-              <Icon name="Mail" />
-              <a href={`mailto:${email}`}>Email</a>
-            </li>
-            <li>
-              <Icon name="MapPin" />
-              {location.city}, {location.countryCode}
-            </li>
-            <li className={styles.languages}>
-              <Icon name="Globe" />
-              {languages.map(item => (
-                <p key={shortid.generate()}>
-                  {item.language}
-                  <span>{item.fluency}</span>
-                </p>
-              ))}
-            </li>
-          </ul>
-        </div>
+        <Header />
 
         <div>
           <h3 className={styles.subTitle}>

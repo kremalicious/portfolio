@@ -9,18 +9,18 @@ import { useMeta } from '../../hooks/use-meta'
 
 Header.propTypes = {
   minimal: PropTypes.bool,
-  isResume: PropTypes.bool
+  hide: PropTypes.bool
 }
 
-export default function Header({ minimal, isResume }) {
+export default function Header({ minimal, hide }) {
   const { availability } = useMeta()
 
   return (
     <header className={minimal ? styles.minimal : styles.header}>
       <ThemeSwitch />
-      {!isResume && (
+      {!hide && (
         <>
-          <LogoUnit minimal={minimal} isResume={isResume} />
+          <LogoUnit minimal={minimal} />
           <Networks hide={minimal} />
           <Availability hide={minimal && !availability.status} />
         </>
