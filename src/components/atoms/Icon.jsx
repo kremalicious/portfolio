@@ -20,7 +20,9 @@ import {
   Globe,
   Briefcase,
   Award,
-  BookOpen
+  BookOpen,
+  Star,
+  Info
 } from 'react-feather'
 import { ReactComponent as Dribbble } from '../../images/dribbble.svg'
 import styles from './Icon.module.scss'
@@ -51,7 +53,9 @@ const Icon = ({ name, ...props }) => {
     Globe,
     Briefcase,
     Award,
-    BookOpen
+    BookOpen,
+    Star,
+    Info
   }
 
   const IconMapped = components[name]
