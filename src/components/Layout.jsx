@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import posed, { PoseGroup } from 'react-pose'
+import shortid from 'shortid'
 import { fadeIn } from './atoms/Transitions'
 import Typekit from './atoms/Typekit'
 import HostnameCheck from './atoms/HostnameCheck'
@@ -36,9 +37,9 @@ export default function Layout({ children, location }) {
       <Typekit />
       <HostnameCheck allowedHosts={allowedHosts} />
 
-      <PoseGroup animateOnMount={true}>
+      <PoseGroup animateOnMount={process.env.NODE_ENV !== 'test' && true}>
         <RoutesContainer
-          key={location.pathname}
+          key={shortid.generate()}
           delay={timeout}
           delayChildren={timeout}
         >

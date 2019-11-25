@@ -20,7 +20,7 @@ const TypekitScript = typekitID => (
 const Typekit = () => {
   const { typekitID } = useMeta()
 
-  return typekitID ? (
+  return (
     <Helmet>
       <link rel="preconnect" href="https://typekit.com" />
       <link rel="preconnect" href="https://use.typekit.net" />
@@ -28,7 +28,7 @@ const Typekit = () => {
 
       {TypekitScript(typekitID)}
     </Helmet>
-  ) : null
+  )
 }
 
 export default Typekit
