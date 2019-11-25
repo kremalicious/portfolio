@@ -4,6 +4,7 @@ import { StaticQuery, useStaticQuery } from 'gatsby'
 
 import meta from './__fixtures__/meta.json'
 import resume from './__fixtures__/resume.json'
+import projects from './__fixtures__/projects.json'
 
 beforeAll(() => {
   const photoSrc = resume.contentJson.basics.picture.childImageSharp.fixed.src
@@ -11,11 +12,10 @@ beforeAll(() => {
     ...meta,
     ...resume,
     photoSrc,
-    portfolioJson: { bugs: '' }
+    portfolioJson: { bugs: '' },
+    ...projects
   }
 
   StaticQuery.mockImplementation(({ render }) => render({ ...dataMock }))
-  useStaticQuery.mockImplementation(() => {
-    return { ...dataMock }
-  })
+  useStaticQuery.mockImplementation(() => ({ ...dataMock }))
 })

@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, useStaticQuery } from 'gatsby'
-import Vcard from '../atoms/Vcard'
+import loadable from '@loadable/component'
 import LogoUnit from '../molecules/LogoUnit'
 import Networks from '../molecules/Networks'
 import styles from './Footer.module.scss'
 import { useMeta } from '../../hooks/use-meta'
+
+const LazyVcard = loadable(() => import('../atoms/Vcard'))
 
 const query = graphql`
   query {
@@ -22,7 +24,7 @@ const FooterMarkup = ({ pkg, meta, year }) => (
     <Networks small />
 
     <p className={styles.actions}>
-      <Vcard />
+      <LazyVcard />
       <a className="u-key" href={meta.gpg}>
         PGP/GPG key
       </a>

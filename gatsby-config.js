@@ -77,5 +77,6 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-offline',
     'gatsby-plugin-webpack-size'
+    // 'gatsby-plugin-webpack-bundle-analyser-v2'
   ]
 }

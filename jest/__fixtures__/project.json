@@ -1,0 +1,110 @@
+{
+  "projectsYaml": {
+    "title": "Ocean Protocol",
+    "slug": "/oceanprotocol/",
+    "fields": {
+      "descriptionHtml": "<p>Since 2017 I'm leading the UI design &#x26; development of Ocean Protocol, iterating on a components-based UI design system spanning all of Ocean Protocol's web properties. Additionally, I conceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.</p>\n<p>Most web interfaces are single-page JavaScript applications built with React, pulling their data from JSON files and various micro services. All design &#x26; development is embedded in a continuous deployment process via GitHub &#x26; Travis.</p>\n<p>Initial website in collaboration with <a href=\"https://balance.io/\">Balance</a>. Key visuals in collaboration with <a href=\"https://twitter.com/wojciechhupert\">Wojciech Hupert</a>.</p>\n",
+      "excerpt": "Since 2017 I'm leading the UI design & development of Ocean Protocol, iterating on a components-based UI design system spanning all of Ocean Protocol's web properties. Additionally, I conceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.\nMost web interfaces are..."
+    },
+    "links": [
+      {
+        "title": "oceanprotocol.com",
+        "url": "https://oceanprotocol.com",
+        "icon": "Compass"
+      },
+      {
+        "title": "Styleguide",
+        "url": "https://oceanprotocol.com/art",
+        "icon": null
+      },
+      {
+        "title": "docs.oceanprotocol.com",
+        "url": "https://docs.oceanprotocol.com",
+        "icon": "Compass"
+      },
+      {
+        "title": "commons.oceanprotocol.com",
+        "url": "https://commons.oceanprotocol.com",
+        "icon": "Compass"
+      },
+      {
+        "title": "@oceanprotocol/art",
+        "url": "https://github.com/oceanprotocol/art",
+        "icon": "GitHub"
+      },
+      {
+        "title": "@oceanprotocol/docs",
+        "url": "https://github.com/oceanprotocol/docs",
+        "icon": "GitHub"
+      },
+      {
+        "title": "@oceanprotocol/commons",
+        "url": "https://github.com/oceanprotocol/commons",
+        "icon": "GitHub"
+      }
+    ],
+    "techstack": [
+      "Sketch",
+      "Affinity Designer",
+      "React",
+      "Gatsby",
+      "HTML",
+      "SCSS",
+      "JavaScript",
+      "TypeScript",
+      "Travis",
+      "AWS S3",
+      "Cloudflare",
+      "Ethereum",
+      "Docker",
+      "Kubernetes",
+      "Cypress",
+      "IPFS"
+    ],
+    "img": {
+      "childImageSharp": {
+        "twitterImage": {
+          "src": "/static/674f679841915ed59da7394e937f8f8f/c7e19/oceanprotocol-01.png"
+        }
+      }
+    }
+  },
+  "projectImages": {
+    "edges": [
+      {
+        "node": {
+          "id": "790521d3-05e7-5ab7-a499-86687637475b",
+          "fluid": {
+            "aspectRatio": 1.8,
+            "src": "/static/674f679841915ed59da7394e937f8f8f/af144/oceanprotocol-01.png",
+            "srcSet": "/static/674f679841915ed59da7394e937f8f8f/7c0ed/oceanprotocol-01.png 200w,\n/static/674f679841915ed59da7394e937f8f8f/647de/oceanprotocol-01.png 400w,\n/static/674f679841915ed59da7394e937f8f8f/af144/oceanprotocol-01.png 800w,\n/static/674f679841915ed59da7394e937f8f8f/ba299/oceanprotocol-01.png 1200w,\n/static/674f679841915ed59da7394e937f8f8f/9ecf6/oceanprotocol-01.png 1600w,\n/static/674f679841915ed59da7394e937f8f8f/7347c/oceanprotocol-01.png 2880w",
+            "srcWebp": "/static/674f679841915ed59da7394e937f8f8f/c6096/oceanprotocol-01.webp",
+            "srcSetWebp": "/static/674f679841915ed59da7394e937f8f8f/1932c/oceanprotocol-01.webp 200w,\n/static/674f679841915ed59da7394e937f8f8f/f4957/oceanprotocol-01.webp 400w,\n/static/674f679841915ed59da7394e937f8f8f/c6096/oceanprotocol-01.webp 800w,\n/static/674f679841915ed59da7394e937f8f8f/b6424/oceanprotocol-01.webp 1200w,\n/static/674f679841915ed59da7394e937f8f8f/7a72d/oceanprotocol-01.webp 1600w,\n/static/674f679841915ed59da7394e937f8f8f/b5fcc/oceanprotocol-01.webp 2880w",
+            "sizes": "(max-width: 800px) 100vw, 800px",
+            "originalImg": "/static/674f679841915ed59da7394e937f8f8f/7347c/oceanprotocol-01.png",
+            "originalName": "oceanprotocol-01.png",
+            "presentationWidth": 800,
+            "presentationHeight": 444
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "f49d52dd-60b9-5833-95ad-4428d4032e76",
+          "fluid": {
+            "aspectRatio": 1.8,
+            "src": "/static/32988a616cc5bc2354e02d16149dbcd6/af144/oceanprotocol-02.png",
+            "srcSet": "/static/32988a616cc5bc2354e02d16149dbcd6/7c0ed/oceanprotocol-02.png 200w,\n/static/32988a616cc5bc2354e02d16149dbcd6/647de/oceanprotocol-02.png 400w,\n/static/32988a616cc5bc2354e02d16149dbcd6/af144/oceanprotocol-02.png 800w,\n/static/32988a616cc5bc2354e02d16149dbcd6/ba299/oceanprotocol-02.png 1200w,\n/static/32988a616cc5bc2354e02d16149dbcd6/9ecf6/oceanprotocol-02.png 1600w,\n/static/32988a616cc5bc2354e02d16149dbcd6/7347c/oceanprotocol-02.png 2880w",
+            "srcWebp": "/static/32988a616cc5bc2354e02d16149dbcd6/c6096/oceanprotocol-02.webp",
+            "srcSetWebp": "/static/32988a616cc5bc2354e02d16149dbcd6/1932c/oceanprotocol-02.webp 200w,\n/static/32988a616cc5bc2354e02d16149dbcd6/f4957/oceanprotocol-02.webp 400w,\n/static/32988a616cc5bc2354e02d16149dbcd6/c6096/oceanprotocol-02.webp 800w,\n/static/32988a616cc5bc2354e02d16149dbcd6/b6424/oceanprotocol-02.webp 1200w,\n/static/32988a616cc5bc2354e02d16149dbcd6/7a72d/oceanprotocol-02.webp 1600w,\n/static/32988a616cc5bc2354e02d16149dbcd6/b5fcc/oceanprotocol-02.webp 2880w",
+            "sizes": "(max-width: 800px) 100vw, 800px",
+            "originalImg": "/static/32988a616cc5bc2354e02d16149dbcd6/7347c/oceanprotocol-02.png",
+            "originalName": "oceanprotocol-02.png",
+            "presentationWidth": 800,
+            "presentationHeight": 444
+          }
+        }
+      }
+    ]
+  }
+}

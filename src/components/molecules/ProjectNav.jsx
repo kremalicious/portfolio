@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import shortid from 'shortid'
 import styles from './ProjectNav.module.scss'
 
 const query = graphql`
@@ -23,6 +24,24 @@ const query = graphql`
     }
   }
 `
+
+const Project = ({ node, refCurrentItem }) => (
+  <div className={styles.item} ref={refCurrentItem}>
+    <Link className={styles.link} to={node.slug}>
+      <Img
+        className={styles.image}
+        fluid={node.img.childImageSharp.fluid}
+        alt={node.title}
+      />
+      <h1 className={styles.title}>{node.title}</h1>
+    </Link>
+  </div>
+)
+
+Project.propTypes = {
+  node: PropTypes.any.isRequired,
+  refCurrentItem: PropTypes.any
+}
 
 export default class ProjectNav extends PureComponent {
   static propTypes = {
@@ -48,30 +67,16 @@ export default class ProjectNav extends PureComponent {
     const scrollContainer = this.scrollContainer.current
     const activeItem = this.currentItem.current
     const scrollRect = scrollContainer.getBoundingClientRect()
-    const activeRect = activeItem.getBoundingClientRect()
+    const activeRect = activeItem && activeItem.getBoundingClientRect()
     const scrollLeftPosition =
+      activeRect &&
       activeRect.left -
-      scrollRect.left -
-      scrollRect.width / 2 +
-      activeRect.width / 2
+        scrollRect.left -
+        scrollRect.width / 2 +
+        activeRect.width / 2
 
     scrollContainer.scrollLeft += this.state.scrollLeftPosition
     this.setState({ scrollLeftPosition })
-  }
-
-  Project({ node, refCurrentItem }) {
-    return (
-      <div className={styles.item} ref={refCurrentItem}>
-        <Link className={styles.link} to={node.slug}>
-          <Img
-            className={styles.image}
-            fluid={node.img.childImageSharp.fluid}
-            alt={node.title}
-          />
-          <h1 className={styles.title}>{node.title}</h1>
-        </Link>
-      </div>
-    )
   }
 
   render() {
@@ -88,8 +93,8 @@ export default class ProjectNav extends PureComponent {
                 const isCurrent = node.slug === currentSlug
 
                 return (
-                  <this.Project
-                    key={node.slug}
+                  <Project
+                    key={shortid.generate()}
                     node={node}
                     refCurrentItem={isCurrent ? this.currentItem : null}
                   />

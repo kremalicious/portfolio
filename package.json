@@ -23,6 +23,7 @@
     "lh": "lighthousebot --pwa=90 --perf=90 --a11y=90 --bp=90 --seo 90 --runner=wpt"
   },
   "dependencies": {
+    "@loadable/component": "^5.10.3",
     "axios": "^0.19.0",
     "file-saver": "^2.0.2",
     "gatsby": "^2.18.3",
@@ -76,6 +77,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^2.3.0",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.8",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "jest-canvas-mock": "^2.2.0",

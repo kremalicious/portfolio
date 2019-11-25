@@ -7,7 +7,7 @@ import { useResume } from '../../hooks/use-resume'
 import styles from './Networks.module.scss'
 
 const linkClasses = key =>
-  key === 'Email' ? `u-email ${styles.link}` : `u-url ${styles.link}`
+  key === 'Mail' ? `u-email ${styles.link}` : `u-url ${styles.link}`
 
 const NetworkLink = ({ name, url }) => (
   <a
