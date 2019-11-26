@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import posed from 'react-pose'
 import { moveInTop } from '../atoms/Transitions'
@@ -25,7 +25,7 @@ NetworkLink.propTypes = {
   url: PropTypes.string.isRequired
 }
 
-export default function Networks({ small, hide }) {
+function Networks({ small, hide }) {
   const { basics } = useResume()
   if (hide) return null
 
@@ -45,6 +45,8 @@ export default function Networks({ small, hide }) {
     </Animation>
   )
 }
+
+export default memo(Networks)
 
 Networks.propTypes = {
   small: PropTypes.bool,

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import useDarkMode from '../../hooks/use-dark-mode'
@@ -33,9 +33,13 @@ ThemeToggleInput.propTypes = {
   toggleDark: PropTypes.func.isRequired
 }
 
-export default function ThemeSwitch() {
+function ThemeSwitch() {
   const { darkMode, toggleDark } = useDarkMode()
-  const themeColor = darkMode ? '#1d2224' : '#e7eef4'
+  const [themeColor, setThemeColor] = useState()
+
+  useEffect(() => {
+    darkMode ? setThemeColor('#1d2224') : setThemeColor('#e7eef4')
+  }, [darkMode])
 
   return (
     <>
@@ -57,3 +61,5 @@ export default function ThemeSwitch() {
     </>
   )
 }
+
+export default memo(ThemeSwitch)

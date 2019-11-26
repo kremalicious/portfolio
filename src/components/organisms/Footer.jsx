@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import { graphql, useStaticQuery } from 'gatsby'
 import loadable from '@loadable/component'
@@ -48,10 +48,12 @@ FooterMarkup.propTypes = {
   year: PropTypes.number.isRequired
 }
 
-export default function Footer() {
+function Footer() {
   const metaYaml = useMeta()
   const { portfolioJson } = useStaticQuery(query)
   const year = new Date().getFullYear()
 
   return <FooterMarkup year={year} pkg={portfolioJson} meta={metaYaml} />
 }
+
+export default memo(Footer)

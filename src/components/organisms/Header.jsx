@@ -16,15 +16,17 @@ export default function Header({ minimal, hide }) {
   const { availability } = useMeta()
 
   return (
-    <header className={minimal ? styles.minimal : styles.header}>
+    <>
       <ThemeSwitch />
-      {!hide && (
-        <>
-          <LogoUnit minimal={minimal} />
-          <Networks hide={minimal} />
-          <Availability hide={minimal && !availability.status} />
-        </>
-      )}
-    </header>
+      <header className={minimal ? styles.minimal : styles.header}>
+        {!hide && (
+          <>
+            <LogoUnit minimal={minimal} />
+            <Networks hide={minimal} />
+            <Availability hide={minimal && !availability.status} />
+          </>
+        )}
+      </header>
+    </>
   )
 }

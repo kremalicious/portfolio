@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import shortid from 'shortid'
@@ -56,7 +56,7 @@ Home.propTypes = {
   pageContext: PropTypes.object.isRequired
 }
 
-export default function Home({ data, pageContext }) {
+function Home({ data, pageContext }) {
   const projects = data.allProjectsYaml.edges
   const images = data.projectImageFiles.edges
 
@@ -74,6 +74,8 @@ export default function Home({ data, pageContext }) {
     </>
   )
 }
+
+export default memo(Home)
 
 export const IndexQuery = graphql`
   query {

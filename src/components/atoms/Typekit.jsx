@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import Helmet from 'react-helmet'
 import { useMeta } from '../../hooks/use-meta'
 
@@ -31,4 +31,4 @@ const Typekit = () => {
   )
 }
 
-export default Typekit
+export default memo(Typekit)

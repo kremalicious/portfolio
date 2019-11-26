@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { useMeta } from '../../hooks/use-meta'
@@ -51,7 +51,7 @@ SEO.propTypes = {
   project: PropTypes.object
 }
 
-export default function SEO({ project }) {
+function SEO({ project }) {
   const meta = useMeta()
   const { basics } = useResume()
   const title = (project && project.title) || null
@@ -71,3 +71,5 @@ export default function SEO({ project }) {
     />
   )
 }
+
+export default memo(SEO)
