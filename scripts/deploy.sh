@@ -74,7 +74,7 @@ elif [ "$GITHUB_REF" == "refs/heads/master" ]; then
 
   s3sync $AWS_S3_BUCKET
 
-  purge
+  # purge
 
   ping
 
