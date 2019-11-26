@@ -63,14 +63,14 @@ function ping {
 ##
 ## check for pull request against master
 ##
-if [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
+if [ "$GITHUB_EVENT_NAME" == "pull_request" ]; then
 
   s3sync $AWS_S3_BUCKET_BETA
 
 ##
 ## check for master push which is no pull request
 ##
-elif [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] || [ "$TRAVIS" != true ]; then
+elif [ "$GITHUB_REF" == "refs/heads/master" ]; then
 
   s3sync $AWS_S3_BUCKET
 

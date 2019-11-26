@@ -1,6 +1,6 @@
 name: 'CI/CD Pipeline'
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   test:
@@ -57,3 +57,15 @@ jobs:
         with:
           name: public
           path: public
+
+  deploy:
+    needs: build
+    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/download-artifact@v1
+        with:
+          name: public
+      - run: ./scripts/deploy.sh
