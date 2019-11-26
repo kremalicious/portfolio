@@ -8,7 +8,7 @@
   <a href="https://matthiaskretschmann.com">matthiaskretschmann.com</a>
 </p>
 <p align="center">
-  <a href="https://travis-ci.com/kremalicious/portfolio"><img src="https://travis-ci.com/kremalicious/portfolio.svg?branch=master" /></a>
+  <a href="https://github.com/kremalicious/portfolio/actions"><img src="https://github.com/kremalicious/portfolio/.github/workflows/ci.yml/badge.svg" /></a>
   <a href="https://codeclimate.com/github/kremalicious/portfolio/maintainability"><img src="https://api.codeclimate.com/v1/badges/8f561ec93e0f8c6b15d9/maintainability" /></a>
   <a href="https://codeclimate.com/github/kremalicious/portfolio/test_coverage"><img src="https://api.codeclimate.com/v1/badges/8f561ec93e0f8c6b15d9/test_coverage" /></a>
   <a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/kremalicious/portfolio.svg" /></a>
@@ -220,7 +220,7 @@ SLUG-03.png
 
 ## 🚚 Deployment
 
-Automatic deployments are triggered upon successful tests & builds on Travis:
+Automatic deployments are triggered upon successful tests & builds via GitHub Actions:
 
 - push to `master` initiates a live deployment
 - any Pull Request, and subsequent pushes to it, initiates a beta deployment
@@ -231,7 +231,7 @@ The deploy command simply calls the [`scripts/deploy.sh`](scripts/deploy.sh) scr
 npm run deploy
 ```
 
-Upon live deployment, deploy script also purges the Cloudflare cache, and pings search engines. Travis requires the following environment variables to be setup for successful deployments:
+Upon live deployment, deploy script also purges the Cloudflare cache, and pings search engines. GitHub requires the following environment variables to be setup for successful deployments in the repository secrets:
 
 - `AWS_ACCESS_KEY_ID`
 - `AWS_SECRET_ACCESS_KEY`
@@ -242,7 +242,7 @@ Upon live deployment, deploy script also purges the Cloudflare cache, and pings 
 
 ## 🏛 Licenses
 
-**© Copyright 2018 Matthias Kretschmann**
+**© Copyright 2019 Matthias Kretschmann**
 
 All images and projects are plain ol' copyright, most displayed projects are subject to the copyright of their respective owners.
 

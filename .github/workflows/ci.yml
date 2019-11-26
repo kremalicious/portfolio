@@ -22,7 +22,13 @@ jobs:
           restore-keys: ${{ runner.os }}-node-
 
       - run: npm ci
-      - run: npm test
+
+      - name: Run tests & publish code coverage
+        uses: paambaati/codeclimate-action@v2.3.0
+        with:
+          coverageCommand: npm test
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
 
   build:
     runs-on: ubuntu-latest
@@ -54,13 +60,14 @@ jobs:
           GATSBY_GITHUB_TOKEN: ${{ secrets.GATSBY_GITHUB_TOKEN }}
 
       - uses: actions/upload-artifact@v1
+        if: github.event_name == 'pull_request' || github.ref == 'refs/heads/master'
         with:
           name: public
           path: public
 
   deploy:
     needs: build
-    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/master'
+    if: success() && (github.event_name == 'pull_request' || github.ref == 'refs/heads/master')
     runs-on: ubuntu-latest
 
     steps:
@@ -68,4 +75,8 @@ jobs:
       - uses: actions/download-artifact@v1
         with:
           name: public
-      - run: ./scripts/deploy.sh
+      - name: Deploy to S3
+        run: ./scripts/deploy.sh
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
