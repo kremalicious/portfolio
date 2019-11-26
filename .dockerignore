@@ -10,7 +10,6 @@ LICENSE
 .vscode
 public
 .cache
-.travis.yml
 package-lock.json
 README.md
 coverage
