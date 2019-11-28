@@ -80,14 +80,11 @@ If you want to know how, have a look at the respective components:
 
 ### 💅 Theme switcher
 
-Includes a theme switcher which allows user to toggle between a light and a dark theme. Switching between them also happens automatically based on user's local sunset and sunrise times. Uses Cloudflare's geo location HTTP header functionality.
-
-If a visitor has set the theme manually that selection is remembered in `localStorage`, and is restored on next visit.
+Includes a theme switcher which allows user to toggle between a light and a dark theme. Switching between them also happens automatically based on user's system preferences. If a visitor has set the theme manually that selection is remembered in `localStorage`, and is restored on next visit. All handled by [use-dark-mode](https://github.com/donavon/use-dark-mode)
 
 If you want to know how, have a look at the respective components:
 
 - [`src/components/molecules/ThemeSwitch.jsx`](src/components/molecules/ThemeSwitch.jsx)
-- [`src/hooks/use-dark-mode.jsx`](src/hooks/use-dark-mode.jsx)
 
 ### 🏆 SEO component
 

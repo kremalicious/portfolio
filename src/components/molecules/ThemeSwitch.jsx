@@ -1,23 +1,25 @@
 import React, { memo, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import useDarkMode from '../../hooks/use-dark-mode'
+import useDarkMode from 'use-dark-mode'
 import Icon from '../atoms/Icon'
 import styles from './ThemeSwitch.module.scss'
 
-const ThemeToggle = ({ dark }) => (
+const ThemeToggle = memo(({ dark }) => (
   <span id="toggle" className={styles.checkboxContainer} aria-live="assertive">
     <Icon name="Sun" className={!dark ? null : 'active'} />
     <span className={styles.checkboxFake} />
     <Icon name="Moon" className={dark ? 'active' : null} />
   </span>
-)
+))
+
+ThemeToggle.displayName = 'ThemeToggle'
 
 ThemeToggle.propTypes = {
   dark: PropTypes.bool.isRequired
 }
 
-const ThemeToggleInput = ({ dark, toggleDark }) => (
+const ThemeToggleInput = memo(({ dark, toggleDark }) => (
   <input
     onChange={() => toggleDark()}
     type="checkbox"
@@ -26,36 +28,52 @@ const ThemeToggleInput = ({ dark, toggleDark }) => (
     aria-describedby="toggle"
     checked={dark}
   />
-)
+))
+
+ThemeToggleInput.displayName = 'ThemeToggleInput'
 
 ThemeToggleInput.propTypes = {
   dark: PropTypes.bool.isRequired,
   toggleDark: PropTypes.func.isRequired
 }
 
+const HeadItems = ({ bodyClass, themeColor }) => (
+  <Helmet>
+    <body className={bodyClass} />
+    <meta name="theme-color" content={themeColor} />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+  </Helmet>
+)
+
+HeadItems.propTypes = {
+  bodyClass: PropTypes.string.isRequired,
+  themeColor: PropTypes.string.isRequired
+}
+
 function ThemeSwitch() {
-  const { darkMode, toggleDark } = useDarkMode()
+  const { value, toggle } = useDarkMode(false, {
+    classNameDark: 'dark',
+    classNameLight: 'light'
+  })
   const [themeColor, setThemeColor] = useState()
+  const [bodyClass, setBodyClass] = useState()
 
   useEffect(() => {
-    darkMode ? setThemeColor('#1d2224') : setThemeColor('#e7eef4')
-  }, [darkMode])
+    setBodyClass(value ? 'dark' : null)
+    setThemeColor(value ? '#1d2224' : '#e7eef4')
+  }, [value])
 
   return (
     <>
-      <Helmet>
-        <body className={darkMode ? 'dark' : null} />
-        <meta name="theme-color" content={themeColor} />
-        <meta
-          name="apple-mobile-web-app-status-bar-style"
-          content="black-translucent"
-        />
-      </Helmet>
+      <HeadItems themeColor={themeColor} bodyClass={bodyClass} />
       <aside className={styles.themeSwitch}>
         <label className={styles.checkbox}>
           <span className={styles.label}>Toggle Night Mode</span>
-          <ThemeToggleInput dark={darkMode} toggleDark={toggleDark} />
-          <ThemeToggle dark={darkMode} />
+          <ThemeToggleInput dark={value} toggleDark={toggle} />
+          <ThemeToggle dark={value} />
         </label>
       </aside>
     </>

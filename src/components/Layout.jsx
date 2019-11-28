@@ -11,11 +11,11 @@ import styles from './Layout.module.scss'
 import { useMeta } from '../hooks/use-meta'
 
 // https://github.com/welldone-software/why-did-you-render
-// if (process.env.NODE_ENV !== 'production') {
-//   // eslint-disable-next-line
-//   const whyDidYouRender = require('@welldone-software/why-did-you-render/dist/no-classes-transpile/umd/whyDidYouRender.min.js')
-//   whyDidYouRender(React)
-// }
+if (process.env.NODE_ENV !== 'production') {
+  // eslint-disable-next-line
+  const whyDidYouRender = require('@welldone-software/why-did-you-render/dist/no-classes-transpile/umd/whyDidYouRender.min.js')
+  whyDidYouRender(React)
+}
 
 Layout.propTypes = {
   children: PropTypes.any.isRequired,

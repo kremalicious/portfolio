@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 
 // https://featherstyles.com
@@ -27,7 +27,7 @@ import {
 import { ReactComponent as Dribbble } from '../../images/dribbble.svg'
 import styles from './Icon.module.scss'
 
-const Icon = ({ name, ...props }) => {
+const Icon = memo(({ name, ...props }) => {
   const components = {
     Dribbble,
     Email: Mail,
@@ -63,7 +63,9 @@ const Icon = ({ name, ...props }) => {
   if (!IconMapped) return null
 
   return <IconMapped className={styles.icon} {...props} />
-}
+})
+
+Icon.displayName = 'Icon'
 
 Icon.propTypes = {
   name: PropTypes.string.isRequired
