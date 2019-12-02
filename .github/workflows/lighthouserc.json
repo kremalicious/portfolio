@@ -1,0 +1,15 @@
+{
+  "ci": {
+    "collect": {
+      "numberOfRuns": 3
+    },
+    "assert": {
+      "preset": "lighthouse:recommended",
+      "assertions": {
+        "font-display": "off",
+        "dom-size": "off",
+        "color-contrast": "off"
+      }
+    }
+  }
+}

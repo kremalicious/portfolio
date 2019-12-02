@@ -19,8 +19,7 @@
     "test": "npm run lint && jest --coverage --silent",
     "test:watch": "npm run lint && jest --coverage --watch",
     "deploy": "./scripts/deploy.sh",
-    "new": "babel-node ./scripts/new.js",
-    "lh": "lighthousebot --pwa=90 --perf=90 --a11y=90 --bp=90 --seo 90 --runner=wpt"
+    "new": "babel-node ./scripts/new.js"
   },
   "dependencies": {
     "@loadable/component": "^5.10.3",
@@ -84,7 +83,6 @@
     "jest": "^24.9.0",
     "jest-canvas-mock": "^2.2.0",
     "js-yaml": "^3.13.1",
-    "lighthousebot": "git+https://github.com/GoogleChromeLabs/lighthousebot.git",
     "node-sass": "^4.13.0",
     "ora": "^4.0.3",
     "prepend": "^1.0.2",
