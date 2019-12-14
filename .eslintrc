@@ -3,9 +3,11 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:testing-library/recommended",
+    "plugin:testing-library/react"
   ],
-  "plugins": ["react", "graphql", "prettier", "react-hooks"],
+  "plugins": ["react", "graphql", "prettier", "react-hooks", "testing-library"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
