@@ -63,7 +63,7 @@
     "@babel/node": "^7.7.4",
     "@babel/preset-env": "^7.7.6",
     "@react-mock/localstorage": "^0.1.2",
-    "@svgr/webpack": "^4.3.3",
+    "@svgr/webpack": "^5.0.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@welldone-software/why-did-you-render": "^3.3.9",
