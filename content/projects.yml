@@ -19,6 +19,9 @@
     - title: commons.oceanprotocol.com
       icon: Compass
       url: https://commons.oceanprotocol.com
+    - title: ipfs.oceanprotocol.com
+      icon: Compass
+      url: https://ipfs.oceanprotocol.com
     - title: '@oceanprotocol/art'
       icon: GitHub
       url: https://github.com/oceanprotocol/art
@@ -28,11 +31,15 @@
     - title: '@oceanprotocol/commons'
       icon: GitHub
       url: https://github.com/oceanprotocol/commons
+    - title: '@oceanprotocol/ipfs'
+      icon: GitHub
+      url: https://github.com/oceanprotocol/ipfs
   techstack:
     - Sketch
     - Affinity Designer
     - React
     - Gatsby
+    - Next.js
     - HTML
     - SCSS
     - JavaScript
