@@ -64,7 +64,7 @@
     "@babel/preset-env": "^7.7.7",
     "@react-mock/localstorage": "^0.1.2",
     "@svgr/webpack": "^5.0.1",
-    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/jest-dom": "^5.0.0",
     "@testing-library/react": "^9.4.0",
     "@welldone-software/why-did-you-render": "^3.5.0",
     "babel-eslint": "^10.0.3",
