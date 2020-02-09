@@ -49,14 +49,15 @@ $line-height: 1.5;
 $line-height-small: 1.1428571429;
 
 $font-family-base: 'ff-tisa-sans-web-pro', 'Trebuchet MS', 'Helvetica Neue',
-    Helvetica, Arial, sans-serif;
+    'Helvetica', 'Arial', 'sans-serif';
 $font-weight-base: 400;
 $font-color-base: $text-color;
 
-$font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
+$font-family-monospace: 'Menlo', 'Monaco', 'Consolas', 'Courier New',
+    'monospace';
 
 $font-family-headings: 'brandon-grotesque', 'Avenir Next', 'Helvetica Neue',
-    Helvetica, Arial, sans-serif;
+    'Helvetica', 'Arial', 'sans-serif';
 $font-weight-headings: 400;
 $line-height-headings: 1.1;
 
