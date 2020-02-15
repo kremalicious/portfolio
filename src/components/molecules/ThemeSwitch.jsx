@@ -58,8 +58,8 @@ function ThemeSwitch() {
     classNameDark: 'dark',
     classNameLight: 'light'
   })
-  const [themeColor, setThemeColor] = useState()
-  const [bodyClass, setBodyClass] = useState()
+  const [themeColor, setThemeColor] = useState('')
+  const [bodyClass, setBodyClass] = useState('')
 
   useEffect(() => {
     setBodyClass(value ? 'dark' : null)
