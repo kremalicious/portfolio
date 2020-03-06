@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import FullWidth from '../components/atoms/FullWidth'
-import ProjectImage from '../components/atoms/ProjectImage'
-import ProjectTechstack from '../components/molecules/ProjectTechstack'
-import ProjectLinks from '../components/molecules/ProjectLinks'
-import ProjectNav from '../components/molecules/ProjectNav'
-import SEO from '../components/atoms/SEO'
+import FullWidth from '../atoms/FullWidth'
+import ProjectImage from '../atoms/ProjectImage'
+import ProjectTechstack from '../molecules/ProjectTechstack'
+import ProjectLinks from '../molecules/ProjectLinks'
+import ProjectNav from '../molecules/ProjectNav'
+import SEO from '../atoms/SEO'
 import styles from './Project.module.scss'
 
 class ProjectMeta extends PureComponent {

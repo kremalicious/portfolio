@@ -142,7 +142,7 @@ exports.onCreateNode = ({ node, actions }) => {
 //
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
-  const template = path.resolve('src/templates/Project.jsx')
+  const template = path.resolve('src/components/templates/Project.jsx')
 
   const result = await graphql(`
     {
