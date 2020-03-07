@@ -11,12 +11,8 @@
 
 .label {
     font-size: var(--font-size-h3);
-    color: var(--brand-grey-light);
+    color: var(--text-color);
     margin-bottom: 0;
-}
-
-:global(.dark) .label {
-    color: var(--brand-grey-dimmed);
 }
 
 .contact {
@@ -30,13 +26,9 @@
 }
 
 .contact svg {
-    stroke: var(--brand-grey-light);
+    stroke: var(--text-color-light);
     margin-right: calc(var(--spacer) / 4);
     margin-bottom: -0.1rem;
-}
-
-:global(.dark) .contact svg {
-    stroke: var(--brand-grey);
 }
 
 @media (min-width: 60em) {
@@ -61,9 +53,5 @@
 .languages span {
     font-size: var(--font-size-small);
     margin-left: calc(var(--spacer) / 4);
-    color: var(--brand-grey-light);
-}
-
-:global(.dark) .languages span {
-    color: var(--brand-grey);
+    color: var(--text-color-light);
 }

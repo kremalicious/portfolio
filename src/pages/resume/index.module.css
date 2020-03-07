@@ -32,9 +32,9 @@
         font-size: 8pt;
     }
 
-    body {
+    :global(body) {
         background: #fff !important;
-        margin: 1cm 1.5cm;
+        margin: 1cm;
     }
 
     p {
@@ -43,5 +43,6 @@
 
     .resume {
         grid-template-columns: 1fr;
+        max-width: 100%;
     }
 }

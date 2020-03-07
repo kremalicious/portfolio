@@ -21,7 +21,7 @@
 }
 
 .repoTitle {
-    font-size: var(--font-size-h4);
+    font-size: var(--font-size-h5);
     margin-bottom: calc(var(--spacer) / 2);
 }
 

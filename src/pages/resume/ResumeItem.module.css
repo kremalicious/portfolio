@@ -2,7 +2,7 @@
     padding-bottom: calc(var(--spacer) * 3);
     padding-left: var(--spacer);
     position: relative;
-    border-left: 0.1rem solid rgba(var(--brand-grey-light), 0.25);
+    border-left: 0.1rem solid var(--text-color-light);
 }
 
 .resumeItem::before {
@@ -11,11 +11,11 @@
     width: var(--font-size-mini);
     height: var(--font-size-mini);
     border-radius: 50%;
-    background: var(--body-background-color);
+    background: var(--color-headings);
     border: 0.1rem solid var(--color-headings);
     position: absolute;
-    left: -(calc(var(--font-size-mini) / 1.8));
-    top: 0.15rem;
+    left: -0.4rem;
+    top: 0.4rem;
 }
 
 .resumeItem:last-child {
@@ -29,17 +29,11 @@
 .title {
     margin-bottom: calc(var(--spacer) / 3);
     font-size: var(--font-size-h4);
-    position: relative;
-    top: -(calc(var(--spacer) / 6));
 }
 
 .subTitle {
-    color: var(--brand-grey-light);
+    color: var(--text-color-light);
     font-size: var(--font-size-h5);
-}
-
-:global(.dark) .subTitle {
-    color: var(--brand-grey-dimmed);
 }
 
 .time {

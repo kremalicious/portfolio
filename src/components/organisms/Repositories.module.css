@@ -1,5 +1,6 @@
 .section {
     margin: calc(var(--spacer) * 3) auto 0 auto;
+    max-width: calc(var(--projectImageMaxWidth) + var(--spacer) * 2);
     padding-left: var(--spacer);
     padding-right: var(--spacer);
 }
@@ -13,13 +14,11 @@
 .repos {
     display: grid;
     grid-template-columns: 1fr;
-    gap: calc(var(--spacer) * 3);
-    margin: 0 auto;
-    max-width: calc(var(--projectImageMaxWidth) + var(--spacer) * 2);
+    gap: calc(var(--spacer) * 2);
 }
 
-@media (min-width: 15rem) {
+@media (min-width: 18rem) {
     .repos {
-        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     }
 }

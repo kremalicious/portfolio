@@ -4,9 +4,11 @@
     gap: calc(var(--spacer) * 3);
     max-width: calc(var(--projectImageMaxWidth) + var(--spacer) * 2);
     margin: 0 auto;
+    padding-left: var(--spacer);
+    padding-right: var(--spacer);
 }
 
-@media (min-width: 15rem) {
+@media (min-width: 30rem) {
     .projects {
         grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     }
