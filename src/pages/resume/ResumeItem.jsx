@@ -5,7 +5,7 @@ import remark2react from 'remark-react'
 import parse from 'remark-parse'
 import html from 'remark-html'
 import breaks from 'remark-breaks'
-import styles from './ResumeItem.module.scss'
+import styles from './ResumeItem.module.css'
 
 const markdownOutput = text =>
   remark()

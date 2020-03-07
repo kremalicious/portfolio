@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import giphyAPI from 'giphy-js-sdk-core'
 import SEO from '../components/atoms/SEO'
 import Button from '../components/atoms/Button'
-import styles from './404.module.scss'
+import styles from './404.module.css'
 
 // Famous last words:
 // "It's just the 404 page so why not expose the dev API key"

@@ -1,0 +1,28 @@
+.projectLinks ul {
+    padding: 0;
+}
+
+.projectLinks li {
+    display: flex;
+    align-items: center;
+    margin-bottom: calc(var(--spacer) / 2.1);
+}
+
+.projectLinks a {
+    display: block;
+    width: 100%;
+    text-transform: none;
+    text-align: left;
+    padding-left: 1.8rem;
+}
+
+.projectLinks svg {
+    stroke: var(--text-color-light);
+    width: var(--font-size-small);
+    height: var(--font-size-small);
+    margin-left: -1.2rem;
+}
+
+.title {
+    composes: metatitle from '../templates/Project.module.css';
+}

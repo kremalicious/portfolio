@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
 import shortid from 'shortid'
-import styles from './ProjectNav.module.scss'
+import ProjectImage from '../atoms/ProjectImage'
+import styles from './ProjectNav.module.css'
 
 const query = graphql`
   query {
@@ -28,7 +28,7 @@ const query = graphql`
 const Project = ({ node, refCurrentItem }) => (
   <div className={styles.item} ref={refCurrentItem}>
     <Link className={styles.link} to={node.slug}>
-      <Img
+      <ProjectImage
         className={styles.image}
         fluid={node.img.childImageSharp.fluid}
         alt={node.title}

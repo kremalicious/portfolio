@@ -4,7 +4,7 @@ import posed from 'react-pose'
 import { moveInTop } from '../atoms/Transitions'
 import Icon from '../atoms/Icon'
 import { useResume } from '../../hooks/use-resume'
-import styles from './Networks.module.scss'
+import styles from './Networks.module.css'
 
 const linkClasses = key =>
   key === 'Mail' ? `u-email ${styles.link}` : `u-url ${styles.link}`

@@ -4,7 +4,7 @@ import Networks from '../molecules/Networks'
 import Availability from '../molecules/Availability'
 import ThemeSwitch from '../molecules/ThemeSwitch'
 import LogoUnit from '../molecules/LogoUnit'
-import styles from './Header.module.scss'
+import styles from './Header.module.css'
 import { useMeta } from '../../hooks/use-meta'
 
 Header.propTypes = {

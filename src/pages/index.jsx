@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 import shortid from 'shortid'
 import SEO from '../components/atoms/SEO'
 import ProjectImage from '../components/atoms/ProjectImage'
-import styles from './index.module.scss'
+import styles from './index.module.css'
 import Repositories from '../components/organisms/Repositories'
 import Icon from '../components/atoms/Icon'
 

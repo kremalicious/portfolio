@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import useDarkMode from 'use-dark-mode'
 import Icon from '../atoms/Icon'
-import styles from './ThemeSwitch.module.scss'
+import styles from './ThemeSwitch.module.css'
 
 const ThemeToggle = memo(({ dark }) => (
   <span id="toggle" className={styles.checkboxContainer} aria-live="assertive">
@@ -49,7 +49,7 @@ const HeadItems = ({ bodyClass, themeColor }) => (
 )
 
 HeadItems.propTypes = {
-  bodyClass: PropTypes.string.isRequired,
+  bodyClass: PropTypes.string,
   themeColor: PropTypes.string.isRequired
 }
 

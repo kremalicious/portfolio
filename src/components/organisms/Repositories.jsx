@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 
 import Repository from '../molecules/Repository'
-import styles from './Repositories.module.scss'
+import styles from './Repositories.module.css'
 
 Repositories.propTypes = {
   repos: PropTypes.array

@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import loadable from '@loadable/component'
 import LogoUnit from '../molecules/LogoUnit'
 import Networks from '../molecules/Networks'
-import styles from './Footer.module.scss'
+import styles from './Footer.module.css'
 import { useMeta } from '../../hooks/use-meta'
 
 const LazyVcard = loadable(() => import('../atoms/Vcard'))

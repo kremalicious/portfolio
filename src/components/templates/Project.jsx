@@ -7,7 +7,7 @@ import ProjectTechstack from '../molecules/ProjectTechstack'
 import ProjectLinks from '../molecules/ProjectLinks'
 import ProjectNav from '../molecules/ProjectNav'
 import SEO from '../atoms/SEO'
-import styles from './Project.module.scss'
+import styles from './Project.module.css'
 
 class ProjectMeta extends PureComponent {
   static propTypes = {

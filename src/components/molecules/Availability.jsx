@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import posed from 'react-pose'
 import { fadeIn } from '../atoms/Transitions'
 import { useMeta } from '../../hooks/use-meta'
-import styles from './Availability.module.scss'
+import styles from './Availability.module.css'
 
 const Animation = posed.aside(fadeIn)
 

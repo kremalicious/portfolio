@@ -3,7 +3,7 @@ import shortid from 'shortid'
 import SEO from '../../components/atoms/SEO'
 import Icon from '../../components/atoms/Icon'
 import { useResume } from '../../hooks/use-resume'
-import styles from './index.module.scss'
+import styles from './index.module.css'
 import Header from './Header'
 import ResumeItem from './ResumeItem'
 
