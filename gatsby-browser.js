@@ -1,7 +1,7 @@
 import wrapPageElementWithLayout from './src/helpers/wrapPageElement'
 
 // Global styles
-import './src/styles/global.scss'
+import './src/styles/global.css'
 
 // IntersectionObserver polyfill for gatsby-image (Safari, IE)
 if (typeof window !== 'undefined' && !window.IntersectionObserver) {

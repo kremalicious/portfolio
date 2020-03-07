@@ -1,10 +1,8 @@
-@import 'variables';
-
 .header {
     position: relative;
-    padding: $spacer;
+    padding: var(--spacer);
     padding-top: 30vh;
-    min-height: calc(100vh - #{$spacer});
+    min-height: calc(100vh - var(--spacer));
     max-height: 1000px;
     text-align: center;
     display: flex;
@@ -15,6 +13,6 @@
 .minimal {
     composes: header;
     min-height: 0;
-    padding-top: $spacer * 2;
+    padding-top: calc(var(--spacer) * 2);
     padding-bottom: 0;
 }

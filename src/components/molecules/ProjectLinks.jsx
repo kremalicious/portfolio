@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Button from '../atoms/Button'
 import Icon from '../atoms/Icon'
-import styles from './ProjectLinks.module.scss'
+import styles from './ProjectLinks.module.css'
 
 ProjectLinks.propTypes = {
   links: PropTypes.array

@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import posed from 'react-pose'
 import { moveInBottom } from '../atoms/Transitions'
 import { ReactComponent as Logo } from '../../images/logo.svg'
-import styles from './LogoUnit.module.scss'
+import styles from './LogoUnit.module.css'
 import { useResume } from '../../hooks/use-resume'
 
 LogoUnit.propTypes = {

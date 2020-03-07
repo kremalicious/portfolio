@@ -1,0 +1,79 @@
+.projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: calc(var(--spacer) * 3);
+    max-width: calc(var(--projectImageMaxWidth) + var(--spacer) * 2);
+    margin: 0 auto;
+}
+
+@media (min-width: 15rem) {
+    .projects {
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    }
+}
+
+.title {
+    font-size: var(--font-size-h4);
+    opacity: 0;
+    position: absolute;
+    top: 15%;
+    left: 0;
+    margin: 0;
+    z-index: 2;
+    padding: calc(var(--spacer) / 3) var(--spacer);
+    color: #fff !important;
+    background: var(--brand-cyan);
+    transform: translate3d(0, -1rem, 0);
+    transition: transform 0.2s ease-out;
+}
+
+.project {
+    position: relative;
+}
+
+.project a {
+    display: block;
+    position: relative;
+}
+
+.project a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    background: transparent;
+    transition: background 0.2s ease-out;
+}
+
+.project a:hover::after,
+.project a:focus::after {
+    background: rgba(var(--brand-cyan), 0.05);
+}
+
+.project a:hover .title,
+.project a:focus .title,
+.project a:hover .imageCount,
+.project a:focus .imageCount {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.imageCount {
+    position: absolute;
+    bottom: 5%;
+    right: 2%;
+    color: var(--brand-cyan);
+    font-size: var(--font-size-small);
+    z-index: 10;
+    opacity: 0;
+    transform: translate3d(0, calc(var(--spacer) / 2), 0);
+    transition: transform 0.25s ease-out;
+}
+
+.imageCount svg {
+    width: var(--font-size-base);
+    height: var(--font-size-base);
+}

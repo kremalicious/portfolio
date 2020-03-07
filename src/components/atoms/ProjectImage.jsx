@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import styles from './ProjectImage.module.scss'
+import styles from './ProjectImage.module.css'
 
 export default class ProjectImage extends PureComponent {
   static propTypes = {

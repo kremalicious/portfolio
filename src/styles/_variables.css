@@ -1,0 +1,61 @@
+:root {
+    /* Colors */
+    --brand-main: #015565;
+    --brand-cyan: #43a699;
+    --brand-main-light: #88bec8;
+    --brand-light: #e7eef4;
+    --brand-grey: #4e5d63;
+    --brand-grey-light: #70858e;
+    --brand-grey-dimmed: #97abb3;
+
+    /* Backgrounds */
+    --body-background-color: var(--brand-light);
+    --box-background-color: rgba(255, 255, 255, 0.2);
+
+    /* Text Colors */
+    --text-color: var(--brand-grey);
+    --text-color-light: var(--brand-grey-light);
+    --color-headings: var(--brand-main);
+
+    /* Typography */
+    --font-size-root: 18px;
+    --font-size-base: 1rem;
+    --font-size-large: 1.2rem;
+    --font-size-small: 0.8rem;
+    --font-size-mini: 0.7rem;
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.65rem;
+    --font-size-h4: 1.45rem;
+    --font-size-h5: var(--font-size-large);
+    --font-size-h6: var(--font-size-base);
+    --line-height: 1.5;
+    --line-height-small: 1.1428571429;
+    --font-family-base: 'ff-tisa-sans-web-pro', 'Trebuchet MS', 'Helvetica Neue',
+        'Helvetica', 'Arial', 'sans-serif';
+    --font-weight-base: 400;
+    --font-family-monospace: 'Menlo', 'Monaco', 'Consolas', 'Courier New',
+        'monospace';
+    --font-family-headings: 'brandon-grotesque', 'Avenir Next', 'Helvetica Neue',
+        'Helvetica', 'Arial', 'sans-serif';
+    --font-weight-headings: 400;
+    --line-height-headings: 1.1;
+
+    /* Components spacing */
+    --spacer: 1.5rem;
+    --border-radius: 0.25rem;
+
+    /* Miscellanious */
+    --projectImageMaxWidth: 1200px;
+    --easing: cubic-bezier(0.75, 0, 0.08, 1);
+    --box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05), 0 5px 16px rgba(0, 0, 0, 0.05);
+}
+
+.dark {
+    --text-color: #7e9199;
+    --text-color-light: #7e9199;
+    --color-headings: var(--brand-main-light);
+    --body-background-color: #1d2224;
+    --box-background-color: rgba(255, 255, 255, 0.03);
+    --box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25), 0 5px 16px rgba(0, 0, 0, 0.25);
+}

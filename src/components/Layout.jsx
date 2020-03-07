@@ -7,7 +7,7 @@ import Typekit from './atoms/Typekit'
 import HostnameCheck from './atoms/HostnameCheck'
 import Header from './organisms/Header'
 import Footer from './organisms/Footer'
-import styles from './Layout.module.scss'
+import styles from './Layout.module.css'
 import { useMeta } from '../hooks/use-meta'
 
 // https://github.com/welldone-software/why-did-you-render

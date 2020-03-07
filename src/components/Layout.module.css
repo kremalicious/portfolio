@@ -1,0 +1,15 @@
+.screen {
+    margin-top: calc(var(--spacer) * var(--line-height));
+}
+
+.screen > article {
+    display: grid;
+    grid-template-columns:
+        [full-start] minmax(var(--spacer), 1fr)
+        [main-start] minmax(0, 38rem) [main-end]
+        minmax(var(--spacer), 1fr) [full-end];
+}
+
+.screen > article > * {
+    grid-column: main;
+}

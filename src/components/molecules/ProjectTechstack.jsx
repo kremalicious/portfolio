@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './ProjectTechstack.module.scss'
+import styles from './ProjectTechstack.module.css'
 
 const ProjectTechstack = ({ techstack }) => (
   <div className={styles.projectTechstack}>
