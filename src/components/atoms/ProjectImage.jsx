@@ -24,7 +24,7 @@ export default class ProjectImage extends PureComponent {
 
 export const projectImage = graphql`
   fragment ProjectImageFluid on ImageSharp {
-    fluid(maxWidth: 1200, quality: 85) {
+    fluid(maxWidth: 1440, quality: 85) {
       ...GatsbyImageSharpFluid_withWebp_noBase64
     }
   }

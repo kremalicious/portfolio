@@ -13,9 +13,10 @@
 
 .available {
     background: var(--body-background-color);
-    color: var(--brand-main);
+    color: var(--text-color);
     position: fixed;
     bottom: var(--spacer);
     left: 50%;
     transform: translateX(-50%);
+    box-shadow: var(--box-shadow);
 }

@@ -32,7 +32,6 @@
 @media (min-width: 40em) {
     .meta {
         grid-template-columns: 2fr 3fr;
-        gap: calc(var(--spacer) * 2);
     }
 }
 
