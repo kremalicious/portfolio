@@ -15,6 +15,7 @@ module.exports = {
   plugins: [
     'gatsby-transformer-yaml',
     'gatsby-transformer-json',
+    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
