@@ -7,7 +7,7 @@ import html from 'remark-html'
 import breaks from 'remark-breaks'
 import styles from './ResumeItem.module.css'
 
-const markdownOutput = text =>
+const markdownOutput = (text) =>
   remark()
     .use(parse, { gfm: true, commonmark: true, pedantic: true })
     .use(html)

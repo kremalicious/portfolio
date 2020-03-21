@@ -15,7 +15,7 @@ function Repositories({ repos }) {
     <section className={styles.section}>
       <h1 className={styles.sectionTitle}>Open Source Projects</h1>
       <div className={styles.repos}>
-        {repos.map(repo => (
+        {repos.map((repo) => (
           <Repository key={repo.name} repo={repo} />
         ))}
       </div>

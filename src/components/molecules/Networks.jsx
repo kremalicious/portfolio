@@ -6,7 +6,7 @@ import Icon from '../atoms/Icon'
 import { useResume } from '../../hooks/use-resume'
 import styles from './Networks.module.css'
 
-const linkClasses = key =>
+const linkClasses = (key) =>
   key === 'Mail' ? `u-email ${styles.link}` : `u-url ${styles.link}`
 
 const NetworkLink = ({ name, url }) => (
@@ -35,7 +35,7 @@ function Networks({ small, hide }) {
     <Animation className={small ? styles.small : styles.networks}>
       <NetworkLink name="Mail" url={`mailto:${basics.email}`} />
 
-      {basics.profiles.map(profile => (
+      {basics.profiles.map((profile) => (
         <NetworkLink
           key={profile.network}
           name={profile.network}

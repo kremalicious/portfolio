@@ -24,7 +24,7 @@ export default function Resume() {
           </h3>
         </div>
         <div>
-          {work.map(workPlace => (
+          {work.map((workPlace) => (
             <ResumeItem key={shortid.generate()} workPlace={workPlace} />
           ))}
         </div>
@@ -36,7 +36,7 @@ export default function Resume() {
           </h3>
         </div>
         <div>
-          {awards.map(award => (
+          {awards.map((award) => (
             <ResumeItem key={shortid.generate()} award={award} />
           ))}
         </div>
@@ -48,7 +48,7 @@ export default function Resume() {
           </h3>
         </div>
         <div>
-          {education.map(eduPlace => (
+          {education.map((eduPlace) => (
             <ResumeItem key={shortid.generate()} eduPlace={eduPlace} />
           ))}
         </div>

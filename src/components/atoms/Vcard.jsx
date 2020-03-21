@@ -19,7 +19,7 @@ export default function Vcard() {
     profiles
   }
 
-  const handleAddressbookClick = e => {
+  const handleAddressbookClick = (e) => {
     e.preventDefault()
     init(meta)
   }
@@ -36,7 +36,7 @@ export default function Vcard() {
   )
 }
 
-export const init = async meta => {
+export const init = async (meta) => {
   // first, convert the avatar to base64, then construct all vCard elements
   const dataUrl = await toDataURL(meta.photoSrc, 'image/jpeg')
   const vcard = await constructVcard(meta, dataUrl)
@@ -51,7 +51,7 @@ export const init = async meta => {
   saveAs(blob, name)
 }
 
-export const constructVcard = async meta => {
+export const constructVcard = async (meta) => {
   const contact = new vCard()
   const blog = meta.profiles.filter(({ network }) => network === 'Blog')[0].url
   const twitter = meta.profiles.filter(

@@ -32,7 +32,7 @@ export default class NotFound extends Component {
     }
   }
 
-  handleClick = e => {
+  handleClick = (e) => {
     e.preventDefault()
     this.getRandomGif()
   }

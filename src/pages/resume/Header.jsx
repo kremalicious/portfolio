@@ -34,7 +34,7 @@ export default function Header() {
           </li>
           <li className={styles.languages}>
             <Icon name="Globe" />
-            {languages.map(item => (
+            {languages.map((item) => (
               <p key={shortid.generate()}>
                 {item.language}
                 <span>{item.fluency}</span>

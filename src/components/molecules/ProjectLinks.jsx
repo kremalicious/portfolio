@@ -16,7 +16,7 @@ export default function ProjectLinks({ links }) {
       </h3>
 
       <ul>
-        {links.map(link => {
+        {links.map((link) => {
           const { title, url, icon } = link
 
           return (

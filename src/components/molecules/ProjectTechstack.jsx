@@ -8,7 +8,7 @@ const ProjectTechstack = ({ techstack }) => (
       Tools & Technologies <span>The tech stack I was involved with.</span>
     </h3>
     <ul>
-      {techstack.map(tech => (
+      {techstack.map((tech) => (
         <li key={tech}>{tech}</li>
       ))}
     </ul>

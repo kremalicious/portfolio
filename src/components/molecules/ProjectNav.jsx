@@ -84,7 +84,7 @@ export default class ProjectNav extends PureComponent {
     return (
       <StaticQuery
         query={query}
-        render={data => {
+        render={(data) => {
           const projects = data.allProjectsYaml.edges
 
           return (

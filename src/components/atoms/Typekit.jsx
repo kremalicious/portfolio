@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import Helmet from 'react-helmet'
 import { useMeta } from '../../hooks/use-meta'
 
-const TypekitScript = typekitID => (
+const TypekitScript = (typekitID) => (
   <script>
     {`
         (function(d) {
