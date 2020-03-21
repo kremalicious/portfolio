@@ -1,68 +1,68 @@
 .networks {
-    margin-top: calc(var(--spacer) * var(--line-height));
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  margin-top: calc(var(--spacer) * var(--line-height));
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .title {
-    display: block;
-    font-size: var(--font-size-mini);
-    color: var(--brand-grey-light);
-    opacity: 0;
-    transform: translate3d(0, 0.5rem, 0);
-    transition: 0.2s var(--easing);
+  display: block;
+  font-size: var(--font-size-mini);
+  color: var(--brand-grey-light);
+  opacity: 0;
+  transform: translate3d(0, 0.5rem, 0);
+  transition: 0.2s var(--easing);
 }
 
 .link {
-    margin-left: calc(var(--spacer) / var(--line-height));
-    margin-right: calc(var(--spacer) / var(--line-height));
-    margin-bottom: calc(var(--spacer) / 2);
-    text-align: center;
-    display: inline-block;
-    flex: 0 1;
-    min-width: 2.5rem;
+  margin-left: calc(var(--spacer) / var(--line-height));
+  margin-right: calc(var(--spacer) / var(--line-height));
+  margin-bottom: calc(var(--spacer) / 2);
+  text-align: center;
+  display: inline-block;
+  flex: 0 1;
+  min-width: 2.5rem;
 }
 
 .link,
 .link svg {
-    transition: 0.2s var(--easing);
+  transition: 0.2s var(--easing);
 }
 
 .link svg {
-    stroke: var(--brand-grey-light);
-    width: 24px;
-    height: 24px;
+  stroke: var(--brand-grey-light);
+  width: 24px;
+  height: 24px;
 }
 
 .link:hover svg,
 .link:focus svg {
-    stroke: var(--brand-cyan);
+  stroke: var(--brand-cyan);
 }
 
 .link:hover .title,
 .link:focus .title {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 
 .small {
-    composes: networks;
+  composes: networks;
 }
 
 .small .link {
-    padding: calc(var(--spacer) / 4);
-    margin-left: calc(var(--spacer) / 7);
-    margin-right: calc(var(--spacer) / 7);
-    margin-bottom: calc(var(--spacer) / 4);
+  padding: calc(var(--spacer) / 4);
+  margin-left: calc(var(--spacer) / 7);
+  margin-right: calc(var(--spacer) / 7);
+  margin-bottom: calc(var(--spacer) / 4);
 }
 
 .small svg {
-    width: var(--font-size-base);
-    height: var(--font-size-base);
-    opacity: 0.8;
+  width: var(--font-size-base);
+  height: var(--font-size-base);
+  opacity: 0.8;
 }

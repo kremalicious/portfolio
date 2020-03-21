@@ -1,51 +1,51 @@
 .repo {
-    padding: var(--spacer);
-    border-radius: var(--border-radius);
-    background: var(--box-background-color);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    box-shadow: var(--box-shadow);
+  padding: var(--spacer);
+  border-radius: var(--border-radius);
+  background: var(--box-background-color);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  box-shadow: var(--box-shadow);
 }
 
 .repo > * {
-    width: 100%;
+  width: 100%;
 }
 
 .repo p {
-    font-size: var(--font-size-small);
+  font-size: var(--font-size-small);
 }
 
 .repo p:last-child {
-    margin: 0;
+  margin: 0;
 }
 
 .repoTitle {
-    font-size: var(--font-size-h5);
-    margin-bottom: calc(var(--spacer) / 2);
+  font-size: var(--font-size-h5);
+  margin-bottom: calc(var(--spacer) / 2);
 }
 
 .meta {
-    font-size: var(--font-size-small);
-    align-self: flex-end;
-    display: flex;
-    justify-content: space-between;
+  font-size: var(--font-size-small);
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-between;
 }
 
 .meta a {
-    display: inline-block;
-    color: var(--text-color-light);
-    font-variant-numeric: lining-nums;
+  display: inline-block;
+  color: var(--text-color-light);
+  font-variant-numeric: lining-nums;
 }
 
 .meta a:hover,
 .meta a:focus {
-    color: var(--brand-cyan);
+  color: var(--brand-cyan);
 }
 
 .meta svg {
-    width: var(--font-size-small);
-    height: var(--font-size-small);
-    margin-right: calc(var(--spacer) / 12);
-    margin-bottom: -0.1rem;
+  width: var(--font-size-small);
+  height: var(--font-size-small);
+  margin-right: calc(var(--spacer) / 12);
+  margin-bottom: -0.1rem;
 }

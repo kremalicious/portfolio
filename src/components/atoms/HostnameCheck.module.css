@@ -1,16 +1,16 @@
 .hostnameInfo {
-    position: sticky;
-    top: 0;
-    z-index: 99;
-    padding: calc(var(--spacer) / 3);
-    font-size: var(--font-size-small);
-    font-weight: bold;
-    background: var(--brand-light);
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  padding: calc(var(--spacer) / 3);
+  font-size: var(--font-size-small);
+  font-weight: bold;
+  background: var(--brand-light);
 }
 
 .hostnameInfo p {
-    margin: auto;
-    margin-bottom: 0;
-    max-width: 70em;
-    text-align: center;
+  margin: auto;
+  margin-bottom: 0;
+  max-width: 70em;
+  text-align: center;
 }

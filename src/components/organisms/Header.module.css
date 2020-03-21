@@ -1,18 +1,18 @@
 .header {
-    position: relative;
-    padding: var(--spacer);
-    padding-top: 30vh;
-    min-height: calc(100vh - var(--spacer));
-    max-height: 1000px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  position: relative;
+  padding: var(--spacer);
+  padding-top: 30vh;
+  min-height: calc(100vh - var(--spacer));
+  max-height: 1000px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .minimal {
-    composes: header;
-    min-height: 0;
-    padding-top: calc(var(--spacer) * 2);
-    padding-bottom: 0;
+  composes: header;
+  min-height: 0;
+  padding-top: calc(var(--spacer) * 2);
+  padding-bottom: 0;
 }

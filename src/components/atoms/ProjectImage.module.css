@@ -1,18 +1,18 @@
 .projectImage {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--box-shadow);
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
 }
 
 @media (min-width: 1200px) {
-    .projectImage {
-        max-width: var(--projectImageMaxWidth);
-    }
+  .projectImage {
+    max-width: var(--projectImageMaxWidth);
+  }
 }
 
 .projectImage img {
-    display: block;
+  display: block;
 }

@@ -14,8 +14,7 @@
     "lint:css": "stylelint ./src/**/*.{css,scss}",
     "lint": "npm run lint:js && npm run lint:css",
     "build": "gatsby build",
-    "format": "prettier --write 'src/**/*.{js,jsx}'",
-    "format:css": "prettier-stylelint --write --quiet 'src/**/*.{css,scss}'",
+    "format": "prettier --write 'src/**/*.{js,jsx,css,scss}'",
     "test": "npm run lint && jest --coverage --silent",
     "test:watch": "npm run lint && jest --coverage --watch",
     "deploy": "./scripts/deploy.sh",
@@ -88,11 +87,10 @@
     "postcss-preset-env": "^6.7.0",
     "prepend": "^1.0.2",
     "prettier": "^2.0.0",
-    "prettier-stylelint": "^0.4.2",
     "slugify": "^1.4.0",
     "stylelint": "^13.2.1",
-    "stylelint-config-css-modules": "^2.2.0",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-prettier": "^1.1.2"
   },
   "browserslist": [
     ">0.2%",

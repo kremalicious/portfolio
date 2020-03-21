@@ -1,68 +1,68 @@
 .logounit {
-    pointer-events: none;
-    display: block;
-    width: 100%;
+  pointer-events: none;
+  display: block;
+  width: 100%;
 }
 
 .logo {
-    display: block;
-    width: 1.5rem;
-    height: 1.5rem;
-    fill: var(--text-color-light);
-    margin-bottom: calc(var(--spacer) / 2);
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--text-color-light);
+  margin-bottom: calc(var(--spacer) / 2);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .title,
 .description {
-    display: inline-block;
-    margin-bottom: 0;
+  display: inline-block;
+  margin-bottom: 0;
 }
 
 .title {
-    font-size: var(--font-size-h3);
-    margin-right: calc(var(--spacer) / 4);
-    line-height: var(--line-height);
+  font-size: var(--font-size-h3);
+  margin-right: calc(var(--spacer) / 4);
+  line-height: var(--line-height);
 }
 
 .description {
-    font-size: var(--font-size-h4);
-    color: var(--text-color);
+  font-size: var(--font-size-h4);
+  color: var(--text-color);
 }
 
 .description::before,
 .description::after {
-    opacity: 0.4;
+  opacity: 0.4;
 }
 
 .description::before {
-    content: '{ ';
+  content: '{ ';
 }
 
 .description::after {
-    content: ' }';
+  content: ' }';
 }
 
 .minimal {
-    composes: logounit;
-    pointer-events: all;
+  composes: logounit;
+  pointer-events: all;
 }
 
 .minimal,
 .minimal:hover,
 .minimal:focus {
-    transform: scale(0.7);
-    transform-origin: top center;
-    transform-box: border-box;
+  transform: scale(0.7);
+  transform-origin: top center;
+  transform-box: border-box;
 }
 
 .minimal .title,
 .minimal .description {
-    color: var(--text-color-light);
+  color: var(--text-color-light);
 }
 
 .minimal .logo {
-    margin-bottom: calc(var(--spacer) / 3);
-    opacity: 0.5;
+  margin-bottom: calc(var(--spacer) / 3);
+  opacity: 0.5;
 }

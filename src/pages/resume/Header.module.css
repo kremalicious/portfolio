@@ -1,57 +1,57 @@
 .title {
-    font-size: var(--font-size-h2);
-    margin-bottom: calc(var(--spacer) / 4);
+  font-size: var(--font-size-h2);
+  margin-bottom: calc(var(--spacer) / 4);
 }
 
 @media print {
-    .title {
-        margin-bottom: 0;
-    }
+  .title {
+    margin-bottom: 0;
+  }
 }
 
 .label {
-    font-size: var(--font-size-h3);
-    color: var(--text-color);
-    margin-bottom: 0;
+  font-size: var(--font-size-h3);
+  color: var(--text-color);
+  margin-bottom: 0;
 }
 
 .contact {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .contact li,
 .contact p {
-    margin-bottom: calc(var(--spacer) / 4);
+  margin-bottom: calc(var(--spacer) / 4);
 }
 
 .contact svg {
-    stroke: var(--text-color-light);
-    margin-right: calc(var(--spacer) / 4);
-    margin-bottom: -0.1rem;
+  stroke: var(--text-color-light);
+  margin-right: calc(var(--spacer) / 4);
+  margin-bottom: -0.1rem;
 }
 
 @media (min-width: 60em) {
-    .contact {
-        margin-top: calc(var(--spacer) * 2.25);
-    }
+  .contact {
+    margin-top: calc(var(--spacer) * 2.25);
+  }
 }
 
 .languages svg {
-    display: inline-block;
+  display: inline-block;
 }
 
 .languages p {
-    margin-left: calc(var(--spacer) / 1.1);
+  margin-left: calc(var(--spacer) / 1.1);
 }
 
 .languages p:first-of-type {
-    margin-left: 0;
-    display: inline-block;
+  margin-left: 0;
+  display: inline-block;
 }
 
 .languages span {
-    font-size: var(--font-size-small);
-    margin-left: calc(var(--spacer) / 4);
-    color: var(--text-color-light);
+  font-size: var(--font-size-small);
+  margin-left: calc(var(--spacer) / 4);
+  color: var(--text-color-light);
 }

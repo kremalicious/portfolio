@@ -1,42 +1,42 @@
 .button {
-    display: block;
-    width: 100%;
-    color: var(--brand-cyan);
-    text-align: center;
-    border-radius: var(--border-radius);
-    padding: calc(var(--spacer) / 4) calc(var(--spacer) / 2);
-    transition-property: all;
-    background: var(--box-background-color);
-    border: 0.05rem solid var(--brand-cyan);
-    font-size: var(--font-size-small);
-    text-transform: uppercase;
-    cursor: pointer;
+  display: block;
+  width: 100%;
+  color: var(--brand-cyan);
+  text-align: center;
+  border-radius: var(--border-radius);
+  padding: calc(var(--spacer) / 4) calc(var(--spacer) / 2);
+  transition-property: all;
+  background: var(--box-background-color);
+  border: 0.05rem solid var(--brand-cyan);
+  font-size: var(--font-size-small);
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 @media (min-width: 30rem) {
-    .button {
-        display: inline-block;
-        width: auto;
-    }
+  .button {
+    display: inline-block;
+    width: auto;
+  }
 }
 
 .button svg {
-    margin-right: calc(var(--spacer) / 4);
-    transition: 0.2s var(--easing);
-    margin-bottom: -0.1rem;
-    width: var(--font-size-small);
-    height: var(--font-size-small);
+  margin-right: calc(var(--spacer) / 4);
+  transition: 0.2s var(--easing);
+  margin-bottom: -0.1rem;
+  width: var(--font-size-small);
+  height: var(--font-size-small);
 }
 
 .button:hover,
 .button:focus {
-    color: #5ebeb1;
-    border-color: #5ebeb1;
-    transform: translate3d(0, -0.1rem, 0);
-    box-shadow: var(--box-shadow);
+  color: #5ebeb1;
+  border-color: #5ebeb1;
+  transform: translate3d(0, -0.1rem, 0);
+  box-shadow: var(--box-shadow);
 }
 
 .button:active {
-    transition: none;
-    background: var(--box-background-color);
+  transition: none;
+  background: var(--box-background-color);
 }

@@ -1,22 +1,22 @@
 .availability {
-    border-radius: var(--border-radius);
-    color: var(--text-color-light);
-    z-index: 2;
-    padding: calc(var(--spacer) / 2);
-    display: block;
-    margin-top: auto;
+  border-radius: var(--border-radius);
+  color: var(--text-color-light);
+  z-index: 2;
+  padding: calc(var(--spacer) / 2);
+  display: block;
+  margin-top: auto;
 }
 
 .availability p {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .available {
-    background: var(--body-background-color);
-    color: var(--text-color);
-    position: fixed;
-    bottom: var(--spacer);
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: var(--box-shadow);
+  background: var(--body-background-color);
+  color: var(--text-color);
+  position: fixed;
+  bottom: var(--spacer);
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: var(--box-shadow);
 }
