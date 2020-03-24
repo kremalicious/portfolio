@@ -50,7 +50,7 @@
     "react-pose": "^4.0.10",
     "remark": "^11.0.2",
     "remark-breaks": "^1.0.3",
-    "remark-html": "^10.0.0",
+    "remark-html": "^11.0.0",
     "remark-parse": "^7.0.2",
     "remark-react": "^7.0.0",
     "shortid": "^2.2.15",
