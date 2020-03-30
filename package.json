@@ -51,7 +51,7 @@
     "remark": "^11.0.2",
     "remark-breaks": "^1.0.3",
     "remark-html": "^11.0.0",
-    "remark-parse": "^7.0.2",
+    "remark-parse": "^8.0.0",
     "remark-react": "^7.0.0",
     "shortid": "^2.2.15",
     "use-dark-mode": "^2.3.1",
