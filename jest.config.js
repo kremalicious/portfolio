@@ -8,12 +8,16 @@ module.exports = {
       '<rootDir>/jest/__mocks__/file-mock.js',
     '\\.svg': '<rootDir>/jest/__mocks__/svgr-mock.js'
   },
-  testPathIgnorePatterns: ['node_modules', '.cache', 'public', 'coverage'],
+  testPathIgnorePatterns: [
+    'node_modules',
+    '\\.cache',
+    '<rootDir>.*/public',
+    'coverage'
+  ],
   transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
   globals: {
     __PATH_PREFIX__: ''
   },
-  testURL: 'http://localhost',
   setupFiles: ['<rootDir>/jest/loadershim.js'],
   setupFilesAfterEnv: ['<rootDir>/jest/setup-test-env.js']
 }
