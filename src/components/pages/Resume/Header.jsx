@@ -1,7 +1,7 @@
 import React from 'react'
 import shortid from 'shortid'
-import { useResume } from '../../hooks/use-resume'
-import Icon from '../../components/atoms/Icon'
+import { useResume } from '../../../hooks/use-resume'
+import Icon from '../../atoms/Icon'
 import styles from './Header.module.css'
 
 export default function Header() {

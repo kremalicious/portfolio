@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import shortid from 'shortid'
-import Icon from '../../components/atoms/Icon'
+import Icon from '../../atoms/Icon'
 import ResumeItem, { ResumeItemContentProps } from './ResumeItem'
 import styles from './ResumeSection.module.css'
 

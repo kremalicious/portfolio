@@ -1,10 +1,10 @@
 import React from 'react'
 import shortid from 'shortid'
-import SEO from '../../components/atoms/SEO'
-import { useResume } from '../../hooks/use-resume'
-import styles from './index.module.css'
-import Header from './Header'
-import ResumeSection from './ResumeSection'
+import SEO from '../components/atoms/SEO'
+import { useResume } from '../hooks/use-resume'
+import styles from './resume.module.css'
+import Header from '../components/pages/Resume/Header'
+import ResumeSection from '../components/pages/Resume/ResumeSection'
 
 export default function Resume() {
   const { education, work, awards } = useResume()
