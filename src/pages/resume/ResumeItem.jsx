@@ -13,51 +13,20 @@ const markdownOutput = (text) =>
     .use(html)
     .use(breaks)
     .use(remark2react)
-    .processSync(text).contents
+    .processSync(text).result
 
-function normalizeData(workPlace, eduPlace, award) {
-  const title = workPlace
-    ? workPlace.company
-    : award
-    ? award.title
-    : eduPlace
-    ? eduPlace.institution
-    : null
-
-  const subTitle = workPlace
-    ? workPlace.position
-    : award
-    ? award.awarder
-    : eduPlace
-    ? eduPlace.area
-    : null
-
-  const text = workPlace
-    ? workPlace.summary
-    : award && award.summary
-    ? award.summary
-    : eduPlace
-    ? eduPlace.studyType
-    : null
-
-  const startDate = award
-    ? award.date
-    : (workPlace && workPlace.startDate) || (eduPlace && eduPlace.startDate)
-
-  const endDate = award
-    ? null
-    : (workPlace && workPlace.endDate) || (eduPlace && eduPlace.endDate)
+function normalizeData(content) {
+  const title = content.company || content.title || content.institution
+  const subTitle = content.position || content.awarder || content.area
+  const text = content.summary || content.studyType
+  const startDate = content.date || content.startDate
+  const endDate = content.endDate
 
   return { title, subTitle, text, startDate, endDate }
 }
 
-export default function ResumeItem({ workPlace, eduPlace, award }) {
-  const { title, subTitle, text, startDate, endDate } = normalizeData(
-    workPlace,
-    eduPlace,
-    award
-  )
-
+export default function ResumeItem({ content }) {
+  const { title, subTitle, text, startDate, endDate } = normalizeData(content)
   const dateStart = new Date(startDate).getFullYear()
   const dateEnd = endDate && new Date(endDate).getFullYear()
   const isSameYear = dateStart === dateEnd
@@ -75,25 +44,29 @@ export default function ResumeItem({ workPlace, eduPlace, award }) {
   )
 }
 
-ResumeItem.propTypes = {
-  workPlace: PropTypes.shape({
+export const ResumeItemContentProps = PropTypes.oneOfType([
+  PropTypes.shape({
     startDate: PropTypes.string.isRequired,
     endDate: PropTypes.string,
     company: PropTypes.string.isRequired,
     position: PropTypes.string.isRequired,
     summary: PropTypes.string
   }),
-  eduPlace: PropTypes.shape({
+  PropTypes.shape({
     startDate: PropTypes.string.isRequired,
     endDate: PropTypes.string,
     institution: PropTypes.string.isRequired,
     area: PropTypes.string.isRequired,
     studyType: PropTypes.string
   }),
-  award: PropTypes.shape({
+  PropTypes.shape({
     date: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     awarder: PropTypes.string.isRequired,
     summary: PropTypes.string
   })
+])
+
+ResumeItem.propTypes = {
+  content: ResumeItemContentProps
 }
