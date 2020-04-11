@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import PropTypes from 'prop-types'
 import { useMeta } from '../../hooks/use-meta'
 import { useResume } from '../../hooks/use-resume'

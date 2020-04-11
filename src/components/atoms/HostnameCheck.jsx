@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import styles from './HostnameCheck.module.css'
 
 export default class HostnameCheck extends PureComponent {

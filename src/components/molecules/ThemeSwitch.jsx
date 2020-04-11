@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import useDarkMode from 'use-dark-mode'
 import Icon from '../atoms/Icon'
 import styles from './ThemeSwitch.module.css'
