@@ -70,7 +70,7 @@
     "babel-jest": "^26.0.1",
     "babel-preset-gatsby": "^0.4.7",
     "chalk": "^4.0.0",
-    "eslint": "^7.0.0",
+    "eslint": "^7.1.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-graphql": "^3.1.1",
