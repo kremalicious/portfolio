@@ -10,8 +10,7 @@ import { useMeta } from '../../hooks/use-meta'
 const LazyVcard = loadable(() => import('../atoms/Vcard'))
 
 const query = graphql`
-  query {
-    # the package.json file
+  query FooterQuery {
     portfolioJson {
       bugs
     }

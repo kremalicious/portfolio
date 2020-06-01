@@ -13,9 +13,6 @@ module.exports = {
     siteUrl: `${website}`
   },
   plugins: [
-    'gatsby-transformer-yaml',
-    'gatsby-transformer-json',
-    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -37,6 +34,9 @@ module.exports = {
         path: path.join(__dirname, 'src', 'images')
       }
     },
+    'gatsby-transformer-yaml',
+    'gatsby-transformer-json',
+    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-svgr',
       options: {
