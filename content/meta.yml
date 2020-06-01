@@ -11,6 +11,7 @@
   # Footer actions
   gpg: https://kretschmann.io/pub.gpg
   addressbook: /matthias-kretschmann.vcf
+  bugs: https://github.com/kremalicious/portfolio/issues
 
   typekitID: dtg3zui
 

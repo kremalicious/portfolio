@@ -4,7 +4,6 @@
   "version": "0.1.0",
   "homepage": "https://matthiaskretschmann.com",
   "repository": "github:kremalicious/portfolio",
-  "bugs": "https://github.com/kremalicious/portfolio/issues",
   "license": "MIT",
   "author": "Matthias Kretschmann <m@kretschmann.io>",
   "scripts": {

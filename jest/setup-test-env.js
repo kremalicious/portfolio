@@ -12,7 +12,6 @@ beforeAll(() => {
     ...meta,
     ...resume,
     photoSrc,
-    portfolioJson: { bugs: '' },
     ...projects
   }
 

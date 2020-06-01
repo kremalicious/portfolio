@@ -18,6 +18,7 @@
     },
     "gpg": "https://kretschmann.io/pub.gpg",
     "addressbook": "/matthias-kretschmann.vcf",
+    "bugs": "https://github.com/kremalicious/portfolio/issues",
     "typekitID": "dtg3zui",
     "matomoUrl": "https://analytics.kremalicious.com",
     "matomoSite": 2,
