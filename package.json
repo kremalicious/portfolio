@@ -63,7 +63,7 @@
     "@react-mock/localstorage": "^0.1.2",
     "@svgr/webpack": "^5.4.0",
     "@testing-library/jest-dom": "^5.10.1",
-    "@testing-library/react": "^10.0.6",
+    "@testing-library/react": "^10.2.1",
     "@welldone-software/why-did-you-render": "^4.2.5",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.0.1",
