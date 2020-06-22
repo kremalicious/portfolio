@@ -59,7 +59,7 @@
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/node": "^7.10.1",
-    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-env": "^7.10.3",
     "@react-mock/localstorage": "^0.1.2",
     "@svgr/webpack": "^5.4.0",
     "@testing-library/jest-dom": "^5.10.1",
