@@ -37,7 +37,7 @@
     "gatsby-plugin-webpack-size": "^1.0.0",
     "gatsby-source-filesystem": "^2.3.12",
     "gatsby-transformer-json": "^2.4.5",
-    "gatsby-transformer-sharp": "^2.5.4",
+    "gatsby-transformer-sharp": "^2.5.7",
     "gatsby-transformer-yaml": "^2.4.3",
     "giphy-js-sdk-core": "^1.0.6",
     "graphql": "^14.6.0",
