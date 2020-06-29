@@ -25,7 +25,7 @@
     "file-saver": "^2.0.2",
     "gatsby": "^2.23.7",
     "gatsby-image": "^2.4.7",
-    "gatsby-plugin-manifest": "^2.4.12",
+    "gatsby-plugin-manifest": "^2.4.14",
     "gatsby-plugin-matomo": "^0.8.3",
     "gatsby-plugin-offline": "^3.2.11",
     "gatsby-plugin-postcss": "^2.3.3",
