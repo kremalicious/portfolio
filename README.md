@@ -219,7 +219,7 @@ SLUG-03.png
 
 Automatic deployments are triggered upon successful tests & builds via GitHub Actions:
 
-- push to `master` initiates a live deployment
+- push to `main` initiates a live deployment
 - any Pull Request, and subsequent pushes to it, initiates a beta deployment
 
 The deploy command simply calls the [`scripts/deploy.sh`](scripts/deploy.sh) script, syncing the contents of the `public/` folder to S3:

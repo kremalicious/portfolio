@@ -61,16 +61,16 @@ function ping {
 }
 
 ##
-## check for pull request against master
+## check for pull request against main
 ##
 if [ "$GITHUB_EVENT_NAME" == "pull_request" ]; then
 
   s3sync $AWS_S3_BUCKET_BETA
 
 ##
-## check for master push which is no pull request
+## check for main push which is no pull request
 ##
-elif [ "$GITHUB_REF" == "refs/heads/master" ]; then
+elif [ "$GITHUB_REF" == "refs/heads/main" ]; then
 
   s3sync $AWS_S3_BUCKET
 

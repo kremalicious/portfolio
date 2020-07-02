@@ -68,14 +68,14 @@ jobs:
           GATSBY_GITHUB_TOKEN: ${{ secrets.GATSBY_GITHUB_TOKEN }}
 
       - uses: actions/upload-artifact@v1
-        if: github.event_name == 'pull_request' || github.ref == 'refs/heads/master'
+        if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main'
         with:
           name: public
           path: public
 
   deploy:
     needs: build
-    if: success() && (github.event_name == 'pull_request' || github.ref == 'refs/heads/master')
+    if: success() && (github.event_name == 'pull_request' || github.ref == 'refs/heads/main')
     runs-on: ubuntu-latest
 
     steps:
@@ -105,7 +105,7 @@ jobs:
           temporaryPublicStorage: 'true'
 
       - name: Audit Live using Lighthouse
-        if: success() && github.ref == 'refs/heads/master'
+        if: success() && github.ref == 'refs/heads/main'
         uses: treosh/lighthouse-ci-action@v2
         with:
           urls: 'https://matthiaskretschmann.com'
