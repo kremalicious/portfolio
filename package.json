@@ -62,7 +62,7 @@
     "@babel/preset-env": "^7.10.4",
     "@svgr/webpack": "^5.4.0",
     "@testing-library/jest-dom": "^5.11.0",
-    "@testing-library/react": "^10.4.3",
+    "@testing-library/react": "^10.4.4",
     "@welldone-software/why-did-you-render": "^4.2.5",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.1.0",
