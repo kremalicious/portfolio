@@ -30,12 +30,12 @@
     "gatsby-plugin-offline": "^3.2.16",
     "gatsby-plugin-postcss": "^2.3.9",
     "gatsby-plugin-react-helmet": "^3.3.9",
-    "gatsby-plugin-sharp": "^2.6.17",
+    "gatsby-plugin-sharp": "^2.6.18",
     "gatsby-plugin-sitemap": "^2.4.10",
     "gatsby-plugin-svgr": "^2.0.2",
     "gatsby-plugin-use-dark-mode": "^1.1.2",
     "gatsby-plugin-webpack-size": "^1.0.0",
-    "gatsby-source-filesystem": "^2.3.17",
+    "gatsby-source-filesystem": "^2.3.18",
     "gatsby-transformer-json": "^2.4.10",
     "gatsby-transformer-sharp": "^2.5.10",
     "gatsby-transformer-yaml": "^2.4.9",
@@ -53,8 +53,7 @@
     "remark-react": "^7.0.0",
     "shortid": "^2.2.15",
     "use-dark-mode": "^2.3.1",
-    "vcf": "^2.0.6",
-    "xstate": "4.10.0"
+    "vcf": "^2.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
@@ -62,7 +61,7 @@
     "@babel/preset-env": "^7.10.4",
     "@svgr/webpack": "^5.4.0",
     "@testing-library/jest-dom": "^5.11.0",
-    "@testing-library/react": "^10.4.3",
+    "@testing-library/react": "^10.4.4",
     "@welldone-software/why-did-you-render": "^4.2.5",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.1.0",
