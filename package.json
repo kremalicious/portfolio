@@ -36,7 +36,7 @@
     "gatsby-plugin-use-dark-mode": "^1.1.2",
     "gatsby-plugin-webpack-size": "^1.0.0",
     "gatsby-source-filesystem": "^2.3.18",
-    "gatsby-transformer-json": "^2.4.10",
+    "gatsby-transformer-json": "^2.4.11",
     "gatsby-transformer-sharp": "^2.5.10",
     "gatsby-transformer-yaml": "^2.4.9",
     "giphy-js-sdk-core": "^1.0.6",
