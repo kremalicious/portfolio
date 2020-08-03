@@ -64,7 +64,7 @@
     "@testing-library/react": "^10.4.7",
     "@welldone-software/why-did-you-render": "^4.2.7",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^26.2.1",
+    "babel-jest": "^26.2.2",
     "babel-preset-gatsby": "^0.5.4",
     "chalk": "^4.1.0",
     "eslint": "^7.5.0",
