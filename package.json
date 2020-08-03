@@ -53,7 +53,7 @@
     "remark-react": "^7.0.0",
     "shortid": "^2.2.15",
     "use-dark-mode": "^2.3.1",
-    "vcf": "^2.0.6"
+    "vcf": "^2.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
