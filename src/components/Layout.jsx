@@ -13,8 +13,8 @@ import { useMeta } from '../hooks/use-meta'
 // https://github.com/welldone-software/why-did-you-render
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line
-  const whyDidYouRender = require('@welldone-software/why-did-you-render/dist/no-classes-transpile/umd/whyDidYouRender.min.js')
-  whyDidYouRender(React)
+  const whyDidYouRender = require('@welldone-software/why-did-you-render')
+  whyDidYouRender(React, { trackAllPureComponents: true })
 }
 
 Layout.propTypes = {
