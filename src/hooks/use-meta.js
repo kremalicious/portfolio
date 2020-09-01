@@ -22,6 +22,7 @@ const query = graphql`
       matomoUrl
       matomoSite
       allowedHosts
+      bugs
     }
   }
 `
