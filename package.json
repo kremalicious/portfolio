@@ -30,7 +30,7 @@
     "gatsby-plugin-offline": "^3.2.26",
     "gatsby-plugin-postcss": "^2.3.11",
     "gatsby-plugin-react-helmet": "^3.3.10",
-    "gatsby-plugin-sharp": "^2.6.30",
+    "gatsby-plugin-sharp": "^2.6.31",
     "gatsby-plugin-sitemap": "^2.4.12",
     "gatsby-plugin-svgr": "^2.0.2",
     "gatsby-plugin-use-dark-mode": "^1.1.2",
