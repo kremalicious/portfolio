@@ -20,7 +20,7 @@
     "new": "babel-node ./scripts/new.js"
   },
   "dependencies": {
-    "@loadable/component": "^5.13.1",
+    "@loadable/component": "^5.13.2",
     "axios": "^0.20.0",
     "file-saver": "^2.0.2",
     "gatsby": "^2.24.57",
