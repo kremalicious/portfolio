@@ -8,6 +8,16 @@ const { name, website } = resume.basics
 
 require('dotenv').config()
 
+if (
+  !process.env.GATSBY_GITHUB_TOKEN ||
+  process.env.GATSBY_GITHUB_TOKEN === 'xxx'
+) {
+  throw Error(`
+      ⚠️  A GitHub token as GATSBY_GITHUB_TOKEN is required to build some parts of the blog.
+      ⚠️  Check the README https://github.com/kremalicious/portfolio#-development.
+  `)
+}
+
 module.exports = {
   siteMetadata: {
     siteUrl: `${website}`

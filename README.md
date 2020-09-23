@@ -158,6 +158,7 @@ git clone git@github.com:kremalicious/portfolio.git
 cd portfolio/
 
 # GATSBY_GITHUB_TOKEN is required for some parts
+# See https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token
 cp .env.sample .env
 vi .env
 
