@@ -28,7 +28,7 @@
     "gatsby-plugin-manifest": "^2.4.31",
     "gatsby-plugin-matomo": "^0.8.3",
     "gatsby-plugin-offline": "^3.2.28",
-    "gatsby-plugin-postcss": "^2.3.12",
+    "gatsby-plugin-postcss": "^2.3.13",
     "gatsby-plugin-react-helmet": "^3.3.11",
     "gatsby-plugin-sharp": "^2.6.35",
     "gatsby-plugin-sitemap": "^2.4.13",
