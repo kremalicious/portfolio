@@ -65,7 +65,7 @@
     "@welldone-software/why-did-you-render": "^5.0.0-alpha.4",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.3.0",
-    "babel-preset-gatsby": "^0.5.10",
+    "babel-preset-gatsby": "^0.5.12",
     "chalk": "^4.1.0",
     "eslint": "^7.10.0",
     "eslint-config-prettier": "^6.12.0",
