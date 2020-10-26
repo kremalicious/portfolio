@@ -77,7 +77,7 @@
     "eslint-plugin-testing-library": "^3.9.2",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.13",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^26.5.3",
+    "jest": "^26.6.1",
     "jest-canvas-mock": "^2.3.0",
     "js-yaml": "^3.14.0",
     "ora": "^5.1.0",
