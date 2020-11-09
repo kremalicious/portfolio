@@ -67,7 +67,7 @@
     "babel-jest": "^26.5.2",
     "babel-preset-gatsby": "^0.5.14",
     "chalk": "^4.1.0",
-    "eslint": "^7.11.0",
+    "eslint": "^7.13.0",
     "eslint-config-prettier": "^6.13.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-graphql": "^4.0.0",
