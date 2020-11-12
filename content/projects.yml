@@ -1,4 +1,4 @@
-- title: Ocean Protocol - Commons
+- title: 'Ocean Protocol - Commons'
   slug: '/commons/'
   img: 'images/commons-01.png'
   description: >
@@ -34,9 +34,9 @@
     - Jest
     - IPFS
 
-- title: Ocean Protocol
-  slug: /oceanprotocol/
-  img: images/oceanprotocol-01.png
+- title: 'Ocean Protocol'
+  slug: '/oceanprotocol/'
+  img: 'images/oceanprotocol-01.png'
   description: >
     Since 2017 I'm leading the UI design & development of Ocean Protocol, iterating on a components-based UI design system spanning all of Ocean Protocol's web properties. Additionally, I conceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.
 
