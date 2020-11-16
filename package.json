@@ -38,7 +38,7 @@
     "gatsby-source-filesystem": "^2.3.35",
     "gatsby-transformer-json": "^2.4.15",
     "gatsby-transformer-sharp": "^2.5.18",
-    "gatsby-transformer-yaml": "^2.4.14",
+    "gatsby-transformer-yaml": "^2.5.0",
     "giphy-js-sdk-core": "^1.0.6",
     "intersection-observer": "^0.11.0",
     "react": "^17.0.1",
