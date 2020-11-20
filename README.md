@@ -60,11 +60,10 @@ If you want to know how, have a look at the respective components:
 
 All displayed project content is powered by one YAML file where all the portfolio's projects are defined. The project description itself is transformed from Markdown written inside the YAML file into HTML on build time.
 
-Gatsby automatically creates pages from each item in that file utilizing the [`Project.jsx`](src/templates/Project.jsx) template.
+Gatsby automatically creates pages from each item in that file utilizing the [`{ProjectsYaml.slug}.jsx`](src/pages/{ProjectsYaml.slug}.jsx) template.
 
 - [`content/projects.yml`](content/projects.yml)
-- [`gatsby-node.js`](gatsby-node.js)
-- [`src/templates/Project.jsx`](src/templates/Project.jsx)
+- [`src/pages/{ProjectsYaml.slug}.jsx`](src/pages/{ProjectsYaml.slug}.jsx)
 
 ### 🐱 GitHub repositories
 

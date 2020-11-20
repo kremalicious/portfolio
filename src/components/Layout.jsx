@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import posed, { PoseGroup } from 'react-pose'
-import shortid from 'shortid'
 import { fadeIn } from './atoms/Transitions'
 import Typekit from './atoms/Typekit'
 import HostnameCheck from './atoms/HostnameCheck'
@@ -24,10 +23,12 @@ Layout.propTypes = {
   }).isRequired
 }
 
+const timeout = 200
+const RoutesContainer = posed.div(fadeIn)
+
 export default function Layout({ children, location }) {
   const { allowedHosts } = useMeta()
-  const timeout = 200
-  const RoutesContainer = posed.div(fadeIn)
+
   const isHomepage =
     location.pathname === '/' ||
     location.pathname === '/offline-plugin-app-shell-fallback/'
@@ -41,7 +42,7 @@ export default function Layout({ children, location }) {
 
       <PoseGroup animateOnMount={process.env.NODE_ENV !== 'test' && true}>
         <RoutesContainer
-          key={shortid.generate()}
+          key={location.pathname}
           delay={timeout}
           delayChildren={timeout}
         >
