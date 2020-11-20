@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-const path = require('path')
+// const path = require('path')
 const remark = require('remark')
 const parse = require('remark-parse')
 const html = require('remark-html')
@@ -135,36 +135,4 @@ exports.onCreateNode = ({ node, actions }) => {
       value: excerpt
     })
   }
-}
-
-//
-// Create project pages from projects.yml
-//
-exports.createPages = async ({ actions, graphql }) => {
-  const { createPage } = actions
-  const template = path.resolve('src/components/templates/Project.jsx')
-
-  const result = await graphql(`
-    {
-      allProjectsYaml {
-        edges {
-          node {
-            slug
-          }
-        }
-      }
-    }
-  `)
-
-  if (result.errors) throw result.errors
-
-  result.data.allProjectsYaml.edges.forEach(({ node }) => {
-    const { slug } = node
-
-    createPage({
-      path: slug,
-      component: template,
-      context: { slug }
-    })
-  })
 }
