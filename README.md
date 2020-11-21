@@ -15,7 +15,6 @@
 </p>
 
 - [🎉 Features](#-features)
-  - [⛵️ Lighthouse score](#️-lighthouse-score)
   - [🗂 JSON Resume](#-json-resume)
   - [💍 One data file to rule all pages](#-one-data-file-to-rule-all-pages)
   - [🐱 GitHub repositories](#-github-repositories)
@@ -41,10 +40,6 @@
 The whole [portfolio](https://matthiaskretschmann.com) is a React-based single page app built with [Gatsby v2](https://www.gatsbyjs.org).
 
 Most metadata is powered by one `resume.json` file based on [🗂 JSON Resume](#-json-resume), and one `projects.yml` file to [define the displayed projects](#-one-data-file-to-rule-all-pages).
-
-### ⛵️ Lighthouse score
-
-![Lighthouse scores](https://lighthouse.now.sh/?perf=100&pwa=100&a11y=100&bp=100&seo=100)
 
 ### 🗂 JSON Resume
 
