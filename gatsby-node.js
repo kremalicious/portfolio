@@ -91,7 +91,7 @@ exports.onCreatePage = async ({ page, actions }) => {
   // Regex for auto-attaching project images to pages based on slug.
   // Image file names follow the pattern slug-01.png.
   // Regex inspiration from https://stackoverflow.com/a/7124976
-  const imageRegex = `/${page.path.replaceAll('/', '')}+?(?=-\\d)/`
+  const imageRegex = `/${page.path.replace(/\//g, '')}+?(?=-\\d)/`
 
   deletePage(page)
   createPage({
