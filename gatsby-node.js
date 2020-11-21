@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 
-// const path = require('path')
 const remark = require('remark')
 const parse = require('remark-parse')
 const html = require('remark-html')
@@ -84,19 +83,26 @@ exports.onPreBootstrap = async () => {
 }
 
 //
-// Add repos to front page's context
+// Add pageContext
 //
 exports.onCreatePage = async ({ page, actions }) => {
-  const { createPage } = actions
+  const { createPage, deletePage } = actions
 
-  if (page.path === '/')
-    createPage({
-      ...page,
-      context: {
-        ...page.context,
-        repos
-      }
-    })
+  // Regex for auto-attaching project images to pages based on slug.
+  // Image file names follow the pattern slug-01.png.
+  // Regex inspiration from https://stackoverflow.com/a/7124976
+  const imageRegex = `/${page.path.replaceAll('/', '')}+?(?=-\\d)/`
+
+  deletePage(page)
+  createPage({
+    ...page,
+    context: {
+      ...page.context,
+      imageRegex,
+      // Add repos only to front page's context
+      ...(page.path === '/' && { repos })
+    }
+  })
 }
 
 exports.onCreateNode = ({ node, actions }) => {

@@ -82,7 +82,7 @@ export default class Project extends PureComponent {
 }
 
 export const projectQuery = graphql`
-  query($slug: String!) {
+  query($slug: String!, $imageRegex: String!) {
     projectsYaml(slug: { eq: $slug }) {
       title
       slug
@@ -106,7 +106,7 @@ export const projectQuery = graphql`
     }
 
     projectImages: allImageSharp(
-      filter: { fluid: { originalName: { regex: $slug } } }
+      filter: { fluid: { originalName: { regex: $imageRegex } } }
       sort: { fields: [fluid___originalName], order: ASC }
     ) {
       edges {
