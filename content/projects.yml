@@ -1,26 +1,53 @@
-- title: 'Ocean Protocol - Commons'
-  slug: '/commons/'
-  img: 'images/commons-01.png'
+- title: 'Ocean Protocol - IPFS Integration'
+  slug: '/oceanprotocol-ipfs/'
+  img: 'images/oceanprotocol-ipfs-01.png'
   description: >
-    From 2018–⁠2019 I was leading the design and development of the Commons marketplace, a Web3 data marketplace to explore, download, and publish open data sets registered in the [Ocean Protocol](/oceanprotocol) network.
+    In 2019 I was leading the integration of IPFS into the Ocean Protocol stack, from the core to the libraries, up to the UI in multiple touchpoints. 
 
-    As the main frontfacing UI of Ocean Protocol, it serves as a product and showcase bringing together the complete Ocean Protocol stack in a simple interface. Additionally, the project was created with developers in mind, making Commons the most complete boilerplate for creating dApps on top of Ocean Protocol.
+    For making IPFS as decentralized file storage solution as seemless as possible to use within Ocean Protocol, a public IPFS node was created with a simple user-facing UI and API. The integration was completed by allowing users to add their files to IPFS directly in the [Commons](/oceanprotocol-commons/) publish flow.
   links:
-    - title: commons.oceanprotocol.com
-      icon: Compass
-      url: https://commons.oceanprotocol.com
-    - title: '@oceanprotocol/commons'
-      icon: GitHub
-      url: https://github.com/oceanprotocol/commons
     - title: Ocean Protocol and IPFS, Sitting In The Merkle Tree
       icon: FileText
       url: https://kremalicious.com/ocean-protocol-and-ipfs-sitting-in-the-merkle-tree
+    - title: ipfs.oceanprotocol.com
+      icon: Compass
+      url: https://ipfs.oceanprotocol.com
+    - title: '@oceanprotocol/ipfs'
+      icon: GitHub
+      url: https://github.com/oceanprotocol/ipfs
+  techstack:
+    - HTML
+    - CSS
+    - TypeScript
+    - React
+    - Next.js
+    - Docker
+    - Kubernetes
+    - Jest
+    - IPFS
+
+- title: 'Ocean Protocol - Commons'
+  slug: '/oceanprotocol-commons/'
+  img: 'images/oceanprotocol-commons-01.png'
+  description: >
+    From 2018–⁠2019 I was leading the design and development of the Commons marketplace, a Web3 data marketplace to explore, download, and publish open data sets registered in the [Ocean Protocol](/oceanprotocol) network.
+
+    As the main front-facing UI of Ocean Protocol v1 & v2, it served as a product and showcase bringing together the complete Ocean Protocol stack in a simple interface. Additionally, the project was created with developers in mind, making Commons the most complete boilerplate for creating dApps on top of Ocean Protocol.
+
+    With the release of Ocean Protocol v3, Commons has been superseded by [Ocean Market](/oceanprotocol-market/).
+  links:
     - title: The Commons Marketplace in Pacific Network
       icon: FileText
       url: https://kremalicious.com/the-commons-marketplace-in-pacific-network
     - title: The Commons Marketplace
       icon: FileText
       url: https://kremalicious.com/the-commons-marketplace
+    - title: commons.oceanprotocol.com
+      icon: Compass
+      url: https://commons.oceanprotocol.com
+    - title: '@oceanprotocol/commons'
+      icon: GitHub
+      url: https://github.com/oceanprotocol/commons
   techstack:
     - HTML
     - SCSS
@@ -34,15 +61,18 @@
     - Jest
     - IPFS
 
-- title: 'Ocean Protocol'
-  slug: '/oceanprotocol/'
-  img: 'images/oceanprotocol-01.png'
+- title: 'Ocean Protocol v1'
+  slug: '/oceanprotocol-v1/'
+  img: 'images/oceanprotocol-v1-01.png'
   description: >
     Since 2017 I'm leading the UI design & development of Ocean Protocol, iterating on a components-based UI design system spanning all of Ocean Protocol's web properties. Additionally, I conceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.
 
-    Most web interfaces are single-page JavaScript applications built with React, pulling their data from JSON files and various micro services. All design & development is embedded in continuous deployment processes via GitHub, Travis, Kubernetes, and Now.
+    Most web interfaces are single-page JavaScript applications built with React, pulling their data from multiple sources. All design & development is embedded in continuous deployment processes via GitHub, Travis, Kubernetes, and Vercel.
+
+    In 2020 I was leading the refresh of Ocean Protocol's visual identity for the release of v3 and the [Ocean Market](/oceanprotocol-market/).
 
     Initial website in collaboration with [Balance](https://balance.io/). Key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
+
   links:
     - title: oceanprotocol.com
       icon: Compass
@@ -52,18 +82,13 @@
     - title: docs.oceanprotocol.com
       icon: Compass
       url: https://docs.oceanprotocol.com
-    - title: ipfs.oceanprotocol.com
-      icon: Compass
-      url: https://ipfs.oceanprotocol.com
     - title: '@oceanprotocol/art'
       icon: GitHub
       url: https://github.com/oceanprotocol/art
     - title: '@oceanprotocol/docs'
       icon: GitHub
       url: https://github.com/oceanprotocol/docs
-    - title: '@oceanprotocol/ipfs'
-      icon: GitHub
-      url: https://github.com/oceanprotocol/ipfs
+
   techstack:
     - Sketch
     - Affinity Designer
