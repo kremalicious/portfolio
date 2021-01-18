@@ -35,7 +35,7 @@
     "gatsby-plugin-svgr": "^2.0.2",
     "gatsby-plugin-use-dark-mode": "^1.2.0",
     "gatsby-plugin-webpack-size": "^1.0.0",
-    "gatsby-source-filesystem": "^2.6.0",
+    "gatsby-source-filesystem": "^2.9.1",
     "gatsby-transformer-json": "^2.6.0",
     "gatsby-transformer-sharp": "^2.7.0",
     "gatsby-transformer-yaml": "^2.6.0",
