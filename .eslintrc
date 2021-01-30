@@ -3,7 +3,6 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:prettier/recommended",
     "plugin:testing-library/recommended",
     "plugin:testing-library/react"
   ],
