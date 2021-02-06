@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import LogoUnit from './LogoUnit'
-import data from '../../../jest/__fixtures__/meta.json'
+import data from '../../../tests/__fixtures__/meta.json'
 
 describe('LogoUnit', () => {
   it('renders correctly from data file values', () => {

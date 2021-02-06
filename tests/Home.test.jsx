@@ -1,8 +1,8 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import Home from '../index'
-import projects from '../../../jest/__fixtures__/projects.json'
-import projectImageFiles from '../../../jest/__fixtures__/projectImageFiles.json'
+import Home from '../src/pages/index'
+import projects from './__fixtures__/projects.json'
+import projectImageFiles from './__fixtures__/projectImageFiles.json'
 
 describe('Home', () => {
   const data = {

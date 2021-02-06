@@ -189,7 +189,7 @@ To run all tests, including all linting tests:
 npm test
 ```
 
-All test files live beside the respective component. Testing setup, fixtures, and mocks can be found in `./jest.config.js` and `./jest` folder.
+Most test files live beside the respective component. Testing setup, fixtures, and mocks can be found in the `./tests/` folder.
 
 ### 🎈 Add a new project
 

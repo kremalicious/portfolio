@@ -1,8 +1,8 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { createHistory, createMemorySource } from '@reach/router'
-import Project from '../{ProjectsYaml.slug}'
-import project from '../../../jest/__fixtures__/project.json'
+import Project from '../src/pages/{ProjectsYaml.slug}'
+import project from './__fixtures__/project.json'
 
 describe('Project', () => {
   const history = createHistory(createMemorySource('/oceanprotocol'))

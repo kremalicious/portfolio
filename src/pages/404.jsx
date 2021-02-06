@@ -1,64 +1,60 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
-import giphyAPI from 'giphy-js-sdk-core'
+import { GiphyFetch } from '@giphy/js-fetch-api'
 import SEO from '../components/atoms/SEO'
 import Button from '../components/atoms/Button'
 import styles from './404.module.css'
 
 // Famous last words:
 // "It's just the 404 page so why not expose the dev API key"
-const giphyClient = giphyAPI('LfXRwufRyt6PK414G2kKJBv3L8NdnxyR')
-const tag = 'fail-cat'
+const giphyClient = new GiphyFetch('LfXRwufRyt6PK414G2kKJBv3L8NdnxyR')
+const tag = 'cat'
 
-export default class NotFound extends Component {
-  state = { gif: '' }
-
-  static propTypes = {
-    location: PropTypes.object
+async function getRandomGif() {
+  try {
+    let response = await giphyClient.random({ tag })
+    const gif = response.data.images.original.mp4
+    return gif
+  } catch (error) {
+    console.error(error.message)
   }
+}
 
-  componentDidMount() {
-    this.getRandomGif()
-  }
+export default function NotFound() {
+  const [gif, setGif] = useState('')
 
-  async getRandomGif() {
-    try {
-      let response = await giphyClient.random('gifs', { tag })
-      const gif = response.data.images.original.mp4
-      this.setState({ gif })
-    } catch (error) {
-      return error
-    }
-  }
-
-  handleClick = (e) => {
+  async function handleClick(e) {
     e.preventDefault()
-    this.getRandomGif()
+    const gif = await getRandomGif()
+    setGif(gif)
   }
 
-  render() {
-    return (
-      <>
-        <SEO />
+  useEffect(() => {
+    async function init() {
+      const gif = await getRandomGif()
+      setGif(gif)
+    }
+    init()
+  }, [])
 
-        <article className={styles.content}>
-          <h1>Shenanigans, page not found.</h1>
-          <p>
-            You might want to check the url, or{' '}
-            <Link to={'/'}>go back to the homepage</Link>. Or just check out
-            some {tag} gifs, entirely your choice.
-          </p>
+  return (
+    <>
+      <SEO />
 
-          <video className="gif" src={this.state.gif} autoPlay loop />
+      <article className={styles.content}>
+        <h1>Shenanigans, page not found.</h1>
+        <p>
+          You might want to check the url, or{' '}
+          <Link to={'/'}>go back to the homepage</Link>. Or just check out some{' '}
+          {tag} gifs, entirely your choice.
+        </p>
 
-          <div>
-            <Button
-              onClick={this.handleClick}
-            >{`Get another '${tag}' gif`}</Button>
-          </div>
-        </article>
-      </>
-    )
-  }
+        <video className="gif" src={gif} autoPlay loop />
+
+        <div>
+          <Button onClick={handleClick}>{`Get another '${tag}' gif`}</Button>
+        </div>
+      </article>
+    </>
+  )
 }

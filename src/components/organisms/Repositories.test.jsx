@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import Repositories from './Repositories'
-import repos from '../../../jest/__fixtures__/repos.json'
+import repos from '../../../tests/__fixtures__/repos.json'
 
 describe('Repositories', () => {
   it('renders correctly', () => {
