@@ -25,7 +25,8 @@ export default function NotFound() {
 
   async function handleClick(e) {
     e.preventDefault()
-    await getRandomGif()
+    const gif = await getRandomGif()
+    setGif(gif)
   }
 
   useEffect(() => {
