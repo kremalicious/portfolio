@@ -10,18 +10,18 @@ import styles from './404.module.css'
 const giphyClient = new GiphyFetch('LfXRwufRyt6PK414G2kKJBv3L8NdnxyR')
 const tag = 'cat'
 
+async function getRandomGif() {
+  try {
+    let response = await giphyClient.random({ tag })
+    const gif = response.data.images.original.mp4
+    return gif
+  } catch (error) {
+    console.error(error.message)
+  }
+}
+
 export default function NotFound() {
   const [gif, setGif] = useState('')
-
-  async function getRandomGif() {
-    try {
-      let response = await giphyClient.random({ tag })
-      const gif = response.data.images.original.mp4
-      setGif(gif)
-    } catch (error) {
-      console.error(error.message)
-    }
-  }
 
   async function handleClick(e) {
     e.preventDefault()
@@ -29,7 +29,11 @@ export default function NotFound() {
   }
 
   useEffect(() => {
-    getRandomGif()
+    async function init() {
+      const gif = await getRandomGif()
+      setGif(gif)
+    }
+    init()
   }, [])
 
   return (
