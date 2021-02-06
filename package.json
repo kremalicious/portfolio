@@ -16,7 +16,7 @@
     "format": "prettier --write 'src/**/*.{js,jsx,css,scss}'",
     "test": "npm run lint && jest --coverage --silent",
     "test:watch": "npm run lint && jest --coverage --watch",
-    "deploy": "./scripts/deploy.sh",
+    "deploy:s3": "./scripts/deploy-s3.sh",
     "new": "babel-node ./scripts/new.js"
   },
   "dependencies": {

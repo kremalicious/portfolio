@@ -5,9 +5,8 @@
 # AWS_SECRET_ACCESS_KEY
 # AWS_DEFAULT_REGION
 AWS_S3_BUCKET="matthiaskretschmann.com"
-AWS_S3_BUCKET_BETA="beta.matthiaskretschmann.com"
 SITEMAP_URL="https%3A%2F%2Fmatthiaskretschmann.com%2Fsitemap.xml"
-#
+
 set -e;
 
 function s3sync {
@@ -42,16 +41,6 @@ function s3sync {
     --acl public-read
 }
 
-# purge full Cloudflare cache
-# https://api.cloudflare.com/#zone-purge-all-files
-function purge {
-  curl -X POST "https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE/purge_cache" \
-    -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
-    -H "X-Auth-Key: $CLOUDFLARE_KEY" \
-    -H "Content-Type: application/json" \
-    --data '{"purge_everything":true}'
-}
-
 # ping search engines
 # returns: HTTP_STATUSCODE URL
 function ping {
@@ -60,34 +49,7 @@ function ping {
     "http://www.bing.com/webmaster/ping.aspx?siteMap=$SITEMAP_URL" -o /dev/null
 }
 
-##
-## check for pull request against main
-##
-if [ "$GITHUB_EVENT_NAME" == "pull_request" ]; then
+# start deployment
+s3sync $AWS_S3_BUCKET
 
-  s3sync $AWS_S3_BUCKET_BETA
-
-##
-## check for main push which is no pull request
-##
-elif [ "$GITHUB_REF" == "refs/heads/main" ]; then
-
-  s3sync $AWS_S3_BUCKET
-
-  # purge
-
-  ping
-
-  echo "---------------------------------------------"
-  echo "         ✓ done deployment "
-  echo "---------------------------------------------"
-
-  exit;
-
-else
-
-  echo "---------------------------------------------"
-  echo "          nothing to deploy "
-  echo "---------------------------------------------"
-
-fi
+ping

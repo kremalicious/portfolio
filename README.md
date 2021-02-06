@@ -212,25 +212,19 @@ SLUG-03.png
 
 ## 🚚 Deployment
 
-Automatic deployments are triggered upon successful tests & builds via GitHub Actions:
+Every branch or Pull Request is automatically deployed by [Vercel](https://vercel.com) with their GitHub integration, where the `main` branch is automatically aliased to `matthiaskretschmann.com`. A link to a preview deployment will appear under each Pull Request.
 
-- push to `main` initiates a live deployment
-- any Pull Request, and subsequent pushes to it, initiates a beta deployment
-
-The deploy command simply calls the [`scripts/deploy.sh`](scripts/deploy.sh) script, syncing the contents of the `public/` folder to S3:
+A backup deployment is also happening to a S3 bucket, triggered by pushes to `main` and executed via GitHub Actions. The deploy command simply calls the [`scripts/deploy-s3.sh`](scripts/deploy-s3.sh) script, syncing the contents of the `public/` folder to S3:
 
 ```bash
-npm run deploy
+npm run deploy:s3
 ```
 
-Upon live deployment, deploy script also purges the Cloudflare cache, and pings search engines. GitHub requires the following environment variables to be setup for successful deployments in the repository secrets:
+Upon live deployment, deploy script also pings search engines. GitHub requires the following environment variables to be setup for successful deployments in the repository secrets:
 
 - `AWS_ACCESS_KEY_ID`
 - `AWS_SECRET_ACCESS_KEY`
 - `AWS_DEFAULT_REGION`
-- `CLOUDFLARE_EMAIL`
-- `CLOUDFLARE_ZONE`
-- `CLOUDFLARE_KEY`
 
 ## 🏛 Licenses
 
