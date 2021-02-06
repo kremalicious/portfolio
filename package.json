@@ -14,8 +14,8 @@
     "lint:css": "stylelint ./src/**/*.{css,scss}",
     "lint": "npm run lint:js && npm run lint:css",
     "format": "prettier --write 'src/**/*.{js,jsx,css,scss}'",
-    "test": "npm run lint && jest --coverage --silent -c tests/jest.config.js",
-    "test:watch": "npm run lint && jest --coverage --watch -c tests/jest.config.js",
+    "test": "NODE_ENV=test npm run lint && jest --coverage --silent -c tests/jest.config.js",
+    "test:watch": "NODE_ENV=test npm run lint && jest --coverage --watch -c tests/jest.config.js",
     "deploy:s3": "./scripts/deploy-s3.sh",
     "new": "babel-node ./scripts/new.js"
   },
