@@ -1,8 +1,8 @@
 import React from 'react'
 import { render, fireEvent, waitForElement } from '@testing-library/react'
 import Vcard, { constructVcard, toDataURL, init } from './Vcard'
-import meta from '../../../jest/__fixtures__/meta.json'
-import resume from '../../../jest/__fixtures__/resume.json'
+import meta from '../../../tests/__fixtures__/meta.json'
+import resume from '../../../tests/__fixtures__/resume.json'
 
 const metaMock = {
   ...meta.metaYaml,
