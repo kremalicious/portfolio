@@ -58,7 +58,7 @@
     "@babel/core": "^7.12.13",
     "@babel/eslint-parser": "^7.12.13",
     "@babel/node": "^7.12.13",
-    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-env": "^7.12.16",
     "@loadable/component": "^5.14.1",
     "@svgr/webpack": "^5.5.0",
     "@testing-library/jest-dom": "^5.11.9",
