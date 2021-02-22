@@ -56,7 +56,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
-    "@babel/eslint-parser": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.17",
     "@babel/node": "^7.12.16",
     "@babel/preset-env": "^7.12.16",
     "@loadable/component": "^5.14.1",
