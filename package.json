@@ -23,7 +23,7 @@
     "@giphy/js-fetch-api": "^2.1.0",
     "axios": "^0.21.1",
     "file-saver": "^2.0.5",
-    "gatsby": "^2.32.3",
+    "gatsby": "^2.32.4",
     "gatsby-image": "^2.11.0",
     "gatsby-plugin-manifest": "^2.12.0",
     "gatsby-plugin-matomo": "^0.9.0",
