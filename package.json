@@ -57,7 +57,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.13.4",
-    "@babel/node": "^7.12.16",
+    "@babel/node": "^7.13.0",
     "@babel/preset-env": "^7.12.17",
     "@loadable/component": "^5.14.1",
     "@svgr/webpack": "^5.5.0",
