@@ -82,7 +82,7 @@
     "postcss-preset-env": "^6.7.0",
     "prepend": "^1.0.2",
     "prettier": "^2.2.1",
-    "slugify": "^1.4.6",
+    "slugify": "^1.4.7",
     "stylelint": "^13.11.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-prettier": "^1.1.2"
