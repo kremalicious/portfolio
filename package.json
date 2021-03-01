@@ -55,7 +55,7 @@
     "vcf": "^2.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.1",
+    "@babel/core": "^7.13.8",
     "@babel/eslint-parser": "^7.13.4",
     "@babel/node": "^7.13.0",
     "@babel/preset-env": "^7.12.17",
