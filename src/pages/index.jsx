@@ -4,7 +4,12 @@ import { Link, graphql } from 'gatsby'
 import shortid from 'shortid'
 import SEO from '../components/atoms/SEO'
 import ProjectImage from '../components/atoms/ProjectImage'
-import styles from './index.module.css'
+import {
+  project as styleProject,
+  projects as styleProjects,
+  title as styleTitle,
+  imageCount as styleImageCount
+} from './index.module.css'
 import Repositories from '../components/organisms/Repositories'
 import Icon from '../components/atoms/Icon'
 
@@ -33,14 +38,14 @@ function Project({ node, images }) {
   const imageCount = getImageCount(images, slug)
 
   return (
-    <article className={styles.project} key={slug}>
+    <article className={styleProject} key={slug}>
       <Link to={slug}>
-        <h1 className={styles.title}>{title}</h1>
+        <h1 className={styleTitle}>{title}</h1>
         <ProjectImage fluid={img.childImageSharp.fluid} alt={title} />
 
         {imageCount > 1 && (
           <small
-            className={styles.imageCount}
+            className={styleImageCount}
             title={`${imageCount} project images`}
           >
             <Icon name="Image" /> {imageCount}
@@ -64,7 +69,7 @@ function Home({ data, pageContext }) {
     <>
       <SEO />
 
-      <div className={styles.projects}>
+      <div className={styleProjects}>
         {projects.map(({ node }) => (
           <Project key={shortid.generate()} node={node} images={images} />
         ))}

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import shortid from 'shortid'
 import Icon from '../../atoms/Icon'
 import ResumeItem, { ResumeItemContentProps } from './ResumeItem'
-import styles from './ResumeSection.module.css'
+import { subTitle } from './ResumeSection.module.css'
 
 export default function ResumeSection({ section }) {
   return (
     <>
-      <h3 className={styles.subTitle}>
+      <h3 className={subTitle}>
         <Icon name={section.icon} />
         {section.name}
       </h3>

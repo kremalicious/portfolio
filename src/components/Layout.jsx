@@ -7,7 +7,7 @@ import HostnameCheck from './atoms/HostnameCheck'
 import ThemeSwitch from './molecules/ThemeSwitch'
 import Header from './organisms/Header'
 import Footer from './organisms/Footer'
-import styles from './Layout.module.css'
+import { screen } from './Layout.module.css'
 import { useMeta } from '../hooks/use-meta'
 
 // https://github.com/welldone-software/why-did-you-render
@@ -49,7 +49,7 @@ export default function Layout({ children, location }) {
           delayChildren={timeout}
         >
           <Header minimal={!isHomepage} hide={isResume} />
-          <main className={styles.screen}>{children}</main>
+          <main className={screen}>{children}</main>
         </RoutesContainer>
       </PoseGroup>
 

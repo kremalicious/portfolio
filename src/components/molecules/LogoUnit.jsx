@@ -4,7 +4,13 @@ import { Link } from 'gatsby'
 import posed from 'react-pose'
 import { moveInBottom } from '../atoms/Transitions'
 import { ReactComponent as Logo } from '../../images/logo.svg'
-import styles from './LogoUnit.module.css'
+import {
+  minimal as styleMinimal,
+  logounit,
+  logo,
+  title,
+  description
+} from './LogoUnit.module.css'
 import { useResume } from '../../hooks/use-resume'
 
 LogoUnit.propTypes = {
@@ -18,12 +24,10 @@ function LogoUnit({ minimal }) {
 
   return (
     <Animation>
-      <Link className={minimal ? styles.minimal : styles.logounit} to={'/'}>
-        <Logo className={styles.logo} />
-        <h1 className={`p-name ${styles.title}`}>
-          {basics.name.toLowerCase()}
-        </h1>
-        <p className={`p-job-title ${styles.description}`}>
+      <Link className={minimal ? styleMinimal : logounit} to={'/'}>
+        <Logo className={logo} />
+        <h1 className={`p-name ${title}`}>{basics.name.toLowerCase()}</h1>
+        <p className={`p-job-title ${description}`}>
           {basics.label.toLowerCase()}
         </p>
       </Link>

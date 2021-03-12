@@ -3,24 +3,24 @@ import PropTypes from 'prop-types'
 import loadable from '@loadable/component'
 import LogoUnit from '../molecules/LogoUnit'
 import Networks from '../molecules/Networks'
-import styles from './Footer.module.css'
+import { footer, actions, copyright } from './Footer.module.css'
 import { useMeta } from '../../hooks/use-meta'
 
 const LazyVcard = loadable(() => import('../atoms/Vcard'))
 
 const FooterMarkup = ({ meta, year }) => (
-  <footer className={`h-card ${styles.footer}`}>
+  <footer className={`h-card ${footer}`}>
     <LogoUnit minimal />
     <Networks small />
 
-    <p className={styles.actions}>
+    <p className={actions}>
       <LazyVcard />
       <a className="u-key" href={meta.gpg}>
         PGP/GPG key
       </a>
       <a href={meta.bugs}>Found a bug?</a>
     </p>
-    <p className={styles.copyright}>
+    <p className={copyright}>
       <small>
         &copy; {year}{' '}
         <a className="u-url" href={meta.url}>

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
-import styles from './HostnameCheck.module.css'
+import { hostnameInfo } from './HostnameCheck.module.css'
 
 export default class HostnameCheck extends PureComponent {
   static propTypes = {
@@ -33,7 +33,7 @@ export default class HostnameCheck extends PureComponent {
         <Helmet>
           <meta name="robots" content="noindex,nofollow" />
         </Helmet>
-        <aside className={styles.hostnameInfo}>
+        <aside className={hostnameInfo}>
           <p>{`Hi there 👋. Please note that only the code and documentation of this
           site are open source. But my logo and the combination of typography,
           colors, and layout making up my brand identity are not. Don't just

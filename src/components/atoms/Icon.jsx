@@ -25,7 +25,7 @@ import {
   Info,
   Dribbble
 } from 'react-feather'
-import styles from './Icon.module.css'
+import { icon } from './Icon.module.css'
 
 const Icon = memo(({ name, ...props }) => {
   const components = {
@@ -62,7 +62,7 @@ const Icon = memo(({ name, ...props }) => {
   // const IconComp = Feather[name]
   if (!IconMapped) return null
 
-  return <IconMapped className={styles.icon} {...props} />
+  return <IconMapped className={icon} {...props} />
 })
 
 Icon.displayName = 'Icon'

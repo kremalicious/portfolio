@@ -3,12 +3,18 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import useDarkMode from 'use-dark-mode'
 import Icon from '../atoms/Icon'
-import styles from './ThemeSwitch.module.css'
+import {
+  checkboxContainer,
+  checkboxFake,
+  themeSwitch,
+  checkbox,
+  label
+} from './ThemeSwitch.module.css'
 
 const ThemeToggle = memo(({ dark }) => (
-  <span id="toggle" className={styles.checkboxContainer} aria-live="assertive">
+  <span id="toggle" className={checkboxContainer} aria-live="assertive">
     <Icon name="Sun" className={!dark ? null : 'active'} />
-    <span className={styles.checkboxFake} />
+    <span className={checkboxFake} />
     <Icon name="Moon" className={dark ? 'active' : null} />
   </span>
 ))
@@ -69,9 +75,9 @@ function ThemeSwitch() {
   return (
     <>
       <HeadItems themeColor={themeColor} bodyClass={bodyClass} />
-      <aside className={styles.themeSwitch}>
-        <label className={styles.checkbox}>
-          <span className={styles.label}>Toggle Night Mode</span>
+      <aside className={themeSwitch}>
+        <label className={checkbox}>
+          <span className={label}>Toggle Night Mode</span>
           <ThemeToggleInput dark={value} toggleDark={toggle} />
           <ThemeToggle dark={value} />
         </label>

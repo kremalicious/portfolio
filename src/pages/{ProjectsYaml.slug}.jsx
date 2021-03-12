@@ -7,7 +7,12 @@ import ProjectTechstack from '../components/molecules/ProjectTechstack'
 import ProjectLinks from '../components/molecules/ProjectLinks'
 import ProjectNav from '../components/molecules/ProjectNav'
 import SEO from '../components/atoms/SEO'
-import styles from './{ProjectsYaml.slug}.module.css'
+import {
+  meta,
+  imageWrap,
+  headerTitle,
+  description
+} from './{ProjectsYaml.slug}.module.css'
 
 class ProjectMeta extends PureComponent {
   static propTypes = {
@@ -19,7 +24,7 @@ class ProjectMeta extends PureComponent {
     const { links, techstack } = this.props
 
     return (
-      <footer className={styles.meta}>
+      <footer className={meta}>
         {!!links && <ProjectLinks links={links} />}
         {!!techstack && <ProjectTechstack techstack={techstack} />}
       </footer>
@@ -37,7 +42,7 @@ class ProjectImages extends PureComponent {
     return (
       <FullWidth>
         {this.props.projectImages.map(({ node }) => (
-          <div className={styles.imageWrap} key={node.id}>
+          <div className={imageWrap} key={node.id}>
             <ProjectImage fluid={node.fluid} alt={this.props.title} />
           </div>
         ))}
@@ -65,10 +70,10 @@ export default class Project extends PureComponent {
 
         <article>
           <header>
-            <h1 className={styles.title}>{title}</h1>
+            <h1 className={headerTitle}>{title}</h1>
           </header>
           <div
-            className={styles.description}
+            className={description}
             dangerouslySetInnerHTML={{ __html: descriptionHtml }}
           />
           <ProjectImages projectImages={projectImages} title={title} />

@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './ProjectTechstack.module.css'
+import { projectTechstack, title } from './ProjectTechstack.module.css'
 
 const ProjectTechstack = ({ techstack }) => (
-  <div className={styles.projectTechstack}>
-    <h3 className={styles.title}>
+  <div className={projectTechstack}>
+    <h3 className={title}>
       Tools & Technologies <span>The tech stack I was involved with.</span>
     </h3>
     <ul>

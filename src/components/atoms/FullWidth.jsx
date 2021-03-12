@@ -1,10 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './FullWidth.module.css'
+import { fullWidth } from './FullWidth.module.css'
 
-const FullWidth = ({ children }) => (
-  <div className={styles.fullWidth}>{children}</div>
-)
+const FullWidth = ({ children }) => <div className={fullWidth}>{children}</div>
 
 FullWidth.propTypes = {
   children: PropTypes.node

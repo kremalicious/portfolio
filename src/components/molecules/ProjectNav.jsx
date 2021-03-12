@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import shortid from 'shortid'
 import ProjectImage from '../atoms/ProjectImage'
-import styles from './ProjectNav.module.css'
+import { item, link, title, projectNav } from './ProjectNav.module.css'
 
 const query = graphql`
   query {
@@ -26,14 +26,10 @@ const query = graphql`
 `
 
 const Project = ({ node, refCurrentItem }) => (
-  <div className={styles.item} ref={refCurrentItem}>
-    <Link className={styles.link} to={node.slug}>
-      <ProjectImage
-        className={styles.image}
-        fluid={node.img.childImageSharp.fluid}
-        alt={node.title}
-      />
-      <h1 className={styles.title}>{node.title}</h1>
+  <div className={item} ref={refCurrentItem}>
+    <Link className={link} to={node.slug}>
+      <ProjectImage fluid={node.img.childImageSharp.fluid} alt={node.title} />
+      <h1 className={title}>{node.title}</h1>
     </Link>
   </div>
 )
@@ -88,7 +84,7 @@ export default class ProjectNav extends PureComponent {
           const projects = data.allProjectsYaml.edges
 
           return (
-            <nav className={styles.projectNav} ref={this.scrollContainer}>
+            <nav className={projectNav} ref={this.scrollContainer}>
               {projects.map(({ node }) => {
                 const isCurrent = node.slug === currentSlug
 

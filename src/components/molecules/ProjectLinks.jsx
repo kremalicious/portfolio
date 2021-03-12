@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Button from '../atoms/Button'
 import Icon from '../atoms/Icon'
-import styles from './ProjectLinks.module.css'
+import { projectLinks, title } from './ProjectLinks.module.css'
 
 ProjectLinks.propTypes = {
   links: PropTypes.array
@@ -10,8 +10,8 @@ ProjectLinks.propTypes = {
 
 export default function ProjectLinks({ links }) {
   return (
-    <div className={styles.projectLinks}>
-      <h3 className={styles.title}>
+    <div className={projectLinks}>
+      <h3 className={title}>
         Links <span>Learn more on the interwebz.</span>
       </h3>
 
