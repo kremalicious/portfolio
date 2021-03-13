@@ -39,7 +39,7 @@ export default function useDarkMode() {
   }, [])
 
   useEffect(() => {
-    if (!isClient) return
+    if (!isClient || process.env.NODE_ENV === 'test') return
 
     const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
