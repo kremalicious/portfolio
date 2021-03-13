@@ -1,10 +1,15 @@
-import React, { memo } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import shortid from 'shortid'
 import SEO from '../components/atoms/SEO'
 import ProjectImage from '../components/atoms/ProjectImage'
-import styles from './index.module.css'
+import { grid } from '../components/Layout.module.css'
+import {
+  project as styleProject,
+  title as styleTitle,
+  imageCount as styleImageCount
+} from './index.module.css'
 import Repositories from '../components/organisms/Repositories'
 import Icon from '../components/atoms/Icon'
 
@@ -33,21 +38,19 @@ function Project({ node, images }) {
   const imageCount = getImageCount(images, slug)
 
   return (
-    <article className={styles.project} key={slug}>
-      <Link to={slug}>
-        <h1 className={styles.title}>{title}</h1>
-        <ProjectImage fluid={img.childImageSharp.fluid} alt={title} />
+    <Link to={slug} className={styleProject} key={slug}>
+      <h1 className={styleTitle}>{title}</h1>
+      <ProjectImage image={img.childImageSharp.gatsbyImageData} alt={title} />
 
-        {imageCount > 1 && (
-          <small
-            className={styles.imageCount}
-            title={`${imageCount} project images`}
-          >
-            <Icon name="Image" /> {imageCount}
-          </small>
-        )}
-      </Link>
-    </article>
+      {imageCount > 1 && (
+        <small
+          className={styleImageCount}
+          title={`${imageCount} project images`}
+        >
+          <Icon name="Image" /> {imageCount}
+        </small>
+      )}
+    </Link>
   )
 }
 
@@ -56,7 +59,7 @@ Home.propTypes = {
   pageContext: PropTypes.object.isRequired
 }
 
-function Home({ data, pageContext }) {
+export default function Home({ data, pageContext }) {
   const projects = data.allProjectsYaml.edges
   const images = data.projectImageFiles.edges
 
@@ -64,7 +67,7 @@ function Home({ data, pageContext }) {
     <>
       <SEO />
 
-      <div className={styles.projects}>
+      <div className={grid}>
         {projects.map(({ node }) => (
           <Project key={shortid.generate()} node={node} images={images} />
         ))}
@@ -75,8 +78,6 @@ function Home({ data, pageContext }) {
   )
 }
 
-export default memo(Home)
-
 export const IndexQuery = graphql`
   query {
     allProjectsYaml {
@@ -86,9 +87,7 @@ export const IndexQuery = graphql`
           slug
           img {
             childImageSharp {
-              fluid(maxWidth: 980, quality: 85) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
+              ...ProjectImageTeaser
             }
           }
         }

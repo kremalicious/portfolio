@@ -74,11 +74,12 @@ If you want to know how, have a look at the respective components:
 
 ### 💅 Theme switcher
 
-Includes a theme switcher which allows user to toggle between a light and a dark theme. Switching between them also happens automatically based on user's system preferences. If a visitor has set the theme manually that selection is remembered in `localStorage`, and is restored on next visit. All handled by [use-dark-mode](https://github.com/donavon/use-dark-mode)
+Includes a theme switcher which allows user to toggle between a light and a dark theme. Switching between them also happens automatically based on user's system preferences.
 
 If you want to know how, have a look at the respective components:
 
 - [`src/components/molecules/ThemeSwitch.jsx`](src/components/molecules/ThemeSwitch.jsx)
+- [`src/hooks/useDarkMode.js`](src/hooks/useDarkMode.js)
 
 ### 🏆 SEO component
 
@@ -117,7 +118,7 @@ Site sends usage statistics to my own [Matomo](https://matomo.org) installation.
 
 All project images live under `content/images` and are automatically attached to each project based on the inclusion of the project's `slug` in their filenames.
 
-All project images make use of the excellent [gatsby-image](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-image) plugin, working in tandem with [gatsby-plugin-sharp](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sharp) and [gatsby-transformer-sharp](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-sharp).
+All project images make use of the excellent [gatsby-plugin-image](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/) plugin, working in tandem with [gatsby-plugin-sharp](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sharp) and [gatsby-transformer-sharp](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-sharp).
 
 All together, Gatsby automatically generates all required image sizes for delivering responsible, responsive images to visitors, including lazy loading of all images. Also includes the [intersection-observer polyfill](https://github.com/w3c/IntersectionObserver) to make lazy loading work properly in Safari.
 

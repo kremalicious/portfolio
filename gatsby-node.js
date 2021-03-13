@@ -9,6 +9,7 @@ const yaml = require('js-yaml')
 const reposYaml = yaml.load(fs.readFileSync('./content/repos.yml', 'utf8'))
 const { performance } = require('perf_hooks')
 const chalk = require('chalk')
+const { execSync } = require('child_process')
 
 function truncate(n, useWordBoundary) {
   if (this.length <= n) {
@@ -21,6 +22,13 @@ function truncate(n, useWordBoundary) {
       : subString) + '...'
   )
 }
+
+//
+// Fetch matomo.js
+//
+execSync(`node ./scripts/fetch-matomo-js > static/matomo.js`, {
+  stdio: 'inherit'
+})
 
 //
 // Get GitHub repos

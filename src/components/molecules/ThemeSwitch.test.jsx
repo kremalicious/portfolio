@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent, cleanup, wait } from '@testing-library/react'
+import { render, fireEvent, cleanup, waitFor } from '@testing-library/react'
 import ThemeSwitch from './ThemeSwitch'
 
 describe('ThemeSwitch', () => {
@@ -7,7 +7,7 @@ describe('ThemeSwitch', () => {
 
   it('renders correctly', async () => {
     const { container } = render(<ThemeSwitch />)
-    await wait(() => container.querySelector('aside'))
+    await waitFor(() => container.querySelector('aside'))
     expect(container.querySelector('aside')).toBeInTheDocument()
   })
 

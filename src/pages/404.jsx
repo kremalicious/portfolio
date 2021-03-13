@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import { GiphyFetch } from '@giphy/js-fetch-api'
 import SEO from '../components/atoms/SEO'
 import Button from '../components/atoms/Button'
-import styles from './404.module.css'
+import { content } from './404.module.css'
 
 // Famous last words:
 // "It's just the 404 page so why not expose the dev API key"
@@ -41,7 +41,7 @@ export default function NotFound() {
     <>
       <SEO />
 
-      <article className={styles.content}>
+      <article className={content}>
         <h1>Shenanigans, page not found.</h1>
         <p>
           You might want to check the url, or{' '}

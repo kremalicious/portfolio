@@ -5,7 +5,12 @@ import remark2react from 'remark-react'
 import parse from 'remark-parse'
 import html from 'remark-html'
 import breaks from 'remark-breaks'
-import styles from './ResumeItem.module.css'
+import {
+  resumeItem,
+  time,
+  styleTitle,
+  styleSubTitle
+} from './ResumeItem.module.css'
 
 const markdownOutput = (text) =>
   remark()
@@ -32,13 +37,13 @@ export default function ResumeItem({ content }) {
   const isSameYear = dateStart === dateEnd
 
   return (
-    <div className={styles.resumeItem}>
-      <span className={styles.time}>
+    <div className={resumeItem}>
+      <span className={time}>
         {dateStart}
         {dateEnd ? !isSameYear && `–${dateEnd}` : '–present'}{' '}
       </span>
-      <h4 className={styles.title}>{title}</h4>
-      <h5 className={styles.subTitle}>{subTitle}</h5>
+      <h4 className={styleTitle}>{title}</h4>
+      <h5 className={styleSubTitle}>{subTitle}</h5>
       {text && markdownOutput(text)}
     </div>
   )

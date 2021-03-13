@@ -1,5 +1,4 @@
 {
-  "parser": "@babel/eslint-parser",
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -9,15 +8,12 @@
   "plugins": ["react", "graphql", "prettier", "react-hooks", "testing-library"],
   "parserOptions": {
     "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true,
-      "modules": true
-    }
+    "ecmaFeatures": { "jsx": true }
   },
   "env": {
     "browser": true,
     "node": true,
-    "es6": true,
+    "es2020": true,
     "jest": true
   },
   "rules": {

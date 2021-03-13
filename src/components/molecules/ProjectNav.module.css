@@ -1,8 +1,10 @@
 .projectNav {
+  composes: fullWidth from '../Layout.module.css';
   white-space: nowrap;
   overflow-y: hidden;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--spacer);
 }
 
 .projectNav::-webkit-scrollbar,
@@ -16,7 +18,7 @@
 }
 
 .projectNav::-webkit-scrollbar-thumb {
-  background: var(--brand-grey-dimmed);
+  background: var(--text-color);
 }
 
 .projectNav::-webkit-scrollbar-track {
@@ -39,13 +41,4 @@
     max-width: 500px;
     margin-left: calc(var(--spacer) * 2);
   }
-}
-
-.title {
-  visibility: hidden;
-  font-size: 0;
-}
-
-.link {
-  display: block;
 }

@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 // https://featherstyles.com
@@ -25,9 +25,9 @@ import {
   Info,
   Dribbble
 } from 'react-feather'
-import styles from './Icon.module.css'
+import { icon } from './Icon.module.css'
 
-const Icon = memo(({ name, ...props }) => {
+export default function Icon({ name, ...props }) {
   const components = {
     Dribbble,
     Email: Mail,
@@ -62,13 +62,9 @@ const Icon = memo(({ name, ...props }) => {
   // const IconComp = Feather[name]
   if (!IconMapped) return null
 
-  return <IconMapped className={styles.icon} {...props} />
-})
-
-Icon.displayName = 'Icon'
+  return <IconMapped className={icon} {...props} />
+}
 
 Icon.propTypes = {
   name: PropTypes.string.isRequired
 }
-
-export default Icon

@@ -1,13 +1,18 @@
-import React, { memo } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import posed from 'react-pose'
 import { moveInTop } from '../atoms/Transitions'
 import Icon from '../atoms/Icon'
 import { useResume } from '../../hooks/use-resume'
-import styles from './Networks.module.css'
+import {
+  link,
+  title,
+  small as styleSmall,
+  networks
+} from './Networks.module.css'
 
 const linkClasses = (key) =>
-  key === 'Mail' ? `u-email ${styles.link}` : `u-url ${styles.link}`
+  key === 'Mail' ? `u-email ${link}` : `u-url ${link}`
 
 const NetworkLink = ({ name, url }) => (
   <a
@@ -16,7 +21,7 @@ const NetworkLink = ({ name, url }) => (
     data-testid={`network-${name.toLowerCase()}`}
   >
     <Icon name={name} />
-    <span className={styles.title}>{name}</span>
+    <span className={title}>{name}</span>
   </a>
 )
 
@@ -25,14 +30,14 @@ NetworkLink.propTypes = {
   url: PropTypes.string.isRequired
 }
 
-function Networks({ small, hide }) {
+export default function Networks({ small, hide }) {
   const { basics } = useResume()
   if (hide) return null
 
   const Animation = posed.aside(moveInTop)
 
   return (
-    <Animation className={small ? styles.small : styles.networks}>
+    <Animation className={small ? styleSmall : networks}>
       <NetworkLink name="Mail" url={`mailto:${basics.email}`} />
 
       {basics.profiles.map((profile) => (
@@ -45,8 +50,6 @@ function Networks({ small, hide }) {
     </Animation>
   )
 }
-
-export default memo(Networks)
 
 Networks.propTypes = {
   small: PropTypes.bool,

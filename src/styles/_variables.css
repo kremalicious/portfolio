@@ -4,18 +4,23 @@
   --brand-cyan: #43a699;
   --brand-main-light: #88bec8;
   --brand-light: #e7eef4;
+
   --brand-grey: #4e5d63;
-  --brand-grey-light: #70858e;
-  --brand-grey-dimmed: #97abb3;
+  --brand-grey-dark: #323c41;
+  --brand-grey-light: #7f97a1;
+  --brand-grey-dimmed: #c3d8e0;
 
   /* Backgrounds */
   --body-background-color: var(--brand-light);
-  --box-background-color: rgba(255, 255, 255, 0.2);
+  --box-background-color: rgba(255, 255, 255, 0.4);
 
   /* Text Colors */
   --text-color: var(--brand-grey);
   --text-color-light: var(--brand-grey-light);
+  --text-color-dimmed: var(--brand-grey-dimmed);
   --color-headings: var(--brand-main);
+  --link-color: var(--brand-cyan);
+  --border-color: var(--brand-grey-dimmed);
 
   /* Typography */
   --font-size-root: 18px;
@@ -45,18 +50,23 @@
   /* Components spacing */
   --spacer: 1.5rem;
   --border-radius: 0.25rem;
+  --stroke-width: 0.125rem;
 
   /* Miscellanious */
   --projectImageMaxWidth: 1440px;
   --easing: cubic-bezier(0.75, 0, 0.08, 1);
-  --box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05), 0 5px 16px rgba(0, 0, 0, 0.05);
+  --box-shadow: 0 1.3px 5.4px rgba(0, 0, 0, 0.1),
+    0 4.5px 18.1px rgba(0, 0, 0, 0.06), 0 20px 81px rgba(0, 0, 0, 0.04);
 }
 
 .dark {
-  --text-color: #7e9199;
-  --text-color-light: var(--brand-grey);
-  --color-headings: var(--brand-main-light);
-  --body-background-color: #1d2224;
+  --body-background-color: #161a1b;
   --box-background-color: rgba(255, 255, 255, 0.03);
-  --box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25), 0 5px 16px rgba(0, 0, 0, 0.25);
+  --box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 16px rgba(0, 0, 0, 0.1);
+
+  --text-color: var(--brand-grey-light);
+  --text-color-light: var(--brand-grey);
+  --text-color-dimmed: var(--brand-grey-dark);
+  --border-color: var(--brand-grey-dark);
+  --color-headings: var(--brand-main-light);
 }

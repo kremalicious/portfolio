@@ -1,12 +1,7 @@
 .networks {
   margin-top: calc(var(--spacer) * var(--line-height));
-  margin-left: auto;
-  margin-right: auto;
   width: 100%;
   text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 .title {
@@ -24,8 +19,6 @@
   margin-bottom: calc(var(--spacer) / 2);
   text-align: center;
   display: inline-block;
-  flex: 0 1;
-  min-width: 2.5rem;
 }
 
 .link,
@@ -41,7 +34,7 @@
 
 .link:hover svg,
 .link:focus svg {
-  stroke: var(--brand-cyan);
+  stroke: var(--link-color);
 }
 
 .link:hover .title,

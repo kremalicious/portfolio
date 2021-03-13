@@ -2,7 +2,7 @@ import React from 'react'
 import shortid from 'shortid'
 import { useResume } from '../../../hooks/use-resume'
 import Icon from '../../atoms/Icon'
-import styles from './Header.module.css'
+import { title, description, contact, languagesList } from './Header.module.css'
 
 export default function Header() {
   const { basics, languages } = useResume()
@@ -12,12 +12,12 @@ export default function Header() {
     <>
       <header>
         <p>Résumé</p>
-        <h1 className={styles.title}>{name}</h1>
-        <h2 className={styles.label}>{label}</h2>
+        <h1 className={title}>{name}</h1>
+        <h2 className={description}>{label}</h2>
       </header>
 
       <div>
-        <ul className={styles.contact}>
+        <ul className={contact}>
           <li>
             <a href={website}>
               <Icon name="Compass" />
@@ -32,7 +32,7 @@ export default function Header() {
             <Icon name="MapPin" />
             {location.city}, {location.countryCode}
           </li>
-          <li className={styles.languages}>
+          <li className={languagesList}>
             <Icon name="Globe" />
             {languages.map((item) => (
               <p key={shortid.generate()}>

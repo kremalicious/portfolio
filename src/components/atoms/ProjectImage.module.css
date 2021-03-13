@@ -1,18 +1,35 @@
-.projectImage {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+.frame {
+  border: var(--stroke-width) solid rgba(255, 255, 255, 0.2);
   border-radius: var(--border-radius);
   overflow: hidden;
+  transition: 0.2s ease-out;
   box-shadow: var(--box-shadow);
 }
 
-@media (min-width: 1200px) {
-  .projectImage {
-    max-width: var(--projectImageMaxWidth);
-  }
+a:hover .frame,
+a:focus .frame {
+  border-color: var(--link-color);
 }
 
-.projectImage img {
+.projectImage {
+  composes: frame;
   display: block;
+}
+
+.projectImage:not(:only-of-type) {
+  margin-bottom: calc(var(--spacer) * 3);
+}
+
+.projectImage:last-of-type {
+  margin-bottom: 0;
+}
+
+@media (min-width: 1200px) {
+  .projectImage:not(:only-of-type) {
+    margin-bottom: calc(var(--spacer) * 6);
+  }
+
+  .projectImage:last-of-type {
+    margin-bottom: 0;
+  }
 }

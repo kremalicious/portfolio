@@ -39,6 +39,9 @@ module.exports = {
     },
     'gatsby-transformer-yaml',
     'gatsby-transformer-json',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-svgr',
@@ -52,7 +55,7 @@ module.exports = {
         siteId: `${matomoSite}`,
         siteUrl: `${website}`,
         matomoUrl: `${matomoUrl}`,
-        localScript: '/piwik.js',
+        localScript: '/matomo.js',
         trackLoad: false
       }
     },
@@ -70,17 +73,7 @@ module.exports = {
         theme_color_in_head: false // dynamically set in ThemeSwitch
       }
     },
-    {
-      resolve: 'gatsby-plugin-use-dark-mode',
-      options: {
-        classNameDark: 'dark',
-        classNameLight: 'light',
-        minify: true
-      }
-    },
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-offline',
     'gatsby-plugin-webpack-size'

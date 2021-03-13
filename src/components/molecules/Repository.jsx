@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Icon from '../atoms/Icon'
-import styles from './Repository.module.css'
+import { repo as styleRepo, repoTitle, meta } from './Repository.module.css'
 
 export default function Repository({ repo }) {
   const {
@@ -23,12 +23,12 @@ export default function Repository({ repo }) {
       : homepage
 
   return (
-    <div className={styles.repo}>
-      <h1 className={styles.repoTitle}>
+    <div className={styleRepo}>
+      <h1 className={repoTitle}>
         <a href={repoLink}>{isExternal ? full_name : name}</a>
       </h1>
       <p>{description}</p>
-      <p className={styles.meta}>
+      <p className={meta}>
         {name === 'portfolio' || name === 'blog'
           ? null
           : !isExternal &&

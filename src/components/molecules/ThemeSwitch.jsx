@@ -1,25 +1,29 @@
-import React, { memo, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
-import useDarkMode from 'use-dark-mode'
 import Icon from '../atoms/Icon'
-import styles from './ThemeSwitch.module.css'
+import {
+  checkboxContainer,
+  checkboxFake,
+  themeSwitch,
+  checkbox,
+  label
+} from './ThemeSwitch.module.css'
+import useDarkMode from '../../hooks/useDarkMode'
 
-const ThemeToggle = memo(({ dark }) => (
-  <span id="toggle" className={styles.checkboxContainer} aria-live="assertive">
+const ThemeToggle = ({ dark }) => (
+  <span id="toggle" className={checkboxContainer} aria-live="assertive">
     <Icon name="Sun" className={!dark ? null : 'active'} />
-    <span className={styles.checkboxFake} />
+    <span className={checkboxFake} />
     <Icon name="Moon" className={dark ? 'active' : null} />
   </span>
-))
-
-ThemeToggle.displayName = 'ThemeToggle'
+)
 
 ThemeToggle.propTypes = {
   dark: PropTypes.bool.isRequired
 }
 
-const ThemeToggleInput = memo(({ dark, toggleDark }) => (
+const ThemeToggleInput = ({ dark, toggleDark }) => (
   <input
     onChange={() => toggleDark()}
     type="checkbox"
@@ -28,9 +32,7 @@ const ThemeToggleInput = memo(({ dark, toggleDark }) => (
     aria-describedby="toggle"
     checked={dark}
   />
-))
-
-ThemeToggleInput.displayName = 'ThemeToggleInput'
+)
 
 ThemeToggleInput.propTypes = {
   dark: PropTypes.bool.isRequired,
@@ -53,11 +55,8 @@ HeadItems.propTypes = {
   themeColor: PropTypes.string.isRequired
 }
 
-function ThemeSwitch() {
-  const { value, toggle } = useDarkMode(false, {
-    classNameDark: 'dark',
-    classNameLight: 'light'
-  })
+export default function ThemeSwitch() {
+  const { value, toggle } = useDarkMode()
   const [themeColor, setThemeColor] = useState('')
   const [bodyClass, setBodyClass] = useState('')
 
@@ -69,9 +68,9 @@ function ThemeSwitch() {
   return (
     <>
       <HeadItems themeColor={themeColor} bodyClass={bodyClass} />
-      <aside className={styles.themeSwitch}>
-        <label className={styles.checkbox}>
-          <span className={styles.label}>Toggle Night Mode</span>
+      <aside className={themeSwitch}>
+        <label className={checkbox}>
+          <span className={label}>Toggle Night Mode</span>
           <ThemeToggleInput dark={value} toggleDark={toggle} />
           <ThemeToggle dark={value} />
         </label>
@@ -79,5 +78,3 @@ function ThemeSwitch() {
     </>
   )
 }
-
-export default memo(ThemeSwitch)

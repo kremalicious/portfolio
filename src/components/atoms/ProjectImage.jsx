@@ -1,31 +1,41 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import styles from './ProjectImage.module.css'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { projectImage as styleProjectImage } from './ProjectImage.module.css'
 
-export default class ProjectImage extends PureComponent {
-  static propTypes = {
-    fluid: PropTypes.object.isRequired,
-    alt: PropTypes.string
-  }
+export default function ProjectImage({ image, alt, className }) {
+  return (
+    <GatsbyImage
+      className={`${styleProjectImage} ${className || ''}`}
+      backgroundColor="transparent"
+      image={image}
+      alt={alt}
+      as="figure"
+    />
+  )
+}
 
-  render() {
-    return (
-      <Img
-        className={styles.projectImage}
-        backgroundColor="transparent"
-        fluid={this.props.fluid}
-        alt={this.props.alt}
-      />
-    )
-  }
+ProjectImage.propTypes = {
+  image: PropTypes.object.isRequired,
+  alt: PropTypes.string.isRequired,
+  className: PropTypes.string
 }
 
 export const projectImage = graphql`
   fragment ProjectImageFluid on ImageSharp {
-    fluid(maxWidth: 1440, quality: 85) {
-      ...GatsbyImageSharpFluid_withWebp_noBase64
-    }
+    gatsbyImageData(layout: CONSTRAINED, width: 1440, quality: 85)
+  }
+`
+
+export const projectImageTeaser = graphql`
+  fragment ProjectImageTeaser on ImageSharp {
+    gatsbyImageData(layout: CONSTRAINED, width: 740, quality: 85)
+  }
+`
+
+export const projectImageNav = graphql`
+  fragment ProjectImageNav on ImageSharp {
+    gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 85)
   }
 `

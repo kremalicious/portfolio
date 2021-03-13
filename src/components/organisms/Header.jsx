@@ -4,7 +4,7 @@ import Networks from '../molecules/Networks'
 import Availability from '../molecules/Availability'
 
 import LogoUnit from '../molecules/LogoUnit'
-import styles from './Header.module.css'
+import { header, minimal as styleMinimal } from './Header.module.css'
 import { useMeta } from '../../hooks/use-meta'
 
 Header.propTypes = {
@@ -16,7 +16,7 @@ export default function Header({ minimal, hide }) {
   const { availability } = useMeta()
 
   return (
-    <header className={minimal ? styles.minimal : styles.header}>
+    <header className={minimal ? styleMinimal : header}>
       {!hide && (
         <>
           <LogoUnit minimal={minimal} />

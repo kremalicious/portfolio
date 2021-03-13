@@ -7,15 +7,15 @@ import HostnameCheck from './atoms/HostnameCheck'
 import ThemeSwitch from './molecules/ThemeSwitch'
 import Header from './organisms/Header'
 import Footer from './organisms/Footer'
-import styles from './Layout.module.css'
+import { screen } from './Layout.module.css'
 import { useMeta } from '../hooks/use-meta'
 
 // https://github.com/welldone-software/why-did-you-render
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line
-  const whyDidYouRender = require('@welldone-software/why-did-you-render')
-  whyDidYouRender(React, { trackAllPureComponents: true })
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   // eslint-disable-next-line
+//   const whyDidYouRender = require('@welldone-software/why-did-you-render')
+//   whyDidYouRender(React, { trackAllPureComponents: true })
+// }
 
 Layout.propTypes = {
   children: PropTypes.any.isRequired,
@@ -42,14 +42,14 @@ export default function Layout({ children, location }) {
       <HostnameCheck allowedHosts={allowedHosts} />
       <ThemeSwitch />
 
-      <PoseGroup animateOnMount={process.env.NODE_ENV !== 'test' && true}>
+      <PoseGroup animateOnMount={process.env.NODE_ENV !== 'test'}>
         <RoutesContainer
           key={location.pathname}
           delay={timeout}
           delayChildren={timeout}
         >
           <Header minimal={!isHomepage} hide={isResume} />
-          <main className={styles.screen}>{children}</main>
+          <main className={screen}>{children}</main>
         </RoutesContainer>
       </PoseGroup>
 

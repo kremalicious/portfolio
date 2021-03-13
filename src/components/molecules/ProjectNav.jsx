@@ -1,9 +1,8 @@
-import React, { PureComponent } from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
-import shortid from 'shortid'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import ProjectImage from '../atoms/ProjectImage'
-import styles from './ProjectNav.module.css'
+import { item, projectNav } from './ProjectNav.module.css'
 
 const query = graphql`
   query {
@@ -14,9 +13,7 @@ const query = graphql`
           slug
           img {
             childImageSharp {
-              fluid(maxWidth: 500, quality: 85) {
-                ...GatsbyImageSharpFluid_noBase64
-              }
+              ...ProjectImageNav
             }
           }
         }
@@ -26,16 +23,12 @@ const query = graphql`
 `
 
 const Project = ({ node, refCurrentItem }) => (
-  <div className={styles.item} ref={refCurrentItem}>
-    <Link className={styles.link} to={node.slug}>
-      <ProjectImage
-        className={styles.image}
-        fluid={node.img.childImageSharp.fluid}
-        alt={node.title}
-      />
-      <h1 className={styles.title}>{node.title}</h1>
-    </Link>
-  </div>
+  <Link className={item} to={node.slug} title={node.title} ref={refCurrentItem}>
+    <ProjectImage
+      image={node.img.childImageSharp.gatsbyImageData}
+      alt={node.title}
+    />
+  </Link>
 )
 
 Project.propTypes = {
@@ -43,67 +36,50 @@ Project.propTypes = {
   refCurrentItem: PropTypes.any
 }
 
-export default class ProjectNav extends PureComponent {
-  static propTypes = {
-    currentSlug: PropTypes.string.isRequired
-  }
+export default function ProjectNav({ currentSlug }) {
+  const data = useStaticQuery(query)
+  const projects = data.allProjectsYaml.edges
 
-  state = {
-    scrollLeftPosition: 0
-  }
+  // Always keep the scroll position centered
+  // to currently viewed project on mount.
+  const scrollContainer = React.createRef()
+  const currentItem = React.createRef()
 
-  scrollContainer = React.createRef()
-  currentItem = React.createRef()
-
-  componentDidMount() {
-    this.scrollToCurrent()
-  }
-
-  componentDidUpdate() {
-    this.scrollToCurrent()
-  }
-
-  scrollToCurrent = () => {
-    const scrollContainer = this.scrollContainer.current
-    const activeItem = this.currentItem.current
-    const scrollRect = scrollContainer.getBoundingClientRect()
+  function scrollToCurrent() {
+    const activeItem = currentItem.current
+    const scrollRect = scrollContainer.current.getBoundingClientRect()
     const activeRect = activeItem && activeItem.getBoundingClientRect()
-    const scrollLeftPosition =
+    const newScrollLeftPosition =
       activeRect &&
       activeRect.left -
         scrollRect.left -
         scrollRect.width / 2 +
         activeRect.width / 2
 
-    scrollContainer.scrollLeft += this.state.scrollLeftPosition
-    this.setState({ scrollLeftPosition })
+    scrollContainer.current.scrollLeft += newScrollLeftPosition
   }
 
-  render() {
-    const { currentSlug } = this.props
-    return (
-      <StaticQuery
-        query={query}
-        render={(data) => {
-          const projects = data.allProjectsYaml.edges
+  useEffect(() => {
+    scrollToCurrent()
+  }, [])
 
-          return (
-            <nav className={styles.projectNav} ref={this.scrollContainer}>
-              {projects.map(({ node }) => {
-                const isCurrent = node.slug === currentSlug
+  return (
+    <nav className={projectNav} ref={scrollContainer}>
+      {projects.map(({ node }) => {
+        const isCurrent = node.slug === currentSlug
 
-                return (
-                  <Project
-                    key={shortid.generate()}
-                    node={node}
-                    refCurrentItem={isCurrent ? this.currentItem : null}
-                  />
-                )
-              })}
-            </nav>
-          )
-        }}
-      />
-    )
-  }
+        return (
+          <Project
+            key={node.slug}
+            node={node}
+            refCurrentItem={isCurrent ? currentItem : null}
+          />
+        )
+      })}
+    </nav>
+  )
+}
+
+ProjectNav.propTypes = {
+  currentSlug: PropTypes.string.isRequired
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import shortid from 'shortid'
 import SEO from '../components/atoms/SEO'
 import { useResume } from '../hooks/use-resume'
-import styles from './resume.module.css'
+import { resume } from './resume.module.css'
 import Header from '../components/pages/Resume/Header'
 import ResumeSection from '../components/pages/Resume/ResumeSection'
 
@@ -18,7 +18,7 @@ export default function Resume() {
     <>
       <SEO />
 
-      <div className={styles.resume}>
+      <div className={resume}>
         <Header />
 
         {items.map((item) => (

@@ -26,12 +26,12 @@
   margin-bottom: 0;
 }
 
-.title {
+.styleTitle {
   margin-bottom: calc(var(--spacer) / 3);
   font-size: var(--font-size-h4);
 }
 
-.subTitle {
+.styleSubTitle {
   color: var(--text-color-light);
   font-size: var(--font-size-h5);
 }
