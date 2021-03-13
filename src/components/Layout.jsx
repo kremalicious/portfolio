@@ -4,7 +4,7 @@ import posed, { PoseGroup } from 'react-pose'
 import { fadeIn } from './atoms/Transitions'
 import Typekit from './atoms/Typekit'
 import HostnameCheck from './atoms/HostnameCheck'
-// import ThemeSwitch from './molecules/ThemeSwitch'
+import ThemeSwitch from './molecules/ThemeSwitch'
 import Header from './organisms/Header'
 import Footer from './organisms/Footer'
 import { screen } from './Layout.module.css'
@@ -40,7 +40,7 @@ export default function Layout({ children, location }) {
     <>
       <Typekit />
       <HostnameCheck allowedHosts={allowedHosts} />
-      {/* <ThemeSwitch /> */}
+      <ThemeSwitch />
 
       <PoseGroup animateOnMount={process.env.NODE_ENV !== 'test'}>
         <RoutesContainer

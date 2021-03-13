@@ -74,11 +74,12 @@ If you want to know how, have a look at the respective components:
 
 ### 💅 Theme switcher
 
-Includes a theme switcher which allows user to toggle between a light and a dark theme. Switching between them also happens automatically based on user's system preferences. If a visitor has set the theme manually that selection is remembered in `localStorage`, and is restored on next visit. All handled by [use-dark-mode](https://github.com/donavon/use-dark-mode)
+Includes a theme switcher which allows user to toggle between a light and a dark theme. Switching between them also happens automatically based on user's system preferences.
 
 If you want to know how, have a look at the respective components:
 
 - [`src/components/molecules/ThemeSwitch.jsx`](src/components/molecules/ThemeSwitch.jsx)
+- [`src/hooks/useDarkMode.js`](src/hooks/useDarkMode.js)
 
 ### 🏆 SEO component
 

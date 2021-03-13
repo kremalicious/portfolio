@@ -73,14 +73,6 @@ module.exports = {
         theme_color_in_head: false // dynamically set in ThemeSwitch
       }
     },
-    {
-      resolve: 'gatsby-plugin-use-dark-mode',
-      options: {
-        classNameDark: 'dark',
-        classNameLight: 'light',
-        minify: true
-      }
-    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-offline',

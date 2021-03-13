@@ -1,7 +1,6 @@
-import React, { memo, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
-import useDarkMode from 'use-dark-mode'
 import Icon from '../atoms/Icon'
 import {
   checkboxContainer,
@@ -10,16 +9,15 @@ import {
   checkbox,
   label
 } from './ThemeSwitch.module.css'
+import useDarkMode from '../../hooks/useDarkMode'
 
-const ThemeToggle = memo(({ dark }) => (
+const ThemeToggle = ({ dark }) => (
   <span id="toggle" className={checkboxContainer} aria-live="assertive">
     <Icon name="Sun" className={!dark ? null : 'active'} />
     <span className={checkboxFake} />
     <Icon name="Moon" className={dark ? 'active' : null} />
   </span>
-))
-
-ThemeToggle.displayName = 'ThemeToggle'
+)
 
 ThemeToggle.propTypes = {
   dark: PropTypes.bool.isRequired
@@ -27,7 +25,7 @@ ThemeToggle.propTypes = {
 
 const ThemeToggleInput = ({ dark, toggleDark }) => (
   <input
-    onChange={() => toggleDark()}
+    onChange={() => toggleDark(!dark)}
     type="checkbox"
     name="toggle"
     value="toggle"
@@ -35,8 +33,6 @@ const ThemeToggleInput = ({ dark, toggleDark }) => (
     checked={dark}
   />
 )
-
-ThemeToggleInput.displayName = 'ThemeToggleInput'
 
 ThemeToggleInput.propTypes = {
   dark: PropTypes.bool.isRequired,
@@ -60,10 +56,7 @@ HeadItems.propTypes = {
 }
 
 export default function ThemeSwitch() {
-  const { value, toggle } = useDarkMode(false, {
-    classNameDark: 'dark',
-    classNameLight: 'light'
-  })
+  const { value, toggle } = useDarkMode()
   const [themeColor, setThemeColor] = useState('')
   const [bodyClass, setBodyClass] = useState('')
 
