@@ -40,7 +40,7 @@ export default function Layout({ children, location }) {
     <>
       <Typekit />
       <HostnameCheck allowedHosts={allowedHosts} />
-      <ThemeSwitch />
+      {/* <ThemeSwitch /> */}
 
       <PoseGroup animateOnMount={process.env.NODE_ENV !== 'test'}>
         <RoutesContainer

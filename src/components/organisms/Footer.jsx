@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import loadable from '@loadable/component'
 import LogoUnit from '../molecules/LogoUnit'
@@ -37,11 +37,9 @@ FooterMarkup.propTypes = {
   year: PropTypes.number.isRequired
 }
 
-function Footer() {
+export default function Footer() {
   const metaYaml = useMeta()
   const year = new Date().getFullYear()
 
   return <FooterMarkup year={year} meta={metaYaml} />
 }
-
-export default memo(Footer)

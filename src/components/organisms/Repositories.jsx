@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import Repository from '../molecules/Repository'
@@ -12,7 +12,7 @@ Repositories.propTypes = {
   repos: PropTypes.array
 }
 
-function Repositories({ repos }) {
+export default function Repositories({ repos }) {
   if (!repos) return null
 
   return (
@@ -26,5 +26,3 @@ function Repositories({ repos }) {
     </section>
   )
 }
-
-export default memo(Repositories)

@@ -10,7 +10,7 @@ import {
 
 const Animation = posed.aside(fadeIn)
 
-const Availability = ({ hide }) => {
+export default function Availability({ hide }) {
   const { availability } = useMeta()
   const { status, available, unavailable } = availability
   const className = status
@@ -30,5 +30,3 @@ const Availability = ({ hide }) => {
 Availability.propTypes = {
   hide: PropTypes.bool
 }
-
-export default Availability

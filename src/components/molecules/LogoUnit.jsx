@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import posed from 'react-pose'
@@ -18,7 +18,7 @@ LogoUnit.propTypes = {
   isResume: PropTypes.bool
 }
 
-function LogoUnit({ minimal }) {
+export default function LogoUnit({ minimal }) {
   const { basics } = useResume()
   const Animation = posed.div(moveInBottom)
 
@@ -34,5 +34,3 @@ function LogoUnit({ minimal }) {
     </Animation>
   )
 }
-
-export default memo(LogoUnit)
