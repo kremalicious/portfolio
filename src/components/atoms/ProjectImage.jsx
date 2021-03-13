@@ -33,3 +33,9 @@ export const projectImageTeaser = graphql`
     gatsbyImageData(layout: CONSTRAINED, width: 740, quality: 85)
   }
 `
+
+export const projectImageNav = graphql`
+  fragment ProjectImageNav on ImageSharp {
+    gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 85)
+  }
+`

@@ -23,6 +23,7 @@
   grid-column: main;
 }
 
+/* Projects Grid */
 .grid {
   display: grid;
   gap: calc(var(--spacer) * 2);
@@ -31,6 +32,7 @@
 
 @media (min-width: 55rem) {
   .grid {
+    gap: calc(var(--spacer) * 3);
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   }
 }
