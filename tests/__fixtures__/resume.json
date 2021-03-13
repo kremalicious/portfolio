@@ -5,15 +5,24 @@
       "label": "Designer & Developer",
       "picture": {
         "childImageSharp": {
-          "fixed": {
-            "aspectRatio": 1,
+          "gatsbyImageData": {
+            "layout": "fixed",
+            "images": {
+              "fallback": {
+                "src": "/static/b45f45aa8d98d4e4019a242d38f2f248/68974/avatar.jpg",
+                "srcSet": "/static/b45f45aa8d98d4e4019a242d38f2f248/68974/avatar.jpg 256w,\n/static/b45f45aa8d98d4e4019a242d38f2f248/3c367/avatar.jpg 512w",
+                "sizes": "256px"
+              },
+              "sources": [
+                {
+                  "srcSet": "/static/b45f45aa8d98d4e4019a242d38f2f248/22bfc/avatar.webp 256w,\n/static/b45f45aa8d98d4e4019a242d38f2f248/d689f/avatar.webp 512w",
+                  "type": "image/webp",
+                  "sizes": "256px"
+                }
+              ]
+            },
             "width": 256,
-            "height": 256,
-            "src": "/static/b45f45aa8d98d4e4019a242d38f2f248/c296b/avatar.jpg",
-            "srcSet": "/static/b45f45aa8d98d4e4019a242d38f2f248/c296b/avatar.jpg 1x,\n/static/b45f45aa8d98d4e4019a242d38f2f248/28b3a/avatar.jpg 1.5x,\n/static/b45f45aa8d98d4e4019a242d38f2f248/72cad/avatar.jpg 2x",
-            "srcWebp": "/static/b45f45aa8d98d4e4019a242d38f2f248/59c88/avatar.webp",
-            "srcSetWebp": "/static/b45f45aa8d98d4e4019a242d38f2f248/59c88/avatar.webp 1x,\n/static/b45f45aa8d98d4e4019a242d38f2f248/bd640/avatar.webp 1.5x,\n/static/b45f45aa8d98d4e4019a242d38f2f248/b957b/avatar.webp 2x",
-            "originalName": "avatar.jpg"
+            "height": 256
           }
         }
       },
@@ -34,16 +43,6 @@
         {
           "network": "GitHub",
           "url": "https://github.com/kremalicious",
-          "username": "kremalicious"
-        },
-        {
-          "network": "Dribbble",
-          "url": "https://dribbble.com/kremalicious",
-          "username": "kremalicious"
-        },
-        {
-          "network": "Keybase",
-          "url": "https://keybase.io/kremalicious",
           "username": "kremalicious"
         }
       ],
@@ -155,8 +154,7 @@
         "website": "https://oceanprotocol.com",
         "startDate": "2017-01-01",
         "endDate": null,
-        "summary": "Leading the UI design & development of Ocean Protocol's user interfaces, iterating on a components-based UI design system spanning all of Ocean Protocol's web properties. \n\nConceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.\n\nAs a core developer leading the execution of [multiple user interfaces](/oceanprotocol) and core components.",
-        "highlights": ["Started the company"]
+        "summary": "Co-Founded the Ocean Protocol project and as a core developer leading the execution of [multiple user interfaces](/oceanprotocol) and core components.\n\nIn general, leading the UI design & development of Ocean Protocol's user interfaces, iterating on a components-based UI design system spanning all of Ocean Protocol's web properties. This also includes the conceptualization, execution and iteration of the creative and visual direction of the Ocean Protocol visual brand."
       },
       {
         "company": "BigchainDB GmbH",
@@ -164,8 +162,7 @@
         "website": "https://bigchaindb.com",
         "startDate": "2016-12-01",
         "endDate": "2018-12-31",
-        "summary": "Leading the UI design & development of all BigchainDB web properties. I created the initial BigchainDB brand and further conceptualized, executed and iterated on the creative and visual direction of BigchainDB. This included creating and iterating on a components-based UI design system for all of [BigchainDB's user interfaces](/bigchaindb).",
-        "highlights": ["Started the company"]
+        "summary": "Leading the UI design & development of all BigchainDB web properties. I created the initial BigchainDB brand and further conceptualized, executed and iterated on the creative and visual direction of BigchainDB. This included creating and iterating on a components-based UI design system for all of [BigchainDB's user interfaces](/bigchaindb)."
       },
       {
         "company": "ascribe GmbH",
@@ -173,8 +170,7 @@
         "website": "https://ascribe.io",
         "startDate": "2016-01-01",
         "endDate": "2017-12-31",
-        "summary": "Description...",
-        "highlights": ["Started the company"]
+        "summary": "Leading the technical architecture of ascribe's web presence, and maintaining the front-end of the product."
       },
       {
         "company": "ChartMogul Ltd.",
@@ -182,8 +178,7 @@
         "website": "https://chartmogul.com",
         "startDate": "2015-07-15",
         "endDate": "2017-02-01",
-        "summary": "Co-designing and leading the UI design & development of various [ChartMogul web properties](/chartmogul). This included the creation of a components-based UI design system and implementing it across all web touch points.\n\nBesides designing and implementing new features, I maintained the front-end of the ChartMogul application and implemented the UI design system by refactoring most of its front-end codebase.",
-        "highlights": ["Started the company"]
+        "summary": "Co-designing and leading the UI design & development of various [ChartMogul web properties](/chartmogul), helping the company to position itself as a market leader. This included the creation of a components-based UI design system and implementing it across all web touch points.\n\nBesides designing and implementing new features, I maintained the front-end of the ChartMogul application and implemented the UI design system by refactoring most of its front-end codebase."
       },
       {
         "company": "UN World Food Programme/ShareTheMeal",
@@ -191,8 +186,7 @@
         "website": "https://sharethemeal.org",
         "startDate": "2014-10-01",
         "endDate": "2015-06-01",
-        "summary": "[app and website](/sharethemeal)",
-        "highlights": ["Started the company"]
+        "summary": "Leading the creation of the [website for ShareTheMeal](/sharethemeal) and assisting in building and consulting for the iOS and Android app."
       },
       {
         "company": "ezeep GmbH",
@@ -200,8 +194,7 @@
         "website": "https://ezeep.com",
         "startDate": "2012-01-01",
         "endDate": "2014-09-01",
-        "summary": "Creating an unprecedented, market-leading & award-winning user experience around printing based on the principles of emotional design way ahead of all competitors.\n\nThis included defining the product based on user & market research in an iterative process and designing & building [ezeep’s numerous touch points](/ezeep), like the web app, web site, desktop apps for Windows & Mac OS X and apps for iOS & Android.\n\nOn top of that I created the corporate identity and a consistent visual branding, including the logo.",
-        "highlights": null
+        "summary": "Creating an unprecedented, market-leading & award-winning user experience around printing based on the principles of emotional design way ahead of all competitors.\n\nThis included defining the product based on user & market research in an iterative process and designing & building [ezeep’s numerous touch points](/ezeep), like the web app, web site, desktop apps for Windows & Mac OS X and apps for iOS & Android.\n\nOn top of that I created the corporate identity and a consistent visual branding, including the logo."
       },
       {
         "company": "Martin Luther University Halle-Wittenberg",
@@ -209,8 +202,7 @@
         "website": null,
         "startDate": "2009-02-01",
         "endDate": "2012-01-01",
-        "summary": "Conceptualizing & implementing [numerous in-house and public facing interfaces](/unihalle) for thousands of students and staff. Additionally, conceptualizing, creating and maintaining the blog network & community for all students & staff.",
-        "highlights": null
+        "summary": "Conceptualizing & implementing [numerous in-house and public facing interfaces](/unihalle) for thousands of students and staff. Additionally, conceptualizing, creating and maintaining the blog network & community for all students & staff."
       },
       {
         "company": "Harz University of Applied Sciences",
@@ -218,8 +210,7 @@
         "website": null,
         "startDate": "2011-02-01",
         "endDate": "2011-05-01",
-        "summary": "Conceptualizing a web design & development university seminar and building a [responsive & fluid grid framework](https://github.com/kremalicious/hsresponsive) with a basic HTML/CSS template for students of Media Informatics at the Harz University of Applied Sciences to learn and use.",
-        "highlights": null
+        "summary": "Conceptualizing a web design & development university seminar and building a [responsive & fluid grid framework](https://github.com/kremalicious/hsresponsive) with a basic HTML/CSS template for students of Media Informatics at the Harz University of Applied Sciences to learn and use."
       },
       {
         "company": "Martin Luther University Halle-Wittenberg",
@@ -227,8 +218,7 @@
         "website": null,
         "startDate": "2011-02-01",
         "endDate": "2011-05-01",
-        "summary": "Conceptualizing a WordPress-based web design university seminar and building a minimal starting theme for students of media & communication science at the MLU Halle-Wittenberg to learn and use.",
-        "highlights": null
+        "summary": "Conceptualizing a WordPress-based web design university seminar and building a minimal starting theme for students of media & communication science at the MLU Halle-Wittenberg to learn and use."
       },
       {
         "company": "Shortmoves",
@@ -236,8 +226,7 @@
         "website": null,
         "startDate": "2009-01-01",
         "endDate": "2010-01-01",
-        "summary": "Creating & managing the web presence and marketing material of the International Shortfilm Festival Shortmoves in Halle (Saale), Germany.",
-        "highlights": null
+        "summary": "Creating & managing the web presence and marketing material of the International Shortfilm Festival Shortmoves in Halle (Saale), Germany."
       },
       {
         "company": "Agentur Ahron",
@@ -245,8 +234,7 @@
         "website": null,
         "startDate": "2005-01-01",
         "endDate": "2008-12-31",
-        "summary": "Co-founded and built up a photo agency from the ground up and worked as a photographer ranging from journalistic works for news agencies & newspapers to photographic work for private clients.",
-        "highlights": null
+        "summary": "Co-founded and built up a photo agency from the ground up and worked as a photographer ranging from journalistic works for news agencies & newspapers to photographic work for private clients."
       },
       {
         "company": "Freelance",
@@ -254,8 +242,7 @@
         "website": null,
         "startDate": "2004-01-01",
         "endDate": null,
-        "summary": "Numerous projects and clients as a UI/UX Designer, Front End Developer, Icon Designer & Photographer.",
-        "highlights": null
+        "summary": "Numerous projects and clients as a UI/UX Designer, Front End Developer, Icon Designer & Photographer."
       }
     ],
     "awards": [
@@ -272,5 +259,6 @@
         "summary": null
       }
     ]
-  }
+  },
+  "extensions": {}
 }

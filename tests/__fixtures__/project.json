@@ -1,9 +1,9 @@
 {
   "projectsYaml": {
-    "title": "Ocean Protocol",
-    "slug": "/oceanprotocol/",
+    "title": "Ocean Protocol v1",
+    "slug": "/oceanprotocol-v1/",
     "fields": {
-      "descriptionHtml": "<p>Since 2017 I'm leading the UI design &#x26; development of Ocean Protocol, iterating on a components-based UI design system spanning all of Ocean Protocol's web properties. Additionally, I conceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.</p>\n<p>Most web interfaces are single-page JavaScript applications built with React, pulling their data from JSON files and various micro services. All design &#x26; development is embedded in a continuous deployment process via GitHub &#x26; Travis.</p>\n<p>Initial website in collaboration with <a href=\"https://balance.io/\">Balance</a>. Key visuals in collaboration with <a href=\"https://twitter.com/wojciechhupert\">Wojciech Hupert</a>.</p>\n",
+      "descriptionHtml": "<p>Since 2017 I'm leading the UI design &#x26; development of Ocean Protocol, iterating on a components-based UI design system spanning all of Ocean Protocol's web properties. Additionally, I conceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.</p>\n<p>Most web interfaces are single-page JavaScript applications built with React, pulling their data from multiple sources. All design &#x26; development is embedded in continuous deployment processes via GitHub, Travis, Kubernetes, and Vercel.</p>\n<p>In 2020 I was leading the refresh of Ocean Protocol's visual identity for the release of v3 and the <a href=\"/oceanprotocol-market/\">Ocean Market</a>.</p>\n<p>Initial website in collaboration with <a href=\"https://balance.io/\">Balance</a>. Key visuals in collaboration with <a href=\"https://twitter.com/wojciechhupert\">Wojciech Hupert</a>.</p>\n",
       "excerpt": "Since 2017 I'm leading the UI design & development of Ocean Protocol, iterating on a components-based UI design system spanning all of Ocean Protocol's web properties. Additionally, I conceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.\nMost web interfaces are..."
     },
     "links": [
@@ -23,11 +23,6 @@
         "icon": "Compass"
       },
       {
-        "title": "commons.oceanprotocol.com",
-        "url": "https://commons.oceanprotocol.com",
-        "icon": "Compass"
-      },
-      {
         "title": "@oceanprotocol/art",
         "url": "https://github.com/oceanprotocol/art",
         "icon": "GitHub"
@@ -36,11 +31,6 @@
         "title": "@oceanprotocol/docs",
         "url": "https://github.com/oceanprotocol/docs",
         "icon": "GitHub"
-      },
-      {
-        "title": "@oceanprotocol/commons",
-        "url": "https://github.com/oceanprotocol/commons",
-        "icon": "GitHub"
       }
     ],
     "techstack": [
@@ -48,6 +38,7 @@
       "Affinity Designer",
       "React",
       "Gatsby",
+      "Next.js",
       "HTML",
       "SCSS",
       "JavaScript",
@@ -58,13 +49,12 @@
       "Ethereum",
       "Docker",
       "Kubernetes",
-      "Cypress",
       "IPFS"
     ],
     "img": {
       "childImageSharp": {
         "twitterImage": {
-          "src": "/static/674f679841915ed59da7394e937f8f8f/c7e19/oceanprotocol-01.png"
+          "src": "/static/674f679841915ed59da7394e937f8f8f/ccef1/oceanprotocol-v1-01.png"
         }
       }
     }
@@ -73,38 +63,355 @@
     "edges": [
       {
         "node": {
-          "id": "790521d3-05e7-5ab7-a499-86687637475b",
-          "fluid": {
-            "aspectRatio": 1.8,
-            "src": "/static/674f679841915ed59da7394e937f8f8f/af144/oceanprotocol-01.png",
-            "srcSet": "/static/674f679841915ed59da7394e937f8f8f/7c0ed/oceanprotocol-01.png 200w,\n/static/674f679841915ed59da7394e937f8f8f/647de/oceanprotocol-01.png 400w,\n/static/674f679841915ed59da7394e937f8f8f/af144/oceanprotocol-01.png 800w,\n/static/674f679841915ed59da7394e937f8f8f/ba299/oceanprotocol-01.png 1200w,\n/static/674f679841915ed59da7394e937f8f8f/9ecf6/oceanprotocol-01.png 1600w,\n/static/674f679841915ed59da7394e937f8f8f/7347c/oceanprotocol-01.png 2880w",
-            "srcWebp": "/static/674f679841915ed59da7394e937f8f8f/c6096/oceanprotocol-01.webp",
-            "srcSetWebp": "/static/674f679841915ed59da7394e937f8f8f/1932c/oceanprotocol-01.webp 200w,\n/static/674f679841915ed59da7394e937f8f8f/f4957/oceanprotocol-01.webp 400w,\n/static/674f679841915ed59da7394e937f8f8f/c6096/oceanprotocol-01.webp 800w,\n/static/674f679841915ed59da7394e937f8f8f/b6424/oceanprotocol-01.webp 1200w,\n/static/674f679841915ed59da7394e937f8f8f/7a72d/oceanprotocol-01.webp 1600w,\n/static/674f679841915ed59da7394e937f8f8f/b5fcc/oceanprotocol-01.webp 2880w",
-            "sizes": "(max-width: 800px) 100vw, 800px",
-            "originalImg": "/static/674f679841915ed59da7394e937f8f8f/7347c/oceanprotocol-01.png",
-            "originalName": "oceanprotocol-01.png",
-            "presentationWidth": 800,
-            "presentationHeight": 444
+          "id": "0bb861dd-385c-5081-96c6-e6e6d87bf227",
+          "gatsbyImageData": {
+            "layout": "constrained",
+            "backgroundColor": "#f8f8f8",
+            "images": {
+              "fallback": {
+                "src": "/static/c2aed5f899971799a903fd8ced8f3114/ce694/oceanprotocol-commons-01.png",
+                "srcSet": "/static/c2aed5f899971799a903fd8ced8f3114/40caa/oceanprotocol-commons-01.png 360w,\n/static/c2aed5f899971799a903fd8ced8f3114/c5f5d/oceanprotocol-commons-01.png 720w,\n/static/c2aed5f899971799a903fd8ced8f3114/ce694/oceanprotocol-commons-01.png 1440w,\n/static/c2aed5f899971799a903fd8ced8f3114/cf037/oceanprotocol-commons-01.png 2880w",
+                "sizes": "(min-width: 1440px) 1440px, 100vw"
+              },
+              "sources": [
+                {
+                  "srcSet": "/static/c2aed5f899971799a903fd8ced8f3114/f5d1b/oceanprotocol-commons-01.webp 360w,\n/static/c2aed5f899971799a903fd8ced8f3114/0b212/oceanprotocol-commons-01.webp 720w,\n/static/c2aed5f899971799a903fd8ced8f3114/ca3cc/oceanprotocol-commons-01.webp 1440w,\n/static/c2aed5f899971799a903fd8ced8f3114/5c5e9/oceanprotocol-commons-01.webp 2880w",
+                  "type": "image/webp",
+                  "sizes": "(min-width: 1440px) 1440px, 100vw"
+                }
+              ]
+            },
+            "width": 1440,
+            "height": 800
           }
         }
       },
       {
         "node": {
-          "id": "f49d52dd-60b9-5833-95ad-4428d4032e76",
-          "fluid": {
-            "aspectRatio": 1.8,
-            "src": "/static/32988a616cc5bc2354e02d16149dbcd6/af144/oceanprotocol-02.png",
-            "srcSet": "/static/32988a616cc5bc2354e02d16149dbcd6/7c0ed/oceanprotocol-02.png 200w,\n/static/32988a616cc5bc2354e02d16149dbcd6/647de/oceanprotocol-02.png 400w,\n/static/32988a616cc5bc2354e02d16149dbcd6/af144/oceanprotocol-02.png 800w,\n/static/32988a616cc5bc2354e02d16149dbcd6/ba299/oceanprotocol-02.png 1200w,\n/static/32988a616cc5bc2354e02d16149dbcd6/9ecf6/oceanprotocol-02.png 1600w,\n/static/32988a616cc5bc2354e02d16149dbcd6/7347c/oceanprotocol-02.png 2880w",
-            "srcWebp": "/static/32988a616cc5bc2354e02d16149dbcd6/c6096/oceanprotocol-02.webp",
-            "srcSetWebp": "/static/32988a616cc5bc2354e02d16149dbcd6/1932c/oceanprotocol-02.webp 200w,\n/static/32988a616cc5bc2354e02d16149dbcd6/f4957/oceanprotocol-02.webp 400w,\n/static/32988a616cc5bc2354e02d16149dbcd6/c6096/oceanprotocol-02.webp 800w,\n/static/32988a616cc5bc2354e02d16149dbcd6/b6424/oceanprotocol-02.webp 1200w,\n/static/32988a616cc5bc2354e02d16149dbcd6/7a72d/oceanprotocol-02.webp 1600w,\n/static/32988a616cc5bc2354e02d16149dbcd6/b5fcc/oceanprotocol-02.webp 2880w",
-            "sizes": "(max-width: 800px) 100vw, 800px",
-            "originalImg": "/static/32988a616cc5bc2354e02d16149dbcd6/7347c/oceanprotocol-02.png",
-            "originalName": "oceanprotocol-02.png",
-            "presentationWidth": 800,
-            "presentationHeight": 444
+          "id": "b7c89abb-87e4-5af7-a4db-74ba3ad8cd7f",
+          "gatsbyImageData": {
+            "layout": "constrained",
+            "backgroundColor": "#f8f8f8",
+            "images": {
+              "fallback": {
+                "src": "/static/0dda6c1f4f857d25fec71f2f16f7b3e5/ce694/oceanprotocol-commons-02.png",
+                "srcSet": "/static/0dda6c1f4f857d25fec71f2f16f7b3e5/40caa/oceanprotocol-commons-02.png 360w,\n/static/0dda6c1f4f857d25fec71f2f16f7b3e5/c5f5d/oceanprotocol-commons-02.png 720w,\n/static/0dda6c1f4f857d25fec71f2f16f7b3e5/ce694/oceanprotocol-commons-02.png 1440w,\n/static/0dda6c1f4f857d25fec71f2f16f7b3e5/cf037/oceanprotocol-commons-02.png 2880w",
+                "sizes": "(min-width: 1440px) 1440px, 100vw"
+              },
+              "sources": [
+                {
+                  "srcSet": "/static/0dda6c1f4f857d25fec71f2f16f7b3e5/f5d1b/oceanprotocol-commons-02.webp 360w,\n/static/0dda6c1f4f857d25fec71f2f16f7b3e5/0b212/oceanprotocol-commons-02.webp 720w,\n/static/0dda6c1f4f857d25fec71f2f16f7b3e5/ca3cc/oceanprotocol-commons-02.webp 1440w,\n/static/0dda6c1f4f857d25fec71f2f16f7b3e5/5c5e9/oceanprotocol-commons-02.webp 2880w",
+                  "type": "image/webp",
+                  "sizes": "(min-width: 1440px) 1440px, 100vw"
+                }
+              ]
+            },
+            "width": 1440,
+            "height": 800
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "39a06cc4-7b33-5402-b291-e281883f40df",
+          "gatsbyImageData": {
+            "layout": "constrained",
+            "backgroundColor": "#f8f8f8",
+            "images": {
+              "fallback": {
+                "src": "/static/57ca1cf313ffe317506e5c3136458172/ce694/oceanprotocol-commons-03.png",
+                "srcSet": "/static/57ca1cf313ffe317506e5c3136458172/40caa/oceanprotocol-commons-03.png 360w,\n/static/57ca1cf313ffe317506e5c3136458172/c5f5d/oceanprotocol-commons-03.png 720w,\n/static/57ca1cf313ffe317506e5c3136458172/ce694/oceanprotocol-commons-03.png 1440w,\n/static/57ca1cf313ffe317506e5c3136458172/cf037/oceanprotocol-commons-03.png 2880w",
+                "sizes": "(min-width: 1440px) 1440px, 100vw"
+              },
+              "sources": [
+                {
+                  "srcSet": "/static/57ca1cf313ffe317506e5c3136458172/f5d1b/oceanprotocol-commons-03.webp 360w,\n/static/57ca1cf313ffe317506e5c3136458172/0b212/oceanprotocol-commons-03.webp 720w,\n/static/57ca1cf313ffe317506e5c3136458172/ca3cc/oceanprotocol-commons-03.webp 1440w,\n/static/57ca1cf313ffe317506e5c3136458172/5c5e9/oceanprotocol-commons-03.webp 2880w",
+                  "type": "image/webp",
+                  "sizes": "(min-width: 1440px) 1440px, 100vw"
+                }
+              ]
+            },
+            "width": 1440,
+            "height": 800
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "65b2eb63-5836-5c1c-94bf-69297a361c9a",
+          "gatsbyImageData": {
+            "layout": "constrained",
+            "backgroundColor": "#f8f8f8",
+            "images": {
+              "fallback": {
+                "src": "/static/f154f589e85335d2bfa0458934fe5098/ce694/oceanprotocol-commons-04.png",
+                "srcSet": "/static/f154f589e85335d2bfa0458934fe5098/40caa/oceanprotocol-commons-04.png 360w,\n/static/f154f589e85335d2bfa0458934fe5098/c5f5d/oceanprotocol-commons-04.png 720w,\n/static/f154f589e85335d2bfa0458934fe5098/ce694/oceanprotocol-commons-04.png 1440w,\n/static/f154f589e85335d2bfa0458934fe5098/cf037/oceanprotocol-commons-04.png 2880w",
+                "sizes": "(min-width: 1440px) 1440px, 100vw"
+              },
+              "sources": [
+                {
+                  "srcSet": "/static/f154f589e85335d2bfa0458934fe5098/f5d1b/oceanprotocol-commons-04.webp 360w,\n/static/f154f589e85335d2bfa0458934fe5098/0b212/oceanprotocol-commons-04.webp 720w,\n/static/f154f589e85335d2bfa0458934fe5098/ca3cc/oceanprotocol-commons-04.webp 1440w,\n/static/f154f589e85335d2bfa0458934fe5098/5c5e9/oceanprotocol-commons-04.webp 2880w",
+                  "type": "image/webp",
+                  "sizes": "(min-width: 1440px) 1440px, 100vw"
+                }
+              ]
+            },
+            "width": 1440,
+            "height": 800
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "1195af99-ad24-58a1-91c8-363404b5a9d7",
+          "gatsbyImageData": {
+            "layout": "constrained",
+            "backgroundColor": "#f8f8f8",
+            "images": {
+              "fallback": {
+                "src": "/static/c83aaf5a493aef55d3433f5294924354/ce694/oceanprotocol-commons-05.png",
+                "srcSet": "/static/c83aaf5a493aef55d3433f5294924354/40caa/oceanprotocol-commons-05.png 360w,\n/static/c83aaf5a493aef55d3433f5294924354/c5f5d/oceanprotocol-commons-05.png 720w,\n/static/c83aaf5a493aef55d3433f5294924354/ce694/oceanprotocol-commons-05.png 1440w,\n/static/c83aaf5a493aef55d3433f5294924354/cf037/oceanprotocol-commons-05.png 2880w",
+                "sizes": "(min-width: 1440px) 1440px, 100vw"
+              },
+              "sources": [
+                {
+                  "srcSet": "/static/c83aaf5a493aef55d3433f5294924354/f5d1b/oceanprotocol-commons-05.webp 360w,\n/static/c83aaf5a493aef55d3433f5294924354/0b212/oceanprotocol-commons-05.webp 720w,\n/static/c83aaf5a493aef55d3433f5294924354/ca3cc/oceanprotocol-commons-05.webp 1440w,\n/static/c83aaf5a493aef55d3433f5294924354/5c5e9/oceanprotocol-commons-05.webp 2880w",
+                  "type": "image/webp",
+                  "sizes": "(min-width: 1440px) 1440px, 100vw"
+                }
+              ]
+            },
+            "width": 1440,
+            "height": 800
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "e140eb7b-cf21-5198-909f-2220ff5476cd",
+          "gatsbyImageData": {
+            "layout": "constrained",
+            "backgroundColor": "#181818",
+            "images": {
+              "fallback": {
+                "src": "/static/76ebcd707f5a3e8b65e786c1772d243b/ce694/oceanprotocol-ipfs-01.png",
+                "srcSet": "/static/76ebcd707f5a3e8b65e786c1772d243b/40caa/oceanprotocol-ipfs-01.png 360w,\n/static/76ebcd707f5a3e8b65e786c1772d243b/c5f5d/oceanprotocol-ipfs-01.png 720w,\n/static/76ebcd707f5a3e8b65e786c1772d243b/ce694/oceanprotocol-ipfs-01.png 1440w,\n/static/76ebcd707f5a3e8b65e786c1772d243b/cf037/oceanprotocol-ipfs-01.png 2880w",
+                "sizes": "(min-width: 1440px) 1440px, 100vw"
+              },
+              "sources": [
+                {
+                  "srcSet": "/static/76ebcd707f5a3e8b65e786c1772d243b/f5d1b/oceanprotocol-ipfs-01.webp 360w,\n/static/76ebcd707f5a3e8b65e786c1772d243b/0b212/oceanprotocol-ipfs-01.webp 720w,\n/static/76ebcd707f5a3e8b65e786c1772d243b/ca3cc/oceanprotocol-ipfs-01.webp 1440w,\n/static/76ebcd707f5a3e8b65e786c1772d243b/5c5e9/oceanprotocol-ipfs-01.webp 2880w",
+                  "type": "image/webp",
+                  "sizes": "(min-width: 1440px) 1440px, 100vw"
+                }
+              ]
+            },
+            "width": 1440,
+            "height": 800
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "83175de1-8822-59fc-9ecb-268302d187a0",
+          "gatsbyImageData": {
+            "layout": "constrained",
+            "backgroundColor": "#f8f8f8",
+            "images": {
+              "fallback": {
+                "src": "/static/135a70a331a1c4ffcc1ebf4c02460e05/ce694/oceanprotocol-ipfs-02.png",
+                "srcSet": "/static/135a70a331a1c4ffcc1ebf4c02460e05/40caa/oceanprotocol-ipfs-02.png 360w,\n/static/135a70a331a1c4ffcc1ebf4c02460e05/c5f5d/oceanprotocol-ipfs-02.png 720w,\n/static/135a70a331a1c4ffcc1ebf4c02460e05/ce694/oceanprotocol-ipfs-02.png 1440w,\n/static/135a70a331a1c4ffcc1ebf4c02460e05/cf037/oceanprotocol-ipfs-02.png 2880w",
+                "sizes": "(min-width: 1440px) 1440px, 100vw"
+              },
+              "sources": [
+                {
+                  "srcSet": "/static/135a70a331a1c4ffcc1ebf4c02460e05/f5d1b/oceanprotocol-ipfs-02.webp 360w,\n/static/135a70a331a1c4ffcc1ebf4c02460e05/0b212/oceanprotocol-ipfs-02.webp 720w,\n/static/135a70a331a1c4ffcc1ebf4c02460e05/ca3cc/oceanprotocol-ipfs-02.webp 1440w,\n/static/135a70a331a1c4ffcc1ebf4c02460e05/5c5e9/oceanprotocol-ipfs-02.webp 2880w",
+                  "type": "image/webp",
+                  "sizes": "(min-width: 1440px) 1440px, 100vw"
+                }
+              ]
+            },
+            "width": 1440,
+            "height": 800
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "83a39174-a39e-547a-9cc8-3e0cf795b45c",
+          "gatsbyImageData": {
+            "layout": "constrained",
+            "backgroundColor": "#f8f8f8",
+            "images": {
+              "fallback": {
+                "src": "/static/674f679841915ed59da7394e937f8f8f/ce694/oceanprotocol-v1-01.png",
+                "srcSet": "/static/674f679841915ed59da7394e937f8f8f/40caa/oceanprotocol-v1-01.png 360w,\n/static/674f679841915ed59da7394e937f8f8f/c5f5d/oceanprotocol-v1-01.png 720w,\n/static/674f679841915ed59da7394e937f8f8f/ce694/oceanprotocol-v1-01.png 1440w,\n/static/674f679841915ed59da7394e937f8f8f/cf037/oceanprotocol-v1-01.png 2880w",
+                "sizes": "(min-width: 1440px) 1440px, 100vw"
+              },
+              "sources": [
+                {
+                  "srcSet": "/static/674f679841915ed59da7394e937f8f8f/f5d1b/oceanprotocol-v1-01.webp 360w,\n/static/674f679841915ed59da7394e937f8f8f/0b212/oceanprotocol-v1-01.webp 720w,\n/static/674f679841915ed59da7394e937f8f8f/ca3cc/oceanprotocol-v1-01.webp 1440w,\n/static/674f679841915ed59da7394e937f8f8f/5c5e9/oceanprotocol-v1-01.webp 2880w",
+                  "type": "image/webp",
+                  "sizes": "(min-width: 1440px) 1440px, 100vw"
+                }
+              ]
+            },
+            "width": 1440,
+            "height": 800
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "7bec1ade-3ab4-589f-80fd-3ea2b34e62cb",
+          "gatsbyImageData": {
+            "layout": "constrained",
+            "backgroundColor": "#181818",
+            "images": {
+              "fallback": {
+                "src": "/static/32988a616cc5bc2354e02d16149dbcd6/ce694/oceanprotocol-v1-02.png",
+                "srcSet": "/static/32988a616cc5bc2354e02d16149dbcd6/40caa/oceanprotocol-v1-02.png 360w,\n/static/32988a616cc5bc2354e02d16149dbcd6/c5f5d/oceanprotocol-v1-02.png 720w,\n/static/32988a616cc5bc2354e02d16149dbcd6/ce694/oceanprotocol-v1-02.png 1440w,\n/static/32988a616cc5bc2354e02d16149dbcd6/cf037/oceanprotocol-v1-02.png 2880w",
+                "sizes": "(min-width: 1440px) 1440px, 100vw"
+              },
+              "sources": [
+                {
+                  "srcSet": "/static/32988a616cc5bc2354e02d16149dbcd6/f5d1b/oceanprotocol-v1-02.webp 360w,\n/static/32988a616cc5bc2354e02d16149dbcd6/0b212/oceanprotocol-v1-02.webp 720w,\n/static/32988a616cc5bc2354e02d16149dbcd6/ca3cc/oceanprotocol-v1-02.webp 1440w,\n/static/32988a616cc5bc2354e02d16149dbcd6/5c5e9/oceanprotocol-v1-02.webp 2880w",
+                  "type": "image/webp",
+                  "sizes": "(min-width: 1440px) 1440px, 100vw"
+                }
+              ]
+            },
+            "width": 1440,
+            "height": 800
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "4ae20cbb-bf65-58c0-9ecf-0e12fca45d55",
+          "gatsbyImageData": {
+            "layout": "constrained",
+            "backgroundColor": "#181818",
+            "images": {
+              "fallback": {
+                "src": "/static/cb2de0894d8c65a935c1fb52c9f67319/ce694/oceanprotocol-v1-03.png",
+                "srcSet": "/static/cb2de0894d8c65a935c1fb52c9f67319/40caa/oceanprotocol-v1-03.png 360w,\n/static/cb2de0894d8c65a935c1fb52c9f67319/c5f5d/oceanprotocol-v1-03.png 720w,\n/static/cb2de0894d8c65a935c1fb52c9f67319/ce694/oceanprotocol-v1-03.png 1440w,\n/static/cb2de0894d8c65a935c1fb52c9f67319/cf037/oceanprotocol-v1-03.png 2880w",
+                "sizes": "(min-width: 1440px) 1440px, 100vw"
+              },
+              "sources": [
+                {
+                  "srcSet": "/static/cb2de0894d8c65a935c1fb52c9f67319/f5d1b/oceanprotocol-v1-03.webp 360w,\n/static/cb2de0894d8c65a935c1fb52c9f67319/0b212/oceanprotocol-v1-03.webp 720w,\n/static/cb2de0894d8c65a935c1fb52c9f67319/ca3cc/oceanprotocol-v1-03.webp 1440w,\n/static/cb2de0894d8c65a935c1fb52c9f67319/5c5e9/oceanprotocol-v1-03.webp 2880w",
+                  "type": "image/webp",
+                  "sizes": "(min-width: 1440px) 1440px, 100vw"
+                }
+              ]
+            },
+            "width": 1440,
+            "height": 800
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "afd37263-cbbc-5e65-9a9b-81ffb8dbe3a0",
+          "gatsbyImageData": {
+            "layout": "constrained",
+            "backgroundColor": "#181818",
+            "images": {
+              "fallback": {
+                "src": "/static/cb7b8721aa4d44eb86e870364672ff52/ce694/oceanprotocol-v1-04.png",
+                "srcSet": "/static/cb7b8721aa4d44eb86e870364672ff52/40caa/oceanprotocol-v1-04.png 360w,\n/static/cb7b8721aa4d44eb86e870364672ff52/c5f5d/oceanprotocol-v1-04.png 720w,\n/static/cb7b8721aa4d44eb86e870364672ff52/ce694/oceanprotocol-v1-04.png 1440w,\n/static/cb7b8721aa4d44eb86e870364672ff52/cf037/oceanprotocol-v1-04.png 2880w",
+                "sizes": "(min-width: 1440px) 1440px, 100vw"
+              },
+              "sources": [
+                {
+                  "srcSet": "/static/cb7b8721aa4d44eb86e870364672ff52/f5d1b/oceanprotocol-v1-04.webp 360w,\n/static/cb7b8721aa4d44eb86e870364672ff52/0b212/oceanprotocol-v1-04.webp 720w,\n/static/cb7b8721aa4d44eb86e870364672ff52/ca3cc/oceanprotocol-v1-04.webp 1440w,\n/static/cb7b8721aa4d44eb86e870364672ff52/5c5e9/oceanprotocol-v1-04.webp 2880w",
+                  "type": "image/webp",
+                  "sizes": "(min-width: 1440px) 1440px, 100vw"
+                }
+              ]
+            },
+            "width": 1440,
+            "height": 800
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "5295d766-6bfa-5bdf-8a73-ae6cf0bd4092",
+          "gatsbyImageData": {
+            "layout": "constrained",
+            "backgroundColor": "#181828",
+            "images": {
+              "fallback": {
+                "src": "/static/efd50223e7de013c9e2511cffe3c035f/ce694/oceanprotocol-v1-05.png",
+                "srcSet": "/static/efd50223e7de013c9e2511cffe3c035f/40caa/oceanprotocol-v1-05.png 360w,\n/static/efd50223e7de013c9e2511cffe3c035f/c5f5d/oceanprotocol-v1-05.png 720w,\n/static/efd50223e7de013c9e2511cffe3c035f/ce694/oceanprotocol-v1-05.png 1440w,\n/static/efd50223e7de013c9e2511cffe3c035f/cf037/oceanprotocol-v1-05.png 2880w",
+                "sizes": "(min-width: 1440px) 1440px, 100vw"
+              },
+              "sources": [
+                {
+                  "srcSet": "/static/efd50223e7de013c9e2511cffe3c035f/f5d1b/oceanprotocol-v1-05.webp 360w,\n/static/efd50223e7de013c9e2511cffe3c035f/0b212/oceanprotocol-v1-05.webp 720w,\n/static/efd50223e7de013c9e2511cffe3c035f/ca3cc/oceanprotocol-v1-05.webp 1440w,\n/static/efd50223e7de013c9e2511cffe3c035f/5c5e9/oceanprotocol-v1-05.webp 2880w",
+                  "type": "image/webp",
+                  "sizes": "(min-width: 1440px) 1440px, 100vw"
+                }
+              ]
+            },
+            "width": 1440,
+            "height": 800
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "da6697fa-fd1f-5b93-b682-ea1c56f95b83",
+          "gatsbyImageData": {
+            "layout": "constrained",
+            "backgroundColor": "#181818",
+            "images": {
+              "fallback": {
+                "src": "/static/c6298808496bc5a8dd0d7a707cb9e0bf/ce694/oceanprotocol-v1-06.png",
+                "srcSet": "/static/c6298808496bc5a8dd0d7a707cb9e0bf/40caa/oceanprotocol-v1-06.png 360w,\n/static/c6298808496bc5a8dd0d7a707cb9e0bf/c5f5d/oceanprotocol-v1-06.png 720w,\n/static/c6298808496bc5a8dd0d7a707cb9e0bf/ce694/oceanprotocol-v1-06.png 1440w,\n/static/c6298808496bc5a8dd0d7a707cb9e0bf/cf037/oceanprotocol-v1-06.png 2880w",
+                "sizes": "(min-width: 1440px) 1440px, 100vw"
+              },
+              "sources": [
+                {
+                  "srcSet": "/static/c6298808496bc5a8dd0d7a707cb9e0bf/f5d1b/oceanprotocol-v1-06.webp 360w,\n/static/c6298808496bc5a8dd0d7a707cb9e0bf/0b212/oceanprotocol-v1-06.webp 720w,\n/static/c6298808496bc5a8dd0d7a707cb9e0bf/ca3cc/oceanprotocol-v1-06.webp 1440w,\n/static/c6298808496bc5a8dd0d7a707cb9e0bf/5c5e9/oceanprotocol-v1-06.webp 2880w",
+                  "type": "image/webp",
+                  "sizes": "(min-width: 1440px) 1440px, 100vw"
+                }
+              ]
+            },
+            "width": 1440,
+            "height": 800
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "1ca0c411-255d-50ca-8c79-9a2a3586fba0",
+          "gatsbyImageData": {
+            "layout": "constrained",
+            "backgroundColor": "#083838",
+            "images": {
+              "fallback": {
+                "src": "/static/1531cd220bd930dc463b75b0eb57c6ca/ce694/oceanprotocol-v1-07.png",
+                "srcSet": "/static/1531cd220bd930dc463b75b0eb57c6ca/40caa/oceanprotocol-v1-07.png 360w,\n/static/1531cd220bd930dc463b75b0eb57c6ca/c5f5d/oceanprotocol-v1-07.png 720w,\n/static/1531cd220bd930dc463b75b0eb57c6ca/ce694/oceanprotocol-v1-07.png 1440w,\n/static/1531cd220bd930dc463b75b0eb57c6ca/cf037/oceanprotocol-v1-07.png 2880w",
+                "sizes": "(min-width: 1440px) 1440px, 100vw"
+              },
+              "sources": [
+                {
+                  "srcSet": "/static/1531cd220bd930dc463b75b0eb57c6ca/f5d1b/oceanprotocol-v1-07.webp 360w,\n/static/1531cd220bd930dc463b75b0eb57c6ca/0b212/oceanprotocol-v1-07.webp 720w,\n/static/1531cd220bd930dc463b75b0eb57c6ca/ca3cc/oceanprotocol-v1-07.webp 1440w,\n/static/1531cd220bd930dc463b75b0eb57c6ca/5c5e9/oceanprotocol-v1-07.webp 2880w",
+                  "type": "image/webp",
+                  "sizes": "(min-width: 1440px) 1440px, 100vw"
+                }
+              ]
+            },
+            "width": 1440,
+            "height": 800
           }
         }
       }
     ]
-  }
+  },
+  "extensions": {}
 }

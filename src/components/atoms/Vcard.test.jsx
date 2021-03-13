@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent, waitForElement } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 import Vcard, { constructVcard, toDataURL, init } from './Vcard'
 import meta from '../../../tests/__fixtures__/meta.json'
 import resume from '../../../tests/__fixtures__/resume.json'
@@ -25,7 +25,7 @@ describe('Vcard', () => {
   it('Button click starts download', async () => {
     const { container } = render(<Vcard />)
     fireEvent.click(container.firstChild)
-    await waitForElement(() => global.URL.createObjectURL)
+    await waitFor(() => global.URL.createObjectURL)
     expect(global.URL.createObjectURL).toHaveBeenCalledTimes(1)
   })
 
