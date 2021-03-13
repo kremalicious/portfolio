@@ -4,20 +4,22 @@ import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { projectImage as styleProjectImage } from './ProjectImage.module.css'
 
-export default function ProjectImage({ image, alt }) {
+export default function ProjectImage({ image, alt, className }) {
   return (
     <GatsbyImage
-      className={styleProjectImage}
+      className={`${styleProjectImage} ${className || ''}`}
       backgroundColor="transparent"
       image={image}
       alt={alt}
+      as="figure"
     />
   )
 }
 
 ProjectImage.propTypes = {
   image: PropTypes.object.isRequired,
-  alt: PropTypes.string.isRequired
+  alt: PropTypes.string.isRequired,
+  className: PropTypes.string
 }
 
 export const projectImage = graphql`
@@ -28,6 +30,6 @@ export const projectImage = graphql`
 
 export const projectImageTeaser = graphql`
   fragment ProjectImageTeaser on ImageSharp {
-    gatsbyImageData(layout: CONSTRAINED, width: 980, quality: 85)
+    gatsbyImageData(layout: CONSTRAINED, width: 740, quality: 85)
   }
 `

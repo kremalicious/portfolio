@@ -1,7 +1,18 @@
 .screen {
-  margin-top: calc(var(--spacer) * var(--line-height));
+  margin: calc(var(--spacer) * var(--line-height)) auto 0 auto;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
+@media (min-width: 55rem) {
+  .screen {
+    padding-left: 4%;
+    padding-right: 4%;
+    max-width: calc(var(--projectImageMaxWidth) + 8%);
+  }
+}
+
+/* Single Project Page */
 .screen > article {
   display: grid;
   grid-template-columns:

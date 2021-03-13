@@ -38,21 +38,19 @@ function Project({ node, images }) {
   const imageCount = getImageCount(images, slug)
 
   return (
-    <article className={styleProject} key={slug}>
-      <Link to={slug}>
-        <h1 className={styleTitle}>{title}</h1>
-        <ProjectImage image={img.childImageSharp.gatsbyImageData} alt={title} />
+    <Link to={slug} className={styleProject} key={slug}>
+      <h1 className={styleTitle}>{title}</h1>
+      <ProjectImage image={img.childImageSharp.gatsbyImageData} alt={title} />
 
-        {imageCount > 1 && (
-          <small
-            className={styleImageCount}
-            title={`${imageCount} project images`}
-          >
-            <Icon name="Image" /> {imageCount}
-          </small>
-        )}
-      </Link>
-    </article>
+      {imageCount > 1 && (
+        <small
+          className={styleImageCount}
+          title={`${imageCount} project images`}
+        >
+          <Icon name="Image" /> {imageCount}
+        </small>
+      )}
+    </Link>
   )
 }
 

@@ -6,19 +6,22 @@
   box-shadow: var(--box-shadow);
 }
 
+a:hover .frame,
+a:focus .frame {
+  border-color: var(--link-color);
+}
+
 .projectImage {
   composes: frame;
-  margin-left: auto;
-  margin-right: auto;
   display: block;
+}
+
+.projectImage:not(:only-of-type) {
+  margin-bottom: calc(var(--spacer) * 3);
 }
 
 @media (min-width: 1200px) {
-  .projectImage {
-    max-width: var(--projectImageMaxWidth);
+  .projectImage:not(:only-of-type) {
+    margin-bottom: calc(var(--spacer) * 6);
   }
-}
-
-.projectImage img {
-  display: block;
 }

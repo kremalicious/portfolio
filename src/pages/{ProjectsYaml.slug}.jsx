@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import FullWidth from '../components/atoms/FullWidth'
+import { fullContainer } from '../components/atoms/FullWidth.module.css'
 import ProjectImage from '../components/atoms/ProjectImage'
 import ProjectTechstack from '../components/molecules/ProjectTechstack'
 import ProjectLinks from '../components/molecules/ProjectLinks'
@@ -9,7 +9,6 @@ import ProjectNav from '../components/molecules/ProjectNav'
 import SEO from '../components/atoms/SEO'
 import {
   meta,
-  imageWrap,
   headerTitle,
   description
 } from './{ProjectsYaml.slug}.module.css'
@@ -29,15 +28,14 @@ ProjectMeta.propTypes = {
 }
 
 function ProjectImages({ projectImages, title }) {
-  return (
-    <FullWidth>
-      {projectImages.map(({ node }) => (
-        <div className={imageWrap} key={node.id}>
-          <ProjectImage image={node.gatsbyImageData} alt={title} />
-        </div>
-      ))}
-    </FullWidth>
-  )
+  return projectImages.map(({ node }) => (
+    <ProjectImage
+      image={node.gatsbyImageData}
+      alt={title}
+      key={node.id}
+      className={fullContainer}
+    />
+  ))
 }
 
 ProjectImages.propTypes = {

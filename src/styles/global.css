@@ -92,7 +92,8 @@ a:focus {
 /* Media */
 img,
 video,
-svg {
+svg,
+figure {
   max-width: 100%;
   height: auto;
   margin: 0;

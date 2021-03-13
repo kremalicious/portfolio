@@ -1,13 +1,13 @@
 .button {
   display: block;
   width: 100%;
-  color: var(--brand-cyan);
+  color: var(--link-color);
   text-align: center;
   border-radius: var(--border-radius);
   padding: calc(var(--spacer) / 4) calc(var(--spacer) / 2);
   transition-property: all;
   background: var(--box-background-color);
-  border: 0.05rem solid var(--brand-cyan);
+  border: var(--stroke-width) solid rgba(255, 255, 255, 0.2);
   font-size: var(--font-size-small);
   text-transform: uppercase;
   cursor: pointer;
@@ -23,15 +23,14 @@
 .button svg {
   margin-right: calc(var(--spacer) / 4);
   transition: 0.2s var(--easing);
-  margin-bottom: -0.1rem;
+  margin-bottom: -0.15rem;
   width: var(--font-size-small);
   height: var(--font-size-small);
 }
 
 .button:hover,
 .button:focus {
-  color: #5ebeb1;
-  border-color: #5ebeb1;
+  border-color: var(--link-color);
   transform: translate3d(0, -0.1rem, 0);
   box-shadow: var(--box-shadow);
 }

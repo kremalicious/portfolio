@@ -1,16 +1,8 @@
-.imageWrap {
-  margin-bottom: calc(var(--spacer) * 3);
-}
-
 .headerTitle {
   font-size: var(--font-size-h2);
 }
 
 @media (min-width: 30em) {
-  .imageWrap {
-    margin-bottom: calc(var(--spacer) * 6);
-  }
-
   .headerTitle {
     font-size: var(--font-size-h1);
   }

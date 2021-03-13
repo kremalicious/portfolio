@@ -14,7 +14,6 @@
   background: var(--box-background-color);
   border-radius: var(--border-radius);
   border: 0.05rem solid transparent;
-  color: var(--text-color-light);
   font-size: var(--font-size-small);
 }
 
