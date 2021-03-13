@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { hostnameInfo } from './HostnameCheck.module.css'
@@ -11,16 +11,12 @@ export default function HostnameCheck({ allowedHosts }) {
   // default to true so SSR builds never show the banner
   const [isAllowedHost, setIsAllowedHost] = useState(true)
 
-  const checkAllowedHost = () => {
-    if (typeof window !== 'undefined' && window.location) {
-      return allowedHosts.includes(window.location.hostname)
-    }
-  }
-
   useEffect(() => {
-    const isAllowedHost = checkAllowedHost()
-    setIsAllowedHost(isAllowedHost)
-  }, [])
+    if (typeof window !== 'undefined' && window.location) {
+      const isAllowedHost = allowedHosts.includes(window.location.hostname)
+      setIsAllowedHost(isAllowedHost)
+    }
+  }, [allowedHosts])
 
   return !isAllowedHost ? (
     <>
