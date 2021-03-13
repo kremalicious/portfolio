@@ -89,7 +89,7 @@ export const IndexQuery = graphql`
           slug
           img {
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED, width: 980, quality: 85)
+              ...ProjectImageTeaser
             }
           }
         }

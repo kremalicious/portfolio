@@ -57,12 +57,6 @@
   transform-box: border-box;
 }
 
-.minimal .title,
-.minimal .description {
-  color: var(--text-color-light);
-}
-
 .minimal .logo {
   margin-bottom: calc(var(--spacer) / 3);
-  opacity: 0.5;
 }

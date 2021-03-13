@@ -103,3 +103,8 @@ svg {
   min-height: 100vh;
   flex-direction: column;
 }
+
+.gatsby-image-wrapper {
+  max-height: 100vh;
+  display: block;
+}

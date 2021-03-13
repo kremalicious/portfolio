@@ -1,10 +1,16 @@
+.frame {
+  border: var(--stroke-width) solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: 0.2s ease-out;
+  box-shadow: var(--box-shadow);
+}
+
 .projectImage {
+  composes: frame;
   margin-left: auto;
   margin-right: auto;
   display: block;
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: var(--box-shadow);
 }
 
 @media (min-width: 1200px) {
