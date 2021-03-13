@@ -27,6 +27,10 @@ function getDarkMode() {
 export default function useDarkMode() {
   const [darkMode, setDarkMode] = useState(getDarkMode)
 
+  function toggleDarkMode() {
+    setDarkMode(!darkMode)
+  }
+
   //
   // Handle system theme change events
   //
@@ -35,26 +39,21 @@ export default function useDarkMode() {
   }, [])
 
   useEffect(() => {
-    if (!isClient) return false
+    if (!isClient) return
 
     const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
     try {
-      // Handle Chrome & Firefox
       darkModeQuery.addEventListener('change', handleChange)
     } catch (addEventListenerError) {
-      try {
-        // Handle Safari
-        darkModeQuery.addListener('change', handleChange)
-      } catch (addListenerError) {
-        console.error(addListenerError)
-      }
+      console.error(addEventListenerError)
     }
+
     return () =>
       window
         .matchMedia('(prefers-color-scheme: dark)')
         .removeEventListener('change', handleChange)
   }, [handleChange])
 
-  return { value: darkMode, toggle: setDarkMode }
+  return { value: darkMode, toggle: toggleDarkMode }
 }
