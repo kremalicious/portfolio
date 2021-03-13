@@ -14,9 +14,7 @@ const query = graphql`
           slug
           img {
             childImageSharp {
-              fluid(maxWidth: 500, quality: 85) {
-                ...GatsbyImageSharpFluid_noBase64
-              }
+              gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 85)
             }
           }
         }
@@ -28,7 +26,10 @@ const query = graphql`
 const Project = ({ node, refCurrentItem }) => (
   <div className={item} ref={refCurrentItem}>
     <Link className={link} to={node.slug}>
-      <ProjectImage fluid={node.img.childImageSharp.fluid} alt={node.title} />
+      <ProjectImage
+        image={node.img.childImageSharp.gatsbyImageData}
+        alt={node.title}
+      />
       <h1 className={title}>{node.title}</h1>
     </Link>
   </div>

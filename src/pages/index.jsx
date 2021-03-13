@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import shortid from 'shortid'
@@ -41,7 +41,7 @@ function Project({ node, images }) {
     <article className={styleProject} key={slug}>
       <Link to={slug}>
         <h1 className={styleTitle}>{title}</h1>
-        <ProjectImage fluid={img.childImageSharp.fluid} alt={title} />
+        <ProjectImage image={img.childImageSharp.gatsbyImageData} alt={title} />
 
         {imageCount > 1 && (
           <small
@@ -61,7 +61,7 @@ Home.propTypes = {
   pageContext: PropTypes.object.isRequired
 }
 
-function Home({ data, pageContext }) {
+export default function Home({ data, pageContext }) {
   const projects = data.allProjectsYaml.edges
   const images = data.projectImageFiles.edges
 
@@ -80,8 +80,6 @@ function Home({ data, pageContext }) {
   )
 }
 
-export default memo(Home)
-
 export const IndexQuery = graphql`
   query {
     allProjectsYaml {
@@ -91,9 +89,7 @@ export const IndexQuery = graphql`
           slug
           img {
             childImageSharp {
-              fluid(maxWidth: 980, quality: 85) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
+              gatsbyImageData(layout: CONSTRAINED, width: 980, quality: 85)
             }
           }
         }

@@ -8,9 +8,12 @@ const query = graphql`
         label
         picture {
           childImageSharp {
-            fixed(width: 256, height: 256) {
-              ...GatsbyImageSharpFixed_withWebp_noBase64
-            }
+            gatsbyImageData(
+              width: 256
+              height: 256
+              placeholder: NONE
+              layout: FIXED
+            )
           }
         }
         email

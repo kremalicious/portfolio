@@ -25,7 +25,7 @@ ThemeToggle.propTypes = {
   dark: PropTypes.bool.isRequired
 }
 
-const ThemeToggleInput = memo(({ dark, toggleDark }) => (
+const ThemeToggleInput = ({ dark, toggleDark }) => (
   <input
     onChange={() => toggleDark()}
     type="checkbox"
@@ -34,7 +34,7 @@ const ThemeToggleInput = memo(({ dark, toggleDark }) => (
     aria-describedby="toggle"
     checked={dark}
   />
-))
+)
 
 ThemeToggleInput.displayName = 'ThemeToggleInput'
 
@@ -59,7 +59,7 @@ HeadItems.propTypes = {
   themeColor: PropTypes.string.isRequired
 }
 
-function ThemeSwitch() {
+export default function ThemeSwitch() {
   const { value, toggle } = useDarkMode(false, {
     classNameDark: 'dark',
     classNameLight: 'light'
@@ -85,5 +85,3 @@ function ThemeSwitch() {
     </>
   )
 }
-
-export default memo(ThemeSwitch)

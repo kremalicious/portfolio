@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import FullWidth from '../components/atoms/FullWidth'
@@ -14,76 +14,67 @@ import {
   description
 } from './{ProjectsYaml.slug}.module.css'
 
-class ProjectMeta extends PureComponent {
-  static propTypes = {
-    links: PropTypes.array,
-    techstack: PropTypes.array
-  }
-
-  render() {
-    const { links, techstack } = this.props
-
-    return (
-      <footer className={meta}>
-        {!!links && <ProjectLinks links={links} />}
-        {!!techstack && <ProjectTechstack techstack={techstack} />}
-      </footer>
-    )
-  }
+function ProjectMeta({ links, techstack }) {
+  return (
+    <footer className={meta}>
+      {!!links && <ProjectLinks links={links} />}
+      {!!techstack && <ProjectTechstack techstack={techstack} />}
+    </footer>
+  )
 }
 
-class ProjectImages extends PureComponent {
-  static propTypes = {
-    projectImages: PropTypes.array,
-    title: PropTypes.string
-  }
-
-  render() {
-    return (
-      <FullWidth>
-        {this.props.projectImages.map(({ node }) => (
-          <div className={imageWrap} key={node.id}>
-            <ProjectImage fluid={node.fluid} alt={this.props.title} />
-          </div>
-        ))}
-      </FullWidth>
-    )
-  }
+ProjectMeta.propTypes = {
+  links: PropTypes.array,
+  techstack: PropTypes.array
 }
 
-export default class Project extends PureComponent {
-  static propTypes = {
-    data: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired
-  }
+function ProjectImages({ projectImages, title }) {
+  return (
+    <FullWidth>
+      {projectImages.map(({ node }) => (
+        <div className={imageWrap} key={node.id}>
+          <ProjectImage image={node.gatsbyImageData} alt={title} />
+        </div>
+      ))}
+    </FullWidth>
+  )
+}
 
-  render() {
-    const { data } = this.props
-    const project = data.projectsYaml
-    const projectImages = data.projectImages.edges
-    const descriptionHtml = data.projectsYaml.fields.descriptionHtml
-    const { title, links, techstack } = project
+ProjectImages.propTypes = {
+  projectImages: PropTypes.array,
+  title: PropTypes.string
+}
 
-    return (
-      <>
-        <SEO project={project} />
+export default function Project({ data }) {
+  const project = data.projectsYaml
+  const projectImages = data.projectImages.edges
+  const descriptionHtml = data.projectsYaml.fields.descriptionHtml
+  const { title, links, techstack } = project
 
-        <article>
-          <header>
-            <h1 className={headerTitle}>{title}</h1>
-          </header>
-          <div
-            className={description}
-            dangerouslySetInnerHTML={{ __html: descriptionHtml }}
-          />
-          <ProjectImages projectImages={projectImages} title={title} />
-          <ProjectMeta links={links} techstack={techstack} />
-        </article>
+  return (
+    <>
+      <SEO project={project} />
 
-        <ProjectNav currentSlug={project.slug} />
-      </>
-    )
-  }
+      <article>
+        <header>
+          <h1 className={headerTitle}>{title}</h1>
+        </header>
+        <div
+          className={description}
+          dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+        />
+        <ProjectImages projectImages={projectImages} title={title} />
+        <ProjectMeta links={links} techstack={techstack} />
+      </article>
+
+      <ProjectNav currentSlug={project.slug} />
+    </>
+  )
+}
+
+Project.propTypes = {
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 }
 
 export const projectQuery = graphql`

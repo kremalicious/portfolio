@@ -39,6 +39,9 @@ module.exports = {
     },
     'gatsby-transformer-yaml',
     'gatsby-transformer-json',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-svgr',
@@ -79,8 +82,6 @@ module.exports = {
       }
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-offline',
     'gatsby-plugin-webpack-size'

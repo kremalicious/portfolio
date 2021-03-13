@@ -3,11 +3,12 @@ import saveAs from 'file-saver'
 import vCard from 'vcf'
 import { useMeta } from '../../hooks/use-meta'
 import { useResume } from '../../hooks/use-resume'
+import { getSrc } from 'gatsby-plugin-image'
 
 export default function Vcard() {
   const metaYaml = useMeta()
   const { basics } = useResume()
-  const photoSrc = basics.picture.childImageSharp.fixed.src
+  const photoSrc = getSrc(basics.picture)
   const { name, label, email, profiles } = basics
 
   const meta = {
