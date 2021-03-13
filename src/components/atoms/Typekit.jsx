@@ -22,9 +22,7 @@ export default function Typekit() {
 
   return (
     <Helmet>
-      <link rel="preconnect" href="https://typekit.com" />
       <link rel="preconnect" href="https://use.typekit.net" />
-      <link rel="preconnect" href="https://p.typekit.net" />
 
       {TypekitScript(typekitID)}
     </Helmet>
