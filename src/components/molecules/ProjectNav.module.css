@@ -1,5 +1,5 @@
 .projectNav {
-  composes: fullWidth from '../atoms/FullWidth.module.css';
+  composes: fullWidth from '../Layout.module.css';
   white-space: nowrap;
   overflow-y: hidden;
   overflow-x: auto;

@@ -1,15 +1,3 @@
-.projects {
-  display: grid;
-  gap: calc(var(--spacer) * 2);
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-}
-
-@media (min-width: 55rem) {
-  .projects {
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  }
-}
-
 .title {
   font-size: var(--font-size-h4);
   opacity: 0;

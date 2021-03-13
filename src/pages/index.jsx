@@ -4,9 +4,9 @@ import { Link, graphql } from 'gatsby'
 import shortid from 'shortid'
 import SEO from '../components/atoms/SEO'
 import ProjectImage from '../components/atoms/ProjectImage'
+import { grid } from '../components/Layout.module.css'
 import {
   project as styleProject,
-  projects as styleProjects,
   title as styleTitle,
   imageCount as styleImageCount
 } from './index.module.css'
@@ -67,7 +67,7 @@ export default function Home({ data, pageContext }) {
     <>
       <SEO />
 
-      <div className={styleProjects}>
+      <div className={grid}>
         {projects.map(({ node }) => (
           <Project key={shortid.generate()} node={node} images={images} />
         ))}

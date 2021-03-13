@@ -14,7 +14,7 @@
 }
 
 .meta {
-  margin-top: -2rem;
+  margin-top: calc(var(--spacer) * 4);
   margin-bottom: calc(var(--spacer) * 5);
   display: grid;
   grid-template-columns: 1fr;

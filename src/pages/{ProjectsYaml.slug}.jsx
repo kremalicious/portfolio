@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import { fullContainer } from '../components/atoms/FullWidth.module.css'
+import { fullContainer } from '../components/Layout.module.css'
 import ProjectImage from '../components/atoms/ProjectImage'
 import ProjectTechstack from '../components/molecules/ProjectTechstack'
 import ProjectLinks from '../components/molecules/ProjectLinks'

@@ -1,14 +1,12 @@
 .screen {
   margin: calc(var(--spacer) * var(--line-height)) auto 0 auto;
-  padding-left: 2%;
-  padding-right: 2%;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 @media (min-width: 55rem) {
   .screen {
-    padding-left: 4%;
-    padding-right: 4%;
-    max-width: calc(var(--projectImageMaxWidth) + 8%);
+    max-width: calc(var(--projectImageMaxWidth) + 10vw);
   }
 }
 
@@ -16,11 +14,32 @@
 .screen > article {
   display: grid;
   grid-template-columns:
-    [full-start] minmax(var(--spacer), 1fr)
+    [full-start] minmax(calc(var(--spacer) / 2), 1fr)
     [main-start] minmax(0, 38rem) [main-end]
-    minmax(var(--spacer), 1fr) [full-end];
+    minmax(calc(var(--spacer) / 2), 1fr) [full-end];
 }
 
 .screen > article > * {
   grid-column: main;
+}
+
+.grid {
+  display: grid;
+  gap: calc(var(--spacer) * 2);
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+@media (min-width: 55rem) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  }
+}
+
+.fullContainer {
+  grid-column: full !important;
+}
+
+.fullWidth {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
