@@ -6,7 +6,7 @@
 }
 
 .themeSwitch svg {
-  stroke: var(--brand-grey-light);
+  stroke: var(--text-color-light);
   width: var(--font-size-base);
   height: var(--font-size-base);
   margin-top: -0.05rem;
@@ -36,7 +36,7 @@
   position: relative;
   width: calc((var(--knob-size) + var(--knob-space) * 2) * 2);
   height: calc(var(--knob-size) + var(--knob-space) * 4);
-  border: 1px solid var(--brand-grey-light);
+  border: 1px solid var(--text-color-light);
   border-radius: 15rem;
   margin-left: calc(var(--spacer) / 3);
   margin-right: calc(var(--spacer) / 3);
@@ -49,7 +49,7 @@
   left: var(--knob-space);
   width: var(--knob-size);
   height: var(--knob-size);
-  background-color: var(--brand-grey-light);
+  background-color: var(--text-color-light);
   border-radius: 15rem;
   transition: transform 0.2s var(--easing);
   transform: translate3d(0, 0, 0);
