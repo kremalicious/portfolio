@@ -37,7 +37,7 @@
 
 ## 🎉 Features
 
-The whole [portfolio](https://matthiaskretschmann.com) is a React-based single page app built with [Gatsby v2](https://www.gatsbyjs.org).
+The whole [portfolio](https://matthiaskretschmann.com) is a React-based single page app built with [Gatsby v3](https://www.gatsbyjs.org).
 
 Most metadata is powered by one `resume.json` file based on [🗂 JSON Resume](#-json-resume), and one `projects.yml` file to [define the displayed projects](#-one-data-file-to-rule-all-pages).
 
