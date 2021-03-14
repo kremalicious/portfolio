@@ -11,12 +11,11 @@
   <a href="https://github.com/kremalicious/portfolio/actions"><img src="https://github.com/kremalicious/portfolio/workflows/CI%2FCD%20Pipeline/badge.svg" /></a>
   <a href="https://codeclimate.com/github/kremalicious/portfolio/maintainability"><img src="https://api.codeclimate.com/v1/badges/8f561ec93e0f8c6b15d9/maintainability" /></a>
   <a href="https://codeclimate.com/github/kremalicious/portfolio/test_coverage"><img src="https://api.codeclimate.com/v1/badges/8f561ec93e0f8c6b15d9/test_coverage" /></a>
-  <a href="https://dependabot.com"><img src="https://badgen.net/dependabot/thepracticaldev/dev.to?icon=dependabot" /></a>
 </p>
 
 - [🎉 Features](#-features)
-  - [🗂 JSON Resume](#-json-resume)
   - [💍 One data file to rule all pages](#-one-data-file-to-rule-all-pages)
+  - [🗂 JSON Resume](#-json-resume)
   - [🐱 GitHub repositories](#-github-repositories)
   - [💅 Theme switcher](#-theme-switcher)
   - [🏆 SEO component](#-seo-component)
@@ -41,6 +40,15 @@ The whole [portfolio](https://matthiaskretschmann.com) is a React-based single p
 
 Most metadata is powered by one `resume.json` file based on [🗂 JSON Resume](#-json-resume), and one `projects.yml` file to [define the displayed projects](#-one-data-file-to-rule-all-pages).
 
+### 💍 One data file to rule all pages
+
+All displayed project content is powered by one YAML file where all the portfolio's projects are defined. The project description itself is transformed from Markdown written inside the YAML file into HTML on build time.
+
+Gatsby automatically creates pages from each item in that file utilizing the [`{ProjectsYaml.slug}.jsx`](src/pages/{ProjectsYaml.slug}.jsx) template.
+
+- [`content/projects.yml`](content/projects.yml)
+- [`src/pages/{ProjectsYaml.slug}.jsx`](src/pages/{ProjectsYaml.slug}.jsx)
+
 ### 🗂 JSON Resume
 
 Most site metadata and social profiles are defined in [`content/resume.json`](content/resume.json) based on the [JSON Resume](https://jsonresume.org) standard and used throughout the site as a custom React hook. Additionally, a resume page is created under `/resume`.
@@ -50,15 +58,6 @@ If you want to know how, have a look at the respective components:
 - [`content/resume.json`](content/resume.json)
 - [`src/pages/resume/index.jsx`](src/pages/resume/index.jsx)
 - [`src/hooks/use-resume.js`](src/hooks/use-resume.js)
-
-### 💍 One data file to rule all pages
-
-All displayed project content is powered by one YAML file where all the portfolio's projects are defined. The project description itself is transformed from Markdown written inside the YAML file into HTML on build time.
-
-Gatsby automatically creates pages from each item in that file utilizing the [`{ProjectsYaml.slug}.jsx`](src/pages/{ProjectsYaml.slug}.jsx) template.
-
-- [`content/projects.yml`](content/projects.yml)
-- [`src/pages/{ProjectsYaml.slug}.jsx`](src/pages/{ProjectsYaml.slug}.jsx)
 
 ### 🐱 GitHub repositories
 
