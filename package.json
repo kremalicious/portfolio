@@ -45,7 +45,7 @@
     "react-helmet": "^6.1.0",
     "react-pose": "^4.0.10",
     "remark": "^13.0.0",
-    "remark-breaks": "^2.0.1",
+    "remark-breaks": "^2.0.2",
     "remark-html": "^13.0.1",
     "remark-parse": "^9.0.0",
     "remark-react": "^8.0.0",
