@@ -76,7 +76,7 @@ Project.propTypes = {
 }
 
 export const projectQuery = graphql`
-  query($slug: String!, $imageRegex: String!) {
+  query ($slug: String!, $imageRegex: String!) {
     projectsYaml(slug: { eq: $slug }) {
       title
       slug

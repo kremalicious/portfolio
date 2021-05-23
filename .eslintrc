@@ -2,7 +2,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:testing-library/recommended",
+    "plugin:testing-library/dom",
     "plugin:testing-library/react"
   ],
   "plugins": ["react", "graphql", "prettier", "react-hooks", "testing-library"],
@@ -19,7 +19,9 @@
   "rules": {
     "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "testing-library/no-node-access": "off",
+    "testing-library/no-container": "off"
   },
   "settings": {
     "react": {
