@@ -4,14 +4,8 @@ import Icon from '../atoms/Icon'
 import { repo as styleRepo, repoTitle, meta } from './Repository.module.css'
 
 export default function Repository({ repo }) {
-  const {
-    name,
-    full_name,
-    description,
-    html_url,
-    homepage,
-    stargazers_count
-  } = repo
+  const { name, full_name, description, html_url, homepage, stargazers_count } =
+    repo
 
   const isExternal = !full_name.includes('kremalicious')
 

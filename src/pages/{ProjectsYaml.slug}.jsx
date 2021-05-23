@@ -76,7 +76,7 @@ Project.propTypes = {
 }
 
 export const projectQuery = graphql`
-  query($slug: String!, $imageRegex: String!) {
+  query ($slug: String!, $imageRegex: String!) {
     projectsYaml(slug: { eq: $slug }) {
       title
       slug
@@ -100,8 +100,8 @@ export const projectQuery = graphql`
     }
 
     projectImages: allImageSharp(
-      filter: { fluid: { originalName: { regex: $imageRegex } } }
-      sort: { fields: [fluid___originalName], order: ASC }
+      filter: { original: { src: { regex: $imageRegex } } }
+      sort: { fields: [original___src], order: ASC }
     ) {
       edges {
         node {
