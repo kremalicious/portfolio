@@ -24,7 +24,7 @@
     "axios": "^0.21.1",
     "file-saver": "^2.0.5",
     "gatsby": "^3.6.1",
-    "gatsby-plugin-image": "^1.5.0",
+    "gatsby-plugin-image": "^1.6.0",
     "gatsby-plugin-manifest": "^3.6.0",
     "gatsby-plugin-matomo": "^0.10.0",
     "gatsby-plugin-offline": "^4.6.0",
