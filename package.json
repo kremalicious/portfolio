@@ -29,7 +29,7 @@
     "gatsby-plugin-matomo": "^0.10.0",
     "gatsby-plugin-offline": "^4.5.1",
     "gatsby-plugin-postcss": "^4.5.0",
-    "gatsby-plugin-react-helmet": "^4.5.0",
+    "gatsby-plugin-react-helmet": "^4.6.0",
     "gatsby-plugin-sharp": "^3.5.0",
     "gatsby-plugin-sitemap": "^4.1.0",
     "gatsby-plugin-svgr": "^3.0.0-beta.0",
