@@ -59,7 +59,7 @@
     "@svgr/webpack": "^5.5.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
-    "@welldone-software/why-did-you-render": "^6.1.4",
+    "@welldone-software/why-did-you-render": "^6.2.0",
     "babel-preset-gatsby": "^1.7.1",
     "chalk": "^4.1.1",
     "eslint": "^7.28.0",
