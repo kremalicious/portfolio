@@ -27,7 +27,7 @@
     "gatsby-plugin-image": "^1.7.1",
     "gatsby-plugin-manifest": "^3.7.1",
     "gatsby-plugin-matomo": "^0.10.0",
-    "gatsby-plugin-offline": "^4.7.1",
+    "gatsby-plugin-offline": "^4.10.0",
     "gatsby-plugin-postcss": "^4.7.1",
     "gatsby-plugin-react-helmet": "^4.7.1",
     "gatsby-plugin-sharp": "^3.7.1",
