@@ -20,7 +20,7 @@
     "new": "babel-node ./scripts/new.js"
   },
   "dependencies": {
-    "@giphy/js-fetch-api": "^4.0.0",
+    "@giphy/js-fetch-api": "^4.1.0",
     "axios": "^0.21.1",
     "file-saver": "^2.0.5",
     "gatsby": "^3.7.1",
