@@ -2,11 +2,11 @@
   slug: '/oceanprotocol-market/'
   img: 'images/oceanprotocol-market-01.png'
   description: >
-    As part of Ocean Protocol v3, I was leading the planning and execution of the Ocean Market product and web app in 2020. Ocean Market allows simple tokenization and secure sharing of data assets within the Ethereum blockchain with the help of data tokens.
+    As part of Ocean Protocol v3, I was leading the planning and execution of the Ocean Market product and decentralized web app in 2020. Ocean Market allows simple tokenization, secure sharing, and monetization of data assets within the Ethereum network with the help of data tokens.
 
-    Assets can be exposed to dynamic price discovery by attaching Automated Market Maker (AMM) pools to them. Metadata is stored on-chain, and all actions like downloading or Compute-to-Data are done via exchanging datatokens, creating trustless provenance records in the process.
+    Assets can be exposed to dynamic price discovery by attaching Automated Market Maker (AMM) pools to them. Metadata is stored on-chain, and all actions like downloading or Compute-to-Data are done via exchanging data tokens, creating trustless provenance records in the process.
 
-    The market project is open-source and has been forked and used to create further marketplaces on top of Ocean Protocol.
+    The market project is open-source and has been forked and used to create further data marketplaces on top of Ocean Protocol.
   links:
     - title: Ocean Makes Multi-Network Even Easier
       icon: FileText
