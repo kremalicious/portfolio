@@ -32,8 +32,22 @@ jobs:
       - run: npm ci
       - run: npm test
 
-      - name: Run tests & publish code coverage
-        uses: paambaati/codeclimate-action@v2.7.5
+      - uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: coverage/
+
+  coverage:
+    runs-on: ubuntu-latest
+    needs: [test]
+    if: ${{ success() && github.actor != 'dependabot[bot]' }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v2
+        with:
+          name: coverage
+
+      - uses: paambaati/codeclimate-action@v2.7.5
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
 
