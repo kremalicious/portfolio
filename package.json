@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@giphy/js-fetch-api": "^4.1.1",
-    "axios": "^0.21.1",
+    "axios": "^0.21.3",
     "file-saver": "^2.0.5",
     "gatsby": "^3.12.1",
     "gatsby-plugin-image": "^1.12.0",
