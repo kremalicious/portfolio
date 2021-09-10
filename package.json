@@ -69,7 +69,7 @@
     "eslint-plugin-react": "^7.25.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^4.12.2",
-    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.24",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.1.1",
     "jest-canvas-mock": "^2.3.1",
