@@ -242,6 +242,37 @@
     - title: Dribbble
       url: https://dribbble.com/shots/2522184-BigchainDB-site
 
+- title: ascribe
+  slug: /ascribe/
+  img: images/ascribe-01.png
+  description: >
+    With ascribe, users were able to tokenize digital art and real life assets onto the Bitcoin blockchain. It was one of the very first decentralized apps using a decentralized ledger as its backend, all before Ethereum even existed. The principles around digital art as entries in a blockchain, given out in editions, would later inspire the ERC-721 NFT standard on the Ethereum blockchain. Finally, the learnings around a decentralized approach for storing structured data led to the creation of [BigchainDB](/bigchaindb).
+
+    From 2015-2017 I worked on the UI development for multiple web touch points, including the main web app built with one of the first versions of React. The service and web app was [discontinued in 2017](https://www.ascribe.io/).
+
+    Branding & key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
+
+  techstack:
+    - ascribe
+    - Sketch
+    - Illustrator
+    - Jekyll
+    - Gulp
+    - HTML
+    - SCSS
+    - JavaScript
+    - Travis
+    - AWS S3
+    - Cloudflare
+    - React
+    - Bitcoin
+
+  links:
+    - title: Link
+      url: https://www.ascribe.io
+    - title: GitHub
+      url: https://github.com/ascribe
+
 - title: ChartMogul
   slug: /chartmogul/
   img: images/chartmogul-01.png
