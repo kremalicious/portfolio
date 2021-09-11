@@ -4,12 +4,12 @@ export const fadeIn = {
   },
   enter: {
     opacity: 1,
-    duration: '0.4',
+    duration: 0.3,
     when: 'beforeChildren'
   },
   exit: {
     opacity: 0,
-    transition: { duration: '0.2' }
+    transition: { duration: 0.2 }
   }
 }
 
@@ -20,11 +20,11 @@ export const moveInTop = {
   },
   enter: {
     y: 0,
-    transition: { type: 'spring', duration: '0.4' }
+    transition: { type: 'spring', duration: 0.3, stiffness: 120 }
   },
   exit: {
     y: '-2rem',
-    transition: { type: 'spring', delay: '0.1', duration: '0.3' }
+    transition: { type: 'spring', delay: 0.1, duration: 0.2 }
   }
 }
 
@@ -35,11 +35,11 @@ export const moveInBottom = {
   },
   enter: {
     y: 0,
-    transition: { type: 'spring', duration: '0.4' }
+    transition: { type: 'spring', duration: 0.3, stiffness: 120 }
   },
   exit: {
     y: '2rem',
-    transition: { type: 'spring', delay: '0.1', duration: '0.3' }
+    transition: { type: 'spring', delay: 0.1, duration: 0.2 }
   }
 }
 
