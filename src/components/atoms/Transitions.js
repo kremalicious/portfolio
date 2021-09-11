@@ -5,7 +5,6 @@ export const fadeIn = {
   enter: {
     opacity: 1,
     duration: '0.6',
-    delay: '0.6',
     when: 'beforeChildren'
   },
   exit: {
@@ -25,7 +24,7 @@ export const moveInTop = {
   },
   exit: {
     y: '-2rem',
-    transition: { type: 'spring', duration: '0.2' }
+    transition: { type: 'spring', delay: '0.1', duration: '0.3' }
   }
 }
 
@@ -40,6 +39,6 @@ export const moveInBottom = {
   },
   exit: {
     y: '2rem',
-    transition: { type: 'spring', duration: '0.2' }
+    transition: { type: 'spring', delay: '0.1', duration: '0.3' }
   }
 }
