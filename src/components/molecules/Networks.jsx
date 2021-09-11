@@ -33,12 +33,13 @@ NetworkLink.propTypes = {
 export default function Networks({ small, hide }) {
   const { basics } = useResume()
   const shouldReduceMotion = useReducedMotion()
+  const isSSr = typeof window === 'undefined'
   if (hide) return null
 
   return (
     <motion.aside
       variants={moveInBottom}
-      {...getAnimationProps(shouldReduceMotion)}
+      {...getAnimationProps(shouldReduceMotion, isSSr)}
       className={small ? styleSmall : networks}
     >
       <NetworkLink name="Mail" url={`mailto:${basics.email}`} />

@@ -27,6 +27,7 @@ Layout.propTypes = {
 export default function Layout({ children, location }) {
   const { allowedHosts } = useMeta()
   const shouldReduceMotion = useReducedMotion()
+  const isSsr = typeof window === 'undefined'
 
   const isHomepage =
     location.pathname === '/' ||
@@ -44,14 +45,14 @@ export default function Layout({ children, location }) {
         <motion.div
           key={location.pathname}
           variants={fadeIn}
-          {...getAnimationProps(shouldReduceMotion)}
+          {...getAnimationProps(shouldReduceMotion, isSsr)}
         >
           <Header minimal={!isHomepage} hide={isResume} />
           <motion.main
             key={location.pathname}
             variants={moveInBottom}
-            initial={`${shouldReduceMotion ? 'enter' : 'initial'}`}
-            animate={`${shouldReduceMotion ? null : 'enter'}`}
+            initial={`${shouldReduceMotion || isSsr ? 'enter' : 'initial'}`}
+            animate={`${shouldReduceMotion || isSsr ? null : 'enter'}`}
             className={screen}
           >
             {children}
