@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import posed, { PoseGroup } from 'react-pose'
-import { fadeIn } from './atoms/Transitions'
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
+import { fadeIn, moveInBottom, getAnimationProps } from './atoms/Transitions'
 import Typekit from './atoms/Typekit'
 import HostnameCheck from './atoms/HostnameCheck'
 import ThemeSwitch from './molecules/ThemeSwitch'
@@ -24,11 +24,10 @@ Layout.propTypes = {
   }).isRequired
 }
 
-const timeout = 200
-const RoutesContainer = posed.div(fadeIn)
-
 export default function Layout({ children, location }) {
   const { allowedHosts } = useMeta()
+  const shouldReduceMotion = useReducedMotion()
+  const isSsr = typeof window === 'undefined'
 
   const isHomepage =
     location.pathname === '/' ||
@@ -42,16 +41,24 @@ export default function Layout({ children, location }) {
       <HostnameCheck allowedHosts={allowedHosts} />
       <ThemeSwitch />
 
-      <PoseGroup animateOnMount={process.env.NODE_ENV !== 'test'}>
-        <RoutesContainer
+      <AnimatePresence exitBeforeEnter>
+        <motion.div
           key={location.pathname}
-          delay={timeout}
-          delayChildren={timeout}
+          variants={fadeIn}
+          {...getAnimationProps(shouldReduceMotion, isSsr)}
         >
           <Header minimal={!isHomepage} hide={isResume} />
-          <main className={screen}>{children}</main>
-        </RoutesContainer>
-      </PoseGroup>
+          <motion.main
+            key={location.pathname}
+            variants={moveInBottom}
+            initial={`${shouldReduceMotion || isSsr ? 'enter' : 'initial'}`}
+            animate={`${shouldReduceMotion || isSsr ? null : 'enter'}`}
+            className={screen}
+          >
+            {children}
+          </motion.main>
+        </motion.div>
+      </AnimatePresence>
 
       <Footer />
     </>

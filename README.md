@@ -98,7 +98,7 @@ If you want to know how, have a look at the respective component:
 
 ### 💫 Page transitions
 
-Includes mechanism for transitioning between route changes with full page transitions defined with [react-pose](https://popmotion.io/pose/). Mechanism ~~stolen~~ inspired by [gatsby-universal](https://github.com/fabe/gatsby-universal).
+Includes mechanism for transitioning between route changes with full page transitions defined with [Framer Motion](https://www.framer.com/motion/).
 
 If you want to know how, have a look at the respective components:
 

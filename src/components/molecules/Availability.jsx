@@ -1,17 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import posed from 'react-pose'
-import { fadeIn } from '../atoms/Transitions'
+import { motion, useReducedMotion } from 'framer-motion'
+import { moveInTop, getAnimationProps } from '../atoms/Transitions'
 import { useMeta } from '../../hooks/use-meta'
 import {
   availability as styleAvailability,
   available as styleAvailable
 } from './Availability.module.css'
 
-const Animation = posed.aside(fadeIn)
-
 export default function Availability({ hide }) {
   const { availability } = useMeta()
+  const shouldReduceMotion = useReducedMotion()
+  const isSSr = typeof window === 'undefined'
   const { status, available, unavailable } = availability
   const className = status
     ? `${styleAvailability} ${styleAvailable}`
@@ -20,9 +20,13 @@ export default function Availability({ hide }) {
 
   return (
     !hide && (
-      <Animation className={className}>
+      <motion.aside
+        variants={moveInTop}
+        className={className}
+        {...getAnimationProps(shouldReduceMotion, isSSr)}
+      >
         <p dangerouslySetInnerHTML={{ __html: html }} />
-      </Animation>
+      </motion.aside>
     )
   )
 }
