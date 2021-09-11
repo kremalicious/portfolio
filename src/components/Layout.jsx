@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import posed, { PoseGroup } from 'react-pose'
-import { fadeIn } from './atoms/Transitions'
+import { motion, AnimatePresence } from 'framer-motion'
+import { fadeIn, moveInBottom } from './atoms/Transitions'
 import Typekit from './atoms/Typekit'
 import HostnameCheck from './atoms/HostnameCheck'
 import ThemeSwitch from './molecules/ThemeSwitch'
@@ -24,9 +24,6 @@ Layout.propTypes = {
   }).isRequired
 }
 
-const timeout = 200
-const RoutesContainer = posed.div(fadeIn)
-
 export default function Layout({ children, location }) {
   const { allowedHosts } = useMeta()
 
@@ -42,16 +39,26 @@ export default function Layout({ children, location }) {
       <HostnameCheck allowedHosts={allowedHosts} />
       <ThemeSwitch />
 
-      <PoseGroup animateOnMount={process.env.NODE_ENV !== 'test'}>
-        <RoutesContainer
+      <AnimatePresence>
+        <motion.div
           key={location.pathname}
-          delay={timeout}
-          delayChildren={timeout}
+          variants={fadeIn}
+          initial="initial"
+          animate="enter"
+          exit="exit"
         >
           <Header minimal={!isHomepage} hide={isResume} />
-          <main className={screen}>{children}</main>
-        </RoutesContainer>
-      </PoseGroup>
+          <motion.main
+            key={location.pathname}
+            variants={moveInBottom}
+            initial="initial"
+            animate="enter"
+            className={screen}
+          >
+            {children}
+          </motion.main>
+        </motion.div>
+      </AnimatePresence>
 
       <Footer />
     </>

@@ -3,13 +3,13 @@
 const remark = require('remark')
 const parse = require('remark-parse')
 const html = require('remark-html')
-const axios = require('axios')
 const fs = require('fs')
 const yaml = require('js-yaml')
 const reposYaml = yaml.load(fs.readFileSync('./content/repos.yml', 'utf8'))
 const { performance } = require('perf_hooks')
 const chalk = require('chalk')
 const { execSync } = require('child_process')
+const { getGithubRepos } = require('./scripts/github')
 
 function truncate(n, useWordBoundary) {
   if (this.length <= n) {
@@ -29,45 +29,6 @@ function truncate(n, useWordBoundary) {
 execSync(`node ./scripts/fetch-matomo-js > static/matomo.js`, {
   stdio: 'inherit'
 })
-
-//
-// Get GitHub repos
-//
-const gitHubConfig = {
-  headers: {
-    'User-Agent': 'kremalicious/portfolio',
-    Authorization: `token ${process.env.GATSBY_GITHUB_TOKEN}`
-  }
-}
-
-async function getGithubRepos(data) {
-  let repos = []
-  let holder = {}
-
-  for (let item of data) {
-    const user = item.split('/')[0]
-    const repoName = item.split('/')[1]
-    const repo = await axios.get(
-      `https://api.github.com/repos/${user}/${repoName}`,
-      gitHubConfig
-    )
-
-    holder.name = repo.data.name
-    holder.full_name = repo.data.full_name
-    holder.description = repo.data.description
-    holder.html_url = repo.data.html_url
-    holder.homepage = repo.data.homepage
-    holder.stargazers_count = repo.data.stargazers_count
-    holder.pushed_at = repo.data.pushed_at
-    repos.push(holder)
-    holder = {}
-  }
-
-  // sort by pushed to, newest first
-  repos = repos.sort((a, b) => b.pushed_at.localeCompare(a.pushed_at))
-
-  return repos
-}
 
 //
 // Get GitHub repos once and store for later build stages

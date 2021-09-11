@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import posed from 'react-pose'
-import { moveInBottom } from '../atoms/Transitions'
+import { motion } from 'framer-motion'
+import { moveInTop } from '../atoms/Transitions'
 import { ReactComponent as Logo } from '../../images/logo.svg'
 import {
   minimal as styleMinimal,
@@ -20,10 +20,14 @@ LogoUnit.propTypes = {
 
 export default function LogoUnit({ minimal }) {
   const { basics } = useResume()
-  const Animation = posed.div(moveInBottom)
 
   return (
-    <Animation>
+    <motion.div
+      variants={moveInTop}
+      initial="initial"
+      animate="enter"
+      exit="exit"
+    >
       <Link className={minimal ? styleMinimal : logounit} to={'/'}>
         <Logo className={logo} />
         <h1 className={`p-name ${title}`}>{basics.name.toLowerCase()}</h1>
@@ -31,6 +35,6 @@ export default function LogoUnit({ minimal }) {
           {basics.label.toLowerCase()}
         </p>
       </Link>
-    </Animation>
+    </motion.div>
   )
 }

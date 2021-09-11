@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import posed from 'react-pose'
-import { moveInTop } from '../atoms/Transitions'
+import { motion } from 'framer-motion'
+import { moveInBottom } from '../atoms/Transitions'
 import Icon from '../atoms/Icon'
 import { useResume } from '../../hooks/use-resume'
 import {
@@ -34,10 +34,14 @@ export default function Networks({ small, hide }) {
   const { basics } = useResume()
   if (hide) return null
 
-  const Animation = posed.aside(moveInTop)
-
   return (
-    <Animation className={small ? styleSmall : networks}>
+    <motion.aside
+      variants={moveInBottom}
+      initial="initial"
+      animate="enter"
+      exit="exit"
+      className={small ? styleSmall : networks}
+    >
       <NetworkLink name="Mail" url={`mailto:${basics.email}`} />
 
       {basics.profiles.map((profile) => (
@@ -47,7 +51,7 @@ export default function Networks({ small, hide }) {
           url={profile.url}
         />
       ))}
-    </Animation>
+    </motion.aside>
   )
 }
 
