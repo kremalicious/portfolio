@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { motion } from 'framer-motion'
-import { moveInTop } from '../atoms/Transitions'
+import { motion, useReducedMotion } from 'framer-motion'
+import { moveInTop, getAnimationProps } from '../atoms/Transitions'
 import { useMeta } from '../../hooks/use-meta'
 import {
   availability as styleAvailability,
@@ -10,6 +10,7 @@ import {
 
 export default function Availability({ hide }) {
   const { availability } = useMeta()
+  const shouldReduceMotion = useReducedMotion()
   const { status, available, unavailable } = availability
   const className = status
     ? `${styleAvailability} ${styleAvailable}`
@@ -20,10 +21,8 @@ export default function Availability({ hide }) {
     !hide && (
       <motion.aside
         variants={moveInTop}
-        initial="initial"
-        animate="enter"
-        exit="exit"
         className={className}
+        {...getAnimationProps(shouldReduceMotion)}
       >
         <p dangerouslySetInnerHTML={{ __html: html }} />
       </motion.aside>

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { motion } from 'framer-motion'
-import { moveInBottom } from '../atoms/Transitions'
+import { motion, useReducedMotion } from 'framer-motion'
+import { moveInBottom, getAnimationProps } from '../atoms/Transitions'
 import Icon from '../atoms/Icon'
 import { useResume } from '../../hooks/use-resume'
 import {
@@ -32,14 +32,13 @@ NetworkLink.propTypes = {
 
 export default function Networks({ small, hide }) {
   const { basics } = useResume()
+  const shouldReduceMotion = useReducedMotion()
   if (hide) return null
 
   return (
     <motion.aside
       variants={moveInBottom}
-      initial="initial"
-      animate="enter"
-      exit="exit"
+      {...getAnimationProps(shouldReduceMotion)}
       className={small ? styleSmall : networks}
     >
       <NetworkLink name="Mail" url={`mailto:${basics.email}`} />

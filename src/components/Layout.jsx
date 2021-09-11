@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { motion, AnimatePresence } from 'framer-motion'
-import { fadeIn, moveInBottom } from './atoms/Transitions'
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
+import { fadeIn, moveInBottom, getAnimationProps } from './atoms/Transitions'
 import Typekit from './atoms/Typekit'
 import HostnameCheck from './atoms/HostnameCheck'
 import ThemeSwitch from './molecules/ThemeSwitch'
@@ -26,6 +26,7 @@ Layout.propTypes = {
 
 export default function Layout({ children, location }) {
   const { allowedHosts } = useMeta()
+  const shouldReduceMotion = useReducedMotion()
 
   const isHomepage =
     location.pathname === '/' ||
@@ -43,16 +44,14 @@ export default function Layout({ children, location }) {
         <motion.div
           key={location.pathname}
           variants={fadeIn}
-          initial="initial"
-          animate="enter"
-          exit="exit"
+          {...getAnimationProps(shouldReduceMotion)}
         >
           <Header minimal={!isHomepage} hide={isResume} />
           <motion.main
             key={location.pathname}
             variants={moveInBottom}
-            initial="initial"
-            animate="enter"
+            initial={`${shouldReduceMotion ? 'enter' : 'initial'}`}
+            animate={`${shouldReduceMotion ? null : 'enter'}`}
             className={screen}
           >
             {children}

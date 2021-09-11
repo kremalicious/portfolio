@@ -42,3 +42,11 @@ export const moveInBottom = {
     transition: { type: 'spring', delay: '0.1', duration: '0.3' }
   }
 }
+
+export function getAnimationProps(shouldReduceMotion) {
+  return {
+    initial: `${shouldReduceMotion ? 'enter' : 'initial'}`,
+    animate: `${shouldReduceMotion ? null : 'enter'}`,
+    exit: `${shouldReduceMotion ? null : 'exit'}`
+  }
+}
