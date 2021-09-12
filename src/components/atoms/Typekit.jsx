@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-const TypekitScript = () => (
+const getTypekitScript = () => (
   <script>
     {`
         (function(d) {
@@ -20,7 +20,7 @@ export default function Typekit() {
   return (
     <Helmet>
       <link rel="preconnect" href="https://use.typekit.net" />
-      <TypekitScript />
+      {getTypekitScript()}
     </Helmet>
   )
 }
