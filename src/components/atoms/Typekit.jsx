@@ -1,13 +1,12 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { useMeta } from '../../hooks/use-meta'
 
-const TypekitScript = (typekitID) => (
+const TypekitScript = () => (
   <script>
     {`
         (function(d) {
             var config = {
-                kitId: '${typekitID}',
+                kitId: '${process.env.GATSBY_TYPEKIT_ID}',
                 scriptTimeout: 3000,
                 async: true
             },
@@ -18,13 +17,10 @@ const TypekitScript = (typekitID) => (
 )
 
 export default function Typekit() {
-  const { typekitID } = useMeta()
-
   return (
     <Helmet>
       <link rel="preconnect" href="https://use.typekit.net" />
-
-      {TypekitScript(typekitID)}
+      <TypekitScript />
     </Helmet>
   )
 }

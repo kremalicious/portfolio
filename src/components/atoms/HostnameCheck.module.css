@@ -5,7 +5,7 @@
   padding: calc(var(--spacer) / 3);
   font-size: var(--font-size-small);
   font-weight: bold;
-  background: var(--brand-light);
+  background: var(--box-background-color);
 }
 
 .hostnameInfo p {

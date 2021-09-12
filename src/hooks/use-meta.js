@@ -18,7 +18,6 @@ const query = graphql`
       }
       gpg
       addressbook
-      typekitID
       matomoUrl
       matomoSite
       allowedHosts
