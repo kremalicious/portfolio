@@ -84,9 +84,10 @@
     "stylelint-prettier": "^1.2.0"
   },
   "browserslist": [
-    ">0.2%",
+    "> 0.2%",
+    "last 2 versions",
+    "Firefox ESR",
     "not dead",
-    "not ie <= 11",
-    "not op_mini all"
+    "not IE 11"
   ]
 }
