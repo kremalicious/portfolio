@@ -62,11 +62,6 @@ export default function SEO({ project }) {
   const url = (project && `${basics.website}${project.slug}`) || basics.website
 
   return (
-    <MetaTags
-      title={title}
-      description={description}
-      url={url}
-      image={image}
-    />
+    <MetaTags title={title} description={description} url={url} image={image} />
   )
 }
