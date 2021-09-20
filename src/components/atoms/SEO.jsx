@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { useMeta } from '../../hooks/use-meta'
 import { useResume } from '../../hooks/use-resume'
 
-const MetaTags = ({ title, description, url, image, meta }) => {
+const MetaTags = ({ title, description, url, image }) => {
   const { basics } = useResume()
   const twitterHandle = basics.profiles.filter(
     ({ network }) => network === 'Twitter'
@@ -67,7 +67,6 @@ export default function SEO({ project }) {
       description={description}
       url={url}
       image={image}
-      meta={meta}
     />
   )
 }
