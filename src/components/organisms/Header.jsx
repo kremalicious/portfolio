@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Networks from '../molecules/Networks'
 import Availability from '../molecules/Availability'
+import Location from '../molecules/Location'
 
 import LogoUnit from '../molecules/LogoUnit'
 import { header, minimal as styleMinimal } from './Header.module.css'
@@ -21,6 +22,7 @@ export default function Header({ minimal, hide }) {
         <>
           <LogoUnit minimal={minimal} />
           <Networks hide={minimal} />
+          <Location hide={minimal} />
           <Availability hide={minimal && !availability.status} />
         </>
       )}

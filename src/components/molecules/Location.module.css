@@ -1,0 +1,20 @@
+.location {
+  font-size: var(--font-size-small);
+}
+
+.location span {
+  color: var(--text-color-light);
+}
+
+.emoji {
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1em;
+  vertical-align: 'middle';
+  margin-right: calc(var(--spacer) / 6);
+}
+
+.next {
+  display: inline-block;
+  margin-left: calc(var(--spacer) / 3);
+}
