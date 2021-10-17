@@ -11,7 +11,7 @@
 
 .footer > aside {
   margin-top: 0;
-  margin-bottom: calc(var(--spacer) * 2);
+  margin-bottom: var(--spacer);
 }
 
 .actions a {
