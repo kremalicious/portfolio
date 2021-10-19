@@ -1,10 +1,10 @@
 .availability {
+  font-size: var(--font-size-small);
   border-radius: var(--border-radius);
   color: var(--text-color-light);
   z-index: 2;
   padding: calc(var(--spacer) / 2);
   display: block;
-  margin-top: auto;
 }
 
 .availability p {
