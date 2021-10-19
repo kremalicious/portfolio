@@ -1,5 +1,5 @@
 .networks {
-  margin-top: calc(var(--spacer) * var(--line-height));
+  margin-top: var(--spacer);
   width: 100%;
   text-align: center;
 }
