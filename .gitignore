@@ -12,3 +12,5 @@ plugins/gatsby-plugin-matomo
 coverage
 .env
 static/matomo.js
+
+.vercel

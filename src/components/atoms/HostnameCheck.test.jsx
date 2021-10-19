@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import HostnameCheck from './HostnameCheck'
 
 describe('HostnameCheck', () => {
@@ -8,16 +8,16 @@ describe('HostnameCheck', () => {
     expect(window.location).not.toBe(undefined)
   })
 
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     const allowedHosts = ['hello.com']
-    const { container } = render(<HostnameCheck allowedHosts={allowedHosts} />)
-    expect(container.firstChild).toHaveTextContent('do a remix')
-    expect(container.firstChild).toBeInTheDocument()
+    render(<HostnameCheck allowedHosts={allowedHosts} />)
+    const element = await screen.findByText(/do a remix/i)
+    expect(element).toBeDefined()
   })
 
-  it('does not render if on correct hostname', () => {
+  it('does not render if on correct hostname', async () => {
     const allowedHosts = ['localhost']
     const { container } = render(<HostnameCheck allowedHosts={allowedHosts} />)
-    expect(container.firstChild).not.toBeInTheDocument()
+    expect(container.firstChild).toBeNull()
   })
 })

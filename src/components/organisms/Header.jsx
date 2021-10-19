@@ -2,9 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Networks from '../molecules/Networks'
 import Availability from '../molecules/Availability'
+import Location from '../molecules/Location'
 
 import LogoUnit from '../molecules/LogoUnit'
-import { header, minimal as styleMinimal } from './Header.module.css'
+import { header, minimal as styleMinimal, meta } from './Header.module.css'
 import { useMeta } from '../../hooks/use-meta'
 
 Header.propTypes = {
@@ -21,7 +22,10 @@ export default function Header({ minimal, hide }) {
         <>
           <LogoUnit minimal={minimal} />
           <Networks hide={minimal} />
-          <Availability hide={minimal && !availability.status} />
+          <div className={meta}>
+            <Location hide={minimal} />
+            <Availability hide={minimal && !availability.status} />
+          </div>
         </>
       )}
     </header>

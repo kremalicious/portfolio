@@ -17,6 +17,7 @@
   - [💍 One data file to rule all pages](#-one-data-file-to-rule-all-pages)
   - [🗂 JSON Resume](#-json-resume)
   - [🐱 GitHub repositories](#-github-repositories)
+  - [📍 Location](#-location)
   - [💅 Theme switcher](#-theme-switcher)
   - [🏆 SEO component](#-seo-component)
   - [📇 Client-side vCard creation](#-client-side-vcard-creation)
@@ -70,6 +71,18 @@ If you want to know how, have a look at the respective components:
 - [`gatsby-node.js`](gatsby-node.js)
 - [`content/repos.yml`](content/repos.yml)
 - [`src/components/molecules/Repository.jsx`](src/components/molecules/Repository.jsx)
+
+### 📍 Location
+
+On client-side, my current and, if known, my next physical location on a city level is fetched from my (private) [nomadlist.com](https://nomadlist.com) profile and displayed in the header.
+
+Fetching is split up into a serverless function, a hook, and display component. Fetching is done with a serverless function as to not expose the whole profile response into the browser. Requires `NOMADLIST_PROFILE` & `NOMADLIST_KEY` environment variables.
+
+If you want to know how, have a look at the respective components:
+
+- [`api/location.js`](api/location.js)
+- [`src/hooks/useLocation.js`](src/hooks/useLocation.js)
+- [`src/components/molecules/Location.jsx`](src/components/molecules/Location.jsx)
 
 ### 💅 Theme switcher
 

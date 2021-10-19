@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@giphy/js-fetch-api": "^4.1.2",
+    "@yaireo/relative-time": "^1.0.1",
     "axios": "^0.23.0",
     "file-saver": "^2.0.5",
     "framer-motion": "^4.1.17",
@@ -70,7 +71,7 @@
     "eslint-plugin-testing-library": "^4.12.4",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^27.2.5",
+    "jest": "^27.3.1",
     "jest-canvas-mock": "^2.3.1",
     "js-yaml": "^4.1.0",
     "ora": "^6.0.1",
