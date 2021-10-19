@@ -11,7 +11,8 @@ module.exports = {
       activeStyle,
       getProps,
       innerRef,
-      ref,
+      partiallyActive,
+      // ref,
       replace,
       to,
       ...rest

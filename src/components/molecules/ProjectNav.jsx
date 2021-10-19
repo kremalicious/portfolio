@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, forwardRef, createRef } from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import ProjectImage from '../atoms/ProjectImage'
@@ -22,18 +22,19 @@ const query = graphql`
   }
 `
 
-const Project = ({ node, refCurrentItem }) => (
-  <Link className={item} to={node.slug} title={node.title} ref={refCurrentItem}>
+const Project = forwardRef(({ node }, ref) => (
+  <Link className={item} to={node.slug} title={node.title} ref={ref}>
     <ProjectImage
       image={node.img.childImageSharp.gatsbyImageData}
       alt={node.title}
     />
   </Link>
-)
+))
+
+Project.displayName = 'Project'
 
 Project.propTypes = {
-  node: PropTypes.any.isRequired,
-  refCurrentItem: PropTypes.any
+  node: PropTypes.any.isRequired
 }
 
 export default function ProjectNav({ currentSlug }) {
@@ -42,8 +43,8 @@ export default function ProjectNav({ currentSlug }) {
 
   // Always keep the scroll position centered
   // to currently viewed project on mount.
-  const scrollContainer = React.createRef()
-  const currentItem = React.createRef()
+  const scrollContainer = createRef()
+  const currentItem = createRef()
 
   function scrollToCurrent() {
     const activeItem = currentItem.current
@@ -72,7 +73,7 @@ export default function ProjectNav({ currentSlug }) {
           <Project
             key={node.slug}
             node={node}
-            refCurrentItem={isCurrent ? currentItem : null}
+            ref={isCurrent ? currentItem : null}
           />
         )
       })}
