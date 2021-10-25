@@ -60,7 +60,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
     "@welldone-software/why-did-you-render": "^6.2.1",
-    "babel-preset-gatsby": "^1.14.0",
+    "babel-preset-gatsby": "^2.0.0",
     "chalk": "^4.1.2",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
