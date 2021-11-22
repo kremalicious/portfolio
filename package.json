@@ -24,7 +24,7 @@
     "@yaireo/relative-time": "^1.0.1",
     "axios": "^0.23.0",
     "file-saver": "^2.0.5",
-    "framer-motion": "^4.1.17",
+    "framer-motion": "^5.3.1",
     "gatsby": "^3.14.4",
     "gatsby-plugin-image": "^1.14.1",
     "gatsby-plugin-manifest": "^3.14.0",
