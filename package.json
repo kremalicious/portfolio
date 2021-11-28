@@ -67,7 +67,7 @@
     "eslint-plugin-graphql": "^4.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
-    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-testing-library": "^4.12.4",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.26",
     "identity-obj-proxy": "^3.0.0",
