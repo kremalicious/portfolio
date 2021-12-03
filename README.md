@@ -76,13 +76,13 @@ If you want to know how, have a look at the respective components:
 
 On client-side, my current and, if known, my next physical location on a city level is fetched from my (private) [nomadlist.com](https://nomadlist.com) profile and displayed in the header.
 
-Fetching is split up into a serverless function, a hook, and display component. Fetching is done with a serverless function as to not expose the whole profile response into the browser. Requires `NOMADLIST_PROFILE` & `NOMADLIST_KEY` environment variables.
+Fetching is split up into a serverless function, a hook, and display component. Fetching is done with a serverless function as to not expose the whole profile response into the browser.
 
 If you want to know how, have a look at the respective components:
 
-- [`api/location.js`](api/location.js)
 - [`src/hooks/useLocation.js`](src/hooks/useLocation.js)
 - [`src/components/molecules/Location.jsx`](src/components/molecules/Location.jsx)
+- [kremalicious/location](https://github.com/kremalicious/location)
 
 ### 💅 Theme switcher
 

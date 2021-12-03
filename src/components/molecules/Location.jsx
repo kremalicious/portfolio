@@ -37,7 +37,7 @@ export default function Location({ hide }) {
   const isDifferentCountry = now?.country !== next?.country
   const relativeTime = new RelativeTime({ locale: 'en' })
 
-  return !hide && now ? (
+  return !hide && now?.city ? (
     <motion.aside
       variants={moveInTop}
       className={styleLocation}

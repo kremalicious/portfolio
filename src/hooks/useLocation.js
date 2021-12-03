@@ -7,7 +7,7 @@ export const useLocation = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios(`/api/location`)
+        const response = await axios('https://location.kremalicious.com')
         if (!response) return
         setLocation(response.data)
       } catch (error) {
