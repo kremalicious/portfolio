@@ -47,7 +47,7 @@
     "remark": "^13.0.0",
     "remark-breaks": "^2.0.2",
     "remark-html": "^13.0.2",
-    "remark-parse": "^9.0.0",
+    "remark-parse": "^10.0.1",
     "remark-react": "^8.0.0",
     "shortid": "^2.2.16",
     "vcf": "^2.1.0"
