@@ -76,7 +76,7 @@
     "js-yaml": "^4.1.0",
     "ora": "^6.0.1",
     "prepend": "^1.0.2",
-    "prettier": "^2.5.0",
+    "prettier": "^2.5.1",
     "slugify": "^1.6.3",
     "stylelint": "^14.1.0",
     "stylelint-config-prettier": "^9.0.3",
