@@ -57,7 +57,7 @@
     "@babel/preset-env": "^7.16.0",
     "@loadable/component": "^5.15.0",
     "@svgr/webpack": "^6.1.1",
-    "@testing-library/jest-dom": "^5.16.0",
+    "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@welldone-software/why-did-you-render": "^6.2.3",
     "babel-preset-gatsby": "^2.2.0",
