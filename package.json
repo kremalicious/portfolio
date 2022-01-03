@@ -53,7 +53,7 @@
     "vcf": "^2.1.0"
   },
   "devDependencies": {
-    "@babel/node": "^7.16.5",
+    "@babel/node": "^7.16.7",
     "@babel/preset-env": "^7.16.5",
     "@loadable/component": "^5.15.2",
     "@svgr/webpack": "^6.1.2",
