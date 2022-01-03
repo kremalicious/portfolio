@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@babel/node": "^7.16.7",
-    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-env": "^7.16.7",
     "@loadable/component": "^5.15.2",
     "@svgr/webpack": "^6.1.2",
     "@testing-library/jest-dom": "^5.16.1",
