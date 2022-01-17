@@ -29,7 +29,7 @@
     "gatsby-plugin-image": "^2.4.0",
     "gatsby-plugin-manifest": "^4.4.0",
     "gatsby-plugin-matomo": "^0.11.0",
-    "gatsby-plugin-offline": "^5.4.0",
+    "gatsby-plugin-offline": "^5.5.1",
     "gatsby-plugin-react-helmet": "^5.4.0",
     "gatsby-plugin-sharp": "^4.4.0",
     "gatsby-plugin-sitemap": "^5.4.0",
