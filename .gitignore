@@ -14,3 +14,4 @@ coverage
 static/matomo.js
 
 .vercel
+size-plugin.json
