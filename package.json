@@ -31,7 +31,7 @@
     "gatsby-plugin-matomo": "^0.11.0",
     "gatsby-plugin-offline": "^5.5.2",
     "gatsby-plugin-react-helmet": "^5.5.0",
-    "gatsby-plugin-sharp": "^4.5.2",
+    "gatsby-plugin-sharp": "^4.6.0",
     "gatsby-plugin-sitemap": "^5.5.0",
     "gatsby-plugin-svgr": "^3.0.0-beta.0",
     "gatsby-plugin-webpack-size": "^2.0.1",
