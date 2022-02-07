@@ -35,7 +35,7 @@
     "gatsby-plugin-sitemap": "^5.5.0",
     "gatsby-plugin-svgr": "^3.0.0-beta.0",
     "gatsby-plugin-webpack-size": "^2.0.1",
-    "gatsby-source-filesystem": "^4.5.2",
+    "gatsby-source-filesystem": "^4.6.0",
     "gatsby-transformer-json": "^4.5.0",
     "gatsby-transformer-sharp": "^4.5.0",
     "gatsby-transformer-yaml": "^4.5.0",
