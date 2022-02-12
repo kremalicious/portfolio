@@ -1,5 +1,4 @@
 import React from 'react'
-import shortid from 'shortid'
 import { useResume } from '../../../hooks/use-resume'
 import Icon from '../../atoms/Icon'
 import { title, description, contact, languagesList } from './Header.module.css'
@@ -34,8 +33,8 @@ export default function Header() {
           </li>
           <li className={languagesList}>
             <Icon name="Globe" />
-            {languages.map((item) => (
-              <p key={shortid.generate()}>
+            {languages.map((item, index) => (
+              <p key={index}>
                 {item.language}
                 <span>{item.fluency}</span>
               </p>

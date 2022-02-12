@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import shortid from 'shortid'
 import Icon from '../../atoms/Icon'
 import ResumeItem, { ResumeItemContentProps } from './ResumeItem'
 import { subTitle } from './ResumeSection.module.css'
@@ -13,8 +12,8 @@ export default function ResumeSection({ section }) {
         {section.name}
       </h3>
       <div>
-        {section.content.map((content) => (
-          <ResumeItem key={shortid.generate()} content={content} />
+        {section.content.map((content, i) => (
+          <ResumeItem key={i} content={content} />
         ))}
       </div>
     </>

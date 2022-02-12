@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
-import shortid from 'shortid'
 import SEO from '../components/atoms/SEO'
 import ProjectImage from '../components/atoms/ProjectImage'
 import { grid } from '../components/Layout.module.css'
@@ -68,8 +67,8 @@ export default function Home({ data, pageContext }) {
       <SEO />
 
       <div className={grid}>
-        {projects.map(({ node }) => (
-          <Project key={shortid.generate()} node={node} images={images} />
+        {projects.map(({ node }, i) => (
+          <Project key={i} node={node} images={images} />
         ))}
       </div>
 

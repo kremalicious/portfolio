@@ -1,5 +1,4 @@
 import React from 'react'
-import shortid from 'shortid'
 import SEO from '../components/atoms/SEO'
 import { useResume } from '../hooks/use-resume'
 import { resume } from './resume.module.css'
@@ -21,8 +20,8 @@ export default function Resume() {
       <div className={resume}>
         <Header />
 
-        {items.map((item) => (
-          <ResumeSection key={shortid.generate()} section={item} />
+        {items.map((item, i) => (
+          <ResumeSection key={i} section={item} />
         ))}
       </div>
     </>

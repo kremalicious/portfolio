@@ -48,7 +48,6 @@
     "remark-html": "^13.0.2",
     "remark-parse": "^9.0.0",
     "remark-react": "^8.0.0",
-    "shortid": "^2.2.16",
     "vcf": "^2.1.1"
   },
   "devDependencies": {
