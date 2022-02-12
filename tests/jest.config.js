@@ -8,7 +8,8 @@ module.exports = {
     '.+\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/tests/__mocks__/file-mock.js',
     '\\.svg': '<rootDir>/tests/__mocks__/svgr-mock.js',
-    '^@reach/router(.*)': '<rootDir>/node_modules/@gatsbyjs/reach-router$1'
+    '^@reach/router(.*)': '<rootDir>/node_modules/@gatsbyjs/reach-router$1',
+    '^gatsby-page-utils/(.*)$': `gatsby-page-utils/dist/$1` // Workaround for https://github.com/facebook/jest/issues/9771
   },
   testPathIgnorePatterns: [
     'node_modules',
