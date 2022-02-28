@@ -34,7 +34,7 @@
     "gatsby-plugin-sharp": "^4.7.0",
     "gatsby-plugin-sitemap": "^5.7.0",
     "gatsby-plugin-svgr": "^3.0.0-beta.0",
-    "gatsby-source-filesystem": "^4.7.0",
+    "gatsby-source-filesystem": "^4.8.1",
     "gatsby-transformer-json": "^4.7.0",
     "gatsby-transformer-sharp": "^4.7.0",
     "gatsby-transformer-yaml": "^4.7.0",
