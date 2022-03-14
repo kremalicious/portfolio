@@ -64,7 +64,7 @@
     "eslint-config-prettier": "^8.4.0",
     "eslint-plugin-graphql": "^4.0.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.29.3",
+    "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-testing-library": "^5.1.0",
     "identity-obj-proxy": "^3.0.0",
