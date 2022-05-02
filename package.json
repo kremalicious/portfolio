@@ -37,7 +37,7 @@
     "gatsby-source-filesystem": "^4.12.1",
     "gatsby-transformer-json": "^4.12.1",
     "gatsby-transformer-sharp": "^4.12.1",
-    "gatsby-transformer-yaml": "^4.12.1",
+    "gatsby-transformer-yaml": "^4.13.0",
     "intersection-observer": "^0.12.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
