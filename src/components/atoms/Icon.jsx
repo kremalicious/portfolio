@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // https://featherstyles.com
-// import * as Feather from 'react-feather'
+// import * as Feather from '@kremalicious/react-feather'
 import {
   ArrowDownCircle,
   Edit,
@@ -24,7 +24,7 @@ import {
   Star,
   Info,
   Dribbble
-} from 'react-feather'
+} from '@kremalicious/react-feather'
 import { icon } from './Icon.module.css'
 
 export default function Icon({ name, ...props }) {
