@@ -57,7 +57,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@welldone-software/why-did-you-render": "^7.0.1",
-    "babel-preset-gatsby": "^2.13.0",
+    "babel-preset-gatsby": "^2.15.0",
     "chalk": "4.1.2",
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
