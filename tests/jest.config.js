@@ -16,7 +16,9 @@ module.exports = {
     '<rootDir>.*/public',
     'coverage'
   ],
-  transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
+  transformIgnorePatterns: [
+    'node_modules/(?!(gatsby|gatsby-script|gatsby-link)/)'
+  ],
   globals: {
     __PATH_PREFIX__: ''
   },
