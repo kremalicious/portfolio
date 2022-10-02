@@ -75,7 +75,7 @@
     "prepend": "^1.0.2",
     "prettier": "^2.7.1",
     "slugify": "^1.6.5",
-    "stylelint": "^14.12.0",
+    "stylelint": "^14.13.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-prettier": "^2.0.0"
   },
