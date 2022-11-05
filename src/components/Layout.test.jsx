@@ -6,9 +6,9 @@ import Layout from './Layout'
 describe('Layout', () => {
   const history = createHistory(createMemorySource('/oceanprotocol'))
 
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     render(<Layout location={history.location}>Hello Layout</Layout>)
-    const element = screen.getByText('Hello Layout')
+    const element = await screen.findByText('Hello Layout')
     expect(element).toBeInTheDocument()
   })
 })

@@ -41,7 +41,7 @@ export default function Layout({ children, location }) {
       <HostnameCheck allowedHosts={allowedHosts} />
       <ThemeSwitch />
 
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence mode="wait">
         <motion.div
           key={location.pathname}
           variants={fadeIn}
