@@ -58,7 +58,7 @@
     "@testing-library/react": "^13.4.0",
     "@welldone-software/why-did-you-render": "^7.0.1",
     "babel-preset-gatsby": "^2.24.0",
-    "chalk": "4.1.2",
+    "chalk": "5.1.2",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-graphql": "^4.0.0",
