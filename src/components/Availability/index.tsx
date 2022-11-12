@@ -5,7 +5,6 @@ import meta from '../../../_content/meta.json'
 
 export default function Availability() {
   const shouldReduceMotion = useReducedMotion()
-  const isSSr = typeof window === 'undefined'
   const { status, available, unavailable } = meta.availability
   const className = status
     ? `${styles.availability} ${styles.available}`
@@ -16,7 +15,7 @@ export default function Availability() {
     <motion.aside
       variants={moveInTop}
       className={className}
-      {...getAnimationProps(shouldReduceMotion, isSSr)}
+      {...getAnimationProps(shouldReduceMotion)}
     >
       <p dangerouslySetInnerHTML={{ __html: html }} />
     </motion.aside>

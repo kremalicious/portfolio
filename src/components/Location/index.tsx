@@ -24,7 +24,6 @@ function Flag({ countryCode }: { countryCode: string }) {
 export default function Location() {
   const { now, next } = useLocation()
   const shouldReduceMotion = useReducedMotion()
-  const isSSr = typeof window === 'undefined'
   const isDifferentCountry = now?.country !== next?.country
   const relativeTime = new RelativeTime({ locale: 'en' })
 
@@ -32,7 +31,7 @@ export default function Location() {
     <motion.aside
       variants={moveInTop}
       className={styles.location}
-      {...getAnimationProps(shouldReduceMotion, isSSr)}
+      {...getAnimationProps(shouldReduceMotion)}
     >
       <Flag countryCode={now?.country_code} />
       {now?.city} <span>Now</span>

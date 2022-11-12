@@ -43,10 +43,10 @@ export const moveInBottom = {
   }
 }
 
-export function getAnimationProps(shouldReduceMotion, isSsr = false) {
+export function getAnimationProps(shouldReduceMotion) {
   return {
-    initial: `${shouldReduceMotion || isSsr ? 'enter' : 'initial'}`,
-    animate: `${shouldReduceMotion || isSsr ? null : 'enter'}`,
-    exit: `${shouldReduceMotion || isSsr ? null : 'exit'}`
+    initial: `${shouldReduceMotion ? 'enter' : 'initial'}`,
+    animate: `${shouldReduceMotion ? null : 'enter'}`,
+    exit: `${shouldReduceMotion ? null : 'exit'}`
   }
 }

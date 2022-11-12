@@ -1,7 +1,10 @@
+// @ts-check
+
+/**
+ * @type {import('next').NextConfig}
+ */
+
 module.exports = (phase, { defaultConfig }) => {
-  /**
-   * @type {import('next').NextConfig}
-   */
   const nextConfig = {
     webpack: (config, options) => {
       config.module.rules.push(

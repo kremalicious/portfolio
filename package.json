@@ -24,6 +24,7 @@
   "dependencies": {
     "@giphy/js-fetch-api": "^4.4.0",
     "@kremalicious/react-feather": "^2.1.0",
+    "@socialgouv/matomo-next": "^1.4.0",
     "@yaireo/relative-time": "^1.0.2",
     "file-saver": "^2.0.5",
     "framer-motion": "^7.6.4",
