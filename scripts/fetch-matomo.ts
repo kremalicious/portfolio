@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env ts-node
 
 const url =
   'https://raw.githubusercontent.com/matomo-org/matomo/4.x-dev/matomo.js'

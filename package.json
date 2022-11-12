@@ -6,11 +6,12 @@
   "repository": "github:kremalicious/portfolio",
   "license": "MIT",
   "author": "Matthias Kretschmann <m@kretschmann.io>",
+  "type": "module",
   "scripts": {
-    "start": "next",
-    "build": "next build",
+    "start": "npm run pregenerate && next",
+    "build": "npm run pregenerate && next build",
     "run": "next start",
-    "export": "next export",
+    "export": "npm run pregenerate && next export",
     "typecheck": "tsc",
     "lint:js": "next lint",
     "lint:css": "stylelint ./src/**/*.css",
@@ -19,7 +20,8 @@
     "jest": "jest --coverage -c src/__tests__/jest.config.ts",
     "test": "NODE_ENV=test npm run lint && npm run typecheck && npm run jest",
     "deploy:s3": "./scripts/deploy-s3.sh",
-    "new": "ts-node ./scripts/new.ts"
+    "new": "ts-node-esm ./scripts/new.ts",
+    "pregenerate": "ts-node-esm ./scripts/fetch-matomo.ts > public/matomo.js"
   },
   "dependencies": {
     "@giphy/js-fetch-api": "^4.4.0",
