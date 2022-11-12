@@ -67,12 +67,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: ${{ runner.os }}-node-
 
-      - name: Cache Gatsby build output
-        uses: actions/cache@v1
-        with:
-          path: public
-          key: ${{ runner.os }}-public
-
       - run: npm ci
       - run: npm run build
         env:

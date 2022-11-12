@@ -1,0 +1,128 @@
+[
+  {
+    "title": "Ocean Market",
+    "slug": "oceanprotocol-market",
+    "description": "As part of Ocean Protocol v3, I was leading the planning and execution of the Ocean Market product and decentralized web app in 2020. Ocean Market allows simple tokenization, secure sharing, and monetization of data assets within the Ethereum network with the help of data tokens.\n\nAssets can be exposed to dynamic price discovery by attaching Automated Market Maker (AMM) pools to them. Metadata is stored on-chain, and all actions like downloading or Compute-to-Data are done via exchanging data tokens, creating trustless provenance records in the process.\n\nThe market project is open-source and has been forked and used to create further data marketplaces on top of Ocean Protocol.\n",
+    "descriptionHtml": "<p>As part of Ocean Protocol v3, I was leading the planning and execution of the Ocean Market product and decentralized web app in 2020. Ocean Market allows simple tokenization, secure sharing, and monetization of data assets within the Ethereum network with the help of data tokens.\n\nAssets can be exposed to dynamic price discovery by attaching Automated Market Maker (AMM) pools to them. Metadata is stored on-chain, and all actions like downloading or Compute-to-Data are done via exchanging data tokens, creating trustless provenance records in the process.\n\nThe market project is open-source and has been forked and used to create further data marketplaces on top of Ocean Protocol.</p>",
+    "techstack": [
+      "HTML",
+      "CSS",
+      "TypeScript",
+      "React",
+      "Ethereum",
+      "Web3",
+      "3Box",
+      "Polygon",
+      "Binance Smart Chain"
+    ],
+    "links": [
+      {
+        "title": "Ocean Makes Multi-Network Even Easier",
+        "icon": "FileText",
+        "url": "https://kremalicious.com/ocean-makes-multi-network-even-easier"
+      },
+      {
+        "title": "Ocean Market: An Open-Source Community Marketplace for Data",
+        "icon": "FileText",
+        "url": "https://blog.oceanprotocol.com/ocean-market-an-open-source-community-marketplace-for-data-4b99bedacdc3\n"
+      },
+      {
+        "title": "market.oceanprotocol.com",
+        "icon": "Compass",
+        "url": "https://market.oceanprotocol.com"
+      },
+      {
+        "title": "@oceanprotocol/market",
+        "icon": "GitHub",
+        "url": "https://github.com/oceanprotocol/market"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/oceanprotocol-market-01.png",
+        "width": 2880,
+        "height": 1600,
+        "type": "png",
+        "blurDataURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIklEQVR4nGPYs3u3o4NjcnLyuXPnGM6dOyckJGRqagrkAACh+gwx3PBT3AAAAABJRU5ErkJggg=="
+      },
+      {
+        "src": "/images/oceanprotocol-market-02.png",
+        "width": 2880,
+        "height": 1600,
+        "type": "png",
+        "blurDataURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIUlEQVR4nGPg4+MzMzVTU1FjZGRk4OPje/bs+aFDh4AcADwVBmUswjyuAAAAAElFTkSuQmCC"
+      },
+      {
+        "src": "/images/oceanprotocol-market-03.png",
+        "width": 2880,
+        "height": 1600,
+        "type": "png",
+        "blurDataURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGPg4+Pbu2/f1CnT+fj4GFhZWD79/P3g3iNRYREAefgKHUsXFTIAAAAASUVORK5CYII="
+      },
+      {
+        "src": "/images/oceanprotocol-market-04.png",
+        "width": 2880,
+        "height": 1600,
+        "type": "png",
+        "blurDataURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGNgYGKSkpJ6+fLVnz9/GDiYOGSkZV89e/Xv7z8Ae1oMHMU2B+IAAAAASUVORK5CYII="
+      },
+      {
+        "src": "/images/oceanprotocol-market-05.png",
+        "width": 2880,
+        "height": 1600,
+        "type": "png",
+        "blurDataURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGP4////u3fvpKWkOdnYGf7////h3QdJCSkmJmYAwiIMS8eeLo0AAAAASUVORK5CYII="
+      }
+    ]
+  },
+  {
+    "title": "Ocean Protocol - IPFS Integration",
+    "slug": "oceanprotocol-ipfs",
+    "description": "In 2019 I was leading the integration of IPFS into the Ocean Protocol stack, from the core to the libraries, up to the UI in multiple touchpoints. \n\nFor making IPFS as decentralized file storage solution as seemless as possible to use within Ocean Protocol, a public IPFS node was created with a simple user-facing UI and API. The integration was completed by allowing users to add their files to IPFS directly in the [Commons](/oceanprotocol-commons/) publish flow.\n",
+    "descriptionHtml": "<p>In 2019 I was leading the integration of IPFS into the Ocean Protocol stack, from the core to the libraries, up to the UI in multiple touchpoints. \n\nFor making IPFS as decentralized file storage solution as seemless as possible to use within Ocean Protocol, a public IPFS node was created with a simple user-facing UI and API. The integration was completed by allowing users to add their files to IPFS directly in the [Commons](/oceanprotocol-commons/) publish flow.</p>",
+    "techstack": [
+      "HTML",
+      "CSS",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Docker",
+      "Kubernetes",
+      "Jest",
+      "IPFS"
+    ],
+    "links": [
+      {
+        "title": "Ocean Protocol and IPFS, Sitting In The Merkle Tree",
+        "icon": "FileText",
+        "url": "https://kremalicious.com/ocean-protocol-and-ipfs-sitting-in-the-merkle-tree\n"
+      },
+      {
+        "title": "ipfs.oceanprotocol.com",
+        "icon": "Compass",
+        "url": "https://ipfs.oceanprotocol.com"
+      },
+      {
+        "title": "@oceanprotocol/ipfs",
+        "icon": "GitHub",
+        "url": "https://github.com/oceanprotocol/ipfs"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/oceanprotocol-ipfs-01.png",
+        "width": 2880,
+        "height": 1600,
+        "type": "png",
+        "blurDataURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGP4+vXr7p07c7Nzr127zjBz5kxlZWVRUdH+/n4AytEM9VH+hkgAAAAASUVORK5CYII="
+      },
+      {
+        "src": "/images/oceanprotocol-ipfs-02.png",
+        "width": 2880,
+        "height": 1600,
+        "type": "png",
+        "blurDataURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGklEQVR4nGMoKirS09UrAgOGoqKi+WAA5AAAgRQK8sS0QUEAAAAASUVORK5CYII="
+      }
+    ]
+  }
+]

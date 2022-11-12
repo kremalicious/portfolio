@@ -1,4 +1,4 @@
-@import '_variables.css';
+@import url('_variables.css');
 
 *,
 *::before,
@@ -97,15 +97,4 @@ figure {
   max-width: 100%;
   height: auto;
   margin: 0;
-}
-
-#___gatsby {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-.gatsby-image-wrapper {
-  max-height: 100vh;
-  display: block;
 }

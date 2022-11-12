@@ -1,0 +1,39 @@
+.imageWrap {
+  position: relative;
+}
+
+.imageWrap:not(:only-of-type) {
+  margin-bottom: calc(var(--spacer) * 3);
+}
+
+.frame {
+  border: var(--stroke-width) solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: border-color 0.2s ease-out;
+  box-shadow: var(--box-shadow);
+}
+
+a:hover .frame,
+a:focus .frame {
+  border-color: var(--link-color);
+}
+
+.image {
+  composes: frame;
+  display: block;
+}
+
+.image:last-of-type {
+  margin-bottom: 0;
+}
+
+@media (min-width: 1200px) {
+  .image:not(:only-of-type) {
+    margin-bottom: calc(var(--spacer) * 6);
+  }
+
+  .image:last-of-type {
+    margin-bottom: 0;
+  }
+}

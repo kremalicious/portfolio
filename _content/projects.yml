@@ -1,0 +1,445 @@
+- title: Ocean Market
+  slug: oceanprotocol-market
+  description: |
+    As part of Ocean Protocol v3, I was leading the planning and execution of the Ocean Market product and decentralized web app in 2020. Ocean Market allows simple tokenization, secure sharing, and monetization of data assets within the Ethereum network with the help of data tokens.
+
+    Assets can be exposed to dynamic price discovery by attaching Automated Market Maker (AMM) pools to them. Metadata is stored on-chain, and all actions like downloading or Compute-to-Data are done via exchanging data tokens, creating trustless provenance records in the process.
+
+    The market project is open-source and has been forked and used to create further data marketplaces on top of Ocean Protocol.
+  links:
+    - title: Ocean Makes Multi-Network Even Easier
+      icon: FileText
+      url: 'https://kremalicious.com/ocean-makes-multi-network-even-easier'
+    - title: 'Ocean Market: An Open-Source Community Marketplace for Data'
+      icon: FileText
+      url: |
+        https://blog.oceanprotocol.com/ocean-market-an-open-source-community-marketplace-for-data-4b99bedacdc3
+    - title: market.oceanprotocol.com
+      icon: Compass
+      url: 'https://market.oceanprotocol.com'
+    - title: '@oceanprotocol/market'
+      icon: GitHub
+      url: 'https://github.com/oceanprotocol/market'
+  techstack:
+    - HTML
+    - CSS
+    - TypeScript
+    - React
+    - Ethereum
+    - Web3
+    - 3Box
+    - Polygon
+    - Binance Smart Chain
+- title: Ocean Protocol - IPFS Integration
+  slug: oceanprotocol-ipfs
+  description: |
+    In 2019 I was leading the integration of IPFS into the Ocean Protocol stack, from the core to the libraries, up to the UI in multiple touchpoints. 
+
+    For making IPFS as decentralized file storage solution as seemless as possible to use within Ocean Protocol, a public IPFS node was created with a simple user-facing UI and API. The integration was completed by allowing users to add their files to IPFS directly in the [Commons](/oceanprotocol-commons/) publish flow.
+  links:
+    - title: 'Ocean Protocol and IPFS, Sitting In The Merkle Tree'
+      icon: FileText
+      url: |
+        https://kremalicious.com/ocean-protocol-and-ipfs-sitting-in-the-merkle-tree
+    - title: ipfs.oceanprotocol.com
+      icon: Compass
+      url: 'https://ipfs.oceanprotocol.com'
+    - title: '@oceanprotocol/ipfs'
+      icon: GitHub
+      url: 'https://github.com/oceanprotocol/ipfs'
+  techstack:
+    - HTML
+    - CSS
+    - TypeScript
+    - React
+    - Next.js
+    - Docker
+    - Kubernetes
+    - Jest
+    - IPFS
+- title: Ocean Protocol - Commons
+  slug: oceanprotocol-commons
+  description: |
+    From 2018–⁠2019 I was leading the design and development of the Commons marketplace, a Web3 data marketplace to explore, download, and publish open data sets registered in the [Ocean Protocol](/oceanprotocol) network.
+
+    As the main front-facing UI of Ocean Protocol v1 & v2, it served as a product and showcase bringing together the complete Ocean Protocol stack in a simple interface. Additionally, the project was created with developers in mind, making Commons the most complete boilerplate for creating dApps on top of Ocean Protocol.
+
+    With the release of Ocean Protocol v3, Commons has been superseded by [Ocean Market](/oceanprotocol-market/).
+  links:
+    - title: The Commons Marketplace in Pacific Network
+      icon: FileText
+      url: 'https://kremalicious.com/the-commons-marketplace-in-pacific-network'
+    - title: The Commons Marketplace
+      icon: FileText
+      url: 'https://kremalicious.com/the-commons-marketplace'
+    - title: commons.oceanprotocol.com
+      icon: Compass
+      url: 'https://commons.oceanprotocol.com'
+    - title: '@oceanprotocol/commons'
+      icon: GitHub
+      url: 'https://github.com/oceanprotocol/commons'
+  techstack:
+    - HTML
+    - SCSS
+    - TypeScript
+    - React
+    - Ethereum
+    - Web3
+    - Docker
+    - Kubernetes
+    - Cypress
+    - Jest
+    - IPFS
+- title: Ocean Protocol v1
+  slug: oceanprotocol-v1
+  description: |
+    Since 2017 I'm leading the UI design & development of Ocean Protocol, iterating on a components-based UI design system spanning all of Ocean Protocol's web properties. Additionally, I conceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.
+
+    Most web interfaces are single-page JavaScript applications built with React, pulling their data from multiple sources. All design & development is embedded in continuous deployment processes via GitHub, Travis, Kubernetes, and Vercel.
+
+    In 2020 I was leading the refresh of Ocean Protocol's visual identity for the release of v3 and the [Ocean Market](/oceanprotocol-market/).
+
+    Initial website in collaboration with [Balance](https://balance.io/). Key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
+  links:
+    - title: oceanprotocol.com
+      icon: Compass
+      url: 'https://oceanprotocol.com'
+    - title: Styleguide
+      url: 'https://oceanprotocol.com/art'
+    - title: docs.oceanprotocol.com
+      icon: Compass
+      url: 'https://docs.oceanprotocol.com'
+    - title: '@oceanprotocol/art'
+      icon: GitHub
+      url: 'https://github.com/oceanprotocol/art'
+    - title: '@oceanprotocol/docs'
+      icon: GitHub
+      url: 'https://github.com/oceanprotocol/docs'
+  techstack:
+    - Sketch
+    - Affinity Designer
+    - React
+    - Gatsby
+    - Next.js
+    - HTML
+    - SCSS
+    - JavaScript
+    - TypeScript
+    - Travis
+    - AWS S3
+    - Cloudflare
+    - Ethereum
+    - Docker
+    - Kubernetes
+    - IPFS
+- title: IPDB
+  slug: ipdb
+  description: |
+    From 2015–2017 I was leading the UI design & development of all IPDB web properties and additionally iterated on the creative and visual direction of the IPDB brand.
+
+    The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it. All design & development is embedded in a continuous deployment process via GitHub & Travis.
+
+    Branding and key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
+  techstack:
+    - Sketch
+    - Jekyll
+    - Gulp
+    - HTML
+    - SCSS
+    - JavaScript
+    - Travis
+    - AWS S3
+    - Cloudflare
+    - 3Scale
+  links:
+    - title: GitHub
+      icon: GitHub
+      url: 'https://github.com/ipdb/website'
+- title: Berlin Innovation Ventures
+  slug: biv
+  description: |
+    I designed & developed the website and a basic branding for the Berlin-based VC firm Berlin Innovation Ventures. The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it.
+  techstack:
+    - Sketch
+    - Jekyll
+    - Gulp
+    - HTML
+    - SCSS
+    - JavaScript
+  links:
+    - title: Link
+      icon: Compass
+      url: 'http://berlininnovation.vc'
+- title: 9984 >> Summit 2017
+  slug: '9984'
+  img: /images/9984-01.png
+  links:
+    - title: Link
+      url: 'https://2017.9984.io'
+    - title: Styleguide
+      url: 'https://2017.9984.io/styleguide'
+    - title: GitHub
+      url: 'https://github.com/9984/2017.9984.io'
+  description: |
+    In 2017 I was leading the UI design & development for the 9984 >> Summit, the first joint summit of BigchainDB & IPDB. Additionally, I conceptualized, executed and iterated on the creative and visual direction of the 9984 brand.
+
+    The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it. All design & development is embedded in a continuous deployment process via GitHub & Travis.
+
+    Branding and key visuals in collaboration with [Cristina Vulpe](https://www.linkedin.com/in/cristina-vulpe-41469262) & [Wojciech Hupert](https://twitter.com/wojciechhupert).
+  techstack:
+    - Sketch
+    - Jekyll
+    - Gulp
+    - HTML
+    - SCSS
+    - JavaScript
+    - Travis
+    - AWS S3
+    - Cloudflare
+- title: BigchainDB
+  slug: bigchaindb
+  description: |
+    From 2016–2019 I was leading the UI design & development of all BigchainDB web properties. I created the initial BigchainDB brand and further conceptualized, executed and iterated on the creative and visual direction of BigchainDB. This included creating and iterating on a components-based UI design system for all of BigchainDB's web properties.
+
+    The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it, pulling data from various external sources and microservices. All design & development is embedded in a continuous deployment process via GitHub & Travis.
+
+    Branding & key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
+  techstack:
+    - BigchainDB
+    - Sketch
+    - Affinity Designer
+    - Illustrator
+    - Jekyll
+    - Gulp
+    - HTML
+    - SCSS
+    - JavaScript
+    - Travis
+    - AWS S3
+    - Cloudflare
+  links:
+    - title: Link
+      url: 'https://www.bigchaindb.com'
+    - title: Styleguide
+      url: 'https://www.bigchaindb.com/styleguide'
+    - title: GitHub
+      url: 'https://github.com/bigchaindb/site'
+    - title: Dribbble
+      url: 'https://dribbble.com/shots/2522184-BigchainDB-site'
+- title: ascribe
+  slug: ascribe
+  description: |
+    With ascribe, users were able to tokenize digital art and real life assets onto the Bitcoin blockchain. It was one of the very first decentralized apps using a decentralized ledger as its backend, all before Ethereum even existed. The principles around digital art as entries in a blockchain, given out in editions, would later inspire the ERC-721 NFT standard on the Ethereum blockchain. Finally, the learnings around a decentralized approach for storing structured data led to the creation of [BigchainDB](/bigchaindb).
+
+    From 2015-2017 I worked on the UI development for multiple web touch points, including the main web app built with one of the first versions of React. The service and web app was [discontinued in 2017](https://www.ascribe.io/).
+
+    Branding & key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
+  techstack:
+    - ascribe
+    - Sketch
+    - Illustrator
+    - Jekyll
+    - Gulp
+    - HTML
+    - SCSS
+    - JavaScript
+    - Travis
+    - AWS S3
+    - Cloudflare
+    - React
+    - Bitcoin
+  links:
+    - title: Link
+      url: 'https://www.ascribe.io'
+    - title: GitHub
+      url: 'https://github.com/ascribe'
+- title: ChartMogul
+  slug: chartmogul
+  description: |
+    From 2015–2017 I was co-designing and leading the UI design & development of various ChartMogul web properties. This included the creation of a components-based UI design system and implementing it across all web touch points.
+
+    The main website with its landing pages is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it, while the blog is running on WordPress with its own custom theme. All embedded in an automated development & deployment workflow via GitHub and Travis.
+
+    Besides designing and implementing new features, I maintained the front-end of the ChartMogul application and implemented the UI design system by refactoring most of its front-end codebase.
+
+    All branding, design & key visuals directed by Michelle Myung.
+  techstack:
+    - Sketch
+    - Affinity Designer
+    - Illustrator
+    - HTML
+    - SCSS
+    - JavaScript
+    - PHP
+    - Jekyll
+    - Gulp
+    - WordPress
+    - Travis
+    - AWS S3
+    - Cloudflare
+    - Ruby on Rails
+    - Backbone.js
+  links:
+    - title: Link
+      url: 'https://chartmogul.com'
+    - title: Styleguide
+      url: 'https://chartmogul.com/styleguide'
+    - title: Dribbble
+      url: 'https://dribbble.com/kremalicious/projects/311439-ChartMogul'
+- title: ShareTheMeal
+  slug: sharethemeal
+  description: |
+    ShareTheMeal is an app from the United Nations World Food Programme (WFP) that enables people to "share their meals" with children in need. In 2015 I was consulting, co-designing and leading the front-end development of the ShareTheMeal website and various parts of the ShareTheMeal apps for iOS & Android.
+
+    The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it, embedded in a continuous deployment process via GitHub & Travis.
+  techstack:
+    - Sketch
+    - Illustrator
+    - Jekyll
+    - Gulp
+    - HTML
+    - SCSS
+    - JavaScript
+    - Travis
+    - AWS S3
+    - Cloudflare
+    - Node.js
+  links:
+    - title: Link
+      url: 'https://sharethemeal.org'
+- title: ezeep
+  slug: ezeep
+  description: |
+    From 2012–2015 I helped create an unprecedented, market-leading & award-winning user experience based on the principles of emotional design way ahead of all competitors. This included conceptualizing executing, and iterating on the creative & visual direction of the ezeep brand.
+
+    I was leading the UI design & development of all ezeep touch points and - as a product designer - defined the ezeep product based on user and market research in an iterative process. On top of that, I designed and helped building all app experiences of ezeep on Windows, macOS, iOS, and Android.
+
+    ezeep was acquired by [Cortado AG](https://www.cortado.com) in 2015 and became part of their [ThinPrint Cloud Services](https://www.thinprintcloud.com) suite of products.
+  techstack:
+    - Photoshop
+    - Illustrator
+    - InDesign
+    - Sketch
+    - HTML
+    - SCSS
+    - JavaScript
+    - PHP
+    - WordPress
+    - Travis
+    - AWS
+    - Cloudflare
+    - Node.js
+    - Backbone.js
+    - Electron
+  links:
+    - title: Info
+      url: 'https://kremalicious.com/enterprise-software-sucks'
+    - title: Dribbble
+      url: 'https://dribbble.com/kremalicious/projects/84318-ezeep'
+- title: Mr. Reader
+  slug: mrreader
+  description: |
+    While working with indy iOS developer Curious Times in 2012, I designed the app icon, a custom theme, and various promotion materials for Mr. Reader, a powerful and highly loved RSS feed reader for iPad.
+  techstack:
+    - Photoshop
+- title: iPixelPad
+  slug: ipixelpad
+  description: |
+    So, what to do when everyone seem to release iPad icons but fail to include some crisp small size icons? Pushing the pixels for yourself of course. So here’s my take on the smaller sizes of an Apple iPad icon, called iPixelPad.
+
+    Released as a goodie on [kremalicious.com](https://kremalicious.com/ipixelpad/).
+  techstack:
+    - Photoshop
+  links:
+    - title: Info & Download
+      url: 'https://kremalicious.com/ipixelpad'
+- title: Out Of Whale Oil
+  slug: outofwhaleoil
+  description: |
+    Tribute wallpaper pack inspired by the Futurama movie _Into The Wild Green Yonder_. Released as a goodie on [kremalicious.com](https://kremalicious.com/out-of-whale-oil/).
+  links:
+    - title: Info & Download
+      url: 'https://kremalicious.com/out-of-whale-oil'
+  techstack:
+    - Photoshop
+- title: Martin-Luther-Universität Halle-Wittenberg
+  slug: unihalle
+  description: |
+    From 2009–2012 I worked at the IT services department of [Martin-Luther-Universität Halle-Wittenberg](http://www.uni-halle.de) where I conceptualized, designed & implemented numerous in-house and public facing interfaces for thousands of students and staff.
+
+    Additionally, I conceptualized, designed, created, and maintained the blog network & community for all students & staff.
+  techstack:
+    - Photoshop
+    - Illustrator
+    - HTML
+    - SCSS
+    - JavaScript
+    - PHP
+    - Ruby on Rails
+    - WordPress
+    - Ilias
+    - Stud.IP
+  links:
+    - title: Link
+      url: 'http://blogs.urz-uni-halle.de'
+    - title: Dribbble
+      url: 'https://dribbble.com/kremalicious/projects/690029-MLU'
+- title: Coffee Cup
+  slug: coffeecup
+  description: |
+    Desktop icons showing the fuel of most designers. Released as a goodie on [kremalicious.com](https://kremalicious.com/coffee-cup-icon/).
+  techstack:
+    - Photoshop
+  links:
+    - title: Info & Download
+      url: 'https://kremalicious.com/coffee-cup-icon'
+- title: Project Purple
+  slug: projectpurple
+  description: |
+    It had been revealed the original iPhone was developed in a locked down building under the name Project Purple and because of the secrecy involved, the team decorated the building with Fight Club references. Perfect story to create a wallpaper out of it.
+
+    Released as a goodie on [kremalicious.com](https://kremalicious.com/projectpurple/).
+  techstack:
+    - Photoshop
+  links:
+    - title: Info & Download
+      url: 'https://kremalicious.com/projectpurple'
+- title: Allinnia Creative Group
+  slug: allinnia
+  description: |
+    In 2009 I created the branding, website, and various key visuals for professional music production studio Allinnia Creative Group, reflecting their own musical compositions.
+
+    The website was built from scratch as a simple PHP application with a store and music listening functionality.
+  techstack:
+    - Photoshop
+    - HTML
+    - CSS
+    - JavaScript
+    - PHP
+- title: Aperture Loupe
+  slug: apertureloupe
+  description: |
+    When Apple released their professional photography app _Aperture_ in 2008, the loupe tool in there was something really novel and just fun to play with. Inspired by that, I created this macOS desktop icon.
+  techstack:
+    - Photoshop
+- title: Adiumeetie
+  slug: adiumeetie
+  description: |
+    A macOS replacement desktop icon created in 2009 for the popular Mac IM client Adium following the style of atebit’s excellent Tweetie for Mac icon. Released as a goodie on [kremalicious.com](https://kremalicious.com/adiumeetie/).
+  techstack:
+    - Photoshop
+  links:
+    - title: Download
+      url: 'https://kremalicious.com/adiumeetie'
+- title: Niépce's Camera Obscura
+  slug: niepces-camera-obscura
+  description: |
+    In 2008 I used the camera obscura as it was used by Nicéphore Niépce in 1826 to create an Aperture and iPhoto replacement icon.
+
+    Nicéphore Niépce made it first possible to preserve an image taken with a camera obscura in 1826 or 1827 by using a special mixture of bitumen on a glass or metal plate, naming it Heliography. This first preserved image 'View from the Window at Le Gras' is the one you can see in the iPhoto icon.
+  links:
+    - title: Info
+      url: |
+        https://kremalicious.com/niepces-camera-obscura-and-the-history-of-the-first-photograph
+  techstack:
+    - Photoshop

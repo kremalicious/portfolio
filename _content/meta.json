@@ -1,0 +1,21 @@
+{
+  "description": "Portfolio of web & ui designer/developer Matthias Kretschmann.",
+  "img": "twitter-card.png",
+  "url": "https://matthiaskretschmann.com",
+  "availability": {
+    "status": false,
+    "available": "👔 Available for new projects. <a href=\"mailto:m@kretschmann.io\">Let’s talk</a>!",
+    "unavailable": "Not available for new projects."
+  },
+  "gpg": "https://kretschmann.io/pub.gpg",
+  "addressbook": "/matthias-kretschmann.vcf",
+  "bugs": "https://github.com/kremalicious/portfolio/issues/new",
+  "matomoUrl": "https://analytics.kremalicious.com",
+  "matomoSite": 2,
+  "allowedHosts": [
+    "matthiaskretschmann.com",
+    "beta.matthiaskretschmann.com",
+    "localhost",
+    "05.local"
+  ]
+}
