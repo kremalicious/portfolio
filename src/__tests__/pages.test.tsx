@@ -26,7 +26,7 @@ describe('pages', () => {
   })
 
   it('IndexPage/getStaticProps', async () => {
-    const props = await getStaticProps()
+    const props = await getStaticProps({} as any)
     expect(props).toBeDefined()
   })
 
@@ -35,7 +35,7 @@ describe('pages', () => {
   })
 
   it('ProjectPage/getStaticPaths', async () => {
-    const props = await getStaticPaths()
+    const props = await getStaticPaths({} as any)
     expect(props).toBeDefined()
   })
 
