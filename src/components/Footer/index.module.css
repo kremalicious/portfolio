@@ -14,6 +14,10 @@
   margin-bottom: var(--spacer);
 }
 
+.actions {
+  margin-bottom: 0;
+}
+
 .actions a {
   display: inline-block;
   padding: 0 calc(var(--spacer) / 4);

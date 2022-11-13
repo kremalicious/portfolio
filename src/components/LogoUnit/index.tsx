@@ -5,12 +5,15 @@ import styles from './index.module.css'
 import resume from '../../../_content/resume.json'
 
 type Props = {
-  minimal?: boolean
+  small?: boolean
 }
 
-export default function LogoUnit({ minimal }: Props) {
+export default function LogoUnit({ small }: Props) {
   return (
-    <Link className={minimal ? styles.minimal : styles.logounit} href="/">
+    <Link
+      className={`${styles.logounit} ${small ? styles.small : null}`}
+      href="/"
+    >
       <Logo className={styles.logo} />
       <h1 className={`p-name ${styles.title}`}>
         {resume.basics.name.toLowerCase()}

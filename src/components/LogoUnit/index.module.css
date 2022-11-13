@@ -23,7 +23,6 @@
 .title {
   font-size: var(--font-size-h3);
   margin-right: calc(var(--spacer) / 4);
-  line-height: var(--line-height);
 }
 
 .description {
@@ -44,19 +43,20 @@
   content: ' }';
 }
 
-.minimal {
-  composes: logounit;
+.small {
   pointer-events: all;
 }
 
-.minimal,
-.minimal:hover,
-.minimal:focus {
-  transform: scale(0.7);
-  transform-origin: top center;
-  transform-box: border-box;
+.small .title {
+  font-size: var(--font-size-h5);
 }
 
-.minimal .logo {
-  margin-bottom: calc(var(--spacer) / 3);
+.small .description {
+  font-size: var(--font-size-h6);
+}
+
+.small .logo {
+  width: 1rem;
+  height: 1rem;
+  margin-bottom: calc(var(--spacer) / 4);
 }

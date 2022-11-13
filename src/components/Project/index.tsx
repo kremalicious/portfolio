@@ -19,13 +19,13 @@ export default function Project({ project }: { project: ProjectType }) {
 
   return (
     <article className={styles.project}>
-      <header>
+      <header className={styles.intro}>
         <h1 className={styles.headerTitle}>{title}</h1>
+        <div
+          className={styles.description}
+          dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+        />
       </header>
-      <div
-        className={styles.description}
-        dangerouslySetInnerHTML={{ __html: descriptionHtml }}
-      />
 
       {images.map((image: ImageType, i: number) => (
         <ProjectImage

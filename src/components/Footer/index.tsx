@@ -1,22 +1,28 @@
 import LogoUnit from '../LogoUnit'
 import Networks from '../Networks'
-import Location from '../Location'
 import styles from './index.module.css'
-import Vcard from './Vcard'
 import meta from '../../../_content/meta.json'
 import resume from '../../../_content/resume.json'
+import dynamic from 'next/dynamic'
+import { Suspense } from 'react'
+
+const DynamicVcard = dynamic(() => import('./Vcard'), {
+  suspense: true
+})
 
 export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
     <footer className={`h-card ${styles.footer}`}>
-      <LogoUnit minimal />
+      <LogoUnit small />
       <Networks small />
-      <Location />
 
       <p className={styles.actions}>
-        <Vcard />
+        <Suspense fallback={'Add to addressbook'}>
+          <DynamicVcard />
+        </Suspense>
+
         <a className="u-key" href={meta.gpg}>
           PGP/GPG key
         </a>

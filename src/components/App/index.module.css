@@ -1,5 +1,5 @@
 .screen {
-  margin: calc(var(--spacer) * var(--line-height)) auto 0 auto;
+  margin: calc(var(--spacer) * 2) auto 0 auto;
   padding-left: 5vw;
   padding-right: 5vw;
 }

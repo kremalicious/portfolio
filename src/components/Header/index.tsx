@@ -1,21 +1,30 @@
 import Networks from '../Networks'
 import Availability from '../Availability'
-import Location from '../Location'
 import LogoUnit from '../LogoUnit'
 import styles from './index.module.css'
+import dynamic from 'next/dynamic'
+import { Suspense } from 'react'
+
+const DynamicLocation = dynamic(() => import('../Location'), {
+  suspense: true
+})
 
 type Props = {
-  minimal?: boolean
+  small?: boolean
 }
 
-export default function Header({ minimal }: Props) {
+export default function Header({ small }: Props) {
   return (
-    <header className={`${styles.header} ${minimal ? styles.minimal : null}`}>
-      <LogoUnit minimal={minimal} />
-      {!minimal ? <Networks /> : null}
+    <header className={`${styles.header} ${small ? styles.small : null}`}>
+      <LogoUnit small={small} />
+      {!small ? <Networks /> : null}
       <div className={styles.meta}>
-        {!minimal ? <Location /> : null}
-        {!minimal ? <Availability /> : null}
+        {!small ? (
+          <Suspense>
+            <DynamicLocation />
+          </Suspense>
+        ) : null}
+        {!small ? <Availability /> : null}
       </div>
     </header>
   )

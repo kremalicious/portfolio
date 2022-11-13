@@ -25,7 +25,7 @@ export default function App({ children }: { children: React.ReactNode }) {
       <Typekit />
       <MetaFavicon />
       <ThemeSwitch />
-      <Header minimal={router.asPath !== '/'} />
+      <Header small={router.asPath !== '/'} />
       <main className={styles.screen}>{children}</main>
       <Footer />
     </>

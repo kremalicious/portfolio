@@ -10,8 +10,9 @@
   border: var(--stroke-width) solid rgba(255, 255, 255, 0.2);
   border-radius: var(--border-radius);
   overflow: hidden;
-  transition: border-color 0.2s ease-out;
+  transition: border-color 0.1s ease-out;
   box-shadow: var(--box-shadow);
+  will-change: border-color;
 }
 
 a:hover .frame,

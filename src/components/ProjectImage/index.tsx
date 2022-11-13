@@ -21,10 +21,10 @@ export default function ProjectImage({
         className={styles.image}
         src={image.src}
         alt={alt}
-        width={image.width}
-        height={image.height}
+        width={image.width / 2}
+        height={image.height / 2}
         sizes={sizes}
-        placeholder="blur"
+        placeholder="empty"
         blurDataURL={image.blurDataURL}
         quality={85}
       />

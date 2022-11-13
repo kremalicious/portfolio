@@ -1,5 +1,5 @@
 .networks {
-  margin-top: var(--spacer);
+  padding-top: var(--spacer);
   width: 100%;
   text-align: center;
 }
@@ -45,6 +45,7 @@
 
 .small {
   composes: networks;
+  padding-top: calc(var(--spacer) / 2);
 }
 
 .small .link {
