@@ -19,7 +19,7 @@ export async function getProjectImages(slug: string) {
   const allImages = fs.readdirSync(imagesDirectory, 'utf8')
   const projectImages = allImages.filter((image) => image.includes(slug))
 
-  const images: ImageType[] = []
+  let images: ImageType[] = []
 
   await Promise.all(
     projectImages.map(async (image) => {
@@ -34,7 +34,8 @@ export async function getProjectImages(slug: string) {
       images.push(imageType)
     })
   )
-
+  // Sort images by sequentially numbered name to be sure
+  images = images.sort((a, b) => a.src.localeCompare(b.src))
   return images
 }
 
