@@ -14,7 +14,7 @@ body {
 
 html {
   font-size: var(--font-size-root);
-  background: var(--body-background-color);
+  background-color: var(--body-background-color);
 }
 
 body {
@@ -28,8 +28,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
-  background: var(--body-background-color);
-  transition: background 0.2s var(--easing);
+  background-color: var(--body-background-color);
+  transition: background-color 0.15s;
+  will-change: background-color;
 }
 
 p,

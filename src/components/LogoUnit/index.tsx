@@ -10,7 +10,7 @@ type Props = {
 
 export default function LogoUnit({ minimal }: Props) {
   return (
-    <Link className={minimal ? styles.minimal : styles.logounit} href={'/'}>
+    <Link className={minimal ? styles.minimal : styles.logounit} href="/">
       <Logo className={styles.logo} />
       <h1 className={`p-name ${styles.title}`}>
         {resume.basics.name.toLowerCase()}

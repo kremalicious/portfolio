@@ -8,10 +8,10 @@
   "author": "Matthias Kretschmann <m@kretschmann.io>",
   "type": "module",
   "scripts": {
-    "start": "npm run pregenerate && next",
-    "build": "npm run pregenerate && next build",
+    "start": "next",
+    "build": "next build",
     "run": "next start",
-    "export": "npm run pregenerate && next export",
+    "export": "next export",
     "typecheck": "tsc",
     "lint:js": "next lint",
     "lint:css": "stylelint ./src/**/*.css",
@@ -21,7 +21,7 @@
     "test": "NODE_ENV=test npm run lint && npm run typecheck && npm run jest",
     "deploy:s3": "./scripts/deploy-s3.sh",
     "new": "ts-node-esm ./scripts/new.ts",
-    "pregenerate": "ts-node-esm ./scripts/fetch-matomo.ts > public/matomo.js"
+    "favicon": "ts-node-esm ./scripts/favicon.ts"
   },
   "dependencies": {
     "@giphy/js-fetch-api": "^4.4.0",
@@ -30,7 +30,7 @@
     "@yaireo/relative-time": "^1.0.2",
     "file-saver": "^2.0.5",
     "framer-motion": "^7.6.4",
-    "next": "^13.0.2",
+    "next": "13.0.3",
     "plaiceholder": "^2.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -48,6 +48,7 @@
     "chalk": "^5.1.2",
     "eslint": "^8.27.0",
     "eslint-config-next": "^13.0.3",
+    "favicons": "^7.0.2",
     "jest": "^29.3.1",
     "jest-canvas-mock": "^2.4.0",
     "jest-environment-jsdom": "^29.3.1",

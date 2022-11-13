@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
+import { GetStaticPaths, GetStaticProps } from 'next/types'
 import { getProjectBySlug, getAllProjects } from '../lib/api'
 import { markdownToHtml } from '../lib/markdown'
 import type ProjectType from '../interfaces/project'
@@ -49,7 +50,7 @@ type Params = {
   }
 }
 
-export async function getStaticProps({ params }: Params) {
+export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
   const project = await getProjectBySlug(params.slug, [
     'title',
     'description',
@@ -72,7 +73,7 @@ export async function getStaticProps({ params }: Params) {
   }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const projects = await getAllProjects(['slug'])
 
   return {

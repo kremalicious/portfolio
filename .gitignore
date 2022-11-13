@@ -38,3 +38,4 @@ next-env.d.ts
 .swc
 coverage
 public/matomo.js
+public/favicon/

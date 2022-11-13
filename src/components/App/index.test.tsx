@@ -2,6 +2,8 @@ import React from 'react'
 import { render, screen, act } from '@testing-library/react'
 import App from '.'
 
+jest.mock('@socialgouv/matomo-next')
+
 describe('App', () => {
   it('renders without crashing', async () => {
     await act(async () => {

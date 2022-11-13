@@ -4,6 +4,7 @@ import meta from '../../_content/meta.json'
 import resume from '../../_content/resume.json'
 import Meta from '../components/Meta'
 import Projects from '../components/Projects'
+import { GetStaticProps } from 'next/types'
 
 type Props = {
   allProjects: Project[]
@@ -24,7 +25,7 @@ export default function IndexPage({ allProjects }: Props) {
   )
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const allProjects = await getAllProjects(['title', 'images', 'slug'])
 
   return {
