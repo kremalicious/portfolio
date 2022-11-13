@@ -1,7 +1,8 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import Repository from './Repository'
-import repos from '../../../tests/__fixtures__/repos.json'
+import Repository from '../Repository'
+import repos from '../../__tests__/__fixtures__/repos.json'
+import Repo from '../../interfaces/repo'
 
 describe('Repository', () => {
   it('renders correctly', () => {
@@ -16,7 +17,7 @@ describe('Repository', () => {
       html_url: 'html_url'
     }
 
-    const { container } = render(<Repository repo={repo1} />)
+    const { container } = render(<Repository repo={repo1 as Repo} />)
     expect(container.querySelector('h1 > a').getAttribute('href')).toBe(
       repo1.html_url
     )
@@ -29,14 +30,14 @@ describe('Repository', () => {
       homepage: 'hello'
     }
 
-    const { container } = render(<Repository repo={repo} />)
+    const { container } = render(<Repository repo={repo as Repo} />)
     expect(container.querySelectorAll('p:last-child a').length).toBe(3)
   })
 
   it('renders no link without homepage', () => {
     const repo = { name: 'Hello', full_name: 'repo/hello' }
 
-    const { container } = render(<Repository repo={repo} />)
+    const { container } = render(<Repository repo={repo as Repo} />)
     expect(container.querySelectorAll('p:last-child a').length).toBe(2)
   })
 })

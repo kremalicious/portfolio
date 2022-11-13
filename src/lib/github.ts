@@ -1,26 +1,19 @@
 //
 // Get GitHub repos
 //
+
+import data from '../../_content/repos.json'
+import Repo from '../interfaces/repo'
+
 const gitHubConfig = {
   headers: {
     'User-Agent': 'kremalicious/portfolio',
-    Authorization: `token ${process.env.GATSBY_GITHUB_TOKEN}`
+    Authorization: `token ${process.env.GITHUB_TOKEN}`
   }
 }
 
-type Holder = {
-  name: string
-  full_name: string
-  description: string
-  html_url: string
-  homepage: string
-  stargazers_count: string
-  pushed_at: string
-}
-
-async function getGithubRepos(data) {
-  let repos = []
-  let holder: Partial<Holder> = {}
+export async function getGithubRepos() {
+  let repos: Repo[] = []
 
   for (let item of data) {
     const user = item.split('/')[0]
@@ -29,17 +22,29 @@ async function getGithubRepos(data) {
       `https://api.github.com/repos/${user}/${repoName}`,
       gitHubConfig
     )
-    const repo = await data.json()
+    const json: Repo = await data.json()
+    if (!json?.name) return
 
-    holder.name = repo.data.name
-    holder.full_name = repo.data.full_name
-    holder.description = repo.data.description
-    holder.html_url = repo.data.html_url
-    holder.homepage = repo.data.homepage
-    holder.stargazers_count = repo.data.stargazers_count
-    holder.pushed_at = repo.data.pushed_at
-    repos.push(holder)
-    holder = {}
+    const {
+      name,
+      full_name,
+      description,
+      html_url,
+      homepage,
+      stargazers_count,
+      pushed_at
+    } = json
+
+    const repo: Repo = {
+      name,
+      full_name,
+      description,
+      html_url,
+      homepage,
+      stargazers_count,
+      pushed_at
+    }
+    repos.push(repo)
   }
 
   // sort by pushed to, newest first
@@ -47,5 +52,3 @@ async function getGithubRepos(data) {
 
   return repos
 }
-
-export default getGithubRepos

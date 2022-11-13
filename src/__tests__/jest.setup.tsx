@@ -1,9 +1,8 @@
 import '@testing-library/jest-dom/extend-expect'
 import 'jest-canvas-mock'
 import { jest } from '@jest/globals'
-import { dataLocation } from './__fixtures__/location'
+import giphy from './__fixtures__/giphy.json'
 
-// mock useRouter
 jest.mock('next/router', () => ({
   useRouter: jest.fn().mockImplementation(() => ({
     route: '/',
@@ -11,7 +10,6 @@ jest.mock('next/router', () => ({
   }))
 }))
 
-// mock next/head
 jest.mock('next/head', () => {
   return {
     __esModule: true,
@@ -21,16 +19,15 @@ jest.mock('next/head', () => {
   }
 })
 
-// Mock fetch for Location component
-beforeAll(() => {
-  ;(global.fetch as jest.Mock) = jest.fn().mockImplementation(() =>
-    Promise.resolve({
-      json: () => Promise.resolve(dataLocation)
-    })
-  )
-  // jest
-  //   .spyOn(global, 'fetch')
-  //   .mockImplementation(() =>
-  //     Promise.resolve({ json: () => Promise.resolve(dataLocation) })
-  //   )
+jest.mock('@giphy/js-fetch-api', () => ({
+  GiphyFetch: jest.fn().mockImplementation(() => ({
+    random: jest.fn().mockImplementation(() => Promise.resolve(giphy))
+  }))
+}))
+
+const unmockedFetch = global.fetch
+
+afterEach(() => {
+  global.fetch = unmockedFetch
+  jest.restoreAllMocks()
 })

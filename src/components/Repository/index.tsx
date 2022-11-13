@@ -1,9 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Icon from '../atoms/Icon'
-import { repo as styleRepo, repoTitle, meta } from './Repository.module.css'
+import Repo from '../../interfaces/repo'
+import Icon from '../Icon'
+import styles from './index.module.css'
 
-export default function Repository({ repo }) {
+export default function Repository({ repo }: { repo: Repo }) {
   const { name, full_name, description, html_url, homepage, stargazers_count } =
     repo
 
@@ -17,12 +17,12 @@ export default function Repository({ repo }) {
       : homepage
 
   return (
-    <div className={styleRepo}>
-      <h1 className={repoTitle}>
+    <div className={styles.repo}>
+      <h1 className={styles.repoTitle}>
         <a href={repoLink}>{isExternal ? full_name : name}</a>
       </h1>
       <p>{description}</p>
-      <p className={meta}>
+      <p className={styles.meta}>
         {name === 'portfolio' || name === 'blog'
           ? null
           : !isExternal &&
@@ -42,8 +42,4 @@ export default function Repository({ repo }) {
       </p>
     </div>
   )
-}
-
-Repository.propTypes = {
-  repo: PropTypes.object.isRequired
 }

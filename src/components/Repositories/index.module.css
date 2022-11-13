@@ -6,6 +6,6 @@
 }
 
 .repos {
-  composes: grid from '../../components/Layout.module.css';
+  composes: projects from '../Projects/index.module.css';
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
 }

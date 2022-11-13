@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { act, render } from '@testing-library/react'
 import IndexPage, { getStaticProps } from '../pages'
 import ProjectPage, {
   getStaticPaths,
@@ -7,25 +7,21 @@ import ProjectPage, {
 } from '../pages/[slug]'
 import projects from './__fixtures__/projects.json'
 import project from './__fixtures__/project.json'
+import repos from './__fixtures__/repos.json'
 import NotFoundPage from '../pages/404'
-// import MyApp from '../pages/_app'
 
 describe('pages', () => {
-  // it('_app', async () => {
-  //   render(
-  //     <MyApp
-  //       Component={<div>Hello World</div>}
-  //       pageProps={{} as any}
-  //       router={{} as any}
-  //     />
-  //   )
-  // })
-
   it('IndexPage', async () => {
-    render(<IndexPage allProjects={projects} />)
+    render(<IndexPage projects={projects} repos={repos} />)
   })
 
   it('IndexPage/getStaticProps', async () => {
+    ;(global.fetch as jest.Mock) = jest.fn(() =>
+      Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(repos)
+      })
+    )
     const props = await getStaticProps({} as any)
     expect(props).toBeDefined()
   })
@@ -44,7 +40,9 @@ describe('pages', () => {
     expect(props).toBeDefined()
   })
 
-  it('NotFoundPage', () => {
-    render(<NotFoundPage />)
+  it('NotFoundPage', async () => {
+    await act(async () => {
+      render(<NotFoundPage />)
+    })
   })
 })

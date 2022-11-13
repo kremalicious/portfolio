@@ -3,9 +3,9 @@ import {
   getProjectBySlug,
   getProjectImages,
   getProjectSlugs
-} from './api'
+} from './content'
 
-describe('api', () => {
+describe('lib/content', () => {
   test('getProjectSlugs', async () => {
     const slugs: string[] = getProjectSlugs()
     expect(slugs).toContain('ipixelpad')

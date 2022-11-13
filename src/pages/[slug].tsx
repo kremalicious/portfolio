@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import { GetStaticPaths, GetStaticProps } from 'next/types'
-import { getProjectBySlug, getAllProjects } from '../lib/api'
+import { getProjectBySlug, getAllProjects } from '../lib/content'
 import { markdownToHtml } from '../lib/markdown'
 import type ProjectType from '../interfaces/project'
 import Project from '../components/Project'
