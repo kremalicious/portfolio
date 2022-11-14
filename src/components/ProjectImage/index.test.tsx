@@ -1,7 +1,6 @@
-import React from 'react'
 import { render, screen } from '@testing-library/react'
 import ProjectImage from '.'
-import project from '../../__tests__/__fixtures__/project.json'
+import project from '../../../tests/__fixtures__/project.json'
 
 describe('ProjectImage', () => {
   it('renders correctly', async () => {

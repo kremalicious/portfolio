@@ -158,7 +158,7 @@ To run all tests, including all linting tests:
 npm test
 ```
 
-Most test files live beside the respective component. Testing setup, fixtures, and mocks can be found in the `./src/__tests__/` folder.
+Most test files live beside the respective component. Testing setup, fixtures, and mocks can be found in the `./tests/` folder.
 
 ### 🎈 Add a new project
 

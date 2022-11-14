@@ -1,4 +1,3 @@
-import React from 'react'
 import { render } from '@testing-library/react'
 import LogoUnit from '.'
 import data from '../../../_content/resume.json'
@@ -17,10 +16,10 @@ describe('LogoUnit', () => {
     )
   })
 
-  it('renders in minimal variant', () => {
-    const { container } = render(<LogoUnit minimal={true} />)
+  it('renders in small variant', () => {
+    const { container } = render(<LogoUnit small />)
 
     expect(container.firstChild).toBeInTheDocument()
-    expect(container.querySelector('.minimal')).toBeInTheDocument()
+    expect(container.querySelector('.small')).toBeInTheDocument()
   })
 })

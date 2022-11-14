@@ -1,14 +1,13 @@
-import React from 'react'
 import { act, render } from '@testing-library/react'
-import IndexPage, { getStaticProps } from '../pages'
+import IndexPage, { getStaticProps } from '../src/pages'
 import ProjectPage, {
   getStaticPaths,
   getStaticProps as getStaticPropsProject
-} from '../pages/[slug]'
+} from '../src/pages/[slug]'
 import projects from './__fixtures__/projects.json'
 import project from './__fixtures__/project.json'
 import repos from './__fixtures__/repos.json'
-import NotFoundPage from '../pages/404'
+import NotFoundPage from '../src/pages/404'
 
 describe('pages', () => {
   it('IndexPage', async () => {

@@ -59,15 +59,11 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
     'techstack',
     'links'
   ])
-  const descriptionHtml = await markdownToHtml(project.description || '')
   const projects = await getAllProjects(['slug', 'images'])
 
   return {
     props: {
-      project: {
-        ...project,
-        descriptionHtml
-      },
+      project,
       projects
     }
   }
@@ -77,13 +73,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const projects = await getAllProjects(['slug'])
 
   return {
-    paths: projects.map((project) => {
-      return {
-        params: {
-          slug: project.slug
-        }
-      }
-    }),
+    paths: projects.map((project) => ({
+      params: { slug: project.slug }
+    })),
     fallback: false
   }
 }

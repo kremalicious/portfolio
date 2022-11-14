@@ -8,21 +8,18 @@ const createJestConfig = nextJest({
 
 // Add any custom config to be passed to Jest
 const customJestConfig: Config = {
-  rootDir: '../../', // = /
-  // overwrite to exlude src/__tests__/*.ts files
-  testMatch: ['**/?(*.)+(spec|test).[jt]s?(x)'],
+  rootDir: '../', // = /
   // Add more setup options before each test is run
-  setupFilesAfterEnv: ['<rootDir>/src/__tests__/jest.setup.tsx'],
+  setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.tsx'],
   // if using TypeScript with a baseUrl set to the root directory then you need the below for alias' to work
   moduleDirectories: ['node_modules', '<rootDir>/src'],
   testEnvironment: 'jsdom',
   moduleNameMapper: {
-    '^.+\\.(svg)$': '<rootDir>/src/__tests__/__mocks__/svgr-mock.tsx'
+    '^.+\\.(svg)$': '<rootDir>/tests/__mocks__/svgr-mock.tsx'
   },
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
-    '!src/__tests__/**/*.{ts,tsx}',
     '!src/**/*.{stories,test}.{ts,tsx}',
     '!src/@types/**/*.{ts,tsx}'
   ],

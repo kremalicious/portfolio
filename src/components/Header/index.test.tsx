@@ -1,7 +1,6 @@
-import React from 'react'
 import { render, screen, act } from '@testing-library/react'
 import Header from '.'
-import { dataLocation } from '../../__tests__/__fixtures__/location'
+import { dataLocation } from '../../../tests/__fixtures__/location'
 ;(global.fetch as jest.Mock) = jest.fn(() =>
   Promise.resolve({
     ok: true,
@@ -19,7 +18,7 @@ describe('Header', () => {
     await screen.findAllByText('Lisbon')
   })
 
-  it('renders minimal', async () => {
-    render(<Header minimal />)
+  it('renders small', async () => {
+    render(<Header small />)
   })
 })

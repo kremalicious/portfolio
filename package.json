@@ -17,7 +17,7 @@
     "lint:css": "stylelint ./src/**/*.css",
     "lint": "npm run lint:js && npm run lint:css",
     "format": "prettier --write 'src/**/*.{ts,tsx,css}'",
-    "jest": "jest --coverage -c src/__tests__/jest.config.ts",
+    "jest": "jest --coverage -c tests/jest.config.ts",
     "test": "NODE_ENV=test npm run lint && npm run typecheck && npm run jest",
     "deploy:s3": "./scripts/deploy-s3.sh",
     "new": "ts-node-esm ./scripts/new.ts",

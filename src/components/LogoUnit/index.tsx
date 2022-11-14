@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'next/link'
 import Logo from '../../images/logo.svg'
 import styles from './index.module.css'

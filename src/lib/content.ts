@@ -4,6 +4,7 @@ import yaml from 'js-yaml'
 import ImageType from '../interfaces/image'
 import { getPlaiceholder } from 'plaiceholder'
 import ProjectType from '../interfaces/project'
+import { markdownToHtml } from './markdown'
 
 const imagesDirectory = join(process.cwd(), 'public', 'images')
 const contentDirectory = join(process.cwd(), '_content')
@@ -51,6 +52,11 @@ export async function getProjectBySlug(slug: string, fields: string[] = []) {
   // Ensure only the minimal needed data is exposed
   await Promise.all(
     fields.map(async (field) => {
+      if (field === 'description') {
+        const descriptionHtml = await markdownToHtml(field)
+        items[field] = project.description
+        items['descriptionHtml'] = descriptionHtml
+      }
       if (field === 'images') {
         const images = await getProjectImages(slug)
         ;(items[field] as unknown as ImageType[]) = images
