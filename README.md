@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://matthiaskretschmann.com"><img src="src/images/github-header.png" /></a>
+  <a href="https://matthiaskretschmann.com"><img src="public/github-header.png" /></a>
  </p>
 <h2 align="center">
   👔 Portfolio thingy.
@@ -34,7 +34,7 @@
 
 ## 🎉 Features
 
-The whole [portfolio](https://matthiaskretschmann.com) is a React-based single page app built with [Next.js](https://nextjs.org) in Typescript.
+The whole [portfolio](https://matthiaskretschmann.com) is a React-based single page app built with [Next.js](https://nextjs.org) in Typescript, using only statically generated pages.
 
 ### 💍 One data file to rule all pages
 
@@ -131,7 +131,7 @@ cp .env.sample .env
 vi .env
 
 npm i
-npm start
+npm run dev
 ```
 
 ### 🔮 Linting

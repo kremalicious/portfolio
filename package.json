@@ -8,9 +8,9 @@
   "author": "Matthias Kretschmann <m@kretschmann.io>",
   "type": "module",
   "scripts": {
-    "start": "npm run pregenerate && next",
+    "dev": "npm run pregenerate && next",
     "build": "npm run pregenerate && next build",
-    "run": "npm run pregenerate && next start",
+    "start": "npm run build && next start",
     "export": "npm run pregenerate && next export",
     "typecheck": "tsc",
     "lint:js": "next lint",
