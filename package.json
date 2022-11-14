@@ -76,7 +76,7 @@
     "prettier": "^2.7.1",
     "slugify": "^1.6.5",
     "stylelint": "^14.14.1",
-    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-prettier": "^9.0.4",
     "stylelint-prettier": "^2.0.0"
   },
   "browserslist": [
