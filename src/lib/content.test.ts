@@ -24,7 +24,7 @@ describe('lib/content', () => {
     ])
     expect(project).toBeDefined()
     expect(project.images[0].src).toContain('ipixelpad')
-    expect(project.images[0].blurDataURL).toBeDefined()
+    // expect(project.images[0].blurDataURL).toBeDefined()
   })
 
   test('getProjectBySlug without fields', async () => {
@@ -36,7 +36,7 @@ describe('lib/content', () => {
     const images = await getProjectImages('ipixelpad')
     expect(images).toBeDefined()
     expect(images[0].src).toContain('ipixelpad')
-    expect(images[0].blurDataURL).toBeDefined()
+    // expect(images[0].blurDataURL).toBeDefined()
     expect(images[0].width).toBeDefined()
     expect(images[0].height).toBeDefined()
     expect(images[0].format).toBeDefined()
