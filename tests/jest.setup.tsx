@@ -2,6 +2,7 @@ import '@testing-library/jest-dom/extend-expect'
 import 'jest-canvas-mock'
 import { jest } from '@jest/globals'
 import giphy from './__fixtures__/giphy.json'
+import './__mocks__/matchMedia'
 
 jest.mock('next/router', () => ({
   useRouter: jest.fn().mockImplementation(() => ({

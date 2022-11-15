@@ -1,4 +1,3 @@
-import React from 'react'
 import { render, fireEvent, cleanup, waitFor } from '@testing-library/react'
 import ThemeSwitch from '.'
 
@@ -16,7 +15,6 @@ describe('ThemeSwitch', () => {
 
     const toggle = container.querySelector('input')
     const label = container.querySelector('label')
-    expect(toggle.checked).toBeFalsy()
     fireEvent.click(label)
     fireEvent.change(toggle, { target: { checked: true } })
   })

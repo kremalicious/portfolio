@@ -25,11 +25,22 @@ function getDarkMode() {
 }
 
 export default function useDarkMode() {
-  const [darkMode, setDarkMode] = useState(getDarkMode)
+  const [darkMode, setDarkMode] = useState(getDarkMode())
+  const [themeColor, setThemeColor] = useState<string>()
 
-  function toggleDarkMode() {
+  const toggleDarkMode = useCallback(() => {
     setDarkMode(!darkMode)
-  }
+  }, [darkMode])
+
+  //
+  // Do things when darkMode changes
+  //
+  useEffect(() => {
+    const bodyClassList = document.body.classList
+    bodyClassList.toggle('dark')
+    bodyClassList.toggle('light')
+    setThemeColor(darkMode === true ? '#1d2224' : '#e7eef4')
+  }, [darkMode])
 
   //
   // Handle system theme change events
@@ -39,7 +50,7 @@ export default function useDarkMode() {
   }, [])
 
   useEffect(() => {
-    if (!isClient || process.env.NODE_ENV === 'test') return
+    if (!isClient) return
 
     const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
@@ -55,5 +66,5 @@ export default function useDarkMode() {
         .removeEventListener('change', handleChange)
   }, [handleChange])
 
-  return { value: darkMode, toggle: toggleDarkMode }
+  return { value: darkMode, toggle: toggleDarkMode, themeColor }
 }
