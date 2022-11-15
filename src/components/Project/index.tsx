@@ -5,7 +5,16 @@ import type ProjectType from '../../interfaces/project'
 import ProjectImage from '../ProjectImage'
 import styles from './index.module.css'
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
-import { getAnimationProps, moveInBottom } from '../Transitions'
+import { getAnimationProps, moveInBottom, moveInTop } from '../Transitions'
+
+const containerVariants = {
+  enter: {
+    transition: {
+      delay: 0.3,
+      staggerChildren: 0.2
+    }
+  }
+}
 
 export default function Project({ project }: { project: ProjectType }) {
   const { title, descriptionHtml, images, links, techstack } = project
@@ -16,13 +25,16 @@ export default function Project({ project }: { project: ProjectType }) {
     <article className={styles.project}>
       <LazyMotion features={domAnimation}>
         <m.header
-          variants={moveInBottom}
+          variants={containerVariants}
           {...animationProps}
           className={styles.intro}
         >
-          <h1 className={styles.headerTitle}>{title}</h1>
+          <m.h1 variants={moveInBottom} className={styles.headerTitle}>
+            {title}
+          </m.h1>
 
-          <div
+          <m.div
+            variants={moveInBottom}
             className={styles.description}
             dangerouslySetInnerHTML={{ __html: descriptionHtml }}
           />
