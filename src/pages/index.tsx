@@ -2,12 +2,12 @@ import { getAllProjects } from '../lib/content'
 import Project from '../interfaces/project'
 import meta from '../../_content/meta.json'
 import resume from '../../_content/resume.json'
-import Meta from '../components/Meta'
 import Projects from '../components/Projects'
 import { GetStaticProps } from 'next/types'
 import { getGithubRepos } from '../lib/github'
 import Repo from '../interfaces/repo'
 import Repositories from '../components/Repositories'
+import Page from '../layouts/Page'
 
 type Props = {
   projects: Project[]
@@ -22,19 +22,15 @@ export default function IndexPage({ projects, repos }: Props) {
   }
 
   return (
-    <>
-      <Meta {...pageMeta} />
+    <Page {...pageMeta}>
       <Projects projects={projects} />
       <Repositories repos={repos} />
-    </>
+    </Page>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   const projects = await getAllProjects(['title', 'images', 'slug'])
   const repos = await getGithubRepos()
-
-  return {
-    props: { projects, repos }
-  }
+  return { props: { projects, repos } }
 }

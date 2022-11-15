@@ -1,4 +1,4 @@
-import React, { useEffect, createRef } from 'react'
+import { useEffect, createRef } from 'react'
 import styles from './index.module.css'
 import ProjectType from '../../interfaces/project'
 import { Project } from './Project'

@@ -1,5 +1,5 @@
-import Meta from '../components/Meta'
 import NotFound from '../components/404'
+import Page from '../layouts/Page'
 
 const pageMeta = {
   title: `NotFound`
@@ -7,9 +7,8 @@ const pageMeta = {
 
 export default function NotFoundPage() {
   return (
-    <>
-      <Meta {...pageMeta} />
+    <Page {...pageMeta}>
       <NotFound />
-    </>
+    </Page>
   )
 }

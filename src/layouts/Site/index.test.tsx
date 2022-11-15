@@ -1,5 +1,5 @@
 import { render, screen, act } from '@testing-library/react'
-import App from '.'
+import Site from '.'
 import { dataLocation } from '../../../tests/__fixtures__/location'
 
 jest.mock('@socialgouv/matomo-next')
@@ -10,12 +10,12 @@ jest.mock('@socialgouv/matomo-next')
   })
 )
 
-describe('App', () => {
+describe('Site', () => {
   it('renders without crashing', async () => {
     await act(async () => {
-      render(<App>Hello App</App>)
+      render(<Site>Hello Site</Site>)
     })
-    await screen.findByText('Hello App')
+    await screen.findByText('Hello Site')
     await screen.findAllByText('Lisbon')
   })
 })

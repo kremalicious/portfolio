@@ -1,5 +1,3 @@
-import { useRouter } from 'next/router'
-import ErrorPage from 'next/error'
 import { GetStaticPaths, GetStaticProps } from 'next/types'
 import {
   getProjectBySlug,
@@ -9,8 +7,8 @@ import {
 import type ProjectType from '../interfaces/project'
 import Project from '../components/Project'
 import resume from '../../_content/resume.json'
-import Meta from '../components/Meta'
 import ProjectNav from '../components/ProjectNav'
+import Page from '../layouts/Page'
 
 type Props = {
   project: ProjectType
@@ -18,11 +16,6 @@ type Props = {
 }
 
 export default function ProjectPage({ project, projects }: Props) {
-  const router = useRouter()
-  if (!router.isFallback && !project?.slug) {
-    return <ErrorPage statusCode={404} />
-  }
-
   const pageMeta = {
     title: `${
       project.title
@@ -33,17 +26,10 @@ export default function ProjectPage({ project, projects }: Props) {
   }
 
   return (
-    <>
-      {router.isFallback ? (
-        <h1>Loading…</h1>
-      ) : (
-        <>
-          <Meta {...pageMeta} />
-          <Project project={project} />
-          <ProjectNav projects={projects} currentSlug={project.slug} />
-        </>
-      )}
-    </>
+    <Page {...pageMeta}>
+      <Project project={project} />
+      <ProjectNav projects={projects} currentSlug={project.slug} />
+    </Page>
   )
 }
 
@@ -63,19 +49,13 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
     'links'
   ])
   const projects = await getAllProjects(['slug', 'images'])
-
-  return {
-    props: { project, projects }
-  }
+  return { props: { project, projects } }
 }
 
 export const getStaticPaths: GetStaticPaths = () => {
   const slugs = getProjectSlugs()
-
   return {
-    paths: slugs.map((slug) => ({
-      params: { slug }
-    })),
+    paths: slugs.map((slug) => ({ params: { slug } })),
     fallback: false
   }
 }

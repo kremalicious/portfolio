@@ -1,11 +1,11 @@
 import { AppProps } from 'next/app'
 import '../styles/global.css'
-import App from '../components/App'
+import Site from '../layouts/Site'
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps, router }: AppProps) {
   return (
-    <App>
-      <Component {...pageProps} />
-    </App>
+    <Site>
+      <Component {...pageProps} key={router.asPath} />
+    </Site>
   )
 }
