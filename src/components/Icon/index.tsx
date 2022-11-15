@@ -61,5 +61,5 @@ export default function Icon({ name, ...props }: { name: string }) {
   // const IconComp = Feather[name]
   if (!IconMapped) return null
 
-  return <IconMapped className={styles.icon} {...props} />
+  return <IconMapped className={`${styles.icon} ${styles[name]}`} {...props} />
 }

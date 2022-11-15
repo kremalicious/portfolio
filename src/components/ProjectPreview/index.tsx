@@ -11,25 +11,17 @@ type Props = {
 }
 
 export default function ProjectPreview({ title, slug, images }: Props) {
-  const imageCount = images?.length
-
   return (
     <Link href={`/${slug}`} className={styles.project} key={slug}>
-      <h1 className={styles.title}>{title}</h1>
       <ProjectImage
         image={images[0]}
         alt={title}
         sizes="(max-width: 1090px) 100vw, 40vw"
       />
 
-      {imageCount > 1 && (
-        <small
-          className={styles.imageCount}
-          title={`${imageCount} project images`}
-        >
-          <Icon name="Image" /> {imageCount}
-        </small>
-      )}
+      <footer className={styles.meta}>
+        <h1 className={styles.title}>{title}</h1>
+      </footer>
     </Link>
   )
 }
