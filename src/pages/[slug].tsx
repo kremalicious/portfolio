@@ -6,7 +6,6 @@ import {
   getAllProjects,
   getProjectSlugs
 } from '../lib/content'
-import { markdownToHtml } from '../lib/markdown'
 import type ProjectType from '../interfaces/project'
 import Project from '../components/Project'
 import resume from '../../_content/resume.json'
@@ -66,10 +65,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
   const projects = await getAllProjects(['slug', 'images'])
 
   return {
-    props: {
-      project,
-      projects
-    }
+    props: { project, projects }
   }
 }
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { moveInTop, getAnimationProps } from '../Transitions'
 import styles from './index.module.css'

@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import HostnameCheck from './HostnameCheck'
+import HostnameCheck from '.'
 
 describe('HostnameCheck', () => {
   it('can access window.location', () => {

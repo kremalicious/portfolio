@@ -28,21 +28,6 @@ export async function toDataURL(photoSrc: string, outputFormat) {
   return dataURL
 }
 
-export async function init(meta) {
-  // first, convert the avatar to base64, then construct all vCard elements
-  const dataUrl = await toDataURL(meta.photoSrc, 'image/jpeg')
-  const vcard = await constructVcard(meta, dataUrl)
-
-  // Construct the download from a blob of the just constructed vCard,
-  const { addressbook } = meta
-  const name = addressbook.split('/').join('')
-  const blob = new Blob([vcard], {
-    type: 'text/x-vcard'
-  })
-  // save it to user's file system
-  saveAs(blob, name)
-}
-
 export async function constructVcard(meta, dataUrl: string) {
   const contact = new vCard()
   const blog = meta.profiles.filter(({ network }) => network === 'Blog')[0].url
@@ -68,4 +53,19 @@ export async function constructVcard(meta, dataUrl: string) {
   const vcard = contact.toString('3.0')
 
   return vcard
+}
+
+export async function init(meta) {
+  // first, convert the avatar to base64, then construct all vCard elements
+  const dataUrl = await toDataURL(meta.photoSrc, 'image/jpeg')
+  const vcard = await constructVcard(meta, dataUrl)
+
+  // Construct the download from a blob of the just constructed vCard,
+  const { addressbook } = meta
+  const name = addressbook.split('/').join('')
+  const blob = new Blob([vcard], {
+    type: 'text/x-vcard'
+  })
+  // save it to user's file system
+  saveAs(blob, name)
 }

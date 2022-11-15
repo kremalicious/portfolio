@@ -5,7 +5,7 @@ import {
   getProjectSlugs
 } from './content'
 
-jest.setTimeout(10000)
+jest.setTimeout(20000)
 
 describe('lib/content', () => {
   test('getProjectSlugs', async () => {

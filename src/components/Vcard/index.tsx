@@ -1,6 +1,5 @@
-import meta from '../../../../_content/meta.json'
-import resume from '../../../../_content/resume.json'
-import { init } from './_utils'
+import meta from '../../../_content/meta.json'
+import resume from '../../../_content/resume.json'
 
 export default function Vcard() {
   const { name, label, email, profiles } = resume.basics
@@ -16,7 +15,10 @@ export default function Vcard() {
 
   const handleAddressbookClick = (e) => {
     e.preventDefault()
-    init(vCardMeta)
+
+    import('./_utils').then(({ init }) => {
+      init(vCardMeta)
+    })
   }
 
   return (

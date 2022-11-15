@@ -3,12 +3,7 @@ import Networks from '../Networks'
 import styles from './index.module.css'
 import meta from '../../../_content/meta.json'
 import resume from '../../../_content/resume.json'
-import dynamic from 'next/dynamic'
-import { Suspense } from 'react'
-
-const DynamicVcard = dynamic(() => import('./Vcard'), {
-  suspense: true
-})
+import Vcard from '../Vcard'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -19,9 +14,7 @@ export default function Footer() {
       <Networks small />
 
       <p className={styles.actions}>
-        <Suspense fallback={'Add to addressbook'}>
-          <DynamicVcard />
-        </Suspense>
+        <Vcard />
 
         <a className="u-key" href={meta.gpg}>
           PGP/GPG key
