@@ -35,7 +35,7 @@ export default function ProjectImage({
 
   useEffect(() => {
     if (loaded && animationControls) {
-      animationControls.start('visible')
+      animationControls.start('enter')
     }
   }, [loaded, animationControls])
 
