@@ -1,7 +1,11 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import { GetStaticPaths, GetStaticProps } from 'next/types'
-import { getProjectBySlug, getAllProjects } from '../lib/content'
+import {
+  getProjectBySlug,
+  getAllProjects,
+  getProjectSlugs
+} from '../lib/content'
 import { markdownToHtml } from '../lib/markdown'
 import type ProjectType from '../interfaces/project'
 import Project from '../components/Project'
@@ -69,12 +73,12 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
   }
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const projects = await getAllProjects(['slug'])
+export const getStaticPaths: GetStaticPaths = () => {
+  const slugs = getProjectSlugs()
 
   return {
-    paths: projects.map((project) => ({
-      params: { slug: project.slug }
+    paths: slugs.map((slug) => ({
+      params: { slug }
     })),
     fallback: false
   }

@@ -5,6 +5,8 @@ import {
   getProjectSlugs
 } from './content'
 
+jest.setTimeout(10000)
+
 describe('lib/content', () => {
   test('getProjectSlugs', async () => {
     const slugs: string[] = getProjectSlugs()
@@ -35,6 +37,9 @@ describe('lib/content', () => {
     expect(images).toBeDefined()
     expect(images[0].src).toContain('ipixelpad')
     expect(images[0].blurDataURL).toBeDefined()
+    expect(images[0].width).toBeDefined()
+    expect(images[0].height).toBeDefined()
+    expect(images[0].format).toBeDefined()
   })
 
   test('getAllProjects', async () => {

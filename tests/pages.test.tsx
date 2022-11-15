@@ -9,6 +9,8 @@ import project from './__fixtures__/project.json'
 import repos from './__fixtures__/repos.json'
 import NotFoundPage from '../src/pages/404'
 
+jest.setTimeout(10000)
+
 describe('pages', () => {
   it('IndexPage', async () => {
     render(<IndexPage projects={projects} repos={repos} />)

@@ -21,12 +21,12 @@ export default function ProjectImage({
         className={styles.image}
         src={image.src}
         alt={alt}
-        width={image.width / 2}
-        height={image.height / 2}
+        width={image.width}
+        height={image.height}
         sizes={sizes}
-        placeholder="empty"
-        blurDataURL={image.blurDataURL}
         quality={85}
+        placeholder="blur"
+        blurDataURL={image.blurDataURL}
       />
     </figure>
   )

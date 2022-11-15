@@ -1,9 +1,9 @@
 import fs from 'fs'
 import { join } from 'path'
 import yaml from 'js-yaml'
-import ImageType from '../interfaces/image'
-import { getPlaiceholder } from 'plaiceholder'
-import ProjectType from '../interfaces/project'
+import sharp from 'sharp'
+import type ImageType from '../interfaces/image'
+import type ProjectType from '../interfaces/project'
 import { markdownToHtml } from './markdown'
 
 const imagesDirectory = join(process.cwd(), 'public', 'images')
@@ -16,6 +16,21 @@ export function getProjectSlugs() {
   return projects.map(({ slug }: { slug: string }) => slug)
 }
 
+// Pixel GIF code adapted from https://stackoverflow.com/a/33919020/266535
+const keyStr =
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
+
+const triplet = (e1: number, e2: number, e3: number) =>
+  keyStr.charAt(e1 >> 2) +
+  keyStr.charAt(((e1 & 3) << 4) | (e2 >> 4)) +
+  keyStr.charAt(((e2 & 15) << 2) | (e3 >> 6)) +
+  keyStr.charAt(e3 & 63)
+
+export const rgbDataURL = ({ r, g, b }: { r: number; g: number; b: number }) =>
+  `data:image/gif;base64,R0lGODlhAQABAPAA${
+    triplet(0, r, g) + triplet(b, 255, 255)
+  }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`
+
 export async function getProjectImages(slug: string) {
   const allImages = fs.readdirSync(imagesDirectory, 'utf8')
   const projectImages = allImages.filter((image) => image.includes(slug))
@@ -24,13 +39,18 @@ export async function getProjectImages(slug: string) {
 
   await Promise.all(
     projectImages.map(async (image) => {
-      const imagePath = `/images/${image}`
-      const { base64, img } = await getPlaiceholder(imagePath)
+      const file = `${imagesDirectory}/${image}`
+      const transformer = sharp(file)
+      const { width, height, format } = await transformer.metadata()
+      const { dominant } = await transformer.stats()
+      const blurDataURL = rgbDataURL(dominant)
 
       const imageType: ImageType = {
-        ...img,
-        src: `/images/${image}`,
-        blurDataURL: base64
+        width,
+        height,
+        format,
+        blurDataURL,
+        src: `/images/${image}`
       }
       images.push(imageType)
     })
@@ -53,7 +73,7 @@ export async function getProjectBySlug(slug: string, fields: string[] = []) {
   await Promise.all(
     fields.map(async (field) => {
       if (field === 'description') {
-        const descriptionHtml = await markdownToHtml(field)
+        const descriptionHtml = await markdownToHtml(project.description)
         items[field] = project.description
         items['descriptionHtml'] = descriptionHtml
       }
