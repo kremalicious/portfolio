@@ -59,7 +59,7 @@
     "prettier": "^2.7.1",
     "sharp": "^0.31.2",
     "slugify": "^1.6.5",
-    "stylelint": "^14.14.1",
+    "stylelint": "^14.15.0",
     "stylelint-config-prettier": "^9.0.4",
     "stylelint-prettier": "^2.0.0",
     "ts-node": "^10.9.1",
