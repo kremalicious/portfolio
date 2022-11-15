@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from 'framer-motion'
+import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
 import { moveInTop, getAnimationProps } from '../Transitions'
 import styles from './index.module.css'
 import { useLocation } from '../../hooks/useLocation'
@@ -27,22 +27,24 @@ export default function Location() {
   const relativeTime = new RelativeTime({ locale: 'en' })
 
   return now?.city ? (
-    <motion.aside
-      variants={moveInTop}
-      className={styles.location}
-      {...getAnimationProps(shouldReduceMotion)}
-    >
-      <Flag countryCode={now?.country_code} />
-      {now?.city} <span>Now</span>
-      <div className={styles.next}>
-        {next?.city && (
-          <>
-            {isDifferentCountry && <Flag countryCode={next.country_code} />}
-            {next.city}{' '}
-            <span>{relativeTime.from(new Date(next.date_start))}</span>
-          </>
-        )}
-      </div>
-    </motion.aside>
+    <LazyMotion features={domAnimation}>
+      <m.aside
+        variants={moveInTop}
+        className={styles.location}
+        {...getAnimationProps(shouldReduceMotion)}
+      >
+        <Flag countryCode={now?.country_code} />
+        {now?.city} <span>Now</span>
+        <div className={styles.next}>
+          {next?.city && (
+            <>
+              {isDifferentCountry && <Flag countryCode={next.country_code} />}
+              {next.city}{' '}
+              <span>{relativeTime.from(new Date(next.date_start))}</span>
+            </>
+          )}
+        </div>
+      </m.aside>
+    </LazyMotion>
   ) : null
 }

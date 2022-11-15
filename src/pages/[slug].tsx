@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
     'techstack',
     'links'
   ])
-  const projects = await getAllProjects(['slug', 'images'])
+  const projects = await getAllProjects(['slug', 'title', 'images'])
   return { props: { project, projects } }
 }
 
