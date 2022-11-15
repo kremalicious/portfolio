@@ -4,14 +4,14 @@
 
 /* TEAM */
 	design & development	: matthias kretschmann
-	Site					        : https://matthiaskretschmann.com
+	Site					      : https://matthiaskretschmann.com
 	Twitter					      : @kremalicious
-  GitHub					      : @kremalicious
-	Location				      : Berlin, Germany
+    GitHub					      : @kremalicious
+	Location				      : Lisboa, Portugal
 
 /* SITE */
-	Typography				    : Brandon Grotesque, FF Tisa Sans Web Pro
-	Software				      : Gatsby.js, React, VS Code, Sketch, macOS
+	Typography				      : Brandon Grotesque, FF Tisa Sans Web Pro
+	Software				      : Next.js, React, VS Code, macOS
 
 
 <!--
