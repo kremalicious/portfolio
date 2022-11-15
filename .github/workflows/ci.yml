@@ -71,6 +71,7 @@ jobs:
       - run: npm run build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NEXT_PUBLIC_TYPEKIT_ID: ${{ secrets.NEXT_PUBLIC_TYPEKIT_ID }}
 
       # - uses: actions/upload-artifact@v1
       #   if: github.ref == 'refs/heads/main'
