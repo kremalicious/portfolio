@@ -13,6 +13,8 @@
   <a href="https://codeclimate.com/github/kremalicious/portfolio/test_coverage"><img src="https://api.codeclimate.com/v1/badges/8f561ec93e0f8c6b15d9/test_coverage" /></a>
 </p>
 
+---
+
 - [🎉 Features](#-features)
   - [💍 One data file to rule all pages](#-one-data-file-to-rule-all-pages)
   - [🖼 Project images](#-project-images)
@@ -36,7 +38,7 @@
 
 The whole [portfolio](https://matthiaskretschmann.com) is a React-based single page app built with [Next.js](https://nextjs.org) in Typescript, using only statically generated pages.
 
-If you are looking for the former Gatsby-baased app, it is archived in the [`gatsby-deprecated`](https://github.com/kremalicious/portfolio/tree/gatsby-deprecated) branch.
+If you are looking for the former Gatsby-based app, it is archived in the [`gatsby-deprecated`](https://github.com/kremalicious/portfolio/tree/gatsby-deprecated) branch.
 
 ### 💍 One data file to rule all pages
 
@@ -86,8 +88,8 @@ Includes a theme switcher which allows user to toggle between a light and a dark
 
 If you want to know how, have a look at the respective components:
 
-- [`src/components/ThemeSwitch/index.tsx`](src/components/ThemeSwitch/index.tsx)
 - [`src/hooks/useDarkMode.js`](src/hooks/useDarkMode.js)
+- [`src/components/ThemeSwitch/index.tsx`](src/components/ThemeSwitch/index.tsx)
 
 ### 🏆 SEO component
 
@@ -155,13 +157,13 @@ npm run format
 
 Test suite is setup with [Jest](https://jestjs.io) and [react-testing-library](https://github.com/kentcdodds/react-testing-library).
 
-To run all tests, including all linting tests:
+To run all tests, including type checking and linting of all files:
 
 ```bash
 npm test
 ```
 
-Most test files live beside the respective component. Testing setup, fixtures, and mocks can be found in the `./tests/` folder.
+Most test files live beside the respective component. Testing setup, fixtures, and mocks can be found in the `tests/` folder.
 
 ### 🎈 Add a new project
 
