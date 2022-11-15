@@ -1,0 +1,12 @@
+{
+  "data": {
+    "images": {
+      "original": {
+        "mp4": "hello.gif",
+        "url": "hello.gif",
+        "width": 100,
+        "height": 100
+      }
+    }
+  }
+}

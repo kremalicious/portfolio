@@ -55,15 +55,17 @@
   /* Miscellanious */
   --projectImageMaxWidth: 1440px;
   --easing: cubic-bezier(0.75, 0, 0.08, 1);
-  --box-shadow: 0 1.3px 5.4px rgba(1, 85, 101, 0.15),
-    0 4.5px 18.1px rgba(1, 85, 101, 0.05), 0 20px 81px rgba(1, 85, 101, 0.025);
+  --box-shadow: 0 1.3px 5.4px rgba(1, 85, 101, 0.15);
+  /* --box-shadow: 0 1.3px 5.4px rgba(1, 85, 101, 0.15),
+    0 4.5px 18.1px rgba(1, 85, 101, 0.05), 0 20px 81px rgba(1, 85, 101, 0.025); */
 }
 
 .dark {
   --body-background-color: #161a1b;
   --box-background-color: rgba(255, 255, 255, 0.03);
-  --box-shadow: 0 1.3px 5.4px rgba(0, 7, 8, 0.6),
-    0 4.5px 18.1px rgba(0, 7, 8, 0.4), 0 20px 81px rgba(0, 7, 8, 0.1);
+  --box-shadow: 0 1.3px 5.4px rgba(0, 7, 8, 0.6);
+  /* --box-shadow: 0 1.3px 5.4px rgba(0, 7, 8, 0.6),
+    0 4.5px 18.1px rgba(0, 7, 8, 0.4), 0 20px 81px rgba(0, 7, 8, 0.1); */
 
   --text-color: var(--brand-grey-light);
   --text-color-light: var(--brand-grey);

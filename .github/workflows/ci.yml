@@ -20,8 +20,8 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Cache node modules
-        uses: actions/cache@v1
+      - name: Cache node_modules
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -60,43 +60,40 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Cache node modules
-        uses: actions/cache@v1
+      - name: Cache node_modules & Next.js build output
+        uses: actions/cache@v3
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-node-
-
-      - name: Cache Gatsby build output
-        uses: actions/cache@v1
-        with:
-          path: public
-          key: ${{ runner.os }}-public
+          path: |
+            ~/.npm
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
       - run: npm ci
       - run: npm run build
         env:
-          GATSBY_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NEXT_PUBLIC_TYPEKIT_ID: ${{ secrets.NEXT_PUBLIC_TYPEKIT_ID }}
 
-      - uses: actions/upload-artifact@v1
-        if: github.ref == 'refs/heads/main'
-        with:
-          name: public
-          path: public
+      # - uses: actions/upload-artifact@v1
+      #   if: github.ref == 'refs/heads/main'
+      #   with:
+      #     name: public
+      #     path: public
 
-  deploy:
-    needs: build
-    if: success() && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+  # deploy:
+  #   needs: build
+  #   if: success() && github.ref == 'refs/heads/main'
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v1
-        with:
-          name: public
-      - name: Deploy to S3
-        run: npm run deploy:s3
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/download-artifact@v1
+  #       with:
+  #         name: public
+  #     - name: Deploy to S3
+  #       run: npm run deploy:s3
+  #       env:
+  #         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  #         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  #         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}

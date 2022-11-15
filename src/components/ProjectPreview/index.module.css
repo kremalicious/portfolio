@@ -1,0 +1,19 @@
+.project {
+  display: block;
+}
+
+.meta {
+  padding: calc(var(--spacer) / 3) calc(var(--spacer) / 4);
+  padding-bottom: 0;
+  text-align: right;
+}
+
+.title {
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  margin: 0;
+}
+
+.project:hover .title {
+  color: var(--link-color);
+}
