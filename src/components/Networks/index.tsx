@@ -1,38 +1,47 @@
-import React from 'react'
-import Icon from '../Icon'
 import styles from './index.module.css'
 import resume from '../../../_content/resume.json'
-
-const linkClasses = (key) =>
-  key === 'Mail' ? `u-email ${styles.link}` : `u-url ${styles.link}`
-
-const NetworkLink = ({ name, url }: { name: string; url: string }) => (
-  <a
-    className={linkClasses(name)}
-    href={url}
-    data-testid={`network-${name.toLowerCase()}`}
-  >
-    <Icon name={name} />
-    <span className={styles.title}>{name}</span>
-  </a>
-)
+import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
+import { getAnimationProps } from '../Transitions'
+import { NetworkLink } from './NetworkLink'
 
 type Props = {
   small?: boolean
 }
 
-export default function Networks({ small }: Props) {
-  return (
-    <aside className={small ? styles.small : styles.networks}>
-      <NetworkLink name="Mail" url={`mailto:${resume.basics.email}`} />
+const containerVariants = {
+  enter: {
+    transition: {
+      delay: 0.2,
+      staggerChildren: 0.1
+    }
+  }
+}
 
-      {resume.basics.profiles.map((profile) => (
+export default function Networks({ small }: Props) {
+  const shouldReduceMotion = useReducedMotion()
+  const animationProps = getAnimationProps(shouldReduceMotion)
+
+  return (
+    <LazyMotion features={domAnimation}>
+      <m.aside
+        variants={containerVariants}
+        {...animationProps}
+        className={small ? styles.small : styles.networks}
+      >
         <NetworkLink
-          key={profile.network}
-          name={profile.network}
-          url={profile.url}
+          name="Mail"
+          key="Mail"
+          url={`mailto:${resume.basics.email}`}
         />
-      ))}
-    </aside>
+
+        {resume.basics.profiles.map((profile) => (
+          <NetworkLink
+            key={profile.network}
+            name={profile.network}
+            url={profile.url}
+          />
+        ))}
+      </m.aside>
+    </LazyMotion>
   )
 }

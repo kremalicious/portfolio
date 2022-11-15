@@ -4,19 +4,30 @@ import type ImageType from '../../interfaces/image'
 import type ProjectType from '../../interfaces/project'
 import ProjectImage from '../ProjectImage'
 import styles from './index.module.css'
+import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
+import { getAnimationProps, moveInBottom } from '../Transitions'
 
 export default function Project({ project }: { project: ProjectType }) {
   const { title, descriptionHtml, images, links, techstack } = project
+  const shouldReduceMotion = useReducedMotion()
+  const animationProps = getAnimationProps(shouldReduceMotion)
 
   return (
     <article className={styles.project}>
-      <header className={styles.intro}>
-        <h1 className={styles.headerTitle}>{title}</h1>
-        <div
-          className={styles.description}
-          dangerouslySetInnerHTML={{ __html: descriptionHtml }}
-        />
-      </header>
+      <LazyMotion features={domAnimation}>
+        <m.header
+          variants={moveInBottom}
+          {...animationProps}
+          className={styles.intro}
+        >
+          <h1 className={styles.headerTitle}>{title}</h1>
+
+          <div
+            className={styles.description}
+            dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+          />
+        </m.header>
+      </LazyMotion>
 
       {images.map((image: ImageType, i: number) => (
         <ProjectImage

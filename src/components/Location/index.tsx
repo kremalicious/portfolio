@@ -1,5 +1,5 @@
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
-import { moveInTop, getAnimationProps } from '../Transitions'
+import { moveInBottom, getAnimationProps, moveInTop } from '../Transitions'
 import styles from './index.module.css'
 import { useLocation } from '../../hooks/useLocation'
 import RelativeTime from '@yaireo/relative-time'

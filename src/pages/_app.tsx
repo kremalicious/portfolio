@@ -1,4 +1,4 @@
-import { AppProps } from 'next/app'
+import type { AppProps, NextWebVitalsMetric } from 'next/app'
 import '../styles/global.css'
 import Site from '../layouts/Site'
 
@@ -9,3 +9,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
     </Site>
   )
 }
+
+// export function reportWebVitals(metric: NextWebVitalsMetric) {
+//   console.info(metric)
+// }

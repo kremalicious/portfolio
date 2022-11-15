@@ -23,6 +23,7 @@ describe('pages', () => {
         json: () => Promise.resolve(repos)
       })
     )
+
     const props = await getStaticProps({} as any)
     expect(props).toBeDefined()
   })

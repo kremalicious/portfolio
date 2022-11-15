@@ -21,11 +21,6 @@
   display: inline-block;
 }
 
-.link,
-.link svg {
-  transition: 0.2s var(--easing);
-}
-
 .link svg {
   stroke: var(--brand-grey-light);
   width: 24px;

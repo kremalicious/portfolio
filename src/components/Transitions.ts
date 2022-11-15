@@ -1,47 +1,53 @@
-// export const fadeIn = {
-//   initial: {
-//     opacity: 0
-//   },
-//   enter: {
-//     opacity: 1,
-//     duration: 0.3,
-//     when: 'beforeChildren'
-//   },
-//   exit: {
-//     opacity: 0,
-//     transition: { duration: 0.2 }
-//   }
-// }
-
 export const moveInTop = {
   initial: {
-    y: '-2rem',
-    transition: { type: 'spring' }
+    opacity: 0,
+    y: -100,
+    transition: {
+      type: 'spring'
+    }
   },
   enter: {
+    opacity: 1,
     y: 0,
-    transition: { type: 'spring', duration: 0.3, stiffness: 120 }
+    transition: {
+      type: 'spring',
+      duration: 0.3,
+      stiffness: 120
+    }
   },
   exit: {
-    y: '-2rem',
-    transition: { type: 'spring', delay: 0.1, duration: 0.2 }
+    opacity: 0,
+    y: -100,
+    transition: {
+      type: 'spring',
+      duration: 0.2
+    }
   }
 }
 
-// export const moveInBottom = {
-//   initial: {
-//     y: '2rem',
-//     transition: { type: 'spring' }
-//   },
-//   enter: {
-//     y: 0,
-//     transition: { type: 'spring', duration: 0.3, stiffness: 120 }
-//   },
-//   exit: {
-//     y: '2rem',
-//     transition: { type: 'spring', delay: 0.1, duration: 0.2 }
-//   }
-// }
+export const moveInBottom = {
+  initial: {
+    opacity: 0,
+    y: 100,
+    transition: { type: 'spring' }
+  },
+  enter: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'spring',
+      duration: 0.2,
+      stiffness: 120
+    }
+  },
+  exit: {
+    opacity: 0,
+    y: 100,
+    transition: {
+      type: 'spring'
+    }
+  }
+}
 
 export function getAnimationProps(shouldReduceMotion) {
   return {

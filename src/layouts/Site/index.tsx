@@ -25,7 +25,6 @@ export default function Site({ children }: { children: React.ReactNode }) {
 
       <Header small={router.asPath !== '/'} />
       <main className={styles.screen}>{children}</main>
-
       <Footer />
     </>
   )

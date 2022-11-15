@@ -1,5 +1,5 @@
 import { useReducedMotion, LazyMotion, domAnimation, m } from 'framer-motion'
-import { moveInTop, getAnimationProps } from '../Transitions'
+import { moveInBottom, getAnimationProps } from '../Transitions'
 import styles from './index.module.css'
 import meta from '../../../_content/meta.json'
 
@@ -14,7 +14,7 @@ export default function Availability() {
   return (
     <LazyMotion features={domAnimation}>
       <m.aside
-        variants={moveInTop}
+        variants={moveInBottom}
         className={className}
         {...getAnimationProps(shouldReduceMotion)}
       >
