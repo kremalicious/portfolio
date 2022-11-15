@@ -3,7 +3,7 @@ type ImageType = {
   width: number
   height: number
   format: string
-  blurDataURL: string
+  blurDataURL?: string
 }
 
 export default ImageType

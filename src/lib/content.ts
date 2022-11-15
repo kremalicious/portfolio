@@ -17,19 +17,19 @@ export function getProjectSlugs() {
 }
 
 // Pixel GIF code adapted from https://stackoverflow.com/a/33919020/266535
-const keyStr =
-  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
+// const keyStr =
+//   'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
 
-const triplet = (e1: number, e2: number, e3: number) =>
-  keyStr.charAt(e1 >> 2) +
-  keyStr.charAt(((e1 & 3) << 4) | (e2 >> 4)) +
-  keyStr.charAt(((e2 & 15) << 2) | (e3 >> 6)) +
-  keyStr.charAt(e3 & 63)
+// const triplet = (e1: number, e2: number, e3: number) =>
+//   keyStr.charAt(e1 >> 2) +
+//   keyStr.charAt(((e1 & 3) << 4) | (e2 >> 4)) +
+//   keyStr.charAt(((e2 & 15) << 2) | (e3 >> 6)) +
+//   keyStr.charAt(e3 & 63)
 
-export const rgbDataURL = ({ r, g, b }: { r: number; g: number; b: number }) =>
-  `data:image/gif;base64,R0lGODlhAQABAPAA${
-    triplet(0, r, g) + triplet(b, 255, 255)
-  }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`
+// export const rgbDataURL = ({ r, g, b }: { r: number; g: number; b: number }) =>
+//   `data:image/gif;base64,R0lGODlhAQABAPAA${
+//     triplet(0, r, g) + triplet(b, 255, 255)
+//   }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`
 
 export async function getProjectImages(slug: string) {
   const allImages = fs.readdirSync(imagesDirectory, 'utf8')
@@ -42,14 +42,14 @@ export async function getProjectImages(slug: string) {
       const file = `${imagesDirectory}/${image}`
       const transformer = sharp(file)
       const { width, height, format } = await transformer.metadata()
-      const { dominant } = await transformer.stats()
-      const blurDataURL = rgbDataURL(dominant)
+      // const { dominant } = await transformer.stats()
+      // const blurDataURL = rgbDataURL(dominant)
 
       const imageType: ImageType = {
         width,
         height,
         format,
-        blurDataURL,
+        // blurDataURL,
         src: `/images/${image}`
       }
       images.push(imageType)

@@ -49,7 +49,7 @@ export const moveInBottom = {
   }
 }
 
-export function getAnimationProps(shouldReduceMotion) {
+export function getAnimationProps(shouldReduceMotion: boolean) {
   return {
     initial: `${shouldReduceMotion ? 'enter' : 'initial'}`,
     animate: `${shouldReduceMotion ? null : 'enter'}`,
