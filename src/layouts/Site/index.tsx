@@ -14,6 +14,7 @@ export default function Site({ children }: { children: React.ReactNode }) {
 
   // init Matomo tracking
   useEffect(() => {
+    if (window._paq) return
     init({ url: meta.matomoUrl, siteId: meta.matomoSite })
   }, [])
 
