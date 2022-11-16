@@ -9,6 +9,9 @@
       #background {
         fill: #161a1b;
       }
+      #logomark {
+        fill: #e7eef4;
+      }
     }
   </style>
   <g fill="none" fill-rule="evenodd">
