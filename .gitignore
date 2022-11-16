@@ -37,4 +37,6 @@ yarn-error.log*
 .swc
 coverage
 public/matomo.js
-public/favicon/
+# public/favicon*
+# public/apple-touch-icon*
+# public/manifest*

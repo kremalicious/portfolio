@@ -1,87 +1,83 @@
-import { favicons, FaviconImage } from 'favicons'
 import path from 'path'
 import fs from 'fs'
+import sharp from 'sharp'
+import ico from 'sharp-ico'
 
-const imagesDirectory = path.resolve(path.join(process.cwd(), 'src', 'images'))
-const source = `${imagesDirectory}/favicon.png`
-const output = path.resolve(path.join(process.cwd(), 'public', 'favicon'))
+const imagesSourcePath = path.resolve(path.join(process.cwd(), 'src', 'images'))
+const faviconSource = `${imagesSourcePath}/favicon-512.png`
+const faviconSourceSvg = `${imagesSourcePath}/favicon.svg`
 
-const configuration = {
-  path: '/favicon', // Path for overriding default icons path. `string`
-  appName: 'matthias kretschmann',
-  appShortName: 'mk',
-  appDescription: null,
-  developerName: null,
-  developerURL: null,
-  dir: 'auto',
-  lang: 'en-US',
-  appleStatusBarStyle: 'black-translucent', // Style for Apple status bar: "black-translucent", "default", "black". `string`
-  display: 'minimal-ui', // Preferred display mode: "fullscreen", "standalone", "minimal-ui" or "browser". `string`
-  orientation: 'any', // Default orientation: "any", "natural", "portrait" or "landscape". `string`
-  scope: '/', // set of URLs that the browser considers within your app
-  start_url: '/?homescreen=1',
-  background_color: '#e7eef4',
-  theme_color: '#e7eef4',
-  preferRelatedApplications: false,
-  relatedApplications: undefined,
-  version: '1.0',
-  pixel_art: false, // Keeps pixels "sharp" when scaling up, for pixel art.  Only supported in offline mode.
-  loadManifestWithCredentials: false,
-  manifestMaskable: `${imagesDirectory}/logo.svg`, // Maskable source image(s) for manifest.json. "true" to use default source. More information at https://web.dev/maskable-icon/. `boolean`, `string`, `buffer` or array of `string`
-  icons: {
-    android: true,
-    appleIcon: true,
-    appleStartup: false,
-    favicons: true,
-    windows: true,
-    yandex: false
+const outputWebRoot = path.resolve(path.join(process.cwd(), 'public'))
+const outputManifest = path.resolve(
+  path.join(process.cwd(), 'public', 'manifest')
+)
+
+// All the sizes and meta we'll need
+// https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
+const sizes = [32, 180, 192, 512]
+const outputMeta = `
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest/manifest.webmanifest">
+`
+
+function createManifest(iconsizes: number[]) {
+  const manifest = {
+    name: 'matthias kretschmann',
+    shortName: 'mk',
+    icons: iconsizes.map((size) => ({
+      src: `/manifest/favicon-${size}.png`,
+      type: 'image/png',
+      sizes: `${size}x${size}`
+    }))
   }
+  fs.writeFileSync(
+    `${outputManifest}/manifest.webmanifest`,
+    JSON.stringify(manifest)
+  )
 }
 
 async function buildFavicons() {
   try {
-    const response = await favicons(source, configuration)
-    const allFilesToWrite = response.images.concat(response.files as any)
+    // Nuke all & create output folder first
+    fs.rmSync(outputManifest, { recursive: true, force: true })
+    fs.rmSync(`${outputWebRoot}/apple-touch-icon.png`, { force: true })
+    fs.rmSync(`${outputWebRoot}/favicon.ico`, { force: true })
+    fs.mkdirSync(outputManifest, { recursive: true })
 
-    fs.rmSync(output, { recursive: true, force: true })
+    // copy over the svg, as it's handcrafted
+    fs.copyFileSync(faviconSourceSvg, `${outputWebRoot}/favicon.svg`)
 
-    allFilesToWrite.forEach((file) => {
-      const { name, contents } = file
-      const destination = `${output}/${name}`
+    // generate all the rest
+    await Promise.all(
+      sizes.map(async (size) => {
+        let destination = `${outputManifest}/favicon-${size}.png`
+        if (size === 180) destination = `${outputWebRoot}/apple-touch-icon.png`
 
-      try {
-        fs.readFileSync(destination, 'utf8')
-      } catch (error) {
-        // if there is no file, get data and write a fresh file
-        if (error.code === 'ENOENT') {
-          try {
-            fs.mkdirSync(output, { recursive: true })
-            fs.writeFileSync(destination, contents)
-          } catch (error) {
-            throw new Error("Couldn't write favicon file")
-          }
-        }
-      }
-    })
-
-    const destinationHtml = `${output}/_meta.html`
-
-    try {
-      fs.readFileSync(destinationHtml, 'utf8')
-    } catch (error) {
-      // if there is no file, get data and write a fresh file
-      if (error.code === 'ENOENT') {
-        try {
-          fs.mkdirSync(output, { recursive: true })
-          fs.writeFileSync(
-            destinationHtml,
-            response.html.reverse().toString().replaceAll(',', '')
+        if (size === 32) {
+          await ico.sharpsToIco(
+            [sharp(faviconSource)],
+            `${outputWebRoot}/favicon.ico`,
+            { sizes: [32, 24, 16], resizeOptions: {} }
           )
-        } catch (error) {
-          throw new Error("Couldn't write favicon file")
+          fs.rmSync(destination, { force: true })
+        } else {
+          await sharp(faviconSource).resize(size, size).toFile(destination)
         }
-      }
-    }
+      })
+    )
+
+    // write out manifest
+    createManifest([192, 512])
+
+    console.log(`
+      -----------------------------
+      Favicon generation complete!
+      -----------------------------
+      Add this to src/components/Meta/Favicon.tsx:
+      ${outputMeta}
+    `)
   } catch (error) {
     console.error(error.message)
   }

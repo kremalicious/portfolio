@@ -7,7 +7,7 @@
     "available": "👔 Available for new projects. <a href=\"mailto:m@kretschmann.io\">Let’s talk</a>!",
     "unavailable": "Not available for new projects."
   },
-  "gpg": "https://kretschmann.io/pub.gpg",
+  "gpg": "/gpg.txt",
   "addressbook": "/matthias-kretschmann.vcf",
   "bugs": "https://github.com/kremalicious/portfolio/issues/new",
   "matomoUrl": "https://analytics.kremalicious.com",

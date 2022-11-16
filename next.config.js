@@ -23,7 +23,9 @@ const next = (phase, { defaultConfig }) => {
       return typeof defaultConfig.webpack === 'function'
         ? defaultConfig.webpack(config, options)
         : config
-    }
+    },
+    // https://nextjs.org/docs/api-reference/next.config.js/react-strict-mode
+    reactStrictMode: true
   }
 
   return nextConfig

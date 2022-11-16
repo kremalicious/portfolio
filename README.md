@@ -25,10 +25,12 @@
   - [📇 Client-side vCard creation](#-client-side-vcard-creation)
   - [💎 Importing SVG assets](#-importing-svg-assets)
   - [🍬 Typekit component](#-typekit-component)
+- [🤓 Scripts](#-scripts)
+  - [🎈 Add a new project](#-add-a-new-project)
+  - [🌄 Favicon generation](#-favicon-generation)
 - [✨ Development](#-development)
   - [🔮 Linting](#-linting)
   - [👩‍🔬 Testing](#-testing)
-  - [🎈 Add a new project](#-add-a-new-project)
 - [🚚 Deployment](#-deployment)
 - [🏛 Licenses](#-licenses)
 
@@ -124,6 +126,38 @@ If you want to know how, have a look at the respective component:
 
 - [`src/components/Typekit/index.tsx`](src/components/Typekit/index.tsx)
 
+## 🤓 Scripts
+
+### 🎈 Add a new project
+
+To add a new project, run the following command. This adds a new item to the top of the `projects.yml` file, creating the title & slug from the argument:
+
+```bash
+npm run new -- "Hello"
+```
+
+Then continue modifying the new entry in [`_content/projects.yml`](_content/projects.yml).
+
+Finally, add as many images as needed with the file name format and put into `public/images/`:
+
+```text
+SLUG-01.png
+SLUG-02.png
+SLUG-03.png
+...
+```
+
+### 🌄 Favicon generation
+
+This generates all required favcion sizes from:
+
+- `src/images/favicon-512.png`
+- `src/images/favicon.svg`
+
+```bash
+npm run favicon
+```
+
 ## ✨ Development
 
 ```bash
@@ -164,25 +198,6 @@ npm test
 ```
 
 Most test files live beside the respective component. Testing setup, fixtures, and mocks can be found in the `tests/` folder.
-
-### 🎈 Add a new project
-
-To add a new project, run the following command. This adds a new item to the top of the `projects.yml` file, creating the title & slug from the argument:
-
-```bash
-npm run new -- "Hello"
-```
-
-Then continue modifying the new entry in [`_content/projects.yml`](_content/projects.yml).
-
-Finally, add as many images as needed with the file name format and put into `public/images/`:
-
-```text
-SLUG-01.png
-SLUG-02.png
-SLUG-03.png
-...
-```
 
 ## 🚚 Deployment
 

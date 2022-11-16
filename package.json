@@ -8,10 +8,10 @@
   "author": "Matthias Kretschmann <m@kretschmann.io>",
   "type": "module",
   "scripts": {
-    "start": "npm run pregenerate && next",
-    "build": "npm run pregenerate && next build",
+    "start": "next",
+    "build": "next build",
     "preview": "npm run build && next start",
-    "export": "npm run pregenerate && next export",
+    "export": "next export",
     "typecheck": "tsc",
     "lint:js": "next lint",
     "lint:css": "stylelint ./src/**/*.css",
@@ -21,8 +21,7 @@
     "test": "NODE_ENV=test npm run lint && npm run typecheck && npm run jest",
     "deploy:s3": "./scripts/deploy-s3.sh",
     "new": "ts-node-esm ./scripts/new.ts",
-    "favicon": "ts-node-esm ./scripts/favicon.ts",
-    "pregenerate": "npm run favicon"
+    "favicon": "ts-node-esm ./scripts/favicon.ts"
   },
   "dependencies": {
     "@giphy/js-fetch-api": "^4.4.0",

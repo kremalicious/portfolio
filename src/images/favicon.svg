@@ -1,0 +1,27 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="512"
+  height="512"
+  viewBox="0 0 512 512"
+>
+  <style>
+    #background {
+      fill: #e7eef4;
+    }
+    #logomark {
+      fill: #6b7f88;
+    }
+    @media (prefers-color-scheme: dark) {
+      #background {
+        fill: #161a1b;
+      }
+    }
+  </style>
+  <g fill="none" fill-rule="evenodd">
+    <rect id="background" width="512" height="512" />
+    <path
+      id="logomark"
+      d="M397,91 L421,115 L114,421 L91,398 L397,91 Z M397,182 L421,206 L205,421 L182,398 L397,182 Z M307,91 L330,115 L114,330 L91,307 L307,91 Z"
+    />
+  </g>
+</svg>
