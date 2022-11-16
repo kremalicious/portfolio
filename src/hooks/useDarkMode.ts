@@ -25,7 +25,7 @@ function getDarkMode() {
 }
 
 export default function useDarkMode() {
-  const [darkMode, setDarkMode] = useState(getDarkMode())
+  const [darkMode, setDarkMode] = useState<boolean>()
   const [themeColor, setThemeColor] = useState<string>()
 
   const toggleDarkMode = useCallback(() => {
@@ -33,10 +33,18 @@ export default function useDarkMode() {
   }, [darkMode])
 
   //
+  // Init
+  //
+  useEffect(() => {
+    const prefersDark = getDarkMode()
+    setDarkMode(prefersDark)
+  }, [])
+
+  //
   // Do things when darkMode changes
   //
   useEffect(() => {
-    const bodyClassList = document.body.classList
+    const bodyClassList = document.querySelector('body').classList
     bodyClassList.toggle('dark')
     bodyClassList.toggle('light')
     setThemeColor(darkMode === true ? '#1d2224' : '#e7eef4')

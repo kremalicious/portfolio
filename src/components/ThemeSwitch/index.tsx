@@ -12,11 +12,6 @@ export default function ThemeSwitch() {
       <Head>
         <meta name="theme-color" content={themeColor} />
         <meta name="msapplication-TileColor" content={themeColor} />
-        {/* <link
-          rel="mask-icon"
-          href="/favicon/safari-pinned-tab.svg"
-          color={themeColor}
-        /> */}
         <meta
           name="apple-mobile-web-app-status-bar-style"
           content="black-translucent"
