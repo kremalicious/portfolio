@@ -26,7 +26,7 @@ export const moveInTop = {
 export const moveInBottom = {
   initial: {
     opacity: 0,
-    y: 50,
+    y: 20,
     transition: { type: 'spring' }
   },
   enter: {
@@ -40,7 +40,7 @@ export const moveInBottom = {
   },
   exit: {
     opacity: 0,
-    y: 50,
+    y: 20,
     transition: {
       type: 'spring'
     }

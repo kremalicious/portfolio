@@ -15,7 +15,7 @@ type Props = {
 
 export default function Header({ small }: Props) {
   return (
-    <header className={`${styles.header} ${small ? styles.small : null}`}>
+    <header className={`${styles.header} ${small ? styles.small : ''}`}>
       <LogoUnit small={small} />
       {!small ? <Networks /> : null}
       <div className={styles.meta}>

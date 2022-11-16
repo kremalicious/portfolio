@@ -1,7 +1,5 @@
 .networks {
   padding-top: var(--spacer);
-  width: 100%;
-  text-align: center;
 }
 
 .title {
@@ -25,6 +23,8 @@
   stroke: var(--brand-grey-light);
   width: 24px;
   height: 24px;
+  transition: stroke 0.2s var(--easing);
+  will-change: stroke;
 }
 
 .link:hover svg,
