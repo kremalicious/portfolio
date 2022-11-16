@@ -27,7 +27,7 @@ function createManifest(iconsizes: number[]) {
     name: 'matthias kretschmann',
     short_name: 'mk',
     display: 'standalone',
-    start_url: '/?homescreen=1',
+    start_url: '/',
     icons: iconsizes.map((size) => ({
       src: `/manifest/favicon-${size}.png`,
       type: 'image/png',
