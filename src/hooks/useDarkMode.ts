@@ -2,7 +2,13 @@
 // adapted from
 // https://github.com/daveschumaker/react-dark-mode-hook/blob/master/useDarkMode.js
 //
-import { useState, useEffect, useCallback } from 'react'
+import {
+  useState,
+  useEffect,
+  useCallback,
+  Dispatch,
+  SetStateAction
+} from 'react'
 
 const isClient = typeof window === 'object'
 
@@ -24,37 +30,37 @@ function getDarkMode() {
   }
 }
 
-export default function useDarkMode() {
-  const [darkMode, setDarkMode] = useState<boolean>()
+export type UseDarkMode = {
+  isDarkMode: boolean
+  themeColor: string
+  setIsDarkMode: Dispatch<SetStateAction<boolean>>
+}
+
+export default function useDarkMode(): UseDarkMode {
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(getDarkMode())
   const [themeColor, setThemeColor] = useState<string>()
 
-  const toggleDarkMode = useCallback(() => {
-    setDarkMode(!darkMode)
-  }, [darkMode])
+  const changeTheme = useCallback(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+    setThemeColor(isDarkMode === true ? '#1d2224' : '#e7eef4')
+  }, [isDarkMode])
 
   //
   // Init
   //
   useEffect(() => {
-    const prefersDark = getDarkMode()
-    setDarkMode(prefersDark)
-  }, [])
-
-  //
-  // Do things when darkMode changes
-  //
-  useEffect(() => {
-    const bodyClassList = document.querySelector('body').classList
-    bodyClassList.toggle('dark')
-    bodyClassList.toggle('light')
-    setThemeColor(darkMode === true ? '#1d2224' : '#e7eef4')
-  }, [darkMode])
+    changeTheme()
+  }, [changeTheme])
 
   //
   // Handle system theme change events
   //
   const handleChange = useCallback(() => {
-    setDarkMode(getDarkMode())
+    setIsDarkMode(getDarkMode())
   }, [])
 
   useEffect(() => {
@@ -74,5 +80,5 @@ export default function useDarkMode() {
         .removeEventListener('change', handleChange)
   }, [handleChange])
 
-  return { value: darkMode, toggle: toggleDarkMode, themeColor }
+  return { isDarkMode, setIsDarkMode, themeColor }
 }

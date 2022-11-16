@@ -25,7 +25,9 @@ const outputMeta = `
 function createManifest(iconsizes: number[]) {
   const manifest = {
     name: 'matthias kretschmann',
-    shortName: 'mk',
+    short_name: 'mk',
+    display: 'standalone',
+    start_url: '/?homescreen=1',
     icons: iconsizes.map((size) => ({
       src: `/manifest/favicon-${size}.png`,
       type: 'image/png',
@@ -38,13 +40,18 @@ function createManifest(iconsizes: number[]) {
   )
 }
 
+function nuke() {
+  fs.rmSync(outputManifest, { recursive: true, force: true })
+  fs.rmSync(`${outputWebRoot}/apple-touch-icon.png`, { force: true })
+  fs.rmSync(`${outputWebRoot}/favicon.ico`, { force: true })
+  fs.rmSync(`${outputWebRoot}/favicon.svg`, { force: true })
+  fs.mkdirSync(outputManifest, { recursive: true })
+}
+
 async function buildFavicons() {
   try {
     // Nuke all & create output folder first
-    fs.rmSync(outputManifest, { recursive: true, force: true })
-    fs.rmSync(`${outputWebRoot}/apple-touch-icon.png`, { force: true })
-    fs.rmSync(`${outputWebRoot}/favicon.ico`, { force: true })
-    fs.mkdirSync(outputManifest, { recursive: true })
+    nuke()
 
     // copy over the svg, as it's handcrafted
     fs.copyFileSync(faviconSourceSvg, `${outputWebRoot}/favicon.svg`)
@@ -55,6 +62,7 @@ async function buildFavicons() {
         let destination = `${outputManifest}/favicon-${size}.png`
         if (size === 180) destination = `${outputWebRoot}/apple-touch-icon.png`
 
+        // 32px size only used for favicon.ico
         if (size === 32) {
           await ico.sharpsToIco(
             [sharp(faviconSource)],

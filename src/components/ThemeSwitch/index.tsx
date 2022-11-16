@@ -5,7 +5,7 @@ import { ThemeToggle } from './ThemeToggle'
 import { ThemeToggleInput } from './ThemeToggleInput'
 
 export default function ThemeSwitch() {
-  const { value, toggle, themeColor } = useDarkMode()
+  const { themeColor } = useDarkMode()
 
   return (
     <>
@@ -20,8 +20,8 @@ export default function ThemeSwitch() {
       <aside className={styles.themeSwitch}>
         <label className={styles.checkbox}>
           <span className={styles.label}>Toggle Night Mode</span>
-          <ThemeToggleInput dark={value} toggleDark={toggle} />
-          <ThemeToggle dark={value} />
+          <ThemeToggleInput />
+          <ThemeToggle />
         </label>
       </aside>
     </>

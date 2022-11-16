@@ -1,17 +1,16 @@
-import React from 'react'
+import useDarkMode from '../../hooks/useDarkMode'
 
-type Props = {
-  dark: boolean
-  toggleDark: () => void
+export const ThemeToggleInput = () => {
+  const { isDarkMode, setIsDarkMode } = useDarkMode()
+
+  return (
+    <input
+      onChange={() => setIsDarkMode(!isDarkMode)}
+      type="checkbox"
+      name="toggle"
+      value="toggle"
+      aria-describedby="toggle"
+      checked={isDarkMode === true}
+    />
+  )
 }
-
-export const ThemeToggleInput = ({ dark, toggleDark }: Props) => (
-  <input
-    onChange={() => toggleDark()}
-    type="checkbox"
-    name="toggle"
-    value="toggle"
-    aria-describedby="toggle"
-    checked={dark}
-  />
-)

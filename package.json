@@ -42,13 +42,12 @@
     "@svgr/webpack": "^6.5.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
-    "@types/jest": "^29.2.2",
+    "@types/jest": "^29.2.3",
     "@types/js-yaml": "^4.0.5",
     "@types/sharp": "^0.31.0",
     "chalk": "^5.1.2",
     "eslint": "^8.27.0",
     "eslint-config-next": "^13.0.3",
-    "favicons": "^7.0.2",
     "jest": "^29.3.1",
     "jest-canvas-mock": "^2.4.0",
     "jest-environment-jsdom": "^29.3.1",
@@ -57,12 +56,13 @@
     "prepend": "^1.0.2",
     "prettier": "^2.7.1",
     "sharp": "^0.31.2",
+    "sharp-ico": "^0.1.5",
     "slugify": "^1.6.5",
-    "stylelint": "^14.14.1",
+    "stylelint": "^14.15.0",
     "stylelint-config-prettier": "^9.0.4",
     "stylelint-prettier": "^2.0.0",
     "ts-node": "^10.9.1",
-    "typescript": "^4.8.4"
+    "typescript": "^4.9.3"
   },
   "engines": {
     "node": "16.x"

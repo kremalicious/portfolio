@@ -149,10 +149,12 @@ SLUG-03.png
 
 ### 🌄 Favicon generation
 
-This generates all required favcion sizes from:
+This generates all required favicon sizes from:
 
 - `src/images/favicon-512.png`
-- `src/images/favicon.svg`
+- `src/images/favicon.svg` (handcrafted, adaptive based on OS theme)
+
+Also creates a web manifest.
 
 ```bash
 npm run favicon
