@@ -1,22 +1,28 @@
 import Link from 'next/link'
 import styles from './index.module.css'
-import Icon from '../Icon'
 import ProjectImage from '../ProjectImage'
 import ImageType from '../../interfaces/image'
 
 type Props = {
   title: string
   slug: string
-  images: ImageType[]
+  image: ImageType
+  imagePriority: boolean
 }
 
-export default function ProjectPreview({ title, slug, images }: Props) {
+export default function ProjectPreview({
+  title,
+  slug,
+  image,
+  imagePriority
+}: Props) {
   return (
     <Link href={`/${slug}`} className={styles.project} key={slug}>
       <ProjectImage
-        image={images[0]}
+        image={image}
         alt={title}
         sizes="(max-width: 1090px) 100vw, 40vw"
+        priority={imagePriority}
       />
 
       <footer className={styles.meta}>

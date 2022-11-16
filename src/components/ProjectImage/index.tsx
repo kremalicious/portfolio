@@ -21,12 +21,14 @@ export default function ProjectImage({
   image,
   alt,
   sizes,
-  className
+  className,
+  priority = false
 }: {
   image: ImageType
   alt: string
   sizes: string
   className?: string
+  priority?: boolean
 }) {
   const [loaded, setLoaded] = useState(false)
   const animationControls = useAnimation()
@@ -55,6 +57,7 @@ export default function ProjectImage({
           height={image.height}
           sizes={sizes}
           quality={85}
+          priority={priority}
           placeholder="empty"
           // blurDataURL={image.blurDataURL}
           onLoadingComplete={() => setLoaded(true)}

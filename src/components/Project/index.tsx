@@ -48,6 +48,8 @@ export default function Project({ project }: { project: ProjectType }) {
           alt={title}
           key={i}
           sizes="100vw"
+          // give priority to the first image
+          priority={i === 0}
         />
       ))}
 
