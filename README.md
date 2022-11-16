@@ -88,7 +88,7 @@ Includes a theme switcher which allows user to toggle between a light and a dark
 
 If you want to know how, have a look at the respective components:
 
-- [`src/hooks/useDarkMode.js`](src/hooks/useDarkMode.js)
+- [`src/hooks/useDarkMode.ts`](src/hooks/useDarkMode.ts)
 - [`src/components/ThemeSwitch/index.tsx`](src/components/ThemeSwitch/index.tsx)
 
 ### 🏆 SEO component
@@ -136,7 +136,7 @@ cp .env.sample .env
 vi .env
 
 npm i
-npm run dev
+npm start
 ```
 
 ### 🔮 Linting
