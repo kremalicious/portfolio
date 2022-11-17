@@ -69,9 +69,8 @@
   },
   "browserslist": [
     "> 0.2%",
-    "last 2 versions",
+    "last 3 versions",
     "Firefox ESR",
-    "not dead",
-    "not IE 11"
+    "not dead"
   ]
 }
