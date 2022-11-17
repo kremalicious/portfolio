@@ -2,16 +2,22 @@ import Link from 'next/link'
 import Logo from '../../images/logo.svg'
 import styles from './index.module.css'
 import resume from '../../../_content/resume.json'
+import { useRouter } from 'next/router'
 
 type Props = {
   small?: boolean
 }
 
 export default function LogoUnit({ small }: Props) {
+  const router = useRouter()
+  const { pathname } = router
+  const isHome = pathname === '/'
+
   return (
     <Link
       className={`${styles.logounit} ${small ? styles.small : null}`}
       href="/"
+      aria-current={isHome ? 'page' : null}
     >
       <Logo className={styles.logo} />
       <h1 className={`p-name ${styles.title}`}>

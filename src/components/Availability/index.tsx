@@ -13,13 +13,13 @@ export default function Availability() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <m.aside
+      <m.section
         variants={moveInBottom}
         className={className}
         {...getAnimationProps(shouldReduceMotion)}
       >
         <p dangerouslySetInnerHTML={{ __html: html }} />
-      </m.aside>
+      </m.section>
     </LazyMotion>
   )
 }

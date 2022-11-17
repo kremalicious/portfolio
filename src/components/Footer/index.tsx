@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer className={`h-card ${styles.footer}`}>
       <LogoUnit small />
-      <Networks small />
+      <Networks label="Networks Footer" small />
 
       <p className={styles.actions}>
         <Vcard />

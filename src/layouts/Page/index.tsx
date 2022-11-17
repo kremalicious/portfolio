@@ -3,7 +3,7 @@ import Meta from '../../components/Meta'
 type Props = {
   children: React.ReactNode
   title: string
-  description?: string
+  description: string
   image?: string
   slug?: string
 }

@@ -3,6 +3,7 @@ import Head from 'next/head'
 const MetaFavicons = () => {
   return (
     <Head>
+      <meta name="viewport" content="width=device-width,initial-scale=1"></meta>
       {/* 
         Stop the favicon madness
         https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs 

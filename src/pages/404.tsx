@@ -2,7 +2,8 @@ import NotFound from '../components/404'
 import Page from '../layouts/Page'
 
 const pageMeta = {
-  title: `NotFound`
+  title: `Shenanigans`,
+  description: 'Page not found.'
 }
 
 export default function NotFoundPage() {

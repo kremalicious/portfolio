@@ -9,7 +9,7 @@ const Meta = ({
   slug
 }: {
   title: string
-  description?: string
+  description: string
   image?: string
   slug?: string
 }) => {
@@ -24,7 +24,7 @@ const Meta = ({
 
       {/* <!--  Essential META Tags --> */}
       <title>{title}</title>
-      <meta name="description" content={description} />
+      <meta name="description" content={`${description.slice(0, 200)}...`} />
       <meta property="og:title" content={title} />
       <meta property="og:image" content={`${meta.url}/${image}`} />
       <meta property="og:url" content={url} />

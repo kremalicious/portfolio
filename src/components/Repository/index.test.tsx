@@ -17,7 +17,7 @@ describe('Repository', () => {
     }
 
     const { container } = render(<Repository repo={repo1 as Repo} />)
-    expect(container.querySelector('h1 > a').getAttribute('href')).toBe(
+    expect(container.querySelector('h3 > a').getAttribute('href')).toBe(
       repo1.html_url
     )
   })

@@ -4,7 +4,7 @@ import Meta from '.'
 describe('Meta', () => {
   it('renders without crashing', async () => {
     await act(async () => {
-      render(<Meta title="Hello World" />, {
+      render(<Meta title="Hello World" description="Hello" />, {
         container: document.head
       })
     })
@@ -13,7 +13,7 @@ describe('Meta', () => {
 
   it('renders without crashing with slug', async () => {
     await act(async () => {
-      render(<Meta title="Hello World" slug="hello" />, {
+      render(<Meta title="Hello World" description="Hello" slug="hello" />, {
         container: document.head
       })
     })

@@ -17,7 +17,7 @@ export default function ThemeSwitch() {
           content="black-translucent"
         />
       </Head>
-      <aside className={styles.themeSwitch}>
+      <aside aria-label="Theme Switch" className={styles.themeSwitch}>
         <label className={styles.checkbox}>
           <span className={styles.label}>Toggle Night Mode</span>
           <ThemeToggleInput />

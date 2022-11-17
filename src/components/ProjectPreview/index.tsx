@@ -20,13 +20,13 @@ export default function ProjectPreview({
     <Link href={`/${slug}`} className={styles.project} key={slug}>
       <ProjectImage
         image={image}
-        alt={title}
+        alt={`Showcase image for ${title}`}
         sizes="(max-width: 1090px) 100vw, 40vw"
         priority={imagePriority}
       />
 
       <footer className={styles.meta}>
-        <h1 className={styles.title}>{title}</h1>
+        <h2 className={styles.title}>{title}</h2>
       </footer>
     </Link>
   )

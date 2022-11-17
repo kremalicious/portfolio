@@ -8,7 +8,7 @@ type Props = {
 
 export default function Projects({ projects }: Props) {
   return (
-    <section className={styles.projects}>
+    <nav className={styles.projects}>
       {projects.length > 0 &&
         projects.map((project, i) => (
           <ProjectPreview
@@ -20,6 +20,6 @@ export default function Projects({ projects }: Props) {
             slug={project.slug}
           />
         ))}
-    </section>
+    </nav>
   )
 }

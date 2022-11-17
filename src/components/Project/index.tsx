@@ -45,7 +45,7 @@ export default function Project({ project }: { project: ProjectType }) {
         <ProjectImage
           className={styles.fullContainer}
           image={image}
-          alt={title}
+          alt={`Showcase image no. ${i + 1} for ${title}`}
           key={i}
           sizes="100vw"
           // give priority to the first image

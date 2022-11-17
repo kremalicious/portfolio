@@ -5,6 +5,7 @@ import { getAnimationProps } from '../Transitions'
 import { NetworkLink } from './NetworkLink'
 
 type Props = {
+  label: string
   small?: boolean
 }
 
@@ -17,13 +18,14 @@ const containerVariants = {
   }
 }
 
-export default function Networks({ small }: Props) {
+export default function Networks({ label, small }: Props) {
   const shouldReduceMotion = useReducedMotion()
   const animationProps = getAnimationProps(shouldReduceMotion)
 
   return (
     <LazyMotion features={domAnimation}>
-      <m.aside
+      <m.section
+        aria-label={label}
         variants={containerVariants}
         {...animationProps}
         className={small ? styles.small : styles.networks}
@@ -41,7 +43,7 @@ export default function Networks({ small }: Props) {
             url={profile.url}
           />
         ))}
-      </m.aside>
+      </m.section>
     </LazyMotion>
   )
 }

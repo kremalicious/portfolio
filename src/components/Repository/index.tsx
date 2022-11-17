@@ -17,9 +17,9 @@ export default function Repository({ repo }: { repo: Repo }) {
 
   return (
     <div className={styles.repo}>
-      <h1 className={styles.repoTitle}>
+      <h3 className={styles.repoTitle}>
         <a href={repoLink}>{isExternal ? full_name : name}</a>
-      </h1>
+      </h3>
       <p>{description}</p>
       <p className={styles.meta}>
         {name === 'portfolio' || name === 'blog'
@@ -35,7 +35,10 @@ export default function Repository({ repo }: { repo: Repo }) {
           <Icon name="GitHub" /> GitHub
         </a>
 
-        <a href={`${html_url}/stargazers`}>
+        <a
+          aria-label={`${stargazers_count} stars`}
+          href={`${html_url}/stargazers`}
+        >
           <Icon name="Star" /> {stargazers_count}
         </a>
       </p>

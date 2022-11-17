@@ -9,9 +9,9 @@ export default function ProjectLinks({
 }) {
   return (
     <div className={styles.projectLinks}>
-      <h3 className={styles.title}>
+      <h2 className={styles.title}>
         Links <span>Learn more on the interwebz.</span>
-      </h3>
+      </h2>
 
       <ul>
         {links.map(({ title, url, icon }) => (

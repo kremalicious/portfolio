@@ -9,7 +9,12 @@ export const NetworkLink = ({ name, url }: { name: string; url: string }) => {
 
   return (
     <LazyMotion features={domAnimation}>
-      <m.a variants={moveInTop} className={linkClasses} href={url}>
+      <m.a
+        aria-label={name}
+        variants={moveInTop}
+        className={linkClasses}
+        href={url}
+      >
         <Icon name={name} />
         <span className={styles.title}>{name}</span>
       </m.a>
