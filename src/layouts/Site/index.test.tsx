@@ -1,8 +1,6 @@
 import { render, screen, act } from '@testing-library/react'
 import Site from '.'
 import { dataLocation } from '../../../tests/__fixtures__/location'
-
-jest.mock('@socialgouv/matomo-next')
 ;(global.fetch as jest.Mock) = jest.fn(() =>
   Promise.resolve({
     ok: true,

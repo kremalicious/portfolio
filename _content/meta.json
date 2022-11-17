@@ -10,8 +10,6 @@
   "gpg": "/gpg.txt",
   "addressbook": "/matthias-kretschmann.vcf",
   "bugs": "https://github.com/kremalicious/portfolio/issues/new",
-  "matomoUrl": "https://analytics.kremalicious.com",
-  "matomoSite": "2",
   "allowedHosts": [
     "matthiaskretschmann.com",
     "beta.matthiaskretschmann.com",
