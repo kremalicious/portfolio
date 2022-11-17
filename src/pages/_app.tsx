@@ -1,15 +1,11 @@
-import type { AppProps, NextWebVitalsMetric } from 'next/app'
+import type { AppProps } from 'next/app'
 import '../styles/global.css'
 import Site from '../layouts/Site'
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <Site>
-      <Component {...pageProps} key={router.asPath} />
+      <Component {...pageProps} />
     </Site>
   )
 }
-
-// export function reportWebVitals(metric: NextWebVitalsMetric) {
-//   console.info(metric)
-// }

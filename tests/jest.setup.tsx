@@ -7,7 +7,7 @@ import './__mocks__/matchMedia'
 jest.mock('next/router', () => ({
   useRouter: jest.fn().mockImplementation(() => ({
     route: '/',
-    asPath: '/'
+    pathname: '/'
   }))
 }))
 

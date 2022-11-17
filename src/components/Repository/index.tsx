@@ -1,4 +1,3 @@
-import React from 'react'
 import Repo from '../../interfaces/repo'
 import Icon from '../Icon'
 import styles from './index.module.css'

@@ -1,5 +1,3 @@
-import React from 'react'
-
 // https://featherstyles.com
 // import * as Feather from '@kremalicious/react-feather'
 import {

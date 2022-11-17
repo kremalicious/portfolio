@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import { forwardRef, ForwardedRef } from 'react'
 import Link from 'next/link'
 import ProjectImage from '../ProjectImage'
 import styles from './index.module.css'
@@ -7,7 +7,7 @@ import ProjectType from '../../interfaces/project'
 export const Project = forwardRef(
   (
     { project }: { project: ProjectType },
-    ref: React.ForwardedRef<HTMLAnchorElement>
+    ref: ForwardedRef<HTMLAnchorElement>
   ) => (
     <Link
       className={`${styles.item} ${ref ? styles.current : null}`}
