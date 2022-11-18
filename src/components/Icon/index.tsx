@@ -1,5 +1,5 @@
 // https://featherstyles.com
-// import * as Feather from '@kremalicious/react-feather'
+// import * as Feather from 'react-feather'
 import {
   ArrowDownCircle,
   Edit,
@@ -21,7 +21,7 @@ import {
   Star,
   Info,
   Dribbble
-} from '@kremalicious/react-feather'
+} from 'react-feather'
 import styles from './index.module.css'
 
 export default function Icon({ name, ...props }: { name: string }) {
