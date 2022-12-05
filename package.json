@@ -24,7 +24,7 @@
     "favicon": "ts-node-esm ./scripts/favicon.ts"
   },
   "dependencies": {
-    "@giphy/js-fetch-api": "^4.4.0",
+    "@giphy/js-fetch-api": "^4.6.0",
     "@yaireo/relative-time": "^1.0.2",
     "file-saver": "^2.0.5",
     "framer-motion": "^7.6.12",
