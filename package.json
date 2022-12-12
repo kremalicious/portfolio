@@ -53,7 +53,7 @@
     "js-yaml": "^4.1.0",
     "ora": "^6.1.2",
     "prepend": "^1.0.2",
-    "prettier": "^2.8.0",
+    "prettier": "^2.8.1",
     "sharp": "^0.31.2",
     "sharp-ico": "^0.1.5",
     "slugify": "^1.6.5",
