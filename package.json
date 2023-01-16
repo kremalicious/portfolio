@@ -43,7 +43,7 @@
     "@testing-library/react": "^13.4.0",
     "@types/jest": "^29.2.5",
     "@types/js-yaml": "^4.0.5",
-    "@types/sharp": "^0.31.0",
+    "@types/sharp": "^0.31.1",
     "chalk": "^5.2.0",
     "eslint": "^8.31.0",
     "eslint-config-next": "^13.1.2",
