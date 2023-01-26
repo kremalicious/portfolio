@@ -14,6 +14,7 @@ export const NetworkLink = ({ name, url }: { name: string; url: string }) => {
         variants={moveInTop}
         className={linkClasses}
         href={url}
+        rel="me"
       >
         <Icon name={name} />
         <span className={styles.title}>{name}</span>

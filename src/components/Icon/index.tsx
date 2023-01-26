@@ -22,6 +22,7 @@ import {
   Info,
   Dribbble
 } from 'react-feather'
+import Mastodon from '../../images/mastodon.svg'
 import styles from './index.module.css'
 
 export default function Icon({ name, ...props }: { name: string }) {
@@ -52,7 +53,8 @@ export default function Icon({ name, ...props }: { name: string }) {
     Award,
     BookOpen,
     Star,
-    Info
+    Info,
+    Mastodon
   }
 
   const IconMapped = components[name]

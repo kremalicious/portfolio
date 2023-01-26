@@ -12,19 +12,24 @@
         "url": "https://kremalicious.com"
       },
       {
-        "network": "Twitter",
-        "username": "kremalicious",
-        "url": "https://twitter.com/kremalicious"
+        "network": "Mastodon",
+        "username": "@krema@mas.to",
+        "url": "https://mas.to/@krema"
       },
       {
         "network": "GitHub",
         "username": "kremalicious",
         "url": "https://github.com/kremalicious"
+      },
+      {
+        "network": "Twitter",
+        "username": "kremalicious",
+        "url": "https://twitter.com/kremalicious"
       }
     ],
     "location": {
-      "city": "Berlin",
-      "countryCode": "DE"
+      "city": "Lisboa",
+      "countryCode": "PT"
     }
   },
   "work": [
