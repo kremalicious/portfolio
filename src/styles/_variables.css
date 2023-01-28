@@ -58,6 +58,8 @@
   --box-shadow: 0 1.3px 5.4px rgba(1, 85, 101, 0.15);
   /* --box-shadow: 0 1.3px 5.4px rgba(1, 85, 101, 0.15),
     0 4.5px 18.1px rgba(1, 85, 101, 0.05), 0 20px 81px rgba(1, 85, 101, 0.025); */
+
+  --theme-color: #e7eef4;
 }
 
 .dark {
@@ -72,4 +74,6 @@
   --text-color-dimmed: var(--brand-grey-dark);
   --border-color: var(--brand-grey-dark);
   --color-headings: var(--brand-main-light);
+
+  --theme-color: #1d2224;
 }
