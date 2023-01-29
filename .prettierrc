@@ -3,6 +3,7 @@
   "singleQuote": true,
   "trailingComma": "none",
   "tabWidth": 2,
+  "endOfLine": "lf",
   "importOrder": [
     "^(react/(.*)$)|^(react$)",
     "^(next/(.*)$)|^(next$)",
