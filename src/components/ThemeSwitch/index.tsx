@@ -1,11 +1,12 @@
-import styles from './index.module.css'
-import Head from 'next/head'
-import { useTheme } from 'next-themes'
-import { useState, useEffect } from 'react'
-import * as Select from '@radix-ui/react-select'
 import Icon from '../Icon'
+import styles from './index.module.css'
+import * as Select from '@radix-ui/react-select'
+import { useTheme } from 'next-themes'
+import Head from 'next/head'
+import { useState, useEffect } from 'react'
+import { Item } from './Item'
 
-function getIconName(theme: string) {
+export function getIconName(theme: string) {
   return theme === 'light' ? 'Sun' : theme === 'dark' ? 'Moon' : 'Monitor'
 }
 
@@ -46,26 +47,11 @@ export default function ThemeSwitch() {
 
             <Select.Portal>
               <Select.Content className={styles.content} position="popper">
+                <Select.Arrow className={styles.arrow} width={14} height={7} />
                 <Select.Viewport className={styles.viewport}>
-                  {themes.map((theme) => (
-                    <Select.Item
-                      key={theme}
-                      value={theme}
-                      className={styles.item}
-                    >
-                      <Select.ItemIndicator className={styles.itemIndicator}>
-                        <Icon name="Check" />
-                      </Select.ItemIndicator>
-
-                      <Select.Icon className={styles.itemIcon}>
-                        <Icon name={getIconName(theme)} />
-                      </Select.Icon>
-
-                      <Select.ItemText className={styles.itemText}>
-                        {theme}
-                      </Select.ItemText>
-                    </Select.Item>
-                  ))}
+                  {themes
+                    .map((theme) => <Item key={theme} theme={theme}></Item>)
+                    .reverse()}
                 </Select.Viewport>
               </Select.Content>
             </Select.Portal>

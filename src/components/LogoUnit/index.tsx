@@ -13,6 +13,8 @@ export default function LogoUnit({ small }: Props) {
   const { pathname } = router
   const isHome = pathname === '/'
 
+  const H = small ? 'h2' : 'h1'
+
   return (
     <Link
       className={`${styles.logounit} ${small ? styles.small : null}`}
@@ -20,9 +22,9 @@ export default function LogoUnit({ small }: Props) {
       aria-current={isHome ? 'page' : null}
     >
       <Logo className={styles.logo} />
-      <h1 className={`p-name ${styles.title}`}>
+      <H className={`p-name ${styles.title}`}>
         {resume.basics.name.toLowerCase()}
-      </h1>
+      </H>
       <p className={`p-job-title ${styles.description}`}>
         {resume.basics.label.toLowerCase()}
       </p>

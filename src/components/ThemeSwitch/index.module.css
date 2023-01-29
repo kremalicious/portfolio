@@ -39,54 +39,37 @@
 }
 
 .content {
-  overflow: hidden;
   padding: calc(var(--spacer) / 3);
   background-color: var(--box-background-color);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+  border: 1px solid var(--text-color-dimmed);
+  animation-duration: 0.2s;
+  animation-timing-function: var(--easing);
+  will-change: transform, opacity;
 }
 
-.item {
-  font-size: var(--font-size-small);
-  color: var(--text-color);
-  position: relative;
-  padding: calc(var(--spacer) / 8) var(--spacer);
-  padding-left: var(--spacer);
-  padding-right: var(--spacer);
-  user-select: none;
-  border-radius: calc(var(--border-radius) / 1.5);
-  display: flex;
-  align-items: center;
+.content[data-state='open'] {
+  animation-name: slideUpAndFade;
 }
 
-.item[data-highlighted] {
-  outline: none;
-  background-color: var(--text-color);
-  color: var(--body-background-color);
-  cursor: default;
-}
-
-.item span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.itemIndicator {
-  position: absolute;
-  left: 0;
-  width: var(--spacer);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.itemIcon {
-  margin-right: calc(var(--spacer) / 4);
+.arrow {
+  fill: var(--text-color-dimmed);
 }
 
 @media print {
   .themeSwitch {
     display: none;
+  }
+}
+
+@keyframes slideUpAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

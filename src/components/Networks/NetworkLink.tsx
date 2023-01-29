@@ -1,6 +1,6 @@
 import Icon from '../Icon'
 import styles from './index.module.css'
-import { LazyMotion, m, domAnimation, useReducedMotion } from 'framer-motion'
+import { LazyMotion, m, domAnimation } from 'framer-motion'
 import { moveInTop } from '../Transitions'
 
 export const NetworkLink = ({ name, url }: { name: string; url: string }) => {
