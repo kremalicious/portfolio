@@ -86,11 +86,10 @@ If you want to know how, have a look at the respective components:
 
 ### 💅 Theme switcher
 
-Includes a theme switcher which allows user to toggle between a light and a dark theme. Switching between them also happens automatically based on user's system preferences.
+Includes a theme switcher which allows user to toggle between a light and a dark theme. Switching between them also happens automatically based on user's system preferences. Uses [next-themes](https://github.com/pacocoursey/next-themes) under the hood.
 
-If you want to know how, have a look at the respective components:
+If you want to know how, have a look at the respective component:
 
-- [`src/hooks/useDarkMode.ts`](src/hooks/useDarkMode.ts)
 - [`src/components/ThemeSwitch/index.tsx`](src/components/ThemeSwitch/index.tsx)
 
 ### 🏆 SEO component
