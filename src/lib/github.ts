@@ -1,12 +1,12 @@
+import data from '../../_content/repos.json'
+import Repo from '../interfaces/repo'
+
 //
 // Get GitHub repos
 //
 if (!process.env.GITHUB_TOKEN) {
   throw new Error('Missing GitHub environment variable')
 }
-
-import data from '../../_content/repos.json'
-import Repo from '../interfaces/repo'
 
 const gitHubConfig = {
   headers: {

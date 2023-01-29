@@ -1,7 +1,7 @@
-import Icon from '../Icon'
 import * as Select from '@radix-ui/react-select'
-import { getIconName } from './index'
+import Icon from '../Icon'
 import styles from './Item.module.css'
+import { getIconName } from './index'
 
 export function Item({ theme }: { theme: string }) {
   return (

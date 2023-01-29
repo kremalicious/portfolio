@@ -1,9 +1,9 @@
-import LogoUnit from '../LogoUnit'
-import Networks from '../Networks'
-import styles from './index.module.css'
 import meta from '../../../_content/meta.json'
 import resume from '../../../_content/resume.json'
+import LogoUnit from '../LogoUnit'
+import Networks from '../Networks'
 import Vcard from '../Vcard'
+import styles from './index.module.css'
 
 export default function Footer() {
   const year = new Date().getFullYear()

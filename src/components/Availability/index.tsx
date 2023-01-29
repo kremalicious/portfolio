@@ -1,7 +1,7 @@
-import { useReducedMotion, LazyMotion, domAnimation, m } from 'framer-motion'
-import { moveInBottom, getAnimationProps } from '../Transitions'
-import styles from './index.module.css'
+import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
 import meta from '../../../_content/meta.json'
+import { getAnimationProps, moveInBottom } from '../Transitions'
+import styles from './index.module.css'
 
 export default function Availability() {
   const shouldReduceMotion = useReducedMotion()

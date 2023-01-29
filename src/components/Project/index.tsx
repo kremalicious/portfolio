@@ -1,11 +1,11 @@
-import ProjectTechstack from './Techstack'
-import ProjectLinks from './Links'
+import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
 import type ImageType from '../../interfaces/image'
 import type ProjectType from '../../interfaces/project'
 import ProjectImage from '../ProjectImage'
-import styles from './index.module.css'
-import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
 import { getAnimationProps, moveInBottom, moveInTop } from '../Transitions'
+import ProjectLinks from './Links'
+import ProjectTechstack from './Techstack'
+import styles from './index.module.css'
 
 const containerVariants = {
   enter: {

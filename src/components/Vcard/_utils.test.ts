@@ -1,6 +1,6 @@
-import { constructVcard, toDataURL, init } from './_utils'
 import meta from '../../../_content/meta.json'
 import resume from '../../../_content/resume.json'
+import { constructVcard, init, toDataURL } from './_utils'
 
 const metaMock = {
   ...meta,

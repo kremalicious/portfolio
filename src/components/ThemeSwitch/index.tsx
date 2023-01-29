@@ -1,10 +1,10 @@
-import Icon from '../Icon'
-import styles from './index.module.css'
+import { useEffect, useState } from 'react'
+import Head from 'next/head'
 import * as Select from '@radix-ui/react-select'
 import { useTheme } from 'next-themes'
-import Head from 'next/head'
-import { useState, useEffect } from 'react'
+import Icon from '../Icon'
 import { Item } from './Item'
+import styles from './index.module.css'
 
 export function getIconName(theme: string) {
   return theme === 'light' ? 'Sun' : theme === 'dark' ? 'Moon' : 'Monitor'

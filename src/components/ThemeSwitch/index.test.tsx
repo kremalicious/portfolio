@@ -1,4 +1,4 @@
-import { render, fireEvent, cleanup, waitFor } from '@testing-library/react'
+import { cleanup, fireEvent, render, waitFor } from '@testing-library/react'
 import ThemeSwitch from '.'
 
 describe('ThemeSwitch', () => {

@@ -1,14 +1,14 @@
 import { GetStaticPaths, GetStaticProps } from 'next/types'
+import resume from '../../_content/resume.json'
+import Project from '../components/Project'
+import ProjectNav from '../components/ProjectNav'
+import type ProjectType from '../interfaces/project'
+import Page from '../layouts/Page'
 import {
-  getProjectBySlug,
   getAllProjects,
+  getProjectBySlug,
   getProjectSlugs
 } from '../lib/content'
-import type ProjectType from '../interfaces/project'
-import Project from '../components/Project'
-import resume from '../../_content/resume.json'
-import ProjectNav from '../components/ProjectNav'
-import Page from '../layouts/Page'
 
 type Props = {
   project: ProjectType

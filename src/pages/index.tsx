@@ -1,13 +1,13 @@
-import { getAllProjects } from '../lib/content'
-import Project from '../interfaces/project'
+import { GetStaticProps } from 'next/types'
 import meta from '../../_content/meta.json'
 import resume from '../../_content/resume.json'
 import Projects from '../components/Projects'
-import { GetStaticProps } from 'next/types'
-import { getGithubRepos } from '../lib/github'
-import Repo from '../interfaces/repo'
 import Repositories from '../components/Repositories'
+import Project from '../interfaces/project'
+import Repo from '../interfaces/repo'
 import Page from '../layouts/Page'
+import { getAllProjects } from '../lib/content'
+import { getGithubRepos } from '../lib/github'
 
 type Props = {
   projects: Project[]

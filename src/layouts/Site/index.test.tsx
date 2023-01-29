@@ -1,4 +1,4 @@
-import { render, screen, act } from '@testing-library/react'
+import { act, render, screen } from '@testing-library/react'
 import Site from '.'
 
 describe('Site', () => {

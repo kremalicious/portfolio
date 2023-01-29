@@ -1,6 +1,6 @@
 import fs from 'fs'
-import { join } from 'path'
 import yaml from 'js-yaml'
+import { join } from 'path'
 import sharp from 'sharp'
 import type ImageType from '../interfaces/image'
 import type ProjectType from '../interfaces/project'

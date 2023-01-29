@@ -1,8 +1,8 @@
-import styles from './index.module.css'
-import resume from '../../../_content/resume.json'
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
+import resume from '../../../_content/resume.json'
 import { getAnimationProps } from '../Transitions'
 import { NetworkLink } from './NetworkLink'
+import styles from './index.module.css'
 
 type Props = {
   label: string

@@ -1,4 +1,4 @@
-import { render, fireEvent, waitFor, screen } from '@testing-library/react'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import Vcard from '.'
 
 describe('Vcard', () => {

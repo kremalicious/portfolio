@@ -1,7 +1,7 @@
-import { useEffect, createRef } from 'react'
-import styles from './index.module.css'
+import { createRef, useEffect } from 'react'
 import ProjectType from '../../interfaces/project'
 import { Project } from './Project'
+import styles from './index.module.css'
 
 type Props = {
   projects: { slug: string }[]

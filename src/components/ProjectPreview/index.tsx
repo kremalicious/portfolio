@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import styles from './index.module.css'
-import ProjectImage from '../ProjectImage'
 import ImageType from '../../interfaces/image'
+import ProjectImage from '../ProjectImage'
+import styles from './index.module.css'
 
 type Props = {
   title: string

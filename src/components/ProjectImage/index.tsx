@@ -1,12 +1,12 @@
+import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import {
-  domAnimation,
   LazyMotion,
+  domAnimation,
   m,
   useAnimation,
   useReducedMotion
 } from 'framer-motion'
-import Image from 'next/image'
-import { useState, useEffect } from 'react'
 import ImageType from '../../interfaces/image'
 import { getAnimationProps } from '../Transitions'
 import styles from './index.module.css'

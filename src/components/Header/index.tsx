@@ -1,9 +1,9 @@
-import Networks from '../Networks'
+import { Suspense } from 'react'
+import dynamic from 'next/dynamic'
 import Availability from '../Availability'
 import LogoUnit from '../LogoUnit'
+import Networks from '../Networks'
 import styles from './index.module.css'
-import dynamic from 'next/dynamic'
-import { Suspense } from 'react'
 
 const DynamicLocation = dynamic(() => import('../Location'), {
   suspense: true

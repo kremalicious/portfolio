@@ -1,9 +1,9 @@
-import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
-import { getAnimationProps, moveInTop } from '../Transitions'
-import styles from './index.module.css'
-import { useLocation } from '../../hooks/useLocation'
 import RelativeTime from '@yaireo/relative-time'
+import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
+import { useLocation } from '../../hooks/useLocation'
+import { getAnimationProps, moveInTop } from '../Transitions'
 import { Flag } from './Flag'
+import styles from './index.module.css'
 
 export default function Location() {
   const { now, next } = useLocation()

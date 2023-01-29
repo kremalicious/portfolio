@@ -1,5 +1,5 @@
-import ProjectPreview from '../ProjectPreview'
 import ProjectType from '../../interfaces/project'
+import ProjectPreview from '../ProjectPreview'
 import styles from './index.module.css'
 
 type Props = {

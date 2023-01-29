@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app'
-import '../styles/global.css'
-import Site from '../layouts/Site'
 import { ThemeProvider } from 'next-themes'
+import Site from '../layouts/Site'
+import '../styles/global.css'
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
   return (

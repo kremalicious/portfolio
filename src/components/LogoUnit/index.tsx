@@ -1,8 +1,8 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import resume from '../../../_content/resume.json'
 import Logo from '../../images/logo.svg'
 import styles from './index.module.css'
-import resume from '../../../_content/resume.json'
-import { useRouter } from 'next/router'
 
 type Props = {
   small?: boolean
