@@ -1,71 +1,54 @@
-// https://featherstyles.com
-// import * as Feather from 'react-feather'
+// https://lucide.dev
 import {
   ArrowDownCircle,
-  Award,
-  BookOpen,
-  Briefcase,
   Check,
   ChevronDown,
   Compass,
-  Dribbble,
-  Edit,
+  Contrast,
+  Feather,
   FileText,
-  GitHub,
+  Github,
   Globe,
   Image,
   Info,
-  Key,
   Mail,
-  MapPin,
-  Monitor,
   Moon,
-  Rss,
   Star,
   Sun,
   Twitter
-} from 'react-feather'
+} from 'lucide-react'
 import Mastodon from '../../images/mastodon.svg'
 import styles from './index.module.css'
 
 export default function Icon({ name, ...props }: { name: string }) {
   const components = {
-    Dribbble,
     Email: Mail,
     Link: Compass,
     Download: ArrowDownCircle,
     'Info & Download': ArrowDownCircle,
     Styleguide: FileText,
-    Blog: Edit,
-    Keybase: Key,
+    Blog: Feather,
     ArrowDownCircle,
-    Edit,
-    GitHub,
+    GitHub: Github,
     Twitter,
-    Rss,
     Sun,
     Moon,
     Compass,
     FileText,
-    Key,
     Image,
     Mail,
-    MapPin,
     Globe,
-    Briefcase,
-    Award,
-    BookOpen,
     Star,
     Info,
     Mastodon,
     ChevronDown,
     Check,
-    Monitor
+    Contrast
   }
 
   const IconMapped = components[name]
-  // const IconComp = Feather[name]
-  if (!IconMapped) return null
 
-  return <IconMapped className={`${styles.icon} ${styles[name]}`} {...props} />
+  return IconMapped ? (
+    <IconMapped className={`${styles.icon} ${styles[name]}`} {...props} />
+  ) : null
 }

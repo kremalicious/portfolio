@@ -7,7 +7,7 @@ import { Item } from './Item'
 import styles from './index.module.css'
 
 export function getIconName(theme: string) {
-  return theme === 'light' ? 'Sun' : theme === 'dark' ? 'Moon' : 'Monitor'
+  return theme === 'light' ? 'Sun' : theme === 'dark' ? 'Moon' : 'Contrast'
 }
 
 export default function ThemeSwitch() {
