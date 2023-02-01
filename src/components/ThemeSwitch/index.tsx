@@ -46,7 +46,11 @@ export default function ThemeSwitch() {
             </Select.Trigger>
 
             <Select.Portal>
-              <Select.Content className={styles.content} position="popper">
+              <Select.Content
+                className={styles.content}
+                position="popper"
+                align="end"
+              >
                 <Select.Arrow className={styles.arrow} width={14} height={7} />
                 <Select.Viewport className={styles.viewport}>
                   {themes
