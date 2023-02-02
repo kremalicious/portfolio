@@ -20,7 +20,7 @@ export const useLocation = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch('https://location.kremalicious.com')
+        const response = await fetch('https://location.kretschmann.io')
         const data = await response.json()
         if (!data) return
         setLocation(data)
