@@ -27,6 +27,6 @@ describe('ThemeSwitch', () => {
 
     theme = 'system'
     const icon3 = getIconName(theme)
-    expect(icon3).toBe('Monitor')
+    expect(icon3).toBe('Contrast')
   })
 })

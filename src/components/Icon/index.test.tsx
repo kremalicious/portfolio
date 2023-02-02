@@ -6,9 +6,6 @@ describe('Icon', () => {
     const { container, rerender } = render(<Icon name={'Compass'} />)
     expect(container.firstChild.nodeName).toBe('svg')
 
-    rerender(<Icon name={'Dribbble'} />)
-    expect(container.firstChild.nodeName).toBe('svg')
-
     rerender(<Icon name={'Download'} />)
     expect(container.firstChild.nodeName).toBe('svg')
 
