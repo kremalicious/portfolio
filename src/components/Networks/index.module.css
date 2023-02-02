@@ -12,11 +12,12 @@
 }
 
 .link {
-  margin-left: calc(var(--spacer) / var(--line-height));
-  margin-right: calc(var(--spacer) / var(--line-height));
+  margin-left: var(--spacer);
+  margin-right: var(--spacer);
   margin-bottom: calc(var(--spacer) / 2);
   text-align: center;
   display: inline-block;
+  width: 24px;
 }
 
 .link svg {
@@ -44,10 +45,10 @@
 }
 
 .small .link {
-  padding: calc(var(--spacer) / 4);
-  margin-left: calc(var(--spacer) / 7);
-  margin-right: calc(var(--spacer) / 7);
+  margin-left: calc(var(--spacer) / 2);
+  margin-right: calc(var(--spacer) / 2);
   margin-bottom: calc(var(--spacer) / 4);
+  width: var(--font-size-base);
 }
 
 .small svg {
