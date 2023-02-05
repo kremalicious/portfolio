@@ -1,11 +1,13 @@
 - title: Ocean Market
   slug: oceanprotocol-market
   description: |
-    As part of Ocean Protocol v3, I was leading the planning and execution of the Ocean Market product and decentralized web app in 2020. Ocean Market allows simple tokenization, secure sharing, and monetization of data assets within the Ethereum network with the help of data tokens.
+    As part of Ocean Protocol v3, I was leading the planning and execution of the Ocean Market product and decentralized web app in 2020. 
 
-    Assets can be exposed to dynamic price discovery by attaching Automated Market Maker (AMM) pools to them. Metadata is stored on-chain, and all actions like downloading or Compute-to-Data are done via exchanging data tokens, creating trustless provenance records in the process.
+    Ocean Market allows for seamless tokenization, sharing, and monetization of valuable data assets within EVM-compatible networks through the use of data tokens.
 
-    The market project is open-source and has been forked and used to create further data marketplaces on top of Ocean Protocol.
+    Assets can be exposed to dynamic price discovery by attaching Automated Market Maker (AMM) pools to them. All metadata is securely stored on the blockchain, and every action - from downloading to Compute-to-Data - is done through exchanging data tokens, establishing a trustless chain of provenance records.
+
+    Not only is Ocean Market open-source, but it has also inspired the creation of other data marketplaces built on top of Ocean Protocol.
   links:
     - title: Ocean Makes Multi-Network Even Easier
       icon: FileText
@@ -30,12 +32,13 @@
     - 3Box
     - Polygon
     - Binance Smart Chain
+
 - title: Ocean Protocol - IPFS Integration
   slug: oceanprotocol-ipfs
   description: |
-    In 2019 I was leading the integration of IPFS into the Ocean Protocol stack, from the core to the libraries, up to the UI in multiple touchpoints. 
+    In 2019 I took on the challenge of seamlessly integrating IPFS into the Ocean Protocol stack, from the core all the way up to multiple touchpoints in the UI. 
 
-    For making IPFS as decentralized file storage solution as seemless as possible to use within Ocean Protocol, a public IPFS node was created with a simple user-facing UI and API. The integration was completed by allowing users to add their files to IPFS directly in the [Commons](/oceanprotocol-commons/) publish flow.
+    For making IPFS as decentralized file storage solution as seemless as possible to use within Ocean Protocol, a public IPFS node was created with a simple user-facing UI and API. This was followed by allowing users to effortlessly add their files to IPFS directly through the convenient publish flow in [Commons](/oceanprotocol-commons/).
   links:
     - title: 'Ocean Protocol and IPFS, Sitting In The Merkle Tree'
       icon: FileText
@@ -57,14 +60,15 @@
     - Kubernetes
     - Jest
     - IPFS
+
 - title: Ocean Protocol - Commons
   slug: oceanprotocol-commons
   description: |
-    From 2018–⁠2019 I was leading the design and development of the Commons marketplace, a Web3 data marketplace to explore, download, and publish open data sets registered in the [Ocean Protocol](/oceanprotocol) network.
+    From 2018 to 2019, I was leading the design and development of the Commons marketplace - a groundbreaking decentralized platform for exploring, downloading, and publishing open data sets on the [Ocean Protocol](/oceanprotocol) network.
 
-    As the main front-facing UI of Ocean Protocol v1 & v2, it served as a product and showcase bringing together the complete Ocean Protocol stack in a simple interface. Additionally, the project was created with developers in mind, making Commons the most complete boilerplate for creating dApps on top of Ocean Protocol.
+    Serving as the main face of Ocean Protocol v1 & v2, the Commons marketplace not only provided a simple interface for showcasing the full Ocean Protocol stack, but also acted as a valuable resource for developers. It was designed with the developer community in mind, making it the most comprehensive boilerplate for building dApps on top of Ocean Protocol.
 
-    With the release of Ocean Protocol v3, Commons has been superseded by [Ocean Market](/oceanprotocol-market/).
+    With the advent of Ocean Protocol v3, the Commons marketplace has been succeeded by [Ocean Market](/oceanprotocol-market/).
   links:
     - title: The Commons Marketplace in Pacific Network
       icon: FileText
@@ -90,14 +94,15 @@
     - Cypress
     - Jest
     - IPFS
+
 - title: Ocean Protocol v1
   slug: oceanprotocol-v1
   description: |
-    Since 2017 I'm leading the UI design & development of Ocean Protocol, iterating on a components-based UI design system spanning all of Ocean Protocol's web properties. Additionally, I conceptualize, execute and iterate on the creative and visual direction of the Ocean Protocol brand.
+    Between 2017 and 2020, I led the UI design and development of Ocean Protocol, constantly refining its components-based UI design system across all of its web properties. In addition to that, I conceptualized, executed and iterated on the creative and visual direction of the Ocean Protocol brand.
 
-    Most web interfaces are single-page JavaScript applications built with React, pulling their data from multiple sources. All design & development is embedded in continuous deployment processes via GitHub, Travis, Kubernetes, and Vercel.
+    The web interfaces were mostly single-page JavaScript applications built with React, with data pulled from multiple sources for seamless user experiences. Design and development was integrated into a continuous deployment process.
 
-    In 2020 I was leading the refresh of Ocean Protocol's visual identity for the release of v3 and the [Ocean Market](/oceanprotocol-market/).
+    In 2020, I spearheaded the refresh of Ocean Protocol's visual identity in advance of the v3 release and the launch of [Ocean Market](/oceanprotocol-market/).
 
     Initial website in collaboration with [Balance](https://balance.io/). Key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
   links:
@@ -132,12 +137,13 @@
     - Docker
     - Kubernetes
     - IPFS
+
 - title: IPDB
   slug: ipdb
   description: |
-    From 2015–2017 I was leading the UI design & development of all IPDB web properties and additionally iterated on the creative and visual direction of the IPDB brand.
+    Between 2015 and 2017, I took the lead in the UI design and development of all IPDB web properties, as well as iterating on the creative and visual direction of the IPDB brand.
 
-    The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it. All design & development is embedded in a continuous deployment process via GitHub & Travis.
+    The main website was a static site built with Jekyll, with a custom Gulp-based build pipeline in place to enhance its functionality. All design and development work was integrated into a continuous deployment process, ensuring that updates were delivered smoothly and efficiently.
 
     Branding and key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
   techstack:
@@ -155,10 +161,13 @@
     - title: GitHub
       icon: GitHub
       url: 'https://github.com/ipdb/website'
+
 - title: Berlin Innovation Ventures
   slug: biv
   description: |
-    I designed & developed the website and a basic branding for the Berlin-based VC firm Berlin Innovation Ventures. The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it.
+    I designed and developed the website and basic branding for Berlin Innovation Ventures, a VC firm based in Berlin. 
+
+    The main website was a static site built with Jekyll, supported by a custom Gulp-based build pipeline for optimal performance and user experience.
   techstack:
     - Sketch
     - Jekyll
@@ -170,6 +179,7 @@
     - title: Link
       icon: Compass
       url: 'http://berlininnovation.vc'
+
 - title: 9984 >> Summit 2017
   slug: '9984'
   img: /images/9984-01.png
@@ -181,9 +191,9 @@
     - title: GitHub
       url: 'https://github.com/9984/2017.9984.io'
   description: |
-    In 2017 I was leading the UI design & development for the 9984 >> Summit, the first joint summit of BigchainDB & IPDB. Additionally, I conceptualized, executed and iterated on the creative and visual direction of the 9984 brand.
+    In 2017, I took the lead in the UI design and development for the 9984 >> Summit, which was the first joint summit of BigchainDB and IPDB. Additionally, I was responsible for conceptualizing, executing, and iterating on the creative and visual direction of the 9984 brand.
 
-    The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it. All design & development is embedded in a continuous deployment process via GitHub & Travis.
+    The main website for the summit was a static site built with Jekyll, with a custom Gulp-based build pipeline in place to enhance its functionality. All design and development work was integrated into a continuous deployment process, ensuring seamless updates and an optimal user experience.
 
     Branding and key visuals in collaboration with [Cristina Vulpe](https://www.linkedin.com/in/cristina-vulpe-41469262) & [Wojciech Hupert](https://twitter.com/wojciechhupert).
   techstack:
@@ -196,12 +206,13 @@
     - Travis
     - AWS S3
     - Cloudflare
+
 - title: BigchainDB
   slug: bigchaindb
   description: |
-    From 2016–2019 I was leading the UI design & development of all BigchainDB web properties. I created the initial BigchainDB brand and further conceptualized, executed and iterated on the creative and visual direction of BigchainDB. This included creating and iterating on a components-based UI design system for all of BigchainDB's web properties.
+    Between 2016 and 2019, I took the lead in the UI design and development for all BigchainDB web properties. I established BigchainDB's brand from the ground up, continually refining and elevating the creative and visual direction of the company. This involved creating a components-based UI design system that would be used across all BigchainDB web properties.
 
-    The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it, pulling data from various external sources and microservices. All design & development is embedded in a continuous deployment process via GitHub & Travis.
+    The main website was a statically generated site built with Jekyll and a custom Gulp-based build pipeline. Data was pulled from various external sources and microservices to create a seamless user experience. All design and development work was streamlined through a continuous deployment process.
 
     Branding & key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
   techstack:
@@ -226,12 +237,15 @@
       url: 'https://github.com/bigchaindb/site'
     - title: Dribbble
       url: 'https://dribbble.com/shots/2522184-BigchainDB-site'
+
 - title: ascribe
   slug: ascribe
   description: |
-    With ascribe, users were able to tokenize digital art and real life assets onto the Bitcoin blockchain. It was one of the very first decentralized apps using a decentralized ledger as its backend, all before Ethereum even existed. The principles around digital art as entries in a blockchain, given out in editions, would later inspire the ERC-721 NFT standard on the Ethereum blockchain. Finally, the learnings around a decentralized approach for storing structured data led to the creation of [BigchainDB](/bigchaindb).
+    Between 2015-2017, I was involved in the UI development of various web touch points for ascribe. The main web app was built using one of the early versions of React.
 
-    From 2015-2017 I worked on the UI development for multiple web touch points, including the main web app built with one of the first versions of React. The service and web app was [discontinued in 2017](https://www.ascribe.io/).
+    As a pioneer in the digital art world, ascribe allowed users to tokenize digital art and real-life assets onto the Bitcoin blockchain, becoming one of the earliest decentralized apps to utilize a decentralized ledger. These principles inspired the ERC-721 NFT standard on the Ethereum blockchain and later led to the creation of [BigchainDB](/bigchaindb).
+
+    However, the service and web app were [discontinued in 2017](https://www.ascribe.io/).
 
     Branding & key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
   techstack:
@@ -253,16 +267,19 @@
       url: 'https://www.ascribe.io'
     - title: GitHub
       url: 'https://github.com/ascribe'
+
 - title: ChartMogul
   slug: chartmogul
   description: |
-    From 2015–2017 I was co-designing and leading the UI design & development of various ChartMogul web properties. This included the creation of a components-based UI design system and implementing it across all web touch points.
+    Between 2015 and 2017, I was co-designing and leading the UI design & development for various web properties of ChartMogul. I played a key role in creating a components-based UI design system and incorporating it across all web touchpoints.
 
-    The main website with its landing pages is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it, while the blog is running on WordPress with its own custom theme. All embedded in an automated development & deployment workflow via GitHub and Travis.
+    [ChartMogul](https://chartmogul.com) is a SaaS platform that provides analytics and business intelligence solutions for subscription-based businesses. It helps businesses to track, analyze, and visualize important metrics and trends to make informed decisions and optimize their growth.
 
-    Besides designing and implementing new features, I maintained the front-end of the ChartMogul application and implemented the UI design system by refactoring most of its front-end codebase.
+    The main website, including landing pages, was built as a static site using Jekyll and a custom Gulp-based build pipeline. Meanwhile, the blog was powered by WordPress with a custom theme.
 
-    All branding, design & key visuals directed by Michelle Myung.
+    In addition to designing and implementing new features, I also maintained the front-end of the ChartMogul application and refactored most of its front-end codebase.
+
+    Michelle Myung was responsible for directing the branding, design, and key visuals of ChartMogul.
   techstack:
     - Sketch
     - Affinity Designer
@@ -286,12 +303,15 @@
       url: 'https://chartmogul.com/styleguide'
     - title: Dribbble
       url: 'https://dribbble.com/kremalicious/projects/311439-ChartMogul'
+
 - title: ShareTheMeal
   slug: sharethemeal
   description: |
-    ShareTheMeal is an app from the United Nations World Food Programme (WFP) that enables people to "share their meals" with children in need. In 2015 I was consulting, co-designing and leading the front-end development of the ShareTheMeal website and various parts of the ShareTheMeal apps for iOS & Android.
+    Between 2015 and 2017, I consulted the ShareTheMeal project, co-designing and leading the front-end development of their website and mobile apps for iOS and Android.
 
-    The main website is a static site built with Jekyll and a custom Gulp-based build pipeline in front of it, embedded in a continuous deployment process via GitHub & Travis.
+    ShareTheMeal is an app from the United Nations World Food Programme (WFP) that allows individuals to make a difference by "sharing their meals" with children in need.
+
+    During this time, I worked to develop the main website using Jekyll and a custom Gulp-based build pipeline, embedded in a continuous deployment process.
   techstack:
     - Sketch
     - Illustrator
@@ -307,12 +327,15 @@
   links:
     - title: Link
       url: 'https://sharethemeal.org'
+
 - title: ezeep
   slug: ezeep
   description: |
-    From 2012–2015 I helped create an unprecedented, market-leading & award-winning user experience based on the principles of emotional design way ahead of all competitors. This included conceptualizing executing, and iterating on the creative & visual direction of the ezeep brand.
+    From 2012–2015 I helped create an unprecedented, market-leading & award-winning user experience based on the principles of emotional design way ahead of all competitors.
 
-    I was leading the UI design & development of all ezeep touch points and - as a product designer - defined the ezeep product based on user and market research in an iterative process. On top of that, I designed and helped building all app experiences of ezeep on Windows, macOS, iOS, and Android.
+    As a pioneering cloud printing provider, ezeep offered innovative software to effortlessly integrate printing capabilities into a wide range of devices.
+
+    I led the design and development of all ezeep touchpoints and was responsible for the creative and visual direction of the ezeep brand. As a product designer, I also defined the ezeep product based on user and market research, and helped in designing and building the ezeep app for various platforms like Windows, macOS, iOS, and Android.
 
     ezeep was acquired by [Cortado AG](https://www.cortado.com) in 2015 and became part of their [ThinPrint Cloud Services](https://www.thinprintcloud.com) suite of products.
   techstack:
@@ -336,12 +359,16 @@
       url: 'https://kremalicious.com/enterprise-software-sucks'
     - title: Dribbble
       url: 'https://dribbble.com/kremalicious/projects/84318-ezeep'
+
 - title: Mr. Reader
   slug: mrreader
   description: |
-    While working with indy iOS developer Curious Times in 2012, I designed the app icon, a custom theme, and various promotion materials for Mr. Reader, a powerful and highly loved RSS feed reader for iPad.
+    During my time collaborating with the talented iOS developer at Curious Times in 2012, I had the opportunity to bring the design vision for Mr. Reader to life.
+
+    I created the iconic app icon, crafted a custom theme, and developed various promotional materials for this powerful and widely beloved RSS feed reader, designed exclusively for the iPad.
   techstack:
     - Photoshop
+
 - title: iPixelPad
   slug: ipixelpad
   description: |
@@ -353,6 +380,7 @@
   links:
     - title: Info & Download
       url: 'https://kremalicious.com/ipixelpad'
+
 - title: Out Of Whale Oil
   slug: outofwhaleoil
   description: |
@@ -365,9 +393,9 @@
 - title: Martin-Luther-Universität Halle-Wittenberg
   slug: unihalle
   description: |
-    From 2009–2012 I worked at the IT services department of [Martin-Luther-Universität Halle-Wittenberg](http://www.uni-halle.de) where I conceptualized, designed & implemented numerous in-house and public facing interfaces for thousands of students and staff.
+    At [Martin-Luther-Universität Halle-Wittenberg](http://www.uni-halle.de) from 2009-2012, I was part of the IT services department where I conceptualized, designed & implemented numerous in-house and public facing interfaces that were used by thousands of students and staff.
 
-    Additionally, I conceptualized, designed, created, and maintained the blog network & community for all students & staff.
+    Additionally, I was the driving force behind the creation and maintenance of the university's blog network and community that was accessible to all students and staff.
   techstack:
     - Photoshop
     - Illustrator
@@ -384,6 +412,7 @@
       url: 'http://blogs.urz-uni-halle.de'
     - title: Dribbble
       url: 'https://dribbble.com/kremalicious/projects/690029-MLU'
+
 - title: Coffee Cup
   slug: coffeecup
   description: |
@@ -393,6 +422,7 @@
   links:
     - title: Info & Download
       url: 'https://kremalicious.com/coffee-cup-icon'
+
 - title: Project Purple
   slug: projectpurple
   description: |
@@ -404,18 +434,20 @@
   links:
     - title: Info & Download
       url: 'https://kremalicious.com/projectpurple'
+
 - title: Allinnia Creative Group
   slug: allinnia
   description: |
-    In 2009 I created the branding, website, and various key visuals for professional music production studio Allinnia Creative Group, reflecting their own musical compositions.
+    In 2009, I was tasked with creating the branding and online presence for Allinnia Creative Group, a professional music production studio. 
 
-    The website was built from scratch as a simple PHP application with a store and music listening functionality.
+    I created a website that showcased their unique musical compositions, including a store and listening functionality. I built the website from scratch as a simple PHP application, ensuring that it accurately reflected the creative spirit of the studio.
   techstack:
     - Photoshop
     - HTML
     - CSS
     - JavaScript
     - PHP
+
 - title: Aperture Loupe
   slug: apertureloupe
   description: |
@@ -431,6 +463,7 @@
   links:
     - title: Download
       url: 'https://kremalicious.com/adiumeetie'
+
 - title: Niépce's Camera Obscura
   slug: niepces-camera-obscura
   description: |

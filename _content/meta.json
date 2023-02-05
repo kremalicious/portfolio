@@ -13,7 +13,6 @@
   "allowedHosts": [
     "matthiaskretschmann.com",
     "beta.matthiaskretschmann.com",
-    "localhost",
-    "05.local"
+    "localhost"
   ]
 }
