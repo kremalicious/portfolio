@@ -1,10 +1,8 @@
+import { jest } from '@jest/globals'
 import '@testing-library/jest-dom/extend-expect'
 import 'jest-canvas-mock'
-import { jest } from '@jest/globals'
-import { useLocation } from '../src/hooks/useLocation'
-import framer from 'framer-motion'
-import { dataLocation } from './__fixtures__/location'
 import giphy from './__fixtures__/giphy.json'
+import { dataLocation } from './__fixtures__/location'
 import './__mocks__/matchMedia'
 
 jest.mock('next/router', () => ({
