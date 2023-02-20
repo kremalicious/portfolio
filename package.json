@@ -50,7 +50,7 @@
     "chalk": "^5.2.0",
     "eslint": "^8.34.0",
     "eslint-config-next": "^13.1.6",
-    "jest": "^29.4.2",
+    "jest": "^29.4.3",
     "jest-canvas-mock": "^2.4.0",
     "jest-environment-jsdom": "^29.4.2",
     "js-yaml": "^4.1.0",
