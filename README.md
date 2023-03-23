@@ -218,7 +218,7 @@ Upon live deployment, deploy script also pings search engines. GitHub requires t
 
 ## 🏛 Licenses
 
-**© Copyright 2022 Matthias Kretschmann**
+**© Copyright 2023 Matthias Kretschmann**
 
 All images and projects are plain ol' copyright, most displayed projects are subject to the copyright of their respective owners.
 
