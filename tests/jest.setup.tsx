@@ -43,5 +43,5 @@ beforeEach(() => {
 afterEach(() => {
   global.fetch = unmockedFetch
   process.env = unmockedEnv
-  jest.restoreAllMocks()
+  // jest.restoreAllMocks()
 })

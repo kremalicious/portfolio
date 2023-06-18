@@ -46,7 +46,13 @@ export default function NotFound() {
         {tag} gifs, entirely your choice.
       </p>
 
-      <video className="gif" src={gif} autoPlay loop />
+      <video
+        className="gif"
+        src={gif}
+        data-testid={gif || null}
+        autoPlay
+        loop
+      />
 
       <div>
         <Button onClick={handleClick}>{`Get another '${tag}' gif`}</Button>

@@ -1,11 +1,9 @@
-import { act, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import Header from '.'
 
 describe('Header', () => {
   it('renders correctly', async () => {
-    await act(async () => {
-      render(<Header />)
-    })
+    render(<Header />)
 
     await screen.findByText('matthias kretschmann')
     await screen.findAllByText('Lisbon')
