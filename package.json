@@ -26,7 +26,7 @@
   "dependencies": {
     "@giphy/js-fetch-api": "^5.0.0",
     "@radix-ui/react-select": "^1.2.2",
-    "@yaireo/relative-time": "^1.0.3",
+    "@yaireo/relative-time": "^1.0.4",
     "file-saver": "^2.0.5",
     "framer-motion": "^10.12.18",
     "lucide-react": "^0.259.0",
