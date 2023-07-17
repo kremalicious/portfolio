@@ -44,7 +44,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
-    "@types/jest": "^29.5.2",
+    "@types/jest": "^29.5.3",
     "@types/js-yaml": "^4.0.5",
     "chalk": "^5.2.0",
     "eslint": "^8.43.0",
