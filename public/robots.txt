@@ -1,2 +1,6 @@
+# https://platform.openai.com/docs/gptbot
+User-agent: GPTBot
+Disallow: /
+
 User-agent: *
 Disallow: /resume
