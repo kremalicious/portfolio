@@ -16,9 +16,6 @@
       icon: FileText
       url: |
         https://blog.oceanprotocol.com/ocean-market-an-open-source-community-marketplace-for-data-4b99bedacdc3
-    - title: market.oceanprotocol.com
-      icon: Compass
-      url: 'https://market.oceanprotocol.com'
     - title: '@oceanprotocol/market'
       icon: GitHub
       url: 'https://github.com/oceanprotocol/market'
@@ -44,9 +41,6 @@
       icon: FileText
       url: |
         https://kremalicious.com/ocean-protocol-and-ipfs-sitting-in-the-merkle-tree
-    - title: ipfs.oceanprotocol.com
-      icon: Compass
-      url: 'https://ipfs.oceanprotocol.com'
     - title: '@oceanprotocol/ipfs'
       icon: GitHub
       url: 'https://github.com/oceanprotocol/ipfs'
@@ -76,9 +70,6 @@
     - title: The Commons Marketplace
       icon: FileText
       url: 'https://kremalicious.com/the-commons-marketplace'
-    - title: commons.oceanprotocol.com
-      icon: Compass
-      url: 'https://commons.oceanprotocol.com'
     - title: '@oceanprotocol/commons'
       icon: GitHub
       url: 'https://github.com/oceanprotocol/commons'
@@ -106,14 +97,6 @@
 
     Initial website in collaboration with [Balance](https://balance.io/). Key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
   links:
-    - title: oceanprotocol.com
-      icon: Compass
-      url: 'https://oceanprotocol.com'
-    - title: Styleguide
-      url: 'https://oceanprotocol.com/art'
-    - title: docs.oceanprotocol.com
-      icon: Compass
-      url: 'https://docs.oceanprotocol.com'
     - title: '@oceanprotocol/art'
       icon: GitHub
       url: 'https://github.com/oceanprotocol/art'
@@ -184,10 +167,6 @@
   slug: '9984'
   img: /images/9984-01.png
   links:
-    - title: Link
-      url: 'https://2017.9984.io'
-    - title: Styleguide
-      url: 'https://2017.9984.io/styleguide'
     - title: GitHub
       url: 'https://github.com/9984/2017.9984.io'
   description: |
@@ -229,10 +208,6 @@
     - AWS S3
     - Cloudflare
   links:
-    - title: Link
-      url: 'https://www.bigchaindb.com'
-    - title: Styleguide
-      url: 'https://www.bigchaindb.com/styleguide'
     - title: GitHub
       url: 'https://github.com/bigchaindb/site'
     - title: Dribbble
