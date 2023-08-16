@@ -1,5 +1,5 @@
 import { jest } from '@jest/globals'
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom'
 import 'jest-canvas-mock'
 import giphy from './__fixtures__/giphy.json'
 import { dataLocation } from './__fixtures__/location'
