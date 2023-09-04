@@ -28,7 +28,7 @@
     "@radix-ui/react-select": "^1.2.2",
     "@yaireo/relative-time": "^1.0.4",
     "file-saver": "^2.0.5",
-    "framer-motion": "^10.16.0",
+    "framer-motion": "^10.16.2",
     "lucide-react": "^0.268.0",
     "next": "13.4.10",
     "next-themes": "^0.2.1",
