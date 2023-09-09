@@ -8,6 +8,12 @@ on:
     branches:
       - '**'
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  NEXT_PUBLIC_TYPEKIT_ID: ${{ secrets.NEXT_PUBLIC_TYPEKIT_ID }}
+  NEXT_PUBLIC_UMAMI_SCRIPT_URL: ${{ secrets.NEXT_PUBLIC_UMAMI_SCRIPT_URL }}
+  NEXT_PUBLIC_UMAMI_WEBSITE_ID: ${{ secrets.NEXT_PUBLIC_UMAMI_WEBSITE_ID }}
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -18,22 +24,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
-
-      - name: Cache node_modules
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-node-
+          node-version: 18
+          cache: 'npm'
 
       - run: npm ci
       - run: npm test
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NEXT_PUBLIC_TYPEKIT_ID: ${{ secrets.NEXT_PUBLIC_TYPEKIT_ID }}
-          NEXT_PUBLIC_UMAMI_SCRIPT_URL: ${{ secrets.NEXT_PUBLIC_UMAMI_SCRIPT_URL }}
-          NEXT_PUBLIC_UMAMI_WEBSITE_ID: ${{ secrets.NEXT_PUBLIC_UMAMI_WEBSITE_ID }}
 
       - uses: actions/upload-artifact@v2
         with:
@@ -63,24 +58,18 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: 18
+          cache: 'npm'
 
-      - name: Cache node_modules & Next.js build output
+      - name: Cache Next.js build output
         uses: actions/cache@v3
         with:
-          path: |
-            ~/.npm
-            ${{ github.workspace }}/.next/cache
+          path: ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
       - run: npm ci
       - run: npm run build
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NEXT_PUBLIC_TYPEKIT_ID: ${{ secrets.NEXT_PUBLIC_TYPEKIT_ID }}
-          NEXT_PUBLIC_UMAMI_SCRIPT_URL: ${{ secrets.NEXT_PUBLIC_UMAMI_SCRIPT_URL }}
-          NEXT_PUBLIC_UMAMI_WEBSITE_ID: ${{ secrets.NEXT_PUBLIC_UMAMI_WEBSITE_ID }}
 
       # - uses: actions/upload-artifact@v1
       #   if: github.ref == 'refs/heads/main'
