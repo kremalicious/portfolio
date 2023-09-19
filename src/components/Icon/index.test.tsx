@@ -14,9 +14,6 @@ describe('Icon', () => {
 
     rerender(<Icon name={'Blog'} />)
     expect(container.firstChild.nodeName).toBe('svg')
-
-    rerender(<Icon name={'Twitter'} />)
-    expect(container.firstChild.nodeName).toBe('svg')
   })
 
   it('does not render with unknown name', () => {

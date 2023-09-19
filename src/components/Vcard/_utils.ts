@@ -31,9 +31,6 @@ export async function toDataURL(photoSrc: string, outputFormat) {
 export async function constructVcard(meta, dataUrl: string) {
   const contact = new vCard()
   const blog = meta.profiles.filter(({ network }) => network === 'Blog')[0].url
-  const twitter = meta.profiles.filter(
-    ({ network }) => network === 'Twitter'
-  )[0].url
   const github = meta.profiles.filter(({ network }) => network === 'GitHub')[0]
     .url
 
@@ -47,7 +44,6 @@ export async function constructVcard(meta, dataUrl: string) {
   contact.set('nickname', 'kremalicious')
   contact.set('url', meta.url, { type: 'Portfolio' })
   contact.add('url', blog, { type: 'Blog' })
-  contact.add('x-socialprofile', twitter, { type: 'twitter' })
   contact.add('x-socialprofile', github, { type: 'GitHub' })
 
   const vcard = contact.toString('3.0')

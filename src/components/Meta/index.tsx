@@ -13,9 +13,6 @@ const Meta = ({
   image?: string
   slug?: string
 }) => {
-  const twitterHandle = resume.basics.profiles.filter(
-    ({ network }) => network === 'Twitter'
-  )[0].username
   const url = slug ? `${meta.url}/${slug}` : meta.url
 
   return (
@@ -29,7 +26,6 @@ const Meta = ({
       <meta property="og:image" content={`${meta.url}/${image}`} />
       <meta property="og:url" content={url} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={twitterHandle} />
     </Head>
   )
 }

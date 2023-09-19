@@ -14,8 +14,7 @@ import {
   Mail,
   Moon,
   Star,
-  Sun,
-  Twitter
+  Sun
 } from 'lucide-react'
 import Mastodon from '../../images/mastodon.svg'
 import styles from './index.module.css'
@@ -30,7 +29,6 @@ export default function Icon({ name, ...props }: { name: string }) {
     Blog: Feather,
     ArrowDownCircle,
     GitHub: Github,
-    Twitter,
     Sun,
     Moon,
     Compass,

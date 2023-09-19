@@ -5,7 +5,6 @@
 /* TEAM */
 	design & development : matthias kretschmann
 	Site				 : https://matthiaskretschmann.com
-	Twitter				 : @kremalicious
     GitHub				 : @kremalicious
 	Location			 : Lisboa, Portugal
 
