@@ -1,6 +1,7 @@
 [
   "kremalicious/portfolio",
   "kremalicious/blog",
+  "kremalicious/astro-redirect-from",
   "kremalicious/gatsby-plugin-matomo",
   "kremalicious/gatsby-redirect-from",
   "kremalicious/hyper-mac-pro",
