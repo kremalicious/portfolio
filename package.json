@@ -65,7 +65,7 @@
     "typescript": "^5.2.2"
   },
   "engines": {
-    "node": ">=18.x"
+    "node": "18"
   },
   "browserslist": [
     "> 0.2%",
