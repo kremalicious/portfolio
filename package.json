@@ -30,14 +30,14 @@
     "file-saver": "^2.0.5",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.290.0",
-    "next": "13.5.4",
+    "next": "14.0.3",
     "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "remark": "^14.0.3",
     "remark-gfm": "^4.0.0",
     "remark-html": "^15.0.2",
-    "vcf": "^2.1.1"
+    "vcf": "github:jhermsmeier/node-vcf"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
@@ -65,7 +65,7 @@
     "typescript": "^5.2.2"
   },
   "engines": {
-    "node": ">=18.x"
+    "node": "18"
   },
   "browserslist": [
     "> 0.2%",
