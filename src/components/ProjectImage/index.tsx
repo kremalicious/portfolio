@@ -60,7 +60,7 @@ export default function ProjectImage({
           priority={priority}
           placeholder="empty"
           // blurDataURL={image.blurDataURL}
-          onLoadingComplete={() => setLoaded(true)}
+          onLoad={() => setLoaded(true)}
         />
       </m.figure>
     </LazyMotion>
