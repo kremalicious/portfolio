@@ -56,7 +56,7 @@
     "ora": "^8.0.1",
     "prepend": "^1.0.2",
     "prettier": "^3.2.2",
-    "sharp": "^0.32.6",
+    "sharp": "^0.33.2",
     "sharp-ico": "^0.1.5",
     "slugify": "^1.6.6",
     "stylelint": "^15.10.3",
