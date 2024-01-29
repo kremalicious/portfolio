@@ -61,7 +61,7 @@
     "slugify": "^1.6.6",
     "stylelint": "^16.2.0",
     "stylelint-prettier": "^4.1.0",
-    "ts-node": "^10.9.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
   "engines": {
