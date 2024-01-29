@@ -59,7 +59,7 @@
     "sharp": "^0.33.2",
     "sharp-ico": "^0.1.5",
     "slugify": "^1.6.6",
-    "stylelint": "^15.10.3",
+    "stylelint": "^16.2.0",
     "stylelint-prettier": "^4.1.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.3.3"
