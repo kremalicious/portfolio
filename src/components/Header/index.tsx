@@ -16,9 +16,7 @@ export default function Header() {
       <LogoUnit small={small} />
       {!small ? <Networks label="Networks" /> : null}
       <div className={styles.meta}>
-        {!small ? (
-            <Location />
-        ) : null}
+        {!small ? <Location /> : null}
         {!small ? <Availability /> : null}
       </div>
     </header>

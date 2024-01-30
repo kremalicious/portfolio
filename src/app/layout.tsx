@@ -6,10 +6,10 @@ import resume from '../../_content/resume.json'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import HostnameCheck from '../components/HostnameCheck'
-// import ThemeSwitch from '../components/ThemeSwitch'
+import ThemeSwitch from '../components/ThemeSwitch'
 import { UMAMI_SCRIPT_URL, UMAMI_WEBSITE_ID } from '../lib/umami'
 import styles from '../styles/layout.module.css'
-import { Metadata } from 'next'
+import { Metadata, Viewport } from 'next'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -28,6 +28,10 @@ export const metadata: Metadata = {
     type: 'website'
   },
   twitter: { card: 'summary_large_image' }
+}
+
+export const viewport: Viewport = {
+  themeColor: 'var(--theme-color)'
 }
 
 export default function RootLayout({
@@ -62,7 +66,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <HostnameCheck allowedHosts={meta.allowedHosts} />
-          {/* <ThemeSwitch /> */}
+          <ThemeSwitch />
 
           <Header />
           <main className={styles.screen}>{children}</main>
