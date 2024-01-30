@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import Page from '../not-found'
 import mockData from '../../../tests/__fixtures__/giphy.json'
+import Page from '../not-found'
 
 describe('app: /not-found', () => {
   it('renders correctly', async () => {

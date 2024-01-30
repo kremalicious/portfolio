@@ -10,7 +10,8 @@
   display: block;
   width: auto;
   height: 300px;
-  box-shadow: 0 3px 5px rgba(var(--brand-main), 0.15),
+  box-shadow:
+    0 3px 5px rgba(var(--brand-main), 0.15),
     0 5px 16px rgba(var(--brand-main), 0.15);
   margin: calc(var(--spacer) / 4) auto calc(var(--spacer) / 2) auto;
 }

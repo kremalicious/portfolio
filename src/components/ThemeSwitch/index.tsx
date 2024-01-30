@@ -1,11 +1,11 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import * as Select from '@radix-ui/react-select'
 import { useTheme } from 'next-themes'
 import Icon from '../Icon'
 import { Item } from './Item'
 import styles from './index.module.css'
-import { useEffect, useState } from 'react'
 
 export function getIconName(theme: string) {
   return theme === 'light' ? 'Sun' : theme === 'dark' ? 'Moon' : 'Contrast'

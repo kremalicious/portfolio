@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react'
-import Page, { generateMetadata, generateStaticParams } from '../[slug]/page'
-import projectsMock from '../../../tests/__fixtures__/projects.json'
-import projectMock from '../../../tests/__fixtures__/project.json'
 import meta from '../../../_content/meta.json'
+import projectMock from '../../../tests/__fixtures__/project.json'
+import projectsMock from '../../../tests/__fixtures__/projects.json'
+import Page, { generateMetadata, generateStaticParams } from '../[slug]/page'
 
 jest.mock('../../lib/content', () => ({
   getAllProjects: jest.fn().mockImplementation(() => projectsMock),

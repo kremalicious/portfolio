@@ -1,4 +1,5 @@
 import { Metadata, ResolvingMetadata } from 'next'
+import { notFound } from 'next/navigation'
 import meta from '../../../_content/meta.json'
 import Project from '../../components/Project'
 import ProjectNav from '../../components/ProjectNav'
@@ -7,7 +8,6 @@ import {
   getProjectBySlug,
   getProjectSlugs
 } from '../../lib/content'
-import { notFound } from 'next/navigation'
 
 type Props = {
   params: { slug: string }

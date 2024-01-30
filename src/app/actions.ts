@@ -1,7 +1,7 @@
 'use server'
 
-import { GiphyFetch } from '@giphy/js-fetch-api'
 import { revalidatePath } from 'next/cache'
+import { GiphyFetch } from '@giphy/js-fetch-api'
 
 export async function getLocation() {
   try {

@@ -1,11 +1,11 @@
 'use client'
 
+import { usePathname } from 'next/navigation'
 import Availability from '../Availability'
+import Location from '../Location'
 import LogoUnit from '../LogoUnit'
 import Networks from '../Networks'
-import Location from '../Location'
 import styles from './index.module.css'
-import { usePathname } from 'next/navigation'
 
 export default function Header() {
   const pathname = usePathname()

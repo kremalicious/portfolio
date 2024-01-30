@@ -4,6 +4,7 @@
   "trailingComma": "none",
   "tabWidth": 2,
   "endOfLine": "lf",
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
   "importOrder": [
     "^(react/(.*)$)|^(react$)",
     "^(next/(.*)$)|^(next$)",
@@ -11,8 +12,5 @@
     "^[./]"
   ],
   "importOrderSeparation": false,
-  "importOrderSortSpecifiers": true,
-  "importOrderBuiltinModulesToTop": true,
-  "importOrderMergeDuplicateImports": true,
-  "importOrderCombineTypeAndValueImports": true
+  "importOrderSortSpecifiers": true
 }

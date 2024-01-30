@@ -2,10 +2,10 @@
 
 import { MouseEvent, useEffect, useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { getRandomGif } from '../../app/actions'
 import Button from '../Button'
 import styles from './index.module.css'
-import { getRandomGif } from '../../app/actions'
-import { usePathname } from 'next/navigation'
 
 const tag = 'cat'
 

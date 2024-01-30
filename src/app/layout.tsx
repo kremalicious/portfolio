@@ -1,5 +1,4 @@
-import '../styles/global.css'
-import { Providers } from './providers'
+import { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import meta from '../../_content/meta.json'
 import resume from '../../_content/resume.json'
@@ -8,8 +7,9 @@ import Header from '../components/Header'
 import HostnameCheck from '../components/HostnameCheck'
 import ThemeSwitch from '../components/ThemeSwitch'
 import { UMAMI_SCRIPT_URL, UMAMI_WEBSITE_ID } from '../lib/umami'
+import '../styles/global.css'
 import styles from '../styles/layout.module.css'
-import { Metadata, Viewport } from 'next'
+import { Providers } from './providers'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
