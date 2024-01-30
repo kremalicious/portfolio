@@ -1,3 +1,5 @@
+'use client'
+
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
 import resume from '../../../_content/resume.json'
 import { getAnimationProps } from '../Transitions'

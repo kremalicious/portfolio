@@ -1,3 +1,5 @@
+'use client'
+
 import { MouseEvent, useEffect, useState } from 'react'
 import Link from 'next/link'
 import Button from '../Button'

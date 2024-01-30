@@ -1,3 +1,5 @@
+'use client'
+
 import meta from '../../../_content/meta.json'
 import resume from '../../../_content/resume.json'
 

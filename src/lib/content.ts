@@ -62,7 +62,6 @@ export async function getProjectImages(slug: string) {
 
 export async function getProjectBySlug(slug: string, fields: string[] = []) {
   const project = projects.find((item) => item.slug === slug)
-
   type Items = {
     [key: string]: string
   }

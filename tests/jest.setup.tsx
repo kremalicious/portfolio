@@ -12,15 +12,6 @@ jest.mock('next/router', () => ({
   }))
 }))
 
-jest.mock('next/head', () => {
-  return {
-    __esModule: true,
-    default: ({ children }: { children: Array<React.ReactElement> }) => {
-      return <>{children}</>
-    }
-  }
-})
-
 jest.mock('../src/hooks/useLocation', () => ({
   useLocation: jest.fn().mockImplementation(() => dataLocation)
 }))

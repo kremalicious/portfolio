@@ -1,3 +1,5 @@
+'use client'
+
 import RelativeTime from '@yaireo/relative-time'
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
 import { useLocation } from '../../hooks/useLocation'

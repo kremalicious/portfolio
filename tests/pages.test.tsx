@@ -4,7 +4,7 @@ import NotFoundPage from '../src/pages/404'
 import ProjectPage, {
   getStaticPaths,
   getStaticProps as getStaticPropsProject
-} from '../src/pages/[slug]'
+} from '../src/app/[slug]/page'
 import mockData from './__fixtures__/giphy.json'
 import project from './__fixtures__/project.json'
 import projects from './__fixtures__/projects.json'

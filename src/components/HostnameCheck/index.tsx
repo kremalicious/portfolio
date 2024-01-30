@@ -1,9 +1,23 @@
+'use client'
+
 import { useEffect, useState } from 'react'
-import Head from 'next/head'
 import styles from './index.module.css'
 
 type Props = {
   allowedHosts: string[]
+}
+
+export async function generateMetadata({ params }) {
+  const isAllowedHost = params.allowedHosts.includes(window.location.hostname)
+
+  if (!isAllowedHost) {
+    return {
+      robots: {
+        index: false,
+        follow: false
+      }
+    }
+  }
 }
 
 export default function HostnameCheck({ allowedHosts }: Props) {
@@ -18,16 +32,11 @@ export default function HostnameCheck({ allowedHosts }: Props) {
   }, [allowedHosts])
 
   return isAllowedHost ? null : (
-    <>
-      <Head>
-        <meta name="robots" content="noindex,nofollow" />
-      </Head>
-      <aside className={styles.hostnameInfo}>
-        <p>{`Hi there 👋. Please note that only the code and documentation of this
+    <aside className={styles.hostnameInfo}>
+      <p>{`Hi there 👋. Please note that only the code and documentation of this
           site are open source. But my logo and the combination of typography,
           colors, and layout making up my brand identity are not. Don't just
           clone, do a remix.`}</p>
-      </aside>
-    </>
+    </aside>
   )
 }

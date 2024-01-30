@@ -16,7 +16,7 @@ export const Project = forwardRef(
       ref={ref}
     >
       <ProjectImage
-        image={project.images[0]}
+        image={project.images?.[0]}
         alt={project.title}
         sizes="(max-width: 30rem) 66vw, 33vw"
       />

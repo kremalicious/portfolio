@@ -1,3 +1,5 @@
+'use client'
+
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import Icon from '../Icon'
 import { moveInTop } from '../Transitions'

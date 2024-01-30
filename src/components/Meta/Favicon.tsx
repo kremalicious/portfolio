@@ -1,8 +1,6 @@
-import Head from 'next/head'
-
 const MetaFavicons = () => {
   return (
-    <Head>
+    <>
       <meta name="viewport" content="width=device-width,initial-scale=1"></meta>
       {/* 
         Stop the favicon madness
@@ -12,7 +10,7 @@ const MetaFavicons = () => {
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       <link rel="manifest" href="/manifest/manifest.webmanifest"></link>
-    </Head>
+    </>
   )
 }
 

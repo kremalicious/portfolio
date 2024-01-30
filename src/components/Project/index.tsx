@@ -1,3 +1,5 @@
+'use client'
+
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
 import type ImageType from '../../interfaces/image'
 import type ProjectType from '../../interfaces/project'
@@ -16,7 +18,11 @@ const containerVariants = {
   }
 }
 
-export default function Project({ project }: { project: ProjectType }) {
+export default function Project({
+  project
+}: {
+  project: Partial<ProjectType>
+}) {
   const { title, descriptionHtml, images, links, techstack } = project
   const shouldReduceMotion = useReducedMotion()
   const animationProps = getAnimationProps(shouldReduceMotion)
@@ -41,7 +47,7 @@ export default function Project({ project }: { project: ProjectType }) {
         </m.header>
       </LazyMotion>
 
-      {images.map((image: ImageType, i: number) => (
+      {images?.map((image: ImageType, i: number) => (
         <ProjectImage
           className={styles.fullContainer}
           image={image}
