@@ -23,7 +23,7 @@ export async function generateMetadata(
 
   return {
     title: project.title,
-    description: `${project.description.slice(0, 200)}...`,
+    description: `${project.description.slice(0, 157)}...`,
     metadataBase: new URL(meta.url),
     alternates: {
       canonical: '/' + project.slug

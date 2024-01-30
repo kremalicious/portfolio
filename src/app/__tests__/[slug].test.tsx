@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import Page, { generateMetadata, generateStaticParams } from './page'
+import Page, { generateMetadata, generateStaticParams } from '../[slug]/page'
 import projectsMock from '../../../tests/__fixtures__/projects.json'
 import projectMock from '../../../tests/__fixtures__/project.json'
 import meta from '../../../_content/meta.json'
@@ -27,7 +27,7 @@ describe('app: [slug]/page', () => {
 
     expect(metadata).toEqual({
       title: projectMock.title,
-      description: `${projectMock.description.slice(0, 200)}...`,
+      description: `${projectMock.description.slice(0, 157)}...`,
       metadataBase: new URL(meta.url),
       alternates: {
         canonical: '/' + projectMock.slug
