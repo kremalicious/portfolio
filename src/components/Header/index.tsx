@@ -12,7 +12,10 @@ export default function Header() {
   const isSmall = pathname !== '/'
 
   return (
-    <header className={`${styles.header} ${isSmall ? styles.small : ''}`}>
+    <header
+      className={`${styles.header} ${isSmall ? styles.small : ''}`}
+      data-testid="header"
+    >
       <LogoUnit small={isSmall} />
       {!isSmall ? <Networks label="Networks" /> : null}
       <div className={styles.meta}>

@@ -10,6 +10,12 @@ describe('Header', () => {
   })
 
   it('renders small', async () => {
-    render(<Header small />)
+    jest.mock('next/navigation', () => ({
+      usePathname: jest.fn().mockImplementation(() => '/something')
+    }))
+
+    render(<Header />)
+
+    expect(await screen.findByTestId('header')).toHaveClass('small')
   })
 })
