@@ -1,5 +1,5 @@
 import { Metadata, ResolvingMetadata } from 'next'
-import resume from '../../../_content/resume.json'
+import meta from '../../../_content/meta.json'
 import Project from '../../components/Project'
 import ProjectNav from '../../components/ProjectNav'
 import {
@@ -20,11 +20,16 @@ export async function generateMetadata(
   const project = await getProjectBySlug(params.slug)
 
   return {
-    title: `${
-      project.title
-    } // ${resume.basics.name.toLowerCase()} { ${resume.basics.label.toLowerCase()} }`,
-    description: project.description
-    // image: project.images[0].src
+    title: project.title,
+    description: `${project.description.slice(0, 200)}...`,
+    metadataBase: new URL(meta.url),
+    alternates: {
+      canonical: '/' + project.slug
+    },
+    openGraph: {
+      url: '/' + project.slug,
+      images: [{ url: project.images[0].src }]
+    }
   }
 }
 

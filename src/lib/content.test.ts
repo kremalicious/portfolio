@@ -14,22 +14,10 @@ describe('lib/content', () => {
   })
 
   test('getProjectBySlug', async () => {
-    const project = await getProjectBySlug('ipixelpad', [
-      'title',
-      'description',
-      'slug',
-      'images',
-      'techstack',
-      'links'
-    ])
+    const project = await getProjectBySlug('ipixelpad')
     expect(project).toBeDefined()
     expect(project.images[0].src).toContain('ipixelpad')
     // expect(project.images[0].blurDataURL).toBeDefined()
-  })
-
-  test('getProjectBySlug without fields', async () => {
-    const project = await getProjectBySlug('ipixelpad')
-    expect(project).toBeDefined()
   })
 
   test('getProjectImages', async () => {
