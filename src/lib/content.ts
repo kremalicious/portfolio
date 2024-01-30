@@ -62,31 +62,15 @@ export async function getProjectImages(slug: string) {
 
 export async function getProjectBySlug(slug: string, fields: string[] = []) {
   const project = projects.find((item) => item.slug === slug)
-  type Items = {
-    [key: string]: string
-  }
 
-  const items: Items = {}
+  // enhance data with additional fields
+  const descriptionHtml = await markdownToHtml(project.description)
+  project.descriptionHtml = descriptionHtml
 
-  // Ensure only the minimal needed data is exposed
-  await Promise.all(
-    fields.map(async (field) => {
-      if (field === 'description') {
-        const descriptionHtml = await markdownToHtml(project.description)
-        items[field] = project.description
-        items['descriptionHtml'] = descriptionHtml
-      }
-      if (field === 'images') {
-        const images = await getProjectImages(slug)
-        ;(items[field] as unknown as ImageType[]) = images
-      }
-      if (typeof project[field] !== 'undefined') {
-        items[field] = project[field]
-      }
-    })
-  )
+  const images = await getProjectImages(slug)
+  project.images = images
 
-  return items as Partial<ProjectType>
+  return project
 }
 
 export async function getAllProjects(

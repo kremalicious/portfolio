@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 
 export default function ThemeSwitch() {
   const { theme, themes, resolvedTheme, setTheme } = useTheme()
+  const iconName = getIconName(resolvedTheme)
 
   return (
     <aside className={styles.themeSwitch}>
@@ -26,8 +27,8 @@ export default function ThemeSwitch() {
         onValueChange={(value) => setTheme(value)}
       >
         <Select.Trigger className={styles.trigger} aria-label="Theme Switch">
-          <Select.Value>
-            <Icon name={getIconName(resolvedTheme)} />
+          <Select.Value asChild>
+            <Icon name={iconName} />
           </Select.Value>
           <Select.Icon className={styles.chevron}>
             <Icon name="ChevronDown" />
