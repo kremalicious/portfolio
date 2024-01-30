@@ -62,6 +62,7 @@ export async function getProjectImages(slug: string) {
 
 export async function getProjectBySlug(slug: string, fields: string[] = []) {
   const project = projects.find((item) => item.slug === slug)
+  if (!project) return
 
   // enhance data with additional fields
   const descriptionHtml = await markdownToHtml(project.description)

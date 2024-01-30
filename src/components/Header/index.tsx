@@ -9,15 +9,15 @@ import { usePathname } from 'next/navigation'
 
 export default function Header() {
   const pathname = usePathname()
-  const small = pathname !== '/'
+  const isSmall = pathname !== '/'
 
   return (
-    <header className={`${styles.header} ${small ? styles.small : ''}`}>
-      <LogoUnit small={small} />
-      {!small ? <Networks label="Networks" /> : null}
+    <header className={`${styles.header} ${isSmall ? styles.small : ''}`}>
+      <LogoUnit small={isSmall} />
+      {!isSmall ? <Networks label="Networks" /> : null}
       <div className={styles.meta}>
-        {!small ? <Location /> : null}
-        {!small ? <Availability /> : null}
+        {!isSmall ? <Location /> : null}
+        {!isSmall ? <Availability /> : null}
       </div>
     </header>
   )

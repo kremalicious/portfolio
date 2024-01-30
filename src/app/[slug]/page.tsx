@@ -7,6 +7,7 @@ import {
   getProjectBySlug,
   getProjectSlugs
 } from '../../lib/content'
+import { notFound } from 'next/navigation'
 
 type Props = {
   params: { slug: string }
@@ -18,6 +19,7 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const project = await getProjectBySlug(params.slug)
+  if (!project) return
 
   return {
     title: project.title,
@@ -35,6 +37,11 @@ export async function generateMetadata(
 
 export default async function ProjectPage({ params }: Props) {
   const project = await getProjectBySlug(params.slug)
+
+  if (!project) {
+    notFound()
+  }
+
   const projects = await getAllProjects(['slug', 'title', 'images'])
 
   return (

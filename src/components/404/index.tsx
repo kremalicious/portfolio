@@ -4,36 +4,24 @@ import { MouseEvent, useEffect, useState } from 'react'
 import Link from 'next/link'
 import Button from '../Button'
 import styles from './index.module.css'
+import { getRandomGif } from '../../app/actions'
+import { usePathname } from 'next/navigation'
 
 const tag = 'cat'
 
-async function getRandomGif() {
-  const Giphy = await import('@giphy/js-fetch-api')
-
-  try {
-    // Famous last words:
-    // "It's just the 404 page so why not expose the dev API key"
-    const giphyClient = new Giphy.GiphyFetch('LfXRwufRyt6PK414G2kKJBv3L8NdnxyR')
-    let response = await giphyClient.random({ tag })
-    const gif = response.data.images.original.mp4
-    return gif
-  } catch (error) {
-    console.error(error.message)
-  }
-}
-
 export default function NotFound() {
+  const pathname = usePathname()
   const [gif, setGif] = useState<string>()
 
   async function handleClick(e: MouseEvent) {
     e.preventDefault()
-    const gif = await getRandomGif()
+    const gif = await getRandomGif(tag, pathname)
     setGif(gif)
   }
 
   useEffect(() => {
     async function init() {
-      const gif = await getRandomGif()
+      const gif = await getRandomGif(tag)
       setGif(gif)
     }
     init()
