@@ -36,7 +36,7 @@
 
 ## 🎉 Features
 
-The whole [portfolio](https://matthiaskretschmann.com) is a React-based single page app built with [Next.js](https://nextjs.org) in Typescript, using only statically generated pages.
+The whole [portfolio](https://matthiaskretschmann.com) is a React-based app built with [Next.js](https://nextjs.org) in Typescript, using statically generated pages with a pinch of server-side rendering and server actions.
 
 If you are looking for the former Gatsby-based app, it is archived in the [`gatsby-deprecated`](https://github.com/kremalicious/portfolio/tree/gatsby-deprecated) branch.
 
@@ -62,7 +62,7 @@ Next.js with `next/image` generates all required image sizes for delivering resp
 
 The open source section at the bottom of the front page shows selected GitHub repositories, sourced from GitHub.
 
-On build time, all my public repositories are fetched from GitHub, then filtered against the ones defined in `content/repos.yml`, sorted by the last push date, and provided via the `pageContext` of the front page.
+On build time, all my public repositories are fetched from GitHub, then filtered against the ones defined in `_content/repos.json`, sorted by the last push date, and provided via the `pageContext` of the front page.
 
 If you want to know how, have a look at the respective components:
 
@@ -84,7 +84,7 @@ If you want to know how, have a look at the respective components:
 
 ### 💅 Theme switcher
 
-Includes a theme switcher which allows user to toggle between a light and a dark theme. Switching between them also happens automatically based on user's system preferences. Uses [next-themes](https://github.com/pacocoursey/next-themes) under the hood.
+Includes a theme switcher which allows user to toggle between a light and a dark theme, where by default the user's system theme is used automatically. Uses [next-themes](https://github.com/pacocoursey/next-themes) under the hood.
 
 If you want to know how, have a look at the respective component:
 
@@ -92,7 +92,7 @@ If you want to know how, have a look at the respective component:
 
 ### 📇 Client-side vCard creation
 
-The _Add to addressbook_ link in the footer automatically creates a downloadable vCard file on the client-side, based on data defined in `content/meta.yml`.
+The _Add to addressbook_ link in the footer automatically creates a downloadable vCard file on the client-side, based on data defined in `_content/meta.json`.
 
 If you want to know how, have a look at the respective component:
 
@@ -103,7 +103,7 @@ If you want to know how, have a look at the respective component:
 All SVG assets will be converted to React components with the help of [@svgr/webpack](https://react-svgr.com). Makes use of [SVGR](https://github.com/smooth-code/svgr) so SVG assets can be imported like so:
 
 ```js
-import Logo from './components/svg/Logo'
+import Logo from './images/logo.svg'
 return <Logo />
 ```
 
@@ -186,21 +186,9 @@ Most test files live beside the respective component. Testing setup, fixtures, a
 
 Every branch or Pull Request is automatically deployed by [Vercel](https://vercel.com) with their GitHub integration, where the `main` branch is automatically aliased to `matthiaskretschmann.com`. A link to a preview deployment will appear under each Pull Request.
 
-A backup deployment is also happening to a S3 bucket, triggered by pushes to `main` and executed via GitHub Actions. The deploy command simply calls the [`scripts/deploy-s3.sh`](scripts/deploy-s3.sh) script, syncing the contents of the `public/` folder to S3:
-
-```bash
-npm run deploy:s3
-```
-
-Upon live deployment, deploy script also pings search engines. GitHub requires the following environment variables to be setup for successful deployments in the repository secrets:
-
-- `AWS_ACCESS_KEY_ID`
-- `AWS_SECRET_ACCESS_KEY`
-- `AWS_DEFAULT_REGION`
-
 ## 🏛 Licenses
 
-**© Copyright 2023 Matthias Kretschmann**
+**© Copyright 2024 Matthias Kretschmann**
 
 All images and projects are plain ol' copyright, most displayed projects are subject to the copyright of their respective owners.
 
