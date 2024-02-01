@@ -11,7 +11,6 @@ import { UseLocation } from './types'
 
 export default function Location() {
   const shouldReduceMotion = useReducedMotion()
-
   const [location, setLocation] = useState<UseLocation>()
 
   const isDifferentCountry = location?.now?.country !== location?.next?.country

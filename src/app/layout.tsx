@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import meta from '../../_content/meta.json'
@@ -35,11 +36,7 @@ export const viewport: Viewport = {
   themeColor: 'var(--theme-color)'
 }
 
-export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
