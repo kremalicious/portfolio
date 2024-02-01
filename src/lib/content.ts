@@ -2,12 +2,12 @@ import fs from 'fs'
 import yaml from 'js-yaml'
 import { join } from 'path'
 import sharp from 'sharp'
-import type ImageType from '../interfaces/image'
-import type ProjectType from '../interfaces/project'
+import type ImageType from '../types/image'
+import type ProjectType from '../types/project'
 import { markdownToHtml } from './markdown'
 
-const imagesDirectory = join(process.cwd(), 'public', 'images')
 const contentDirectory = join(process.cwd(), '_content')
+const imagesDirectory = join(process.cwd(), 'public', 'images')
 const projects = yaml.load(
   fs.readFileSync(`${contentDirectory}/projects.yml`, 'utf8')
 ) as Partial<ProjectType>[]
@@ -62,32 +62,16 @@ export async function getProjectImages(slug: string) {
 
 export async function getProjectBySlug(slug: string, fields: string[] = []) {
   const project = projects.find((item) => item.slug === slug)
+  if (!project) return
 
-  type Items = {
-    [key: string]: string
-  }
+  // enhance data with additional fields
+  const descriptionHtml = await markdownToHtml(project.description)
+  project.descriptionHtml = descriptionHtml
 
-  const items: Items = {}
+  const images = await getProjectImages(slug)
+  project.images = images
 
-  // Ensure only the minimal needed data is exposed
-  await Promise.all(
-    fields.map(async (field) => {
-      if (field === 'description') {
-        const descriptionHtml = await markdownToHtml(project.description)
-        items[field] = project.description
-        items['descriptionHtml'] = descriptionHtml
-      }
-      if (field === 'images') {
-        const images = await getProjectImages(slug)
-        ;(items[field] as unknown as ImageType[]) = images
-      }
-      if (typeof project[field] !== 'undefined') {
-        items[field] = project[field]
-      }
-    })
-  )
-
-  return items as Partial<ProjectType>
+  return project
 }
 
 export async function getAllProjects(

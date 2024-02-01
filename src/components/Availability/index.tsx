@@ -1,3 +1,5 @@
+'use client'
+
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
 import meta from '../../../_content/meta.json'
 import { getAnimationProps, moveInBottom } from '../Transitions'

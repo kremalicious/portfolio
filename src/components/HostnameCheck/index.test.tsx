@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import HostnameCheck from '.'
+import HostnameCheck, { generateMetadata } from '.'
 
 describe('HostnameCheck', () => {
   it('can access window.location', () => {
@@ -18,5 +18,25 @@ describe('HostnameCheck', () => {
     const allowedHosts = ['localhost']
     const { container } = render(<HostnameCheck allowedHosts={allowedHosts} />)
     expect(container.firstChild).toBeNull()
+  })
+
+  it('generateMetadata: should return robots metadata when host is not allowed', async () => {
+    // Mock window object
+    global.window = Object.create(window)
+    Object.defineProperty(window, 'location', {
+      value: {
+        hostname: 'disallowed.com'
+      }
+    })
+
+    const params = { allowedHosts: ['allowed.com'] }
+    const result = await generateMetadata({ params })
+
+    expect(result).toEqual({
+      robots: {
+        index: false,
+        follow: false
+      }
+    })
   })
 })

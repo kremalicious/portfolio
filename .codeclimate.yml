@@ -28,7 +28,7 @@ exclude_patterns:
   - '**/*_test.go'
   - '**/*.d.ts'
   - '**/@types/'
-  - '**/interfaces/'
+  - '**/types/'
   - '**/_types.*'
   - '**/*.stories.*'
   - '**/*.test.*'

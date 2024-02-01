@@ -1,5 +1,7 @@
+'use client'
+
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
-import resume from '../../../_content/resume.json'
+import meta from '../../../_content/meta.json'
 import { getAnimationProps } from '../Transitions'
 import { NetworkLink } from './NetworkLink'
 import styles from './index.module.css'
@@ -33,10 +35,10 @@ export default function Networks({ label, small }: Props) {
         <NetworkLink
           name="Mail"
           key="Mail"
-          url={`mailto:${resume.basics.email}`}
+          url={`mailto:${meta.author.email}`}
         />
 
-        {resume.basics.profiles.map((profile) => (
+        {meta.profiles.map((profile) => (
           <NetworkLink
             key={profile.network}
             name={profile.network}

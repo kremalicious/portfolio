@@ -1,13 +1,12 @@
 import meta from '../../../_content/meta.json'
-import resume from '../../../_content/resume.json'
 import { constructVcard, init, toDataURL } from './_utils'
 
 const metaMock = {
   ...meta,
-  name: resume.basics.name,
-  label: resume.basics.label,
-  email: resume.basics.email,
-  profiles: [...resume.basics.profiles]
+  name: meta.author.name,
+  label: meta.author.label,
+  email: meta.author.email,
+  profiles: [...meta.profiles]
 }
 
 describe('Vcard/_utils', () => {

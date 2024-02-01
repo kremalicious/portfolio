@@ -21,8 +21,8 @@ const next = (phase, { defaultConfig }) => {
         // Convert all other *.svg imports to React components
         {
           test: /\.svg$/i,
-          issuer: /\.[jt]sx?$/,
-          resourceQuery: { not: /url/ }, // exclude if *.svg?url
+          issuer: fileLoaderRule.issuer,
+          resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
           use: [{ loader: '@svgr/webpack', options: { icon: true } }]
         }
       )
@@ -40,9 +40,7 @@ const next = (phase, { defaultConfig }) => {
       return typeof defaultConfig.webpack === 'function'
         ? defaultConfig.webpack(config, options)
         : config
-    },
-    // https://nextjs.org/docs/api-reference/next.config.js/react-strict-mode
-    reactStrictMode: true
+    }
   }
 
   return nextConfig

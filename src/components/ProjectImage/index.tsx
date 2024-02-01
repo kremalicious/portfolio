@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import {
@@ -7,7 +9,7 @@ import {
   useAnimation,
   useReducedMotion
 } from 'framer-motion'
-import ImageType from '../../interfaces/image'
+import ImageType from '../../types/image'
 import { getAnimationProps } from '../Transitions'
 import styles from './index.module.css'
 

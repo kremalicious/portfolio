@@ -1,9 +1,9 @@
-import ProjectType from '../../interfaces/project'
+import ProjectType from '../../types/project'
 import ProjectPreview from '../ProjectPreview'
 import styles from './index.module.css'
 
 type Props = {
-  projects: ProjectType[]
+  projects: Partial<ProjectType>[]
 }
 
 export default function Projects({ projects }: Props) {

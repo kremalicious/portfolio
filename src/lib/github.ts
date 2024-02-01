@@ -1,5 +1,5 @@
 import data from '../../_content/repos.json'
-import Repo from '../interfaces/repo'
+import Repo from '../types/repo'
 
 //
 // Get GitHub repos

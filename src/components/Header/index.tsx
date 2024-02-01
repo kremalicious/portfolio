@@ -1,30 +1,26 @@
-import { Suspense } from 'react'
-import dynamic from 'next/dynamic'
+'use client'
+
+import { usePathname } from 'next/navigation'
 import Availability from '../Availability'
+import Location from '../Location'
 import LogoUnit from '../LogoUnit'
 import Networks from '../Networks'
 import styles from './index.module.css'
 
-const DynamicLocation = dynamic(() => import('../Location'), {
-  suspense: true
-})
+export default function Header() {
+  const pathname = usePathname()
+  const isSmall = pathname !== '/'
 
-type Props = {
-  small?: boolean
-}
-
-export default function Header({ small }: Props) {
   return (
-    <header className={`${styles.header} ${small ? styles.small : ''}`}>
-      <LogoUnit small={small} />
-      {!small ? <Networks label="Networks" /> : null}
+    <header
+      className={`${styles.header} ${isSmall ? styles.small : ''}`}
+      data-testid="header"
+    >
+      <LogoUnit small={isSmall} />
+      {!isSmall ? <Networks label="Networks" /> : null}
       <div className={styles.meta}>
-        {!small ? (
-          <Suspense>
-            <DynamicLocation />
-          </Suspense>
-        ) : null}
-        {!small ? <Availability /> : null}
+        {!isSmall ? <Location /> : null}
+        {!isSmall ? <Availability /> : null}
       </div>
     </header>
   )

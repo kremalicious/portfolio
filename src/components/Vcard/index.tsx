@@ -1,8 +1,9 @@
+'use client'
+
 import meta from '../../../_content/meta.json'
-import resume from '../../../_content/resume.json'
 
 export default function Vcard() {
-  const { name, label, email, profiles } = resume.basics
+  const { name, label, email } = meta.author
 
   const vCardMeta = {
     ...meta,
@@ -10,7 +11,7 @@ export default function Vcard() {
     name,
     label,
     email,
-    profiles
+    profiles: meta.profiles
   }
 
   const handleAddressbookClick = (e) => {

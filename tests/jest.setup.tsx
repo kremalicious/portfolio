@@ -5,31 +5,22 @@ import giphy from './__fixtures__/giphy.json'
 import { dataLocation } from './__fixtures__/location'
 import './__mocks__/matchMedia'
 
-jest.mock('next/router', () => ({
-  useRouter: jest.fn().mockImplementation(() => ({
-    route: '/',
-    pathname: '/'
-  }))
+jest.mock('next/navigation', () => ({
+  usePathname: jest.fn().mockImplementationOnce(() => '/')
 }))
 
-jest.mock('next/head', () => {
-  return {
-    __esModule: true,
-    default: ({ children }: { children: Array<React.ReactElement> }) => {
-      return <>{children}</>
-    }
-  }
-})
-
-jest.mock('../src/hooks/useLocation', () => ({
-  useLocation: jest.fn().mockImplementation(() => dataLocation)
+jest.mock('../src/app/actions', () => ({
+  getLocation: jest.fn().mockImplementation(() => dataLocation),
+  getRandomGif: jest
+    .fn()
+    .mockImplementation(() => giphy.data.images.original.mp4)
 }))
 
-jest.mock('@giphy/js-fetch-api', () => ({
-  GiphyFetch: jest.fn().mockImplementation(() => ({
-    random: jest.fn().mockImplementation(() => Promise.resolve(giphy))
-  }))
-}))
+// jest.mock('@giphy/js-fetch-api', () => ({
+//   GiphyFetch: jest.fn().mockImplementation(() => ({
+//     random: jest.fn().mockImplementation(() => Promise.resolve(giphy))
+//   }))
+// }))
 
 const unmockedFetch = global.fetch
 const unmockedEnv = process.env
@@ -43,5 +34,5 @@ beforeEach(() => {
 afterEach(() => {
   global.fetch = unmockedFetch
   process.env = unmockedEnv
-  // jest.restoreAllMocks()
+  jest.restoreAllMocks()
 })

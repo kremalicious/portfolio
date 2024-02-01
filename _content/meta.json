@@ -2,11 +2,33 @@
   "description": "Portfolio of web & ui designer/developer Matthias Kretschmann.",
   "img": "twitter-card.png",
   "url": "https://matthiaskretschmann.com",
+  "author": {
+    "name": "Matthias Kretschmann",
+    "label": "Designer & Developer",
+    "email": "m@kretschmann.io",
+    "picture": "../src/images/avatar.jpg"
+  },
   "availability": {
     "status": false,
     "available": "👔 Available for new projects. <a href=\"mailto:m@kretschmann.io\">Let’s talk</a>!",
     "unavailable": "Not available for new projects."
   },
+  "profiles": [
+    {
+      "network": "Blog",
+      "url": "https://kremalicious.com"
+    },
+    {
+      "network": "Mastodon",
+      "username": "@krema@mas.to",
+      "url": "https://mas.to/@krema"
+    },
+    {
+      "network": "GitHub",
+      "username": "kremalicious",
+      "url": "https://github.com/kremalicious"
+    }
+  ],
   "gpg": "/gpg.txt",
   "addressbook": "/matthias-kretschmann.vcf",
   "bugs": "https://github.com/kremalicious/portfolio/issues/new",

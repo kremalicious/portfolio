@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import ImageType from '../../interfaces/image'
+import ImageType from '../../types/image'
 import ProjectImage from '../ProjectImage'
 import styles from './index.module.css'
 
