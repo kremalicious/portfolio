@@ -1,6 +1,6 @@
 import { ForwardedRef, forwardRef } from 'react'
 import Link from 'next/link'
-import ProjectType from '../../interfaces/project'
+import ProjectType from '../../types/project'
 import ProjectImage from '../ProjectImage'
 import styles from './index.module.css'
 

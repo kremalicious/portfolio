@@ -1,4 +1,4 @@
-import Repo from '../../interfaces/repo'
+import Repo from '../../types/repo'
 import Repository from '../Repository'
 import styles from './index.module.css'
 

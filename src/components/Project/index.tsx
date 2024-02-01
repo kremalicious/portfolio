@@ -1,8 +1,8 @@
 'use client'
 
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
-import type ImageType from '../../interfaces/image'
-import type ProjectType from '../../interfaces/project'
+import type ImageType from '../../types/image'
+import type ProjectType from '../../types/project'
 import ProjectImage from '../ProjectImage'
 import { getAnimationProps, moveInBottom } from '../Transitions'
 import ProjectLinks from './Links'

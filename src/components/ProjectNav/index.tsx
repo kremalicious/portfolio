@@ -1,7 +1,7 @@
 'use client'
 
 import { createRef, useEffect } from 'react'
-import ProjectType from '../../interfaces/project'
+import ProjectType from '../../types/project'
 import { Project } from './Project'
 import styles from './index.module.css'
 

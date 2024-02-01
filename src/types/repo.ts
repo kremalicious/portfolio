@@ -1,4 +1,4 @@
-type Repo = {
+declare type Repo = {
   name: string
   full_name: string
   description: string

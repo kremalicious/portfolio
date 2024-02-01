@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import repos from '../../../tests/__fixtures__/repos.json'
-import Repo from '../../interfaces/repo'
+import Repo from '../../types/repo'
 import Repository from '../Repository'
 
 describe('Repository', () => {

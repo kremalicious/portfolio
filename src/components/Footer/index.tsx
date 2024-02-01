@@ -1,5 +1,4 @@
 import meta from '../../../_content/meta.json'
-import resume from '../../../_content/resume.json'
 import LogoUnit from '../LogoUnit'
 import Networks from '../Networks'
 import Vcard from '../Vcard'
@@ -25,7 +24,7 @@ export default function Footer() {
         <small>
           &copy; {year}{' '}
           <a className="u-url" href={meta.url}>
-            {resume.basics.name.toLowerCase()}
+            {meta.author.name.toLowerCase()}
           </a>{' '}
           &mdash; All Rights Reserved
         </small>

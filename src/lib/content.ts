@@ -2,12 +2,12 @@ import fs from 'fs'
 import yaml from 'js-yaml'
 import { join } from 'path'
 import sharp from 'sharp'
-import type ImageType from '../interfaces/image'
-import type ProjectType from '../interfaces/project'
+import type ImageType from '../types/image'
+import type ProjectType from '../types/project'
 import { markdownToHtml } from './markdown'
 
-const imagesDirectory = join(process.cwd(), 'public', 'images')
 const contentDirectory = join(process.cwd(), '_content')
+const imagesDirectory = join(process.cwd(), 'public', 'images')
 const projects = yaml.load(
   fs.readFileSync(`${contentDirectory}/projects.yml`, 'utf8')
 ) as Partial<ProjectType>[]

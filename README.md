@@ -21,10 +21,8 @@
   - [🐱 GitHub repositories](#-github-repositories)
   - [📍 Location](#-location)
   - [💅 Theme switcher](#-theme-switcher)
-  - [🏆 SEO component](#-seo-component)
   - [📇 Client-side vCard creation](#-client-side-vcard-creation)
   - [💎 Importing SVG assets](#-importing-svg-assets)
-  - [🍬 Typekit component](#-typekit-component)
 - [🤓 Scripts](#-scripts)
   - [🎈 Add a new project](#-add-a-new-project)
   - [🌄 Favicon generation](#-favicon-generation)
@@ -46,10 +44,10 @@ If you are looking for the former Gatsby-based app, it is archived in the [`gats
 
 All displayed project content is powered by one YAML file where all the portfolio's projects are defined. The project description itself is transformed from Markdown written inside the YAML file into HTML on build time.
 
-Next.js automatically creates pages from each item in that file utilizing the [`[slug].tsx`](src/pages/[slug].tsx) template.
+Next.js automatically creates pages from each item in that file utilizing the [`[slug]/page.tsx`](src/app/[slug]/page.tsx) template.
 
 - [`_content/projects.yml`](_content/projects.yml)
-- [`src/pages/[slug].tsx`](src/pages/[slug].tsx)
+- [`src/app/[slug]/page.tsx`](src/app/[slug]/page.tsx)
 
 ### 🖼 Project images
 
@@ -76,11 +74,11 @@ If you want to know how, have a look at the respective components:
 
 On client-side, my current and, if known, my next physical location on a city level is fetched from my (private) [nomadlist.com](https://nomadlist.com) profile and displayed in the header.
 
-Fetching is split up into an external serverless function, a hook, and display component. Fetching is done with a serverless function as to not expose the whole profile response into the browser.
+Fetching is split up into an external serverless function, a server action, and display component. Fetching is done with a serverless function as to not expose the whole profile response into the browser.
 
 If you want to know how, have a look at the respective components:
 
-- [`src/hooks/useLocation.ts`](src/hooks/useLocation.ts)
+- [`src/app/actions.ts`](src/app/actions.ts)
 - [`src/components/Location/index.tsx`](src/components/Location/index.tsx)
 - [kremalicious/location](https://github.com/kremalicious/location)
 
@@ -91,14 +89,6 @@ Includes a theme switcher which allows user to toggle between a light and a dark
 If you want to know how, have a look at the respective component:
 
 - [`src/components/ThemeSwitch/index.tsx`](src/components/ThemeSwitch/index.tsx)
-
-### 🏆 SEO component
-
-Includes a SEO component which automatically switches all required `meta` tags for search engines, Twitter Cards, and Facebook OpenGraph tags based on the browsed route/page.
-
-If you want to know how, have a look at the respective component:
-
-- [`src/components/Meta/index.tsx`](src/components/Meta/index.tsx)
 
 ### 📇 Client-side vCard creation
 
@@ -116,14 +106,6 @@ All SVG assets will be converted to React components with the help of [@svgr/web
 import Logo from './components/svg/Logo'
 return <Logo />
 ```
-
-### 🍬 Typekit component
-
-Includes a component for adding the Typekit snippet.
-
-If you want to know how, have a look at the respective component:
-
-- [`src/components/Typekit/index.tsx`](src/components/Typekit/index.tsx)
 
 ## 🤓 Scripts
 

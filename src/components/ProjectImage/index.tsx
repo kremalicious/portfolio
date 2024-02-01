@@ -9,7 +9,7 @@ import {
   useAnimation,
   useReducedMotion
 } from 'framer-motion'
-import ImageType from '../../interfaces/image'
+import ImageType from '../../types/image'
 import { getAnimationProps } from '../Transitions'
 import styles from './index.module.css'
 

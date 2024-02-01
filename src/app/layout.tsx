@@ -1,7 +1,6 @@
 import { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import meta from '../../_content/meta.json'
-import resume from '../../_content/resume.json'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import HostnameCheck from '../components/HostnameCheck'
@@ -13,10 +12,12 @@ import { Providers } from './providers'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
+const { name, label } = meta.author
+
 export const metadata: Metadata = {
   title: {
-    template: `%s // ${resume.basics.name.toLowerCase()} { ${resume.basics.label.toLowerCase()} }`,
-    default: `${resume.basics.name.toLowerCase()} { ${resume.basics.label.toLowerCase()} }`
+    template: `%s // ${name.toLowerCase()} { ${label.toLowerCase()} }`,
+    default: `${name.toLowerCase()} { ${label.toLowerCase()} }`
   },
   description: meta.description,
   metadataBase: new URL(meta.url),

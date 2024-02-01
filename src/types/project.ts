@@ -1,6 +1,6 @@
 import ImageType from './image'
 
-type ProjectType = {
+declare type ProjectType = {
   images: ImageType[]
   slug: string
   title: string

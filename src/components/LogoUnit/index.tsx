@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import resume from '../../../_content/resume.json'
+import meta from '../../../_content/meta.json'
 import Logo from '../../images/logo.svg'
 import styles from './index.module.css'
 
@@ -18,10 +18,10 @@ export default function LogoUnit({ small }: Props) {
     >
       <Logo className={styles.logo} />
       <H className={`p-name ${styles.title}`}>
-        {resume.basics.name.toLowerCase()}
+        {meta.author.name.toLowerCase()}
       </H>
       <p className={`p-job-title ${styles.description}`}>
-        {resume.basics.label.toLowerCase()}
+        {meta.author.label.toLowerCase()}
       </p>
     </Link>
   )
