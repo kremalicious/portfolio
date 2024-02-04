@@ -1,0 +1,9 @@
+.header {
+  position: relative;
+  padding-top: calc(var(--spacer) * 2);
+  margin-bottom: calc(var(--spacer) * 2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}

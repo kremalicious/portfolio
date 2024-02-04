@@ -1,4 +1,4 @@
-.header {
+.hero {
   position: relative;
   padding: calc(var(--spacer) / 2);
   padding-top: 25vh;
@@ -13,10 +13,4 @@
 
 .meta {
   margin-top: auto;
-}
-
-.small {
-  min-height: 0;
-  padding-top: calc(var(--spacer) * 2);
-  padding-bottom: 0;
 }

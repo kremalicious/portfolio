@@ -1,7 +1,7 @@
 import { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 import meta from '../../../_content/meta.json'
-import Header from '../../components/Header'
+import Header from '../../components/Header/Header'
 import Project from '../../components/Project'
 import ProjectNav from '../../components/ProjectNav'
 import {
@@ -45,7 +45,7 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <>
-      <Header isSmall />
+      <Header />
       <Project project={project} />
       <ProjectNav projects={projects} currentSlug={params.slug} />
     </>

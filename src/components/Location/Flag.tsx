@@ -1,4 +1,4 @@
-import styles from './index.module.css'
+import styles from './Location.module.css'
 
 type Props = {
   country: {
