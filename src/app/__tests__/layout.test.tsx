@@ -1,11 +1,15 @@
 import { render, screen } from '@testing-library/react'
-import { dataLocation } from '../../../tests/__fixtures__/location'
 import Layout from '../layout'
 
 describe('app: /layout', () => {
   // suppress error "Warning: validateDOMNesting(...): <html> cannot appear as a child of <div>"
   // https://github.com/testing-library/react-testing-library/issues/1250
-  let originalError
+  let originalError: {
+    (...data: any[]): void
+    (message?: any, ...optionalParams: any[]): void
+    (...data: any[]): void
+    (message?: any, ...optionalParams: any[]): void
+  }
 
   beforeAll(() => {
     originalError = console.error

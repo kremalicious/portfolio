@@ -5,7 +5,7 @@ describe('Networks', () => {
   it('renders correctly from data file values', () => {
     const { container } = render(<Networks label="Networks" />)
     expect(container.firstChild).toBeInTheDocument()
-    expect(container.firstChild.nodeName).toBe('SECTION')
+    expect(container.firstChild?.nodeName).toBe('SECTION')
   })
 
   it('renders correctly in small variant', () => {

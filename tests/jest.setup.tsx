@@ -3,6 +3,7 @@ import '@testing-library/jest-dom'
 import 'jest-canvas-mock'
 import giphy from './__fixtures__/giphy.json'
 import { dataLocation } from './__fixtures__/location'
+import reposMock from './__fixtures__/repos.json'
 import './__mocks__/matchMedia'
 
 jest.mock('next/navigation', () => ({
@@ -14,7 +15,8 @@ jest.mock('../src/app/actions', () => ({
   getRandomGif: jest
     .fn()
     .mockImplementation(() => giphy.data.images.original.mp4),
-  preloadLocation: jest.fn()
+  preloadLocation: jest.fn(),
+  getRepos: jest.fn().mockImplementationOnce(() => reposMock)
 }))
 
 const unmockedFetch = global.fetch

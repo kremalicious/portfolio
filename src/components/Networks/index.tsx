@@ -22,7 +22,7 @@ const containerVariants = {
 
 export default function Networks({ label, small }: Props) {
   const shouldReduceMotion = useReducedMotion()
-  const animationProps = getAnimationProps(shouldReduceMotion)
+  const animationProps = getAnimationProps(shouldReduceMotion || false)
 
   return (
     <LazyMotion features={domAnimation}>

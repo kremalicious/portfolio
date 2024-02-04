@@ -1,5 +1,6 @@
 'use client'
 
+import { MouseEvent } from 'react'
 import meta from '../../../_content/meta.json'
 
 export default function Vcard() {
@@ -14,7 +15,7 @@ export default function Vcard() {
     profiles: meta.profiles
   }
 
-  const handleAddressbookClick = (e) => {
+  const handleAddressbookClick = (e: MouseEvent) => {
     e.preventDefault()
 
     import('./_utils').then(({ init }) => {

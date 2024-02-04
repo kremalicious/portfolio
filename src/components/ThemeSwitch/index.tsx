@@ -13,7 +13,7 @@ export function getIconName(theme: string) {
 
 export default function ThemeSwitch() {
   const { theme, themes, resolvedTheme, setTheme } = useTheme()
-  const iconName = getIconName(resolvedTheme)
+  const iconName = getIconName(resolvedTheme || '')
 
   // hydration errors workaround
   const [mounted, setMounted] = useState(false)

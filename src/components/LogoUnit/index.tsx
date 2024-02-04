@@ -14,7 +14,6 @@ export default function LogoUnit({ small }: Props) {
     <Link
       className={`${styles.logounit} ${small ? styles.small : null}`}
       href="/"
-      aria-current={!small ? 'page' : null}
     >
       <Logo className={styles.logo} />
       <H className={`p-name ${styles.title}`}>

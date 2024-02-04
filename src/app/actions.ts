@@ -3,6 +3,7 @@
 import { cache } from 'react'
 import { revalidatePath } from 'next/cache'
 import { GiphyFetch } from '@giphy/js-fetch-api'
+import { getGithubRepos } from '../lib/github'
 
 export const preloadLocation = () => {
   void getLocation()
@@ -16,8 +17,17 @@ export const getLocation = cache(async () => {
 
     const data = await response.json()
     return data
-  } catch (error) {
-    console.error(error.message)
+  } catch (error: unknown) {
+    console.error((error as Error).message)
+  }
+})
+
+export const getRepos = cache(async () => {
+  try {
+    const repos = await getGithubRepos()
+    return repos
+  } catch (error: unknown) {
+    console.error((error as Error).message)
   }
 })
 
@@ -29,8 +39,8 @@ export async function getRandomGif(tag: string, pathname?: string) {
     const { data } = await giphyClient.random({ tag })
     const gif = data.images.original.mp4
     return gif
-  } catch (error) {
-    console.error(error.message)
+  } catch (error: unknown) {
+    console.error((error as Error).message)
   }
 
   if (pathname) revalidatePath(pathname)

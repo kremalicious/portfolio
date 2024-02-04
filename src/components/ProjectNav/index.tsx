@@ -6,7 +6,7 @@ import { Project } from './Project'
 import styles from './index.module.css'
 
 type Props = {
-  projects: Partial<ProjectType>[]
+  projects: ProjectType[]
   currentSlug: string
 }
 
@@ -19,7 +19,7 @@ export default function ProjectNav({ projects, currentSlug }: Props) {
   useEffect(() => {
     function scrollToCurrent() {
       const activeItem = currentItem.current
-      const scrollRect = scrollContainer.current.getBoundingClientRect()
+      const scrollRect = scrollContainer.current?.getBoundingClientRect()
       const activeRect = activeItem && activeItem.getBoundingClientRect()
       const newScrollLeftPosition =
         activeRect &&

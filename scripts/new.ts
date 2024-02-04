@@ -1,10 +1,8 @@
 #!/usr/bin/env ts-node
-
 import fs from 'fs'
-import path from 'path'
-import prepend from 'prepend'
-import slugify from 'slugify'
 import ora from 'ora'
+import path from 'path'
+import slugify from 'slugify'
 
 const templatePath = path.join(process.cwd(), 'scripts', 'new.yml')
 const template = fs.readFileSync(templatePath).toString()
@@ -26,7 +24,13 @@ const newContents = template
   .split('SLUG')
   .join(titleSlug)
 
-prepend(projects, newContents, (error) => {
-  if (error) spinner.fail(error)
-  spinner.succeed(`Added '${title}' to top of projects.yml file.`)
+// prepend newContents to projects.yml file
+fs.readFile(projects, 'utf8', (error, data) => {
+  if (error) spinner.fail(error.message)
+
+  fs.writeFile(projects, newContents + data, (error) => {
+    if (error) spinner.fail(error.message)
+
+    spinner.succeed(`Added '${title}' to top of projects.yml file.`)
+  })
 })

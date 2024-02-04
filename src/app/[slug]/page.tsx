@@ -1,26 +1,20 @@
-import { Metadata, ResolvingMetadata } from 'next'
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import meta from '../../../_content/meta.json'
-import Header from '../../components/Header/Header'
-import Project from '../../components/Project'
-import ProjectNav from '../../components/ProjectNav'
-import {
-  getAllProjects,
-  getProjectBySlug,
-  getProjectSlugs
-} from '../../lib/content'
+import meta from '@/_content/meta.json'
+import projects from '@/generated/projects.json'
+import Header from '@/src/components/Header/Header'
+import Project from '@/src/components/Project'
+import ProjectNav from '@/src/components/ProjectNav'
+import { getAllSlugs } from './getAllSlugs'
+import { getProjectBySlug } from './getProjectBySlug'
 
 type Props = {
   params: { slug: string }
-  // searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export async function generateMetadata(
-  { params }: Props
-  // parent: ResolvingMetadata
-): Promise<Metadata> {
-  const project = await getProjectBySlug(params.slug)
-  if (!project) return
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const project = getProjectBySlug(params.slug)
+  if (!project) return {}
 
   return {
     title: project.title,
@@ -37,11 +31,9 @@ export async function generateMetadata(
 }
 
 export default async function ProjectPage({ params }: Props) {
-  const project = await getProjectBySlug(params.slug)
+  const project = getProjectBySlug(params.slug)
 
   if (!project) notFound()
-
-  const projects = await getAllProjects(['slug', 'title', 'images'])
 
   return (
     <>
@@ -53,7 +45,6 @@ export default async function ProjectPage({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  const slugs = getProjectSlugs()
-
+  const slugs = getAllSlugs()
   return slugs.map((slug) => ({ slug }))
 }

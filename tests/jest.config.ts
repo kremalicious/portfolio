@@ -15,6 +15,7 @@ const customJestConfig: Config = {
   moduleDirectories: ['node_modules', '<rootDir>/src'],
   testEnvironment: 'jsdom',
   moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/$1',
     '^.+\\.(svg)$': '<rootDir>/tests/__mocks__/svgr-mock.tsx'
   },
   collectCoverage: true,
@@ -38,7 +39,6 @@ const customJestConfig: Config = {
 // https://github.com/vercel/next.js/issues/35634#issuecomment-1115250297
 async function jestConfig() {
   const nextJestConfig = await createJestConfig(customJestConfig)()
-  // /node_modules/ is the first pattern
   nextJestConfig.transformIgnorePatterns[0] = '/node_modules/(?!uuid|remark)/'
   return nextJestConfig
 }

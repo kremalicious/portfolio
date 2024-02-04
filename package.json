@@ -8,19 +8,20 @@
   "author": "Matthias Kretschmann <m@kretschmann.io>",
   "type": "module",
   "scripts": {
-    "start": "next",
+    "start": "npm run prebuild && next",
     "build": "next build",
-    "preview": "npm run build && next start",
-    "export": "next export",
+    "preview": "next start",
+    "export": "npm run prebuild && next export",
     "typecheck": "tsc",
     "lint:js": "next lint",
     "lint:css": "stylelint ./src/**/*.css",
     "lint": "npm run lint:js && npm run lint:css",
     "format": "prettier --write 'src/**/*.{ts,tsx,css}'",
     "jest": "jest --coverage -c tests/jest.config.ts",
-    "test": "NODE_ENV=test npm run lint && npm run typecheck && npm run jest",
+    "test": "NODE_ENV=test npm run prebuild && npm run lint && npm run typecheck && npm run jest",
     "new": "ts-node-esm ./scripts/new.ts",
-    "favicon": "ts-node-esm ./scripts/favicon.ts"
+    "favicon": "ts-node-esm ./scripts/favicon.ts",
+    "prebuild": "ts-node-esm ./scripts/prebuild.ts"
   },
   "dependencies": {
     "@giphy/js-fetch-api": "^5.3.0",
@@ -53,7 +54,6 @@
     "jest-environment-jsdom": "^29.7.0",
     "js-yaml": "^4.1.0",
     "ora": "^8.0.1",
-    "prepend": "^1.0.2",
     "prettier": "^3.2.4",
     "sharp": "^0.33.2",
     "sharp-ico": "^0.1.5",
