@@ -13,7 +13,8 @@ jest.mock('../src/app/actions', () => ({
   getLocation: jest.fn().mockImplementation(() => dataLocation),
   getRandomGif: jest
     .fn()
-    .mockImplementation(() => giphy.data.images.original.mp4)
+    .mockImplementation(() => giphy.data.images.original.mp4),
+  preloadLocation: jest.fn()
 }))
 
 const unmockedFetch = global.fetch

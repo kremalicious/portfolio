@@ -21,7 +21,7 @@ const customJestConfig: Config = {
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
     '!src/**/*.{stories,test}.{ts,tsx}',
-    '!src/@types/**/*.{ts,tsx}'
+    '!src/types/**/*.{ts,tsx}'
   ],
   // note: this does not work with Next.js, hence workaround further down
   // see: https://github.com/vercel/next.js/issues/35634#issuecomment-1115250297
