@@ -9,5 +9,4 @@ export type Location = {
 export type UseLocation = {
   now: Location
   next: Location
-  previous: Location
 }

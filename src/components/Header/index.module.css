@@ -2,6 +2,7 @@
   position: relative;
   padding: calc(var(--spacer) / 2);
   padding-top: 25vh;
+  margin-bottom: calc(var(--spacer) * 2);
   min-height: calc(85vh - var(--spacer));
   max-height: 1000px;
   text-align: center;

@@ -5,7 +5,9 @@ import { GiphyFetch } from '@giphy/js-fetch-api'
 
 export async function getLocation() {
   try {
-    const response = await fetch('https://location.kretschmann.io')
+    const response = await fetch('https://location.kretschmann.io', {
+      cache: 'no-store'
+    })
     if (!response.ok)
       throw new Error('Network response for location was not ok.')
 

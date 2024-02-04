@@ -16,12 +16,6 @@ jest.mock('../src/app/actions', () => ({
     .mockImplementation(() => giphy.data.images.original.mp4)
 }))
 
-// jest.mock('@giphy/js-fetch-api', () => ({
-//   GiphyFetch: jest.fn().mockImplementation(() => ({
-//     random: jest.fn().mockImplementation(() => Promise.resolve(giphy))
-//   }))
-// }))
-
 const unmockedFetch = global.fetch
 const unmockedEnv = process.env
 

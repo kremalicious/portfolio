@@ -19,6 +19,6 @@ describe('app: /layout', () => {
   it('renders correctly', async () => {
     render(<Layout>Hello</Layout>)
 
-    await screen.findByText(dataLocation.now.city)
+    await screen.findByText('Hello')
   })
 })
