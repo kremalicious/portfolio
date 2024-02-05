@@ -1,3 +1,3 @@
-import { generateProjects } from './content/generateProjects.js'
+import { generateProjects } from './content/generateProjects'
 
 generateProjects()

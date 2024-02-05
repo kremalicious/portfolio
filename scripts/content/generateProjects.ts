@@ -1,11 +1,11 @@
 import fs from 'fs'
 import yaml from 'js-yaml'
 import ora from 'ora'
-import { join } from 'path'
-import type ProjectType from '@/types/project.js'
-import { transformProject } from './transformProject.js'
+import path from 'path'
+import type ProjectType from '@/types/project'
+import { transformProject } from './transformProject'
 
-const contentDirectory = join(process.cwd(), '_content')
+const contentDirectory = path.join(process.cwd(), '_content')
 const projectsOriginal = yaml.load(
   fs.readFileSync(`${contentDirectory}/projects.yml`, 'utf8')
 ) as ProjectType[]

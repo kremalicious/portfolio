@@ -1,6 +1,6 @@
-import ProjectType from '../../src/types/project'
-import { getProjectImages } from './images.js'
-import { markdownToHtml } from './markdown.js'
+import ProjectType from '@/types/project'
+import { getProjectImages } from './images'
+import { markdownToHtml } from './markdown'
 
 export async function transformProject(
   projectsOriginal: ProjectType[],
