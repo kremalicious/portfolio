@@ -1,8 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import NotFoundPage from '../../../src/components/404'
+import NotFoundPage from '@/components/404'
 import mockData from '../../../tests/__fixtures__/giphy.json'
-
-jest.setTimeout(30000)
 
 describe('NotFoundPage', () => {
   it('renders correctly', async () => {

@@ -3,13 +3,13 @@
 import { useEffect, useState, useTransition } from 'react'
 import RelativeTime from '@yaireo/relative-time'
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
-import { getLocation } from '@/app/actions'
+import { getLocation } from '@/actions/getLocation'
 import { fadeIn, getAnimationProps } from '../Transitions'
 import { Flag } from './Flag'
 import styles from './Location.module.css'
 import { UseLocation } from './types'
 
-export function Location() {
+export default function Location() {
   const shouldReduceMotion = useReducedMotion()
   const [isPending, startTransition] = useTransition()
   const [location, setLocation] = useState<UseLocation | null>(null)

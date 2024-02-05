@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import NotFound from '../components/404'
+import NotFound from '@/components/404'
 
 export const metadata: Metadata = {
   title: `Shenanigans`,

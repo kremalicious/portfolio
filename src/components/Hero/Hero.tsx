@@ -1,5 +1,5 @@
 import Availability from '../Availability'
-import { Location } from '../Location'
+import Location from '../Location'
 import LogoUnit from '../LogoUnit'
 import Networks from '../Networks'
 import styles from './Hero.module.css'
