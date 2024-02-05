@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import meta from '../../../_content/meta.json'
-import Logo from '../../images/logo.svg'
+import Logo from '@/images/logo.svg'
+import meta from '@content/meta.json'
 import styles from './index.module.css'
 
 type Props = {

@@ -44,9 +44,10 @@ If you are looking for the former Gatsby-based app, it is archived in the [`gats
 
 All displayed project content is powered by one YAML file where all the portfolio's projects are defined. The project description itself is transformed from Markdown written inside the YAML file into HTML on build time.
 
-Next.js automatically creates pages from each item in that file utilizing the [`[slug]/page.tsx`](src/app/[slug]/page.tsx) template.
+Next.js automatically creates pages from each item in that file utilizing the [`scripts/prebuild.ts`](scripts/prebuild.ts) script and the [`[slug]/page.tsx`](src/app/[slug]/page.tsx) template.
 
 - [`_content/projects.yml`](_content/projects.yml)
+- [`scripts/prebuild.ts`](scripts/prebuild.ts)
 - [`src/app/[slug]/page.tsx`](src/app/[slug]/page.tsx)
 
 ### 🖼 Project images
@@ -56,7 +57,7 @@ All project images live under `public/images` and are automatically attached to 
 Next.js with `next/image` generates all required image sizes for delivering responsible, responsive images to visitors, including lazy loading of all images. For this to work, images are analyzed on build time and various image metadata is passed down as props.
 
 - [`src/components/ProjectImage/index.tsx`](src/components/ProjectImage/index.tsx)
-- [`src/lib/content.ts`](src/lib/content.ts)
+- [`script/content/images.ts`](script/content/images.ts)
 
 ### 🐱 GitHub repositories
 

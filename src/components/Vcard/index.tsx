@@ -1,7 +1,7 @@
 'use client'
 
 import { MouseEvent } from 'react'
-import meta from '../../../_content/meta.json'
+import meta from '@content/meta.json'
 
 export default function Vcard() {
   const { name, label, email } = meta.author

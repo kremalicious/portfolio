@@ -16,6 +16,8 @@ const customJestConfig: Config = {
   testEnvironment: 'jsdom',
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
+    '^@content/(.*)$': '<rootDir>/_content/$1',
+    '^@generated/(.*)$': '<rootDir>/generated/$1',
     '^.+\\.(svg)$': '<rootDir>/tests/__mocks__/svgr-mock.tsx'
   },
   collectCoverage: true,

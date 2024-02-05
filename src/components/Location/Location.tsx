@@ -1,9 +1,9 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { getLocation } from '@/src/app/actions'
+import { useEffect, useState, useTransition } from 'react'
 import RelativeTime from '@yaireo/relative-time'
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
+import { getLocation } from '@/app/actions'
 import { fadeIn, getAnimationProps } from '../Transitions'
 import { Flag } from './Flag'
 import styles from './Location.module.css'
@@ -11,22 +11,22 @@ import { UseLocation } from './types'
 
 export default function Location() {
   const shouldReduceMotion = useReducedMotion()
+  const [isPending, startTransition] = useTransition()
   const [location, setLocation] = useState<UseLocation | null>(null)
 
   const isDifferentCountry = location?.now?.country !== location?.next?.country
   const relativeTime = new RelativeTime({ locale: 'en' })
 
   useEffect(() => {
-    const updateLocation = async () => {
+    startTransition(async () => {
       const location = await getLocation()
       setLocation(location)
-    }
-    updateLocation()
+    })
   }, [])
 
   return (
     <div className={styles.wrapper}>
-      {location?.now?.city ? (
+      {!isPending && location?.now?.city ? (
         <LazyMotion features={domAnimation}>
           <m.section
             aria-label="Location"

@@ -16,7 +16,7 @@ import {
   Star,
   Sun
 } from 'lucide-react'
-import Mastodon from '../../images/mastodon.svg'
+import Mastodon from '@/images/mastodon.svg'
 import styles from './index.module.css'
 
 export default function Icon({ name, ...props }: { name: string }) {

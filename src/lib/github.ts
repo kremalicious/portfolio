@@ -1,5 +1,5 @@
-import data from '../../_content/repos.json'
-import Repo from '../types/repo'
+import type Repo from '@/types/repo'
+import filter from '@content/repos.json'
 
 //
 // Get GitHub repos
@@ -18,7 +18,7 @@ const gitHubConfig = {
 export async function getGithubRepos() {
   let repos: Repo[] = []
 
-  for (let item of data) {
+  for (let item of filter) {
     const user = item.split('/')[0]
     const repoName = item.split('/')[1]
     const data = await fetch(

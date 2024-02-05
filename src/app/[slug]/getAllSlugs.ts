@@ -1,4 +1,4 @@
-import projects from '@/generated/projects.json'
+import projects from '@generated/projects.json'
 
 export function getAllSlugs() {
   const slugs = projects.map(({ slug }: { slug: string }) => slug)

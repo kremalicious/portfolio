@@ -1,7 +1,7 @@
 'use client'
 
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
-import meta from '../../../_content/meta.json'
+import meta from '@content/meta.json'
 import { getAnimationProps } from '../Transitions'
 import { NetworkLink } from './NetworkLink'
 import styles from './index.module.css'
