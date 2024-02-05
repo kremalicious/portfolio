@@ -1,13 +1,9 @@
-import meta from '../../../_content/meta.json'
-import { constructVcard, init, toDataURL } from './_utils'
+import { constructVcard, init } from './_utils'
 
-const metaMock = {
-  ...meta,
-  name: meta.author.name,
-  label: meta.author.label,
-  email: meta.author.email,
-  profiles: [...meta.profiles]
-}
+jest.mock('./imageToDataUrl', () => ({
+  __esModule: true,
+  imageToDataUrl: jest.fn().mockResolvedValue('data:image/png;base64,')
+}))
 
 describe('Vcard/_utils', () => {
   beforeEach(() => {
@@ -15,17 +11,12 @@ describe('Vcard/_utils', () => {
   })
 
   it('combined vCard download process finishes', async () => {
-    await init(metaMock)
+    await init()
     expect(global.URL.createObjectURL).toHaveBeenCalledTimes(1)
   })
 
-  it('vCard can be constructed', async () => {
-    const vcard = await constructVcard(metaMock, 'data:image/jpeg;base64,00')
+  it('vCard can be constructed', () => {
+    const vcard = constructVcard('data:image/jpeg;base64,00')
     expect(vcard).toBeDefined()
-  })
-
-  it('Base64 from image can be constructed', async () => {
-    const dataUrl = await toDataURL('hello', 'image/jpeg')
-    expect(dataUrl).toBeDefined()
   })
 })

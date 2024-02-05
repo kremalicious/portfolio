@@ -14,7 +14,6 @@ type Props = {
 const containerVariants = {
   enter: {
     transition: {
-      delay: 0.2,
       staggerChildren: 0.1
     }
   }

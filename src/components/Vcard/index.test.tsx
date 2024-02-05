@@ -1,6 +1,11 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import Vcard from '.'
 
+jest.mock('./imageToDataUrl', () => ({
+  __esModule: true,
+  imageToDataUrl: jest.fn().mockResolvedValue('data:image/png;base64,')
+}))
+
 describe('Vcard', () => {
   beforeEach(() => {
     global.URL.createObjectURL = jest.fn()

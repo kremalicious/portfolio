@@ -2,7 +2,7 @@ import fs from 'fs'
 import yaml from 'js-yaml'
 import ora from 'ora'
 import { join } from 'path'
-import type ProjectType from '../../src/types/project.js'
+import type ProjectType from '@/types/project.js'
 import { transformProject } from './transformProject.js'
 
 const contentDirectory = join(process.cwd(), '_content')

@@ -9,7 +9,7 @@ import { Flag } from './Flag'
 import styles from './Location.module.css'
 import { UseLocation } from './types'
 
-export default function Location() {
+export function Location() {
   const shouldReduceMotion = useReducedMotion()
   const [isPending, startTransition] = useTransition()
   const [location, setLocation] = useState<UseLocation | null>(null)
