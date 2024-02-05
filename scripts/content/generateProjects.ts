@@ -24,6 +24,12 @@ export async function generateProjects(): Promise<void> {
       if (project) projects.push(project)
     }
 
+    const dirPath = path.dirname(projectsOutput)
+
+    if (!fs.existsSync(dirPath)) {
+      fs.mkdirSync(dirPath, { recursive: true })
+    }
+
     fs.writeFileSync(projectsOutput, JSON.stringify(projects, null, 2))
     spinner.succeed(`Projects content written to ${projectsOutput}\n`)
   } catch (error: unknown) {
