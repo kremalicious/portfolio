@@ -1,4 +1,4 @@
-import meta from '../../../_content/meta.json'
+import meta from '@content/meta.json'
 import styles from './index.module.css'
 
 export default function Availability() {

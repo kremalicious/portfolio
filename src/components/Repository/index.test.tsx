@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
+import Repo from '@/types/repo'
+import Repository from '.'
 import repos from '../../../tests/__fixtures__/repos.json'
-import Repo from '../../types/repo'
-import Repository from '../Repository'
 
 describe('Repository', () => {
   it('renders correctly', () => {
@@ -17,7 +17,7 @@ describe('Repository', () => {
     }
 
     const { container } = render(<Repository repo={repo1 as Repo} />)
-    expect(container.querySelector('h3 > a').getAttribute('href')).toBe(
+    expect(container.querySelector('h3 > a')?.getAttribute('href')).toBe(
       repo1.html_url
     )
   })

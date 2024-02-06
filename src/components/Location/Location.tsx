@@ -1,34 +1,49 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useTransition } from 'react'
 import RelativeTime from '@yaireo/relative-time'
-import { getLocation } from '../../app/actions'
+import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
+import { getLocation } from '@/lib/getLocation'
+import { fadeIn, getAnimationProps } from '../Transitions'
 import { Flag } from './Flag'
 import styles from './Location.module.css'
 import { UseLocation } from './types'
 
+function Animation({ children }: { children: React.ReactNode }) {
+  const shouldReduceMotion = useReducedMotion()
+
+  return (
+    <LazyMotion features={domAnimation}>
+      <m.section
+        aria-label="Location"
+        variants={fadeIn}
+        className={styles.location}
+        {...getAnimationProps(shouldReduceMotion || false)}
+      >
+        {children}
+      </m.section>
+    </LazyMotion>
+  )
+}
+
 export default function Location() {
+  const [isPending, startTransition] = useTransition()
   const [location, setLocation] = useState<UseLocation | null>(null)
 
   const isDifferentCountry = location?.now?.country !== location?.next?.country
   const relativeTime = new RelativeTime({ locale: 'en' })
 
   useEffect(() => {
-    const updateLocation = async () => {
+    startTransition(async () => {
       const location = await getLocation()
       setLocation(location)
-    }
-    updateLocation()
+    })
   }, [])
 
   return (
     <div className={styles.wrapper}>
-      {location?.now?.city ? (
-        <section
-          aria-label="Location"
-          className={styles.location}
-          style={{ opacity: 1 }}
-        >
+      {!isPending && location?.now?.city ? (
+        <Animation>
           <Flag
             country={{
               code: location.now.country_code,
@@ -54,7 +69,7 @@ export default function Location() {
               </>
             )}
           </div>
-        </section>
+        </Animation>
       ) : null}
     </div>
   )

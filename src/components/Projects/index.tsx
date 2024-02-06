@@ -1,9 +1,9 @@
-import ProjectType from '../../types/project'
+import ProjectType from '@/types/project'
 import ProjectPreview from '../ProjectPreview'
 import styles from './index.module.css'
 
 type Props = {
-  projects: Partial<ProjectType>[]
+  projects: ProjectType[]
 }
 
 export default function Projects({ projects }: Props) {
@@ -15,8 +15,6 @@ export default function Projects({ projects }: Props) {
             key={project.slug}
             title={project.title}
             image={project.images[0]}
-            // give priority for the first 2 images
-            imagePriority={i == 0 || i === 1}
             slug={project.slug}
           />
         ))}

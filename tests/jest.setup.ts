@@ -1,20 +1,25 @@
 import { jest } from '@jest/globals'
 import '@testing-library/jest-dom'
-import 'jest-canvas-mock'
-import giphy from './__fixtures__/giphy.json'
+import fetchMock from 'jest-fetch-mock'
+import giphyMock from './__fixtures__/giphy.json'
 import { dataLocation } from './__fixtures__/location'
 import './__mocks__/matchMedia'
+
+fetchMock.enableMocks()
 
 jest.mock('next/navigation', () => ({
   usePathname: jest.fn().mockImplementationOnce(() => '/')
 }))
 
-jest.mock('../src/app/actions', () => ({
+jest.mock('../src/lib/getLocation', () => ({
   getLocation: jest.fn().mockImplementation(() => dataLocation),
+  preloadLocation: jest.fn()
+}))
+
+jest.mock('../src/lib/getRandomGif', () => ({
   getRandomGif: jest
     .fn()
-    .mockImplementation(() => giphy.data.images.original.mp4),
-  preloadLocation: jest.fn()
+    .mockImplementation(() => giphyMock.data.images.original.mp4)
 }))
 
 const unmockedFetch = global.fetch

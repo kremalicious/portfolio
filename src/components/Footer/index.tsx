@@ -1,4 +1,4 @@
-import meta from '../../../_content/meta.json'
+import meta from '@content/meta.json'
 import LogoUnit from '../LogoUnit'
 import Networks from '../Networks'
 import Vcard from '../Vcard'

@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import meta from '../../../_content/meta.json'
-import Logo from '../../images/logo.svg'
+import Logo from '@/images/logo.svg'
+import meta from '@content/meta.json'
 import styles from './index.module.css'
 
 type Props = {
@@ -14,7 +14,6 @@ export default function LogoUnit({ small }: Props) {
     <Link
       className={`${styles.logounit} ${small ? styles.small : null}`}
       href="/"
-      aria-current={!small ? 'page' : null}
     >
       <Logo className={styles.logo} />
       <H className={`p-name ${styles.title}`}>

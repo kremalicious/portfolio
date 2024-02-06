@@ -1,12 +1,12 @@
 'use client'
 
 import { createRef, useEffect } from 'react'
-import ProjectType from '../../types/project'
+import ProjectType from '@/types/project'
 import { Project } from './Project'
 import styles from './index.module.css'
 
 type Props = {
-  projects: Partial<ProjectType>[]
+  projects: ProjectType[]
   currentSlug: string
 }
 
@@ -18,9 +18,13 @@ export default function ProjectNav({ projects, currentSlug }: Props) {
 
   useEffect(() => {
     function scrollToCurrent() {
+      if (!scrollContainer.current || !currentItem.current) return
+
       const activeItem = currentItem.current
       const scrollRect = scrollContainer.current.getBoundingClientRect()
       const activeRect = activeItem && activeItem.getBoundingClientRect()
+      if (!activeItem || !scrollRect || !activeRect) return
+
       const newScrollLeftPosition =
         activeRect &&
         activeRect.left -

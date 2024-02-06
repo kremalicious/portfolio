@@ -1,7 +1,7 @@
 'use client'
 
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
-import meta from '../../../_content/meta.json'
+import meta from '@content/meta.json'
 import { getAnimationProps } from '../Transitions'
 import { NetworkLink } from './NetworkLink'
 import styles from './index.module.css'
@@ -14,7 +14,6 @@ type Props = {
 const containerVariants = {
   enter: {
     transition: {
-      delay: 0.2,
       staggerChildren: 0.1
     }
   }
@@ -22,7 +21,7 @@ const containerVariants = {
 
 export default function Networks({ label, small }: Props) {
   const shouldReduceMotion = useReducedMotion()
-  const animationProps = getAnimationProps(shouldReduceMotion)
+  const animationProps = getAnimationProps(shouldReduceMotion || false)
 
   return (
     <LazyMotion features={domAnimation}>

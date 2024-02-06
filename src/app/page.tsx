@@ -1,13 +1,13 @@
-import Hero from '../components/Hero'
-import Projects from '../components/Projects'
-import Repositories from '../components/Repositories'
-import { getAllProjects } from '../lib/content'
-import { getGithubRepos } from '../lib/github'
-import { preloadLocation } from './actions'
+import { Suspense } from 'react'
+import Hero from '@/components/Hero'
+import Projects from '@/components/Projects'
+import Repositories from '@/components/Repositories/Repositories'
+import { preloadLocation } from '@/lib/getLocation'
+import { getRepos } from '@/lib/getRepos'
+import projects from '@generated/projects.json'
 
 export default async function IndexPage() {
-  const projects = await getAllProjects(['title', 'images', 'slug'])
-  const repos = await getGithubRepos()
+  const repos = await getRepos()
 
   preloadLocation()
 
@@ -15,7 +15,9 @@ export default async function IndexPage() {
     <>
       <Hero />
       <Projects projects={projects} />
-      <Repositories repos={repos} />
+      <Suspense fallback={<p>Loading open source projects...</p>}>
+        <Repositories repos={repos} />
+      </Suspense>
     </>
   )
 }

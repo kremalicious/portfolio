@@ -1,9 +1,14 @@
 import styles from './index.module.css'
 
-const Button = ({ children, ...props }) => (
-  <a className={styles.button} {...props}>
-    {children}
-  </a>
-)
+declare type ButtonProps = React.DetailedHTMLProps<
+  React.AnchorHTMLAttributes<HTMLAnchorElement>,
+  HTMLAnchorElement
+>
 
-export default Button
+export default function Button({ children, ...props }: ButtonProps) {
+  return (
+    <a {...props} className={styles.button}>
+      {children}
+    </a>
+  )
+}

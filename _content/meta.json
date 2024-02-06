@@ -5,8 +5,7 @@
   "author": {
     "name": "Matthias Kretschmann",
     "label": "Designer & Developer",
-    "email": "m@kretschmann.io",
-    "picture": "../src/images/avatar.jpg"
+    "email": "m@kretschmann.io"
   },
   "availability": {
     "status": false,

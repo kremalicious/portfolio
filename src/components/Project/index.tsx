@@ -1,8 +1,8 @@
 'use client'
 
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
-import type ImageType from '../../types/image'
-import type ProjectType from '../../types/project'
+import type ImageType from '@/types/image'
+import type ProjectType from '@/types/project'
 import ProjectImage from '../ProjectImage'
 import { getAnimationProps, moveInBottom } from '../Transitions'
 import ProjectLinks from './Links'
@@ -12,7 +12,6 @@ import styles from './index.module.css'
 const containerVariants = {
   enter: {
     transition: {
-      delay: 0.3,
       staggerChildren: 0.2
     }
   }
@@ -25,7 +24,7 @@ export default function Project({
 }) {
   const { title, descriptionHtml, images, links, techstack } = project
   const shouldReduceMotion = useReducedMotion()
-  const animationProps = getAnimationProps(shouldReduceMotion)
+  const animationProps = getAnimationProps(shouldReduceMotion || false)
 
   return (
     <article className={styles.project}>
@@ -42,7 +41,7 @@ export default function Project({
           <m.div
             variants={moveInBottom}
             className={styles.description}
-            dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+            dangerouslySetInnerHTML={{ __html: descriptionHtml ?? '' }}
           />
         </m.header>
       </LazyMotion>
@@ -54,8 +53,6 @@ export default function Project({
           alt={`Showcase image no. ${i + 1} for ${title}`}
           key={i}
           sizes="100vw"
-          // give priority to the first image
-          priority={i === 0}
         />
       ))}
 

@@ -3,7 +3,7 @@
 import { MouseEvent, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { getRandomGif } from '../../app/actions'
+import { getRandomGif } from '@/lib/getRandomGif'
 import Button from '../Button'
 import styles from './index.module.css'
 

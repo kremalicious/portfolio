@@ -7,7 +7,7 @@ type Props = {
   allowedHosts: string[]
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }: { params: Props }) {
   const isAllowedHost = params.allowedHosts.includes(window.location.hostname)
 
   if (!isAllowedHost) {

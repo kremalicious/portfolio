@@ -16,6 +16,8 @@ describe('ProjectImage', () => {
   })
 
   it('returns without errors without image', async () => {
-    render(<ProjectImage image={null} alt={project.title} sizes="100vw" />)
+    render(
+      <ProjectImage image={null as any} alt={project.title} sizes="100vw" />
+    )
   })
 })

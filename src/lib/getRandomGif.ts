@@ -1,25 +1,7 @@
 'use server'
 
-import { cache } from 'react'
 import { revalidatePath } from 'next/cache'
 import { GiphyFetch } from '@giphy/js-fetch-api'
-
-export const preloadLocation = () => {
-  void getLocation()
-}
-
-export const getLocation = cache(async () => {
-  try {
-    const response = await fetch('https://location.kretschmann.io')
-    if (!response.ok)
-      throw new Error('Network response for location was not ok.')
-
-    const data = await response.json()
-    return data
-  } catch (error) {
-    console.error(error.message)
-  }
-})
 
 export async function getRandomGif(tag: string, pathname?: string) {
   try {
@@ -29,8 +11,8 @@ export async function getRandomGif(tag: string, pathname?: string) {
     const { data } = await giphyClient.random({ tag })
     const gif = data.images.original.mp4
     return gif
-  } catch (error) {
-    console.error(error.message)
+  } catch (error: unknown) {
+    console.error((error as Error).message)
   }
 
   if (pathname) revalidatePath(pathname)

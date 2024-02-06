@@ -1,5 +1,5 @@
-import Button from '../../Button'
-import Icon from '../../Icon'
+import Button from '@/components/Button'
+import Icon from '@/components/Icon'
 import styles from './index.module.css'
 
 export default function ProjectLinks({

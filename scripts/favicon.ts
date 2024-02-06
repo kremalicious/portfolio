@@ -86,8 +86,8 @@ async function buildFavicons() {
       Add this to src/components/Meta/Favicon.tsx:
       ${outputMeta}
     `)
-  } catch (error) {
-    console.error(error.message)
+  } catch (error: unknown) {
+    console.error((error as Error).message)
   }
 }
 

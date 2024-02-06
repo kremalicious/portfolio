@@ -16,7 +16,7 @@ import {
   Star,
   Sun
 } from 'lucide-react'
-import Mastodon from '../../images/mastodon.svg'
+import Mastodon from '@/images/mastodon.svg'
 import styles from './index.module.css'
 
 export default function Icon({ name, ...props }: { name: string }) {
@@ -44,7 +44,7 @@ export default function Icon({ name, ...props }: { name: string }) {
     Contrast
   }
 
-  const IconMapped = components[name]
+  const IconMapped = components[name as keyof typeof components]
 
   return IconMapped ? (
     <IconMapped className={`${styles.icon} ${styles[name]}`} {...props} />
