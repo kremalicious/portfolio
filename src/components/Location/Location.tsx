@@ -18,7 +18,7 @@ function Animation({ children }: { children: React.ReactNode }) {
         aria-label="Location"
         variants={fadeIn}
         className={styles.location}
-        {...getAnimationProps(shouldReduceMotion)}
+        {...getAnimationProps(shouldReduceMotion || false)}
       >
         {children}
       </m.section>

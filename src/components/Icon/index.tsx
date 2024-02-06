@@ -44,7 +44,7 @@ export default function Icon({ name, ...props }: { name: string }) {
     Contrast
   }
 
-  const IconMapped = components[name]
+  const IconMapped = components[name as keyof typeof components]
 
   return IconMapped ? (
     <IconMapped className={`${styles.icon} ${styles[name]}`} {...props} />

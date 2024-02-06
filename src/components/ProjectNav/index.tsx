@@ -18,9 +18,13 @@ export default function ProjectNav({ projects, currentSlug }: Props) {
 
   useEffect(() => {
     function scrollToCurrent() {
+      if (!scrollContainer.current || !currentItem.current) return
+
       const activeItem = currentItem.current
-      const scrollRect = scrollContainer.current?.getBoundingClientRect()
+      const scrollRect = scrollContainer.current.getBoundingClientRect()
       const activeRect = activeItem && activeItem.getBoundingClientRect()
+      if (!activeItem || !scrollRect || !activeRect) return
+
       const newScrollLeftPosition =
         activeRect &&
         activeRect.left -

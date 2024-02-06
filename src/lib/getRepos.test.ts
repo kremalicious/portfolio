@@ -5,7 +5,7 @@ import { getRepos } from './getRepos'
 
 jest.mock('react', () => ({
   ...jest.requireActual('react'),
-  cache: (fn) => fn
+  cache: (fn: any) => fn
 }))
 
 describe('getRepos', () => {

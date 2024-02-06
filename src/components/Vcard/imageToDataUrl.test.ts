@@ -23,7 +23,7 @@ describe('imageToDataUrl', () => {
   })
 
   it('should convert image to data URL', async () => {
-    function MockFileReader() {
+    function MockFileReader(this: any) {
       this.readAsDataURL = function () {
         this.result = 'data:image/png;base64,...'
         setTimeout(() => this.onload(), 0)
@@ -33,11 +33,12 @@ describe('imageToDataUrl', () => {
     window.FileReader = MockFileReader as any
 
     const dataUrl = await imageToDataUrl(dummyPath)
+
     expect(dataUrl).toBe('data:image/png;base64,...')
   })
 
   it('should handle errors in readAsDataURL', async () => {
-    function MockFileReader() {
+    function MockFileReader(this: FileReader) {
       this.readAsDataURL = function () {
         throw new Error('Mock error')
       }
