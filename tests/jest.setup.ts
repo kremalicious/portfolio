@@ -3,7 +3,6 @@ import '@testing-library/jest-dom'
 import fetchMock from 'jest-fetch-mock'
 import giphyMock from './__fixtures__/giphy.json'
 import { dataLocation } from './__fixtures__/location'
-import reposMock from './__fixtures__/repos.json'
 import './__mocks__/matchMedia'
 
 fetchMock.enableMocks()
@@ -21,10 +20,6 @@ jest.mock('../src/lib/getRandomGif', () => ({
   getRandomGif: jest
     .fn()
     .mockImplementation(() => giphyMock.data.images.original.mp4)
-}))
-
-jest.mock('../src/lib/getRepos', () => ({
-  getRepos: jest.fn().mockImplementation(() => reposMock)
 }))
 
 const unmockedFetch = global.fetch

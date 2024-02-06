@@ -9,8 +9,24 @@ import { Flag } from './Flag'
 import styles from './Location.module.css'
 import { UseLocation } from './types'
 
-export default function Location() {
+function Animation({ children }: { children: React.ReactNode }) {
   const shouldReduceMotion = useReducedMotion()
+
+  return (
+    <LazyMotion features={domAnimation}>
+      <m.section
+        aria-label="Location"
+        variants={fadeIn}
+        className={styles.location}
+        {...getAnimationProps(shouldReduceMotion)}
+      >
+        {children}
+      </m.section>
+    </LazyMotion>
+  )
+}
+
+export default function Location() {
   const [isPending, startTransition] = useTransition()
   const [location, setLocation] = useState<UseLocation | null>(null)
 
@@ -27,40 +43,33 @@ export default function Location() {
   return (
     <div className={styles.wrapper}>
       {!isPending && location?.now?.city ? (
-        <LazyMotion features={domAnimation}>
-          <m.section
-            aria-label="Location"
-            variants={fadeIn}
-            className={styles.location}
-            {...getAnimationProps(shouldReduceMotion)}
-          >
-            <Flag
-              country={{
-                code: location.now.country_code,
-                name: location.now.country
-              }}
-            />
-            {location.now.city} <span>Now</span>
-            <div className={styles.next}>
-              {location?.next?.city && (
-                <>
-                  {isDifferentCountry && (
-                    <Flag
-                      country={{
-                        code: location.next.country_code,
-                        name: location.next.country
-                      }}
-                    />
-                  )}
-                  {location.next.city}{' '}
-                  <span>
-                    {relativeTime.from(new Date(location.next.date_start))}
-                  </span>
-                </>
-              )}
-            </div>
-          </m.section>
-        </LazyMotion>
+        <Animation>
+          <Flag
+            country={{
+              code: location.now.country_code,
+              name: location.now.country
+            }}
+          />
+          {location.now.city} <span>Now</span>
+          <div className={styles.next}>
+            {location?.next?.city && (
+              <>
+                {isDifferentCountry && (
+                  <Flag
+                    country={{
+                      code: location.next.country_code,
+                      name: location.next.country
+                    }}
+                  />
+                )}
+                {location.next.city}{' '}
+                <span>
+                  {relativeTime.from(new Date(location.next.date_start))}
+                </span>
+              </>
+            )}
+          </div>
+        </Animation>
       ) : null}
     </div>
   )
