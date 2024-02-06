@@ -3,10 +3,10 @@ import { notFound } from 'next/navigation'
 import Header from '@/components/Header/Header'
 import Project from '@/components/Project'
 import ProjectNav from '@/components/ProjectNav'
+import { getAllSlugs } from '@/lib/getAllSlugs'
+import { getProjectBySlug } from '@/lib/getProjectBySlug'
 import meta from '@content/meta.json'
 import projects from '@generated/projects.json'
-import { getAllSlugs } from './getAllSlugs'
-import { getProjectBySlug } from './getProjectBySlug'
 
 type Props = {
   params: { slug: string }

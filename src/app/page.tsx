@@ -1,8 +1,9 @@
 import { Suspense } from 'react'
-import { getRepos, preloadLocation } from '@/actions'
 import Hero from '@/components/Hero'
 import Projects from '@/components/Projects'
-import Repositories from '@/components/Repositories'
+import Repositories from '@/components/Repositories/Repositories'
+import { preloadLocation } from '@/lib/getLocation'
+import { getRepos } from '@/lib/getRepos'
 import projects from '@generated/projects.json'
 
 export default async function IndexPage() {

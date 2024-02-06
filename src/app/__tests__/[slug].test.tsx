@@ -1,13 +1,13 @@
 import { render } from '@testing-library/react'
-import meta from '../../../_content/meta.json'
+import meta from '@content/meta.json'
 import projectMock from '../../../tests/__fixtures__/project.json'
 import Page, { generateMetadata, generateStaticParams } from '../[slug]/page'
 
-jest.mock('../[slug]/getProjectBySlug', () => ({
+jest.mock('../../lib/getProjectBySlug', () => ({
   getProjectBySlug: jest.fn().mockImplementation(() => projectMock)
 }))
 
-jest.mock('../[slug]/getAllSlugs', () => ({
+jest.mock('../../lib/getAllSlugs', () => ({
   getAllSlugs: jest.fn().mockImplementationOnce(() => ['slug1', 'slug2'])
 }))
 
