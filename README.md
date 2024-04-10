@@ -154,7 +154,7 @@ cp .env.sample .env
 vi .env
 
 npm i
-npm start
+npm run dev
 ```
 
 ### 🔮 Linting

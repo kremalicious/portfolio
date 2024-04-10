@@ -8,9 +8,9 @@
   "author": "Matthias Kretschmann <m@kretschmann.io>",
   "type": "module",
   "scripts": {
-    "start": "npm run prebuild && next",
+    "dev": "npm run prebuild && next dev",
     "build": "next build",
-    "preview": "next start",
+    "start": "next start",
     "export": "npm run prebuild && next export",
     "typecheck": "tsc",
     "lint:js": "next lint",
