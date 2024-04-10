@@ -12,11 +12,11 @@
 }
 
 .available {
-  background: var(--body-background-color);
   color: var(--text-color);
+  /* background: var(--body-background-color);
   position: fixed;
   bottom: var(--spacer);
   left: 50%;
-  transform: translateX(-50%);
-  box-shadow: var(--box-shadow);
+  transform: translateX(-50%); 
+  box-shadow: var(--box-shadow);*/
 }
