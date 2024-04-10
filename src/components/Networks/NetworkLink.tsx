@@ -18,7 +18,7 @@ export const NetworkLink = ({ name, url }: { name: string; url: string }) => {
         href={url}
         rel="me"
       >
-        <Icon name={name} />
+        <Icon name={name} className={styles[name.toLowerCase()]} />
         <span className={styles.title}>{name}</span>
       </m.a>
     </LazyMotion>

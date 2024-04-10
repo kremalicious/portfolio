@@ -56,3 +56,7 @@
   height: var(--font-size-base);
   opacity: 0.8;
 }
+
+.farcaster {
+  stroke-width: 0.1275rem;
+}

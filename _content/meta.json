@@ -18,22 +18,20 @@
       "url": "https://kremalicious.com"
     },
     {
+      "network": "GitHub",
+      "url": "https://github.com/kremalicious"
+    },
+    {
       "network": "Mastodon",
-      "username": "@krema@mas.to",
       "url": "https://mas.to/@krema"
     },
     {
-      "network": "GitHub",
-      "username": "kremalicious",
-      "url": "https://github.com/kremalicious"
+      "network": "Farcaster",
+      "url": "https://warpcast.com/@krema.eth"
     }
   ],
   "gpg": "/gpg.txt",
   "addressbook": "/matthias-kretschmann.vcf",
   "bugs": "https://github.com/kremalicious/portfolio/issues/new",
-  "allowedHosts": [
-    "matthiaskretschmann.com",
-    "beta.matthiaskretschmann.com",
-    "localhost"
-  ]
+  "allowedHosts": ["matthiaskretschmann.com", "localhost"]
 }

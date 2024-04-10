@@ -16,10 +16,15 @@ import {
   Star,
   Sun
 } from 'lucide-react'
+import Farcaster from '@/images/farcaster.svg'
 import Mastodon from '@/images/mastodon.svg'
 import styles from './index.module.css'
 
-export default function Icon({ name, ...props }: { name: string }) {
+type Props = React.SVGAttributes<{
+  name: string
+}>
+
+export default function Icon({ name, className, ...props }: Props) {
   const components = {
     Email: Mail,
     Link: Compass,
@@ -41,12 +46,13 @@ export default function Icon({ name, ...props }: { name: string }) {
     Mastodon,
     ChevronDown,
     Check,
-    Contrast
+    Contrast,
+    Farcaster
   }
 
   const IconMapped = components[name as keyof typeof components]
 
   return IconMapped ? (
-    <IconMapped className={`${styles.icon} ${styles[name]}`} {...props} />
+    <IconMapped className={`${styles.icon} ${className || ''}`} {...props} />
   ) : null
 }
