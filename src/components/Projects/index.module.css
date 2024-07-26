@@ -7,8 +7,8 @@
   .projects {
     gap: calc(var(--spacer) * 3);
     grid-template-columns: repeat(
-      auto-fill,
-      minmax(min-content, calc(50% - (var(--spacer) * 1.5)))
-    );
+        auto-fill,
+        minmax(min-content, calc(50% - (var(--spacer) * 1.5)))
+      );
   }
 }

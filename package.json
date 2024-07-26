@@ -13,7 +13,7 @@
     "start": "next start",
     "export": "npm run prebuild && next export",
     "typecheck": "tsc",
-    "lint": "biome check --write src/**/*",
+    "lint": "biome check --write .",
     "jest": "jest --coverage -c tests/jest.config.js",
     "test": "NODE_ENV=test npm run jest",
     "new": "node --import tsx/esm ./scripts/new.ts",

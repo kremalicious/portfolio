@@ -1,6 +1,6 @@
 #!/usr/bin/env ts-node
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 import ora from 'ora'
 import slugify from 'slugify'
 

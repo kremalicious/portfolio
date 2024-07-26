@@ -8,6 +8,8 @@ self.addEventListener('activate', (e) => {
     .unregister()
     .then(() => self.clients.matchAll())
     .then((clients) => {
-      clients.forEach((client) => client.navigate(client.url))
+      for (const client of clients) {
+        client.navigate(client.url)
+      }
     })
 })
