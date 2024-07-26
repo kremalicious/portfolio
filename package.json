@@ -15,7 +15,7 @@
     "typecheck": "tsc",
     "lint": "biome check --write src/**/*",
     "jest": "jest --coverage -c tests/jest.config.js",
-    "test": "NODE_ENV=test npm run prebuild && npm run jest",
+    "test": "NODE_ENV=test npm run jest",
     "new": "node --import tsx/esm ./scripts/new.ts",
     "favicon": "node --import tsx/esm ./scripts/favicon.ts",
     "prebuild": "node --import tsx/esm ./scripts/prebuild.ts"
