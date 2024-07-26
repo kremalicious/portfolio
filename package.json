@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
+    "@kremalicious/config": "^1.0.1",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^6.4.8",
     "@testing-library/react": "^16.0.0",

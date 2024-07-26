@@ -1,33 +1,3 @@
 {
-  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true
-  },
-  "linter": { "enabled": true, "rules": { "recommended": true } },
-  "organizeImports": { "enabled": true },
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "indentWidth": 2
-  },
-  "javascript": {
-    "formatter": {
-      "jsxQuoteStyle": "double",
-      "quoteProperties": "asNeeded",
-      "trailingCommas": "none",
-      "semicolons": "asNeeded",
-      "arrowParentheses": "always",
-      "bracketSpacing": true,
-      "bracketSameLine": false,
-      "quoteStyle": "single",
-      "attributePosition": "auto"
-    }
-  },
-  "css": {
-    "linter": { "enabled": true },
-    "formatter": { "enabled": true, "quoteStyle": "single" },
-    "parser": { "cssModules": true }
-  }
+  "extends": ["@kremalicious/config/biome"]
 }
