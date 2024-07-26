@@ -1,13 +1,13 @@
 'use client'
 
-import { useEffect, useState, useTransition } from 'react'
+import { getLocation } from '@/lib/getLocation'
 import RelativeTime from '@yaireo/relative-time'
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
-import { getLocation } from '@/lib/getLocation'
+import { useEffect, useState, useTransition } from 'react'
 import { fadeIn, getAnimationProps } from '../Transitions'
 import { Flag } from './Flag'
 import styles from './Location.module.css'
-import { UseLocation } from './types'
+import type { UseLocation } from './types'
 
 function Animation({ children }: { children: React.ReactNode }) {
   const shouldReduceMotion = useReducedMotion()

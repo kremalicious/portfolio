@@ -1,11 +1,10 @@
-import * as React from 'react'
-import fetch, { FetchMock } from 'jest-fetch-mock'
 import repoFilter from '@content/repos.json'
+import fetch, { type FetchMock } from 'jest-fetch-mock'
 import { getRepos } from './getRepos'
 
 jest.mock('react', () => ({
   ...jest.requireActual('react'),
-  cache: (fn: any) => fn
+  cache: (fn: () => void) => fn
 }))
 
 describe('getRepos', () => {
@@ -33,8 +32,9 @@ describe('getRepos', () => {
   })
 
   it('should handle network errors', async () => {
-    let consoleErrorMock: jest.SpyInstance
-    consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {})
+    const consoleErrorMock: jest.SpyInstance = jest
+      .spyOn(console, 'error')
+      .mockImplementation(() => {})
     ;(fetch as FetchMock).mockRejectOnce(new Error('Network error'))
 
     const data = await getRepos()

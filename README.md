@@ -104,8 +104,8 @@ If you want to know how, have a look at the respective component:
 All SVG assets will be converted to React components with the help of [@svgr/webpack](https://react-svgr.com). Makes use of [SVGR](https://github.com/smooth-code/svgr) so SVG assets can be imported like so:
 
 ```js
-import Logo from './images/logo.svg'
-return <Logo />
+import Logo from "./images/logo.svg";
+return <Logo />;
 ```
 
 ## 🤓 Scripts
@@ -159,16 +159,10 @@ npm run dev
 
 ### 🔮 Linting
 
-ESLint, Prettier, and Stylelint are setup for all linting purposes:
+[Biome](https://biomejs.dev) is setup for all linting and formatting purposes:
 
 ```bash
 npm run lint
-```
-
-To automatically format all code files:
-
-```bash
-npm run format
 ```
 
 ### 👩‍🔬 Testing

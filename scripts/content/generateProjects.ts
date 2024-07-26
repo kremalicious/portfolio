@@ -1,8 +1,8 @@
-import fs from 'fs'
+import fs from 'node:fs'
+import path from 'node:path'
+import type { ProjectType } from '@/types/project'
 import yaml from 'js-yaml'
 import ora from 'ora'
-import path from 'path'
-import type ProjectType from '@/types/project'
 import { transformProject } from './transformProject'
 
 const contentDirectory = path.join(process.cwd(), '_content')

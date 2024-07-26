@@ -1,9 +1,9 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import Icon from '@/components/Icon'
 import * as Select from '@radix-ui/react-select'
 import { useTheme } from 'next-themes'
-import Icon from '../Icon'
+import { useEffect, useState } from 'react'
 import { Item } from './Item'
 import styles from './index.module.css'
 
@@ -45,7 +45,7 @@ export default function ThemeSwitch() {
               <Select.Arrow className={styles.arrow} width={14} height={7} />
               <Select.Viewport className={styles.viewport}>
                 {themes
-                  .map((theme) => <Item key={theme} theme={theme}></Item>)
+                  .map((theme) => <Item key={theme} theme={theme} />)
                   .reverse()}
               </Select.Viewport>
             </Select.Content>

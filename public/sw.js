@@ -1,15 +1,13 @@
 // https://github.com/NekR/self-destroying-sw
-self.addEventListener('install', function (e) {
+self.addEventListener('install', (e) => {
   self.skipWaiting()
 })
 
-self.addEventListener('activate', function (e) {
+self.addEventListener('activate', (e) => {
   self.registration
     .unregister()
-    .then(function () {
-      return self.clients.matchAll()
-    })
-    .then(function (clients) {
+    .then(() => self.clients.matchAll())
+    .then((clients) => {
       clients.forEach((client) => client.navigate(client.url))
     })
 })

@@ -1,8 +1,7 @@
 'use client'
 
+import type { ImageType, ProjectType } from '@/types'
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
-import type ImageType from '@/types/image'
-import type ProjectType from '@/types/project'
 import ProjectImage from '../ProjectImage'
 import { getAnimationProps, moveInBottom } from '../Transitions'
 import ProjectLinks from './Links'
@@ -41,6 +40,7 @@ export default function Project({
           <m.div
             variants={moveInBottom}
             className={styles.description}
+            // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
             dangerouslySetInnerHTML={{ __html: descriptionHtml ?? '' }}
           />
         </m.header>
@@ -51,7 +51,7 @@ export default function Project({
           className={styles.fullContainer}
           image={image}
           alt={`Showcase image no. ${i + 1} for ${title}`}
-          key={i}
+          key={image.src}
           sizes="100vw"
         />
       ))}

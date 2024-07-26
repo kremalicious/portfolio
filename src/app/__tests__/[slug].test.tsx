@@ -1,5 +1,5 @@
-import { render } from '@testing-library/react'
 import meta from '@content/meta.json'
+import { render } from '@testing-library/react'
 import projectMock from '../../../tests/__fixtures__/project.json'
 import Page, { generateMetadata, generateStaticParams } from '../[slug]/page'
 
@@ -31,10 +31,10 @@ describe('app: [slug]/page', () => {
       description: `${projectMock.description.slice(0, 157)}...`,
       metadataBase: new URL(meta.url),
       alternates: {
-        canonical: '/' + projectMock.slug
+        canonical: `/${projectMock.slug}`
       },
       openGraph: {
-        url: '/' + projectMock.slug,
+        url: `/${projectMock.slug}`,
         images: [{ url: projectMock.images[0].src }]
       }
     })

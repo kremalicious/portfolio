@@ -1,7 +1,7 @@
 'use server'
 
-import { revalidatePath } from 'next/cache'
 import { GiphyFetch } from '@giphy/js-fetch-api'
+import { revalidatePath } from 'next/cache'
 
 export async function getRandomGif(tag: string, pathname?: string) {
   try {

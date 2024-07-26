@@ -1,5 +1,5 @@
-import { fireEvent, render, screen } from '@testing-library/react'
 import NotFoundPage from '@/components/404'
+import { fireEvent, render, screen } from '@testing-library/react'
 import mockData from '../../../tests/__fixtures__/giphy.json'
 
 describe('NotFoundPage', () => {

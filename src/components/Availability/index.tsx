@@ -10,6 +10,7 @@ export default function Availability() {
 
   return (
     <section className={className}>
+      {/* biome-ignore lint/security/noDangerouslySetInnerHtml: nothing injected on run time */}
       <p dangerouslySetInnerHTML={{ __html: html }} />
     </section>
   )

@@ -40,6 +40,13 @@ const next = (phase, { defaultConfig }) => {
       return typeof defaultConfig.webpack === 'function'
         ? defaultConfig.webpack(config, options)
         : config
+    },
+
+    eslint: {
+      // Using Biome instead of ESLint,
+      // sadly Next.js doesn't have a way to disable ESLint
+      // see https://github.com/vercel/next.js/discussions/59347
+      ignoreDuringBuilds: true
     }
   }
 

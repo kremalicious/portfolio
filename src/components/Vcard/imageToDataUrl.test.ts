@@ -1,4 +1,4 @@
-import fetch, { FetchMock } from 'jest-fetch-mock'
+import fetch, { type FetchMock } from 'jest-fetch-mock'
 import { imageToDataUrl } from './imageToDataUrl'
 
 const dummyPath = 'http://example.com/image.png'
@@ -23,6 +23,7 @@ describe('imageToDataUrl', () => {
   })
 
   it('should convert image to data URL', async () => {
+    // biome-ignore lint/suspicious/noExplicitAny: not worth it for mocking
     function MockFileReader(this: any) {
       this.readAsDataURL = function () {
         this.result = 'data:image/png;base64,...'
@@ -30,7 +31,7 @@ describe('imageToDataUrl', () => {
       }
     }
 
-    window.FileReader = MockFileReader as any
+    window.FileReader = MockFileReader as unknown as typeof FileReader
 
     const dataUrl = await imageToDataUrl(dummyPath)
 
@@ -39,12 +40,12 @@ describe('imageToDataUrl', () => {
 
   it('should handle errors in readAsDataURL', async () => {
     function MockFileReader(this: FileReader) {
-      this.readAsDataURL = function () {
+      this.readAsDataURL = () => {
         throw new Error('Mock error')
       }
     }
 
-    window.FileReader = MockFileReader as any
+    window.FileReader = MockFileReader as unknown as typeof FileReader
 
     // Expect imageToDataUrl to reject with the mock error
     await expect(imageToDataUrl(dummyPath)).rejects.toThrow('Mock error')

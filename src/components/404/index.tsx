@@ -1,9 +1,9 @@
 'use client'
 
-import { MouseEvent, useEffect, useState } from 'react'
+import { getRandomGif } from '@/lib/getRandomGif'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { getRandomGif } from '@/lib/getRandomGif'
+import { type MouseEvent, useEffect, useState } from 'react'
 import Button from '../Button'
 import styles from './index.module.css'
 
@@ -36,13 +36,9 @@ export default function NotFound() {
         {tag} gifs, entirely your choice.
       </p>
 
-      <video
-        className="gif"
-        src={gif}
-        data-testid={gif || null}
-        autoPlay
-        loop
-      />
+      <video className="gif" src={gif} data-testid={gif || null} autoPlay loop>
+        <track kind="captions" srcLang="en" label="English" />
+      </video>
 
       <div>
         <Button onClick={handleClick}>{`Get another '${tag}' gif`}</Button>

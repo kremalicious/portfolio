@@ -1,5 +1,5 @@
+import type { ImageType } from '@/types'
 import Image from 'next/image'
-import ImageType from '@/types/image'
 import styles from './index.module.css'
 
 export default function ProjectImage({

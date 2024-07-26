@@ -1,8 +1,8 @@
-import { Metadata } from 'next'
 import NotFound from '@/components/404'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: `Shenanigans`,
+  title: 'Shenanigans',
   description: 'Page not found.'
 }
 

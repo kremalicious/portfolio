@@ -5,10 +5,10 @@ describe('app: /layout', () => {
   // suppress error "Warning: validateDOMNesting(...): <html> cannot appear as a child of <div>"
   // https://github.com/testing-library/react-testing-library/issues/1250
   let originalError: {
-    (...data: any[]): void
-    (message?: any, ...optionalParams: any[]): void
-    (...data: any[]): void
-    (message?: any, ...optionalParams: any[]): void
+    (...data: unknown[]): void
+    (message?: unknown, ...optionalParams: unknown[]): void
+    (...data: unknown[]): void
+    (message?: unknown, ...optionalParams: unknown[]): void
   }
 
   beforeAll(() => {
