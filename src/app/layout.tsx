@@ -1,10 +1,10 @@
-import { ReactNode } from 'react'
-import { Metadata, Viewport } from 'next'
-import Script from 'next/script'
 import Footer from '@/components/Footer'
 import HostnameCheck from '@/components/HostnameCheck'
 import ThemeSwitch from '@/components/ThemeSwitch'
 import { UMAMI_SCRIPT_URL, UMAMI_WEBSITE_ID } from '@/lib/umami'
+import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
+import type { ReactNode } from 'react'
 import '@/styles/global.css'
 import styles from '@/styles/layout.module.css'
 import meta from '@content/meta.json'
@@ -50,7 +50,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest/manifest.webmanifest"></link>
+        <link rel="manifest" href="/manifest/manifest.webmanifest" />
 
         {isProduction && (
           <Script

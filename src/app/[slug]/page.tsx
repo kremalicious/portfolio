@@ -1,5 +1,3 @@
-import { Metadata } from 'next'
-import { notFound } from 'next/navigation'
 import Header from '@/components/Header/Header'
 import Project from '@/components/Project'
 import ProjectNav from '@/components/ProjectNav'
@@ -7,6 +5,8 @@ import { getAllSlugs } from '@/lib/getAllSlugs'
 import { getProjectBySlug } from '@/lib/getProjectBySlug'
 import meta from '@content/meta.json'
 import projects from '@generated/projects.json'
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
 type Props = {
   params: { slug: string }
@@ -21,10 +21,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: `${project.description.slice(0, 157)}...`,
     metadataBase: new URL(meta.url),
     alternates: {
-      canonical: '/' + project.slug
+      canonical: `/${project.slug}`
     },
     openGraph: {
-      url: '/' + project.slug,
+      url: `/${project.slug}`,
       images: [{ url: project.images[0].src }]
     }
   }

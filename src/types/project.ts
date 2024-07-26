@@ -1,13 +1,17 @@
-import ImageType from './image'
+import type { ImageType } from './image'
 
-declare type ProjectType = {
+export declare type ProjectLink = {
+  title: string
+  url: string
+  icon?: string
+}
+
+export declare type ProjectType = {
   images: ImageType[]
   slug: string
   title: string
   description: string
   descriptionHtml: string
   techstack: string[]
-  links?: any
+  links?: ProjectLink[]
 }
-
-export default ProjectType

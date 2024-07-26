@@ -1,7 +1,7 @@
 #!/usr/bin/env ts-node
 import fs from 'fs'
-import ora from 'ora'
 import path from 'path'
+import ora from 'ora'
 import slugify from 'slugify'
 
 const templatePath = path.join(process.cwd(), 'scripts', 'new.yml')

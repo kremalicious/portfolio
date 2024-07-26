@@ -1,11 +1,12 @@
 import Button from '@/components/Button'
 import Icon from '@/components/Icon'
+import type { ProjectLink } from '@/types'
 import styles from './index.module.css'
 
 export default function ProjectLinks({
   links
 }: {
-  links: { title: string; url: string; icon: string }[]
+  links: ProjectLink[]
 }) {
   return (
     <div className={styles.projectLinks}>

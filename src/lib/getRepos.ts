@@ -1,8 +1,8 @@
 'use server'
 
-import { cache } from 'react'
-import type Repo from '@/types/repo'
+import type { Repo } from '@/types'
 import filter from '@content/repos.json'
+import { cache } from 'react'
 
 //
 // Get GitHub repos
@@ -22,7 +22,7 @@ export const getRepos = cache(async () => {
   try {
     let repos: Repo[] = []
 
-    for (let item of filter) {
+    for (const item of filter) {
       const user = item.split('/')[0]
       const repoName = item.split('/')[1]
       const response = await fetch(

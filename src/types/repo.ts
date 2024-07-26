@@ -1,4 +1,4 @@
-declare type Repo = {
+export declare type Repo = {
   name: string
   full_name: string
   description: string
@@ -7,5 +7,3 @@ declare type Repo = {
   stargazers_count: number
   pushed_at: string
 }
-
-export default Repo

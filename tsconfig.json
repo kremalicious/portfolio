@@ -17,6 +17,7 @@
     "plugins": [{ "name": "next" }],
     "paths": {
       "@/*": ["./src/*"],
+      "@tests/*": ["./tests/*"],
       "@content/*": ["./_content/*"],
       "@generated/*": ["./generated/*"]
     }

@@ -1,7 +1,7 @@
 'use client'
 
-import { MouseEvent } from 'react'
 import meta from '@content/meta.json'
+import type { MouseEvent } from 'react'
 
 export default function Vcard() {
   const handleAddressbookClick = (e: MouseEvent) => {

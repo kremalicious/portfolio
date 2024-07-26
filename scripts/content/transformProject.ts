@@ -1,4 +1,4 @@
-import ProjectType from '@/types/project'
+import type { ProjectType } from '@/types/project'
 import { getProjectImages } from './images'
 import { markdownToHtml } from './markdown'
 

@@ -1,6 +1,7 @@
+import type { ImageType } from '@/types'
 import { render, screen } from '@testing-library/react'
+import project from '@tests/__fixtures__/project.json'
 import ProjectImage from '.'
-import project from '../../../tests/__fixtures__/project.json'
 
 describe('ProjectImage', () => {
   it('renders correctly', async () => {
@@ -17,7 +18,11 @@ describe('ProjectImage', () => {
 
   it('returns without errors without image', async () => {
     render(
-      <ProjectImage image={null as any} alt={project.title} sizes="100vw" />
+      <ProjectImage
+        image={null as unknown as ImageType}
+        alt={project.title}
+        sizes="100vw"
+      />
     )
   })
 })

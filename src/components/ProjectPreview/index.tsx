@@ -1,5 +1,5 @@
+import type { ImageType } from '@/types'
 import Link from 'next/link'
-import ImageType from '../../types/image'
 import ProjectImage from '../ProjectImage'
 import styles from './index.module.css'
 

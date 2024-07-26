@@ -1,7 +1,7 @@
 'use client'
 
+import type { ProjectType } from '@/types'
 import { createRef, useEffect } from 'react'
-import ProjectType from '@/types/project'
 import { Project } from './Project'
 import styles from './index.module.css'
 
@@ -22,7 +22,7 @@ export default function ProjectNav({ projects, currentSlug }: Props) {
 
       const activeItem = currentItem.current
       const scrollRect = scrollContainer.current.getBoundingClientRect()
-      const activeRect = activeItem && activeItem.getBoundingClientRect()
+      const activeRect = activeItem?.getBoundingClientRect()
       if (!activeItem || !scrollRect || !activeRect) return
 
       const newScrollLeftPosition =
