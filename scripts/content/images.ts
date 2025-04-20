@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import { join } from 'node:path'
 import type { ImageType } from '@/types/image'
 import sharp from 'sharp'
-import { rgbDataURL } from './rgbDataURL'
+import { rgbDataUrl } from './rgbDataURL'
 
 const imagesDirectory = join(process.cwd(), 'public', 'images')
 
@@ -18,13 +18,13 @@ export async function getProjectImages(slug: string) {
       const transformer = sharp(file)
       const { width, height, format } = await transformer.metadata()
       const { dominant } = await transformer.stats()
-      const blurDataURL = rgbDataURL(dominant.r, dominant.g, dominant.b)
+      const blurDataUrl = rgbDataUrl(dominant.r, dominant.g, dominant.b)
 
       const imageType: ImageType = {
         width,
         height,
         format,
-        blurDataURL,
+        blurDataUrl,
         src: `/images/${image}`
       }
       images.push(imageType)

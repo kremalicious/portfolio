@@ -3,5 +3,5 @@ export declare type ImageType = {
   width?: number
   height?: number
   format?: string
-  blurDataURL?: string
+  blurDataUrl?: string
 }

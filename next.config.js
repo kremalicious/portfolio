@@ -1,6 +1,6 @@
 // @ts-check
 
-const next = (phase, { defaultConfig }) => {
+const next = ({ defaultConfig }) => {
   /**
    * @type {import('next').NextConfig}
    */

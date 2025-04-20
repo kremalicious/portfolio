@@ -15,11 +15,15 @@ describe('getRepos', () => {
   it('should fetch repos data', async () => {
     const mockData = {
       name: 'test',
+      // biome-ignore lint/style/useNamingConvention: API response
       full_name: 'test/test',
       description: 'test repo',
+      // biome-ignore lint/style/useNamingConvention: API response
       html_url: 'https://github.com/test/test',
       homepage: 'https://test.com',
+      // biome-ignore lint/style/useNamingConvention: API response
       stargazers_count: 100,
+      // biome-ignore lint/style/useNamingConvention: API response
       pushed_at: '2022-01-01T00:00:00Z'
     }
     ;(fetch as FetchMock).mockResponse(JSON.stringify(mockData))

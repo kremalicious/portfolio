@@ -10,7 +10,7 @@ export default function Projects({ projects }: Props) {
   return (
     <nav className={styles.projects}>
       {projects.length > 0 &&
-        projects.map((project, i) => (
+        projects.map((project) => (
           <ProjectPreview
             key={project.slug}
             title={project.title}

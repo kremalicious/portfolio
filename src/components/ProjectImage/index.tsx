@@ -27,7 +27,7 @@ export default function ProjectImage({
         quality={85}
         priority={priority}
         placeholder="blur"
-        blurDataURL={image.blurDataURL}
+        blurDataURL={image.blurDataUrl}
       />
     </figure>
   ) : null

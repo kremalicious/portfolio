@@ -10,10 +10,10 @@ type Props = {
 export function Flag({ country }: Props) {
   if (!country?.name || !country?.code) return null
   // offset between uppercase ascii and regional indicator symbols
-  const OFFSET = 127397
+  const offset = 127397
 
   const emoji = country.code.replace(/./g, (char) =>
-    String.fromCodePoint(char.charCodeAt(0) + OFFSET)
+    String.fromCodePoint(char.charCodeAt(0) + offset)
   )
 
   return (

@@ -14,6 +14,7 @@ if (!process.env.GITHUB_TOKEN) {
 const gitHubConfig = {
   headers: {
     'User-Agent': 'kremalicious/portfolio',
+    // biome-ignore lint/style/useNamingConvention: Fetch API
     Authorization: `token ${process.env.GITHUB_TOKEN}`
   }
 }

@@ -26,13 +26,19 @@ type Props = React.SVGAttributes<{
 
 export default function Icon({ name, className, ...props }: Props) {
   const components = {
+    // biome-ignore lint/style/useNamingConvention: Components
     Email: Mail,
+    // biome-ignore lint/style/useNamingConvention: Components
     Link: Compass,
+    // biome-ignore lint/style/useNamingConvention: Components
     Download: ArrowDownCircle,
     'Info & Download': ArrowDownCircle,
+    // biome-ignore lint/style/useNamingConvention: Components
     Styleguide: FileText,
+    // biome-ignore lint/style/useNamingConvention: Components
     Blog: Feather,
     ArrowDownCircle,
+    // biome-ignore lint/style/useNamingConvention: Components
     GitHub: Github,
     Sun,
     Moon,
