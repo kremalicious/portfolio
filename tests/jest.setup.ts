@@ -7,6 +7,13 @@ import './__mocks__/matchMedia'
 
 fetchMock.enableMocks()
 
+// Mock ResizeObserver which is not available in JSDOM
+global.ResizeObserver = jest.fn().mockImplementation(() => ({
+  observe: jest.fn(),
+  unobserve: jest.fn(),
+  disconnect: jest.fn()
+})) as unknown as typeof ResizeObserver
+
 jest.mock('next/navigation', () => ({
   usePathname: jest.fn().mockImplementationOnce(() => '/')
 }))

@@ -42,35 +42,35 @@
       "width": 2880,
       "height": 1600,
       "format": "png",
-      "blurDataURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIklEQVR4nGPYs3u3o4NjcnLyuXPnGM6dOyckJGRqagrkAACh+gwx3PBT3AAAAABJRU5ErkJggg=="
+      "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIklEQVR4nGPYs3u3o4NjcnLyuXPnGM6dOyckJGRqagrkAACh+gwx3PBT3AAAAABJRU5ErkJggg=="
     },
     {
       "src": "/images/oceanprotocol-market-02.png",
       "width": 2880,
       "height": 1600,
       "format": "png",
-      "blurDataURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIUlEQVR4nGPg4+MzMzVTU1FjZGRk4OPje/bs+aFDh4AcADwVBmUswjyuAAAAAElFTkSuQmCC"
+      "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIUlEQVR4nGPg4+MzMzVTU1FjZGRk4OPje/bs+aFDh4AcADwVBmUswjyuAAAAAElFTkSuQmCC"
     },
     {
       "src": "/images/oceanprotocol-market-03.png",
       "width": 2880,
       "height": 1600,
       "format": "png",
-      "blurDataURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGPg4+Pbu2/f1CnT+fj4GFhZWD79/P3g3iNRYREAefgKHUsXFTIAAAAASUVORK5CYII="
+      "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGPg4+Pbu2/f1CnT+fj4GFhZWD79/P3g3iNRYREAefgKHUsXFTIAAAAASUVORK5CYII="
     },
     {
       "src": "/images/oceanprotocol-market-04.png",
       "width": 2880,
       "height": 1600,
       "format": "png",
-      "blurDataURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGNgYGKSkpJ6+fLVnz9/GDiYOGSkZV89e/Xv7z8Ae1oMHMU2B+IAAAAASUVORK5CYII="
+      "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGNgYGKSkpJ6+fLVnz9/GDiYOGSkZV89e/Xv7z8Ae1oMHMU2B+IAAAAASUVORK5CYII="
     },
     {
       "src": "/images/oceanprotocol-market-05.png",
       "width": 2880,
       "height": 1600,
       "format": "png",
-      "blurDataURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGP4////u3fvpKWkOdnYGf7////h3QdJCSkmJmYAwiIMS8eeLo0AAAAASUVORK5CYII="
+      "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGP4////u3fvpKWkOdnYGf7////h3QdJCSkmJmYAwiIMS8eeLo0AAAAASUVORK5CYII="
     }
   ]
 }

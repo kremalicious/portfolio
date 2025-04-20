@@ -11,7 +11,6 @@
     "dev": "npm run prebuild && next dev",
     "build": "next build",
     "start": "next start",
-    "export": "npm run prebuild && next export",
     "typecheck": "tsc",
     "lint": "biome check .",
     "format": "biome check --write .",
@@ -39,7 +38,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@kremalicious/config": "1.1.0",
-    "@svgr/webpack": "8.1.0",
+    "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/react": "16.3.0",
     "@types/file-saver": "2.0.7",

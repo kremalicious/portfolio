@@ -2,7 +2,7 @@
 
 import { cache } from 'react'
 
-export const preloadLocation = () => {
+export const preloadLocation = async () => {
   void getLocation()
 }
 

@@ -9,11 +9,12 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 type Props = {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = getProjectBySlug(params.slug)
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const { slug } = await props.params
+  const project = getProjectBySlug(slug)
   if (!project) return {}
 
   return {
@@ -30,8 +31,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default async function ProjectPage({ params }: Props) {
-  const project = getProjectBySlug(params.slug)
+export default async function ProjectPage(props: Props) {
+  const { slug } = await props.params
+  const project = getProjectBySlug(slug)
 
   if (!project) notFound()
 
@@ -39,7 +41,7 @@ export default async function ProjectPage({ params }: Props) {
     <>
       <Header />
       <Project project={project} />
-      <ProjectNav projects={projects} currentSlug={params.slug} />
+      <ProjectNav projects={projects} currentSlug={slug} />
     </>
   )
 }

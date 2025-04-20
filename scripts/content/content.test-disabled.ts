@@ -23,7 +23,7 @@
 //     const images = await getProjectImages('ipixelpad')
 //     expect(images).toBeDefined()
 //     expect(images[0].src).toContain('ipixelpad')
-//     // expect(images[0].blurDataURL).toBeDefined()
+//     // expect(images[0].blurDataUrl).toBeDefined()
 //     expect(images[0].width).toBeDefined()
 //     expect(images[0].height).toBeDefined()
 //     expect(images[0].format).toBeDefined()
