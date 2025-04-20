@@ -13,7 +13,7 @@ jest.mock('../../lib/getAllSlugs', () => ({
 
 describe('app: [slug]/page', () => {
   it('renders correctly', async () => {
-    render(await Page({ params: { slug: 'slug' } }))
+    render(await Page({ params: Promise.resolve({ slug: 'slug' }) }))
   })
 
   it('generateStaticParams()', async () => {
@@ -23,7 +23,7 @@ describe('app: [slug]/page', () => {
 
   it('generateMetadata()', async () => {
     const metadata = await generateMetadata({
-      params: { slug: projectMock.slug }
+      params: Promise.resolve({ slug: projectMock.slug })
     })
 
     expect(metadata).toEqual({
