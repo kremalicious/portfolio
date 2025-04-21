@@ -29,9 +29,34 @@ function Animation({ children }: { children: React.ReactNode }) {
 export default function Location() {
   const [isPending, startTransition] = useTransition()
   const [location, setLocation] = useState<UseLocation | null>(null)
+  const [nowLocalTime, setNowLocalTime] = useState<string>('')
 
   const isDifferentCountry = location?.now?.country !== location?.next?.country
   const relativeTime = new RelativeTime({ locale: 'en' })
+
+  useEffect(() => {
+    if (!location?.now?.city) return
+
+    const updateLocalTime = () => {
+      const userLocale = navigator.language || 'en-US'
+      const formatter = new Intl.DateTimeFormat(userLocale, {
+        hour: 'numeric',
+        minute: 'numeric',
+        timeZone:
+          Intl.supportedValuesOf('timeZone').find(
+            (tz) =>
+              tz.includes(location.now.city) ||
+              tz.includes(location.now.country)
+          ) || undefined
+      })
+      setNowLocalTime(formatter.format(new Date()))
+    }
+
+    updateLocalTime()
+    const interval = setInterval(updateLocalTime, 60000) // Update every minute
+
+    return () => clearInterval(interval)
+  }, [location])
 
   useEffect(() => {
     startTransition(async () => {
@@ -52,7 +77,10 @@ export default function Location() {
                   name: location.now.country
                 }}
               />
-              {location.now.city} <span>Now</span>
+              {location.now.city} <span>Now, </span>{' '}
+              <span className={styles.localTime}>
+                {nowLocalTime} local time
+              </span>
             </>
           ) : null}
 

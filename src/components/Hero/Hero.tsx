@@ -10,8 +10,8 @@ export default function Hero() {
       <LogoUnit />
       <Networks label="Networks" />
       <div className={styles.meta}>
-        <Location />
         <Availability />
+        <Location />
       </div>
     </header>
   )

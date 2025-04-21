@@ -11,6 +11,10 @@
   color: var(--text-color-light);
 }
 
+.localTime {
+  font-size: var(--font-size-mini);
+}
+
 .emoji {
   display: inline-block;
   font-size: 1em;
