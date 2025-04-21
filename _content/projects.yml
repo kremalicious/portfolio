@@ -1,7 +1,32 @@
+- title: vado
+  slug: vado
+  description: |
+    Vado is a decentralized URL shortener, built on the Base network. It enables users to create, manage, and resolve short links that are stored onchain.
+
+    I helped brand, design and build the service from the ground up in 2025, from smart contracts to the resolver architecture to the Astro-based frontend. I focused on balancing usability with robustness, ensuring links can be accessed through various grades of decentralization.
+
+    Token-gating and fee mechanics are enforced at the smart contract level. The frontend reflects this by offering a gated dashboard and analytics view for token holders. Both the app and documentation are built with a minimal stack using Astro, but otherwise framework-less, to maximize robustness, longevity, and ease of maintenance.
+  links:
+    - title: vado app
+      icon: Compass
+      url: 'https://app.vado.link'
+    - title: vado docs
+      icon: FileText
+      url: 'https://docs.vado.link'
+  techstack:
+    - HTML
+    - CSS
+    - JavaScript
+    - TypeScript
+    - Astro
+    - Solidity
+    - Ethereum
+    - Base
+
 - title: Ocean Market
   slug: oceanprotocol-market
   description: |
-    As part of Ocean Protocol v3, I was leading the planning and execution of the Ocean Market product and decentralized web app in 2020. 
+    As part of Ocean Protocol v3, I was leading the planning and execution of the Ocean Market product and decentralized web app in 2020.
 
     Ocean Market allows for seamless tokenization, sharing, and monetization of valuable data assets within EVM-compatible networks through the use of data tokens.
 
@@ -33,7 +58,7 @@
 - title: Ocean Protocol - IPFS Integration
   slug: oceanprotocol-ipfs
   description: |
-    In 2019 I took on the challenge of seamlessly integrating IPFS into the Ocean Protocol stack, from the core all the way up to multiple touchpoints in the UI. 
+    In 2019 I took on the challenge of seamlessly integrating IPFS into the Ocean Protocol stack, from the core all the way up to multiple touchpoints in the UI.
 
     For making IPFS as decentralized file storage solution as seemless as possible to use within Ocean Protocol, a public IPFS node was created with a simple user-facing UI and API. This was followed by allowing users to effortlessly add their files to IPFS directly through the convenient publish flow in [Commons](/oceanprotocol-commons/).
   links:
@@ -148,7 +173,7 @@
 - title: Berlin Innovation Ventures
   slug: biv
   description: |
-    I designed and developed the website and basic branding for Berlin Innovation Ventures, a VC firm based in Berlin. 
+    I designed and developed the website and basic branding for Berlin Innovation Ventures, a VC firm based in Berlin.
 
     The main website was a static site built with Jekyll, supported by a custom Gulp-based build pipeline for optimal performance and user experience.
   techstack:
@@ -413,7 +438,7 @@
 - title: Allinnia Creative Group
   slug: allinnia
   description: |
-    In 2009, I was tasked with creating the branding and online presence for Allinnia Creative Group, a professional music production studio. 
+    In 2009, I was tasked with creating the branding and online presence for Allinnia Creative Group, a professional music production studio.
 
     I created a website that showcased their unique musical compositions, including a store and listening functionality. I built the website from scratch as a simple PHP application, ensuring that it accurately reflected the creative spirit of the studio.
   techstack:
