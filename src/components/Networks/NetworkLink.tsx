@@ -1,6 +1,6 @@
 'use client'
 
-import { LazyMotion, domAnimation, m } from 'framer-motion'
+import { LazyMotion, domAnimation, m } from 'motion/react'
 import Icon from '../Icon'
 import { moveInTop } from '../Transitions'
 import styles from './index.module.css'
