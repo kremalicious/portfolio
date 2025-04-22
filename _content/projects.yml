@@ -3,7 +3,7 @@
   description: |
     Vado is a decentralized URL shortener, built on the Base network. It enables users to create, manage, and resolve short links that are stored onchain.
 
-    I helped brand, design and build the service from the ground up in 2025, from smart contracts to the resolver architecture to the Astro-based frontend. I focused on balancing usability with robustness, ensuring links can be accessed through various grades of decentralization.
+    I helped brand, design and build the service from the ground up in 2025, from smart contracts to the resolver and subgraph architecture to the Astro-based frontend app. I focused on balancing usability with robustness, ensuring links can be accessed through various grades of decentralization.
 
     Token-gating and fee mechanics are enforced at the smart contract level. The frontend reflects this by offering a gated dashboard and analytics view for token holders. Both the app and documentation are built with a minimal stack using Astro, but otherwise framework-less, to maximize robustness, longevity, and ease of maintenance.
   links:
@@ -22,6 +22,7 @@
     - Solidity
     - Ethereum
     - Base
+    - Subgraph
 
 - title: Ocean Market
   slug: oceanprotocol-market
