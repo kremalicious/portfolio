@@ -25,14 +25,17 @@ export const metadata: Metadata = {
   openGraph: {
     images: [{ url: meta.img }],
     url: meta.url,
-    locale: 'en_US',
-    type: 'website'
+    locale: 'en_US'
   },
   twitter: { card: 'summary_large_image' }
 }
 
 export const viewport: Viewport = {
-  themeColor: 'var(--theme-color)'
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#e7eef4' },
+    { media: '(prefers-color-scheme: dark)', color: '#1d2224' }
+  ],
+  colorScheme: 'light dark'
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -43,9 +46,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
           href={`https://use.typekit.net/${process.env.NEXT_PUBLIC_TYPEKIT_ID}.css`}
         />
-        {/* 
+        {/*
           Stop the favicon madness
-          https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs 
+          https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
         */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
