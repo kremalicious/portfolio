@@ -3,6 +3,14 @@ import { render } from '@testing-library/react'
 import projectMock from '../../../tests/__fixtures__/project.json'
 import Page, { generateMetadata, generateStaticParams } from '../[slug]/page'
 
+// Mock the generateOgImageUrl function to return a predictable URL
+jest.mock('../../lib/generateOgImageUrl', () => ({
+  generateOgImageUrl: jest.fn().mockImplementation((image) => {
+    const src = typeof image === 'string' ? image : image.src
+    return `https://optimized-image.com${src}`
+  })
+}))
+
 jest.mock('../../lib/getProjectBySlug', () => ({
   getProjectBySlug: jest.fn().mockImplementation(() => projectMock)
 }))
@@ -35,7 +43,18 @@ describe('app: [slug]/page', () => {
       },
       openGraph: {
         url: `/${projectMock.slug}`,
-        images: [{ url: projectMock.images[0].src }]
+        images: [
+          {
+            url: `https://optimized-image.com${projectMock.images[0].src}`,
+            width: 1200,
+            height: 630,
+            alt: `${projectMock.title} - ${meta.author.name}`
+          }
+        ]
+      },
+      twitter: {
+        card: 'summary_large_image',
+        images: [`https://optimized-image.com${projectMock.images[0].src}`]
       }
     })
   })

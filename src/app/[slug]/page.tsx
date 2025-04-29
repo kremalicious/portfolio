@@ -1,6 +1,7 @@
 import Header from '@/components/Header/Header'
 import Project from '@/components/Project'
 import ProjectNav from '@/components/ProjectNav'
+import { generateOgImageUrl } from '@/lib/generateOgImageUrl'
 import { getAllSlugs } from '@/lib/getAllSlugs'
 import { getProjectBySlug } from '@/lib/getProjectBySlug'
 import meta from '@content/meta.json'
@@ -26,7 +27,18 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     },
     openGraph: {
       url: `/${project.slug}`,
-      images: [{ url: project.images[0].src }]
+      images: [
+        {
+          url: generateOgImageUrl(project.images[0]),
+          width: 1200,
+          height: 630,
+          alt: `${project.title} - ${meta.author.name}`
+        }
+      ]
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [generateOgImageUrl(project.images[0])]
     }
   }
 }

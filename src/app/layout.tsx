@@ -1,6 +1,7 @@
 import Footer from '@/components/Footer'
 import HostnameCheck from '@/components/HostnameCheck'
 import ThemeSwitch from '@/components/ThemeSwitch'
+import { generateOgImageUrl } from '@/lib/generateOgImageUrl'
 import { UMAMI_SCRIPT_URL, UMAMI_WEBSITE_ID } from '@/lib/umami'
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(meta.url),
   alternates: { canonical: '/' },
   openGraph: {
-    images: [{ url: meta.img }],
+    images: [{ url: generateOgImageUrl(meta.img) }],
     url: meta.url,
     locale: 'en_US'
   },
