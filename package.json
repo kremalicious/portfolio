@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@giphy/js-fetch-api": "5.6.0",
-    "@radix-ui/react-select": "2.2.2",
+    "@radix-ui/react-select": "2.2.5",
     "@yaireo/relative-time": "1.0.5",
     "file-saver": "2.0.5",
     "lucide-react": "0.503.0",
