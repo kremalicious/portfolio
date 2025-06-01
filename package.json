@@ -50,7 +50,7 @@
     "jest-fetch-mock": "3.0.3",
     "js-yaml": "4.1.0",
     "ora": "8.2.0",
-    "sharp": "0.34.1",
+    "sharp": "0.34.2",
     "sharp-ico": "0.1.5",
     "slugify": "1.6.6",
     "tsx": "4.19.4",
