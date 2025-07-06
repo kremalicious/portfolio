@@ -73,7 +73,7 @@ export default function Location() {
             <>
               <Flag
                 country={{
-                  code: location.now.country_code,
+                  code: location.now.countryCode,
                   name: location.now.country
                 }}
               />
@@ -89,14 +89,14 @@ export default function Location() {
               {isDifferentCountry && (
                 <Flag
                   country={{
-                    code: location.next.country_code,
+                    code: location.next.countryCode,
                     name: location.next.country
                   }}
                 />
               )}
               {location.next.city}{' '}
               <span>
-                {relativeTime.from(new Date(location.next.date_start))}
+                {relativeTime.from(new Date(location.next.startDate))}
               </span>
             </div>
           )}
