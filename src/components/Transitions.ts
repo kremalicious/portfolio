@@ -1,14 +1,13 @@
 export const moveInTop = {
   initial: {
     opacity: 0,
-    y: -50,
-    transition: { type: 'spring' }
+    y: -50
   },
   enter: {
     opacity: 1,
     y: 0,
     transition: {
-      type: 'spring',
+      type: 'spring' as const,
       duration: 0.3,
       stiffness: 120
     }
@@ -17,7 +16,7 @@ export const moveInTop = {
     opacity: 0,
     y: -50,
     transition: {
-      type: 'spring',
+      type: 'spring' as const,
       duration: 0.2
     }
   }
@@ -26,14 +25,13 @@ export const moveInTop = {
 export const moveInBottom = {
   initial: {
     opacity: 0,
-    y: 20,
-    transition: { type: 'spring' }
+    y: 20
   },
   enter: {
     opacity: 1,
     y: 0,
     transition: {
-      type: 'spring',
+      type: 'spring' as const,
       duration: 0.4,
       stiffness: 120
     }
@@ -42,7 +40,7 @@ export const moveInBottom = {
     opacity: 0,
     y: 20,
     transition: {
-      type: 'spring'
+      type: 'spring' as const
     }
   }
 }
