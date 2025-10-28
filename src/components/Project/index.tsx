@@ -1,12 +1,12 @@
 'use client'
 
+import { domAnimation, LazyMotion, m, useReducedMotion } from 'motion/react'
 import type { ImageType, ProjectType } from '@/types'
-import { LazyMotion, domAnimation, m, useReducedMotion } from 'motion/react'
-import ProjectImage from '../ProjectImage'
+import ProjectImage from '../ProjectImage/index.astr'
 import { getAnimationProps, moveInBottom } from '../Transitions'
+import styles from './index.module.css'
 import ProjectLinks from './Links'
 import ProjectTechstack from './Techstack'
-import styles from './index.module.css'
 
 const containerVariants = {
   enter: {

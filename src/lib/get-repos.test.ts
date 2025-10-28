@@ -1,29 +1,20 @@
+import { beforeEach, describe, expect, test } from 'bun:test'
 import repoFilter from '@content/repos.json'
-import fetch, { type FetchMock } from 'jest-fetch-mock'
-import { getRepos } from './getRepos'
-
-jest.mock('react', () => ({
-  ...jest.requireActual('react'),
-  cache: (fn: () => void) => fn
-}))
+import { getRepos } from './get-repos'
 
 describe('getRepos', () => {
   beforeEach(() => {
     fetch.resetMocks()
   })
 
-  it('should fetch repos data', async () => {
+  test('should fetch repos data', async () => {
     const mockData = {
       name: 'test',
-      // biome-ignore lint/style/useNamingConvention: API response
       full_name: 'test/test',
       description: 'test repo',
-      // biome-ignore lint/style/useNamingConvention: API response
       html_url: 'https://github.com/test/test',
       homepage: 'https://test.com',
-      // biome-ignore lint/style/useNamingConvention: API response
       stargazers_count: 100,
-      // biome-ignore lint/style/useNamingConvention: API response
       pushed_at: '2022-01-01T00:00:00Z'
     }
     ;(fetch as FetchMock).mockResponse(JSON.stringify(mockData))
@@ -35,7 +26,7 @@ describe('getRepos', () => {
     expect(fetch).toHaveBeenCalledTimes(count)
   })
 
-  it('should handle network errors', async () => {
+  test('should handle network errors', async () => {
     const consoleErrorMock: jest.SpyInstance = jest
       .spyOn(console, 'error')
       .mockImplementation(() => {})
@@ -49,7 +40,7 @@ describe('getRepos', () => {
     consoleErrorMock.mockRestore()
   })
 
-  it('should handle invalid repo data', async () => {
+  test('should handle invalid repo data', async () => {
     const mockData = { name: null }
     ;(fetch as FetchMock).mockResponseOnce(JSON.stringify(mockData))
 

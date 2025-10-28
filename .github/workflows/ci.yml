@@ -11,8 +11,6 @@ on:
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   ADOBE_ID: ${{ secrets.NEXT_PUBLIC_TYPEKIT_ID }}
-  NEXT_PUBLIC_UMAMI_SCRIPT_URL: ${{ secrets.NEXT_PUBLIC_UMAMI_SCRIPT_URL }}
-  NEXT_PUBLIC_UMAMI_WEBSITE_ID: ${{ secrets.NEXT_PUBLIC_UMAMI_WEBSITE_ID }}
 
 jobs:
   lint:
@@ -21,7 +19,6 @@ jobs:
       - uses: actions/checkout@v5
       - uses: oven-sh/setup-bun@v2
       - run: bun ci
-      - run: bun run prebuild
       - run: bun run lint
 
   typecheck:
@@ -30,7 +27,6 @@ jobs:
       - uses: actions/checkout@v5
       - uses: oven-sh/setup-bun@v2
       - run: bun ci
-      - run: bun run prebuild
       - run: bun run typecheck
 
   test:
@@ -39,7 +35,6 @@ jobs:
       - uses: actions/checkout@v5
       - uses: oven-sh/setup-bun@v2
       - run: bun ci
-      - run: bun run prebuild
       - run: bun test
       - uses: qltysh/qlty-action/coverage@v1
         with:

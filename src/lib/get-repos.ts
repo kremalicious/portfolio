@@ -1,8 +1,5 @@
-'use server'
-
-import type { Repo } from '@/types'
 import filter from '@content/repos.json'
-import { cache } from 'react'
+import type { Repo } from '@/types'
 
 //
 // Get GitHub repos
@@ -14,12 +11,11 @@ if (!process.env.GITHUB_TOKEN) {
 const gitHubConfig = {
   headers: {
     'User-Agent': 'kremalicious/portfolio',
-    // biome-ignore lint/style/useNamingConvention: Fetch API
     Authorization: `token ${process.env.GITHUB_TOKEN}`
   }
 }
 
-export const getRepos = cache(async () => {
+export const getRepos = async () => {
   try {
     let repos: Repo[] = []
 
@@ -62,4 +58,4 @@ export const getRepos = cache(async () => {
   } catch (error: unknown) {
     console.error((error as Error).message)
   }
-})
+}

@@ -3,11 +3,7 @@ import Icon from '@/components/Icon'
 import type { ProjectLink } from '@/types'
 import styles from './index.module.css'
 
-export default function ProjectLinks({
-  links
-}: {
-  links: ProjectLink[]
-}) {
+export default function ProjectLinks({ links }: { links: ProjectLink[] }) {
   return (
     <div className={styles.projectLinks}>
       <h2 className={styles.title}>

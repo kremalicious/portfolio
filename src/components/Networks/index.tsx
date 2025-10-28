@@ -1,10 +1,10 @@
 'use client'
 
 import meta from '@content/meta.json'
-import { LazyMotion, domAnimation, m, useReducedMotion } from 'motion/react'
+import { domAnimation, LazyMotion, m, useReducedMotion } from 'motion/react'
 import { getAnimationProps } from '../Transitions'
-import { NetworkLink } from './NetworkLink'
 import styles from './index.module.css'
+import { NetworkLink } from './NetworkLink'
 
 type Props = {
   label: string

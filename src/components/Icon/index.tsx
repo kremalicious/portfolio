@@ -1,5 +1,3 @@
-import Farcaster from '@/images/farcaster.svg'
-import Mastodon from '@/images/mastodon.svg'
 // https://lucide.dev
 import {
   ArrowDownCircle,
@@ -18,6 +16,8 @@ import {
   Star,
   Sun
 } from 'lucide-react'
+import Farcaster from '@/images/farcaster.svg'
+import Mastodon from '@/images/mastodon.svg'
 import styles from './index.module.css'
 
 type Props = React.SVGAttributes<{

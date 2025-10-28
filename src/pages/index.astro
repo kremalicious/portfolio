@@ -1,0 +1,17 @@
+---
+import Hero from '@/components/Hero'
+import Projects from '@/components/Projects'
+import Repositories from '@/components/Repositories'
+import BaseLayout from '@/layouts/Base.astro'
+import { getProjects } from '@/lib/get-projects'
+import { getRepos } from '@/lib/get-repos'
+
+const repos = await getRepos()
+const projects = await getProjects()
+---
+
+<BaseLayout>
+  <Hero />
+  <Projects projects={projects} />
+  <Repositories repos={repos} />
+</BaseLayout>

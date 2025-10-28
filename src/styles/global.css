@@ -1,10 +1,5 @@
-@import url('_variables.css');
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@import url('./_reset.css');
+@import url('./_variables.css');
 
 html,
 body {
@@ -25,8 +20,6 @@ body {
   color: var(--text-color);
   text-rendering: optimizeLegibility;
   font-feature-settings: 'liga', 'kern';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
   background-color: var(--body-background-color);
   transition: background-color 0.15s;

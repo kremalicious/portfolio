@@ -1,12 +1,4 @@
-'use server'
-
-import { cache } from 'react'
-
-export const preloadLocation = async () => {
-  void getLocation()
-}
-
-export const getLocation = cache(async () => {
+export const getLocation = async () => {
   try {
     const response = await fetch('https://location.kretschmann.io')
     if (!response.ok)
@@ -17,4 +9,4 @@ export const getLocation = cache(async () => {
   } catch (error: unknown) {
     console.error((error as Error).message)
   }
-})
+}

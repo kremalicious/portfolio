@@ -1,9 +1,6 @@
-'use client'
-
-import Icon from '@/components/Icon'
 import * as Select from '@radix-ui/react-select'
-import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
+import Icon from '@/components/Icon'
 import { Item } from './Item'
 import styles from './index.module.css'
 

@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
-import LogoUnit from '.'
 import meta from '../../../_content/meta.json'
+import LogoUnit from '.'
 
 describe('LogoUnit', () => {
   it('renders correctly from data file values', () => {

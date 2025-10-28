@@ -1,6 +1,5 @@
 import type { ImageType } from '@/types'
-import Link from 'next/link'
-import ProjectImage from '../ProjectImage'
+import ProjectImage from '../ProjectImage/index.astro'
 import styles from './index.module.css'
 
 type Props = {
@@ -11,7 +10,7 @@ type Props = {
 
 export default function ProjectPreview({ title, slug, image }: Props) {
   return (
-    <Link href={`/${slug}`} className={styles.project} key={slug}>
+    <a href={`/${slug}`} className={styles.project} key={slug}>
       <ProjectImage
         image={image}
         alt={`Showcase image for ${title}`}
@@ -21,6 +20,6 @@ export default function ProjectPreview({ title, slug, image }: Props) {
       <footer className={styles.meta}>
         <h2 className={styles.title}>{title}</h2>
       </footer>
-    </Link>
+    </a>
   )
 }

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import Projects from '.'
 import projects from '../../../tests/__fixtures__/projects.json'
+import Projects from '.'
 
 describe('Projects', () => {
   it('renders correctly from data file values', async () => {

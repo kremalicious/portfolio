@@ -1,9 +1,7 @@
-'use client'
-
-import { getLocation } from '@/lib/getLocation'
 import RelativeTime from '@yaireo/relative-time'
-import { LazyMotion, domAnimation, m, useReducedMotion } from 'motion/react'
+import { domAnimation, LazyMotion, m, useReducedMotion } from 'motion/react'
 import { useEffect, useState, useTransition } from 'react'
+import { getLocation } from '@/lib/get-location'
 import { fadeIn, getAnimationProps } from '../Transitions'
 import { Flag } from './Flag'
 import styles from './Location.module.css'

@@ -1,9 +1,9 @@
 'use client'
 
-import type { ProjectType } from '@/types'
 import { createRef, useEffect } from 'react'
-import { Project } from './Project'
+import type { ProjectType } from '@/types'
 import styles from './index.module.css'
+import { Project } from './Project'
 
 type Props = {
   projects: ProjectType[]

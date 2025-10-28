@@ -1,8 +1,8 @@
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
-import meta from '@content/meta.json'
 import { defineConfig, fontProviders } from 'astro/config'
 import { loadEnv } from 'vite'
+import meta from './_content/meta.json'
 
 const env = loadEnv(process.env.NODE_ENV ?? '', process.cwd(), '')
 const adobeId = env.ADOBE_ID
@@ -18,7 +18,7 @@ export default defineConfig({
         name: 'Brandon Grotesque',
         cssVariable: '--font-brandon-grotesque',
         provider: fontProviders.adobe({ id: adobeId }),
-        weights: [700],
+        weights: [400],
         styles: ['normal'],
         featureSettings: 'liga'
       },
@@ -26,7 +26,7 @@ export default defineConfig({
         name: 'FF Tisa Sans Pro',
         cssVariable: '--font-ff-tisa-sans-pro',
         provider: fontProviders.adobe({ id: adobeId }),
-        weights: [400, 600],
+        weights: [400, 700],
         styles: ['normal', 'italic'],
         featureSettings: 'liga'
       }

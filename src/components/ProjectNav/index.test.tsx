@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import ProjectNav from '.'
 import projects from '../../../tests/__fixtures__/projects.json'
+import ProjectNav from '.'
 
 describe('ProjectNav', () => {
   it('renders correctly', async () => {

@@ -1,0 +1,249 @@
+@layer reset {
+  html {
+    color-scheme: light dark;
+    font:
+      clamp(1rem, 1rem + 0.5vw, 2rem) / 1.4 system-ui,
+      sans-serif;
+    tab-size: 2;
+    hanging-punctuation: first allow-end last;
+    word-break: break-word;
+  }
+
+  body {
+    margin: 0;
+    padding: 2rem;
+    min-height: 100vh;
+
+    @media (width < 500px) {
+      padding: 1rem;
+    }
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  h1,
+  h2 {
+    font-weight: 800;
+    letter-spacing: -0.02rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 /* FUTURE :heading */ {
+    text-wrap: balance;
+    margin-block-start: 0;
+  }
+
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+    max-inline-size: 88ch;
+  }
+
+  a {
+    color: oklch(68% 0.17 228deg);
+    text-underline-offset: 2px;
+
+    &:not(:is(:hover, :focus)) {
+      text-decoration-color: color-mix(in srgb, currentColor, transparent 50%);
+    }
+  }
+
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  sub {
+    inset-block-end: -0.25em;
+  }
+
+  sup {
+    inset-block-start: -0.5em;
+  }
+
+  ul,
+  ol,
+  dl {
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+
+    ul,
+    ol,
+    dl {
+      padding-inline-start: 2ch;
+    }
+  }
+
+  img,
+  video,
+  iframe {
+    display: block;
+    max-inline-size: 100%;
+    block-size: auto;
+    border-style: none;
+  }
+
+  figure {
+    inline-size: fit-content;
+    margin-inline: auto;
+  }
+
+  figcaption {
+    contain: inline-size;
+    font-size: 90%;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    font: inherit;
+
+    /* FUTURE: appearance: base; */
+  }
+
+  label {
+    display: block;
+  }
+
+  input:not(
+      :where(
+          [type='submit'],
+          [type='checkbox'],
+          [type='radio'],
+          [type='button'],
+          [type='reset']
+        )
+    ) {
+    inline-size: 100%;
+  }
+
+  button,
+  input:where([type='submit'], [type='reset'], [type='button']) {
+    background: CanvasText;
+    color: Canvas;
+    border: 1px solid transparent;
+  }
+
+  textarea {
+    field-sizing: content;
+    min-block-size: 5lh;
+    inline-size: 100%;
+    max-inline-size: 100%;
+  }
+
+  pre,
+  code,
+  kbd,
+  samp {
+    font-family: ui-monospace, SFMono-Regular, monospace;
+  }
+
+  [aria-disabled='true' i],
+  [disabled] {
+    cursor: not-allowed;
+  }
+
+  [hidden] {
+    /* biome-ignore lint/complexity/noImportantStyles: IGNORE */
+    display: none !important;
+  }
+
+  [disabled],
+  label:has(input[disabled]) {
+    opacity: 0.5;
+
+    [disabled] {
+      opacity: 1;
+    }
+  }
+
+  pre {
+    white-space: pre-wrap;
+    background: CanvasText;
+    color: Canvas;
+    padding: 1.5rem;
+  }
+
+  hr {
+    border-style: solid;
+    border-width: 1px 0 0;
+    color: inherit;
+    height: 0;
+    overflow: visible;
+    margin-block: 2.5rem;
+  }
+
+  :target {
+    scroll-margin: 3rlh;
+  }
+
+  table {
+    caption-side: bottom;
+    border-collapse: collapse;
+
+    td {
+      font-size: 90%;
+    }
+
+    td,
+    th {
+      word-break: normal;
+      padding: 0.5rem;
+    }
+  }
+
+  [role='region'][aria-labelledby][tabindex] {
+    overflow: auto;
+  }
+
+  caption {
+    font-size: 90%;
+  }
+
+  .screenreader-only:not(:focus):not(:active) {
+    clip-path: rect(0 0 0 0);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  :focus-visible {
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @view-transition {
+      navigation: auto;
+    }
+
+    html {
+      interpolate-size: allow-keywords;
+
+      &:focus-within {
+        scroll-behavior: smooth;
+      }
+    }
+  }
+}

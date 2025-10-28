@@ -1,0 +1,24 @@
+---
+import Header from '@/components/Header'
+import Project from '@/components/Project'
+import ProjectNav from '@/components/ProjectNav'
+import BaseLayout from '@/layouts/Base.astro'
+import { getProjectBySlug } from '@/lib/get-project-by-slug'
+import { getProjects } from '@/lib/get-projects'
+
+type Props = {
+  params: { slug: string }
+}
+
+const { slug } = Astro.props.params
+const project = await getProjectBySlug(slug)
+if (!project) return Astro.redirect('/404')
+
+const projects = await getProjects()
+---
+
+<BaseLayout title={project.title} description={`${project.description.slice(0, 157)}...`} image={project.images[0]}>
+  <Header />
+  <Project project={project} />
+  <ProjectNav projects={projects} currentSlug={slug} />
+</BaseLayout>
