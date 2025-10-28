@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'bun:test'
 import { markdownToHtml } from './markdown'
 
 describe('lib/markdown', () => {

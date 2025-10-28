@@ -1,3 +1,13 @@
 {
-  "extends": ["@kremalicious/config/biome"]
+  "extends": ["@kremalicious/config/biome"],
+  "linter": {
+    "domains": {
+      "next": "none"
+    },
+    "rules": {
+      "correctness": {
+        "noUnusedVariables": "error"
+      }
+    }
+  }
 }

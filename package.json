@@ -11,8 +11,7 @@
     "dev": "bun run prebuild && bun --bun astro dev",
     "build": "bun --bun astro build",
     "preview": "bun --bun astro preview",
-    "jest": "jest --coverage -c tests/jest.config.js",
-    "test": "NODE_ENV=test bun run jest",
+    "test": "bun test",
     "lint": "biome check .",
     "format": "biome check --write .",
     "typecheck": "tsc --noEmit && bun --bun astro check",
@@ -21,16 +20,18 @@
     "prebuild": "bun ./scripts/prebuild.ts"
   },
   "dependencies": {
+    "@astrojs/check": "0.9.5",
+    "@astrojs/react": "4.4.0",
+    "@astrojs/sitemap": "3.6.0",
     "@giphy/js-fetch-api": "5.7.0",
-    "@radix-ui/react-select": "2.2.5",
-    "@yaireo/relative-time": "1.0.5",
+    "@radix-ui/react-select": "2.2.6",
+    "@yaireo/relative-time": "1.1.0",
+    "astro": "5.15.1",
     "file-saver": "2.0.5",
-    "lucide-react": "0.526.0",
+    "lucide-react": "0.548.0",
     "motion": "12.23.9",
-    "next": "15.4.4",
-    "next-themes": "0.4.6",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
     "remark": "15.0.1",
     "remark-gfm": "4.0.1",
     "remark-html": "16.0.1"
@@ -38,19 +39,14 @@
   "devDependencies": {
     "@biomejs/biome": "2.3.2",
     "@kremalicious/config": "2.2.0",
-    "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "6.6.4",
     "@testing-library/react": "16.3.0",
     "@types/bun": "1.3.1",
     "@types/file-saver": "2.0.7",
-    "@types/jest": "30.0.0",
-    "@types/js-yaml": "4.0.9",
     "@types/node": "24.9.1",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
     "chalk": "5.4.1",
-    "jest": "30.0.5",
-    "jest-environment-jsdom": "30.0.5",
-    "jest-fetch-mock": "3.0.3",
-    "js-yaml": "4.1.0",
     "ora": "8.2.0",
     "sharp": "0.34.1",
     "sharp-ico": "0.1.5",
@@ -61,5 +57,10 @@
     "bun": ">=1.3.0"
   },
   "packageManager": "bun@1.3.0",
-  "browserslist": ["> 0.2%", "last 3 versions", "Firefox ESR", "not dead"]
+  "browserslist": [
+    "> 0.2%",
+    "last 3 versions",
+    "Firefox ESR",
+    "not dead"
+  ]
 }

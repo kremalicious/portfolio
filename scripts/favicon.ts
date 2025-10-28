@@ -25,10 +25,8 @@ const outputMeta = `
 function createManifest(iconsizes: number[]) {
   const manifest = {
     name: 'matthias kretschmann',
-    // biome-ignore lint/style/useNamingConvention: Web API
     short_name: 'mk',
     display: 'standalone',
-    // biome-ignore lint/style/useNamingConvention: Web API
     start_url: '/',
     icons: iconsizes.map((size) => ({
       src: `/manifest/favicon-${size}.png`,

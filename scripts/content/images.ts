@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import { join } from 'node:path'
-import type { ImageType } from '@/types/image'
 import sharp from 'sharp'
+import type { ImageType } from '@/types/image'
 import { rgbDataUrl } from './rgbDataURL'
 
 const imagesDirectory = join(process.cwd(), 'public', 'images')
