@@ -9,9 +9,8 @@ import { getRepos } from '@/lib/get-repos'
 const repos = await getRepos()
 const projects = await getProjects()
 ---
-
 <BaseLayout>
-  <Hero />
-  <Projects projects={projects} />
-  <Repositories repos={repos} />
+  <Hero/>
+  <Projects projects={projects}/>
+  <Repositories repos={repos}/>
 </BaseLayout>

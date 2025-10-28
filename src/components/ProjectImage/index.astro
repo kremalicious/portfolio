@@ -14,16 +14,15 @@ type Props = {
 const { image, alt, sizes, className, priority } = Astro.props as Props
 if (!image || !image.src) return null
 ---
-
 <figure class={`${styles.imageWrap} ${className || null}`}>
-      <Image
-        class={styles.image}
-        src={image.src}
-        alt={alt}
-        width={image.width}
-        height={image.height}
-        sizes={sizes}
-        quality={85}
-        priority={priority}
-      />
-    </figure>
+  <Image
+    class={styles.image}
+    src={image.src}
+    alt={alt}
+    width={image.width}
+    height={image.height}
+    sizes={sizes}
+    quality={85}
+    priority={priority}
+  />
+</figure>

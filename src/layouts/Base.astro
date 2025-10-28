@@ -1,24 +1,26 @@
 ---
 import meta from '@content/meta.json'
-import Footer from '@/components/Footer'
+import FooterComponent from '@/components/Footer'
 import HostnameCheck from '@/components/HostnameCheck'
 import ThemeSwitch from '@/components/ThemeSwitch'
-import Head from './Head.astro'
+import HeadComponent from './Head.astro'
 ---
-
 <html lang="en">
-      <Head />
-      <body>
-          <HostnameCheck allowedHosts={meta.allowedHosts} />
-          <ThemeSwitch />
+  <HeadComponent/>
 
-          <main class="screen"><slot /></main>
-          <Footer />
-      </body>
-    </html>
+  <body>
+    <HostnameCheck allowedHosts={meta.allowedHosts}/>
+    <ThemeSwitch/>
 
-    <style>
-      .screen {
+    <main class="screen">
+      <slot/>
+    </main>
+    <FooterComponent/>
+  </body>
+</html>
+
+<style>
+.screen {
   margin: 0 auto;
   padding-left: 5vw;
   padding-right: 5vw;
@@ -29,5 +31,4 @@ import Head from './Head.astro'
     max-width: calc(var(--projectImageMaxWidth) + 10vw);
   }
 }
-
-    </style>
+</style>

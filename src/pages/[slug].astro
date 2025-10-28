@@ -16,9 +16,12 @@ if (!project) return Astro.redirect('/404')
 
 const projects = await getProjects()
 ---
-
-<BaseLayout title={project.title} description={`${project.description.slice(0, 157)}...`} image={project.images[0]}>
-  <Header />
-  <Project project={project} />
-  <ProjectNav projects={projects} currentSlug={slug} />
+<BaseLayout
+  title={project.title}
+  description={`${project.description.slice(0, 157)}...`}
+  image={project.images[0]}
+>
+  <header/>
+  <Project project={project}/>
+  <ProjectNav projects={projects} currentSlug={slug}/>
 </BaseLayout>

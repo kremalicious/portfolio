@@ -48,84 +48,80 @@ const appleTouchIcon = await getImage({
 })
 const faviconSvg = await getImage({ src: faviconSvgSrc, format: 'svg' })
 ---
-
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
 
-  <script
-    is:inline
-    define:vars={{ sessionStorageName: "preferred-theme" }}
-  >
-    // run early so no page flashes
-    (function () {
-      function getPreferTheme() {
-        const savedTheme = sessionStorage.getItem(sessionStorageName);
-        if (savedTheme) return savedTheme;
+  <script is:inline define:vars={{ sessionStorageName: "preferred-theme" }}>
+  // run early so no page flashes
+  ;(() => {
+    function getPreferTheme() {
+      const savedTheme = sessionStorage.getItem(sessionStorageName)
+      if (savedTheme) return savedTheme
 
-        const isSystemDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
+      const isSystemDark = window.matchMedia(
+        '(prefers-color-scheme: dark)'
+      ).matches
 
-        return isSystemDark ? "dark" : "light";
-      }
+      return isSystemDark ? 'dark' : 'light'
+    }
 
-      function getThemeColor(theme) {
-        return theme === "dark" ? "#1d2224" : "#e7eef4";
-      }
+    function getThemeColor(theme) {
+      return theme === 'dark' ? '#1d2224' : '#e7eef4'
+    }
 
-      const themeValue = getPreferTheme();
-      const themeColor = getThemeColor(themeValue);
+    const themeValue = getPreferTheme()
+    const themeColor = getThemeColor(themeValue)
 
-      function reflectPreference() {
-        const htmlEl = document.documentElement;
-        const metaThemeColor = document.querySelector("meta[name=theme-color]");
+    function reflectPreference() {
+      const htmlEl = document.documentElement
+      const metaThemeColor = document.querySelector('meta[name=theme-color]')
 
-        htmlEl.setAttribute("data-theme", themeValue);
-        htmlEl.setAttribute("data-theme-color", themeColor);
-        metaThemeColor?.setAttribute("content", themeColor);
-      }
+      htmlEl.setAttribute('data-theme', themeValue)
+      htmlEl.setAttribute('data-theme-color', themeColor)
+      metaThemeColor?.setAttribute('content', themeColor)
+    }
 
-      reflectPreference();
-    })();
+    reflectPreference()
+  })()
   </script>
 
   <title>{titleFinal}</title>
 
-  <link rel="canonical" href={canonicalUrl} />
-  <meta name="description" content={descriptionFinal} />
-  <meta property="og:title" content={titleFinal} />
-  <meta property="og:image" content={imageFinal} />
-  <meta property="og:image:alt" content={imageFinalAlt} />
-  <meta property="og:url" content={canonicalUrl} />
-  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href={canonicalUrl}>
+  <meta name="description" content={descriptionFinal}>
+  <meta property="og:title" content={titleFinal}>
+  <meta property="og:image" content={imageFinal}>
+  <meta property="og:image:alt" content={imageFinalAlt}>
+  <meta property="og:url" content={canonicalUrl}>
+  <meta name="twitter:card" content="summary_large_image">
 
   <meta
-      name="theme-color"
-      content="#e7eef4"
-      media="(prefers-color-scheme: light)"
-    />
-    <meta
-      name="theme-color"
-      content="#1d2224"
-      media="(prefers-color-scheme: dark)"
-    />
-    <meta name="color-scheme" content="light dark" />
+    name="theme-color"
+    content="#e7eef4"
+    media="(prefers-color-scheme: light)"
+  >
+  <meta
+    name="theme-color"
+    content="#1d2224"
+    media="(prefers-color-scheme: dark)"
+  >
+  <meta name="color-scheme" content="light dark">
 
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-  <meta name="robots" content="noai, noimageai" />
+  >
+  <meta name="robots" content="noai, noimageai">
 
-  <link rel="icon" href="/favicon.ico" sizes="32x32" />
-  <link rel="icon" href={faviconSvg.src} type="image/svg+xml" />
-  <link rel="apple-touch-icon" href={appleTouchIcon.src} />
-  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href={faviconSvg.src} type="image/svg+xml">
+  <link rel="apple-touch-icon" href={appleTouchIcon.src}>
+  <link rel="manifest" href="/manifest.json">
 
-  <link rel="sitemap" href="/sitemap-index.xml" />
+  <link rel="sitemap" href="/sitemap-index.xml">
 
-  <Font cssVariable="--font-ff-tisa-sans-pro" />
-  <Font cssVariable="--font-brandon-grotesque" />
+  <Font cssVariable="--font-ff-tisa-sans-pro"/>
+  <Font cssVariable="--font-brandon-grotesque"/>
 
   {
     shouldIncludeAnalytics && (

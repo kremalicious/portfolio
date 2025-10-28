@@ -9,5 +9,8 @@
         "noUnusedVariables": "error"
       }
     }
+  },
+  "html": {
+    "experimentalFullSupportEnabled": true
   }
 }
