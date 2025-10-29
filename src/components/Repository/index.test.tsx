@@ -12,9 +12,7 @@ describe('Repository', () => {
   it('uses html_url as main link for portfolio & blog', () => {
     const repo1 = {
       name: 'portfolio',
-      // biome-ignore lint/style/useNamingConvention: API response
       full_name: 'kremalicious/portfolio',
-      // biome-ignore lint/style/useNamingConvention: API response
       html_url: 'html_url'
     }
 
@@ -27,7 +25,6 @@ describe('Repository', () => {
   it('renders homepage link when provided', () => {
     const repo = {
       name: 'Hello',
-      // biome-ignore lint/style/useNamingConvention: API response
       full_name: 'kremalicious/hello',
       homepage: 'hello'
     }
@@ -37,7 +34,6 @@ describe('Repository', () => {
   })
 
   it('renders no link without homepage', () => {
-    // biome-ignore lint/style/useNamingConvention: API response
     const repo = { name: 'Hello', full_name: 'repo/hello' }
 
     const { container } = render(<Repository repo={repo as Repo} />)

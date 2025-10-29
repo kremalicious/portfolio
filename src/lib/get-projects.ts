@@ -4,9 +4,9 @@ import type { ProjectType } from '@/types/project'
 import { transformProject } from './content/transformProject'
 
 const contentDirectory = path.join(process.cwd(), '_content')
-const projectsOriginal = YAML.parse(
-  await Bun.file(`${contentDirectory}/projects.yml`).text()
-) as ProjectType[]
+const projectsFilePath = path.join(contentDirectory, 'projects.yml')
+const projectsFile = await Bun.file(projectsFilePath).text()
+const projectsOriginal = YAML.parse(projectsFile) as ProjectType[]
 
 export async function getProjects(): Promise<ProjectType[]> {
   const slugs = projectsOriginal.map(({ slug }: { slug: string }) => slug)

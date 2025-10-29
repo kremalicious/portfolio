@@ -1,7 +1,9 @@
 ---
-import Header from '@/components/Header'
+import HeaderComponent from '@/components/Header'
 import Project from '@/components/Project'
-import ProjectNav from '@/components/ProjectNav'
+import styles from '@/components/Project/index.module.css'
+import ProjectImage from '@/components/ProjectImage/index.astro'
+import ProjectNav from '@/components/ProjectNav/index.astro'
 import BaseLayout from '@/layouts/Base.astro'
 import { getProjectBySlug } from '@/lib/get-project-by-slug'
 import { getProjects } from '@/lib/get-projects'
@@ -21,7 +23,7 @@ const projects = await getProjects()
   description={`${project.description.slice(0, 157)}...`}
   image={project.images[0]}
 >
-  <header/>
-  <Project project={project}/>
+  <HeaderComponent/>
+  <Project project={project} client:load></Project>
   <ProjectNav projects={projects} currentSlug={slug}/>
 </BaseLayout>

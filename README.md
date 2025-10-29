@@ -52,9 +52,9 @@ Next.js automatically creates pages from each item in that file utilizing the [`
 
 ### 🖼 Project images
 
-All project images live under `public/images` and are automatically attached to each project based on the inclusion of the project's `slug` in their filenames.
+All project images live under `_content_/images` and are automatically attached to each project based on the inclusion of the project's `slug` in their filenames.
 
-Next.js with `next/image` generates all required image sizes for delivering responsible, responsive images to visitors, including lazy loading of all images. For this to work, images are analyzed on build time and various image metadata is passed down as props.
+Astro generates all required image sizes for delivering responsible, responsive images to visitors, including lazy loading of all images. For this to work, images are analyzed on build time and various image metadata is passed down as props.
 
 - [`src/components/ProjectImage/index.tsx`](src/components/ProjectImage/index.tsx)
 - [`script/content/images.ts`](script/content/images.ts)

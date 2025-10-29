@@ -1,8 +1,9 @@
 ---
 import { Font, getImage } from 'astro:assets'
 import meta from '@content/meta.json'
-import faviconSrc from '@/images/favicon.png'
-import faviconSvgSrc from '@/images/favicon.svg'
+
+// import faviconSrc from '@/images/favicon.png'
+// import faviconSvgSrc from '@/images/favicon.svg'
 
 type Props = {
   title?: string
@@ -28,25 +29,14 @@ const canonicalUrl =
     : `${Astro.site?.origin}${Astro.url.pathname}`
 
 const imageFinal = `${Astro.site?.origin}${
-  image
-    ? (await getImage({ src: image, width: 800, format: 'jpg' })).src
-    : faviconSrc.src
+  image ? (await getImage({ src: image, width: 800, format: 'jpg' })).src : null
 }`
 
 const imageFinalAlt = image ? `Teaser image for ${title}` : 'Logo'
-
-const isProduction = import.meta.env.PROD
+const isProduction = process.env.NODE_ENV === 'production'
 const { UMAMI_WEBSITE_ID, UMAMI_SCRIPT_URL } = process.env
 const shouldIncludeAnalytics =
   isProduction && UMAMI_WEBSITE_ID && UMAMI_SCRIPT_URL
-
-const appleTouchIcon = await getImage({
-  src: faviconSrc,
-  width: 180,
-  height: 180,
-  format: 'png'
-})
-const faviconSvg = await getImage({ src: faviconSvgSrc, format: 'svg' })
 ---
 <head>
   <meta charset="utf-8">
@@ -114,8 +104,8 @@ const faviconSvg = await getImage({ src: faviconSvgSrc, format: 'svg' })
   <meta name="robots" content="noai, noimageai">
 
   <link rel="icon" href="/favicon.ico" sizes="32x32">
-  <link rel="icon" href={faviconSvg.src} type="image/svg+xml">
-  <link rel="apple-touch-icon" href={appleTouchIcon.src}>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.json">
 
   <link rel="sitemap" href="/sitemap-index.xml">

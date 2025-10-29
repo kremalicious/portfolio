@@ -1,8 +1,6 @@
-'use client'
-
 import { domAnimation, LazyMotion, m, useReducedMotion } from 'motion/react'
-import type { ImageType, ProjectType } from '@/types'
-import ProjectImage from '../ProjectImage/index.astr'
+import type { ReactNode } from 'react'
+import type { ProjectType } from '@/types'
 import { getAnimationProps, moveInBottom } from '../Transitions'
 import styles from './index.module.css'
 import ProjectLinks from './Links'
@@ -17,11 +15,13 @@ const containerVariants = {
 }
 
 export default function Project({
-  project
+  project,
+  children
 }: {
   project: Partial<ProjectType>
+  children?: ReactNode
 }) {
-  const { title, descriptionHtml, images, links, techstack } = project
+  const { title, descriptionHtml, links, techstack } = project
   const shouldReduceMotion = useReducedMotion()
   const animationProps = getAnimationProps(shouldReduceMotion || false)
 
@@ -40,21 +40,13 @@ export default function Project({
           <m.div
             variants={moveInBottom}
             className={styles.description}
-            // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+            // biome-ignore lint/security/noDangerouslySetInnerHtml: Ignored for markdown content
             dangerouslySetInnerHTML={{ __html: descriptionHtml ?? '' }}
           />
         </m.header>
       </LazyMotion>
 
-      {images?.map((image: ImageType, i: number) => (
-        <ProjectImage
-          className={styles.fullContainer}
-          image={image}
-          alt={`Showcase image no. ${i + 1} for ${title}`}
-          key={image.src}
-          sizes="100vw"
-        />
-      ))}
+      {children}
 
       <footer className={styles.meta}>
         {links && <ProjectLinks links={links} />}

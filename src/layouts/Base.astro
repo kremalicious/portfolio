@@ -2,7 +2,7 @@
 import meta from '@content/meta.json'
 import FooterComponent from '@/components/Footer'
 import HostnameCheck from '@/components/HostnameCheck'
-import ThemeSwitch from '@/components/ThemeSwitch'
+// import ThemeSwitch from '@/components/ThemeSwitch'
 import HeadComponent from './Head.astro'
 ---
 <html lang="en">
@@ -10,7 +10,7 @@ import HeadComponent from './Head.astro'
 
   <body>
     <HostnameCheck allowedHosts={meta.allowedHosts}/>
-    <ThemeSwitch/>
+    <!-- <ThemeSwitch/> -->
 
     <main class="screen">
       <slot/>

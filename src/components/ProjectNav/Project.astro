@@ -1,0 +1,19 @@
+---
+import type { ProjectType } from '../../types/project'
+import styles from './index.module.css'
+
+type Props = {
+  project: ProjectType
+  isCurrent?: boolean
+}
+
+const { project, isCurrent } = Astro.props
+---
+<a
+  class={`${styles.item} ${isCurrent ? styles.current : ''}`}
+  href={`/${project.slug}`}
+  title={project.title}
+  data-current={isCurrent ? 'true' : undefined}
+>
+  <span>{project.title}</span>
+</a>
