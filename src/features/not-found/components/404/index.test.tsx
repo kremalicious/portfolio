@@ -1,6 +1,7 @@
+import { describe, it } from 'bun:test'
 import { fireEvent, render, screen } from '@testing-library/react'
-import NotFoundPage from '@/components/404'
-import mockData from '../../../tests/__fixtures__/giphy.json'
+import mockData from '@tests/__fixtures__/giphy.json'
+import NotFoundPage from '@/features/not-found/components/404'
 
 describe('NotFoundPage', () => {
   it('renders correctly', async () => {

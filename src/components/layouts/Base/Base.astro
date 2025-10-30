@@ -1,16 +1,15 @@
 ---
+import '@/styles/global.css'
 import meta from '@content/meta.json'
-import FooterComponent from './Footer.astro'
-// import ThemeSwitch from '@/components/ThemeSwitch'
+import FooterComponent from '@/components/common/Footer/Footer.astro'
+import HostnameCheck from '@/components/common/HostnameCheck/HostnameCheck.astro'
 import HeadComponent from './Head.astro'
-import HostnameCheck from './HostnameCheck.astro'
 ---
 <html lang="en">
   <HeadComponent/>
 
   <body>
-    <HostnameCheck allowedHosts={meta.allowedHosts} client:load/>
-    <!-- <ThemeSwitch/> -->
+    <HostnameCheck allowedHosts={meta.allowedHosts}/>
 
     <main class="screen">
       <slot/>

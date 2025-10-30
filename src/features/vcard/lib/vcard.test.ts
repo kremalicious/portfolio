@@ -1,13 +1,21 @@
+import { beforeEach, describe, expect, it, mock } from 'bun:test'
 import { constructVcard, downloadVcard } from './vcard'
 
-jest.mock('./imageToDataUrl', () => ({
-  __esModule: true,
-  imageToDataUrl: jest.fn().mockResolvedValue('data:image/png;base64,')
+mock.module('./getVcardData', () => ({
+  getVcardData: mock().mockResolvedValue({
+    fullName: 'John Doe',
+    organization: 'Acme Corp',
+    title: 'Software Engineer',
+    email: 'john.doe@example.com',
+    phone: '+1234567890',
+    address: '123 Main St, Anytown, USA',
+    photo: 'https://example.com/photo.jpg'
+  })
 }))
 
 describe('Vcard/_utils', () => {
   beforeEach(() => {
-    global.URL.createObjectURL = jest.fn()
+    global.URL.createObjectURL = mock()
   })
 
   it('combined vCard download process finishes', async () => {

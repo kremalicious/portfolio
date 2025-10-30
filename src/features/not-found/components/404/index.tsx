@@ -1,6 +1,6 @@
 import { type MouseEvent, useEffect, useState } from 'react'
+import Button from '@/components/ui/Button'
 import { getRandomGif } from '@/features/not-found/lib/get-random-gif'
-import Button from '../Button'
 import styles from './index.module.css'
 
 const tag = 'cat'

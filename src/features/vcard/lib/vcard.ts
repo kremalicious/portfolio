@@ -1,6 +1,6 @@
 import meta from '@content/meta.json'
 import saveAs from 'file-saver'
-import avatar from '@/images/avatar.jpg'
+import avatar from '@/assets/avatar.jpg'
 import { imageToDataUrl } from './imageToDataUrl'
 
 export function constructVcard(dataUrl: string) {

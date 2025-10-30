@@ -1,7 +1,6 @@
 ---
-import Button from '@/components/Button/index.astro'
-import Icon from '@/components/ui/Icon/index.astro'
-import type { ProjectLink } from '@/types'
+import Button from '@/components/ui/Button'
+import type { ProjectLink } from '@/features/projects/types/project'
 import styles from './index.module.css'
 
 interface Props {
@@ -19,7 +18,7 @@ const { links } = Astro.props
     {links.map(({ title, url, icon }) => (
       <li>
         <Button href={url} data-testid="link">
-          <Icon name={icon ? icon : title} />
+          {/* <Icon name={icon ? icon : title} /> */}
           {title}
         </Button>
       </li>

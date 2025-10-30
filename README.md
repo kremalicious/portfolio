@@ -167,7 +167,7 @@ npm run lint
 
 ### 👩‍🔬 Testing
 
-Test suite is setup with [Jest](https://jestjs.io) and [react-testing-library](https://github.com/kentcdodds/react-testing-library).
+Test suite is setup with [Bun Test Runner](https://bun.com) and [react-testing-library](https://github.com/kentcdodds/react-testing-library).
 
 To run all tests, including type checking and linting of all files:
 

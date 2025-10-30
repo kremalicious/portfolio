@@ -1,10 +1,16 @@
-import { beforeEach, describe, expect, test } from 'bun:test'
+import { afterEach, beforeEach, describe, expect, spyOn, test } from 'bun:test'
 import repoFilter from '@content/repos.json'
 import { getRepos } from './get-repos'
 
+let fetchSpy: ReturnType<typeof spyOn<typeof globalThis, 'fetch'>>
+
 describe('getRepos', () => {
   beforeEach(() => {
-    fetch.resetMocks()
+    fetchSpy = spyOn(globalThis, 'fetch')
+  })
+
+  afterEach(() => {
+    fetchSpy.mockRestore()
   })
 
   test('should fetch repos data', async () => {
@@ -17,32 +23,33 @@ describe('getRepos', () => {
       stargazers_count: 100,
       pushed_at: '2022-01-01T00:00:00Z'
     }
-    ;(fetch as FetchMock).mockResponse(JSON.stringify(mockData))
 
-    const data = await getRepos()
-    const count = repoFilter.length
+    fetchSpy.mockResolvedValueOnce(new Response(JSON.stringify(mockData)))
 
-    expect(data).toEqual(Array.from({ length: count }, () => mockData))
-    expect(fetch).toHaveBeenCalledTimes(count)
+    const actualRepos = await getRepos()
+
+    expect(fetchSpy).toHaveBeenCalledTimes(repoFilter.length)
+    expect(actualRepos).toEqual(
+      Array.from({ length: repoFilter.length }, () => mockData)
+    )
   })
 
   test('should handle network errors', async () => {
-    const consoleErrorMock: jest.SpyInstance = jest
-      .spyOn(console, 'error')
-      .mockImplementation(() => {})
-    ;(fetch as FetchMock).mockRejectOnce(new Error('Network error'))
+    const consoleErrorSpy = spyOn(console, 'error').mockReturnValue()
 
-    const data = await getRepos()
+    fetchSpy.mockRejectedValueOnce(new Error('Network error'))
 
-    expect(data).toBeUndefined()
-    expect(fetch).toHaveBeenCalledTimes(1)
+    const actualRepos = await getRepos()
 
-    consoleErrorMock.mockRestore()
+    expect(actualRepos).toBeUndefined()
+    expect(fetchSpy).toHaveBeenCalledTimes(1)
+
+    consoleErrorSpy.mockRestore()
   })
 
   test('should handle invalid repo data', async () => {
     const mockData = { name: null }
-    ;(fetch as FetchMock).mockResponseOnce(JSON.stringify(mockData))
+    fetchSpy.mockResolvedValueOnce(new Response(JSON.stringify(mockData)))
 
     const data = await getRepos()
 

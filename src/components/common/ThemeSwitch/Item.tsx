@@ -1,7 +1,5 @@
-'use client'
-
 import * as Select from '@radix-ui/react-select'
-import Icon from '../ui/Icon'
+import { CheckIcon } from 'lucide-react'
 import styles from './Item.module.css'
 import { getIconName } from './index'
 
@@ -9,7 +7,7 @@ export function Item({ theme }: { theme: string }) {
   return (
     <Select.Item value={theme} className={styles.item}>
       <Select.ItemIndicator className={styles.itemIndicator}>
-        <Icon name="Check" />
+        <CheckIcon className="icon" />
       </Select.ItemIndicator>
 
       <Select.Icon className={styles.itemIcon}>

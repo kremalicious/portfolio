@@ -18,5 +18,5 @@
 }
 
 .title {
-  composes: metatitle from '../index.module.css';
+  composes: metatitle from '../Project.module.css';
 }
