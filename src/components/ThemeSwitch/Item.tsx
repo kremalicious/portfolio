@@ -1,7 +1,7 @@
 'use client'
 
 import * as Select from '@radix-ui/react-select'
-import Icon from '../Icon'
+import Icon from '../ui/Icon'
 import styles from './Item.module.css'
 import { getIconName } from './index'
 

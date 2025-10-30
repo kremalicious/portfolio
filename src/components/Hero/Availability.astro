@@ -1,0 +1,13 @@
+---
+import meta from '@content/meta.json'
+import styles from './Availability.module.css'
+
+const { status, available, unavailable } = meta.availability
+const className = status
+  ? `${styles.availability} ${styles.available}`
+  : `${styles.availability}`
+const html = status ? available : unavailable
+---
+<section class={className}>
+  <p set:html={html}/>
+</section>

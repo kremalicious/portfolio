@@ -1,7 +1,7 @@
 ---
-import NotFound from '@/components/404'
-import BaseLayout from '@/layouts/Base.astro'
+import BaseLayout from '@/components/layouts/Base/Base.astro'
+import NotFound from '@/features/not-found/components/404'
 ---
 <BaseLayout title="Shenanigans" description="Page not found.">
-  <NotFound/>
+  <NotFound client:load/>
 </BaseLayout>

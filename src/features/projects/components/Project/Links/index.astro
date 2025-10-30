@@ -1,0 +1,28 @@
+---
+import Button from '@/components/Button/index.astro'
+import Icon from '@/components/ui/Icon/index.astro'
+import type { ProjectLink } from '@/types'
+import styles from './index.module.css'
+
+interface Props {
+  links: ProjectLink[]
+}
+
+const { links } = Astro.props
+---
+<div class={styles.projectLinks}>
+  <h2 class={styles.title}>
+    Links <span>Learn more on the interwebz.</span>
+  </h2>
+
+  <ul>
+    {links.map(({ title, url, icon }) => (
+      <li>
+        <Button href={url} data-testid="link">
+          <Icon name={icon ? icon : title} />
+          {title}
+        </Button>
+      </li>
+    ))}
+  </ul>
+</div>

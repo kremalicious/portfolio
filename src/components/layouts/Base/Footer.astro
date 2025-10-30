@@ -1,0 +1,29 @@
+---
+import meta from '@content/meta.json'
+import Networks from '@/components/Networks/Networks.astro'
+import LogoUnit from '@/components/ui/LogoUnit/index.astro'
+import Vcard from '@/features/vcard/components/Vcard.astro'
+import styles from './Footer.module.css'
+
+const year = new Date().getFullYear()
+---
+<footer class={`h-card ${styles.footer}`}>
+  <LogoUnit small/>
+  <Networks label="Networks Footer" small/>
+
+  <p class={styles.actions}>
+    <Vcard/>
+
+    <a class="u-key" href={meta.gpg}> PGP/GPG key </a>
+    <a href={meta.bugs}>Found a bug?</a>
+  </p>
+  <p class={styles.copyright}>
+    <small>
+      &copy; {year}
+      {' '}
+      <a class="u-url" href={meta.url}> {meta.author.name.toLowerCase()}</a>
+      {' '}
+      &mdash; All Rights Reserved
+    </small>
+  </p>
+</footer>

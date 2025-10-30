@@ -1,6 +1,6 @@
 import * as Select from '@radix-ui/react-select'
 import { useEffect, useState } from 'react'
-import Icon from '@/components/Icon'
+import Icon from '@/components/ui/Icon'
 import { Item } from './Item'
 import styles from './index.module.css'
 

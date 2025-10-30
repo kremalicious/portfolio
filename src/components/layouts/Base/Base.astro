@@ -1,0 +1,34 @@
+---
+import meta from '@content/meta.json'
+import FooterComponent from './Footer.astro'
+// import ThemeSwitch from '@/components/ThemeSwitch'
+import HeadComponent from './Head.astro'
+import HostnameCheck from './HostnameCheck.astro'
+---
+<html lang="en">
+  <HeadComponent/>
+
+  <body>
+    <HostnameCheck allowedHosts={meta.allowedHosts} client:load/>
+    <!-- <ThemeSwitch/> -->
+
+    <main class="screen">
+      <slot/>
+    </main>
+    <FooterComponent/>
+  </body>
+</html>
+
+<style>
+.screen {
+  margin: 0 auto;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+@media (min-width: 55rem) {
+  .screen {
+    max-width: calc(var(--projectImageMaxWidth) + 10vw);
+  }
+}
+</style>

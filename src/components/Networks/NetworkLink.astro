@@ -1,0 +1,23 @@
+---
+import styles from './index.module.css'
+
+interface Props {
+  name: string
+  url: string
+}
+
+const { name, url } = Astro.props as Props
+const linkClasses =
+  name === 'Mail' ? `u-email ${styles.link}` : `u-url ${styles.link}`
+
+const icons = {
+  GitHub: 'github',
+  LinkedIn: 'linkedin',
+  Twitter: 'twitter',
+  Mail: 'mail',
+  Mastodon: 'mastodon'
+}
+---
+<a aria-label={name} class={linkClasses} href={url} rel="me">
+  <span class={styles.title}>{name}</span>
+</a>

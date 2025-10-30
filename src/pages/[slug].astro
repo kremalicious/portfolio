@@ -1,12 +1,12 @@
 ---
-import HeaderComponent from '@/components/Header'
-import Project from '@/components/Project'
+import HeaderComponent from '@/components/Header/Header.astro'
+import BaseLayout from '@/components/layouts/Base/Base.astro'
 import styles from '@/components/Project/index.module.css'
-import ProjectImage from '@/components/ProjectImage/index.astro'
-import ProjectNav from '@/components/ProjectNav/index.astro'
-import BaseLayout from '@/layouts/Base.astro'
-import { getProjectBySlug } from '@/lib/get-project-by-slug'
-import { getProjects } from '@/lib/get-projects'
+import Project from '@/features/projects/components/Project'
+import ProjectImage from '@/features/projects/components/ProjectImage/index.astro'
+import ProjectNav from '@/features/projects/components/ProjectNav/index.astro'
+import { getProjectBySlug } from '@/features/projects/lib/get-project-by-slug'
+import { getProjects } from '@/features/projects/lib/get-projects'
 
 type Props = {
   params: { slug: string }
@@ -24,6 +24,6 @@ const projects = await getProjects()
   image={project.images[0]}
 >
   <HeaderComponent/>
-  <Project project={project} client:load></Project>
+  <Project project={project}/>
   <ProjectNav projects={projects} currentSlug={slug}/>
 </BaseLayout>

@@ -1,10 +1,10 @@
 ---
-import Hero from '@/components/Hero'
-import Projects from '@/components/Projects/index.astro'
-import Repositories from '@/components/Repositories'
-import BaseLayout from '@/layouts/Base.astro'
-import { getProjects } from '@/lib/get-projects'
-import { getRepos } from '@/lib/get-repos'
+import Hero from '@/components/Hero/Hero.astro'
+import BaseLayout from '@/components/layouts/Base/Base.astro'
+import Projects from '@/features/projects/components/Projects/index.astro'
+import { getProjects } from '@/features/projects/lib/get-projects'
+import Repositories from '@/features/repositories/components/Repositories.astro'
+import { getRepos } from '@/features/repositories/lib/get-repos'
 
 const repos = await getRepos()
 const projects = await getProjects()

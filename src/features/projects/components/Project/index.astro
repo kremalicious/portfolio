@@ -1,0 +1,27 @@
+---
+import type { ProjectType } from '../../types/project'
+import styles from './index.module.css'
+import ProjectLinks from './Links/index.astro'
+import ProjectTechstack from './Techstack/index.astro'
+
+interface Props {
+  project: Partial<ProjectType>
+}
+
+const { project } = Astro.props
+const { title, descriptionHtml, links, techstack } = project
+---
+<article class={styles.project}>
+  <header class={styles.intro}>
+    <h1 class={styles.headerTitle}>{title}</h1>
+
+    <div class={styles.description} set:html={descriptionHtml ?? ''}/>
+  </header>
+
+  <slot/>
+
+  <footer class={styles.meta}>
+    {links && <ProjectLinks links={links} />}
+    {techstack && <ProjectTechstack techstack={techstack} />}
+  </footer>
+</article>

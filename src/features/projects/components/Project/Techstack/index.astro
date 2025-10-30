@@ -1,0 +1,19 @@
+---
+import styles from './index.module.css'
+
+interface Props {
+  techstack: string[]
+}
+
+const { techstack } = Astro.props
+---
+<div class={styles.projectTechstack}>
+  <h2 class={styles.title}>
+    Tools & Technologies <span>The tech stack I was involved with.</span>
+  </h2>
+  <ul>
+    {techstack.map((tech) => (
+      <li>{tech}</li>
+    ))}
+  </ul>
+</div>
