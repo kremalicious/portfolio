@@ -1,16 +1,22 @@
 ---
-import type { ImageType } from '../../types/image'
+import ProjectImage from '../ProjectImage/index.astro'
 import styles from './index.module.css'
 
 type Props = {
   title: string
   slug: string
-  image: ImageType
+  images: ImageMetadata[]
 }
 
-const { title, slug, image } = Astro.props
+const { title, slug, images } = Astro.props as Props
 ---
 <a href={`/${slug}`} class={styles.project}>
+  {images && images.length > 0 && (
+    <ProjectImage
+      image={images[0]}
+      alt={title}
+    />
+  )}
   <footer class={styles.meta}>
     <h2 class={styles.title}>{title}</h2>
   </footer>

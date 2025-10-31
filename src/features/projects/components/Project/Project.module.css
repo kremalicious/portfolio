@@ -20,10 +20,6 @@
   }
 }
 
-.intro {
-  margin-bottom: calc(var(--spacer) * 2);
-}
-
 .description {
   font-size: var(--font-size-base);
 }

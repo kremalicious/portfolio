@@ -51,7 +51,8 @@
 
   /* Components spacing */
   --spacer: 1.5rem;
-  --border-radius: 0.25rem;
+  --border-radius: 0.5rem;
+  --border-radius-lg: 0.75rem;
   --stroke-width: 0.125rem;
 
   /* Miscellanious */

@@ -2,7 +2,7 @@ import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
 import { defineConfig, fontProviders } from 'astro/config'
 import { loadEnv } from 'vite'
-import meta from './_content/meta.json'
+import meta from './src/_content/meta.json'
 
 const env = loadEnv(process.env.NODE_ENV ?? '', process.cwd(), '')
 const adobeId = env.ADOBE_ID

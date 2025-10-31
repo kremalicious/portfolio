@@ -1,0 +1,37 @@
+---
+import type { ProjectType } from '../types/project'
+import ProjectPreview from './ProjectPreview/index.astro'
+
+type Props = {
+  projects: ProjectType[]
+}
+
+const { projects } = Astro.props
+---
+<nav class="projects">
+  {projects.length > 0 &&
+    projects.map((project) => (
+      <ProjectPreview
+        title={project.title}
+        slug={project.slug}
+        images={project.images}
+      />
+    ))}
+</nav>
+
+<style>
+.projects {
+  display: grid;
+  gap: calc(var(--spacer) * 2);
+}
+
+@media (min-width: 55rem) {
+  .projects {
+    gap: calc(var(--spacer) * 3);
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(min-content, calc(50% - (var(--spacer) * 1.5)))
+      );
+  }
+}
+</style>

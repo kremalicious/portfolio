@@ -1,5 +1,3 @@
-import type { ImageType } from './image'
-
 export declare type ProjectLink = {
   title: string
   url: string
@@ -7,11 +5,11 @@ export declare type ProjectLink = {
 }
 
 export declare type ProjectType = {
-  images: ImageType[]
   slug: string
   title: string
   description: string
   descriptionHtml: string
+  images: ImageMetadata[]
   techstack: string[]
   links?: ProjectLink[]
 }

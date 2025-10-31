@@ -1,8 +1,8 @@
 import type { ProjectType } from '../types/project'
-// import { getProjectImages } from './images'
+import { getProjectImages } from './get-project-images'
 import { markdownToHtml } from './markdown'
 
-export async function transformProject(
+export async function enhanceProject(
   projectsOriginal: ProjectType[],
   slug: string
 ) {
@@ -13,8 +13,8 @@ export async function transformProject(
   const descriptionHtml = await markdownToHtml(project.description)
   project.descriptionHtml = descriptionHtml
 
-  // const images = await getProjectImages(slug)
-  // project.images = images
+  const images = await getProjectImages(slug)
+  project.images = images
 
   return project
 }

@@ -1,28 +1,30 @@
 ---
-import type { ImageType } from '../../types/image'
+import { Image } from 'astro:assets'
+import type { ImageMetadata } from 'astro'
 import styles from './index.module.css'
 
 type Props = {
-  image: ImageType
+  image: ImageMetadata
   alt: string
   className?: string
   width?: number
 }
 
 const { image, alt, className, width } = Astro.props as Props
-if (!image || !image.src) return null
+if (!image) return null
 
-// Convert absolute path to relative URL
-const imageUrl = image.src.replace(process.cwd(), '').replace('/_content', '')
+const defaultSizes = '(min-width: 960px) 800px, 100vw'
+const availableWidth = width ?? image.width ?? 1200
+const widths = [400, 800, 1200, 1200].filter((value) => value <= availableWidth)
 ---
-<figure class={`${styles.imageWrap} ${className || ''}`}>
-  <img
+<figure class:list={[styles.imageWrap, className || '']}>
+  <Image
     class={styles.image}
-    src={imageUrl}
+    src={image}
     alt={alt}
-    width={width || image.width}
-    height={image.height}
+    widths={widths.length > 0 ? widths : undefined}
+    sizes={defaultSizes}
     loading="lazy"
     decoding="async"
-  >
+  />
 </figure>

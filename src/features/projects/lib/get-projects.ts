@@ -1,9 +1,9 @@
 import path from 'node:path'
 import { YAML } from 'bun'
 import type { ProjectType } from '../types/project'
-import { transformProject } from './transformProject'
+import { enhanceProject } from './enhance-project'
 
-const contentDirectory = path.join(process.cwd(), '_content')
+const contentDirectory = path.join(process.cwd(), 'src', '_content')
 const projectsFilePath = path.join(contentDirectory, 'projects.yml')
 const projectsFile = await Bun.file(projectsFilePath).text()
 const projectsOriginal = YAML.parse(projectsFile) as ProjectType[]
@@ -15,7 +15,7 @@ export async function getProjects(): Promise<ProjectType[]> {
     const projects: ProjectType[] = []
 
     for (const slug of slugs) {
-      const project = await transformProject(projectsOriginal, slug)
+      const project = await enhanceProject(projectsOriginal, slug)
       if (project) projects.push(project)
     }
 

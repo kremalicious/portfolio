@@ -1,4 +1,5 @@
 ---
+import ProjectImage from '@/features/projects/components/ProjectImage/index.astro'
 import type { ProjectType } from '../../types/project'
 import styles from './index.module.css'
 
@@ -15,5 +16,12 @@ const { project, isCurrent } = Astro.props
   title={project.title}
   data-current={isCurrent ? 'true' : undefined}
 >
+  <ProjectImage
+    image={project.images[0]}
+    alt={project.title}
+    className={styles.projectImage}
+    width={884}
+  />
+
   <span>{project.title}</span>
 </a>

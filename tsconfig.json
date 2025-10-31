@@ -4,7 +4,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@tests/*": ["./tests/*"],
-      "@content/*": ["./_content/*"]
+      "@content/*": ["./src/_content/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react",
