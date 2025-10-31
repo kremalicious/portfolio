@@ -5,12 +5,12 @@
   "start_url": "/?homescreen=1",
   "icons": [
     {
-      "src": "/manifest/favicon-192.png",
+      "src": "/favicon-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/manifest/favicon-512.png",
+      "src": "/favicon-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

@@ -1,23 +1,38 @@
 ---
+import { FeatherIcon, MailIcon } from '@lucide/astro'
+import FarcasterIcon from '@/assets/farcaster.svg'
+import GitHubIcon from '@/assets/github.svg'
+import MastodonIcon from '@/assets/mastodon.svg'
 import styles from './Networks.module.css'
 
 interface Props {
   name: string
   url: string
+  animationOrder?: number
 }
 
-const { name, url } = Astro.props as Props
-const linkClasses =
-  name === 'Mail' ? `u-email ${styles.link}` : `u-url ${styles.link}`
+const { name, url, animationOrder = 0 } = Astro.props as Props
+const linkClasses = [styles.link, name === 'Mail' ? 'u-email' : 'u-url']
 
 const icons = {
-  GitHub: 'github',
-  LinkedIn: 'linkedin',
-  Twitter: 'twitter',
-  Mail: 'mail',
-  Mastodon: 'mastodon'
+  GitHub: GitHubIcon,
+  Mastodon: MastodonIcon,
+  Blog: FeatherIcon,
+  Farcaster: FarcasterIcon,
+  Mail: MailIcon
 }
+
+type NetworkName = keyof typeof icons
+
+const IconComponent = icons[name as NetworkName] || null
 ---
-<a aria-label={name} class={linkClasses} href={url} rel="me">
-  <span class={styles.title}>{name}</span>
+<a
+  aria-label={name}
+  title={name}
+  class:list={linkClasses}
+  href={url}
+  rel="me"
+  style={`--animation-order: ${animationOrder}`}
+>
+  <IconComponent width={24} height={24} class={styles.icon}/>
 </a>

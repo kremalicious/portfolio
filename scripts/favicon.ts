@@ -8,9 +8,7 @@ const faviconSource = `${imagesSourcePath}/favicon-512.png`
 const faviconSourceSvg = `${imagesSourcePath}/favicon.svg`
 
 const outputWebRoot = path.resolve(path.join(process.cwd(), 'public'))
-const outputManifest = path.resolve(
-  path.join(process.cwd(), 'public', 'manifest')
-)
+const outputManifest = path.resolve(path.join(process.cwd(), 'public'))
 
 // All the sizes and meta we'll need
 // https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
@@ -19,7 +17,7 @@ const outputMeta = `
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/manifest/manifest.webmanifest" />
+  <link rel="manifest" href="/manifest.webmanifest" />
 `
 
 function createManifest(iconsizes: number[]) {
@@ -29,7 +27,7 @@ function createManifest(iconsizes: number[]) {
     display: 'standalone',
     start_url: '/',
     icons: iconsizes.map((size) => ({
-      src: `/manifest/favicon-${size}.png`,
+      src: `/favicon-${size}.png`,
       type: 'image/png',
       sizes: `${size}x${size}`
     }))

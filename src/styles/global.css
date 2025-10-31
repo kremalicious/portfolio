@@ -33,6 +33,10 @@ ol {
   margin: 0 0 var(--spacer);
 }
 
+p {
+  max-inline-size: 100%;
+}
+
 /* Headings */
 
 h1 {
@@ -82,14 +86,4 @@ a {
 a:hover,
 a:focus {
   color: #5ebeb1;
-}
-
-/* Media */
-img,
-video,
-svg,
-figure {
-  max-width: 100%;
-  height: auto;
-  margin: 0;
 }

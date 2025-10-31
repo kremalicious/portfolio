@@ -9,25 +9,20 @@
   font-size: var(--font-size-mini);
 }
 
-.footer > aside {
-  margin-top: 0;
-  margin-bottom: var(--spacer);
-}
-
 .actions {
-  margin-bottom: 0;
+  margin-top: calc(var(--spacer) * 2);
+  display: flex;
+  gap: calc(var(--spacer) * 2);
+  justify-content: center;
 }
 
 .actions a {
-  display: inline-block;
-  padding: 0 calc(var(--spacer) / 4);
+  display: block;
   font-size: var(--font-size-small);
-  margin-left: calc(var(--spacer) / 2);
-  margin-right: calc(var(--spacer) / 2);
-  margin-bottom: calc(var(--spacer) / 2);
   color: inherit;
 }
 
-.copyright {
+.copyright,
+.copyright a {
   color: var(--text-color-light);
 }

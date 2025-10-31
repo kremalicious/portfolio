@@ -8,18 +8,13 @@ interface Props {
 }
 
 const { small } = Astro.props
+const TitleTag = small ? 'h2' : 'h1'
 ---
-<a class={`${styles.logounit} ${small ? styles.small : ''}`} href="/">
+<a class:list={[styles.logounit, small ? styles.small : '']} href="/">
   <Logo class={styles.logo}/>
-  {small ? (
-    <h2 class={`p-name ${styles.title}`}>
-      {meta.author.name.toLowerCase()}
-    </h2>
-  ) : (
-    <h1 class={`p-name ${styles.title}`}>
-      {meta.author.name.toLowerCase()}
-    </h1>
-  )}
+  <TitleTag class={`p-name ${styles.title}`}>
+    {meta.author.name.toLowerCase()}
+  </TitleTag>
   <p class={`p-job-title ${styles.description}`}>
     {meta.author.label.toLowerCase()}
   </p>

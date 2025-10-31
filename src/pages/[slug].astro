@@ -1,6 +1,6 @@
 ---
 import HeaderComponent from '@/components/common/Header/Header.astro'
-import BaseLayout from '@/components/layouts/Base/Base.astro'
+import BaseLayout from '@/components/layouts/Base.astro'
 import styles from '@/components/Project/index.module.css'
 import Project from '@/features/projects/components/Project/Project.astro'
 import ProjectImage from '@/features/projects/components/ProjectImage/index.astro'
@@ -23,7 +23,6 @@ const projects = await getProjects()
 <BaseLayout
   title={project.title}
   description={`${project.description.slice(0, 157)}...`}
-  image={project.images[0]}
 >
   <HeaderComponent/>
   <Project project={project}/>
