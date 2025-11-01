@@ -13,10 +13,14 @@
   const { title, descriptionHtml, links, techstack, images } = project
 ---
 <article class={styles.project}>
-  <header>
-    <h1 class={styles.headerTitle}>{title}</h1>
-    <div set:html={descriptionHtml ?? ''}/>
-  </header>
+  <h1 class:list={[styles.title, 'animation', 'animation--move-in-bottom']}>
+    {title}
+  </h1>
+  <div
+    class:list={[styles.description, 'animation', 'animation--move-in-bottom']}
+    style="animation-delay:var(--animation-delay-step)"
+    set:html={descriptionHtml ?? ''}
+  />
 
   {images.map((image) => (
     <ProjectImage

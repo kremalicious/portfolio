@@ -12,7 +12,12 @@
   }
 
   const { name, url, animationOrder = 0 } = Astro.props as Props
-  const linkClasses = [styles.link, name === 'Mail' ? 'u-email' : 'u-url']
+  const linkClasses = [
+    styles.link,
+    'animation',
+    'animation--move-in-top',
+    name === 'Mail' ? 'u-email' : 'u-url'
+  ]
 
   const icons = {
     GitHub: GitHubIcon,

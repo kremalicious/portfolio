@@ -1,0 +1,85 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family-base);
+  font-size: var(--fs-0);
+  background-color: var(--background-color);
+}
+
+body {
+  padding: 0;
+  font-size: var(--fs-0);
+  line-height: var(--fs-2);
+  color: var(--text-color);
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga', 'kern';
+  min-height: 100vh;
+  background-color: var(--background-color);
+  transition: background-color 0.15s;
+  will-change: background-color;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 var(--space-m);
+}
+
+p {
+  max-inline-size: 100%;
+}
+
+/* Headings */
+
+h1 {
+  font-size: var(--fs-4);
+}
+
+h2 {
+  font-size: var(--fs-3);
+}
+
+h3 {
+  font-size: var(--fs-2);
+}
+
+h4 {
+  font-size: var(--fs-1);
+}
+
+h5 {
+  font-size: var(--fs-0);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-family-headings);
+  line-height: var(--line-height-headings);
+  color: var(--color-headings);
+  font-weight: var(--font-weight-headings);
+  margin: 0 0 var(--space-m);
+}
+
+/* Links */
+a {
+  color: var(--brand-cyan);
+  text-decoration: none;
+  transition: 0.2s ease-out;
+}
+
+a:hover,
+a:focus {
+  color: #5ebeb1;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}

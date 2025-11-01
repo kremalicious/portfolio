@@ -3,11 +3,12 @@
 
   const { status, available, unavailable } = meta.availability
   const html = status ? available : unavailable
+  const classList = [
+    'availability',
+    status === true ? 'available animation animation--move-in-top' : ''
+  ]
 ---
-<p
-  class:list={['availability', status === true ? 'available' : '' ]}
-  set:html={html}
-/>
+<p class:list={classList} set:html={html}/>
 
 <style>
   .availability {
@@ -16,16 +17,15 @@
     color: var(--text-color-light);
     z-index: 2;
     text-align: center;
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-3xs);
   }
 
   .available {
     color: var(--text-color);
-    /* background: var(--body-background-color);
-  position: fixed;
-  bottom: var(--space-m);
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: var(--box-shadow);*/
+    animation-delay: calc(
+      var(--animation-duration-base) +
+      5 *
+      var(--animation-delay-step)
+    );
   }
 </style>

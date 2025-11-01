@@ -2,36 +2,7 @@
   /* Project-specific
   ///////////////////////////////////// */
 
-  --projectImageMaxWidth: 1440px;
-  --easing: cubic-bezier(0.75, 0, 0.08, 1);
-  --spring-easing: linear(
-    0,
-    0.009,
-    0.035 2.1%,
-    0.141 4.4%,
-    0.723 12.9%,
-    0.938 16.7%,
-    1.017,
-    1.077,
-    1.121,
-    1.149 24.3%,
-    1.159,
-    1.163,
-    1.161,
-    1.154 29.9%,
-    1.129 32.8%,
-    1.051 39.6%,
-    1.017 43.1%,
-    0.991,
-    0.977 51%,
-    0.974 53.8%,
-    0.975 57.1%,
-    0.997 69.8%,
-    1.003 76.9%,
-    1.004 83.8%,
-    1
-  );
-  --spring-duration: 1.333s;
+  --projectImageMaxWidth: 1200px;
 
   /* Colors
   ///////////////////////////////////// */
@@ -49,8 +20,8 @@
   /* Backgrounds
   ///////////////////////////////////// */
 
-  --body-background-color: var(--brand-light);
-  --box-background-color: #f1f5f8;
+  --background-color: var(--brand-light);
+  --background-color-highlight: #f1f5f8;
 
   --box-shadow:
     0 1.3px 5.4px rgba(1 85 101 / 15%), 0 4.5px 18.1px rgba(1 85 101 / 5%), 0
@@ -121,8 +92,8 @@
 }
 
 :root[data-theme='dark'] {
-  --body-background-color: #161a1b;
-  --box-background-color: #1e2122;
+  --background-color: #161a1b;
+  --background-color-highlight: #1e2122;
 
   --box-shadow:
     0 1.3px 5.4px rgba(0 7 8 / 50%), 0 4.5px 18.1px rgba(0 7 8 / 30%), 0 20px

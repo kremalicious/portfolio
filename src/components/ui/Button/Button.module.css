@@ -3,7 +3,7 @@
   align-items: center;
   gap: var(--space-3xs);
   padding: var(--space-2xs) var(--space-xs);
-  border: var(--border-width) solid rgba(255, 255, 255, 0.2);
+  border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   font-size: var(--fs-0);
   font-weight: 500;
@@ -37,7 +37,7 @@
 
 .button:active {
   transition: none;
-  background: var(--box-background-color);
+  background: var(--background-color-highlight);
 }
 
 .button.primary {
@@ -51,14 +51,13 @@
 }
 
 .button.secondary {
-  background-color: var(--body-background-color);
-  color: var(--link-color);
-  border-color: var(--border-color);
+  background-color: var(--background-color-highlight);
+  color: var(--heading-color);
 }
 
 .button.secondary:hover:not(:disabled) {
-  background-color: var(--body-background-color);
-  color: var(--link-color-hover);
+  background-color: var(--background-color-highlight);
+  color: var(--heading-color);
 }
 
 .button.size--small {

@@ -9,42 +9,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-2xs);
+  padding: var(--space-3xs);
+  border: var(--border-width) solid transparent;
   border-radius: var(--border-radius);
-  color: var(--brand-grey-light);
+  color: var(--text-color-light);
   transition: 0.2s ease-out;
-  animation: moveInTop var(--spring-duration) var(--spring-easing) backwards;
   animation-delay: calc(
-    var(--animation-delay-base, 0.2s) +
+    var(--animation-duration-base) +
     var(--animation-order, 0) *
-    var(--animation-delay-step, 0.05s)
+    var(--animation-delay-step)
   );
 }
 
 .link:hover,
 .link:focus {
-  color: var(--link-color);
+  color: var(--text-color-light);
+  border-color: var(--border-color);
   transform: translateY(-0.1rem);
-  background-color: var(--border-color);
+  background-color: var(--background-color-highlight);
 }
 
 .small {
-  margin-block: var(--space-m);
+  margin-block: var(--space-s);
   gap: var(--space-xs);
 }
 
 .small svg {
   width: var(--fs-0);
   height: var(--fs-0);
-}
-
-@keyframes moveInTop {
-  0% {
-    opacity: 0;
-    transform: translateY(-3rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }

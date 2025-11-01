@@ -87,7 +87,13 @@ export class LocationWidget extends HTMLElement {
     }
 
     this.innerHTML = html
-    this.classList.add('visible')
+    this.classList.add('animation', 'animation--fade-in')
+    // Set animation delay based on the number of elements before
+    // (networks + availability)
+    this.style.setProperty(
+      'animation-delay',
+      'calc(var(--animation-delay-step) * 6)'
+    )
   }
 }
 

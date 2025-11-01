@@ -10,19 +10,23 @@
   grid-column: main;
 }
 
-.headerTitle {
+.title {
   font-size: var(--fs-3);
 }
 
 @media (min-width: 30em) {
-  .headerTitle {
+  .title {
     font-size: var(--fs-4);
   }
 }
 
+.description {
+  margin-bottom: var(--space-m);
+}
+
 .meta {
-  margin-top: var(--space-3xl);
-  margin-bottom: var(--space-3xl);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-xl);
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-l);
@@ -48,5 +52,5 @@
 }
 
 .fullContainer {
-  grid-column: full !important;
+  grid-column: full;
 }

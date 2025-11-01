@@ -23,7 +23,7 @@
 }
 
 .projectNav::-webkit-scrollbar-track {
-  background: var(--box-background-color);
+  background: var(--background-color-highlight);
 }
 
 .item {

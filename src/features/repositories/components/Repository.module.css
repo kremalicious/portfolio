@@ -1,7 +1,7 @@
 .repo {
   padding: var(--space-m);
   border-radius: var(--border-radius);
-  background: var(--box-background-color);
+  background: var(--background-color-highlight);
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;

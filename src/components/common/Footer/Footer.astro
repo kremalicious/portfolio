@@ -2,6 +2,7 @@
   import meta from '@content/meta.json'
   import LogoUnit from '@/components/ui/LogoUnit/index.astro'
   import Vcard from '@/features/vcard/components/Vcard.astro'
+  import Availability from '../Hero/Availability.astro'
   import Networks from '../Networks/Networks.astro'
   import styles from './Footer.module.css'
 
@@ -10,6 +11,7 @@
 <footer class={`h-card ${styles.footer}`}>
   <LogoUnit small/>
   <Networks label="Networks Footer" small/>
+  <Availability/>
 
   <aside class={styles.aside}>
     <p class={styles.actions}>

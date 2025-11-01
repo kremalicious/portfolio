@@ -1,0 +1,94 @@
+:root {
+  --animation-easing-spring: linear(
+    0,
+    0.009,
+    0.035 2.1%,
+    0.141 4.4%,
+    0.723 12.9%,
+    0.938 16.7%,
+    1.017,
+    1.077,
+    1.121,
+    1.149 24.3%,
+    1.159,
+    1.163,
+    1.161,
+    1.154 29.9%,
+    1.129 32.8%,
+    1.051 39.6%,
+    1.017 43.1%,
+    0.991,
+    0.977 51%,
+    0.974 53.8%,
+    0.975 57.1%,
+    0.997 69.8%,
+    1.003 76.9%,
+    1.004 83.8%,
+    1
+  );
+  --animation-duration-spring: 1.666s;
+  --animation-duration-base: 0.3s;
+  --animation-delay-step: 0.05s;
+}
+
+.animation {
+  animation-fill-mode: backwards;
+}
+
+.animation--move-in-top {
+  animation-name: move-in-top;
+  animation-duration: var(--animation-duration-spring);
+  animation-timing-function: var(--animation-easing-spring);
+}
+
+.animation--move-in-bottom {
+  animation-name: move-in-bottom;
+  animation-duration: var(--animation-duration-spring);
+  animation-timing-function: var(--animation-easing-spring);
+}
+
+.animation--fade-in {
+  animation-name: fade-in;
+  animation-duration: var(--animation-duration-base);
+  animation-timing-function: ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animation,
+  .animation--move-in-top,
+  .animation--move-in-bottom,
+  .animation--fade-in {
+    animation: none;
+  }
+}
+
+@keyframes move-in-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes move-in-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
