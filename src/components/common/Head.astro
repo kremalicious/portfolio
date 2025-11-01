@@ -41,12 +41,33 @@ const shouldIncludeAnalytics =
 <head>
   <meta charset="utf-8">
 
-  <!-- Apply theme before any content renders to prevent flickering -->
-  <script>
-  import { reflectPreference } from './ThemeSwitch/theme-switch'
-
+  <script is:inline>
   ;(() => {
-    reflectPreference()
+    const key = 'preferred-theme'
+    const colors = { dark: '#1d2224', light: '#e7eef4' }
+
+    const system = () =>
+      typeof window.matchMedia === 'function' &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light'
+
+    let theme = system()
+
+    try {
+      const stored = sessionStorage.getItem(key)
+      if (stored === 'dark' || stored === 'light') theme = stored
+    } catch (error) {
+      console.warn('Unable to read stored theme preference.', error)
+    }
+
+    const root = document.documentElement
+    const meta = document.querySelector('meta[name="theme-color"]')
+    const color = colors[theme]
+
+    root.setAttribute('data-theme', theme)
+    root.setAttribute('data-theme-color', color)
+    meta?.setAttribute('content', color)
   })()
   </script>
 
