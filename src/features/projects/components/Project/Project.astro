@@ -15,7 +15,7 @@ const { title, descriptionHtml, links, techstack, images } = project
 <article class={styles.project}>
   <header>
     <h1 class={styles.headerTitle}>{title}</h1>
-    <div class={styles.description} set:html={descriptionHtml ?? ''}/>
+    <div set:html={descriptionHtml ?? ''}/>
   </header>
 
   {images.map((image) => (

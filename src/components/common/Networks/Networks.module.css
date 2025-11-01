@@ -1,15 +1,19 @@
 .networks {
-  margin-block: calc(var(--spacer) * 2);
+  margin-block: var(--space-xl);
   display: flex;
   justify-content: center;
-  gap: calc(var(--spacer) * 2);
+  gap: var(--space-s);
 }
 
 .link {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xs);
+  border-radius: var(--border-radius);
   color: var(--brand-grey-light);
-  transition: color 0.2s var(--easing);
-  animation: moveInTop 0.5s ease-out backwards;
+  transition: 0.2s ease-out;
+  animation: moveInTop var(--spring-duration) var(--spring-easing) backwards;
   animation-delay: calc(
     var(--animation-delay-base, 0.2s) +
     var(--animation-order, 0) *
@@ -20,16 +24,18 @@
 .link:hover,
 .link:focus {
   color: var(--link-color);
+  transform: translateY(-0.1rem);
+  background-color: var(--border-color);
 }
 
 .small {
-  margin-block: var(--spacer);
-  gap: var(--spacer);
+  margin-block: var(--space-m);
+  gap: var(--space-xs);
 }
 
 .small svg {
-  width: var(--font-size-base);
-  height: var(--font-size-base);
+  width: var(--fs-0);
+  height: var(--fs-0);
 }
 
 @keyframes moveInTop {

@@ -1,6 +1,6 @@
 .icon {
-  width: var(--font-size-base);
-  height: var(--font-size-base);
+  width: var(--fs-0);
+  height: var(--fs-0);
   stroke: currentColor;
   stroke-width: 0.1rem;
   stroke-linecap: round;

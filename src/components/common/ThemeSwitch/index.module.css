@@ -1,8 +1,8 @@
 .themeSwitch {
   position: absolute;
   color: var(--text-color-light);
-  right: var(--spacer);
-  top: calc(var(--spacer) / 2);
+  right: var(--space-m);
+  top: var(--space-xs);
 }
 
 .themeSwitch:hover,

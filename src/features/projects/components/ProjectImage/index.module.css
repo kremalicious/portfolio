@@ -4,11 +4,11 @@
 }
 
 .imageWrap:not(:only-of-type) {
-  margin-bottom: calc(var(--spacer) * 3);
+  margin-bottom: var(--space-2xl);
 }
 
 .frame {
-  border: var(--stroke-width) solid rgba(255, 255, 255, 0.2);
+  border: var(--border-width) solid rgba(255, 255, 255, 0.2);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   transition: border-color 0.1s ease-out;
@@ -32,7 +32,7 @@ a:focus .frame {
 
 @media (min-width: 1200px) {
   .image:not(:only-of-type) {
-    margin-bottom: calc(var(--spacer) * 6);
+    margin-bottom: var(--space-3xl);
   }
 
   .image:last-of-type {

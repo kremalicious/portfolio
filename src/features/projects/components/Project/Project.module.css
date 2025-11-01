@@ -1,9 +1,9 @@
 .project {
   display: grid;
   grid-template-columns:
-    [full-start] minmax(calc(var(--spacer) / 2), 1fr)
+    [full-start] minmax(var(--space-xs), 1fr)
     [main-start] minmax(0, 38rem) [main-end]
-    minmax(calc(var(--spacer) / 2), 1fr) [full-end];
+    minmax(var(--space-xs), 1fr) [full-end];
 }
 
 .project > * {
@@ -11,25 +11,21 @@
 }
 
 .headerTitle {
-  font-size: var(--font-size-h2);
+  font-size: var(--fs-3);
 }
 
 @media (min-width: 30em) {
   .headerTitle {
-    font-size: var(--font-size-h1);
+    font-size: var(--fs-4);
   }
 }
 
-.description {
-  font-size: var(--font-size-base);
-}
-
 .meta {
-  margin-top: calc(var(--spacer) * 4);
-  margin-bottom: calc(var(--spacer) * 5);
+  margin-top: var(--space-3xl);
+  margin-bottom: var(--space-3xl);
   display: grid;
   grid-template-columns: 1fr;
-  gap: calc(var(--spacer) * 2);
+  gap: var(--space-xl);
 }
 
 @media (min-width: 40em) {
@@ -39,14 +35,14 @@
 }
 
 .metatitle {
-  font-size: var(--font-size-h3);
-  margin-bottom: calc(var(--spacer) * 1.5);
+  font-size: var(--fs-2);
+  margin-bottom: var(--space-l);
 }
 
 .metatitle span {
   display: block;
-  margin-top: calc(var(--spacer) / 3);
-  font-size: var(--font-size-base);
+  margin-top: var(--space-2xs);
+  font-size: var(--fs-0);
   font-family: var(--font-family-base);
   color: var(--brand-grey-light);
 }

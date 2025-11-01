@@ -1,9 +1,9 @@
 .hero {
   position: relative;
-  padding: calc(var(--spacer) / 2);
+  padding: var(--space-xs);
   padding-top: 25vh;
-  margin-bottom: calc(var(--spacer) * 2);
-  min-height: calc(85vh - var(--spacer));
+  margin-bottom: var(--space-xl);
+  min-height: calc(85vh - var(--space-m));
   max-height: 1000px;
   text-align: center;
   display: flex;

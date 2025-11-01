@@ -2,19 +2,19 @@
   padding: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: calc(var(--spacer) / 2);
+  gap: var(--space-xs);
 }
 
 .projectTechstack li {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: calc(var(--spacer) / 4);
+  padding: var(--space-3xs);
   text-align: center;
   background: var(--box-background-color);
   border-radius: var(--border-radius);
   border: 0.05rem solid transparent;
-  font-size: var(--font-size-small);
+  font-size: var(--fs--1);
 }
 
 .title {

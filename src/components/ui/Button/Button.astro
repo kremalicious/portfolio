@@ -1,0 +1,38 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import styles from './Button.module.css'
+
+interface Props extends HTMLAttributes<'button' | 'a'> {
+  href?: string
+  type?: 'button' | 'submit' | 'reset'
+  variant?: 'primary' | 'secondary' | 'danger'
+  disabled?: boolean
+  size?: 'small' | 'medium'
+}
+
+const {
+  href,
+  type = 'button',
+  variant = 'secondary',
+  size = 'medium',
+  disabled = false,
+  class: className,
+  id,
+  ...rest
+} = Astro.props
+const Tag = href ? 'a' : 'button'
+const isLink = !!href
+---
+<Tag
+  {...isLink ? { href } : { type, disabled }}
+  id={id}
+  class:list={[
+    styles.button,
+    styles[variant],
+    styles[`size--${size}`],
+    className || ''
+  ]}
+  {...rest}
+>
+  <slot/>
+</Tag>

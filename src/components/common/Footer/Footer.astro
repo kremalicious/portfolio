@@ -11,19 +11,21 @@ const year = new Date().getFullYear()
   <LogoUnit small/>
   <Networks label="Networks Footer" small/>
 
-  <p class={styles.actions}>
-    <Vcard/>
+  <aside class={styles.aside}>
+    <p class={styles.actions}>
+      <Vcard/>
 
-    <a class="u-key" href={meta.gpg}> PGP/GPG key </a>
-    <a href={meta.bugs}>Found a bug?</a>
-  </p>
-  <p class={styles.copyright}>
-    <small>
-      &copy; {year}
-      {' '}
-      <a class="u-url" href={meta.url}> {meta.author.name.toLowerCase()}</a>
-      {' '}
-      &mdash; All Rights Reserved
-    </small>
-  </p>
+      <a class="u-key" href={meta.gpg}> PGP/GPG key </a>
+      <a href={meta.bugs}>Found a bug?</a>
+    </p>
+    <p class={styles.copyright}>
+      <small>
+        &copy; {year}
+        {' '}
+        <a class="u-url" href={meta.url}> {meta.author.name.toLowerCase()}</a>
+        {' '}
+        &mdash; All Rights Reserved
+      </small>
+    </p>
+  </aside>
 </footer>

@@ -4,7 +4,7 @@
 
 .projectLinks li {
   display: block;
-  margin-bottom: calc(var(--spacer) / 2.1);
+  margin-bottom: var(--space-s);
 }
 
 .projectLinks a {

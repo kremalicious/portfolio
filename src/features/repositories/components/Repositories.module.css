@@ -1,7 +1,7 @@
 .sectionTitle {
-  font-size: var(--font-size-h3);
-  margin-top: calc(var(--spacer) * 6);
-  margin-bottom: calc(var(--spacer) * 2);
+  font-size: var(--fs-2);
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-xl);
   text-align: center;
 }
 

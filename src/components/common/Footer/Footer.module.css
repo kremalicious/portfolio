@@ -1,24 +1,41 @@
 .footer {
-  padding: var(--spacer);
-  padding-top: calc(var(--spacer) * 4);
+  padding: var(--space-m);
+  padding-top: var(--space-3xl);
   text-align: center;
 }
 
 .footer,
 .footer small {
-  font-size: var(--font-size-mini);
+  font-size: var(--fs--2);
+}
+
+.aside {
+  margin-top: var(--space-l);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--space-3xs);
+
+  @media (width > 50rem) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.aside p {
+  margin: 0;
 }
 
 .actions {
-  margin-top: calc(var(--spacer) * 2);
+  margin-top: var(--space-xl);
   display: flex;
-  gap: calc(var(--spacer) * 2);
+  gap: var(--space-m);
   justify-content: center;
 }
 
 .actions a {
   display: block;
-  font-size: var(--font-size-small);
   color: inherit;
 }
 

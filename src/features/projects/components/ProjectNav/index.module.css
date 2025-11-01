@@ -5,7 +5,7 @@
   overflow-y: hidden;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: var(--spacer);
+  padding-bottom: var(--space-m);
 }
 
 .projectNav::-webkit-scrollbar,
@@ -29,18 +29,18 @@
 .item {
   display: inline-block;
   width: 60vw;
-  margin-left: var(--spacer);
+  margin-left: var(--space-m);
 }
 
 .item:last-child {
-  margin-right: calc(var(--spacer) * 2);
+  margin-right: var(--space-xl);
 }
 
 @media (min-width: 30rem) {
   .item {
     width: 33vw;
     max-width: 500px;
-    margin-left: calc(var(--spacer) * 2);
+    margin-left: var(--space-xl);
   }
 }
 

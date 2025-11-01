@@ -2,8 +2,8 @@
   position: sticky;
   top: 0;
   z-index: 99;
-  padding: calc(var(--spacer) / 3);
-  font-size: var(--font-size-small);
+  padding: var(--space-2xs);
+  font-size: var(--fs--1);
   font-weight: bold;
   background: var(--box-background-color);
 }

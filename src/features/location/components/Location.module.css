@@ -4,7 +4,7 @@
 }
 
 .location {
-  font-size: var(--font-size-small);
+  font-size: var(--fs--1);
 }
 
 .location span {
@@ -12,7 +12,7 @@
 }
 
 .localTime {
-  font-size: var(--font-size-mini);
+  font-size: var(--fs--2);
 }
 
 .emoji {
@@ -20,10 +20,10 @@
   font-size: 1em;
   line-height: 1em;
   vertical-align: 'middle';
-  margin-right: calc(var(--spacer) / 6);
+  margin-right: var(--space-3xs);
 }
 
 .next {
   display: inline-block;
-  margin-left: calc(var(--spacer) / 3);
+  margin-left: var(--space-2xs);
 }

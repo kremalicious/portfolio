@@ -1,7 +1,43 @@
 :root {
-  /* Colors */
+  /* Project-specific
+  ///////////////////////////////////// */
+
+  --projectImageMaxWidth: 1440px;
+  --easing: cubic-bezier(0.75, 0, 0.08, 1);
+  --spring-easing: linear(
+    0,
+    0.009,
+    0.035 2.1%,
+    0.141 4.4%,
+    0.723 12.9%,
+    0.938 16.7%,
+    1.017,
+    1.077,
+    1.121,
+    1.149 24.3%,
+    1.159,
+    1.163,
+    1.161,
+    1.154 29.9%,
+    1.129 32.8%,
+    1.051 39.6%,
+    1.017 43.1%,
+    0.991,
+    0.977 51%,
+    0.974 53.8%,
+    0.975 57.1%,
+    0.997 69.8%,
+    1.003 76.9%,
+    1.004 83.8%,
+    1
+  );
+  --spring-duration: 1.333s;
+
+  /* Colors
+  ///////////////////////////////////// */
+
   --brand-main: #015565;
-  --brand-cyan: #43a699;
+  --brand-cyan: rgb(67 166 153);
   --brand-main-light: #88bec8;
   --brand-light: #e7eef4;
 
@@ -10,69 +46,91 @@
   --brand-grey-light: #7f97a1;
   --brand-grey-dimmed: #c3d8e0;
 
-  /* Backgrounds */
-  --body-background-color: var(--brand-light);
-  --box-background-color: #f0f5f8;
+  /* Backgrounds
+  ///////////////////////////////////// */
 
-  /* Text Colors */
+  --body-background-color: var(--brand-light);
+  --box-background-color: #f1f5f8;
+
+  --box-shadow:
+    0 1.3px 5.4px rgba(1 85 101 / 15%), 0 4.5px 18.1px rgba(1 85 101 / 5%), 0
+    20px 81px rgba(1 85 101 / 2.5%);
+
+  /* Text Colors
+  ///////////////////////////////////// */
+
   --text-color: var(--brand-grey);
   --text-color-light: var(--brand-grey-light);
   --text-color-dimmed: var(--brand-grey-dimmed);
   --color-headings: var(--brand-main);
+
   --link-color: var(--brand-cyan);
+  --link-color-hover: #4ab8a9;
+  --link-underline-color: rgba(67 166 153 / 35%);
+
+  /* Border
+  ///////////////////////////////////// */
+
+  --border-radius: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --border-width: 0.125rem;
   --border-color: var(--brand-grey-dimmed);
 
-  /* Typography */
-  --font-size-root: 18px;
-  --font-size-base: 1rem;
-  --font-size-large: 1.2rem;
-  --font-size-small: 0.8rem;
-  --font-size-mini: 0.7rem;
-  --font-size-h1: 2.5rem;
-  --font-size-h2: 2rem;
-  --font-size-h3: 1.65rem;
-  --font-size-h4: 1.45rem;
-  --font-size-h5: var(--font-size-large);
-  --font-size-h6: var(--font-size-base);
-  --line-height: 1.6;
-  --line-height-small: 1.1428571429;
+  /* Typography
+  ///////////////////////////////////// */
+
   --font-family-base:
     var(--font-ff-tisa-sans-pro), 'Trebuchet MS', 'Helvetica Neue', 'Helvetica',
     'Arial', 'sans-serif';
   --font-weight-base: 400;
   --font-weight-bold: 700;
-  --font-family-monospace:
-    'Menlo', 'Monaco', 'Consolas', 'Courier New', 'monospace';
+
   --font-family-headings:
     var(--font-brandon-grotesque), 'Avenir Next', 'Helvetica Neue', 'Helvetica',
     'Arial', 'sans-serif';
   --font-weight-headings: 400;
   --line-height-headings: 1.1;
 
-  /* Components spacing */
-  --spacer: 1.5rem;
-  --border-radius: 0.5rem;
-  --border-radius-lg: 0.75rem;
-  --stroke-width: 0.125rem;
+  --font-family-monospace:
+    'SF Mono', sfmono-regular, ui-monospace, 'DejaVu Sans Mono', menlo, consolas,
+    monospace;
 
-  /* Miscellanious */
-  --projectImageMaxWidth: 1440px;
-  --easing: cubic-bezier(0.75, 0, 0.08, 1);
-  --box-shadow: 0 1.3px 5.4px rgba(1, 85, 101, 0.15);
-  /* --box-shadow: 0 1.3px 5.4px rgba(1, 85, 101, 0.15),
-    0 4.5px 18.1px rgba(1, 85, 101, 0.05), 0 20px 81px rgba(1, 85, 101, 0.025); */
+  /* @link https://utopia.fyi/type/calculator?c=320,16,1.25,760,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --fs--2: clamp(0.64rem, 0.5818rem + 0.2909vw, 0.72rem);
+  --fs--1: clamp(0.8rem, 0.7273rem + 0.3636vw, 0.9rem);
+  --fs-0: clamp(1rem, 0.9091rem + 0.4545vw, 1.125rem);
+  --fs-1: clamp(1.25rem, 1.1364rem + 0.5682vw, 1.4063rem);
+  --fs-2: clamp(1.5625rem, 1.4205rem + 0.7102vw, 1.7578rem);
+  --fs-3: clamp(1.9531rem, 1.7756rem + 0.8878vw, 2.1973rem);
+  --fs-4: clamp(2.4414rem, 2.2195rem + 1.1097vw, 2.7466rem);
+  --fs-5: clamp(3.0518rem, 2.7743rem + 1.3872vw, 3.4332rem);
+
+  /* Spacing
+  ///////////////////////////////////// */
+
+  /* @link https://utopia.fyi/space/calculator?c=320,16,1.25,760,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --space-3xs: clamp(0.25rem, 0.2045rem + 0.2273vw, 0.3125rem);
+  --space-2xs: clamp(0.5rem, 0.4545rem + 0.2273vw, 0.5625rem);
+  --space-xs: clamp(0.75rem, 0.6591rem + 0.4545vw, 0.875rem);
+  --space-s: clamp(1rem, 0.9091rem + 0.4545vw, 1.125rem);
+  --space-m: clamp(1.5rem, 1.3636rem + 0.6818vw, 1.6875rem);
+  --space-l: clamp(2rem, 1.8182rem + 0.9091vw, 2.25rem);
+  --space-xl: clamp(3rem, 2.7273rem + 1.3636vw, 3.375rem);
+  --space-2xl: clamp(4rem, 3.6364rem + 1.8182vw, 4.5rem);
+  --space-3xl: clamp(6rem, 5.4545rem + 2.7273vw, 6.75rem);
 }
 
 :root[data-theme='dark'] {
   --body-background-color: #161a1b;
-  --box-background-color: #1d2122;
-  --box-shadow: 0 1.3px 5.4px rgba(0, 7, 8, 0.6);
-  /* --box-shadow: 0 1.3px 5.4px rgba(0, 7, 8, 0.6),
-    0 4.5px 18.1px rgba(0, 7, 8, 0.4), 0 20px 81px rgba(0, 7, 8, 0.1); */
+  --box-background-color: #1e2122;
+
+  --box-shadow:
+    0 1.3px 5.4px rgba(0 7 8 / 50%), 0 4.5px 18.1px rgba(0 7 8 / 30%), 0 20px
+    81px rgba(0 7 8 / 10%);
 
   --text-color: var(--brand-grey-light);
   --text-color-light: var(--brand-grey);
   --text-color-dimmed: var(--brand-grey-dark);
-  --border-color: var(--brand-grey-dark);
+  --border-color: #253034;
   --color-headings: var(--brand-main-light);
 }
