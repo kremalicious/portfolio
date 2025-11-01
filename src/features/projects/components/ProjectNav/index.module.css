@@ -5,7 +5,11 @@
   overflow-y: hidden;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: var(--space-m);
+  padding-top: var(--space-m);
+  padding-bottom: calc(var(--space-m) + 6px);
+  background-color: var(--background-color-highlight);
+  border-top: var(--border-width) solid var(--border-color);
+  border-bottom: var(--border-width) solid var(--border-color);
 }
 
 .projectNav::-webkit-scrollbar,
@@ -39,15 +43,15 @@
 @media (min-width: 30rem) {
   .item {
     width: 33vw;
-    max-width: 500px;
+    max-width: 420px;
     margin-left: var(--space-xl);
   }
 }
 
-.item.current {
+.item[data-current] {
   pointer-events: none;
 }
 
-.item.current img {
-  border-color: var(--link-color);
+.item[data-current] img {
+  opacity: 0.5;
 }

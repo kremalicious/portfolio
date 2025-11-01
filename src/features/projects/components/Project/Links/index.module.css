@@ -4,14 +4,13 @@
 
 .projectLinks li {
   display: block;
-  margin-bottom: var(--space-s);
+  margin-bottom: var(--space-xs);
 }
 
 .projectLinks a {
   width: 100%;
   text-align: left;
-  font-size: var(--fs--1);
-  line-height: 1.4;
+  text-transform: none;
 }
 
 .projectLinks svg {

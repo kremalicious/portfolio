@@ -5,13 +5,15 @@
   padding: var(--space-2xs) var(--space-xs);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
-  font-size: var(--fs-0);
+  font-size: var(--fs--1);
+  line-height: 1.4;
   font-weight: 500;
   cursor: pointer;
   transition: 0.2s ease-out;
   text-decoration: none;
   min-width: 120px;
   width: 100%;
+  text-transform: uppercase;
 }
 
 @media (min-width: 30rem) {
