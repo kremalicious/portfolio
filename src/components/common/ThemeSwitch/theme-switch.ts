@@ -9,10 +9,6 @@
 //
 export const SESSION_STORAGE_NAME = 'preferred-theme'
 
-const themeToggle = document.querySelector(
-  '#theme-toggle'
-) as HTMLElement | null
-
 export function getPreferTheme() {
   const savedTheme = sessionStorage.getItem(SESSION_STORAGE_NAME)
   if (savedTheme) return savedTheme
@@ -29,6 +25,9 @@ let themeValue = getPreferTheme()
 let themeColor = getThemeColor(themeValue)
 
 export function reflectPreference() {
+  const themeToggle = document.querySelector(
+    '#theme-toggle'
+  ) as HTMLElement | null
   const htmlEl = document.documentElement
   const metaThemeColor = document.querySelector('meta[name=theme-color]')
 
@@ -59,6 +58,9 @@ export function setPreference() {
 }
 
 window.onload = () => {
+  const themeToggle = document.querySelector(
+    '#theme-toggle'
+  ) as HTMLElement | null
   // sync with system changes
   window
     .matchMedia('(prefers-color-scheme: dark)')

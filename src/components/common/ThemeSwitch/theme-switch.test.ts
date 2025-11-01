@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from 'bun:test'
+import { beforeEach, describe, expect, it, mock } from 'bun:test'
 import { SESSION_STORAGE_NAME } from './theme-switch'
 
 const baseHtml = `
@@ -38,12 +38,12 @@ function setupDocument(template: string): void {
 
 function setupStorage(theme: string | null = null): void {
   const mockStorage = {
-    getItem: vi.fn().mockReturnValue(theme),
-    setItem: vi.fn(),
-    removeItem: vi.fn(),
-    clear: vi.fn(),
+    getItem: mock().mockReturnValue(theme),
+    setItem: mock(),
+    removeItem: mock(),
+    clear: mock(),
     length: theme ? 1 : 0,
-    key: vi.fn()
+    key: mock()
   }
 
   Object.defineProperty(window, 'sessionStorage', {
@@ -58,19 +58,19 @@ function setupMatchMedia(
 ): ListenerRecord | undefined {
   const listeners: ListenerRecord = {}
 
-  const matchMediaMock = vi.fn().mockImplementation((query) => ({
+  const matchMediaMock = mock().mockImplementation((query) => ({
     matches: query.includes('dark') ? isDarkMode : !isDarkMode,
     addEventListener: trackListeners
-      ? vi.fn((event, listener) => {
+      ? mock((event, listener) => {
           if (!listeners[event]) listeners[event] = []
           listeners[event].push(listener as (e: MediaQueryListEvent) => void)
         })
-      : vi.fn(),
-    removeEventListener: vi.fn(),
-    dispatchEvent: vi.fn(),
+      : mock(),
+    removeEventListener: mock(),
+    dispatchEvent: mock(),
     onchange: null,
-    addListener: vi.fn(),
-    removeListener: vi.fn(),
+    addListener: mock(),
+    removeListener: mock(),
     media: query
   }))
 
@@ -83,7 +83,8 @@ function setupMatchMedia(
 }
 
 async function loadThemeModule(): Promise<typeof import('./theme-switch')> {
-  return await import('./theme-switch')
+  const cacheBuster = crypto.randomUUID()
+  return await import(`./theme-switch?cache=${cacheBuster}`)
 }
 
 function triggerWindowLoad(): void {
@@ -91,7 +92,6 @@ function triggerWindowLoad(): void {
 }
 
 beforeEach(() => {
-  vi.restoreAllMocks()
   setupDocument(baseHtml)
   setupStorage(null)
   setupMatchMedia(false)

@@ -11,7 +11,7 @@
     "dev": "bun --bun astro dev",
     "build": "bun --bun astro build",
     "preview": "bun --bun astro preview",
-    "test": "bun test",
+    "test": "bun test --coverage",
     "lint": "biome check .",
     "format": "biome check --write .",
     "typecheck": "tsc --noEmit && bun --bun astro check",
