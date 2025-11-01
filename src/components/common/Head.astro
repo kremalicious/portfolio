@@ -31,7 +31,7 @@
   const imageFinal = `${Astro.site?.origin}${
     image
       ? (await getImage({ src: image, width: 800, format: 'jpg' })).src
-      : null
+      : meta.img
   }`
 
   const imageFinalAlt = image ? `Teaser image for ${title}` : 'Logo'

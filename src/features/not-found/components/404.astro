@@ -8,10 +8,9 @@
 <article class="content">
   <h1>Shenanigans, page not found.</h1>
   <p>
-    You might want to check the url, or{' '}
-    <a href={'/'}>go back to the homepage</a>. Or just check out some {tag}
-    {' '}
-    gifs, entirely your choice.
+    Go to the <a href={'/'}>homepage</a>, or watch some
+    {tag}
+    {' '}gifs, entirely your choice.
   </p>
 
   <video id="gif" src={initialGif} autoplay loop>
@@ -20,7 +19,7 @@
 
   <div>
     <ButtonComponent id="get-gif" data-tag={tag}>
-      {`Get another '${tag}' gif`}
+      {`Get another ${tag} gif`}
     </ButtonComponent>
   </div>
 </article>

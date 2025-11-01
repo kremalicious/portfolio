@@ -11,7 +11,7 @@
 <footer class={`h-card ${styles.footer}`}>
   <LogoUnit small/>
   <Networks label="Networks Footer" small/>
-  <Availability/>
+  {meta.availability.status === true && <Availability/>}
 
   <aside class={styles.aside}>
     <p class={styles.actions}>
