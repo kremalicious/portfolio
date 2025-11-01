@@ -1,16 +1,16 @@
 ---
-import ProjectImage from '@/features/projects/components/ProjectImage/index.astro'
-import type { ProjectType } from '../../types/project'
-import ProjectLinks from './Links/index.astro'
-import styles from './Project.module.css'
-import ProjectTechstack from './Techstack/index.astro'
+  import ProjectImage from '@/features/projects/components/ProjectImage/index.astro'
+  import type { ProjectType } from '../../types/project'
+  import ProjectLinks from './Links/index.astro'
+  import styles from './Project.module.css'
+  import ProjectTechstack from './Techstack/index.astro'
 
-interface Props {
-  project: ProjectType
-}
+  interface Props {
+    project: ProjectType
+  }
 
-const { project } = Astro.props
-const { title, descriptionHtml, links, techstack, images } = project
+  const { project } = Astro.props
+  const { title, descriptionHtml, links, techstack, images } = project
 ---
 <article class={styles.project}>
   <header>

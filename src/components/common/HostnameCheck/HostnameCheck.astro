@@ -1,11 +1,11 @@
 ---
-import styles from './HostnameCheck.module.css'
+  import styles from './HostnameCheck.module.css'
 
-interface Props {
-  allowedHosts: string[]
-}
+  interface Props {
+    allowedHosts: string[]
+  }
 
-const { allowedHosts } = Astro.props
+  const { allowedHosts } = Astro.props
 ---
 <aside class={`${styles.hostnameInfo} hostnameInfo`} style="display: none;">
   <p>
@@ -17,10 +17,10 @@ const { allowedHosts } = Astro.props
 </aside>
 
 <script define:vars={{ allowedHosts }}>
-const isAllowedHost = allowedHosts.includes(window.location.hostname)
+  const isAllowedHost = allowedHosts.includes(window.location.hostname)
 
-if (!isAllowedHost) {
-  const aside = document.querySelector('aside.hostnameInfo')
-  if (aside) aside.style.display = 'block'
-}
+  if (!isAllowedHost) {
+    const aside = document.querySelector('aside.hostnameInfo')
+    if (aside) aside.style.display = 'block'
+  }
 </script>

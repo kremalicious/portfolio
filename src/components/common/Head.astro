@@ -1,74 +1,76 @@
 ---
-import { Font, getImage } from 'astro:assets'
-import meta from '@content/meta.json'
+  import { Font, getImage } from 'astro:assets'
+  import meta from '@content/meta.json'
 
-// import faviconSrc from '@/images/favicon.png'
-// import faviconSvgSrc from '@/images/favicon.svg'
+  // import faviconSrc from '@/images/favicon.png'
+  // import faviconSvgSrc from '@/images/favicon.svg'
 
-type Props = {
-  title?: string
-  description?: string
-  image?: ImageMetadata
-}
+  type Props = {
+    title?: string
+    description?: string
+    image?: ImageMetadata
+  }
 
-const { title, description, image } = Astro.props
-const { name, label } = meta.author
+  const { title, description, image } = Astro.props
+  const { name, label } = meta.author
 
-const titleFinal =
-  title && title !== ''
-    ? `${title} // ${name.toLowerCase()} { ${label.toLowerCase()} }`
-    : `${name.toLowerCase()} { ${label.toLowerCase()} }`
+  const titleFinal =
+    title && title !== ''
+      ? `${title} // ${name.toLowerCase()} { ${label.toLowerCase()} }`
+      : `${name.toLowerCase()} { ${label.toLowerCase()} }`
 
-const descriptionFinal = description
-  ? description.trim().slice(0, 160)
-  : meta.description
+  const descriptionFinal = description
+    ? description.trim().slice(0, 160)
+    : meta.description
 
-const canonicalUrl =
-  Astro.url.pathname === '/'
-    ? Astro.site?.origin
-    : `${Astro.site?.origin}${Astro.url.pathname}`
+  const canonicalUrl =
+    Astro.url.pathname === '/'
+      ? Astro.site?.origin
+      : `${Astro.site?.origin}${Astro.url.pathname}`
 
-const imageFinal = `${Astro.site?.origin}${
-  image ? (await getImage({ src: image, width: 800, format: 'jpg' })).src : null
-}`
+  const imageFinal = `${Astro.site?.origin}${
+    image
+      ? (await getImage({ src: image, width: 800, format: 'jpg' })).src
+      : null
+  }`
 
-const imageFinalAlt = image ? `Teaser image for ${title}` : 'Logo'
-const isProduction = process.env.NODE_ENV === 'production'
-const { UMAMI_WEBSITE_ID, UMAMI_SCRIPT_URL } = process.env
-const shouldIncludeAnalytics =
-  isProduction && UMAMI_WEBSITE_ID && UMAMI_SCRIPT_URL
+  const imageFinalAlt = image ? `Teaser image for ${title}` : 'Logo'
+  const isProduction = process.env.NODE_ENV === 'production'
+  const { UMAMI_WEBSITE_ID, UMAMI_SCRIPT_URL } = process.env
+  const shouldIncludeAnalytics =
+    isProduction && UMAMI_WEBSITE_ID && UMAMI_SCRIPT_URL
 ---
 <head>
   <meta charset="utf-8">
 
   <script is:inline>
-  ;(() => {
-    const key = 'preferred-theme'
-    const colors = { dark: '#1d2224', light: '#e7eef4' }
+    ;(() => {
+      const key = 'preferred-theme'
+      const colors = { dark: '#1d2224', light: '#e7eef4' }
 
-    const system = () =>
-      typeof window.matchMedia === 'function' &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light'
+      const system = () =>
+        typeof window.matchMedia === 'function' &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light'
 
-    let theme = system()
+      let theme = system()
 
-    try {
-      const stored = sessionStorage.getItem(key)
-      if (stored === 'dark' || stored === 'light') theme = stored
-    } catch (error) {
-      console.warn('Unable to read stored theme preference.', error)
-    }
+      try {
+        const stored = sessionStorage.getItem(key)
+        if (stored === 'dark' || stored === 'light') theme = stored
+      } catch (error) {
+        console.warn('Unable to read stored theme preference.', error)
+      }
 
-    const root = document.documentElement
-    const meta = document.querySelector('meta[name="theme-color"]')
-    const color = colors[theme]
+      const root = document.documentElement
+      const meta = document.querySelector('meta[name="theme-color"]')
+      const color = colors[theme]
 
-    root.setAttribute('data-theme', theme)
-    root.setAttribute('data-theme-color', color)
-    meta?.setAttribute('content', color)
-  })()
+      root.setAttribute('data-theme', theme)
+      root.setAttribute('data-theme-color', color)
+      meta?.setAttribute('content', color)
+    })()
   </script>
 
   <script src="@/components/common/ThemeSwitch/theme-switch.ts"></script>

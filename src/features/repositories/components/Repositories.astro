@@ -1,13 +1,13 @@
 ---
-import type { Repo } from '../types/repo'
-import styles from './Repositories.module.css'
-import Repository from './Repository.astro'
+  import type { Repo } from '../types/repo'
+  import styles from './Repositories.module.css'
+  import Repository from './Repository.astro'
 
-interface Props {
-  repos: Repo[] | undefined
-}
+  interface Props {
+    repos: Repo[] | undefined
+  }
 
-const { repos } = Astro.props
+  const { repos } = Astro.props
 ---
 <h2 class={styles.sectionTitle}>Open Source Projects</h2>
 <div class={styles.repos}>

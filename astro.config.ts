@@ -1,4 +1,3 @@
-import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
 import { defineConfig, fontProviders } from 'astro/config'
 import { loadEnv } from 'vite'
@@ -10,7 +9,7 @@ const adobeId = env.ADOBE_ID
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  integrations: [react(), sitemap()],
+  integrations: [sitemap()],
   site: meta.url,
   experimental: {
     fonts: [

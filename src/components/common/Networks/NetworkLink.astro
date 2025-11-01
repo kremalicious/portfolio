@@ -1,30 +1,30 @@
 ---
-import { FeatherIcon, MailIcon } from '@lucide/astro'
-import FarcasterIcon from '@/assets/farcaster.svg'
-import GitHubIcon from '@/assets/github.svg'
-import MastodonIcon from '@/assets/mastodon.svg'
-import styles from './Networks.module.css'
+  import { FeatherIcon, MailIcon } from '@lucide/astro'
+  import FarcasterIcon from '@/assets/farcaster.svg'
+  import GitHubIcon from '@/assets/github.svg'
+  import MastodonIcon from '@/assets/mastodon.svg'
+  import styles from './Networks.module.css'
 
-interface Props {
-  name: string
-  url: string
-  animationOrder?: number
-}
+  interface Props {
+    name: string
+    url: string
+    animationOrder?: number
+  }
 
-const { name, url, animationOrder = 0 } = Astro.props as Props
-const linkClasses = [styles.link, name === 'Mail' ? 'u-email' : 'u-url']
+  const { name, url, animationOrder = 0 } = Astro.props as Props
+  const linkClasses = [styles.link, name === 'Mail' ? 'u-email' : 'u-url']
 
-const icons = {
-  GitHub: GitHubIcon,
-  Mastodon: MastodonIcon,
-  Blog: FeatherIcon,
-  Farcaster: FarcasterIcon,
-  Mail: MailIcon
-}
+  const icons = {
+    GitHub: GitHubIcon,
+    Mastodon: MastodonIcon,
+    Blog: FeatherIcon,
+    Farcaster: FarcasterIcon,
+    Mail: MailIcon
+  }
 
-type NetworkName = keyof typeof icons
+  type NetworkName = keyof typeof icons
 
-const IconComponent = icons[name as NetworkName] || null
+  const IconComponent = icons[name as NetworkName] || null
 ---
 <a
   aria-label={name}

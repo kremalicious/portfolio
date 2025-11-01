@@ -1,14 +1,14 @@
 ---
-import ProjectImage from '@/features/projects/components/ProjectImage/index.astro'
-import type { ProjectType } from '../../types/project'
-import styles from './index.module.css'
+  import ProjectImage from '@/features/projects/components/ProjectImage/index.astro'
+  import type { ProjectType } from '../../types/project'
+  import styles from './index.module.css'
 
-type Props = {
-  project: ProjectType
-  isCurrent?: boolean
-}
+  type Props = {
+    project: ProjectType
+    isCurrent?: boolean
+  }
 
-const { project, isCurrent } = Astro.props
+  const { project, isCurrent } = Astro.props
 ---
 <a
   class={`${styles.item} ${isCurrent ? styles.current : ''}`}

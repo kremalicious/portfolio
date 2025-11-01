@@ -1,0 +1,42 @@
+<section class="location">
+  <location-widget></location-widget>
+</section>
+
+<script>
+  import './location-web-component'
+</script>
+
+<style>
+  .location {
+    min-height: 31px;
+  }
+</style>
+
+<style is:global>
+  location-widget {
+    font-size: var(--fs--1);
+    opacity: 0;
+    transition: 0.2s ease-out;
+  }
+
+  location-widget.visible {
+    opacity: 1;
+  }
+
+  location-widget span {
+    color: var(--text-color-light);
+  }
+
+  location-widget .flag {
+    display: inline-block;
+    font-size: 1em;
+    line-height: 1em;
+    vertical-align: middle;
+    margin-right: var(--space-3xs);
+  }
+
+  location-widget .next {
+    display: inline-block;
+    margin-left: var(--space-2xs);
+  }
+</style>

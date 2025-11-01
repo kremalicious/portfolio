@@ -1,22 +1,22 @@
 ---
-import { CompassIcon, StarIcon } from '@lucide/astro'
-import GitHubIcon from '@/assets/github.svg'
-import type { Repo } from '../types/repo'
-import styles from './Repository.module.css'
+  import { CompassIcon, StarIcon } from '@lucide/astro'
+  import GitHubIcon from '@/assets/github.svg'
+  import type { Repo } from '../types/repo'
+  import styles from './Repository.module.css'
 
-interface Props {
-  repo: Repo
-}
+  interface Props {
+    repo: Repo
+  }
 
-const { repo } = Astro.props as Props
-const { name, full_name, description, html_url, homepage, stargazers_count } =
-  repo
+  const { repo } = Astro.props as Props
+  const { name, full_name, description, html_url, homepage, stargazers_count } =
+    repo
 
-const isExternal = !full_name.includes('kremalicious')
-const repoLink =
-  name === 'blog' || name === 'portfolio' || !homepage || isExternal
-    ? html_url
-    : homepage
+  const isExternal = !full_name.includes('kremalicious')
+  const repoLink =
+    name === 'blog' || name === 'portfolio' || !homepage || isExternal
+      ? html_url
+      : homepage
 ---
 <div class={styles.repo}>
   <h3 class={styles.repoTitle}>

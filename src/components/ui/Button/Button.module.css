@@ -1,19 +1,16 @@
 .button {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: var(--space-3xs);
-  padding: var(--space-xs);
+  padding: var(--space-2xs) var(--space-xs);
   border: var(--border-width) solid rgba(255, 255, 255, 0.2);
   border-radius: var(--border-radius);
   font-size: var(--fs-0);
-  line-height: 1;
   font-weight: 500;
   cursor: pointer;
   transition: 0.2s ease-out;
   text-decoration: none;
   min-width: 120px;
-  text-wrap: nowrap;
   width: 100%;
 }
 
@@ -24,11 +21,11 @@
 }
 
 .button svg {
-  margin-right: var(--space-3xs);
-  transition: 0.2s var(--easing);
-  margin-bottom: -0.15rem;
-  width: var(--fs--1);
-  height: var(--fs--1);
+  transition: 0.2s ease-out;
+  margin-bottom: -0.1rem;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
 }
 
 .button:hover,

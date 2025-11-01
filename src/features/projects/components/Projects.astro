@@ -1,12 +1,12 @@
 ---
-import type { ProjectType } from '../types/project'
-import ProjectPreview from './ProjectPreview/index.astro'
+  import type { ProjectType } from '../types/project'
+  import ProjectPreview from './ProjectPreview/index.astro'
 
-type Props = {
-  projects: ProjectType[]
-}
+  type Props = {
+    projects: ProjectType[]
+  }
 
-const { projects } = Astro.props
+  const { projects } = Astro.props
 ---
 <nav class="projects">
   {projects.length > 0 &&
@@ -20,18 +20,18 @@ const { projects } = Astro.props
 </nav>
 
 <style>
-.projects {
-  display: grid;
-  gap: var(--space-xl);
-}
-
-@media (min-width: 55rem) {
   .projects {
-    gap: var(--space-2xl);
-    grid-template-columns: repeat(
-        auto-fill,
-        minmax(min-content, calc(50% - var(--space-l)))
-      );
+    display: grid;
+    gap: var(--space-xl);
   }
-}
+
+  @media (min-width: 55rem) {
+    .projects {
+      gap: var(--space-2xl);
+      grid-template-columns: repeat(
+          auto-fill,
+          minmax(min-content, calc(50% - var(--space-l)))
+        );
+    }
+  }
 </style>

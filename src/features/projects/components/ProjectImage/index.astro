@@ -1,21 +1,23 @@
 ---
-import { Image } from 'astro:assets'
-import type { ImageMetadata } from 'astro'
-import styles from './index.module.css'
+  import { Image } from 'astro:assets'
+  import type { ImageMetadata } from 'astro'
+  import styles from './index.module.css'
 
-type Props = {
-  image: ImageMetadata
-  alt: string
-  className?: string
-  width?: number
-}
+  type Props = {
+    image: ImageMetadata
+    alt: string
+    className?: string
+    width?: number
+  }
 
-const { image, alt, className, width } = Astro.props as Props
-if (!image) return null
+  const { image, alt, className, width } = Astro.props as Props
+  if (!image) return null
 
-const defaultSizes = '(min-width: 960px) 800px, 100vw'
-const availableWidth = width ?? image.width ?? 1200
-const widths = [400, 800, 1200, 1200].filter((value) => value <= availableWidth)
+  const defaultSizes = '(min-width: 960px) 800px, 100vw'
+  const availableWidth = width ?? image.width ?? 1200
+  const widths = [400, 800, 1200, 1200].filter(
+    (value) => value <= availableWidth
+  )
 ---
 <figure class:list={[styles.imageWrap, className || '']}>
   <Image

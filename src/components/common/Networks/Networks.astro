@@ -1,14 +1,14 @@
 ---
-import meta from '@content/meta.json'
-import NetworkLink from './NetworkLink.astro'
-import styles from './Networks.module.css'
+  import meta from '@content/meta.json'
+  import NetworkLink from './NetworkLink.astro'
+  import styles from './Networks.module.css'
 
-interface Props {
-  label: string
-  small?: boolean
-}
+  interface Props {
+    label: string
+    small?: boolean
+  }
 
-const { label, small } = Astro.props
+  const { label, small } = Astro.props
 ---
 <section
   aria-label={label}

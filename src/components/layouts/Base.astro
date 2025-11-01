@@ -1,10 +1,10 @@
 ---
-import '@/styles/global.css'
-import meta from '@content/meta.json'
-import FooterComponent from '@/components/common/Footer/Footer.astro'
-import HeadComponent from '@/components/common/Head.astro'
-import HostnameCheck from '@/components/common/HostnameCheck/HostnameCheck.astro'
-import ThemeSwitch from '@/components/common/ThemeSwitch/index.astro'
+  import '@/styles/global.css'
+  import meta from '@content/meta.json'
+  import FooterComponent from '@/components/common/Footer/Footer.astro'
+  import HeadComponent from '@/components/common/Head.astro'
+  import HostnameCheck from '@/components/common/HostnameCheck/HostnameCheck.astro'
+  import ThemeSwitch from '@/components/common/ThemeSwitch/index.astro'
 ---
 <html lang="en">
   <HeadComponent/>
@@ -21,15 +21,15 @@ import ThemeSwitch from '@/components/common/ThemeSwitch/index.astro'
 </html>
 
 <style>
-.screen {
-  margin: 0 auto;
-  padding-left: 5vw;
-  padding-right: 5vw;
-}
-
-@media (min-width: 55rem) {
   .screen {
-    max-width: calc(var(--projectImageMaxWidth) + 10vw);
+    margin: 0 auto;
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
-}
+
+  @media (min-width: 55rem) {
+    .screen {
+      max-width: calc(var(--projectImageMaxWidth) + 10vw);
+    }
+  }
 </style>

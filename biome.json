@@ -11,6 +11,9 @@
     }
   },
   "html": {
-    "experimentalFullSupportEnabled": true
+    "experimentalFullSupportEnabled": true,
+    "formatter": {
+      "indentScriptAndStyle": true
+    }
   }
 }

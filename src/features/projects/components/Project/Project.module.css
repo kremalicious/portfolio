@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns:
     [full-start] minmax(var(--space-xs), 1fr)
-    [main-start] minmax(0, 38rem) [main-end]
+    [main-start] minmax(0, 40rem) [main-end]
     minmax(var(--space-xs), 1fr) [full-end];
 }
 
@@ -25,7 +25,7 @@
   margin-bottom: var(--space-3xl);
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-xl);
+  gap: var(--space-l);
 }
 
 @media (min-width: 40em) {

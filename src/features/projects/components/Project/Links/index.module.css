@@ -8,10 +8,10 @@
 }
 
 .projectLinks a {
-  display: block;
   width: 100%;
-  text-transform: none;
   text-align: left;
+  font-size: var(--fs--1);
+  line-height: 1.4;
 }
 
 .projectLinks svg {

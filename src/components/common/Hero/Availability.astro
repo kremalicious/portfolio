@@ -1,8 +1,8 @@
 ---
-import meta from '@content/meta.json'
+  import meta from '@content/meta.json'
 
-const { status, available, unavailable } = meta.availability
-const html = status ? available : unavailable
+  const { status, available, unavailable } = meta.availability
+  const html = status ? available : unavailable
 ---
 <p
   class:list={['availability', status === true ? 'available' : '' ]}
@@ -10,22 +10,22 @@ const html = status ? available : unavailable
 />
 
 <style>
-.availability {
-  font-size: var(--fs--1);
-  border-radius: var(--border-radius);
-  color: var(--text-color-light);
-  z-index: 2;
-  text-align: center;
-  margin-bottom: var(--space-xs);
-}
+  .availability {
+    font-size: var(--fs--1);
+    border-radius: var(--border-radius);
+    color: var(--text-color-light);
+    z-index: 2;
+    text-align: center;
+    margin-bottom: var(--space-xs);
+  }
 
-.available {
-  color: var(--text-color);
-  /* background: var(--body-background-color);
+  .available {
+    color: var(--text-color);
+    /* background: var(--body-background-color);
   position: fixed;
   bottom: var(--space-m);
   left: 50%;
   transform: translateX(-50%);
   box-shadow: var(--box-shadow);*/
-}
+  }
 </style>
