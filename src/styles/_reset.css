@@ -220,7 +220,7 @@
     font-size: 90%;
   }
 
-  .screenreader-only:not(:focus):not(:active) {
+  .screenreader-only {
     clip-path: rect(0 0 0 0);
     height: 1px;
     overflow: hidden;

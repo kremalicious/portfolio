@@ -41,39 +41,16 @@ const shouldIncludeAnalytics =
 <head>
   <meta charset="utf-8">
 
-  <script is:inline define:vars={{ sessionStorageName: "preferred-theme" }}>
-  // run early so no page flashes
+  <!-- Apply theme before any content renders to prevent flickering -->
+  <script>
+  import { reflectPreference } from './ThemeSwitch/theme-switch'
+
   ;(() => {
-    function getPreferTheme() {
-      const savedTheme = sessionStorage.getItem(sessionStorageName)
-      if (savedTheme) return savedTheme
-
-      const isSystemDark = window.matchMedia(
-        '(prefers-color-scheme: dark)'
-      ).matches
-
-      return isSystemDark ? 'dark' : 'light'
-    }
-
-    function getThemeColor(theme) {
-      return theme === 'dark' ? '#1d2224' : '#e7eef4'
-    }
-
-    const themeValue = getPreferTheme()
-    const themeColor = getThemeColor(themeValue)
-
-    function reflectPreference() {
-      const htmlEl = document.documentElement
-      const metaThemeColor = document.querySelector('meta[name=theme-color]')
-
-      htmlEl.setAttribute('data-theme', themeValue)
-      htmlEl.setAttribute('data-theme-color', themeColor)
-      metaThemeColor?.setAttribute('content', themeColor)
-    }
-
     reflectPreference()
   })()
   </script>
+
+  <script src="@/components/common/ThemeSwitch/theme-switch.ts"></script>
 
   <title>{titleFinal}</title>
 
@@ -85,16 +62,7 @@ const shouldIncludeAnalytics =
   <meta property="og:url" content={canonicalUrl}>
   <meta name="twitter:card" content="summary_large_image">
 
-  <meta
-    name="theme-color"
-    content="#e7eef4"
-    media="(prefers-color-scheme: light)"
-  >
-  <meta
-    name="theme-color"
-    content="#1d2224"
-    media="(prefers-color-scheme: dark)"
-  >
+  <meta name="theme-color" content="#e7eef4">
   <meta name="color-scheme" content="light dark">
 
   <meta
