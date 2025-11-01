@@ -3,33 +3,32 @@
   import meta from '@content/meta.json'
   import FooterComponent from '@/components/common/Footer/Footer.astro'
   import HeadComponent from '@/components/common/Head.astro'
+  import HeaderComponent from '@/components/common/Header/Header.astro'
   import HostnameCheck from '@/components/common/HostnameCheck/HostnameCheck.astro'
   import ThemeSwitch from '@/components/common/ThemeSwitch/index.astro'
+
+  type Props = {
+    title?: string
+    description?: string
+    image?: ImageMetadata
+    noHeader?: boolean
+  }
+
+  const { noHeader = false, title, description, image } = Astro.props
 ---
 <html lang="en">
-  <HeadComponent/>
+  <HeadComponent title={title} description={description} image={image}/>
 
   <body>
     <HostnameCheck allowedHosts={meta.allowedHosts}/>
     <ThemeSwitch/>
 
-    <main class="screen">
+    {!noHeader && <HeaderComponent/>}
+
+    <main class="container">
       <slot/>
     </main>
+
     <FooterComponent/>
   </body>
 </html>
-
-<style>
-  .screen {
-    margin: 0 auto;
-    padding-left: 5vw;
-    padding-right: 5vw;
-  }
-
-  @media (min-width: 55rem) {
-    .screen {
-      max-width: calc(var(--projectImageMaxWidth) + 10vw);
-    }
-  }
-</style>

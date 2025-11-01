@@ -8,7 +8,7 @@
 }
 
 .frame {
-  border: var(--border-width) solid rgba(255, 255, 255, 0.2);
+  border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   transition: border-color 0.1s ease-out;
@@ -24,18 +24,4 @@ a:focus .frame {
 .image {
   composes: frame;
   display: block;
-}
-
-.image:last-of-type {
-  margin-bottom: 0;
-}
-
-@media (min-width: 1200px) {
-  .image:not(:only-of-type) {
-    margin-bottom: var(--space-3xl);
-  }
-
-  .image:last-of-type {
-    margin-bottom: 0;
-  }
 }

@@ -1,0 +1,11 @@
+.container {
+  margin: 0 auto;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+@media (min-width: 55rem) {
+  .container {
+    max-width: calc(var(--projectImageMaxWidth) + 10vw);
+  }
+}

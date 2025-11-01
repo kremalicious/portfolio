@@ -43,3 +43,7 @@
 .copyright a {
   color: var(--text-color-light);
 }
+
+.actions a:hover {
+  color: var(--link-color-hover);
+}

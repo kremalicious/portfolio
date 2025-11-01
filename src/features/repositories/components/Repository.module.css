@@ -40,7 +40,7 @@
 
 .meta a:hover,
 .meta a:focus {
-  color: var(--brand-cyan);
+  color: var(--brand-primary);
 }
 
 .meta svg {

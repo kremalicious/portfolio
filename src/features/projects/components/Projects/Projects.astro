@@ -8,7 +8,7 @@
 
   const { projects } = Astro.props
 ---
-<nav class="projects">
+<section class="projects">
   {projects.length > 0 &&
     projects.map((project) => (
       <ProjectPreview
@@ -17,7 +17,7 @@
         images={project.images}
       />
     ))}
-</nav>
+</section>
 
 <style>
   .projects {

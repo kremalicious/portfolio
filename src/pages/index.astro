@@ -4,14 +4,14 @@
   import Projects from '@/features/projects/components/Projects/Projects.astro'
   import { getProjects } from '@/features/projects/lib/get-projects'
 
-  // import Repositories from '@/features/repositories/components/Repositories.astro'
-  //import { getRepos } from '@/features/repositories/lib/get-repos'
+  import Repositories from '@/features/repositories/components/Repositories.astro'
+  import { getRepos } from '@/features/repositories/lib/get-repos'
 
-  // const repos = await getRepos()
+  const repos = await getRepos()
   const projects = await getProjects()
 ---
-<BaseLayout>
+<BaseLayout noHeader>
   <Hero/>
   <Projects projects={projects}/>
-  <!-- <Repositories repos={repos}/> -->
+  <Repositories repos={repos}/>
 </BaseLayout>

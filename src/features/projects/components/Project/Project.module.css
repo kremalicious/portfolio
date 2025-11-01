@@ -25,8 +25,7 @@
 }
 
 .meta {
-  margin-top: var(--space-xl);
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-2xl);
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-l);
@@ -48,7 +47,7 @@
   margin-top: var(--space-2xs);
   font-size: var(--fs-0);
   font-family: var(--font-family-base);
-  color: var(--brand-grey-light);
+  color: var(--text-color-light);
 }
 
 .fullContainer {

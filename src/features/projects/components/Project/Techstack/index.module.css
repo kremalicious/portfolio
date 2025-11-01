@@ -11,7 +11,7 @@
   justify-content: center;
   padding: var(--space-2xs);
   text-align: center;
-  background: var(--border-color);
+  background: var(--background-color-dimmed);
   border-radius: 30px;
   border: 0.05rem solid transparent;
   font-size: var(--fs--1);
