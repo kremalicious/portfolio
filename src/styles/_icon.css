@@ -1,10 +1,11 @@
 .icon {
-  width: var(--fs-0);
-  height: var(--fs-0);
+  width: 1em;
+  height: 1em;
   stroke: currentColor;
-  stroke-width: 0.1rem;
+  stroke-width: var(--border-width);
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
   vertical-align: baseline;
+  margin-bottom: -0.1em;
 }

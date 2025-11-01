@@ -8,9 +8,11 @@
   }
 
   const { repos } = Astro.props
+  if (!repos || repos.length === 0) return null
 ---
 <h2 class={styles.sectionTitle}>Open Source Projects</h2>
-<div class={styles.repos}>
+
+<div class:list={[styles.repos, 'grid']}>
   {repos?.map((repo) => (
     <Repository repo={repo} />
   ))}

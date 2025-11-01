@@ -1,11 +1,11 @@
 .repo {
-  padding: var(--space-m);
+  padding: var(--space-s) var(--space-m);
   border-radius: var(--border-radius);
   background: var(--background-color-highlight);
+  border: var(--border-width) solid var(--border-color);
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  box-shadow: var(--box-shadow);
 }
 
 .repo > * {
@@ -14,6 +14,8 @@
 
 .repo p {
   font-size: var(--fs--1);
+  line-height: var(--fs-1);
+  margin-bottom: var(--space-s);
 }
 
 .repo p:last-child {
@@ -22,11 +24,11 @@
 
 .repoTitle {
   font-size: var(--fs-1);
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-2xs);
 }
 
 .meta {
-  font-size: var(--fs--1);
+  font-size: var(--fs--2);
   align-self: flex-end;
   display: flex;
   justify-content: space-between;
@@ -44,8 +46,5 @@
 }
 
 .meta svg {
-  width: var(--fs--1);
-  height: var(--fs--1);
   margin-right: var(--space-3xs);
-  margin-bottom: -0.1rem;
 }

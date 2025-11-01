@@ -6,6 +6,7 @@
 }
 
 .repos {
-  composes: projects from '../../projects/components/Projects/index.module.css';
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--space-l);
 }

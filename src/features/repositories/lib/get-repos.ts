@@ -1,25 +1,33 @@
-import filter from '@content/repos.json'
+import reposFilter from '@content/repos.json'
 import type { Repo } from '../types/repo'
+import { readReposCache, saveReposCache } from './repos-cache'
 
 //
-// Get GitHub repos
+// Get GitHub repos, with local cache during development
 //
-if (!process.env.GITHUB_TOKEN) {
-  throw new Error('Missing GitHub environment variable')
-}
-
 const gitHubConfig = {
   headers: {
-    'User-Agent': 'kremalicious/portfolio',
     Authorization: `token ${process.env.GITHUB_TOKEN}`
   }
 }
 
+const isDevelopment = import.meta.env.DEV
+
 export const getRepos = async () => {
+  if (!process.env.GITHUB_TOKEN) {
+    console.error('Missing GitHub environment variable')
+    return []
+  }
+
   try {
+    if (isDevelopment) {
+      const cachedRepos = await readReposCache()
+      if (cachedRepos) return cachedRepos
+    }
+
     let repos: Repo[] = []
 
-    for (const item of filter) {
+    for (const item of reposFilter) {
       const user = item.split('/')[0]
       const repoName = item.split('/')[1]
       const response = await fetch(
@@ -53,6 +61,8 @@ export const getRepos = async () => {
 
     // sort by pushed to, newest first
     repos = repos.sort((a, b) => b.pushed_at.localeCompare(a.pushed_at))
+
+    if (isDevelopment) await saveReposCache({ repos })
 
     return repos
   } catch (error: unknown) {

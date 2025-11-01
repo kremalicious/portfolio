@@ -25,6 +25,7 @@
 }
 
 .meta {
+  margin-top: var(--space-xl);
   margin-bottom: var(--space-2xl);
   display: grid;
   grid-template-columns: 1fr;
@@ -39,7 +40,7 @@
 
 .metatitle {
   font-size: var(--fs-2);
-  margin-bottom: var(--space-l);
+  margin-bottom: var(--space-m);
 }
 
 .metatitle span {

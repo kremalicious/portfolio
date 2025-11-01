@@ -2,12 +2,9 @@
   "kremalicious/portfolio",
   "kremalicious/blog",
   "kremalicious/astro-redirect-from",
-  "kremalicious/gatsby-plugin-matomo",
-  "kremalicious/gatsby-redirect-from",
+  "kremalicious/mongodb-s3-backup",
   "kremalicious/hyper-mac-pro",
   "kremalicious/appstorebadges",
   "kremalicious/kbdfun",
-  "kremalicious/ipfs",
-  "oceanprotocol/market",
-  "kremalicious/asi-calculator"
+  "oceanprotocol/market"
 ]
