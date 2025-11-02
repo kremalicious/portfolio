@@ -27,7 +27,7 @@
 - [✨ Development](#-development)
   - [🔮 Linting](#-linting)
   - [👩‍🔬 Testing](#-testing)
-- [🚚 TODO: Deployment](#-todo-deployment)
+- [🚚 Deployment](#-deployment)
 - [🏛 Licenses](#-licenses)
 
 ---
@@ -53,7 +53,7 @@ The whole tech stack:
 
 All displayed project content is powered by one YAML file where all the portfolio's projects are defined. The project description itself is transformed from Markdown written inside the YAML file into HTML on build time.
 
-Astro automatically creates pages from each item in that file utilizing the [`get-projects.ts`](features/projects/lib/get-projects.ts) script in the [`[slug].astro`](src/pages/[slug].astro) page template.
+Astro automatically creates pages from each item in that file in the [`[slug].astro`](src/pages/[slug].astro) page template. Utilizing the [`get-projects.ts`](features/projects/lib/get-projects.ts) script which validates, transforms and enhances the data.
 
 - [`projects.yml`](src/_content/projects.yml)
 - [`get-projects.ts`](features/projects/lib/get-projects.ts)
@@ -61,7 +61,9 @@ Astro automatically creates pages from each item in that file utilizing the [`ge
 
 ### 🖼 Project images
 
-All project images live under `src/_content/images` and are automatically attached to each project based on the inclusion of the project's `slug` in their filenames. Astro generates all required image sizes for delivering responsible, responsive images to visitors.
+All project images live under `src/_content/images` and are automatically attached to each project based on the inclusion of the project's `slug` in their filenames during the above mentioned `get-projects.ts` pipeline.
+
+Astro generates all required image sizes for delivering responsible, responsive images to visitors.
 
 - [`ProjectImage.astro`](src/features/projects/components/ProjectImage/ProjectImage.astro)
 - [`get-project-images.ts`](src/features/projects/lib/get-project-images.ts)
@@ -176,9 +178,9 @@ bun run test
 
 Most test files live beside the respective component. Testing setup, fixtures, and mocks can be found in the `test/` folder.
 
-## 🚚 TODO: Deployment
+## 🚚 Deployment
 
-
+Every branch or Pull Request is automatically deployed by [Vercel](https://vercel.com) with their GitHub integration, where the `main` branch is automatically aliased to `matthiaskretschmann.com`. A link to a preview deployment will appear under each Pull Request.
 
 ## 🏛 Licenses
 

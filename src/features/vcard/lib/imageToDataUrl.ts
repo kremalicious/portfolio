@@ -8,7 +8,8 @@ export async function imageToDataUrl(
   options: ImageToDataUrlOptions = {}
 ): Promise<string> {
   const fetchImplementation =
-    options.fetchImplementation ?? (globalThis.fetch as typeof fetch | undefined)
+    options.fetchImplementation ??
+    (globalThis.fetch as typeof fetch | undefined)
   const fileReaderConstructor =
     options.fileReaderConstructor ??
     (globalThis as { FileReader?: typeof FileReader }).FileReader

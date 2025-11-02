@@ -1,15 +1,14 @@
-export declare type ProjectLink = {
-  title: string
-  url: string
-  icon?: string
-}
+import type { ImageMetadata } from 'astro'
+import type {
+  ProjectLinkSchema,
+  ProjectSourceSchema
+} from '../lib/schemas/project'
 
-export declare type ProjectType = {
-  slug: string
-  title: string
-  description: string
+export interface ProjectLink extends ProjectLinkSchema {}
+
+export interface ProjectSource extends ProjectSourceSchema {}
+
+export interface ProjectType extends ProjectSource {
   descriptionHtml: string
   images: ImageMetadata[]
-  techstack: string[]
-  links?: ProjectLink[]
 }
