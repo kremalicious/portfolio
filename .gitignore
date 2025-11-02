@@ -1,6 +1,12 @@
+# build outputs
 dist/
 .astro/
 .cache/
+
+# ignore other package manager's lock files, just in case
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
 # dependencies
 /node_modules
@@ -21,5 +27,3 @@ yarn-error.log*
 # local env files
 .env*.local
 .env
-
-generated
