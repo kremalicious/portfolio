@@ -1,8 +1,13 @@
 ---
   import { MoonIcon, SunIcon } from '@lucide/astro'
-  import styles from './index.module.css'
+  import styles from './ThemeSwitch.module.css'
 ---
-<div class={styles.themeSwitch} title="Toggle Theme" id="theme-toggle">
+<theme-switch
+  class={styles.themeSwitch}
+  title="Toggle Theme"
+  id="theme-toggle"
+  role="switch"
+>
   <label for="toggle" class={styles.checkbox}>
     <span class="screenreader-only">Toggle Theme</span>
     <input
@@ -17,4 +22,11 @@
       <MoonIcon width={24} height={24} id="moon" style="display: none;"/>
     </div>
   </label>
-</div>
+</theme-switch>
+
+<script src="./theme-switch-element.ts"></script>
+<script>
+  import { addThemeListeners } from '../lib/theme'
+
+  addThemeListeners()
+</script>

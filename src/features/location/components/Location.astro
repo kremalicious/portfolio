@@ -1,9 +1,9 @@
 <section class="location">
-  <location-widget></location-widget>
+  <location-element></location-element>
 </section>
 
 <script>
-  import './location-web-component'
+  import './location-element'
 </script>
 
 <style>
@@ -13,15 +13,15 @@
 </style>
 
 <style is:global>
-  location-widget {
+  location-element {
     font-size: var(--fs--1);
   }
 
-  location-widget span {
+  location-element span {
     color: var(--text-color-light);
   }
 
-  location-widget .flag {
+  location-element .flag {
     display: inline-block;
     font-size: 1em;
     line-height: 1em;
@@ -29,7 +29,7 @@
     margin-right: var(--space-3xs);
   }
 
-  location-widget .next {
+  location-element .next {
     display: inline-block;
     margin-left: var(--space-2xs);
   }

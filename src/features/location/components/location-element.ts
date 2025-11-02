@@ -11,7 +11,7 @@ function createFlag(countryCode: string, countryName: string): string {
   return `<span role="img" aria-label="${countryName}" class="flag">${emoji}</span>`
 }
 
-export class LocationWidget extends HTMLElement {
+export class LocationElement extends HTMLElement {
   private location: UseLocation | null = null
   private relativeTime = new RelativeTime({ locale: 'en' })
   private timeUpdateInterval: number | null = null
@@ -97,4 +97,4 @@ export class LocationWidget extends HTMLElement {
   }
 }
 
-customElements.define('location-widget', LocationWidget)
+customElements.define('location-element', LocationElement)

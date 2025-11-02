@@ -88,17 +88,22 @@ If you want to know how, have a look at the respective components:
 
 - [`get-location.ts`](src/features/location/api/get-location.ts)
 - [`Location.astro`](src/features/location/components/Location.astro)
-- [`location-web-component.ts`](src/features/location/components/location-web-component.ts)
+- [`location-element.ts`](src/features/location/components/location-element.ts)
 - [kremalicious/location](https://github.com/kremalicious/location)
 - [lugara.me](https://lugara.me)
 
 ### 💅 Theme switcher
 
-Includes a theme switcher which allows user to toggle between a light and a dark theme, where by default the user's system theme is used automatically.
+Includes a theme switcher which allows user to toggle between a light and a dark theme. Done without any dependencies:
 
-If you want to know how, have a look at the respective component:
+- before document renders, the theme is set based on system preference or session storage user preference in the `<head>`
+- the theme switch component then listens/dispatches a custom event to sync its UI
 
-- [`src/components/ThemeSwitch/index.tsx`](src/components/ThemeSwitch/index.tsx)
+If you want to know how this works in detail, have a look at the respective files:
+
+- [`theme.ts`](src/features/theme-switch/lib/theme.ts)
+- [`theme-switch-element.ts`](src/features/theme-switch/components/theme-switch-element.ts)
+- [`ThemeSwitch.astro`](src/features/theme-switch/components/ThemeSwitch.astro)
 
 ### 📇 Client-side vCard creation
 
@@ -107,7 +112,7 @@ The _Add to addressbook_ link in the footer automatically creates a downloadable
 If you want to know how, have a look at the respective component:
 
 - [`Vcard.astro`](src/features/vcard/components/Vcard.astro)
-- [`vcard-web-component.ts`](src/features/vcard/components/vcard-web-component.ts)
+- [`vcard-element.ts`](src/features/vcard/components/vcard-element.ts)
 - [`vcard.ts`](src/features/vcard/lib/vcard.ts)
 
 ## 🤓 Scripts

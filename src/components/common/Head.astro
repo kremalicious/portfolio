@@ -44,23 +44,18 @@
   <meta charset="utf-8">
 
   <script is:inline>
-    ;(() => {
-      const key = 'preferred-theme'
+    function setInitialTheme() {
       const colors = { dark: '#1d2224', light: '#e7eef4' }
+      const preferredTheme = sessionStorage.getItem('preferred-theme')
+      const systemPrefersDark = window?.matchMedia(
+        '(prefers-color-scheme: dark)'
+      ).matches
+      let theme = 'light'
 
-      const system = () =>
-        typeof window.matchMedia === 'function' &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches
-          ? 'dark'
-          : 'light'
-
-      let theme = system()
-
-      try {
-        const stored = sessionStorage.getItem(key)
-        if (stored === 'dark' || stored === 'light') theme = stored
-      } catch (error) {
-        console.warn('Unable to read stored theme preference.', error)
+      if (preferredTheme === 'dark' || preferredTheme === 'light') {
+        theme = preferredTheme
+      } else if (systemPrefersDark) {
+        theme = 'dark'
       }
 
       const root = document.documentElement
@@ -70,10 +65,10 @@
       root.setAttribute('data-theme', theme)
       root.setAttribute('data-theme-color', color)
       meta?.setAttribute('content', color)
-    })()
-  </script>
+    }
 
-  <script src="@/components/common/ThemeSwitch/theme-switch.ts"></script>
+    setInitialTheme()
+  </script>
 
   <title>{titleFinal}</title>
 
