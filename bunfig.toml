@@ -1,2 +1,8 @@
 [test]
 preload = ["./test/test-setup.ts"]
+coverage = true
+coverageReporter = ["text", "lcov"]
+coverageSkipTestFiles = true
+coveragePathIgnorePatterns = [
+  "test/**"
+]

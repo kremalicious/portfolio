@@ -29,8 +29,18 @@ END:VCARD`
   return vCard
 }
 
-export async function downloadVcard() {
-  const dataUrl = await imageToDataUrl(avatar.src)
+interface DownloadVcardOptions {
+  readImage?: typeof imageToDataUrl
+  saveFile?: (blob: Blob, fileName: string) => void
+  avatarSource?: string
+}
+
+export async function downloadVcard(options: DownloadVcardOptions = {}) {
+  const readImage = options.readImage ?? imageToDataUrl
+  const saveFile = options.saveFile ?? saveAs
+  const avatarSource = options.avatarSource ?? avatar.src
+
+  const dataUrl = await readImage(avatarSource)
   const vcard = constructVcard(dataUrl)
 
   // Construct the download from a blob of the just constructed vCard,
@@ -39,5 +49,5 @@ export async function downloadVcard() {
   const blob = new Blob([vcard], { type: 'text/x-vcard' })
 
   // save it to user's file system
-  saveAs(blob, name)
+  saveFile(blob, name)
 }

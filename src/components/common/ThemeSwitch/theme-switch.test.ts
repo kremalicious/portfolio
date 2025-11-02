@@ -1,4 +1,5 @@
-import { beforeEach, describe, expect, it, mock } from 'bun:test'
+import { beforeEach, describe, expect, it } from 'bun:test'
+import { setupMatchMedia, setupStorage } from '@test/test-utils'
 import { SESSION_STORAGE_NAME } from './theme-switch'
 
 const baseHtml = `
@@ -30,61 +31,19 @@ const themeToggleHtml = `
   </html>
 `
 
-type ListenerRecord = Record<string, ((e: MediaQueryListEvent) => void)[]>
-
 function setupDocument(template: string): void {
   document.documentElement.innerHTML = template
 }
 
-function setupStorage(theme: string | null = null): void {
-  const mockStorage = {
-    getItem: mock().mockReturnValue(theme),
-    setItem: mock(),
-    removeItem: mock(),
-    clear: mock(),
-    length: theme ? 1 : 0,
-    key: mock()
-  }
-
-  Object.defineProperty(window, 'sessionStorage', {
-    value: mockStorage,
-    writable: true
-  })
-}
-
-function setupMatchMedia(
-  isDarkMode = false,
-  trackListeners = false
-): ListenerRecord | undefined {
-  const listeners: ListenerRecord = {}
-
-  const matchMediaMock = mock().mockImplementation((query) => ({
-    matches: query.includes('dark') ? isDarkMode : !isDarkMode,
-    addEventListener: trackListeners
-      ? mock((event, listener) => {
-          if (!listeners[event]) listeners[event] = []
-          listeners[event].push(listener as (e: MediaQueryListEvent) => void)
-        })
-      : mock(),
-    removeEventListener: mock(),
-    dispatchEvent: mock(),
-    onchange: null,
-    addListener: mock(),
-    removeListener: mock(),
-    media: query
-  }))
-
-  Object.defineProperty(window, 'matchMedia', {
-    writable: true,
-    value: matchMediaMock
-  })
-
-  return trackListeners ? listeners : undefined
-}
+let themeModulePromise: Promise<typeof import('./theme-switch')> | undefined
 
 async function loadThemeModule(): Promise<typeof import('./theme-switch')> {
-  const cacheBuster = crypto.randomUUID()
-  return await import(`./theme-switch?cache=${cacheBuster}`)
+  if (!themeModulePromise) {
+    themeModulePromise = import('./theme-switch')
+  }
+  const module = await themeModulePromise
+  module.resetThemePreference()
+  return module
 }
 
 function triggerWindowLoad(): void {
@@ -173,6 +132,30 @@ describe('Theme toggle', () => {
       'dark'
     )
   })
+
+  it('cycles back to light when toggle fires twice', async () => {
+    setupMatchMedia(false)
+    const { reflectPreference } = await loadThemeModule()
+    reflectPreference()
+    triggerWindowLoad()
+
+    const themeToggleElement = document.getElementById('theme-toggle')
+
+    themeToggleElement?.dispatchEvent(new Event('change'))
+    themeToggleElement?.dispatchEvent(new Event('change'))
+
+    expect(document.documentElement.getAttribute('data-theme')).toBe('light')
+    expect(document.documentElement.getAttribute('data-theme-color')).toBe(
+      '#e7eef4'
+    )
+    expect(
+      document.querySelector('#theme-toggle')?.getAttribute('checked')
+    ).toBe('false')
+    expect(window.sessionStorage.setItem).toHaveBeenLastCalledWith(
+      SESSION_STORAGE_NAME,
+      'light'
+    )
+  })
 })
 
 describe('System preference changes', () => {
@@ -195,5 +178,38 @@ describe('System preference changes', () => {
     expect(document.documentElement.getAttribute('data-theme-color')).toBe(
       '#1d2224'
     )
+  })
+})
+
+describe('Theme utilities', () => {
+  it('returns saved preference when present', async () => {
+    setupStorage('dark')
+    setupMatchMedia(false)
+    const { getPreferTheme } = await loadThemeModule()
+
+    const actualTheme = getPreferTheme()
+
+    expect(window.sessionStorage.getItem).toHaveBeenCalledWith(
+      SESSION_STORAGE_NAME
+    )
+    expect(actualTheme).toBe('dark')
+  })
+
+  it('reflects preference without toggle present', async () => {
+    setupDocument(baseHtml)
+    setupMatchMedia(false)
+    const { reflectPreference } = await loadThemeModule()
+
+    reflectPreference()
+
+    expect(document.documentElement.getAttribute('data-theme')).toBe('light')
+    expect(document.documentElement.getAttribute('data-theme-color')).toBe(
+      '#e7eef4'
+    )
+    expect(
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.getAttribute('content')
+    ).toBe('#e7eef4')
   })
 })

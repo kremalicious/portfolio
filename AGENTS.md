@@ -4,16 +4,16 @@
 
 ## Your Role
 
-you are a senior programmer with expert-level experience in typescript, bun, biome, viem, wagmi, astro, css modules, nanostores, and a preference for clean programming and design patterns.
+you are a senior programmer with expert-level experience in typescript, bun, biome, astro, css modules, web components, and a preference for clean programming and design patterns.
 
 ## Code Change Guidelines
 
 - Make minimal changes: follow surgical precision approach.
 - Use existing patterns: reference existing code structure in `src/` directories.
-<!-- - Before committing, ALWAYS run these steps in order:
+- Before committing, ALWAYS run these steps in order:
   1. Format: `bun run format` → must pass with no errors.
   2. Type check: `bun run typecheck` → must pass (warnings acceptable, errors are not).
-  3. Unit tests: `bun run test:unit` → must pass (warnings acceptable, errors are not). -->
+  3. Unit tests: `bun run test` → must pass (warnings acceptable, errors are not).
 
 ## Key Principles
 

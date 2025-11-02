@@ -24,6 +24,11 @@ export function getThemeColor(theme: string) {
 let themeValue = getPreferTheme()
 let themeColor = getThemeColor(themeValue)
 
+export function resetThemePreference() {
+  themeValue = getPreferTheme()
+  themeColor = getThemeColor(themeValue)
+}
+
 export function reflectPreference() {
   const themeToggle = document.querySelector(
     '#theme-toggle'

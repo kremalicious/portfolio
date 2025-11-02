@@ -1,26 +1,42 @@
 ---
-  import styles from './HostnameCheck.module.css'
-
   interface Props {
     allowedHosts: string[]
   }
 
   const { allowedHosts } = Astro.props
 ---
-<aside class={`${styles.hostnameInfo} hostnameInfo`} style="display: none;">
-  <p>
-    {`Hi there 👋. Please note that only the code and documentation of this
-          site are open source. But my logo and the combination of typography,
-          colors, and layout making up my brand identity are not. Don't just
-          clone, do a remix.`}
-  </p>
-</aside>
+<aside
+  id="hostnameInfo"
+  data-allowedhosts={JSON.stringify(allowedHosts)}
+  style="display: none;"
+></aside>
 
-<script define:vars={{ allowedHosts }}>
-  const isAllowedHost = allowedHosts.includes(window.location.hostname)
+<script>
+  import { hostnameCheckInit } from './hostname-check'
 
-  if (!isAllowedHost) {
-    const aside = document.querySelector('aside.hostnameInfo')
-    if (aside) aside.style.display = 'block'
-  }
+  const hostnameInfo = document.getElementById('hostnameInfo')
+  const allowedHosts = JSON.parse(
+    hostnameInfo?.getAttribute('data-allowedhosts') || '[]'
+  )
+  hostnameCheckInit(hostnameInfo, allowedHosts)
 </script>
+
+<style>
+  #hostnameInfo {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    padding: var(--space-2xs);
+    font-size: var(--fs--1);
+    line-height: var(--fs-1);
+    font-weight: var(--font-weight-bold);
+    background: var(--background-color-highlight);
+  }
+
+  #hostnameInfo :global(p) {
+    margin: auto;
+    margin-bottom: 0;
+    max-width: 55em;
+    text-align: center;
+  }
+</style>

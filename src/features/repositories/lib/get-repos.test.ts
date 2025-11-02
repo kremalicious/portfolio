@@ -1,16 +1,39 @@
 import { afterEach, beforeEach, describe, expect, spyOn, test } from 'bun:test'
 import repoFilter from '@content/repos.json'
+import { createFetchMock } from '@test/test-utils'
 import { getRepos } from './get-repos'
+import * as reposCache from './repos-cache'
 
 let fetchSpy: ReturnType<typeof spyOn<typeof globalThis, 'fetch'>>
+let readReposCacheSpy: ReturnType<
+  typeof spyOn<typeof reposCache, 'readReposCache'>
+>
+let saveReposCacheSpy: ReturnType<
+  typeof spyOn<typeof reposCache, 'saveReposCache'>
+>
+
+const originalGitHubToken = process.env.GITHUB_TOKEN
 
 describe('getRepos', () => {
   beforeEach(() => {
+    process.env.GITHUB_TOKEN = 'test-token'
     fetchSpy = spyOn(globalThis, 'fetch')
+    fetchSpy.mockImplementation(createFetchMock({ body: {} }))
+    readReposCacheSpy = spyOn(reposCache, 'readReposCache')
+    readReposCacheSpy.mockResolvedValue(null)
+    saveReposCacheSpy = spyOn(reposCache, 'saveReposCache')
+    saveReposCacheSpy.mockResolvedValue()
   })
 
   afterEach(() => {
     fetchSpy.mockRestore()
+    readReposCacheSpy.mockRestore()
+    saveReposCacheSpy.mockRestore()
+    if (originalGitHubToken === undefined) {
+      delete process.env.GITHUB_TOKEN
+      return
+    }
+    process.env.GITHUB_TOKEN = originalGitHubToken
   })
 
   test('should fetch repos data', async () => {
@@ -24,7 +47,7 @@ describe('getRepos', () => {
       pushed_at: '2022-01-01T00:00:00Z'
     }
 
-    fetchSpy.mockResolvedValueOnce(new Response(JSON.stringify(mockData)))
+    fetchSpy.mockImplementation(createFetchMock({ body: mockData }))
 
     const actualRepos = await getRepos()
 
@@ -37,7 +60,9 @@ describe('getRepos', () => {
   test('should handle network errors', async () => {
     const consoleErrorSpy = spyOn(console, 'error').mockReturnValue()
 
-    fetchSpy.mockRejectedValueOnce(new Error('Network error'))
+    fetchSpy.mockImplementationOnce(
+      createFetchMock({ error: new Error('Network error') })
+    )
 
     const actualRepos = await getRepos()
 
@@ -49,11 +74,11 @@ describe('getRepos', () => {
 
   test('should handle invalid repo data', async () => {
     const mockData = { name: null }
-    fetchSpy.mockResolvedValueOnce(new Response(JSON.stringify(mockData)))
+    fetchSpy.mockImplementation(createFetchMock({ body: mockData }))
 
     const data = await getRepos()
 
     expect(data).toBeUndefined()
-    expect(fetch).toHaveBeenCalledTimes(1)
+    expect(fetchSpy).toHaveBeenCalledTimes(1)
   })
 })
