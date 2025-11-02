@@ -107,6 +107,7 @@ The _Add to addressbook_ link in the footer automatically creates a downloadable
 If you want to know how, have a look at the respective component:
 
 - [`Vcard.astro`](src/features/vcard/components/Vcard.astro)
+- [`vcard-web-component.ts`](src/features/vcard/components/vcard-web-component.ts)
 - [`vcard.ts`](src/features/vcard/lib/vcard.ts)
 
 ## 🤓 Scripts

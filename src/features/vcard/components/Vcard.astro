@@ -1,19 +1,11 @@
 ---
   import meta from '@content/meta.json'
 ---
-<!-- href is kinda fake, only there for usability
-      so user knows what to expect when hovering the link before clicking -->
-<a href={meta.addressbook} data-download> Add to addressbook </a>
+<vcard-download href={meta.addressbook}>
+  <!-- href is for progressive enhancement, so users without JS still see the expected URL -->
+  <a href={meta.addressbook}> Add to addressbook </a>
+</vcard-download>
 
 <script>
-  import { downloadVcard } from '../lib/vcard'
-
-  const downloadButton = document.querySelector(
-    '[data-download]'
-  ) as HTMLAnchorElement | null
-
-  downloadButton?.addEventListener('click', (e) => {
-    e.preventDefault()
-    downloadVcard()
-  })
+  import './vcard-web-component'
 </script>
