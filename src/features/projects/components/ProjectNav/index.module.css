@@ -48,18 +48,10 @@
   }
 }
 
-.item img {
-  transition: 0.2s ease-out;
-}
-
-.item:hover img {
-  transform: scale(1.01);
-}
-
 .item[data-current] {
   pointer-events: none;
 }
 
 .item[data-current] img {
-  opacity: 0.5;
+  filter: brightness(0.5);
 }

@@ -5,7 +5,7 @@ import {
   readFileMock,
   setupFsMocks,
   writeFileMock
-} from '@test/test-utils'
+} from '@test/mock-fs'
 
 let modulePromise: Promise<typeof import('./repos-cache')> | undefined
 

@@ -1,5 +1,5 @@
 ---
-  import ButtonComponent from '@/components/ui/Button/Button.astro'
+  import Button from '@/components/ui/Button/Button.astro'
   import { getRandomGif } from '../api/get-random-gif'
 
   const tag = 'cat'
@@ -18,9 +18,7 @@
   </video>
 
   <div>
-    <ButtonComponent id="get-gif" data-tag={tag}>
-      {`Get another ${tag} gif`}
-    </ButtonComponent>
+    <Button id="get-gif" data-tag={tag}>{`Get another ${tag} gif`}</Button>
   </div>
 </article>
 

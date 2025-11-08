@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, spyOn, test } from 'bun:test'
 import repoFilter from '@content/repos.json'
-import { createFetchMock } from '@test/test-utils'
+import { createFetchMock } from '@test/mock-fetch'
 import { getRepos } from './get-repos'
 import * as reposCache from './repos-cache'
 

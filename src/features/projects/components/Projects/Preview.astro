@@ -1,11 +1,12 @@
 ---
+  import type { ProjectImage as ProjectImageType } from '../../types/project'
   import ProjectImage from '../ProjectImage/ProjectImage.astro'
   import styles from './Preview.module.css'
 
   type Props = {
     title: string
     slug: string
-    images: ImageMetadata[]
+    images: ProjectImageType[]
   }
 
   const { title, slug, images } = Astro.props as Props

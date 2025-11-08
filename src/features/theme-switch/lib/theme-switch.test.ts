@@ -1,5 +1,4 @@
 import { beforeEach, describe, expect, it } from 'bun:test'
-import { setupMatchMedia, setupStorage } from '@test/test-utils'
 import {
   __resetListeners,
   addThemeListeners,
@@ -8,6 +7,8 @@ import {
   setTheme
 } from './theme'
 import '../components/theme-switch-element'
+import { setupMatchMedia } from '@test/mock-match-media'
+import { setupStorage } from '@test/mock-session-storage'
 
 const baseHtml = `
   <html>

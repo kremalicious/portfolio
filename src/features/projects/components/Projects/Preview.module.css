@@ -1,9 +1,5 @@
 .project {
   display: block;
-
-  img {
-    transition: 0.2s ease-out;
-  }
 }
 
 .meta {
@@ -20,8 +16,4 @@
 
 .project:hover .title {
   color: var(--link-color);
-}
-
-.project:hover img {
-  transform: scale(1.01);
 }

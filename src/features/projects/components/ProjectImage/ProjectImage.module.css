@@ -2,7 +2,7 @@
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
-  transition: border-color 0.1s ease-out;
+  transition: border-color 0.6s ease-out;
   box-shadow: var(--box-shadow);
   will-change: border-color;
 }
@@ -25,5 +25,16 @@ a:focus .frame {
 .image {
   display: block;
   opacity: 0;
-  transition: opacity 0.7s ease-out;
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
+
+  /* Disable text selection for Safari Live Text */
+  user-select: none;
+}
+
+a:hover .image,
+a:focus .image {
+  transform: scale(1.03);
+  transform-style: preserve-3d;
 }
