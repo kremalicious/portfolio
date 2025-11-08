@@ -15,7 +15,6 @@ a:focus .frame {
 .imageWrap {
   composes: frame;
   position: relative;
-  max-width: 1200px;
   background-color: var(--image-background-color);
 }
 
