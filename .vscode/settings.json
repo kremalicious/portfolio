@@ -1,12 +1,10 @@
 {
   "editor.defaultFormatter": "biomejs.biome",
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
-
   "[astro]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
-
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
     "source.action.useSortedAttributes.biome": "explicit",
     "source.action.useSortedProperties.biome": "explicit",

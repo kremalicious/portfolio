@@ -8,7 +8,12 @@ export interface ProjectLink extends ProjectLinkSchema {}
 
 export interface ProjectSource extends ProjectSourceSchema {}
 
+export interface ProjectImage extends ImageMetadata {
+  blurDataUrl?: string
+  dominantColor?: string
+}
+
 export interface ProjectType extends ProjectSource {
   descriptionHtml: string
-  images: ImageMetadata[]
+  images: ProjectImage[]
 }

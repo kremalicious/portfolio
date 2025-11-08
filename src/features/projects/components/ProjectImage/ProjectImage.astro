@@ -1,10 +1,10 @@
 ---
   import { Image } from 'astro:assets'
-  import type { ImageMetadata } from 'astro'
+  import type { ProjectImage } from '../../types/project'
   import styles from './ProjectImage.module.css'
 
   type Props = {
-    image: ImageMetadata
+    image: ProjectImage
     alt: string
     className?: string
     width?: number
@@ -13,20 +13,22 @@
   const { image, alt, className, width } = Astro.props as Props
   if (!image) return null
 
-  const defaultSizes = '(min-width: 960px) 800px, 100vw'
-  const availableWidth = width ?? image.width ?? 1200
-  const widths = [400, 800, 1200, 1200].filter(
-    (value) => value <= availableWidth
-  )
+  const defaultSizes = '(min-width: 960px) 2400px, 100vw'
+  const widths = [400, 400 * 2, 800, 800 * 2, 1200, 1200 * 2]
 ---
-<figure class:list={[styles.imageWrap, className || '']}>
+<figure
+  class:list={[styles.imageWrap, className || '']}
+  style={`--image-background-color: ${image.dominantColor}`}
+>
   <Image
     class={styles.image}
     src={image}
     alt={alt}
-    widths={widths.length > 0 ? widths : undefined}
+    width={width}
+    widths={widths}
     sizes={defaultSizes}
     loading="lazy"
     decoding="async"
+    onload={`this.style.opacity='1'`}
   />
 </figure>
