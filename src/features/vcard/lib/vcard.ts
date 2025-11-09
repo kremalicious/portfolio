@@ -50,4 +50,5 @@ export async function downloadVcard(options: DownloadVcardOptions = {}) {
 
   // save it to user's file system
   saveFile(blob, name)
+  window.umami?.trackEvent('Download VCard')
 }
