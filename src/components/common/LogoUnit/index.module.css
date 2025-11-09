@@ -32,10 +32,12 @@
 .description::before,
 .description::after {
   opacity: 0.4;
+  display: inline-block;
 }
 
-.description::before {
+.description:before {
   content: '{ ';
+  margin-left: var(--space-3xs);
 }
 
 .description::after {
