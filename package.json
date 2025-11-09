@@ -24,7 +24,7 @@
     "@giphy/js-fetch-api": "5.7.0",
     "@lucide/astro": "0.552.0",
     "@yaireo/relative-time": "1.1.0",
-    "astro": "5.15.3",
+    "astro": "5.15.4",
     "file-saver": "2.0.5",
     "remark": "15.0.1",
     "remark-gfm": "4.0.1",
