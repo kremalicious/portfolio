@@ -1,5 +1,5 @@
-import { readFileSync } from 'node:fs'
 import type { ImageMetadata } from 'astro'
+import { fileURLToPath } from 'bun'
 import sharp from 'sharp'
 import type { ProjectImage } from '../types/project'
 
@@ -21,7 +21,8 @@ export async function getProjectImages(slug: string): Promise<ProjectImage[]> {
 
   await Promise.all(
     projectImages.map(async ([modulePath, imageModule]) => {
-      const dominantColor = await getDominantColor(modulePath)
+      const filenameWithEnding = modulePath.split('/').pop() || ''
+      const dominantColor = await getDominantColor(filenameWithEnding)
       enhancedImages.push({
         ...imageModule.default,
         dominantColor
@@ -34,14 +35,22 @@ export async function getProjectImages(slug: string): Promise<ProjectImage[]> {
   return enhancedImages
 }
 
-async function getDominantColor(imagePath: string): Promise<string> {
+async function getDominantColor(fileName: string): Promise<string> {
   let dominantColor = 'rgb(128, 128, 128)' // fallback
+  if (process.env.NODE_ENV !== 'production') return dominantColor // only extract in production
 
   try {
-    const buffer = readFileSync(imagePath)
-    const { dominant } = await sharp(buffer).stats()
+    const fileUrl = new URL(
+      `../../src/_content/images/${fileName}`,
+      import.meta.url
+    )
+    const filePath = fileURLToPath(fileUrl)
+    const { dominant } = await sharp(filePath).stats()
     dominantColor = `rgb(${dominant.r}, ${dominant.g}, ${dominant.b})`
-  } catch {}
+  } catch (error) {
+    const msg = error instanceof Error ? error.message : String(error)
+    console.error(`Color extraction failed for ${fileName}: ${msg}`)
+  }
 
   return dominantColor
 }
