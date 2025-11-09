@@ -53,17 +53,17 @@ The whole tech stack:
 
 All displayed project content is powered by one YAML file where all the portfolio's projects are defined. The project description itself is transformed from Markdown written inside the YAML file into HTML on build time.
 
-Astro automatically creates pages from each item in that file in the [`[slug].astro`](src/pages/[slug].astro) page template. Utilizing the [`get-projects.ts`](features/projects/lib/get-projects.ts) script which validates, transforms and enhances the data.
+Astro automatically creates pages from each item in that file in the [`[slug].astro`](src/pages/[slug].astro) page template. Utilizing the [`get-projects.ts`](src/features/projects/lib/get-projects.ts) script which validates, transforms and enhances the data.
 
 - [`projects.yml`](src/_content/projects.yml)
-- [`get-projects.ts`](features/projects/lib/get-projects.ts)
+- [`get-projects.ts`](src/features/projects/lib/get-projects.ts)
 - [`[slug].astro`](src/pages/[slug].astro)
 
 ### 🖼 Project images
 
 All project images live under `src/_content/images` and are automatically attached to each project based on the inclusion of the project's `slug` in their filenames during the above mentioned `get-projects.ts` pipeline.
 
-Astro generates all required image sizes for delivering responsible, responsive images to visitors.
+During production build, the dominant color for each image is extracted with sharp, and then used for the initial loading state for each image. Astro generates all required image sizes for delivering responsible, responsive images to visitors.
 
 - [`ProjectImage.astro`](src/features/projects/components/ProjectImage/ProjectImage.astro)
 - [`get-project-images.ts`](src/features/projects/lib/get-project-images.ts)
@@ -127,7 +127,7 @@ bun run new -- "Hello"
 
 Then continue modifying the new entry in [`src/_content/projects.yml`](src/_content/projects.yml).
 
-Finally, add as many images as needed with the file name format and put into `public/images/`:
+Finally, add as many images as needed with the file name format and put into `src/_content/images/`:
 
 ```text
 SLUG-01.png
