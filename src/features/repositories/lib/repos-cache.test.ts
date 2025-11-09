@@ -7,15 +7,10 @@ import {
   writeFileMock
 } from '@test/mock-fs'
 
-let modulePromise: Promise<typeof import('./repos-cache')> | undefined
-
-async function loadReposCacheModule() {
-  if (!modulePromise) {
-    setupFsMocks()
-    modulePromise = import('./repos-cache')
-  }
-  return modulePromise
-}
+setupFsMocks()
+const { readReposCache, saveReposCache, cacheFilePath } = await import(
+  './repos-cache'
+)
 
 beforeEach(() => {
   readFileMock.mockReset()
@@ -38,7 +33,6 @@ describe('readReposCache', () => {
     ]
     readFileMock.mockResolvedValueOnce(JSON.stringify(expectedRepos))
 
-    const { readReposCache, cacheFilePath } = await loadReposCacheModule()
     const actualRepos = await readReposCache()
 
     expect(readFileMock).toHaveBeenCalledWith(cacheFilePath, 'utf8')
@@ -47,7 +41,6 @@ describe('readReposCache', () => {
 
   it('returns null when cached data is not an array', async () => {
     readFileMock.mockResolvedValueOnce(JSON.stringify({ invalid: true }))
-    const { readReposCache } = await loadReposCacheModule()
 
     const actualRepos = await readReposCache()
 
@@ -59,7 +52,6 @@ describe('readReposCache', () => {
     readFileMock.mockRejectedValueOnce(missingError)
     const consoleErrorSpy = spyOn(console, 'error').mockReturnValue()
 
-    const { readReposCache } = await loadReposCacheModule()
     const actualRepos = await readReposCache()
 
     expect(actualRepos).toBeNull()
@@ -72,7 +64,6 @@ describe('readReposCache', () => {
     readFileMock.mockRejectedValueOnce(crashError)
     const consoleErrorSpy = spyOn(console, 'error').mockReturnValue()
 
-    const { readReposCache } = await loadReposCacheModule()
     const actualRepos = await readReposCache()
 
     expect(actualRepos).toBeNull()
@@ -95,8 +86,6 @@ describe('saveReposCache', () => {
   ]
 
   it('writes repos to cache file', async () => {
-    const { saveReposCache, cacheFilePath } = await loadReposCacheModule()
-
     await saveReposCache({ repos: reposPayload })
 
     expect(mkdirMock).toHaveBeenCalledWith(dirname(cacheFilePath), {
@@ -110,8 +99,6 @@ describe('saveReposCache', () => {
   })
 
   it('skips writing when repos list is empty', async () => {
-    const { saveReposCache } = await loadReposCacheModule()
-
     await saveReposCache({ repos: [] })
 
     expect(mkdirMock).not.toHaveBeenCalled()
@@ -122,7 +109,6 @@ describe('saveReposCache', () => {
     writeFileMock.mockRejectedValueOnce(new Error('write failed'))
     const consoleErrorSpy = spyOn(console, 'error').mockReturnValue()
 
-    const { saveReposCache } = await loadReposCacheModule()
     await saveReposCache({ repos: reposPayload })
 
     expect(consoleErrorSpy).toHaveBeenCalledWith('write failed')
