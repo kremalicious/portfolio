@@ -1,7 +1,6 @@
 import { beforeEach, describe, expect, it, mock } from 'bun:test'
 import { createFetchMock } from '@test/mock-fetch'
 import type { UseLocation } from '../types/types'
-import './location-element'
 
 const mockLocation: UseLocation = {
   now: {
@@ -41,9 +40,13 @@ function setupDocument(): void {
   document.body.innerHTML = '<location-element></location-element>'
 }
 
-beforeEach(() => {
+beforeEach(async () => {
   document.body.innerHTML = ''
   mock.restore()
+  // Mock fetch with fetch mocks that can be overridden per test
+  global.fetch = createFetchMock({ body: null })
+  // Import the element only when needed for this test
+  await import('./location-element')
 })
 
 describe('LocationElement', () => {

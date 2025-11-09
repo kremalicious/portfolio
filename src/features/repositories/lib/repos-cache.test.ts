@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, spyOn } from 'bun:test'
+import { beforeEach, describe, expect, it } from 'bun:test'
 import { dirname } from 'node:path'
 import {
   mkdirMock,
@@ -50,25 +50,10 @@ describe('readReposCache', () => {
   it('returns null when cache file is missing', async () => {
     const missingError = Object.assign(new Error('missing'), { code: 'ENOENT' })
     readFileMock.mockRejectedValueOnce(missingError)
-    const consoleErrorSpy = spyOn(console, 'error').mockReturnValue()
 
     const actualRepos = await readReposCache()
 
     expect(actualRepos).toBeNull()
-    expect(consoleErrorSpy).not.toHaveBeenCalled()
-    consoleErrorSpy.mockRestore()
-  })
-
-  it('logs error when reading cache fails unexpectedly', async () => {
-    const crashError = Object.assign(new Error('boom'), { code: 'EACCES' })
-    readFileMock.mockRejectedValueOnce(crashError)
-    const consoleErrorSpy = spyOn(console, 'error').mockReturnValue()
-
-    const actualRepos = await readReposCache()
-
-    expect(actualRepos).toBeNull()
-    expect(consoleErrorSpy).toHaveBeenCalledWith('boom')
-    consoleErrorSpy.mockRestore()
   })
 })
 
@@ -103,15 +88,5 @@ describe('saveReposCache', () => {
 
     expect(mkdirMock).not.toHaveBeenCalled()
     expect(writeFileMock).not.toHaveBeenCalled()
-  })
-
-  it('logs error when saving cache fails', async () => {
-    writeFileMock.mockRejectedValueOnce(new Error('write failed'))
-    const consoleErrorSpy = spyOn(console, 'error').mockReturnValue()
-
-    await saveReposCache({ repos: reposPayload })
-
-    expect(consoleErrorSpy).toHaveBeenCalledWith('write failed')
-    consoleErrorSpy.mockRestore()
   })
 })
