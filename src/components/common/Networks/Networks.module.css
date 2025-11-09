@@ -1,0 +1,40 @@
+.networks {
+  margin-block: var(--space-xl);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-s);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3xs);
+  border: var(--border-width) solid transparent;
+  border-radius: var(--border-radius);
+  color: var(--text-color-light);
+  transition: 0.2s ease-out;
+  animation-delay: calc(
+    var(--animation-duration-base) +
+    var(--animation-order, 0) *
+    var(--animation-delay-step)
+  );
+}
+
+.link:hover,
+.link:focus {
+  color: var(--text-color-light);
+  border-color: var(--border-color);
+  transform: translateY(-0.1rem);
+  background-color: var(--background-color-highlight);
+}
+
+.small {
+  margin-block: var(--space-s);
+  gap: var(--space-xs);
+}
+
+.small svg {
+  width: var(--fs-0);
+  height: var(--fs-0);
+}

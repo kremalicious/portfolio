@@ -1,0 +1,59 @@
+---
+  import Button from '@/components/ui/Button/Button.astro'
+  import { getRandomGif } from '../api/get-random-gif'
+
+  const tag = 'cat'
+  const initialGif = await getRandomGif(tag)
+---
+<article class="content">
+  <h1>Shenanigans, page not found.</h1>
+  <p>
+    Go to the <a href={'/'}>homepage</a>, or watch some
+    {tag}
+    {' '}gifs, entirely your choice.
+  </p>
+
+  <video id="gif" src={initialGif} autoplay loop>
+    <track kind="captions" srclang="en" label="English">
+  </video>
+
+  <div>
+    <Button id="get-gif" data-tag={tag}>{`Get another ${tag} gif`}</Button>
+  </div>
+</article>
+
+<script>
+  import { getRandomGif } from '../api/get-random-gif'
+
+  const button = document.getElementById('get-gif') as HTMLButtonElement
+  const video = document.getElementById('gif') as HTMLVideoElement
+  const tag = button.dataset.tag || 'cat'
+
+  button.addEventListener('click', async () => {
+    const newGif = await getRandomGif(tag)
+    if (newGif) {
+      video.src = newGif
+      video.play()
+    }
+  })
+</script>
+
+<style>
+  .content {
+    text-align: center;
+    height: 100%;
+    max-width: 35rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content video {
+    display: block;
+    width: auto;
+    height: 300px;
+    box-shadow:
+      0 3px 5px rgba(var(--brand-secondary), 0.15),
+      0 5px 16px rgba(var(--brand-secondary), 0.15);
+    margin: var(--space-3xs) auto var(--space-xs) auto;
+  }
+</style>

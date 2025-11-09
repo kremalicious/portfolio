@@ -1,0 +1,36 @@
+<section class="location">
+  <location-element></location-element>
+</section>
+
+<script>
+  import './location-element'
+</script>
+
+<style>
+  .location {
+    min-height: 31px;
+  }
+</style>
+
+<style is:global>
+  location-element {
+    font-size: var(--fs--1);
+  }
+
+  location-element span {
+    color: var(--text-color-light);
+  }
+
+  location-element .flag {
+    display: inline-block;
+    font-size: 1em;
+    line-height: 1em;
+    vertical-align: middle;
+    margin-right: var(--space-3xs);
+  }
+
+  location-element .next {
+    display: inline-block;
+    margin-left: var(--space-2xs);
+  }
+</style>

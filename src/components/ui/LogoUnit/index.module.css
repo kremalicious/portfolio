@@ -1,0 +1,61 @@
+.logounit {
+  pointer-events: none;
+  display: inline-block;
+}
+
+.logo {
+  display: block;
+  width: var(--fs-2);
+  height: var(--fs-2);
+  fill: var(--text-color-light);
+  margin-bottom: var(--space-xs);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title,
+.description {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.title {
+  font-size: var(--fs-2);
+  margin-right: var(--space-3xs);
+}
+
+.description {
+  font-size: var(--fs-1);
+  color: var(--text-color);
+}
+
+.description::before,
+.description::after {
+  opacity: 0.4;
+}
+
+.description::before {
+  content: '{ ';
+}
+
+.description::after {
+  content: ' }';
+}
+
+.small {
+  pointer-events: all;
+}
+
+.small .title {
+  font-size: var(--fs-1);
+}
+
+.small .description {
+  font-size: var(--fs-0);
+}
+
+.small .logo {
+  width: var(--fs-1);
+  height: var(--fs-1);
+  margin-bottom: var(--space-3xs);
+}

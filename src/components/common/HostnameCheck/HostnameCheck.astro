@@ -1,0 +1,42 @@
+---
+  interface Props {
+    allowedHosts: string[]
+  }
+
+  const { allowedHosts } = Astro.props
+---
+<aside
+  id="hostnameInfo"
+  data-allowedhosts={JSON.stringify(allowedHosts)}
+  style="display: none;"
+></aside>
+
+<script>
+  import { hostnameCheckInit } from './hostname-check'
+
+  const hostnameInfo = document.getElementById('hostnameInfo')
+  const allowedHosts = JSON.parse(
+    hostnameInfo?.getAttribute('data-allowedhosts') || '[]'
+  )
+  hostnameCheckInit(hostnameInfo, allowedHosts)
+</script>
+
+<style>
+  #hostnameInfo {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    padding: var(--space-2xs);
+    font-size: var(--fs--1);
+    line-height: var(--fs-1);
+    font-weight: var(--font-weight-bold);
+    background: var(--background-color-highlight);
+  }
+
+  #hostnameInfo :global(p) {
+    margin: auto;
+    margin-bottom: 0;
+    max-width: 55em;
+    text-align: center;
+  }
+</style>

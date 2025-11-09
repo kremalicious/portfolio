@@ -1,0 +1,37 @@
+---
+  import { CompassIcon, FileTextIcon } from '@lucide/astro'
+  import GitHubIcon from '@/assets/github.svg'
+  import Button from '@/components/ui/Button/Button.astro'
+  import type { ProjectLink } from '@/features/projects/types/project'
+  import styles from './index.module.css'
+
+  interface Props {
+    links: ProjectLink[]
+  }
+
+  const { links } = Astro.props
+
+  const icons = {
+    GitHub: GitHubIcon,
+    Compass: CompassIcon,
+    FileText: FileTextIcon
+  }
+---
+<div class={styles.projectLinks}>
+  <h2 class={styles.title}>
+    Links <span>Learn more on the interwebz.</span>
+  </h2>
+
+  <ul>
+    {links.map(({ title, url, icon }) => {
+      const Icon = icon ? icons[icon as keyof typeof icons] : null
+      return (
+        <li>
+          <Button href={url} data-testid="link">
+            {Icon && <Icon class="icon" />}
+            {title}
+          </Button>
+        </li>
+    )})}
+  </ul>
+</div>

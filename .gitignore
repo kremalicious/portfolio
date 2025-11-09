@@ -1,19 +1,18 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# build outputs
+dist/
+.astro/
+.cache/
+
+# ignore other package manager's lock files, just in case
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
 
 # testing
 /coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
 
 # misc
 .DS_Store
@@ -28,16 +27,3 @@ yarn-error.log*
 # local env files
 .env*.local
 .env
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-.swc
-coverage
-public/matomo.js
-# public/favicon*
-# public/apple-touch-icon*
-# public/manifest*
-generated

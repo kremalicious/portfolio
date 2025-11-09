@@ -1,0 +1,56 @@
+.project {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(var(--space-xs), 1fr)
+    [main-start] minmax(0, 40rem) [main-end]
+    minmax(var(--space-xs), 1fr) [full-end];
+}
+
+.project > * {
+  grid-column: main;
+}
+
+.title {
+  font-size: var(--fs-3);
+}
+
+@media (min-width: 30em) {
+  .title {
+    font-size: var(--fs-4);
+  }
+}
+
+.description {
+  margin-bottom: var(--space-m);
+}
+
+.meta {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-l);
+}
+
+@media (min-width: 40em) {
+  .meta {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.metatitle {
+  font-size: var(--fs-2);
+  margin-bottom: var(--space-m);
+}
+
+.metatitle span {
+  display: block;
+  margin-top: var(--space-2xs);
+  font-size: var(--fs-0);
+  font-family: var(--font-family-base);
+  color: var(--text-color-light);
+}
+
+.fullContainer {
+  grid-column: full;
+}

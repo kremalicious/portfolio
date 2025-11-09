@@ -1,0 +1,12 @@
+.sectionTitle {
+  font-size: var(--fs-2);
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-xl);
+  text-align: center;
+}
+
+.repos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--space-l);
+}

@@ -1,0 +1,32 @@
+---
+  import ProjectImage from '@/features/projects/components/ProjectImage/ProjectImage.astro'
+  import type { ProjectType } from '../../types/project'
+  import styles from './index.module.css'
+
+  type Props = {
+    project: ProjectType
+    isCurrent?: boolean
+  }
+
+  const { project, isCurrent } = Astro.props
+---
+<a
+  class={styles.item}
+  href={`/${project.slug}`}
+  title={project.title}
+  data-current={isCurrent ? 'true' : undefined}
+>
+  <ProjectImage image={project.images[0]} alt={project.title} width={840}/>
+  <h4 class="title">{project.title}</h4>
+</a>
+
+<style>
+  .title {
+    font-size: var(--fs--1);
+    text-align: right;
+    color: var(--text-color);
+    margin: 0;
+    padding: var(--space-2xs) var(--space-3xs);
+    padding-bottom: 0;
+  }
+</style>

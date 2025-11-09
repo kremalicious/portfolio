@@ -1,0 +1,21 @@
+---
+  import meta from '@content/meta.json'
+  import Logo from '@/assets/logo.svg'
+  import styles from './index.module.css'
+
+  interface Props {
+    small?: boolean
+  }
+
+  const { small } = Astro.props
+  const TitleTag = small ? 'h2' : 'h1'
+---
+<a class:list={[styles.logounit, small ? styles.small : '']} href="/">
+  <Logo class={styles.logo}/>
+  <TitleTag class={`p-name ${styles.title}`}>
+    {meta.author.name.toLowerCase()}
+  </TitleTag>
+  <p class={`p-job-title ${styles.description}`}>
+    {meta.author.label.toLowerCase()}
+  </p>
+</a>

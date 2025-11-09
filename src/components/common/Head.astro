@@ -1,0 +1,110 @@
+---
+  import { Font, getImage } from 'astro:assets'
+  import meta from '@content/meta.json'
+
+  // import faviconSrc from '@/images/favicon.png'
+  // import faviconSvgSrc from '@/images/favicon.svg'
+
+  type Props = {
+    title?: string
+    description?: string
+    image?: ImageMetadata
+  }
+
+  const { title, description, image } = Astro.props
+  const { name, label } = meta.author
+
+  const titleFinal =
+    title && title !== ''
+      ? `${title} // ${name.toLowerCase()} { ${label.toLowerCase()} }`
+      : `${name.toLowerCase()} { ${label.toLowerCase()} }`
+
+  const descriptionFinal = description
+    ? description.trim().slice(0, 160)
+    : meta.description
+
+  const canonicalUrl =
+    Astro.url.pathname === '/'
+      ? Astro.site?.origin
+      : `${Astro.site?.origin}${Astro.url.pathname}`
+
+  const imageFinal = `${Astro.site?.origin}${
+    image
+      ? (await getImage({ src: image, width: 800, format: 'jpg' })).src
+      : meta.img
+  }`
+
+  const imageFinalAlt = image ? `Teaser image for ${title}` : 'Logo'
+  const isProduction = process.env.NODE_ENV === 'production'
+  const { UMAMI_WEBSITE_ID, UMAMI_SCRIPT_URL } = process.env
+  const shouldIncludeAnalytics =
+    isProduction && UMAMI_WEBSITE_ID && UMAMI_SCRIPT_URL
+---
+<head>
+  <meta charset="utf-8">
+
+  <script is:inline>
+    function setInitialTheme() {
+      const colors = { dark: '#1d2224', light: '#e7eef4' }
+      const preferredTheme = sessionStorage.getItem('preferred-theme')
+      const systemPrefersDark = window?.matchMedia(
+        '(prefers-color-scheme: dark)'
+      ).matches
+      let theme = 'light'
+
+      if (preferredTheme === 'dark' || preferredTheme === 'light') {
+        theme = preferredTheme
+      } else if (systemPrefersDark) {
+        theme = 'dark'
+      }
+
+      const root = document.documentElement
+      const meta = document.querySelector('meta[name="theme-color"]')
+      const color = colors[theme]
+
+      root.setAttribute('data-theme', theme)
+      root.setAttribute('data-theme-color', color)
+      meta?.setAttribute('content', color)
+    }
+
+    setInitialTheme()
+  </script>
+
+  <title>{titleFinal}</title>
+
+  <link rel="canonical" href={canonicalUrl}>
+  <meta name="description" content={descriptionFinal}>
+  <meta property="og:title" content={titleFinal}>
+  <meta property="og:image" content={imageFinal}>
+  <meta property="og:image:alt" content={imageFinalAlt}>
+  <meta property="og:url" content={canonicalUrl}>
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="theme-color" content="#e7eef4">
+  <meta name="color-scheme" content="light dark">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  >
+  <meta name="robots" content="noai, noimageai">
+
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  <link rel="sitemap" href="/sitemap-index.xml">
+
+  <Font cssVariable="--font-ff-tisa-sans-pro"/>
+  <Font cssVariable="--font-brandon-grotesque"/>
+
+  {
+    shouldIncludeAnalytics && (
+      <>
+        <link rel="preconnect" href={UMAMI_SCRIPT_URL} />
+        <script async src={UMAMI_SCRIPT_URL} data-website-id={UMAMI_WEBSITE_ID} is:inline />
+      </>
+    )
+  }
+</head>

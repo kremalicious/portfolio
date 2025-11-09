@@ -1,0 +1,46 @@
+---
+  import { CompassIcon, StarIcon } from '@lucide/astro'
+  import GitHubIcon from '@/assets/github.svg'
+  import type { Repo } from '../types/repo'
+  import styles from './Repository.module.css'
+
+  interface Props {
+    repo: Repo
+  }
+
+  const { repo } = Astro.props as Props
+  const { name, full_name, description, html_url, homepage, stargazers_count } =
+    repo
+
+  const isExternal = !full_name.includes('kremalicious')
+  const repoLink =
+    name === 'blog' || name === 'portfolio' || !homepage || isExternal
+      ? html_url
+      : homepage
+---
+<div class={styles.repo}>
+  <h3 class={styles.repoTitle}>
+    <a href={repoLink}>{isExternal ? full_name : name}</a>
+  </h3>
+  <p>{description}</p>
+  <p class={styles.meta}>
+    {name === 'portfolio' || name === 'blog'
+      ? null
+      : !isExternal &&
+        homepage && (
+          <a href={homepage}>
+            <CompassIcon class="icon" /> More info
+          </a>
+        )}
+
+    <a href={html_url}>
+      <GitHubIcon class="icon"/>
+      GitHub
+    </a>
+
+    <a aria-label={`${stargazers_count} stars`} href={`${html_url}/stargazers`}>
+      <StarIcon class="icon"/>
+      {stargazers_count}
+    </a>
+  </p>
+</div>

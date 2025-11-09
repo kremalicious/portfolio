@@ -1,0 +1,23 @@
+.projectTechstack ul {
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xs);
+}
+
+.projectTechstack li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xs);
+  text-align: center;
+  background: var(--background-color-dimmed);
+  border-radius: 30px;
+  border: 0.05rem solid transparent;
+  font-size: var(--fs--1);
+  line-height: 1.4;
+}
+
+.title {
+  composes: metatitle from '../Project.module.css';
+}

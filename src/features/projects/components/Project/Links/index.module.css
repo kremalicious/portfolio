@@ -1,0 +1,22 @@
+.projectLinks ul {
+  padding: 0;
+}
+
+.projectLinks li {
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.projectLinks a {
+  width: 100%;
+  text-align: left;
+  text-transform: none;
+}
+
+.projectLinks svg {
+  stroke: var(--text-color);
+}
+
+.title {
+  composes: metatitle from '../Project.module.css';
+}

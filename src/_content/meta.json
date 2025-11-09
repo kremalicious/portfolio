@@ -1,0 +1,37 @@
+{
+  "description": "Portfolio of web & ui designer/developer Matthias Kretschmann.",
+  "img": "/og-image.png",
+  "url": "https://matthiaskretschmann.com",
+  "author": {
+    "name": "Matthias Kretschmann",
+    "label": "Designer & Developer",
+    "email": "m@kretschmann.io"
+  },
+  "availability": {
+    "status": true,
+    "available": "👔 Available for new projects. <a href=\"mailto:m@kretschmann.io\">Let's chat</a>!",
+    "unavailable": "Not available for new projects."
+  },
+  "profiles": [
+    {
+      "network": "Blog",
+      "url": "https://kremalicious.com"
+    },
+    {
+      "network": "GitHub",
+      "url": "https://github.com/kremalicious"
+    },
+    {
+      "network": "Mastodon",
+      "url": "https://mas.to/@krema"
+    },
+    {
+      "network": "Farcaster",
+      "url": "https://warpcast.com/@krema.eth"
+    }
+  ],
+  "gpg": "/gpg.txt",
+  "addressbook": "/matthias-kretschmann.vcf",
+  "bugs": "https://github.com/kremalicious/portfolio/issues/new",
+  "allowedHosts": ["matthiaskretschmann.com", "localhost"]
+}

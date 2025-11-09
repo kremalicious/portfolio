@@ -1,0 +1,17 @@
+.themeSwitch {
+  position: absolute;
+  color: var(--text-color-light);
+  right: var(--space-m);
+  top: var(--space-xs);
+}
+
+.themeSwitch:hover,
+.themeSwitch:focus {
+  color: var(--link-color);
+}
+
+.checkbox {
+  position: relative;
+  cursor: pointer;
+  display: block;
+}

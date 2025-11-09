@@ -1,0 +1,16 @@
+.hero {
+  position: relative;
+  padding: var(--space-xs);
+  padding-top: 25vh;
+  margin-bottom: var(--space-xl);
+  min-height: calc(85vh - var(--space-m));
+  max-height: 1000px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.meta {
+  margin-top: auto;
+}

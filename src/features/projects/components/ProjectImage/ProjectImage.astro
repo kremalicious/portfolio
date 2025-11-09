@@ -1,0 +1,68 @@
+---
+  import { getImage } from 'astro:assets'
+  import type { ProjectImage } from '../../types/project'
+  import styles from './ProjectImage.module.css'
+
+  type Props = {
+    image: ProjectImage
+    alt: string
+    className?: string
+    width?: number
+  }
+
+  const { image, alt, className, width } = Astro.props as Props
+  if (!image) return null
+
+  const baseWidths = [400, 800, 1200]
+  const densities = [1, 2]
+
+  // Generate all unique sizes needed for 1x and 2x displays
+  const getSizes = (): number[] => {
+    const allSizes = new Set<number>()
+
+    const widthsToProcess = width
+      ? baseWidths.filter((w) => w <= width)
+      : baseWidths
+
+    for (const w of widthsToProcess) {
+      for (const d of densities) {
+        allSizes.add(w * d)
+      }
+    }
+
+    // Sort sizes in ascending order
+    return Array.from(allSizes).sort((a, b) => a - b)
+  }
+
+  const sizes = getSizes()
+
+  const images = await Promise.all(
+    sizes.map((size) => getImage({ src: image, width: size, format: 'webp' }))
+  )
+
+  const srcset = images
+    .map((img, index) => `${img.src} ${sizes[index]}w`)
+    .join(', ')
+
+  const sizesAttr = width ? `${width}px` : '(min-width: 1200px) 1200px, 100vw'
+
+  // Use the largest available image as fallback
+  const fallbackImage = images[images.length - 1]
+---
+<figure
+  class:list={[styles.imageWrap, className || '']}
+  style={`--image-background-color: ${image.dominantColor}`}
+>
+  <img
+    class={styles.image}
+    src={fallbackImage.src}
+    srcset={srcset}
+    sizes={sizesAttr}
+    alt={alt}
+    width={fallbackImage.attributes.width}
+    height={fallbackImage.attributes.height}
+    loading="lazy"
+    decoding="async"
+    onload={`this.style.opacity='1'`}
+  >
+</figure>

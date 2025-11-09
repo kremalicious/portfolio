@@ -1,0 +1,41 @@
+---
+  import meta from '@content/meta.json'
+
+  type Props = {
+    small?: boolean
+  }
+
+  const { small = false } = Astro.props as Props
+  const { status, available, unavailable } = meta.availability
+  const html = status ? available : unavailable
+  const classList = [
+    'availability',
+    status === true ? 'available animation animation--move-in-top' : '',
+    small ? 'availability--small' : ''
+  ]
+---
+<p class:list={classList} set:html={html}/>
+
+<style>
+  .availability {
+    font-size: var(--fs--1);
+    border-radius: var(--border-radius);
+    color: var(--text-color-light);
+    z-index: 2;
+    text-align: center;
+    margin-bottom: var(--space-3xs);
+  }
+
+  .availability--small {
+    font-size: var(--fs--2);
+  }
+
+  .available {
+    color: var(--text-color);
+    animation-delay: calc(
+      var(--animation-duration-base) +
+      5 *
+      var(--animation-delay-step)
+    );
+  }
+</style>

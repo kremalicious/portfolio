@@ -1,0 +1,34 @@
+---
+  import '@/styles/global.css'
+  import meta from '@content/meta.json'
+  import Footer from '@/components/common/Footer/Footer.astro'
+  import Head from '@/components/common/Head.astro'
+  import Header from '@/components/common/Header/Header.astro'
+  import HostnameCheck from '@/components/common/HostnameCheck/HostnameCheck.astro'
+  import ThemeSwitch from '@/features/theme-switch/components/ThemeSwitch.astro'
+
+  type Props = {
+    title?: string
+    description?: string
+    image?: ImageMetadata
+    noHeader?: boolean
+  }
+
+  const { noHeader = false, title, description, image } = Astro.props
+---
+<html lang="en">
+  <Head title={title} description={description} image={image}/>
+
+  <body>
+    <HostnameCheck allowedHosts={meta.allowedHosts}/>
+    <ThemeSwitch/>
+
+    {!noHeader && <Header/>}
+
+    <main class="container">
+      <slot/>
+    </main>
+
+    <Footer/>
+  </body>
+</html>

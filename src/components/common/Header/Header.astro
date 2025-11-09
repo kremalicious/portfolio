@@ -1,0 +1,18 @@
+---
+  import LogoUnit from '@/components/ui/LogoUnit/index.astro'
+---
+<header class="header container" data-testid="header">
+  <LogoUnit small/>
+</header>
+
+<style>
+  .header {
+    position: relative;
+    padding-top: var(--space-xl);
+    margin-bottom: var(--space-xl);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+</style>

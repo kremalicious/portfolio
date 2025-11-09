@@ -1,0 +1,26 @@
+---
+  import BaseLayout from '@/components/layouts/Base.astro'
+  import Project from '@/features/projects/components/Project/Project.astro'
+  import ProjectNav from '@/features/projects/components/ProjectNav/index.astro'
+  import { getProjects } from '@/features/projects/lib/get-projects'
+
+  export async function getStaticPaths() {
+    const projects = await getProjects()
+    return projects.map((project) => ({
+      params: { slug: project.slug },
+      props: { project }
+    }))
+  }
+
+  const { slug } = Astro.params
+  const { project } = Astro.props
+  const projects = await getProjects()
+---
+<BaseLayout
+  title={project.title}
+  description={`${project.description.slice(0, 157)}...`}
+  image={project.images[0]}
+>
+  <Project project={project}/>
+  <ProjectNav projects={projects} currentSlug={slug}/>
+</BaseLayout>
