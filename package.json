@@ -22,7 +22,7 @@
     "@astrojs/check": "0.9.5",
     "@astrojs/sitemap": "3.6.0",
     "@giphy/js-fetch-api": "5.7.0",
-    "@lucide/astro": "0.552.0",
+    "@lucide/astro": "0.553.0",
     "@yaireo/relative-time": "1.1.0",
     "astro": "5.15.3",
     "file-saver": "2.0.5",

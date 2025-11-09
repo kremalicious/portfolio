@@ -7,7 +7,7 @@
         "@astrojs/check": "0.9.5",
         "@astrojs/sitemap": "3.6.0",
         "@giphy/js-fetch-api": "5.7.0",
-        "@lucide/astro": "0.552.0",
+        "@lucide/astro": "0.553.0",
         "@yaireo/relative-time": "1.1.0",
         "astro": "5.15.3",
         "file-saver": "2.0.5",
@@ -211,7 +211,7 @@
 
     "@kremalicious/config": ["@kremalicious/config@2.2.0", "", { "peerDependencies": { "@biomejs/biome": ">=2.0.0", "prettier": ">=3.0.0" } }, "sha512-oy3N+YO+Oe4iXW4gU6VetdV2fBd7q//gjulRdazB9HukF8K1Zpqds8bAsKCpwhIiRH6MsBtw7S0hZx3R+VTGFg=="],
 
-    "@lucide/astro": ["@lucide/astro@0.552.0", "", { "peerDependencies": { "astro": "^4 || ^5" } }, "sha512-nPO3RPor+3eOeom+KDmNGDSLYec5DYn5jc085FNNqIpUkl6kH8wnxZhtd53aGJleYrUt3/xIbwLxsrU1cm6epg=="],
+    "@lucide/astro": ["@lucide/astro@0.553.0", "", { "peerDependencies": { "astro": "^4 || ^5" } }, "sha512-yiHpOKGBPOy+pmZfkQmZcFAETU8FvkqWdoLCboSZGuZ1zgwFHGxBmr/brmk5PxVFOUnImzsRFGzAX2O2A88hmQ=="],
 
     "@nodelib/fs.scandir": ["@nodelib/fs.scandir@2.1.5", "", { "dependencies": { "@nodelib/fs.stat": "2.0.5", "run-parallel": "^1.1.9" } }, "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g=="],
 
