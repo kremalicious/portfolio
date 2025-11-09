@@ -37,7 +37,8 @@ export async function getProjectImages(slug: string): Promise<ProjectImage[]> {
 
 async function getDominantColor(fileName: string): Promise<string> {
   let dominantColor = 'rgb(128, 128, 128)' // fallback
-  if (process.env.NODE_ENV !== 'production') return dominantColor // only extract in production
+  // only extract in production
+  if (process.env.NODE_ENV !== 'production') return dominantColor
 
   try {
     const fileUrl = new URL(

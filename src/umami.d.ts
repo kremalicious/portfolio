@@ -1,20 +1,14 @@
 declare global {
   interface Window {
-    umami?: (eventName: string) =>
-      | undefined
-      | {
-          trackEvent: (
-            event_name: string,
-            event_data?: { [key: string]: string },
-            url?: string,
-            website_id?: string
-          ) => void
-          trackView: (
-            url: string,
-            referrer?: string,
-            website_id?: string
-          ) => void
-        }
+    umami?: {
+      trackEvent: (
+        event_name: string,
+        event_data?: { [key: string]: string },
+        url?: string,
+        website_id?: string
+      ) => void
+      trackView: (url: string, referrer?: string, website_id?: string) => void
+    }
   }
 }
 
