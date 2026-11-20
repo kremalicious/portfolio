@@ -11,5 +11,5 @@
     "types": ["astro/client", "@types/bun"]
   },
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist", "coverage", "node_modules"]
+  "exclude": ["dist", "node_modules"]
 }

@@ -7,10 +7,6 @@
 <p align="center">
   <a href="https://matthiaskretschmann.com">matthiaskretschmann.com</a>
 </p>
-<p align="center">
-  <a href="https://github.com/kremalicious/portfolio/actions"><img src="https://github.com/kremalicious/portfolio/workflows/CI%2FCD%20Pipeline/badge.svg" /></a>
-  <a href="https://qlty.sh/gh/kremalicious/projects/portfolio"><img src="https://qlty.sh/gh/kremalicious/projects/portfolio/maintainability.svg" alt="Maintainability" /></a>
-</p>
 
 ---
 

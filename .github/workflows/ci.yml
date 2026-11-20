@@ -16,7 +16,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
       - run: bun ci
       - run: bun run lint
@@ -25,19 +25,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
       - run: bun ci
       - run: bun run test
-      - uses: qltysh/qlty-action/coverage@v1
-        with:
-          token: ${{ secrets.QLTY_COVERAGE_TOKEN }}
-          files: coverage/lcov.info
 
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
       - run: bun ci
       - run: bun run build
