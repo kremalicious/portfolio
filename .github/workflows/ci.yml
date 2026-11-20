@@ -13,20 +13,13 @@ env:
   ADOBE_ID: ${{ secrets.NEXT_PUBLIC_TYPEKIT_ID }}
 
 jobs:
-  lint:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
       - uses: oven-sh/setup-bun@v2
       - run: bun ci
       - run: bun run lint
-
-  typecheck:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-      - uses: oven-sh/setup-bun@v2
-      - run: bun ci
       - run: bun run typecheck
 
   test:
