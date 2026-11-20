@@ -1,28 +1,45 @@
-- title: vado
-  slug: vado
+- title: Onde
+  slug: onde
   description: |
-    Vado is a decentralized URL shortener, built on the Base network. It enables users to create, manage, and resolve short links that are stored onchain.
+    Onde is a geographic data service I built with alatus labs in 2026. It grew out of our work on [Lugara](/lugara/), where we needed a reliable source of city data. We developed our own dataset and made it available to other developers through a public API.
 
-    I helped brand, design and build the service from the ground up in 2025, from smart contracts to the resolver and subgraph architecture to the Astro-based frontend app. I focused on balancing usability with robustness, ensuring links can be accessed through various grades of decentralization.
-
-    Token-gating and fee mechanics are enforced at the smart contract level. The frontend reflects this by offering a gated dashboard and analytics view for token holders. Both the app and documentation are built with a minimal stack using Astro, but otherwise framework-less, to maximize robustness, longevity, and ease of maintenance.
+    My work covered the design and development of the API, the Onde website and its developer documentation.
   links:
-    - title: vado app
+    - title: Onde
       icon: Compass
-      url: 'https://app.vado.link'
-    - title: vado docs
+      url: 'https://onde.earth'
+    - title: City API documentation
       icon: FileText
-      url: 'https://docs.vado.link'
+      url: 'https://onde.earth/docs'
+    - title: alatus labs
+      icon: Compass
+      url: 'https://alatus.dev'
   techstack:
-    - HTML
-    - CSS
-    - JavaScript
     - TypeScript
     - Astro
-    - Solidity
-    - Ethereum
-    - Base
-    - Subgraph
+    - Hono
+    - SQLite
+    - Bun
+
+- title: Lugara
+  slug: lugara
+  description: |
+    I designed and developed Lugara with alatus labs, an independent product studio in Lisbon. Lugara is a travel tracking app that turns years of trips into a personal atlas.
+
+    I created the visual identity and design system for Lugara and built the web application and the mapping services behind it.
+  links:
+    - title: Lugara
+      icon: Compass
+      url: 'https://lugara.me'
+    - title: alatus labs
+      icon: Compass
+      url: 'https://alatus.dev'
+  techstack:
+    - TypeScript
+    - Astro
+    - React
+    - MapLibre GL JS
+    - Bun
 
 - title: Ocean Market
   slug: oceanprotocol-market

@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it, mock } from 'bun:test'
 import type { ProjectImage } from '../types/project'
 import { getProjects } from './get-projects'
+import { projectsSchema } from './schemas/project'
 
 const mockImages: ProjectImage[] = [
   {
@@ -78,11 +79,15 @@ describe('getProjects', () => {
     expect(projectWithLinks?.links?.[0]).toHaveProperty('url')
   })
 
-  it('returns projects in correct order', async () => {
+  it('returns projects in the order listed in the catalog', async () => {
+    const catalog = Bun.file(
+      new URL('../../../_content/projects.yml', import.meta.url)
+    )
+    const expected = projectsSchema.parse(Bun.YAML.parse(await catalog.text()))
     const projects = await getProjects()
 
-    // Projects should be returned in the order they appear in projects.yml
-    expect(projects[0].slug).toBe('vado')
-    expect(projects[1].slug).toBe('oceanprotocol-market')
+    expect(projects.map(({ slug }) => slug)).toEqual(
+      expected.map(({ slug }) => slug)
+    )
   })
 })
