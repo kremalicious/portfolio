@@ -1,15 +1,16 @@
 ---
-  import Location from '@/features/location/components/Location.astro'
-  import Availability from '../Availability.astro'
-  import LogoUnit from '../LogoUnit/index.astro'
-  import Networks from '../Networks/Networks.astro'
-  import styles from './Hero.module.css'
+import Location from '@/features/location/components/Location.astro'
+import Availability from '../Availability.astro'
+import LogoUnit from '../LogoUnit/index.astro'
+import Networks from '../Networks/Networks.astro'
+import styles from './Hero.module.css'
 ---
+
 <header class={styles.hero} data-testid="header">
-  <LogoUnit/>
-  <Networks label="Networks"/>
+  <LogoUnit />
+  <Networks label="Networks" />
   <div class={styles.meta}>
-    <Availability/>
-    <Location/>
+    <Availability />
+    <Location />
   </div>
 </header>

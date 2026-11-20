@@ -26,7 +26,7 @@ class ThemeSwitchElement extends HTMLElement {
 
   private handleToggle = (event: Event) => {
     const target = event.target as HTMLInputElement | null
-    if (!target || target.type !== 'checkbox') return
+    if (target?.type !== 'checkbox') return
 
     const theme: ThemePreference = target.checked ? 'dark' : 'light'
     document.dispatchEvent(
@@ -51,9 +51,7 @@ class ThemeSwitchElement extends HTMLElement {
     const isDark = theme === 'dark'
 
     this.setAttribute('checked', `${isDark}`)
-    this.setAttribute('aria-checked', `${isDark}`)
     checkbox.checked = isDark
-    checkbox.setAttribute('aria-checked', `${isDark}`)
     sunIcon.style.display = isDark ? 'block' : 'none'
     moonIcon.style.display = isDark ? 'none' : 'block'
   }

@@ -11,26 +11,24 @@ export default defineConfig({
   output: 'static',
   integrations: [sitemap()],
   site: meta.url,
-  experimental: {
-    fonts: [
-      {
-        name: 'Brandon Grotesque',
-        cssVariable: '--font-brandon-grotesque',
-        provider: fontProviders.adobe({ id: adobeId }),
-        weights: [400],
-        styles: ['normal'],
-        featureSettings: 'liga'
-      },
-      {
-        name: 'FF Tisa Sans Pro',
-        cssVariable: '--font-ff-tisa-sans-pro',
-        provider: fontProviders.adobe({ id: adobeId }),
-        weights: [400, 700],
-        styles: ['normal', 'italic'],
-        featureSettings: 'liga'
-      }
-    ]
-  },
+  fonts: [
+    {
+      name: 'Brandon Grotesque',
+      cssVariable: '--font-brandon-grotesque',
+      provider: fontProviders.adobe({ id: adobeId }),
+      weights: [400],
+      styles: ['normal'],
+      featureSettings: 'liga'
+    },
+    {
+      name: 'FF Tisa Sans Pro',
+      cssVariable: '--font-ff-tisa-sans-pro',
+      provider: fontProviders.adobe({ id: adobeId }),
+      weights: [400, 700],
+      styles: ['normal', 'italic'],
+      featureSettings: 'liga'
+    }
+  ],
   devToolbar: {
     enabled: false
   }

@@ -1,10 +1,11 @@
 ---
-  interface Props {
-    allowedHosts: string[]
-  }
+interface Props {
+  allowedHosts: string[]
+}
 
-  const { allowedHosts } = Astro.props
+const { allowedHosts } = Astro.props
 ---
+
 <aside
   id="hostnameInfo"
   data-allowedhosts={JSON.stringify(allowedHosts)}

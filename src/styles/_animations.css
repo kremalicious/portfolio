@@ -62,12 +62,10 @@
   }
 }
 
-/* biome-ignore lint/correctness/noUnknownTypeSelector: valid css, just modern */
 ::view-transition-old(root) {
   animation: var(--animation-duration-base) ease-out both fade-out;
 }
 
-/* biome-ignore lint/correctness/noUnknownTypeSelector: valid css, just modern */
 ::view-transition-new(root) {
   animation: var(--animation-duration-base) ease-out both fade-in;
 }

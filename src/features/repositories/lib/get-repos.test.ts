@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, describe, expect, spyOn, test } from 'bun:test'
+import { afterEach, beforeEach, describe, expect, it, spyOn } from 'bun:test'
 import repoFilter from '@content/repos.json'
 import { createFetchMock } from '@test/mock-fetch'
 import { getRepos } from './get-repos'
@@ -36,7 +36,7 @@ describe('getRepos', () => {
     process.env.GITHUB_TOKEN = originalGitHubToken
   })
 
-  test('should fetch repos data', async () => {
+  it('should fetch repos data', async () => {
     const mockData = {
       name: 'test',
       full_name: 'test/test',
@@ -57,7 +57,7 @@ describe('getRepos', () => {
     )
   })
 
-  test('should handle network errors', async () => {
+  it('should handle network errors', async () => {
     const consoleErrorSpy = spyOn(console, 'error').mockReturnValue()
 
     fetchSpy.mockImplementationOnce(
@@ -72,7 +72,7 @@ describe('getRepos', () => {
     consoleErrorSpy.mockRestore()
   })
 
-  test('should handle invalid repo data', async () => {
+  it('should handle invalid repo data', async () => {
     const mockData = { name: null }
     fetchSpy.mockImplementation(createFetchMock({ body: mockData }))
 

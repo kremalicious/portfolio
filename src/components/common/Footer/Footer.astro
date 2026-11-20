@@ -1,21 +1,22 @@
 ---
-  import meta from '@content/meta.json'
-  import Vcard from '@/features/vcard/components/Vcard.astro'
-  import Availability from '../Availability.astro'
-  import LogoUnit from '../LogoUnit/index.astro'
-  import Networks from '../Networks/Networks.astro'
-  import styles from './Footer.module.css'
+import meta from '@content/meta.json'
+import Vcard from '@/features/vcard/components/Vcard.astro'
+import Availability from '../Availability.astro'
+import LogoUnit from '../LogoUnit/index.astro'
+import Networks from '../Networks/Networks.astro'
+import styles from './Footer.module.css'
 
-  const year = new Date().getFullYear()
+const year = new Date().getFullYear()
 ---
+
 <footer class:list={['h-card', 'container', styles.footer]}>
-  <LogoUnit small/>
-  <Networks label="Networks Footer" small/>
-  {meta.availability.status === true && <Availability small/>}
+  <LogoUnit small />
+  <Networks label="Networks Footer" small />
+  {meta.availability.status === true && <Availability small />}
 
   <aside class={styles.aside}>
     <p class={styles.actions}>
-      <Vcard/>
+      <Vcard />
 
       <a class="u-key" href={meta.gpg}>PGP/GPG key</a>
       <a href={meta.bugs}>Found a bug?</a>

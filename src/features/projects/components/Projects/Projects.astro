@@ -1,13 +1,14 @@
 ---
-  import type { ProjectType } from '../../types/project'
-  import ProjectPreview from './Preview.astro'
+import type { ProjectType } from '../../types/project'
+import ProjectPreview from './Preview.astro'
 
-  type Props = {
-    projects: ProjectType[]
-  }
+type Props = {
+  projects: ProjectType[]
+}
 
-  const { projects } = Astro.props
+const { projects } = Astro.props
 ---
+
 <section class="projects">
   {projects.length > 0 &&
     projects.map((project) => (

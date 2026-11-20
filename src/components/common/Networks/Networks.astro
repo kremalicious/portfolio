@@ -1,20 +1,21 @@
 ---
-  import meta from '@content/meta.json'
-  import NetworkLink from './NetworkLink.astro'
-  import styles from './Networks.module.css'
+import meta from '@content/meta.json'
+import NetworkLink from './NetworkLink.astro'
+import styles from './Networks.module.css'
 
-  interface Props {
-    label: string
-    small?: boolean
-  }
+interface Props {
+  label: string
+  small?: boolean
+}
 
-  const { label, small } = Astro.props
+const { label, small } = Astro.props
 ---
+
 <section
   aria-label={label}
   class:list={[styles.networks, small ? styles.small : '']}
 >
-  <NetworkLink name="Mail" url={`mailto:${meta.author.email}`}/>
+  <NetworkLink name="Mail" url={`mailto:${meta.author.email}`} />
 
   {meta.profiles.map((profile, profileIndex) => (
     <NetworkLink

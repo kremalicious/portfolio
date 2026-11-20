@@ -1,17 +1,18 @@
 ---
-  import ProjectImage from '@/features/projects/components/ProjectImage/ProjectImage.astro'
-  import type { ProjectType } from '../../types/project'
-  import ProjectLinks from './Links/index.astro'
-  import styles from './Project.module.css'
-  import ProjectTechstack from './Techstack/index.astro'
+import ProjectImage from '@/features/projects/components/ProjectImage/ProjectImage.astro'
+import type { ProjectType } from '../../types/project'
+import ProjectLinks from './Links/index.astro'
+import styles from './Project.module.css'
+import ProjectTechstack from './Techstack/index.astro'
 
-  interface Props {
-    project: ProjectType
-  }
+interface Props {
+  project: ProjectType
+}
 
-  const { project } = Astro.props
-  const { title, descriptionHtml, links, techstack, images } = project
+const { project } = Astro.props
+const { title, descriptionHtml, links, techstack, images } = project
 ---
+
 <article class={styles.project}>
   <h1 class:list={[styles.title, 'animation', 'animation--move-in-bottom']}>
     {title}
@@ -23,11 +24,7 @@
   />
 
   {images.map((image) => (
-    <ProjectImage
-      image={image}
-      alt={title}
-      className={styles.fullContainer}
-    />
+    <ProjectImage image={image} alt={title} className={styles.fullContainer} />
   ))}
 
   <footer class={styles.meta}>

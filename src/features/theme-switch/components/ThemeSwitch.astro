@@ -1,25 +1,15 @@
 ---
-  import { MoonIcon, SunIcon } from '@lucide/astro'
-  import styles from './ThemeSwitch.module.css'
+import { MoonIcon, SunIcon } from '@lucide/astro'
+import styles from './ThemeSwitch.module.css'
 ---
-<theme-switch
-  class={styles.themeSwitch}
-  title="Toggle Theme"
-  id="theme-toggle"
-  role="switch"
->
+
+<theme-switch class={styles.themeSwitch} title="Toggle Theme" id="theme-toggle">
   <label for="toggle" class={styles.checkbox}>
     <span class="screenreader-only">Toggle Theme</span>
-    <input
-      type="checkbox"
-      name="toggle"
-      id="toggle"
-      aria-describedby="theme-toggle"
-      class="screenreader-only"
-    >
+    <input type="checkbox" name="toggle" id="toggle" class="screenreader-only">
     <div aria-live="assertive">
-      <SunIcon width={24} height={24} id="sun"/>
-      <MoonIcon width={24} height={24} id="moon" style="display: none;"/>
+      <SunIcon width={24} height={24} id="sun" />
+      <MoonIcon width={24} height={24} id="moon" style="display: none;" />
     </div>
   </label>
 </theme-switch>

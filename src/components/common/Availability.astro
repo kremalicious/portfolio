@@ -1,20 +1,21 @@
 ---
-  import meta from '@content/meta.json'
+import meta from '@content/meta.json'
 
-  type Props = {
-    small?: boolean
-  }
+type Props = {
+  small?: boolean
+}
 
-  const { small = false } = Astro.props as Props
-  const { status, available, unavailable } = meta.availability
-  const html = status ? available : unavailable
-  const classList = [
-    'availability',
-    status === true ? 'available animation animation--move-in-top' : '',
-    small ? 'availability--small' : ''
-  ]
+const { small = false } = Astro.props as Props
+const { status, available, unavailable } = meta.availability
+const html = status ? available : unavailable
+const classList = [
+  'availability',
+  status === true ? 'available animation animation--move-in-top' : '',
+  small ? 'availability--small' : ''
+]
 ---
-<p class:list={classList} set:html={html}/>
+
+<p class:list={classList} set:html={html} />
 
 <style>
   .availability {

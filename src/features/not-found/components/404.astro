@@ -1,10 +1,11 @@
 ---
-  import Button from '@/components/ui/Button/Button.astro'
-  import { getRandomGif } from '../api/get-random-gif'
+import Button from '@/components/ui/Button/Button.astro'
+import { getRandomGif } from '../api/get-random-gif'
 
-  const tag = 'cat'
-  const initialGif = await getRandomGif(tag)
+const tag = 'cat'
+const initialGif = await getRandomGif(tag)
 ---
+
 <article class="content">
   <h1>Shenanigans, page not found.</h1>
   <p>

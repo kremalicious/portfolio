@@ -15,5 +15,23 @@
     "formatter": {
       "indentScriptAndStyle": true
     }
-  }
+  },
+  "markdown": {
+    "formatter": {
+      "formatEmbeds": false
+    },
+    "parser": {
+      "frontmatter": true
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["scripts/**/*.yml", "src/**/*.yml"],
+      "yaml": {
+        "formatter": {
+          "quoteStyle": "single"
+        }
+      }
+    }
+  ]
 }

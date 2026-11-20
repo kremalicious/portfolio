@@ -1,21 +1,19 @@
 ---
-  import type { ProjectType } from '../../types/project'
-  import styles from './index.module.css'
-  import Project from './Project.astro'
+import type { ProjectType } from '../../types/project'
+import styles from './index.module.css'
+import Project from './Project.astro'
 
-  type Props = {
-    projects: ProjectType[]
-    currentSlug: string
-  }
+type Props = {
+  projects: ProjectType[]
+  currentSlug: string
+}
 
-  const { projects, currentSlug } = Astro.props
+const { projects, currentSlug } = Astro.props
 ---
+
 <nav class={styles.projectNav} id="project-nav">
   {projects.map((project: ProjectType) => (
-    <Project
-      project={project}
-      isCurrent={project.slug === currentSlug}
-    />
+    <Project project={project} isCurrent={project.slug === currentSlug} />
   ))}
 </nav>
 

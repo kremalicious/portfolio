@@ -1,45 +1,46 @@
 ---
-  import { Font, getImage } from 'astro:assets'
-  import meta from '@content/meta.json'
+import { Font, getImage } from 'astro:assets'
+import meta from '@content/meta.json'
 
-  // import faviconSrc from '@/images/favicon.png'
-  // import faviconSvgSrc from '@/images/favicon.svg'
+// import faviconSrc from '@/images/favicon.png'
+// import faviconSvgSrc from '@/images/favicon.svg'
 
-  type Props = {
-    title?: string
-    description?: string
-    image?: ImageMetadata
-  }
+type Props = {
+  title?: string
+  description?: string
+  image?: ImageMetadata
+}
 
-  const { title, description, image } = Astro.props
-  const { name, label } = meta.author
+const { title, description, image } = Astro.props
+const { name, label } = meta.author
 
-  const titleFinal =
-    title && title !== ''
-      ? `${title} // ${name.toLowerCase()} { ${label.toLowerCase()} }`
-      : `${name.toLowerCase()} { ${label.toLowerCase()} }`
+const titleFinal =
+  title && title !== ''
+    ? `${title} // ${name.toLowerCase()} { ${label.toLowerCase()} }`
+    : `${name.toLowerCase()} { ${label.toLowerCase()} }`
 
-  const descriptionFinal = description
-    ? description.trim().slice(0, 160)
-    : meta.description
+const descriptionFinal = description
+  ? description.trim().slice(0, 160)
+  : meta.description
 
-  const canonicalUrl =
-    Astro.url.pathname === '/'
-      ? Astro.site?.origin
-      : `${Astro.site?.origin}${Astro.url.pathname}`
+const canonicalUrl =
+  Astro.url.pathname === '/'
+    ? Astro.site?.origin
+    : `${Astro.site?.origin}${Astro.url.pathname}`
 
-  const imageFinal = `${Astro.site?.origin}${
-    image
-      ? (await getImage({ src: image, width: 800, format: 'jpg' })).src
-      : meta.img
-  }`
+const imageFinal = `${Astro.site?.origin}${
+  image
+    ? (await getImage({ src: image, width: 800, format: 'jpg' })).src
+    : meta.img
+}`
 
-  const imageFinalAlt = image ? `Teaser image for ${title}` : 'Logo'
-  const isProduction = process.env.NODE_ENV === 'production'
-  const { UMAMI_WEBSITE_ID, UMAMI_SCRIPT_URL } = process.env
-  const shouldIncludeAnalytics =
-    isProduction && UMAMI_WEBSITE_ID && UMAMI_SCRIPT_URL
+const imageFinalAlt = image ? `Teaser image for ${title}` : 'Logo'
+const isProduction = process.env.NODE_ENV === 'production'
+const { UMAMI_WEBSITE_ID, UMAMI_SCRIPT_URL } = process.env
+const shouldIncludeAnalytics =
+  isProduction && UMAMI_WEBSITE_ID && UMAMI_SCRIPT_URL
 ---
+
 <head>
   <meta charset="utf-8">
 
@@ -96,15 +97,18 @@
 
   <link rel="sitemap" href="/sitemap-index.xml">
 
-  <Font cssVariable="--font-ff-tisa-sans-pro"/>
-  <Font cssVariable="--font-brandon-grotesque"/>
+  <Font cssVariable="--font-ff-tisa-sans-pro" />
+  <Font cssVariable="--font-brandon-grotesque" />
 
-  {
-    shouldIncludeAnalytics && (
-      <>
-        <link rel="preconnect" href={UMAMI_SCRIPT_URL} />
-        <script async src={UMAMI_SCRIPT_URL} data-website-id={UMAMI_WEBSITE_ID} is:inline />
-      </>
-    )
-  }
+  {shouldIncludeAnalytics && (
+    <>
+      <link rel="preconnect" href={UMAMI_SCRIPT_URL} />
+      <script
+        async
+        src={UMAMI_SCRIPT_URL}
+        data-website-id={UMAMI_WEBSITE_ID}
+        is:inline
+      />
+    </>
+  )}
 </head>

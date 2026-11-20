@@ -3,6 +3,7 @@
   width="512"
   height="512"
   viewBox="0 0 512 512"
+  aria-hidden="true"
 >
   <style>
     @media (prefers-color-scheme: dark) {
