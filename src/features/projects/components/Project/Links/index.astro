@@ -3,6 +3,7 @@ import { CompassIcon, FileTextIcon } from '@lucide/astro'
 import GitHubIcon from '@/assets/github.svg'
 import Button from '@/components/ui/Button/Button.astro'
 import type { ProjectLink } from '@/features/projects/types/project'
+import projectStyles from '../Project.module.css'
 import styles from './index.module.css'
 
 interface Props {
@@ -19,7 +20,9 @@ const icons = {
 ---
 
 <div class={styles.projectLinks}>
-  <h2 class={styles.title}>Links <span>Learn more on the interwebz.</span></h2>
+  <h2 class={projectStyles.metatitle}>
+    Links <span>Learn more on the interwebz.</span>
+  </h2>
 
   <ul>
     {links.map(({ title, url, icon }) => {

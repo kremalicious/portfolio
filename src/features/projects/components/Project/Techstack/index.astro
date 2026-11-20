@@ -1,4 +1,5 @@
 ---
+import projectStyles from '../Project.module.css'
 import styles from './index.module.css'
 
 interface Props {
@@ -9,7 +10,7 @@ const { techstack } = Astro.props
 ---
 
 <div class={styles.projectTechstack}>
-  <h2 class={styles.title}>
+  <h2 class={projectStyles.metatitle}>
     Tools & Technologies <span>The tech stack I was involved with.</span>
   </h2>
   <ul>

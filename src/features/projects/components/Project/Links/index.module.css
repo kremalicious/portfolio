@@ -16,7 +16,3 @@
 .projectLinks svg {
   stroke: var(--text-color);
 }
-
-.title {
-  composes: metatitle from '../Project.module.css';
-}

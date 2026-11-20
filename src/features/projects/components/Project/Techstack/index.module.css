@@ -17,7 +17,3 @@
   font-size: var(--fs--1);
   line-height: 1.4;
 }
-
-.title {
-  composes: metatitle from '../Project.module.css';
-}
