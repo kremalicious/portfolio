@@ -24,10 +24,6 @@
     {
       "network": "Mastodon",
       "url": "https://mas.to/@krema"
-    },
-    {
-      "network": "Farcaster",
-      "url": "https://warpcast.com/@krema.eth"
     }
   ],
   "gpg": "/gpg.txt",
