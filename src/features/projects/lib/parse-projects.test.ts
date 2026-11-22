@@ -1,18 +1,7 @@
-import { afterEach, beforeEach, describe, expect, it, mock } from 'bun:test'
+import { describe, expect, it } from 'bun:test'
 import { parseProjects } from './parse-projects'
 
 describe('parseProjects', () => {
-  const consoleErrorSpy = mock(() => {})
-
-  beforeEach(() => {
-    consoleErrorSpy.mockClear()
-    console.error = consoleErrorSpy
-  })
-
-  afterEach(() => {
-    mock.restore()
-  })
-
   it('parses valid YAML content', () => {
     const yamlContent = `
 - slug: test-project
@@ -55,24 +44,34 @@ describe('parseProjects', () => {
     expect(projects[0].links).toBeUndefined()
   })
 
-  it('returns empty array for invalid YAML', () => {
+  it('throws for invalid YAML', () => {
     const yamlContent = 'invalid: [yaml: content'
-    const projects = parseProjects(yamlContent)
 
-    expect(projects).toEqual([])
+    expect(() => parseProjects(yamlContent)).toThrow(
+      new SyntaxError('YAML Parse error: Unexpected token')
+    )
   })
 
-  it('returns empty array for invalid schema', () => {
+  it('throws for each missing required field', () => {
     const yamlContent = `
 - slug: invalid
   title: Missing required fields
 `
-    const projects = parseProjects(yamlContent)
 
-    expect(projects).toEqual([])
+    expect(() => parseProjects(yamlContent)).toThrow(
+      new Error(
+        'Invalid project content\n' +
+          '✖ Invalid input: expected string, received undefined\n' +
+          '  → at [0].description\n' +
+          '✖ Invalid input: expected string, received undefined\n' +
+          '  → at [0].content\n' +
+          '✖ Invalid input: expected array, received undefined\n' +
+          '  → at [0].techstack'
+      )
+    )
   })
 
-  it('validates required fields', () => {
+  it('throws for a missing slug', () => {
     const yamlContent = `
 - title: No Slug
   description: Missing slug
@@ -80,12 +79,17 @@ describe('parseProjects', () => {
   techstack:
     - HTML
 `
-    const projects = parseProjects(yamlContent)
 
-    expect(projects).toEqual([])
+    expect(() => parseProjects(yamlContent)).toThrow(
+      new Error(
+        'Invalid project content\n' +
+          '✖ Invalid input: expected string, received undefined\n' +
+          '  → at [0].slug'
+      )
+    )
   })
 
-  it('validates techstack is not empty', () => {
+  it('throws for an empty techstack', () => {
     const yamlContent = `
 - slug: empty-stack
   title: Empty Stack
@@ -93,12 +97,17 @@ describe('parseProjects', () => {
   content: Has empty techstack
   techstack: []
 `
-    const projects = parseProjects(yamlContent)
 
-    expect(projects).toEqual([])
+    expect(() => parseProjects(yamlContent)).toThrow(
+      new Error(
+        'Invalid project content\n' +
+          '✖ Too small: expected array to have >=1 items\n' +
+          '  → at [0].techstack'
+      )
+    )
   })
 
-  it('validates link URLs', () => {
+  it('throws for an invalid link URL', () => {
     const yamlContent = `
 - slug: invalid-link
   title: Invalid Link
@@ -110,8 +119,11 @@ describe('parseProjects', () => {
     - title: Bad URL
       url: not-a-url
 `
-    const projects = parseProjects(yamlContent)
 
-    expect(projects).toEqual([])
+    expect(() => parseProjects(yamlContent)).toThrow(
+      new Error(
+        'Invalid project content\n✖ Invalid URL\n  → at [0].links[0].url'
+      )
+    )
   })
 })
