@@ -9,27 +9,21 @@ const template = fs.readFileSync(templatePath).toString()
 const spinner = ora('Adding new project').start()
 
 if (!process.argv[2]) {
-  spinner.fail('Use the format `npm run new -- Title of project`')
+  spinner.fail('Use the format `bun run new -- "Title of project"`')
+  process.exit(1)
 }
 
 const title = process.argv[2]
 spinner.text = `Adding '${title}'.`
 
 const titleSlug = slugify(title, { lower: true })
-const projects = path.join(process.cwd(), '_content', 'projects.yml')
+const projects = path.join(process.cwd(), 'src', '_content', 'projects.yml')
 const newContents = template
   .split('TITLE')
   .join(title)
   .split('SLUG')
   .join(titleSlug)
 
-// prepend newContents to projects.yml file
-fs.readFile(projects, 'utf8', (error, data) => {
-  if (error) spinner.fail(error.message)
-
-  fs.writeFile(projects, newContents + data, (error) => {
-    if (error) spinner.fail(error.message)
-
-    spinner.succeed(`Added '${title}' to top of projects.yml file.`)
-  })
-})
+const data = fs.readFileSync(projects, 'utf8')
+fs.writeFileSync(projects, `${newContents}\n${data}`)
+spinner.succeed(`Added '${title}' to top of projects.yml file.`)
