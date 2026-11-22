@@ -17,10 +17,9 @@ export async function getStaticPaths() {
 const { slug } = Astro.params
 const { project } = Astro.props
 const projects = await getProjects()
-const description = markdownToText(project.description)
 const structuredData = getCreativeWorkStructuredData({
   title: project.title,
-  description,
+  description: markdownToText(project.content),
   url: new URL(Astro.url.pathname, Astro.site).href,
   keywords: project.techstack
 })
@@ -28,7 +27,7 @@ const structuredData = getCreativeWorkStructuredData({
 
 <BaseLayout
   title={project.title}
-  description={description}
+  description={project.description}
   image={project.images[0]}
   structuredData={structuredData}
 >

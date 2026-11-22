@@ -10,7 +10,7 @@ interface Props {
 }
 
 const { project } = Astro.props
-const { title, descriptionHtml, links, techstack, images } = project
+const { title, contentHtml, links, techstack, images } = project
 ---
 
 <article class={styles.project}>
@@ -18,9 +18,9 @@ const { title, descriptionHtml, links, techstack, images } = project
     {title}
   </h1>
   <div
-    class:list={[styles.description, 'animation', 'animation--move-in-bottom']}
+    class:list={[styles.content, 'animation', 'animation--move-in-bottom']}
     style="animation-delay:var(--animation-delay-step)"
-    set:html={descriptionHtml ?? ''}
+    set:html={contentHtml ?? ''}
   />
 
   {images.map((image) => (

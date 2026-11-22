@@ -47,7 +47,7 @@ The whole tech stack:
 
 ### 💍 One data file to rule all pages
 
-All displayed project content is powered by one YAML file where all the portfolio's projects are defined. The project description itself is transformed from Markdown written inside the YAML file into HTML on build time.
+All displayed project content is powered by one YAML file where all the portfolio's projects are defined. The project content itself is transformed from Markdown written inside the YAML file into HTML on build time.
 
 Astro automatically creates pages from each item in that file in the [`[slug].astro`](src/pages/[slug].astro) page template. Utilizing the [`get-projects.ts`](src/features/projects/lib/get-projects.ts) script which validates, transforms and enhances the data.
 

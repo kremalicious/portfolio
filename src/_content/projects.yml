@@ -1,6 +1,7 @@
 - title: Onde
   slug: onde
-  description: |
+  description: Onde is a geographic data API for city and country search, created with alatus labs in 2026. I designed and built the API, website, and documentation.
+  content: |
     While building [Lugara](/lugara/), we couldn't find a city dataset we actually trusted. So we built our own and opened it up to other developers as a public API.
 
     Created with alatus labs in 2026, Onde is a focused geographic data service. I designed and built the API, the website, and the developer documentation.
@@ -23,7 +24,8 @@
 
 - title: Lugara
   slug: lugara
-  description: |
+  description: Lugara turns years of trips into a personal atlas on an interactive map. I designed the identity and built the web app and mapping services with alatus labs.
+  content: |
     Lugara turns years of trips into a personal atlas: an interactive map of everywhere you've been, built with alatus labs, an independent product studio.
 
     I crafted the visual identity and design system, then built the web application and the mapping services behind it.
@@ -43,7 +45,8 @@
 
 - title: Ocean Market
   slug: oceanprotocol-market
-  description: |
+  description: Ocean Market was the flagship web app of Ocean Protocol v3 for publishing, pricing, and monetizing datasets. I led product design and front-end engineering.
+  content: |
     Ocean Market was the flagship decentralized web app for Ocean Protocol v3, letting anyone publish, price, and monetize datasets across EVM networks.
 
     In 2020, I led product design and front-end engineering for the app. Attaching Automated Market Maker pools to datatokens brought dynamic price discovery to data, while on-chain metadata and token-gated access (from direct downloads to Compute-to-Data) established a verifiable trail of provenance.
@@ -73,7 +76,8 @@
 
 - title: Ocean Protocol - IPFS Integration
   slug: oceanprotocol-ipfs
-  description: |
+  description: In 2019 I integrated IPFS across the Ocean Protocol stack, so publishing a dataset required no node and no terminal.
+  content: |
     Decentralized storage tends to come with rough UX. In 2019, I integrated IPFS across the Ocean Protocol stack, from infrastructure and API to UI, so publishing a dataset wouldn't require running a node or touching a terminal.
 
     I built a public IPFS node with a focused upload interface and API, then wired it directly into the publish flow of [Commons](/oceanprotocol-commons/) so files could be pinned and shared in one step.
@@ -98,7 +102,8 @@
 
 - title: Ocean Protocol - Commons
   slug: oceanprotocol-commons
-  description: |
+  description: Commons was the open-data marketplace and public face of Ocean Protocol v1 and v2. I led its design and front-end engineering from 2018 to 2019.
+  content: |
     Commons was the main public face of [Ocean Protocol](/oceanprotocol-v1/) v1 and v2: an open-data marketplace for browsing, downloading, and publishing datasets on the network.
 
     From 2018 to 2019, I led its design and front-end engineering. Beyond showcasing the full stack in production, Commons doubled as an open-source reference codebase for developers building their own Ocean dApps, before [Ocean Market](/oceanprotocol-market/) succeeded it in v3.
@@ -127,7 +132,8 @@
 
 - title: Ocean Protocol v1
   slug: oceanprotocol-v1
-  description: |
+  description: From 2017 to 2020 I shaped the visual identity of Ocean Protocol and built its websites, docs, and React apps on a shared component system.
+  content: |
     Between 2017 and 2020, I shaped the visual identity and built the web ecosystem for Ocean Protocol, translating a dense data-economy protocol into a cohesive family of websites, docs, and React applications backed by a shared component system.
 
     In 2020, I led the brand's visual refresh ahead of the v3 release and the launch of [Ocean Market](/oceanprotocol-market/).
@@ -160,7 +166,8 @@
 
 - title: IPDB
   slug: ipdb
-  description: |
+  description: The Interplanetary Database was a public blockchain database network powered by BigchainDB. I shaped its visual direction and built its websites.
+  content: |
     The Interplanetary Database (IPDB) was a public blockchain database network powered by [BigchainDB](/bigchaindb/). Between 2015 and 2017, I shaped its visual direction and designed and built all of its web properties.
 
     Branding and key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
@@ -182,7 +189,8 @@
 
 - title: Berlin Innovation Ventures
   slug: biv
-  description: |
+  description: Brand foundations and website for Berlin Innovation Ventures, a venture capital firm in Berlin, built as a fast static site focused on typography.
+  content: |
     Brand foundations and website for Berlin Innovation Ventures, a venture capital firm in Berlin. Designed and built as a fast, lightweight static site focused on typography and clarity.
   techstack:
     - Sketch
@@ -198,11 +206,12 @@
 
 - title: 9984 >> Summit 2017
   slug: '9984'
+  description: 9984 >> Summit 2017 was the first joint conference of BigchainDB and IPDB. I directed the visual identity and designed and built the website.
   img: /images/9984-01.png
   links:
     - title: GitHub
       url: 'https://github.com/9984/2017.9984.io'
-  description: |
+  content: |
     Named after BigchainDB's default HTTP API port, 9984 >> Summit was the first joint conference hosted by [BigchainDB](/bigchaindb/) and [IPDB](/ipdb/) in 2017.
 
     I directed the visual identity for the event and designed and built the summit website.
@@ -221,7 +230,8 @@
 
 - title: BigchainDB
   slug: bigchaindb
-  description: |
+  description: From 2016 to 2019 I built the brand and web presence of BigchainDB from scratch, with a shared UI component system across every website.
+  content: |
     Between 2016 and 2019, I built BigchainDB's brand and web presence from scratch: defining the visual direction, creating a shared UI component system, and building every web property across the company.
 
     The main site paired a fast static front-end with live data pulled from external APIs and microservices, turning a scalable blockchain database into a clear, approachable product for developers.
@@ -248,7 +258,8 @@
 
 - title: ascribe
   slug: ascribe
-  description: |
+  description: Years before NFTs went mainstream, ascribe registered ownership of art on the Bitcoin blockchain. I built UI for its websites and web app from 2015 to 2017.
+  content: |
     Years before NFTs went mainstream, ascribe let artists register and transfer ownership of digital and physical works on the Bitcoin blockchain. Its approach helped inspire Ethereum's ERC-721 standard and eventually grew into [BigchainDB](/bigchaindb/).
 
     From 2015 to 2017, I built UI across ascribe's web touchpoints, including a main web app written in an early version of React, before the service was [discontinued in 2017](https://www.ascribe.io/).
@@ -276,7 +287,8 @@
 
 - title: ChartMogul
   slug: chartmogul
-  description: |
+  description: From 2015 to 2017 I co-designed and led front-end development for ChartMogul, the subscription analytics company, across its websites and product.
+  content: |
     [ChartMogul](https://chartmogul.com) builds subscription analytics for SaaS companies. Between 2015 and 2017, I co-designed and led front-end development across its web properties, rolling out a component-based design system spanning the marketing site, landing pages, and a custom WordPress blog.
 
     Inside the product itself, I designed and shipped new features while refactoring much of the core application's front-end codebase.
@@ -308,7 +320,8 @@
 
 - title: ShareTheMeal
   slug: sharethemeal
-  description: |
+  description: ShareTheMeal is the UN World Food Programme app for funding meals for children in need. I co-designed and led front-end development from 2015 to 2017.
+  content: |
     ShareTheMeal is the United Nations World Food Programme's app for funding meals for children in need with a single tap.
 
     Between 2015 and 2017, I consulted with the team to co-design and lead front-end development across the website and the iOS and Android apps.
@@ -330,7 +343,8 @@
 
 - title: ezeep
   slug: ezeep
-  description: |
+  description: From 2012 to 2015 I directed the brand and led product design and front-end engineering at ezeep, bringing emotional design to cloud printing.
+  content: |
     Enterprise printing software is rarely pleasant to use. At ezeep from 2012 to 2015, I set out to change that by bringing consumer-grade craft and emotional design to cloud printing.
 
     I directed the brand and led product design and front-end engineering across every touchpoint, from user and market research to shipping apps for macOS, Windows, iOS, and Android.
@@ -360,7 +374,8 @@
 
 - title: Mr. Reader
   slug: mrreader
-  description: |
+  description: App icon, custom reading theme, and promotional artwork for Mr. Reader, a power-user RSS reader for the iPad, made with Curious Times in 2012.
+  content: |
     A collaboration with Curious Times in 2012 on Mr. Reader, a power-user RSS reader built exclusively for the iPad.
 
     I designed the app icon, crafted a custom reading theme, and produced the promotional artwork.
@@ -369,7 +384,8 @@
 
 - title: iPixelPad
   slug: ipixelpad
-  description: |
+  description: iPixelPad is a set of crisp, hand-crafted small-size iPad icons, released as a freebie on kremalicious.com.
+  content: |
     When everyone started releasing iPad icons but skipped the small sizes, there was only one thing left to do: push the pixels myself. iPixelPad is a set of crisp, hand-crafted small-size iPad icons.
 
     Released as a freebie on [kremalicious.com](https://kremalicious.com/ipixelpad/).
@@ -381,7 +397,8 @@
 
 - title: Out Of Whale Oil
   slug: outofwhaleoil
-  description: |
+  description: Out Of Whale Oil is a tribute wallpaper pack inspired by the Futurama film Into The Wild Green Yonder, released as a freebie.
+  content: |
     A tribute wallpaper pack inspired by the Futurama film _Into The Wild Green Yonder_. Released as a freebie on [kremalicious.com](https://kremalicious.com/out-of-whale-oil/).
   links:
     - title: Info & Download
@@ -391,7 +408,8 @@
 
 - title: Martin-Luther-Universität Halle-Wittenberg
   slug: unihalle
-  description: |
+  description: From 2009 to 2012 I designed and built internal tools, public web interfaces, and the campus blog network at Martin-Luther-Universität Halle-Wittenberg.
+  content: |
     From 2009 to 2012, I worked in the IT services department at [Martin-Luther-Universität Halle-Wittenberg](http://www.uni-halle.de), designing and building internal tools and public web interfaces used daily by thousands of students and staff.
 
     I also initiated, built, and maintained the university's campus-wide blog network and publishing community.
@@ -414,7 +432,8 @@
 
 - title: Coffee Cup
   slug: coffeecup
-  description: |
+  description: Coffee Cup is a set of desktop icons celebrating the unofficial fuel of designers and developers, released as a freebie.
+  content: |
     Desktop icons celebrating the unofficial fuel of designers and developers. Released as a freebie on [kremalicious.com](https://kremalicious.com/coffee-cup-icon/).
   techstack:
     - Photoshop
@@ -424,7 +443,8 @@
 
 - title: Project Purple
   slug: projectpurple
-  description: |
+  description: Project Purple is a wallpaper about the locked-down Apple building where the original iPhone was built, Fight Club references included.
+  content: |
     The original iPhone was built inside a locked-down Apple building codenamed Project Purple, decorated with _Fight Club_ references to underscore the secrecy. Too good a piece of tech folklore not to turn into a wallpaper.
 
     Released as a freebie on [kremalicious.com](https://kremalicious.com/projectpurple/).
@@ -436,7 +456,8 @@
 
 - title: Allinnia Creative Group
   slug: allinnia
-  description: |
+  description: Brand identity and custom PHP website with audio listening and an online store, built in 2009 for the music production studio Allinnia Creative Group.
+  content: |
     Brand identity and custom website built in 2009 for Allinnia Creative Group, a music production studio.
 
     Written from scratch in PHP, the site showcased their original compositions with built-in audio listening and an online store.
@@ -449,14 +470,16 @@
 
 - title: Aperture Loupe
   slug: apertureloupe
-  description: |
+  description: Aperture Loupe is a macOS desktop icon from 2008, inspired by the loupe tool in Apple's Aperture.
+  content: |
     The loupe tool in Apple's _Aperture_ felt like a rare piece of interface magic: tactile, novel, and genuinely fun to play with. In 2008, I turned that fascination into a custom macOS desktop icon.
   techstack:
     - Photoshop
 
 - title: Adiumeetie
   slug: adiumeetie
-  description: |
+  description: Adiumeetie is a 2009 macOS replacement icon for the IM client Adium, riffing on the Tweetie for Mac icon by atebits.
+  content: |
     A 2009 macOS replacement icon for the Mac IM client Adium, riffing on atebits' beloved Tweetie for Mac icon. Released as a freebie on [kremalicious.com](https://kremalicious.com/adiumeetie/).
   techstack:
     - Photoshop
@@ -466,7 +489,8 @@
 
 - title: Niépce's Camera Obscura
   slug: niepces-camera-obscura
-  description: |
+  description: A 2008 replacement icon for Aperture and iPhoto, modeled after the camera obscura Nicéphore Niépce used for the first surviving photograph.
+  content: |
     A 2008 replacement icon for Aperture and iPhoto, modeled after the camera obscura Nicéphore Niépce used in 1826 to capture the world's first surviving photograph.
 
     Using a bitumen-coated plate in a process he called heliography, Niépce produced _View from the Window at Le Gras_, the very photograph tucked inside the iPhoto icon itself.

@@ -1,7 +1,8 @@
 - title: TITLE
   slug: '/SLUG/'
   img: 'images/SLUG-01.png'
-  description: >
+  description: Plain text for search results, 160 characters at most.
+  content: >
     Markdown can be used here.
   links:
     - title: Link

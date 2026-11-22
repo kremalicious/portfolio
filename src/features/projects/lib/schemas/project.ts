@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { metaDescriptionMaxLength } from '@/lib/meta-description'
 
 export const projectLinkSchema = z.object({
   title: z.string().min(1),
@@ -9,7 +10,8 @@ export const projectLinkSchema = z.object({
 export const projectSchema = z.object({
   slug: z.string().min(1),
   title: z.string().min(1),
-  description: z.string().min(1),
+  description: z.string().min(1).max(metaDescriptionMaxLength),
+  content: z.string().min(1),
   techstack: z.array(z.string().min(1)).min(1),
   links: z.array(projectLinkSchema).min(1).optional()
 })

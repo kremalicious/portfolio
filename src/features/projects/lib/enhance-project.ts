@@ -9,12 +9,12 @@ export async function enhanceProject(
   const project = projectsOriginal.find((item) => item.slug === slug)
   if (!project) return
 
-  const descriptionHtml = await markdownToHtml(project.description)
+  const contentHtml = await markdownToHtml(project.content)
   const images = await getProjectImages(slug)
 
   return {
     ...project,
-    descriptionHtml,
+    contentHtml,
     images
   }
 }

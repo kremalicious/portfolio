@@ -1,6 +1,7 @@
 ---
 import { Font, getImage } from 'astro:assets'
 import meta from '@content/meta.json'
+import { metaDescriptionMaxLength } from '@/lib/meta-description'
 import type { StructuredData } from '@/lib/structured-data'
 
 // import faviconSrc from '@/images/favicon.png'
@@ -21,13 +22,11 @@ const titleFinal =
     ? `${title} // ${name.toLowerCase()} { ${label.toLowerCase()} }`
     : `${name.toLowerCase()} { ${label.toLowerCase()} }`
 
-const descriptionMaxLength = 160
-
 function truncateDescription(text: string) {
   const normalized = text.replace(/\s+/g, ' ').trim()
-  if (normalized.length <= descriptionMaxLength) return normalized
+  if (normalized.length <= metaDescriptionMaxLength) return normalized
 
-  const cut = normalized.slice(0, descriptionMaxLength - 1)
+  const cut = normalized.slice(0, metaDescriptionMaxLength - 1)
   const lastSpace = cut.lastIndexOf(' ')
   const words = lastSpace > 0 ? cut.slice(0, lastSpace) : cut
   return `${words.replace(/[\s.,;:–—-]+$/, '')}…`

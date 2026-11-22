@@ -13,6 +13,6 @@ export interface ProjectImage extends ImageMetadata {
 }
 
 export interface ProjectType extends ProjectSource {
-  descriptionHtml: string
+  contentHtml: string
   images: ProjectImage[]
 }

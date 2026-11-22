@@ -32,18 +32,19 @@ describe('getProjects', () => {
     expect(firstProject.slug).toBeDefined()
     expect(firstProject.title).toBeDefined()
     expect(firstProject.description).toBeDefined()
-    expect(firstProject.descriptionHtml).toBeDefined()
+    expect(firstProject.content).toBeDefined()
+    expect(firstProject.contentHtml).toBeDefined()
     expect(firstProject.techstack).toBeDefined()
     expect(firstProject.images).toBeDefined()
     expect(Array.isArray(firstProject.images)).toBe(true)
   })
 
-  it('converts markdown description to HTML', async () => {
+  it('converts markdown content to HTML', async () => {
     const projects = await getProjects()
     const firstProject = projects[0]
 
-    expect(firstProject.descriptionHtml).toContain('<p>')
-    expect(firstProject.descriptionHtml).not.toBe(firstProject.description)
+    expect(firstProject.contentHtml).toContain('<p>')
+    expect(firstProject.contentHtml).not.toBe(firstProject.content)
   })
 
   it('includes project images', async () => {
@@ -66,6 +67,7 @@ describe('getProjects', () => {
     expect(typeof firstProject.slug).toBe('string')
     expect(typeof firstProject.title).toBe('string')
     expect(typeof firstProject.description).toBe('string')
+    expect(typeof firstProject.content).toBe('string')
     expect(Array.isArray(firstProject.techstack)).toBe(true)
     expect(firstProject.techstack.length).toBeGreaterThan(0)
   })

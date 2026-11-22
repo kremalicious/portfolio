@@ -18,6 +18,7 @@ describe('parseProjects', () => {
 - slug: test-project
   title: Test Project
   description: A test project description
+  content: A test project content
   techstack:
     - TypeScript
     - React
@@ -32,6 +33,7 @@ describe('parseProjects', () => {
     expect(projects[0].slug).toBe('test-project')
     expect(projects[0].title).toBe('Test Project')
     expect(projects[0].description).toBe('A test project description')
+    expect(projects[0].content).toBe('A test project content')
     expect(projects[0].techstack).toEqual(['TypeScript', 'React'])
     expect(projects[0].links).toHaveLength(1)
     expect(projects[0].links?.[0].title).toBe('GitHub')
@@ -42,6 +44,7 @@ describe('parseProjects', () => {
 - slug: minimal-project
   title: Minimal Project
   description: Just a description
+  content: Just some content
   techstack:
     - HTML
 `
@@ -73,6 +76,7 @@ describe('parseProjects', () => {
     const yamlContent = `
 - title: No Slug
   description: Missing slug
+  content: Missing slug
   techstack:
     - HTML
 `
@@ -86,6 +90,7 @@ describe('parseProjects', () => {
 - slug: empty-stack
   title: Empty Stack
   description: Has empty techstack
+  content: Has empty techstack
   techstack: []
 `
     const projects = parseProjects(yamlContent)
@@ -98,6 +103,7 @@ describe('parseProjects', () => {
 - slug: invalid-link
   title: Invalid Link
   description: Has invalid URL
+  content: Has invalid URL
   techstack:
     - HTML
   links:
