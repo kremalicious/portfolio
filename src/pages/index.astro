@@ -6,12 +6,13 @@ import { getProjects } from '@/features/projects/lib/get-projects'
 
 import Repositories from '@/features/repositories/components/Repositories.astro'
 import { getRepos } from '@/features/repositories/lib/get-repos'
+import { getHomeStructuredData } from '@/lib/structured-data'
 
 const repos = await getRepos()
 const projects = await getProjects()
 ---
 
-<BaseLayout noHeader>
+<BaseLayout noHeader structuredData={getHomeStructuredData()}>
   <Hero />
   <Projects projects={projects} />
   <Repositories repos={repos} />

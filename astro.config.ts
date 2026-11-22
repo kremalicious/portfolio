@@ -11,6 +11,7 @@ export default defineConfig({
   output: 'static',
   integrations: [sitemap()],
   site: meta.url,
+  trailingSlash: 'always',
   fonts: [
     {
       name: 'Brandon Grotesque',

@@ -1,6 +1,7 @@
 ---
 import { Font, getImage } from 'astro:assets'
 import meta from '@content/meta.json'
+import type { StructuredData } from '@/lib/structured-data'
 
 // import faviconSrc from '@/images/favicon.png'
 // import faviconSvgSrc from '@/images/favicon.svg'
@@ -9,9 +10,10 @@ type Props = {
   title?: string
   description?: string
   image?: ImageMetadata
+  structuredData?: StructuredData
 }
 
-const { title, description, image } = Astro.props
+const { title, description, image, structuredData } = Astro.props
 const { name, label } = meta.author
 
 const titleFinal =
@@ -19,9 +21,19 @@ const titleFinal =
     ? `${title} // ${name.toLowerCase()} { ${label.toLowerCase()} }`
     : `${name.toLowerCase()} { ${label.toLowerCase()} }`
 
-const descriptionFinal = description
-  ? description.trim().slice(0, 160)
-  : meta.description
+const descriptionMaxLength = 160
+
+function truncateDescription(text: string) {
+  const normalized = text.replace(/\s+/g, ' ').trim()
+  if (normalized.length <= descriptionMaxLength) return normalized
+
+  const cut = normalized.slice(0, descriptionMaxLength - 1)
+  const lastSpace = cut.lastIndexOf(' ')
+  const words = lastSpace > 0 ? cut.slice(0, lastSpace) : cut
+  return `${words.replace(/[\s.,;:–—-]+$/, '')}…`
+}
+
+const descriptionFinal = truncateDescription(description ?? meta.description)
 
 const canonicalUrl =
   Astro.url.pathname === '/'
@@ -33,6 +45,10 @@ const imageFinal = `${Astro.site?.origin}${
     ? (await getImage({ src: image, width: 800, format: 'jpg' })).src
     : meta.img
 }`
+
+const structuredDataJson = structuredData
+  ? JSON.stringify(structuredData).replaceAll('<', '\\u003c')
+  : undefined
 
 const imageFinalAlt = image ? `Teaser image for ${title}` : 'Logo'
 const isProduction = process.env.NODE_ENV === 'production'
@@ -75,7 +91,10 @@ const shouldIncludeAnalytics =
 
   <link rel="canonical" href={canonicalUrl}>
   <meta name="description" content={descriptionFinal}>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content={name}>
   <meta property="og:title" content={titleFinal}>
+  <meta property="og:description" content={descriptionFinal}>
   <meta property="og:image" content={imageFinal}>
   <meta property="og:image:alt" content={imageFinalAlt}>
   <meta property="og:url" content={canonicalUrl}>
@@ -96,6 +115,14 @@ const shouldIncludeAnalytics =
   <link rel="manifest" href="/manifest.webmanifest">
 
   <link rel="sitemap" href="/sitemap-index.xml">
+
+  {structuredDataJson && (
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={structuredDataJson}
+    />
+  )}
 
   <Font cssVariable="--font-ff-tisa-sans-pro" />
   <Font cssVariable="--font-brandon-grotesque" />

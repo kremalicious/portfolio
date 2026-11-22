@@ -24,3 +24,5 @@ User-agent: peer39_crawler/1.0
 User-agent: PerplexityBot
 User-agent: YouBot
 Disallow: /
+
+Sitemap: https://matthiaskretschmann.com/sitemap-index.xml

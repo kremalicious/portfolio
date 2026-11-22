@@ -3,6 +3,8 @@ import BaseLayout from '@/components/layouts/Base.astro'
 import Project from '@/features/projects/components/Project/Project.astro'
 import ProjectNav from '@/features/projects/components/ProjectNav/index.astro'
 import { getProjects } from '@/features/projects/lib/get-projects'
+import { markdownToText } from '@/features/projects/lib/markdown'
+import { getCreativeWorkStructuredData } from '@/lib/structured-data'
 
 export async function getStaticPaths() {
   const projects = await getProjects()
@@ -15,12 +17,20 @@ export async function getStaticPaths() {
 const { slug } = Astro.params
 const { project } = Astro.props
 const projects = await getProjects()
+const description = markdownToText(project.description)
+const structuredData = getCreativeWorkStructuredData({
+  title: project.title,
+  description,
+  url: new URL(Astro.url.pathname, Astro.site).href,
+  keywords: project.techstack
+})
 ---
 
 <BaseLayout
   title={project.title}
-  description={`${project.description.slice(0, 157)}...`}
+  description={description}
   image={project.images[0]}
+  structuredData={structuredData}
 >
   <Project project={project} />
   <ProjectNav projects={projects} currentSlug={slug} />

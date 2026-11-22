@@ -6,19 +6,32 @@ import Head from '@/components/common/Head.astro'
 import Header from '@/components/common/Header/Header.astro'
 import HostnameCheck from '@/components/common/HostnameCheck/HostnameCheck.astro'
 import ThemeSwitch from '@/features/theme-switch/components/ThemeSwitch.astro'
+import type { StructuredData } from '@/lib/structured-data'
 
 type Props = {
   title?: string
   description?: string
   image?: ImageMetadata
   noHeader?: boolean
+  structuredData?: StructuredData
 }
 
-const { noHeader = false, title, description, image } = Astro.props
+const {
+  noHeader = false,
+  title,
+  description,
+  image,
+  structuredData
+} = Astro.props
 ---
 
 <html lang="en">
-  <Head title={title} description={description} image={image} />
+  <Head
+    title={title}
+    description={description}
+    image={image}
+    structuredData={structuredData}
+  />
 
   <body>
     <HostnameCheck allowedHosts={meta.allowedHosts} />
