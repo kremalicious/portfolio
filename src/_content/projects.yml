@@ -1,10 +1,10 @@
 - title: Onde
   slug: onde
-  description: Onde is a geographic data API for city and country search, created with alatus labs in 2026. I designed and built the API, website, and documentation.
+  description: A geographic data API for city and country search, built with alatus labs in 2026. I designed and built the API, website, and developer docs.
   content: |
     While building [Lugara](/lugara/), we couldn't find a city dataset we actually trusted. So we built our own and opened it up to other developers as a public API.
 
-    Created with alatus labs in 2026, Onde is a focused geographic data service. I designed and built the API, the website, and the developer documentation.
+    Created with alatus labs in 2026, Onde provides clean geographic data for city and country search. I designed and built the API, the website, and the developer documentation.
   links:
     - title: Onde
       icon: Compass
@@ -24,9 +24,9 @@
 
 - title: Lugara
   slug: lugara
-  description: Lugara turns years of trips into a personal atlas on an interactive map. I designed the identity and built the web app and mapping services with alatus labs.
+  description: Turns years of trips into a personal atlas on an interactive map. I designed the identity and built the web app and mapping services with alatus labs.
   content: |
-    Lugara turns years of trips into a personal atlas: an interactive map of everywhere you've been, built with alatus labs, an independent product studio.
+    A personal atlas built from years of travel: an interactive map of everywhere you've been, created with alatus labs, an independent product studio.
 
     I crafted the visual identity and design system, then built the web application and the mapping services behind it.
   links:
@@ -45,9 +45,9 @@
 
 - title: Ocean Market
   slug: oceanprotocol-market
-  description: Ocean Market was the flagship web app of Ocean Protocol v3 for publishing, pricing, and monetizing datasets. I led product design and front-end engineering.
+  description: The flagship decentralized web app for Ocean Protocol v3, letting anyone publish, price, and monetize datasets. Product design and front-end engineering.
   content: |
-    Ocean Market was the flagship decentralized web app for Ocean Protocol v3, letting anyone publish, price, and monetize datasets across EVM networks.
+    The flagship decentralized web app for Ocean Protocol v3, built so anyone could publish, price, and monetize datasets across EVM networks.
 
     In 2020, I led product design and front-end engineering for the app. Attaching Automated Market Maker pools to datatokens brought dynamic price discovery to data, while on-chain metadata and token-gated access (from direct downloads to Compute-to-Data) established a verifiable trail of provenance.
 
@@ -76,7 +76,7 @@
 
 - title: Ocean Protocol - IPFS Integration
   slug: oceanprotocol-ipfs
-  description: In 2019 I integrated IPFS across the Ocean Protocol stack, so publishing a dataset required no node and no terminal.
+  description: Integrating IPFS across the Ocean Protocol stack in 2019, with a public node, upload UI, and API so publishing datasets needed no CLI.
   content: |
     Decentralized storage tends to come with rough UX. In 2019, I integrated IPFS across the Ocean Protocol stack, from infrastructure and API to UI, so publishing a dataset wouldn't require running a node or touching a terminal.
 
@@ -102,9 +102,9 @@
 
 - title: Ocean Protocol - Commons
   slug: oceanprotocol-commons
-  description: Commons was the open-data marketplace and public face of Ocean Protocol v1 and v2. I led its design and front-end engineering from 2018 to 2019.
+  description: An open-data marketplace and open-source dApp blueprint for Ocean Protocol v1 and v2. Led design and front-end engineering from 2018 to 2019.
   content: |
-    Commons was the main public face of [Ocean Protocol](/oceanprotocol-v1/) v1 and v2: an open-data marketplace for browsing, downloading, and publishing datasets on the network.
+    The main public face of [Ocean Protocol](/oceanprotocol-v1/) v1 and v2: an open-data marketplace for browsing, downloading, and publishing datasets on the network.
 
     From 2018 to 2019, I led its design and front-end engineering. Beyond showcasing the full stack in production, Commons doubled as an open-source reference codebase for developers building their own Ocean dApps, before [Ocean Market](/oceanprotocol-market/) succeeded it in v3.
   links:
@@ -132,9 +132,9 @@
 
 - title: Ocean Protocol v1
   slug: oceanprotocol-v1
-  description: From 2017 to 2020 I shaped the visual identity of Ocean Protocol and built its websites, docs, and React apps on a shared component system.
+  description: Visual identity, shared component system, docs, and React web apps for Ocean Protocol from 2017 to 2020, including the 2020 brand refresh.
   content: |
-    Between 2017 and 2020, I shaped the visual identity and built the web ecosystem for Ocean Protocol, translating a dense data-economy protocol into a cohesive family of websites, docs, and React applications backed by a shared component system.
+    Turning a dense data-economy protocol into a cohesive family of websites, docs, and React applications. Between 2017 and 2020, I shaped Ocean Protocol's visual identity and built its web ecosystem on a shared component system.
 
     In 2020, I led the brand's visual refresh ahead of the v3 release and the launch of [Ocean Market](/oceanprotocol-market/).
 
@@ -189,9 +189,9 @@
 
 - title: Berlin Innovation Ventures
   slug: biv
-  description: Brand foundations and website for Berlin Innovation Ventures, a venture capital firm in Berlin, built as a fast static site focused on typography.
+  description: Brand foundations and a fast, typography-led static website for Berlin Innovation Ventures, a venture capital firm in Berlin.
   content: |
-    Brand foundations and website for Berlin Innovation Ventures, a venture capital firm in Berlin. Designed and built as a fast, lightweight static site focused on typography and clarity.
+    Brand foundations and a lightweight static website for a Berlin-based venture capital firm, designed and built with an emphasis on typography, speed, and clarity.
   techstack:
     - Sketch
     - Jekyll
@@ -206,7 +206,7 @@
 
 - title: 9984 >> Summit 2017
   slug: '9984'
-  description: 9984 >> Summit 2017 was the first joint conference of BigchainDB and IPDB. I directed the visual identity and designed and built the website.
+  description: Visual identity and website for the first joint conference of BigchainDB and IPDB, named after BigchainDB's default HTTP API port.
   img: /images/9984-01.png
   links:
     - title: GitHub
@@ -230,7 +230,7 @@
 
 - title: BigchainDB
   slug: bigchaindb
-  description: From 2016 to 2019 I built the brand and web presence of BigchainDB from scratch, with a shared UI component system across every website.
+  description: Brand, shared UI component system, and web properties built from scratch for BigchainDB, a scalable blockchain database (2016–2019).
   content: |
     Between 2016 and 2019, I built BigchainDB's brand and web presence from scratch: defining the visual direction, creating a shared UI component system, and building every web property across the company.
 
@@ -287,7 +287,7 @@
 
 - title: ChartMogul
   slug: chartmogul
-  description: From 2015 to 2017 I co-designed and led front-end development for ChartMogul, the subscription analytics company, across its websites and product.
+  description: Design system, marketing sites, and core product front-end work for ChartMogul's SaaS subscription analytics platform (2015–2017).
   content: |
     [ChartMogul](https://chartmogul.com) builds subscription analytics for SaaS companies. Between 2015 and 2017, I co-designed and led front-end development across its web properties, rolling out a component-based design system spanning the marketing site, landing pages, and a custom WordPress blog.
 
@@ -320,9 +320,9 @@
 
 - title: ShareTheMeal
   slug: sharethemeal
-  description: ShareTheMeal is the UN World Food Programme app for funding meals for children in need. I co-designed and led front-end development from 2015 to 2017.
+  description: The UN World Food Programme app for funding meals for children in need. Consulted on design and front-end engineering across web and mobile (2015–2017).
   content: |
-    ShareTheMeal is the United Nations World Food Programme's app for funding meals for children in need with a single tap.
+    The United Nations World Food Programme's app for funding meals for children in need with a single tap.
 
     Between 2015 and 2017, I consulted with the team to co-design and lead front-end development across the website and the iOS and Android apps.
   techstack:
@@ -343,7 +343,7 @@
 
 - title: ezeep
   slug: ezeep
-  description: From 2012 to 2015 I directed the brand and led product design and front-end engineering at ezeep, bringing emotional design to cloud printing.
+  description: Bringing consumer-grade craft and emotional design to cloud printing. Brand direction, product design, and front-end engineering at ezeep (2012–2015).
   content: |
     Enterprise printing software is rarely pleasant to use. At ezeep from 2012 to 2015, I set out to change that by bringing consumer-grade craft and emotional design to cloud printing.
 
@@ -384,7 +384,7 @@
 
 - title: iPixelPad
   slug: ipixelpad
-  description: iPixelPad is a set of crisp, hand-crafted small-size iPad icons, released as a freebie on kremalicious.com.
+  description: A set of crisp, hand-crafted small-size iPad icons built for the tiny sizes everyone else skipped, released as a freebie on kremalicious.com.
   content: |
     When everyone started releasing iPad icons but skipped the small sizes, there was only one thing left to do: push the pixels myself. iPixelPad is a set of crisp, hand-crafted small-size iPad icons.
 
@@ -397,7 +397,7 @@
 
 - title: Out Of Whale Oil
   slug: outofwhaleoil
-  description: Out Of Whale Oil is a tribute wallpaper pack inspired by the Futurama film Into The Wild Green Yonder, released as a freebie.
+  description: A tribute wallpaper pack inspired by the Futurama film Into The Wild Green Yonder, released as a freebie on kremalicious.com.
   content: |
     A tribute wallpaper pack inspired by the Futurama film _Into The Wild Green Yonder_. Released as a freebie on [kremalicious.com](https://kremalicious.com/out-of-whale-oil/).
   links:
@@ -408,7 +408,7 @@
 
 - title: Martin-Luther-Universität Halle-Wittenberg
   slug: unihalle
-  description: From 2009 to 2012 I designed and built internal tools, public web interfaces, and the campus blog network at Martin-Luther-Universität Halle-Wittenberg.
+  description: Internal tools, public web interfaces for thousands of students and staff, and the campus-wide blog network built inside IT services (2009–2012).
   content: |
     From 2009 to 2012, I worked in the IT services department at [Martin-Luther-Universität Halle-Wittenberg](http://www.uni-halle.de), designing and building internal tools and public web interfaces used daily by thousands of students and staff.
 
@@ -432,7 +432,7 @@
 
 - title: Coffee Cup
   slug: coffeecup
-  description: Coffee Cup is a set of desktop icons celebrating the unofficial fuel of designers and developers, released as a freebie.
+  description: A set of macOS desktop icons celebrating the unofficial fuel of designers and developers, released as a freebie on kremalicious.com.
   content: |
     Desktop icons celebrating the unofficial fuel of designers and developers. Released as a freebie on [kremalicious.com](https://kremalicious.com/coffee-cup-icon/).
   techstack:
@@ -443,7 +443,7 @@
 
 - title: Project Purple
   slug: projectpurple
-  description: Project Purple is a wallpaper about the locked-down Apple building where the original iPhone was built, Fight Club references included.
+  description: A wallpaper inspired by the locked-down Apple building where the original iPhone was built, Fight Club references included.
   content: |
     The original iPhone was built inside a locked-down Apple building codenamed Project Purple, decorated with _Fight Club_ references to underscore the secrecy. Too good a piece of tech folklore not to turn into a wallpaper.
 
@@ -470,7 +470,7 @@
 
 - title: Aperture Loupe
   slug: apertureloupe
-  description: Aperture Loupe is a macOS desktop icon from 2008, inspired by the loupe tool in Apple's Aperture.
+  description: A 2008 macOS desktop icon inspired by the tactile loupe tool in Apple's Aperture.
   content: |
     The loupe tool in Apple's _Aperture_ felt like a rare piece of interface magic: tactile, novel, and genuinely fun to play with. In 2008, I turned that fascination into a custom macOS desktop icon.
   techstack:
@@ -478,7 +478,7 @@
 
 - title: Adiumeetie
   slug: adiumeetie
-  description: Adiumeetie is a 2009 macOS replacement icon for the IM client Adium, riffing on the Tweetie for Mac icon by atebits.
+  description: A 2009 macOS replacement icon for the IM client Adium, riffing on atebits' beloved Tweetie for Mac icon.
   content: |
     A 2009 macOS replacement icon for the Mac IM client Adium, riffing on atebits' beloved Tweetie for Mac icon. Released as a freebie on [kremalicious.com](https://kremalicious.com/adiumeetie/).
   techstack:
@@ -491,9 +491,9 @@
   slug: niepces-camera-obscura
   description: A 2008 replacement icon for Aperture and iPhoto, modeled after the camera obscura Nicéphore Niépce used for the first surviving photograph.
   content: |
-    A 2008 replacement icon for Aperture and iPhoto, modeled after the camera obscura Nicéphore Niépce used in 1826 to capture the world's first surviving photograph.
+    In 1826, Nicéphore Niépce used a camera obscura and a bitumen-coated plate to capture the world's first surviving photograph, _View from the Window at Le Gras_, the very image tucked inside Apple's iPhoto icon.
 
-    Using a bitumen-coated plate in a process he called heliography, Niépce produced _View from the Window at Le Gras_, the very photograph tucked inside the iPhoto icon itself.
+    In 2008, I turned Niépce's camera obscura into a custom replacement icon for Aperture and iPhoto.
   links:
     - title: Info
       url: |
