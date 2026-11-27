@@ -11,11 +11,12 @@ const { projects } = Astro.props
 
 <section class="projects">
   {projects.length > 0 &&
-    projects.map((project) => (
+    projects.map((project, index) => (
       <ProjectPreview
         title={project.title}
         slug={project.slug}
         images={project.images}
+        priority={index < 2}
       />
     ))}
 </section>

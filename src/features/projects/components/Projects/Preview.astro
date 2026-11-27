@@ -7,14 +7,20 @@ type Props = {
   title: string
   slug: string
   images: ProjectImageType[]
+  priority?: boolean
 }
 
-const { title, slug, images } = Astro.props as Props
+const { title, slug, images, priority = false } = Astro.props as Props
 ---
 
 <a href={`/${slug}`} class={styles.project}>
   {images && images.length > 0 && (
-    <ProjectImage image={images[0]} alt={title} width={800} />
+    <ProjectImage
+      image={images[0]}
+      alt={title}
+      width={800}
+      priority={priority}
+    />
   )}
   <footer class={styles.meta}>
     <h2 class={styles.title}>{title}</h2>

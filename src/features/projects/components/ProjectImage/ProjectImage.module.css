@@ -24,17 +24,21 @@ a:focus .frame {
 
 .image {
   display: block;
-  opacity: 0;
-  transition:
-    opacity 0.3s ease-out,
-    transform 0.7s ease-out;
 
   /* Disable text selection for Safari Live Text */
   user-select: none;
 }
 
-a:hover .image,
-a:focus .image {
-  transform: scale(1.03);
-  transform-style: preserve-3d;
+@media (prefers-reduced-motion: no-preference) {
+  .image {
+    transition: transform 0.7s ease-out;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover .image,
+  a:focus-visible .image {
+    transform: scale(1.03);
+    transform-style: preserve-3d;
+  }
 }

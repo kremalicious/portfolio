@@ -8,9 +8,10 @@ type Props = {
   alt: string
   className?: string
   width?: number
+  priority?: boolean
 }
 
-const { image, alt, className, width } = Astro.props as Props
+const { image, alt, className, width, priority = false } = Astro.props as Props
 if (!image) return null
 
 const baseWidths = [400, 800, 1200]
@@ -62,8 +63,8 @@ const fallbackImage = images[images.length - 1]
     alt={alt}
     width={fallbackImage.attributes.width}
     height={fallbackImage.attributes.height}
-    loading="lazy"
+    loading={priority ? 'eager' : 'lazy'}
+    fetchpriority={priority ? 'high' : undefined}
     decoding="async"
-    onload={`this.style.opacity='1'`}
   >
 </figure>

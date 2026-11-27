@@ -23,8 +23,13 @@ const { title, contentHtml, links, techstack, images } = project
     set:html={contentHtml ?? ''}
   />
 
-  {images.map((image) => (
-    <ProjectImage image={image} alt={title} className={styles.fullContainer} />
+  {images.map((image, index) => (
+    <ProjectImage
+      image={image}
+      alt={title}
+      className={styles.fullContainer}
+      priority={index === 0}
+    />
   ))}
 
   <footer class={styles.meta}>
