@@ -10,7 +10,7 @@ export async function enhanceProject(
   if (!project) return
 
   const contentHtml = await markdownToHtml(project.content)
-  const images = await getProjectImages(slug)
+  const images = await getProjectImages(project.images)
 
   return {
     ...project,

@@ -17,7 +17,7 @@ const { project, isCurrent } = Astro.props
   title={project.title}
   data-current={isCurrent ? 'true' : undefined}
 >
-  <ProjectImage image={project.images[0]} alt={project.title} width={840} />
+  <ProjectImage image={project.images[0]} width={840} decorative />
   <h4 class="title">{project.title}</h4>
 </a>
 

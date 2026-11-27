@@ -17,9 +17,9 @@ const { title, slug, images, priority = false } = Astro.props as Props
   {images && images.length > 0 && (
     <ProjectImage
       image={images[0]}
-      alt={title}
       width={800}
       priority={priority}
+      decorative
     />
   )}
   <footer class={styles.meta}>

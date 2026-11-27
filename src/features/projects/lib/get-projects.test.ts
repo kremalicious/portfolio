@@ -9,6 +9,7 @@ const mockImages: ProjectImage[] = [
     width: 1920,
     height: 1080,
     format: 'png',
+    alt: 'Test project preview',
     dominantColor: 'rgb(100, 150, 200)'
   }
 ]
@@ -57,6 +58,7 @@ describe('getProjects', () => {
     expect(projectWithImages?.images[0]).toHaveProperty('src')
     expect(projectWithImages?.images[0]).toHaveProperty('width')
     expect(projectWithImages?.images[0]).toHaveProperty('height')
+    expect(projectWithImages?.images[0]).toHaveProperty('alt')
     expect(projectWithImages?.images[0]).toHaveProperty('dominantColor')
   })
 

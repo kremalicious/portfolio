@@ -3,6 +3,9 @@
   description: Plain text for search results, 160 characters at most.
   content: >
     Markdown can be used here.
+  images:
+    - file: SLUG-01.png
+      alt: Concise description of the image.
   links:
     - title: Link
       url: https://url

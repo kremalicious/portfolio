@@ -5,6 +5,17 @@
     While building [Lugara](/lugara), we couldn't find a city dataset we actually trusted. So we built our own and opened it up to other developers as a public API.
 
     Created with alatus labs in 2026, Onde provides clean geographic data for city and country search. I designed and built the API, the website, and the developer documentation.
+  images:
+    - file: onde-01.png
+      alt: Onde dark world map drawn in topographic wave lines with orange coordinate pins for Reykjavík, New York, Lisbon, São Paulo, and Mumbai.
+    - file: onde-02.png
+      alt: Onde website homepage in light desktop and dark mobile views with topographic lines, city search headline, and Create a Free Key button.
+    - file: onde-03.png
+      alt: Onde interactive API playground in light and dark themes with autocomplete and reverse lookup requests for Kyoto in cURL and JSON.
+    - file: onde-04.png
+      alt: Onde annotated JSON response for Kyoto with callouts for city ID, localized names, ISO codes, coordinates, IANA time zone, and dataset metadata.
+    - file: onde-05.png
+      alt: Onde API reference page for the city autocomplete endpoint with query parameters on the left and a cURL request and JSON response on the right.
   links:
     - title: Onde
       icon: Compass
@@ -29,6 +40,15 @@
     A personal atlas built from years of travel: an interactive map of everywhere you've been, created with alatus labs, an independent product studio.
 
     I crafted the visual identity and design system, then built the web application and the mapping services behind it.
+  images:
+    - file: lugara-01.png
+      alt: Lugara landing page hero with Travel Tracking for Modern Explorers headline, Create Your Profile button, and three traveler profile cards.
+    - file: lugara-02.png
+      alt: Lugara natural-language trip input parsing a flight to Istanbul beside a 3D globe with European travel routes between London and Berlin.
+    - file: lugara-03.png
+      alt: Lugara travel analytics cards with the Exploration Wheel continent chart, an 8.2 Globe Trotter Exploration Score, and circular country flag badges.
+    - file: lugara-04.png
+      alt: Lugara traveler profile on desktop and mobile with a dark blue interactive globe, route arcs, and trip counts.
   links:
     - title: Lugara
       icon: Compass
@@ -52,6 +72,17 @@
     In 2020, I led product design and front-end engineering for the app. Attaching Automated Market Maker pools to datatokens brought dynamic price discovery to data, while on-chain metadata and token-gated access (from direct downloads to Compute-to-Data) established a verifiable trail of provenance.
 
     Shipped open-source, it went on to serve as the blueprint for third-party data marketplaces built on Ocean Protocol.
+  images:
+    - file: oceanprotocol-market-01.png
+      alt: Ocean Market multi-network switcher popover in light and dark modes with toggles for Ethereum, Polygon, BSC, and test networks.
+    - file: oceanprotocol-market-02.png
+      alt: Ocean Market dark-mode homepage with wave lines, bookmarked datasets, and a grid of highest-liquidity data pools.
+    - file: oceanprotocol-market-03.png
+      alt: Ocean Market dark-mode dataset page for an ocean chlorophyll satellite image with a Compute-to-Data algorithm selector and Buy Compute Job button.
+    - file: oceanprotocol-market-04.png
+      alt: Ocean Market liquidity pool card in dark and light themes with datatoken exchange rate, pool shares, TVL chart, and Add Liquidity button.
+    - file: oceanprotocol-market-05.png
+      alt: Ocean Market light-mode homepage with wave background, bookmarks list, and highest-liquidity dataset cards.
   links:
     - title: Ocean Makes Multi-Network Even Easier
       icon: FileText
@@ -81,6 +112,11 @@
     Decentralized storage tends to come with rough UX. In 2019, I integrated IPFS across the Ocean Protocol stack, from infrastructure and API to UI, so publishing a dataset wouldn't require running a node or touching a terminal.
 
     I built a public IPFS node with a focused upload interface and API, then wired it directly into the publish flow of [Commons](/oceanprotocol-commons) so files could be pinned and shared in one step.
+  images:
+    - file: oceanprotocol-ipfs-01.png
+      alt: Dark Ocean Protocol IPFS gateway web interface with drag-and-drop file upload box, gateway URLs, and js-ipfs-http-client code example.
+    - file: oceanprotocol-ipfs-02.png
+      alt: Ocean Protocol Commons file input with a confirmed IPFS hash URL and an inline Add File To IPFS upload dropzone.
   links:
     - title: 'Ocean Protocol and IPFS, Sitting In The Merkle Tree'
       icon: FileText
@@ -107,6 +143,17 @@
     The main public face of [Ocean Protocol](/oceanprotocol-v1) v1 and v2: an open-data marketplace for browsing, downloading, and publishing datasets on the network.
 
     From 2018 to 2019, I led its design and front-end engineering. Beyond showcasing the full stack in production, Commons doubled as an open-source reference codebase for developers building their own Ocean dApps, before [Ocean Market](/oceanprotocol-market) succeeded it in v3.
+  images:
+    - file: oceanprotocol-commons-01.png
+      alt: Ocean Protocol Commons marketplace homepage with a magenta dataset search bar and Featured Channel dataset cards.
+    - file: oceanprotocol-commons-02.png
+      alt: Three dark Ocean Commons dataset download cards for CSV and ZIP files with jellyfish line art and magenta Get File buttons.
+    - file: oceanprotocol-commons-03.png
+      alt: Ocean Protocol Commons four-step publish form on step 1 Essentials with a title field and URL or IPFS file buttons.
+    - file: oceanprotocol-commons-04.png
+      alt: Ocean Protocol Commons status page with the connected Web3 burner wallet address and live version indicators for Commons, Squid-js, Aquarius, Brizo, and Faucet.
+    - file: oceanprotocol-commons-05.png
+      alt: Ocean Protocol Commons AI For Good channel page with banner image, initiative overview, and open dataset cards.
   links:
     - title: The Commons Marketplace in Pacific Network
       icon: FileText
@@ -139,6 +186,21 @@
     In 2020, I led the brand's visual refresh ahead of the v3 release and the launch of [Ocean Market](/oceanprotocol-market).
 
     Initial website in collaboration with [Balance](https://balance.io/). Key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
+  images:
+    - file: oceanprotocol-v1-01.png
+      alt: Ocean Protocol v1 website with dark dotted-wave hero banner, data provider and consumer diagram, and AI data statistics.
+    - file: oceanprotocol-v1-02.png
+      alt: Ocean Protocol v1 homepage hero with introductory video thumbnail, Learn About The Project button, and community bounty links.
+    - file: oceanprotocol-v1-03.png
+      alt: Ocean Protocol documentation portal with Core Concepts, Setup Guides, and Tutorials cards above a Docker quickstart snippet.
+    - file: oceanprotocol-v1-04.png
+      alt: Ocean Protocol World Tour events section on a dark background with wireframe jellyfish art and dates for Tokyo, Seoul, Seattle, Shanghai, and San Francisco.
+    - file: oceanprotocol-v1-05.png
+      alt: Ocean Protocol dark purple website sections with a hexagonal milestone roadmap, events grid, and Data Economy Meetups city links.
+    - file: oceanprotocol-v1-06.png
+      alt: Dark Ocean Protocol account signup card with magenta-bordered email and password fields and a gradient Signup button.
+    - file: oceanprotocol-v1-07.png
+      alt: Ocean Protocol Data Economy Challenge dark teal landing page with global wireframe map, submission timeline, and three prize track cards.
   links:
     - title: '@oceanprotocol/art'
       icon: GitHub
@@ -171,6 +233,15 @@
     The Interplanetary Database (IPDB) was a public blockchain database network powered by [BigchainDB](/bigchaindb). Between 2015 and 2017, I shaped its visual direction and designed and built all of its web properties.
 
     Branding and key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
+  images:
+    - file: ipdb-01.png
+      alt: IPDB website hero banner on dark teal with geometric planetary node illustrations and a magenta Get Started button.
+    - file: ipdb-02.png
+      alt: IPDB website sections with the planetary-scale database overview, horizontal rollout roadmap timeline, and three-step developer onboarding guide.
+    - file: ipdb-03.png
+      alt: IPDB Foundation and governance webpage with sub-navigation links, introductory copy, and a geometric mesh illustration.
+    - file: ipdb-04.png
+      alt: IPDB contact form with name, email, and message fields and a rounded Submit button between angled color bands.
   techstack:
     - Sketch
     - Jekyll
@@ -192,6 +263,9 @@
   description: Brand foundations and a fast, typography-led static website for Berlin Innovation Ventures, a venture capital firm in Berlin.
   content: |
     Brand foundations and a lightweight static website for a Berlin-based venture capital firm, designed and built with an emphasis on typography, speed, and clarity.
+  images:
+    - file: biv-01.png
+      alt: Berlin Innovation Ventures website with a purple-to-magenta Berlin TV Tower hero photo and two-column mission statement.
   techstack:
     - Sketch
     - Jekyll
@@ -207,7 +281,11 @@
 - title: 9984 >> Summit 2017
   slug: '9984'
   description: Visual identity and website for the first joint conference of BigchainDB and IPDB, named after BigchainDB's default HTTP API port.
-  img: /images/9984-01.png
+  images:
+    - file: 9984-01.png
+      alt: 9984 Summit 2017 conference website with dark pixelated hero section, speaker grid, and ESMT Berlin venue map.
+    - file: 9984-02.png
+      alt: 9984 Summit 2017 speaker profile page for Vinay Gupta with biography and keynote session details.
   links:
     - title: GitHub
       url: 'https://github.com/9984/2017.9984.io'
@@ -237,6 +315,17 @@
     The main site paired a fast static front-end with live data pulled from external APIs and microservices, turning a scalable blockchain database into a clear, approachable product for developers.
 
     Branding and key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
+  images:
+    - file: bigchaindb-01.png
+      alt: BigchainDB initial website with aurora hero banner, throughput chart, pip install snippet, and whitepaper section.
+    - file: bigchaindb-02.jpg
+      alt: BigchainDB 2.0 website homepage with Berlin skyline and aurora hero header, live GitHub release bar, and product overview.
+    - file: bigchaindb-03.png
+      alt: BigchainDB features grid and network setup section with geometric node illustrations for the managed test network and self-hosted server.
+    - file: bigchaindb-04.png
+      alt: "The Hitchhiker's Guide to BigchainDB developer documentation landing page with illustrated planetary nodes and a Don't Panic flag."
+    - file: bigchaindb-05.png
+      alt: BigchainDB contributor license agreement form with tabs for individuals and organizations on a dark slate card.
   techstack:
     - BigchainDB
     - Sketch
@@ -265,6 +354,9 @@
     From 2015 to 2017, I built UI across ascribe's web touchpoints, including a main web app written in an early version of React, before the service was [discontinued in 2017](https://www.ascribe.io/).
 
     Branding and key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
+  images:
+    - file: ascribe-01.png
+      alt: ascribe website homepage with monochrome artist studio header photo, Create a Free Account button, and attribution feature icons.
   techstack:
     - ascribe
     - Sketch
@@ -294,6 +386,17 @@
     Inside the product itself, I designed and shipped new features while refactoring much of the core application's front-end codebase.
 
     Brand direction, design, and key visuals by Michelle Myung.
+  images:
+    - file: chartmogul-01.png
+      alt: ChartMogul marketing pages for Stripe subscription analytics and team reporting with MRR line charts and a revenue heat map.
+    - file: chartmogul-02.png
+      alt: ChartMogul integrations directory and Google Sheets integration landing page with install, export, and analyze steps.
+    - file: chartmogul-03.png
+      alt: Three purple ChartMogul product landing pages for Subscription Analytics and Revenue Recognition with dashboard preview and geometric illustrations.
+    - file: chartmogul-04.png
+      alt: ChartMogul SaaS Cheat Sheets and SaaS Open Mic Podcasts resource pages with a downloadable SaaS Finance guide preview.
+    - file: chartmogul-05.png
+      alt: ChartMogul web app sign-in card with email and password inputs, coral Log In button, and teal Create Account button.
   techstack:
     - Sketch
     - Affinity Designer
@@ -325,6 +428,9 @@
     The United Nations World Food Programme's app for funding meals for children in need with a single tap.
 
     Between 2015 and 2017, I consulted with the team to co-design and lead front-end development across the website and the iOS and Android apps.
+  images:
+    - file: sharethemeal-01.png
+      alt: ShareTheMeal homepage with a child portrait, an 8.25 million shared meals counter, mobile app mockups, and App Store, Google Play, and Amazon badges.
   techstack:
     - Sketch
     - Illustrator
@@ -350,6 +456,23 @@
     I directed the brand and led product design and front-end engineering across every touchpoint, from user and market research to shipping apps for macOS, Windows, iOS, and Android.
 
     ezeep was acquired by [Cortado AG](https://www.cortado.com) in 2015 and became part of [ThinPrint Cloud Services](https://www.thinprintcloud.com).
+  images:
+    - file: ezeep-01.png
+      alt: ezeep marketing website with the Cloud Managed Printing hero banner, cloud infrastructure diagram, and Mobile Printing overview.
+    - file: ezeep-02.png
+      alt: ezeep web app document upload screen and monthly print dashboard with printer counts, usage graph, and active users table.
+    - file: ezeep-03.png
+      alt: Two ezeep printer status cards with duplex and stapling toggles, paper size selectors, and an open cover warning banner.
+    - file: ezeep-04.png
+      alt: ezeep mobile app icons and iOS and Android screens for picking documents and configuring print settings.
+    - file: ezeep-05.png
+      alt: ezeep web app sign-in card with origami bird logo, email and password fields, and green Sign In button.
+    - file: ezeep-06.png
+      alt: Seven pastel document file-type icons for ezeep representing plain files, images, text documents, spreadsheets, and presentations.
+    - file: ezeep-07.png
+      alt: ezeep macOS desktop printer icon with the origami bird emblem and an illustrated cat printout across four icon sizes.
+    - file: ezeep-08.png
+      alt: German ezeep Care Shop website with printer subscription bundles, hardware cards, and a multi-step checkout form.
   techstack:
     - Photoshop
     - Illustrator
@@ -379,6 +502,13 @@
     A collaboration with Curious Times in 2012 on Mr. Reader, a power-user RSS reader built exclusively for the iPad.
 
     I designed the app icon, crafted a custom reading theme, and produced the promotional artwork.
+  images:
+    - file: mrreader-01.png
+      alt: Mr. Reader iPad app icon depicting a gentleman in a bowler hat with a mustache, monocle, and RSS symbols for eyes.
+    - file: mrreader-02.jpg
+      alt: Mr. Reader app icon on an iPad home screen over a starry purple space wallpaper.
+    - file: mrreader-03.png
+      alt: Mr. Reader promotional banner displayed inside the iPad App Store carousel.
   techstack:
     - Photoshop
 
@@ -389,6 +519,9 @@
     When everyone started releasing iPad icons but skipped the small sizes, there was only one thing left to do: push the pixels myself. iPixelPad is a set of crisp, hand-crafted small-size iPad icons.
 
     Released as a freebie on [kremalicious.com](https://kremalicious.com/ipixelpad/).
+  images:
+    - file: ipixelpad-01.png
+      alt: iPixelPad small-size iPad icons arranged symmetrically across three compact icon sizes on a light gray background.
   techstack:
     - Photoshop
   links:
@@ -400,6 +533,13 @@
   description: A tribute wallpaper pack inspired by the Futurama film Into The Wild Green Yonder, released as a freebie on kremalicious.com.
   content: |
     A tribute wallpaper pack inspired by the Futurama film _Into The Wild Green Yonder_. Released as a freebie on [kremalicious.com](https://kremalicious.com/out-of-whale-oil/).
+  images:
+    - file: outofwhaleoil-01.jpg
+      alt: Out Of Whale Oil brushed green metal wallpaper with a nearly empty blue whale-shaped fuel gauge.
+    - file: outofwhaleoil-02.jpg
+      alt: Out Of Whale Oil brushed green metal wallpaper with a full glowing light-blue whale-shaped fuel gauge.
+    - file: outofwhaleoil-03.jpg
+      alt: Out Of Whale Oil pink brushed-metal wallpaper with the low whale fuel gauge and green spray-painted Feministas graffiti.
   links:
     - title: Info & Download
       url: 'https://kremalicious.com/out-of-whale-oil'
@@ -413,6 +553,13 @@
     From 2009 to 2012, I worked in the IT services department at [Martin-Luther-Universität Halle-Wittenberg](http://www.uni-halle.de), designing and building internal tools and public web interfaces used daily by thousands of students and staff.
 
     I also initiated, built, and maintained the university's campus-wide blog network and publishing community.
+  images:
+    - file: unihalle-01.png
+      alt: Martin-Luther-Universität Halle-Wittenberg blogs@ITZ homepage with green navigation bar, three-step blog setup list, and recent campus posts.
+    - file: unihalle-02.png
+      alt: Campus blog icon for mlublogs depicting a notepad with a green header and yellow pencil across six icon sizes.
+    - file: unihalle-03.png
+      alt: White magician top hat icon with a green band and blue sparkles rising from inside across four icon sizes.
   techstack:
     - Photoshop
     - Illustrator
@@ -435,6 +582,9 @@
   description: A set of macOS desktop icons celebrating the unofficial fuel of designers and developers, released as a freebie on kremalicious.com.
   content: |
     Desktop icons celebrating the unofficial fuel of designers and developers. Released as a freebie on [kremalicious.com](https://kremalicious.com/coffee-cup-icon/).
+  images:
+    - file: coffeecup-01.png
+      alt: Coffee Cup macOS desktop icons showing top-down white and black ceramic coffee cups on matching saucers over a gray background.
   techstack:
     - Photoshop
   links:
@@ -448,6 +598,9 @@
     The original iPhone was built inside a locked-down Apple building codenamed Project Purple, decorated with _Fight Club_ references to underscore the secrecy. Too good a piece of tech folklore not to turn into a wallpaper.
 
     Released as a freebie on [kremalicious.com](https://kremalicious.com/projectpurple/).
+  images:
+    - file: projectpurple-01.png
+      alt: Project Purple wallpaper on a deep purple background with a pink soap bar embossed with Project Purple and surrounded by soap bubbles.
   techstack:
     - Photoshop
   links:
@@ -461,6 +614,13 @@
     Brand identity and custom website built in 2009 for Allinnia Creative Group, a music production studio.
 
     Written from scratch in PHP, the site showcased their original compositions with built-in audio listening and an online store.
+  images:
+    - file: allinnia-01.png
+      alt: Allinnia Creative Group website homepage with dark brushed-metal styling, blue audio waveform graphic, and services overview.
+    - file: allinnia-02.png
+      alt: Dark glossy UI icons for Allinnia Creative Group with glowing blue audio, film, keyboard, and vinyl motifs.
+    - file: allinnia-03.png
+      alt: Three vinyl record album cover graphics designed for the Allinnia Creative Group online music store.
   techstack:
     - Photoshop
     - HTML
@@ -473,6 +633,9 @@
   description: A 2008 macOS desktop icon inspired by the tactile loupe tool in Apple's Aperture.
   content: |
     The loupe tool in Apple's _Aperture_ felt like a rare piece of interface magic: tactile, novel, and genuinely fun to play with. In 2008, I turned that fascination into a custom macOS desktop icon.
+  images:
+    - file: apertureloupe-01.png
+      alt: Aperture Loupe macOS icon set in monochrome and rainbow glass variants across three sizes on a dark slate background.
   techstack:
     - Photoshop
 
@@ -481,6 +644,9 @@
   description: A 2009 macOS replacement icon for the IM client Adium, riffing on atebits' beloved Tweetie for Mac icon.
   content: |
     A 2009 macOS replacement icon for the Mac IM client Adium, riffing on atebits' beloved Tweetie for Mac icon. Released as a freebie on [kremalicious.com](https://kremalicious.com/adiumeetie/).
+  images:
+    - file: adiumeetie-01.png
+      alt: Adiumeetie macOS replacement icon for Adium with a purple duck silhouette inside a silver speech bubble across four sizes.
   techstack:
     - Photoshop
   links:
@@ -494,6 +660,11 @@
     In 1826, Nicéphore Niépce used a camera obscura and a bitumen-coated plate to capture the world's first surviving photograph, _View from the Window at Le Gras_, the very image tucked inside Apple's iPhoto icon.
 
     In 2008, I turned Niépce's camera obscura into a custom replacement icon for Aperture and iPhoto.
+  images:
+    - file: niepces-camera-obscura-01.jpg
+      alt: "Niépce's Camera Obscura wooden box icons with glass lenses beside a monochrome print of View from the Window at Le Gras."
+    - file: niepces-camera-obscura-02.jpg
+      alt: Stacked color-tinted prints of View from the Window at Le Gras beside a white cubic wooden camera obscura icon.
   links:
     - title: Info
       url: |

@@ -9,10 +9,11 @@ export interface ProjectLink extends ProjectLinkSchema {}
 export interface ProjectSource extends ProjectSourceSchema {}
 
 export interface ProjectImage extends ImageMetadata {
+  alt: string
   dominantColor: string
 }
 
-export interface ProjectType extends ProjectSource {
+export interface ProjectType extends Omit<ProjectSource, 'images'> {
   contentHtml: string
   images: ProjectImage[]
 }

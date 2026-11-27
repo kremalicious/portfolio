@@ -1,38 +1,42 @@
 import type { ImageMetadata } from 'astro'
 import { fileURLToPath } from 'bun'
 import sharp from 'sharp'
-import type { ProjectImage } from '../types/project'
+import type { ProjectImage, ProjectSource } from '../types/project'
 
 interface ImageModule {
   default: ImageMetadata
 }
 
-export async function getProjectImages(slug: string): Promise<ProjectImage[]> {
+export async function getProjectImages(
+  projectImages: ProjectSource['images']
+): Promise<ProjectImage[]> {
   const allImages = import.meta.glob<ImageModule>(
     '../../../_content/images/*.{png,jpg,jpeg,webp,avif}',
     { eager: true }
   )
 
-  const projectImages = Object.entries(allImages).filter(([, module]) =>
-    module.default.src.includes(`/${slug}-`)
+  const imagesByFileName = new Map(
+    Object.entries(allImages).map(([modulePath, imageModule]) => [
+      modulePath.split('/').pop() || '',
+      imageModule.default
+    ])
   )
 
-  const enhancedImages: ProjectImage[] = []
+  return Promise.all(
+    projectImages.map(async ({ file, alt }) => {
+      const image = imagesByFileName.get(file)
+      if (!image) {
+        throw new Error(`Missing project image "${file}"`)
+      }
 
-  await Promise.all(
-    projectImages.map(async ([modulePath, imageModule]) => {
-      const filenameWithEnding = modulePath.split('/').pop() || ''
-      const dominantColor = await getDominantColor(filenameWithEnding)
-      enhancedImages.push({
-        ...imageModule.default,
+      const dominantColor = await getDominantColor(file)
+      return {
+        ...image,
+        alt,
         dominantColor
-      })
+      }
     })
   )
-
-  enhancedImages.sort((a, b) => a.src.localeCompare(b.src))
-
-  return enhancedImages
 }
 
 async function getDominantColor(fileName: string): Promise<string> {

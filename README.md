@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://matthiaskretschmann.com"><img src="public/github-header.png" /></a>
+  <a href="https://matthiaskretschmann.com"><img src="public/github-header.png" alt="Matthias Kretschmann portfolio logo" /></a>
  </p>
 <h2 align="center">
   👔 Portfolio thingy.
@@ -57,7 +57,7 @@ Astro automatically creates pages from each item in that file in the [`[slug].as
 
 ### 🖼 Project images
 
-All project images live under `src/_content/images` and are automatically attached to each project based on the inclusion of the project's `slug` in their filenames during the above mentioned `get-projects.ts` pipeline.
+All project images live under `src/_content/images`. Each project lists its images in display order under `images` in `src/_content/projects.yml`, with a `file` name and an `alt` description for each. The build fails if a listed file does not exist or is listed twice for a project.
 
 During production build, the dominant color for each image is extracted with sharp, and then used for the initial loading state for each image. Astro generates all required image sizes for delivering responsible, responsive images to visitors.
 
@@ -123,14 +123,7 @@ bun run new -- "Hello"
 
 Then continue modifying the new entry in [`src/_content/projects.yml`](src/_content/projects.yml).
 
-Finally, add as many images as needed with the file name format and put into `src/_content/images/`:
-
-```text
-SLUG-01.png
-SLUG-02.png
-SLUG-03.png
-...
-```
+Finally, put the project images into `src/_content/images/` and list them in display order with `file` and `alt` under `images` in [`src/_content/projects.yml`](src/_content/projects.yml).
 
 ### 🌄 Favicon generation
 

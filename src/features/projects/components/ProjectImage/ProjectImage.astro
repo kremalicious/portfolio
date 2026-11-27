@@ -5,13 +5,19 @@ import styles from './ProjectImage.module.css'
 
 type Props = {
   image: ProjectImage
-  alt: string
   className?: string
   width?: number
   priority?: boolean
+  decorative?: boolean
 }
 
-const { image, alt, className, width, priority = false } = Astro.props as Props
+const {
+  image,
+  className,
+  width,
+  priority = false,
+  decorative = false
+} = Astro.props as Props
 if (!image) return null
 
 const baseWidths = [400, 800, 1200]
@@ -60,7 +66,7 @@ const fallbackImage = images[images.length - 1]
     src={fallbackImage.src}
     srcset={srcset}
     sizes={sizesAttr}
-    alt={alt}
+    alt={decorative ? '' : image.alt}
     width={fallbackImage.attributes.width}
     height={fallbackImage.attributes.height}
     loading={priority ? 'eager' : 'lazy'}

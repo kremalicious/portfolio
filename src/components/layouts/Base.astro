@@ -5,13 +5,14 @@ import Footer from '@/components/common/Footer/Footer.astro'
 import Head from '@/components/common/Head.astro'
 import Header from '@/components/common/Header/Header.astro'
 import HostnameCheck from '@/components/common/HostnameCheck/HostnameCheck.astro'
+import type { ProjectImage } from '@/features/projects/types/project'
 import ThemeSwitch from '@/features/theme-switch/components/ThemeSwitch.astro'
 import type { StructuredData } from '@/lib/structured-data'
 
 type Props = {
   title?: string
   description?: string
-  image?: ImageMetadata
+  image?: ProjectImage
   noHeader?: boolean
   structuredData?: StructuredData
   noindex?: boolean

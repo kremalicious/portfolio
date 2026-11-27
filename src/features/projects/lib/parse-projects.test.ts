@@ -8,6 +8,9 @@ describe('parseProjects', () => {
   title: Test Project
   description: A test project description
   content: A test project content
+  images:
+    - file: test-project-01.png
+      alt: Test project interface
   techstack:
     - TypeScript
     - React
@@ -23,6 +26,9 @@ describe('parseProjects', () => {
     expect(projects[0].title).toBe('Test Project')
     expect(projects[0].description).toBe('A test project description')
     expect(projects[0].content).toBe('A test project content')
+    expect(projects[0].images).toEqual([
+      { file: 'test-project-01.png', alt: 'Test project interface' }
+    ])
     expect(projects[0].techstack).toEqual(['TypeScript', 'React'])
     expect(projects[0].links).toHaveLength(1)
     expect(projects[0].links?.[0].title).toBe('GitHub')
@@ -34,6 +40,9 @@ describe('parseProjects', () => {
   title: Minimal Project
   description: Just a description
   content: Just some content
+  images:
+    - file: minimal-project-01.png
+      alt: Minimal project interface
   techstack:
     - HTML
 `
@@ -66,6 +75,8 @@ describe('parseProjects', () => {
           '✖ Invalid input: expected string, received undefined\n' +
           '  → at [0].content\n' +
           '✖ Invalid input: expected array, received undefined\n' +
+          '  → at [0].images\n' +
+          '✖ Invalid input: expected array, received undefined\n' +
           '  → at [0].techstack'
       )
     )
@@ -76,6 +87,9 @@ describe('parseProjects', () => {
 - title: No Slug
   description: Missing slug
   content: Missing slug
+  images:
+    - file: no-slug-01.png
+      alt: Preview
   techstack:
     - HTML
 `
@@ -89,12 +103,59 @@ describe('parseProjects', () => {
     )
   })
 
+  it('throws for an empty images list', () => {
+    const yamlContent = `
+- slug: empty-images
+  title: Empty Images
+  description: Has no images
+  content: Has no images
+  images: []
+  techstack:
+    - HTML
+`
+
+    expect(() => parseProjects(yamlContent)).toThrow(
+      new Error(
+        'Invalid project content\n' +
+          '✖ Too small: expected array to have >=1 items\n' +
+          '  → at [0].images'
+      )
+    )
+  })
+
+  it('throws for a duplicate image file', () => {
+    const yamlContent = `
+- slug: duplicate-images
+  title: Duplicate Images
+  description: Lists one image twice
+  content: Lists one image twice
+  images:
+    - file: duplicate-images-01.png
+      alt: First description
+    - file: duplicate-images-01.png
+      alt: Second description
+  techstack:
+    - HTML
+`
+
+    expect(() => parseProjects(yamlContent)).toThrow(
+      new Error(
+        'Invalid project content\n' +
+          '✖ Duplicate image file "duplicate-images-01.png"\n' +
+          '  → at [0].images[1].file'
+      )
+    )
+  })
+
   it('throws for an empty techstack', () => {
     const yamlContent = `
 - slug: empty-stack
   title: Empty Stack
   description: Has empty techstack
   content: Has empty techstack
+  images:
+    - file: empty-stack-01.png
+      alt: Preview
   techstack: []
 `
 
@@ -113,6 +174,9 @@ describe('parseProjects', () => {
   title: Invalid Link
   description: Has invalid URL
   content: Has invalid URL
+  images:
+    - file: invalid-link-01.png
+      alt: Preview
   techstack:
     - HTML
   links:

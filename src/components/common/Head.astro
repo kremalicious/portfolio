@@ -1,6 +1,7 @@
 ---
 import { Font, getImage } from 'astro:assets'
 import meta from '@content/meta.json'
+import type { ProjectImage } from '@/features/projects/types/project'
 import { getCanonicalUrl } from '@/lib/canonical-url'
 import { metaDescriptionMaxLength } from '@/lib/meta-description'
 import type { StructuredData } from '@/lib/structured-data'
@@ -11,7 +12,7 @@ import type { StructuredData } from '@/lib/structured-data'
 type Props = {
   title?: string
   description?: string
-  image?: ImageMetadata
+  image?: ProjectImage
   structuredData?: StructuredData
   noindex?: boolean
 }
@@ -57,7 +58,7 @@ const structuredDataJson = structuredData
   ? JSON.stringify(structuredData).replaceAll('<', '\\u003c')
   : undefined
 
-const imageFinalAlt = image ? `Teaser image for ${title}` : 'Logo'
+const imageFinalAlt = image ? image.alt : `${name} portfolio logo`
 const isProduction = process.env.NODE_ENV === 'production'
 const { UMAMI_WEBSITE_ID, UMAMI_SCRIPT_URL } = process.env
 const shouldIncludeAnalytics =
