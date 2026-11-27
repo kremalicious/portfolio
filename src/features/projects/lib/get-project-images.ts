@@ -1,7 +1,10 @@
+import path from 'node:path'
 import type { ImageMetadata } from 'astro'
-import { fileURLToPath } from 'bun'
 import sharp from 'sharp'
 import type { ProjectImage, ProjectSource } from '../types/project'
+
+const imagesDirectory = path.join(process.cwd(), 'src', '_content', 'images')
+const dominantColorCache = new Map<string, Promise<string>>()
 
 interface ImageModule {
   default: ImageMetadata
@@ -40,22 +43,22 @@ export async function getProjectImages(
 }
 
 async function getDominantColor(fileName: string): Promise<string> {
-  let dominantColor = 'rgb(128, 128, 128)' // fallback
+  const fallbackColor = 'rgb(128, 128, 128)'
   // only extract in production
-  if (process.env.NODE_ENV !== 'production') return dominantColor
+  if (process.env.NODE_ENV !== 'production') return fallbackColor
 
-  try {
-    const fileUrl = new URL(
-      `../../src/_content/images/${fileName}`,
-      import.meta.url
-    )
-    const filePath = fileURLToPath(fileUrl)
-    const { dominant } = await sharp(filePath).stats()
-    dominantColor = `rgb(${dominant.r}, ${dominant.g}, ${dominant.b})`
-  } catch (error) {
-    const msg = error instanceof Error ? error.message : String(error)
-    console.error(`Color extraction failed for ${fileName}: ${msg}`)
-  }
+  const cached = dominantColorCache.get(fileName)
+  if (cached) return cached
 
-  return dominantColor
+  const pending = sharp(path.join(imagesDirectory, fileName))
+    .stats()
+    .then(({ dominant }) => `rgb(${dominant.r}, ${dominant.g}, ${dominant.b})`)
+    .catch((error: unknown) => {
+      const msg = error instanceof Error ? error.message : String(error)
+      console.error(`Color extraction failed for ${fileName}: ${msg}`)
+      return fallbackColor
+    })
+
+  dominantColorCache.set(fileName, pending)
+  return pending
 }
