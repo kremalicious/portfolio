@@ -2,7 +2,7 @@
   slug: onde
   description: A geographic data API for city and country search, built with alatus labs in 2026. I designed and built the API, website, and developer docs.
   content: |
-    While building [Lugara](/lugara/), we couldn't find a city dataset we actually trusted. So we built our own and opened it up to other developers as a public API.
+    While building [Lugara](/lugara), we couldn't find a city dataset we actually trusted. So we built our own and opened it up to other developers as a public API.
 
     Created with alatus labs in 2026, Onde provides clean geographic data for city and country search. I designed and built the API, the website, and the developer documentation.
   links:
@@ -80,7 +80,7 @@
   content: |
     Decentralized storage tends to come with rough UX. In 2019, I integrated IPFS across the Ocean Protocol stack, from infrastructure and API to UI, so publishing a dataset wouldn't require running a node or touching a terminal.
 
-    I built a public IPFS node with a focused upload interface and API, then wired it directly into the publish flow of [Commons](/oceanprotocol-commons/) so files could be pinned and shared in one step.
+    I built a public IPFS node with a focused upload interface and API, then wired it directly into the publish flow of [Commons](/oceanprotocol-commons) so files could be pinned and shared in one step.
   links:
     - title: 'Ocean Protocol and IPFS, Sitting In The Merkle Tree'
       icon: FileText
@@ -104,9 +104,9 @@
   slug: oceanprotocol-commons
   description: An open-data marketplace and open-source dApp blueprint for Ocean Protocol v1 and v2. Led design and front-end engineering from 2018 to 2019.
   content: |
-    The main public face of [Ocean Protocol](/oceanprotocol-v1/) v1 and v2: an open-data marketplace for browsing, downloading, and publishing datasets on the network.
+    The main public face of [Ocean Protocol](/oceanprotocol-v1) v1 and v2: an open-data marketplace for browsing, downloading, and publishing datasets on the network.
 
-    From 2018 to 2019, I led its design and front-end engineering. Beyond showcasing the full stack in production, Commons doubled as an open-source reference codebase for developers building their own Ocean dApps, before [Ocean Market](/oceanprotocol-market/) succeeded it in v3.
+    From 2018 to 2019, I led its design and front-end engineering. Beyond showcasing the full stack in production, Commons doubled as an open-source reference codebase for developers building their own Ocean dApps, before [Ocean Market](/oceanprotocol-market) succeeded it in v3.
   links:
     - title: The Commons Marketplace in Pacific Network
       icon: FileText
@@ -136,7 +136,7 @@
   content: |
     Turning a dense data-economy protocol into a cohesive family of websites, docs, and React applications. Between 2017 and 2020, I shaped Ocean Protocol's visual identity and built its web ecosystem on a shared component system.
 
-    In 2020, I led the brand's visual refresh ahead of the v3 release and the launch of [Ocean Market](/oceanprotocol-market/).
+    In 2020, I led the brand's visual refresh ahead of the v3 release and the launch of [Ocean Market](/oceanprotocol-market).
 
     Initial website in collaboration with [Balance](https://balance.io/). Key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
   links:
@@ -168,7 +168,7 @@
   slug: ipdb
   description: The Interplanetary Database was a public blockchain database network powered by BigchainDB. I shaped its visual direction and built its websites.
   content: |
-    The Interplanetary Database (IPDB) was a public blockchain database network powered by [BigchainDB](/bigchaindb/). Between 2015 and 2017, I shaped its visual direction and designed and built all of its web properties.
+    The Interplanetary Database (IPDB) was a public blockchain database network powered by [BigchainDB](/bigchaindb). Between 2015 and 2017, I shaped its visual direction and designed and built all of its web properties.
 
     Branding and key visuals in collaboration with [Wojciech Hupert](https://twitter.com/wojciechhupert).
   techstack:
@@ -212,7 +212,7 @@
     - title: GitHub
       url: 'https://github.com/9984/2017.9984.io'
   content: |
-    Named after BigchainDB's default HTTP API port, 9984 >> Summit was the first joint conference hosted by [BigchainDB](/bigchaindb/) and [IPDB](/ipdb/) in 2017.
+    Named after BigchainDB's default HTTP API port, 9984 >> Summit was the first joint conference hosted by [BigchainDB](/bigchaindb) and [IPDB](/ipdb) in 2017.
 
     I directed the visual identity for the event and designed and built the summit website.
 
@@ -260,7 +260,7 @@
   slug: ascribe
   description: Years before NFTs went mainstream, ascribe registered ownership of art on the Bitcoin blockchain. I built UI for its websites and web app from 2015 to 2017.
   content: |
-    Years before NFTs went mainstream, ascribe let artists register and transfer ownership of digital and physical works on the Bitcoin blockchain. Its approach helped inspire Ethereum's ERC-721 standard and eventually grew into [BigchainDB](/bigchaindb/).
+    Years before NFTs went mainstream, ascribe let artists register and transfer ownership of digital and physical works on the Bitcoin blockchain. Its approach helped inspire Ethereum's ERC-721 standard and eventually grew into [BigchainDB](/bigchaindb).
 
     From 2015 to 2017, I built UI across ascribe's web touchpoints, including a main web app written in an early version of React, before the service was [discontinued in 2017](https://www.ascribe.io/).
 

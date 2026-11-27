@@ -34,9 +34,17 @@
   justify-content: center;
 }
 
-.actions a {
+.actions a,
+.actions button {
   display: block;
   color: inherit;
+}
+
+.actions button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
 .copyright,
@@ -44,6 +52,22 @@
   color: var(--text-color-light);
 }
 
-.actions a:hover {
+@media (hover: hover) and (pointer: fine) {
+  .actions a:hover,
+  .actions button:hover {
+    color: var(--link-color-hover);
+  }
+}
+
+.actions button:active {
   color: var(--link-color-hover);
+  transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .actions button {
+    transition:
+      color 0.2s ease-out,
+      transform 160ms ease-out;
+  }
 }

@@ -4,6 +4,7 @@ import Project from '@/features/projects/components/Project/Project.astro'
 import ProjectNav from '@/features/projects/components/ProjectNav/index.astro'
 import { getProjects } from '@/features/projects/lib/get-projects'
 import { markdownToText } from '@/features/projects/lib/markdown'
+import { getCanonicalUrl } from '@/lib/canonical-url'
 import { getCreativeWorkStructuredData } from '@/lib/structured-data'
 
 export async function getStaticPaths() {
@@ -20,7 +21,9 @@ const projects = await getProjects()
 const structuredData = getCreativeWorkStructuredData({
   title: project.title,
   description: markdownToText(project.content),
-  url: new URL(Astro.url.pathname, Astro.site).href,
+  url: Astro.site
+    ? getCanonicalUrl(Astro.url.pathname, Astro.site)
+    : `/${slug}`,
   keywords: project.techstack
 })
 ---

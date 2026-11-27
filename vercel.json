@@ -1,4 +1,16 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "trailingSlash": true
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/gpg.txt",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
+  ]
 }

@@ -1,6 +1,7 @@
 ---
 import { Font, getImage } from 'astro:assets'
 import meta from '@content/meta.json'
+import { getCanonicalUrl } from '@/lib/canonical-url'
 import { metaDescriptionMaxLength } from '@/lib/meta-description'
 import type { StructuredData } from '@/lib/structured-data'
 
@@ -12,9 +13,16 @@ type Props = {
   description?: string
   image?: ImageMetadata
   structuredData?: StructuredData
+  noindex?: boolean
 }
 
-const { title, description, image, structuredData } = Astro.props
+const {
+  title,
+  description,
+  image,
+  structuredData,
+  noindex = false
+} = Astro.props
 const { name, label } = meta.author
 
 const titleFinal =
@@ -34,10 +42,10 @@ function truncateDescription(text: string) {
 
 const descriptionFinal = truncateDescription(description ?? meta.description)
 
-const canonicalUrl =
-  Astro.url.pathname === '/'
-    ? Astro.site?.origin
-    : `${Astro.site?.origin}${Astro.url.pathname}`
+const canonicalUrl = Astro.site
+  ? getCanonicalUrl(Astro.url.pathname, Astro.site)
+  : undefined
+const robotsContent = noindex ? 'noindex, noai, noimageai' : 'noai, noimageai'
 
 const imageFinal = `${Astro.site?.origin}${
   image
@@ -88,7 +96,7 @@ const shouldIncludeAnalytics =
 
   <title>{titleFinal}</title>
 
-  <link rel="canonical" href={canonicalUrl}>
+  {!noindex && canonicalUrl && <link rel="canonical" href={canonicalUrl}>}
   <meta name="description" content={descriptionFinal}>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content={name}>
@@ -96,7 +104,7 @@ const shouldIncludeAnalytics =
   <meta property="og:description" content={descriptionFinal}>
   <meta property="og:image" content={imageFinal}>
   <meta property="og:image:alt" content={imageFinalAlt}>
-  <meta property="og:url" content={canonicalUrl}>
+  {!noindex && canonicalUrl && <meta property="og:url" content={canonicalUrl}>}
   <meta name="twitter:card" content="summary_large_image">
 
   <meta name="theme-color" content="#e7eef4">
@@ -106,7 +114,7 @@ const shouldIncludeAnalytics =
     name="viewport"
     content="width=device-width, initial-scale=1, shrink-to-fit=no"
   >
-  <meta name="robots" content="noai, noimageai">
+  <meta name="robots" content={robotsContent}>
 
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">

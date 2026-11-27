@@ -1,23 +1,22 @@
 import { downloadVcard } from '../lib/vcard'
 
 class VcardDownloadElement extends HTMLElement {
-  private anchor: HTMLAnchorElement | null = null
+  private button: HTMLButtonElement | null = null
 
   connectedCallback(): void {
-    const candidate = this.querySelector('a')
+    const candidate = this.querySelector('button')
     if (!candidate) return
 
-    this.anchor = candidate
-    this.anchor.addEventListener('click', this.handleClick, { passive: false })
+    this.button = candidate
+    this.button.addEventListener('click', this.handleClick)
   }
 
   disconnectedCallback(): void {
-    this.anchor?.removeEventListener('click', this.handleClick)
-    this.anchor = null
+    this.button?.removeEventListener('click', this.handleClick)
+    this.button = null
   }
 
-  private handleClick = (event: MouseEvent): void => {
-    event.preventDefault()
+  private handleClick = (): void => {
     downloadVcard().catch((error: unknown) => {
       console.error('Failed to create vCard download', error)
     })

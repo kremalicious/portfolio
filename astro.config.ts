@@ -9,9 +9,12 @@ const adobeId = env.ADOBE_ID
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
+  build: {
+    format: 'file'
+  },
   integrations: [sitemap()],
   site: meta.url,
-  trailingSlash: 'always',
+  trailingSlash: 'never',
   fonts: [
     {
       name: 'Brandon Grotesque',

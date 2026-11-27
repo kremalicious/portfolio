@@ -103,7 +103,7 @@ If you want to know how this works in detail, have a look at the respective file
 
 ### 📇 Client-side vCard creation
 
-The _Add to addressbook_ link in the footer automatically creates a downloadable vCard file on the client-side, based on data defined in `src/_content/meta.json`.
+The _Add to addressbook_ button in the footer automatically creates a downloadable vCard file on the client-side, based on data defined in `src/_content/meta.json`.
 
 If you want to know how, have a look at the respective component:
 
